@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const LogoReveal = () => {
+export const LogoRevealSpin = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const charRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
@@ -26,8 +26,8 @@ export const LogoReveal = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
-          end: '+=150%', // Pin for 1.5x viewport height to scrub the animation
-          scrub: 1, // Smooth scrubbing
+          end: '+=200%', // Increased scroll duration to fit the extra spin
+          scrub: 1,
           pin: true,
           anticipatePin: 1
         }
@@ -37,53 +37,62 @@ export const LogoReveal = () => {
       tl.from(eye, {
         scale: 0.1,
         opacity: 0,
-        rotation: 360,
-        duration: 0.1
+        rotation: -360,
+        duration: 0.2
       }, 0);
 
-      // Animate all other characters (Orbital math)
+      // Animate all other characters (Different orbital math)
       chars.forEach((char, i) => {
         if (i === 6 || !char) return; // Skip eye and nulls
         
         const charX = char.offsetLeft + char.offsetWidth / 2;
         const charY = char.offsetTop + char.offsetHeight / 2;
         
-        // Vector from char's natural position to the eye
         const dx = eyeX - charX;
         const dy = eyeY - charY;
         
-        // Animation state object for GSAP to tween
         const data = {
           progress: 0,
           startAngle: Math.random() * Math.PI * 2,
-          startRadius: window.innerWidth * 0.3 + Math.random() * window.innerWidth * 0.2 // Start wide
+          startRadius: window.innerWidth * 0.4 // Slightly wider start
         };
+
+        // FORCE INITIAL RENDER STATE BEFORE SCROLLING
+        const initialAngle = data.startAngle;
+        const initialRadius = data.startRadius;
+        gsap.set(char, {
+          x: dx + Math.cos(initialAngle) * initialRadius,
+          y: dy + Math.sin(initialAngle) * initialRadius,
+          rotation: -720, // Start negative to spin clockwise into 0
+          opacity: 0 // completely hidden before they start flying in
+        });
 
         tl.to(data, {
           progress: 1,
           duration: 1,
-          ease: 'power2.inOut',
+          ease: 'power2.inOut', // Changed from power3 to power2 for a less aggressive, smoother speed curve
           onUpdate: () => {
-            // Angle spins rapidly then slows down
-            const currentAngle = data.startAngle + data.progress * Math.PI * 4;
-            // Radius shrinks as progress goes to 1
-            const currentRadius = data.startRadius * (1 - Math.pow(data.progress, 1.5));
+            // Clockwise smooth orbital revolutions
+            const currentAngle = data.startAngle + data.progress * Math.PI * 6;
             
-            // Center of the swirl moves from the eye (dx, dy) to natural position (0, 0)
+            // Reduced the exponent from 2.0 to 1.4 so the radius shrinks more smoothly and gradually, avoiding a harsh snap at the end
+            const currentRadius = data.startRadius * (1 - Math.pow(data.progress, 1.4));
+            
             const centerX = dx * (1 - data.progress);
             const centerY = dy * (1 - data.progress);
             
             gsap.set(char, {
               x: centerX + Math.cos(currentAngle) * currentRadius,
               y: centerY + Math.sin(currentAngle) * currentRadius,
-              rotation: (1 - data.progress) * 360,
-              opacity: data.progress
+              // Spin clockwise on their own axis before settling to 0
+              rotation: -(1 - data.progress) * 720,
+              opacity: Math.min(1, data.progress * 1.5)
             });
           }
         }, 0);
       });
 
-      // Fade in the top and bottom content at the end of the reveal
+      // Fade in the top and bottom content at the very end
       if (topTextRef.current && bottomContentRef.current) {
         tl.from([topTextRef.current, bottomContentRef.current], {
           opacity: 0,

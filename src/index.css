@@ -59,7 +59,7 @@ body {
   letter-spacing: -0.022em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  /* overflow-x: hidden; Removed to fix GSAP ScrollTrigger pinning breaking at the bottom of the page */
   transition: background-color 0.5s var(--apple-easing), color 0.5s var(--apple-easing);
 }
 

@@ -33,7 +33,7 @@ export const AboutSection = () => {
               marginLeft: '24px', // Offset to account for tilted badges
               marginTop: '24px'
             }}>
-              {/* Tilted Photo */}
+            {/* Tilted Photo */}
               <motion.div 
                 initial={{ rotate: -8, scale: 0.9, opacity: 0 }}
                 whileInView={{ rotate: -4, scale: 1, opacity: 1 }}
@@ -120,21 +120,12 @@ export const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="relative flex flex-col p-8 md:p-10 border"
+            className="relative flex flex-col p-8 md:p-10"
             style={{ 
-              borderColor: 'var(--accent-color)',
               background: 'rgba(255,255,255,0.01)',
               marginTop: '24px'
             }}
           >
-            <DotPattern width={20} height={20} cx={2} cy={2} cr={1} className="opacity-40" />
-
-            {/* Corner Squares */}
-            <div className="absolute -left-1.5 -top-1.5 h-3 w-3" style={{ background: 'var(--accent-color)' }} />
-            <div className="absolute -bottom-1.5 -left-1.5 h-3 w-3" style={{ background: 'var(--accent-color)' }} />
-            <div className="absolute -right-1.5 -top-1.5 h-3 w-3" style={{ background: 'var(--accent-color)' }} />
-            <div className="absolute -bottom-1.5 -right-1.5 h-3 w-3" style={{ background: 'var(--accent-color)' }} />
-
             <div className="relative z-20 flex flex-col gap-8 w-full">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
                 <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0 }}>

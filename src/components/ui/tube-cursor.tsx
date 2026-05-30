@@ -81,7 +81,7 @@ const TubesCursor = ({
   }, [initialColors, lightColors, lightIntensity, enableRandomizeOnClick]);
 
   return (
-    <div className={`relative h-screen w-screen overflow-hidden ${className}`}>
+    <div className={`relative h-screen w-full overflow-hidden ${className}`}>
       {/* Background canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 block h-full w-full pointer-events-auto" />
 
