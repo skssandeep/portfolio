@@ -1,0 +1,2 @@
+<svg width="15" height="47" viewBox="0 0 15 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.362305 0V32.9633L14.1272 46.7281" stroke="#130537" stroke-width="0.724467"></path></svg>
+<svg width="15" height="47" viewBox="0 0 15 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.021 0V32.9633L0.256118 46.7281" stroke="#130537" stroke-width="0.724467"></path></svg>

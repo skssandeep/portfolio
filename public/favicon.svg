@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    .ring { stroke: #ef4444; fill: none; stroke-width: 6; }
+    .dot { fill: #ef4444; }
+  </style>
+  <circle cx="50" cy="50" r="40" class="ring" />
+  <circle cx="50" cy="50" r="8" class="dot" />
+</svg>
