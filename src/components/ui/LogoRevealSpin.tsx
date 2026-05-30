@@ -109,66 +109,68 @@ export const LogoRevealSpin = () => {
   const text = "SANDSTORMIFY";
 
   return (
-    <section 
-      ref={containerRef} 
-      className="relative flex flex-col items-center justify-center w-full min-h-screen bg-[#050505] overflow-hidden gap-12"
-    >
-      {/* Top subtitle */}
-      <div 
-        ref={topTextRef}
-        className="z-10 text-[11px] sm:text-[13px] tracking-[0.5em] text-[#888] uppercase font-mono mt-[-2vh]"
+    <div className="w-full">
+      <section 
+        ref={containerRef} 
+        className="relative flex flex-col items-center justify-center w-full min-h-screen bg-[#050505] overflow-hidden gap-12"
       >
-        Ready to start?
-      </div>
-
-      <div 
-        className="flex text-white text-[8.5vw] sm:text-[6.5vw] tracking-tighter mix-blend-difference z-10 select-none font-normal"
-        style={{ fontFamily: "'Dune Rise', var(--font-system)" }}
-      >
-        {text.split('').map((char, i) => (
-          <span 
-            key={i} 
-            ref={el => charRefs.current[i] = el}
-            className="inline-block origin-center"
-            style={{ 
-              color: i === 6 ? 'var(--accent-color)' : '#ffffff',
-              textTransform: i === 6 ? 'lowercase' : 'uppercase',
-            }}
-          >
-            {i === 6 ? (
-              <span style={{ display: 'inline-block', transform: 'scale(1)', margin: '0 0.5vw' }}>
-                {char}
-              </span>
-            ) : char}
-          </span>
-        ))}
-      </div>
-
-      {/* Bottom text & CTA */}
-      <div 
-        ref={bottomContentRef}
-        className="z-10 flex flex-col items-center gap-8 mt-[2vh]"
-      >
-        <p className="text-[#a0a0a0] font-mono text-center leading-relaxed text-[13px] sm:text-[15px] max-w-[420px] mx-auto px-4">
-          Ready to turn your website into your<br/>
-          best salesperson? Let's build a standout<br/>
-          brand and high-converting interface.
-        </p>
-
-        <button 
-          className="px-8 py-3 rounded-full text-[11px] sm:text-[13px] text-[#ddd] font-mono hover:text-white relative overflow-hidden group cursor-pointer"
-          style={{ 
-            background: 'linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%)', 
-            border: '1px solid rgba(255,255,255,0.15)',
-            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.5), inset 0 -10px 20px rgba(255,255,255,0.03)',
-            transition: 'all 0.3s var(--apple-easing)'
-          }}
-          onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+        {/* Top subtitle */}
+        <div 
+          ref={topTextRef}
+          className="z-10 text-[11px] sm:text-[13px] tracking-[0.5em] text-[#888] uppercase font-mono mt-[-2vh]"
         >
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent)' }} />
-          <span className="relative z-10">Book Your Free Strategy Call</span>
-        </button>
-      </div>
-    </section>
+          Ready to start?
+        </div>
+
+        <div 
+          className="flex text-white text-[8.5vw] sm:text-[6.5vw] tracking-tighter mix-blend-difference z-10 select-none font-normal"
+          style={{ fontFamily: "'Dune Rise', var(--font-system)" }}
+        >
+          {text.split('').map((char, i) => (
+            <span 
+              key={i} 
+              ref={el => charRefs.current[i] = el}
+              className="inline-block origin-center"
+              style={{ 
+                color: i === 6 ? 'var(--accent-color)' : '#ffffff',
+                textTransform: i === 6 ? 'lowercase' : 'uppercase',
+              }}
+            >
+              {i === 6 ? (
+                <span style={{ display: 'inline-block', transform: 'scale(1)', margin: '0 0.5vw' }}>
+                  {char}
+                </span>
+              ) : char}
+            </span>
+          ))}
+        </div>
+
+        {/* Bottom text & CTA */}
+        <div 
+          ref={bottomContentRef}
+          className="z-10 flex flex-col items-center gap-8 mt-[2vh]"
+        >
+          <p className="text-[#a0a0a0] font-mono text-center leading-relaxed text-[13px] sm:text-[15px] max-w-[420px] mx-auto px-4">
+            Ready to turn your website into your<br/>
+            best salesperson? Let's build a standout<br/>
+            brand and high-converting interface.
+          </p>
+
+          <button 
+            className="px-8 py-3 rounded-full text-[11px] sm:text-[13px] text-[#ddd] font-mono hover:text-white relative overflow-hidden group cursor-pointer"
+            style={{ 
+              background: 'linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%)', 
+              border: '1px solid rgba(255,255,255,0.15)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.5), inset 0 -10px 20px rgba(255,255,255,0.03)',
+              transition: 'all 0.3s var(--apple-easing)'
+            }}
+            onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+          >
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent)' }} />
+            <span className="relative z-10">Book Your Free Strategy Call</span>
+          </button>
+        </div>
+      </section>
+    </div>
   );
 };
