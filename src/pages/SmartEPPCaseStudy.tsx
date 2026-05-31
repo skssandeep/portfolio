@@ -9,8 +9,8 @@ const SmartEPPPrototype = () => {
   const [selectedDevice, setSelectedDevice] = useState<string | null>(null);
 
   const devices = [
-    { id: 'macbook', name: 'MacBook Pro 16"', specs: 'M3 Max, 32GB RAM', price: '$2,499' },
-    { id: 'thinkpad', name: 'ThinkPad X1', specs: 'Core i7, 16GB RAM', price: '$1,899' },
+    { id: 'iphone', name: 'iPhone 15 Pro', specs: 'Zero-Cost EMI', price: '₹4,166/mo' },
+    { id: 'macbook', name: 'MacBook Air M3', specs: 'Salary Linked', price: '₹5,833/mo' },
   ];
 
   return (
@@ -25,14 +25,14 @@ const SmartEPPPrototype = () => {
       fontFamily: 'var(--font-system)'
     }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)' }}>Hardware Request</h3>
+        <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)' }}>Instant Eligibility Check</h3>
         <span style={{ fontSize: '14px', color: 'var(--accent-color)', fontWeight: 500 }}>Step {step} of 3</span>
       </div>
 
       <div style={{ minHeight: '200px' }}>
         {step === 1 && (
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>Select your required device based on your engineering tier.</p>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>Select a premium device to calculate your pre-approved salary deduction.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {devices.map(device => (
                 <div 
@@ -73,14 +73,14 @@ const SmartEPPPrototype = () => {
                 cursor: selectedDevice ? 'pointer' : 'not-allowed'
               }}
             >
-              Continue to Justification
+              Continue to verification
             </button>
           </motion.div>
         )}
 
         {step === 2 && (
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>Auto-justification generated based on your role (Senior Frontend Engineer).</p>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>Auto-verifying your employment via corporate HRMS integration...</p>
             <div style={{
               background: 'rgba(255,255,255,0.03)',
               padding: '16px',
@@ -91,7 +91,7 @@ const SmartEPPPrototype = () => {
               lineHeight: 1.6,
               marginBottom: '24px'
             }}>
-              "Requires high-performance compute for running local Docker containers, large Webpack builds, and multiple Figma instances simultaneously."
+              "Successfully fetched employee records. Salary band qualifies for up to ₹2,50,000 in zero-cost EMI financing with no manual KYC required."
             </div>
             <div style={{ display: 'flex', gap: '12px' }}>
               <button 
@@ -104,7 +104,7 @@ const SmartEPPPrototype = () => {
                 onClick={() => setStep(3)}
                 style={{ flex: 2, padding: '12px', background: 'var(--accent-color)', border: 'none', color: '#fff', borderRadius: '8px', fontWeight: 600, cursor: 'pointer' }}
               >
-                Submit for Auto-Approval
+                Confirm 1-Click Checkout
               </button>
             </div>
           </motion.div>
@@ -113,9 +113,9 @@ const SmartEPPPrototype = () => {
         {step === 3 && (
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ textAlign: 'center', padding: '32px 0' }}>
             <CheckCircle2 size={48} color="var(--accent-color)" style={{ margin: '0 auto 16px auto' }} />
-            <h4 style={{ color: 'var(--text-primary)', fontSize: '20px', marginBottom: '8px' }}>Instantly Approved</h4>
+            <h4 style={{ color: 'var(--text-primary)', fontSize: '20px', marginBottom: '8px' }}>Purchase Approved</h4>
             <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.6 }}>
-              Your request met the pre-approved budget rules for your tier. It has been routed to fulfillment immediately.
+              Your new device is being dispatched. The first EMI will be automatically deducted from your next month's payroll.
             </p>
             <button 
                 onClick={() => { setStep(1); setSelectedDevice(null); }}
@@ -157,11 +157,11 @@ export const SmartEPPCaseStudy = () => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
                 <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
                   <span style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '8px' }}>The Problem</span>
-                  <p style={{ color: 'var(--text-primary)', fontSize: '16px', margin: 0, lineHeight: 1.5 }}>Corporate employees were waiting an average of 3 weeks to receive essential work hardware due to a fragmented, manual approval chain.</p>
+                  <p style={{ color: 'var(--text-primary)', fontSize: '16px', margin: 0, lineHeight: 1.5 }}>Traditional Employee Purchase Programs (EPPs) suffered from an abysmal 12% conversion rate due to tedious manual KYC, opaque credit limits, and fragmented checkout flows.</p>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
                   <span style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '8px' }}>The Solution</span>
-                  <p style={{ color: 'var(--text-primary)', fontSize: '16px', margin: 0, lineHeight: 1.5 }}>An automated, rule-based Enterprise Procurement Platform that reduced hardware request-to-fulfillment time from 21 days to 48 hours.</p>
+                  <p style={{ color: 'var(--text-primary)', fontSize: '16px', margin: 0, lineHeight: 1.5 }}>A seamless B2B2C FinTech mobile ecosystem offering corporate employees instant salary-linked EMIs and 1-click checkout for premium devices.</p>
                 </div>
               </div>
 
@@ -169,15 +169,15 @@ export const SmartEPPCaseStudy = () => {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
                 <div>
                   <div style={{ color: 'var(--text-primary)', fontSize: '32px', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>-85%</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Fulfillment Time</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Drop-off Rate</div>
                 </div>
                 <div>
-                  <div style={{ color: 'var(--text-primary)', fontSize: '32px', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>$2.4M</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Saved Productivity</div>
+                  <div style={{ color: 'var(--text-primary)', fontSize: '32px', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>$12.4M</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Additional GMV</div>
                 </div>
                 <div>
-                  <div style={{ color: 'var(--text-primary)', fontSize: '32px', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>10k+</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Users Onboarded</div>
+                  <div style={{ color: 'var(--text-primary)', fontSize: '32px', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>40k+</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Devices Financed</div>
                 </div>
               </div>
             </div>
@@ -200,7 +200,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
             <div>
               <div style={{ color: 'var(--text-secondary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Platform</div>
-              <div style={{ color: 'var(--text-primary)', fontSize: '15px', fontWeight: 500 }}>Web / Desktop</div>
+              <div style={{ color: 'var(--text-primary)', fontSize: '15px', fontWeight: 500 }}>Mobile Web / PWA</div>
             </div>
             <div>
               <div style={{ color: 'var(--text-secondary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>My Role</div>
@@ -208,7 +208,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
             <div>
               <div style={{ color: 'var(--text-secondary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Constraints</div>
-              <div style={{ color: 'var(--accent-color)', fontSize: '15px', fontWeight: 500 }}>Legacy DB Sync</div>
+              <div style={{ color: 'var(--accent-color)', fontSize: '15px', fontWeight: 500 }}>Complex NBFC Integrations</div>
             </div>
           </div>
         </div>
@@ -219,14 +219,14 @@ export const SmartEPPCaseStudy = () => {
         <div className="container" style={{ maxWidth: '800px' }}>
           <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em' }}>The Business Problem</h2>
           <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '32px' }}>
-            Most UX case studies focus entirely on "the user was confused." In enterprise software, confusion is a symptom; the disease is lost revenue. 
+            Most UX case studies focus entirely on aesthetics. In FinTech e-commerce, user friction is a symptom; the disease is cart abandonment. 
           </p>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '16px', borderLeft: '4px solid var(--accent-color)' }}>
             <AlertCircle color="var(--accent-color)" size={32} style={{ flexShrink: 0, marginTop: '4px' }} />
             <div>
-              <h4 style={{ color: 'var(--text-primary)', fontSize: '18px', marginBottom: '12px' }}>The $2.4M Bleed</h4>
+              <h4 style={{ color: 'var(--text-primary)', fontSize: '18px', marginBottom: '12px' }}>The $12M Bleed</h4>
               <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                When a Senior Engineer is hired at $180k/yr, every week they wait for a laptop costs the company ~$3,500 in wasted salary. Multiplied by 700 new hires a year, the broken procurement UI wasn't just "bad UX" — it was a multi-million dollar leak.
+                When a corporate employee gets frustrated by manual KYC document uploads just to buy a phone, they bounce. A 5% drop in the funnel for high-ticket electronics like smartphones and laptops was costing our retail partners millions in lost GMV.
               </p>
             </div>
           </div>
@@ -238,7 +238,7 @@ export const SmartEPPCaseStudy = () => {
         <div className="container" style={{ maxWidth: '1000px' }}>
           <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
           <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '48px', maxWidth: '600px' }}>
-            Design isn't linear. Here are the three primary directions we explored for the approval matrix, and why the first two failed.
+            Design isn't linear. Here are the three primary directions we explored for the e-commerce purchase flow, and why the first two failed.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
@@ -250,10 +250,10 @@ export const SmartEPPCaseStudy = () => {
               <div style={{ padding: '24px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                   <XCircle size={16} color="#ef4444" />
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>The Kanban Approach</span>
+                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Standard E-Commerce Flow</span>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>
-                  <strong>Why it failed:</strong> IT Managers process 100+ requests a day. Dragging and dropping cards across columns was too high-friction compared to bulk actions.
+                  <strong>Why it failed:</strong> Ignored the B2B context. Employees didn't know their pre-approved EMI credit limits upfront, resulting in sticker shock at checkout.
                 </p>
               </div>
             </div>
@@ -266,10 +266,10 @@ export const SmartEPPCaseStudy = () => {
               <div style={{ padding: '24px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                   <XCircle size={16} color="#ef4444" />
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>The Chatbot Flow</span>
+                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>The Heavy KYC Wizard</span>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>
-                  <strong>Why it failed:</strong> Engineering rejected the NLP complexity. Furthermore, users wanted to visually compare laptop specs, which chat interfaces handle poorly.
+                  <strong>Why it failed:</strong> Asked for PAN cards and salary slips before users even browsed the product catalog. The friction caused an immediate 70% bounce rate.
                 </p>
               </div>
             </div>
@@ -282,10 +282,10 @@ export const SmartEPPCaseStudy = () => {
               <div style={{ padding: '24px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                   <CheckCircle2 size={16} color="var(--accent-color)" />
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Rules-Engine Wizard</span>
+                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Progressive Disclosure</span>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>
-                  <strong>The Winner:</strong> A simple step-by-step wizard that auto-approved requests if they matched the employee's tier-budget. Zero manual intervention required for 80% of cases.
+                  <strong>The Winner:</strong> Authenticate via Corporate SSO to show instant credit limits, letting them browse confidently. We delayed technical KYC until checkout.
                 </p>
               </div>
             </div>
@@ -299,7 +299,7 @@ export const SmartEPPCaseStudy = () => {
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Visual Ecosystem</h2>
             <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
-              A unified design language that scales from high-density desktop dashboards down to the pocket-sized employee mobile experience.
+              A unified FinTech design language scaling from comprehensive admin dashboards down to the pocket-sized employee mobile purchasing experience.
             </p>
           </div>
 
@@ -373,9 +373,9 @@ export const SmartEPPCaseStudy = () => {
           <div style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '12px', marginBottom: '16px' }}>
             Live Prototype
           </div>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em' }}>The "Zero-Touch" Flow</h2>
+          <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em' }}>The "Zero-Touch" Verification Flow</h2>
           <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '64px', marginInline: 'auto' }}>
-            Instead of showing a flat PNG, try the actual coded component below. By offloading justification to a rules engine, we eliminated the need for manual manager approval entirely.
+            Instead of showing a flat PNG, try the actual coded component below. By linking directly to corporate HRMS systems, we eliminated the need for manual income verification entirely.
           </p>
           
           {/* Embedded React Prototype */}
@@ -390,19 +390,19 @@ export const SmartEPPCaseStudy = () => {
           <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '32px', letterSpacing: '-0.02em' }}>What I Got Wrong</h2>
           
           <div style={{ background: 'var(--bg-color)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)' }}>
-            <h4 style={{ color: 'var(--text-primary)', fontSize: '20px', marginBottom: '16px' }}>The "Manager Dashboard" Fallacy</h4>
+            <h4 style={{ color: 'var(--text-primary)', fontSize: '20px', marginBottom: '16px' }}>The "Universal App" Fallacy</h4>
             <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
-              Initially, I spent two weeks designing a beautiful, high-density dashboard for IT managers to manually review edge-case requests. I obsessed over table sorting, bulk actions, and filtering.
+              Initially, I spent two weeks designing a beautiful, standalone native iOS & Android application. I obsessed over push notifications, persistent login states, and native biometric auth.
             </p>
             <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
-              <strong>The Reality Check:</strong> During beta testing, IT managers ignored the dashboard. They just wanted an email notification with an "Approve" or "Deny" button that they could tap from their phones while walking between meetings.
+              <strong>The Reality Check:</strong> During beta testing, corporate employees absolutely refused to download *another* app just to buy a phone once a year. The app store friction killed our acquisition funnel instantly.
             </p>
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '24px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
               <Target size={24} color="var(--accent-color)" style={{ flexShrink: 0 }} />
               <div>
                 <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: '4px' }}>The Pivot</strong>
                 <span style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.5 }}>
-                  We scrapped the complex dashboard entirely and built interactive email widgets using AMP for Email. It reduced engineering scope by a month and resulted in a 90% faster response time from managers. Sometimes the best UI is no UI.
+                  We scrapped the native app entirely and rebuilt the entire flow as a lightweight Progressive Web App (PWA) that could be deeply embedded inside their existing corporate intranet portal (HRMS). Conversion spiked by 300% overnight.
                 </span>
               </div>
             </div>
@@ -415,7 +415,7 @@ export const SmartEPPCaseStudy = () => {
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em' }}>Final Thoughts</h2>
           <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '48px' }}>
-            Smart EPP was a masterclass in designing for business logic over aesthetics. By deeply understanding the procurement rules, we were able to design an interface that essentially made itself obsolete for 80% of transactions.
+            Smart EPP was a masterclass in designing for trust and low friction over pure aesthetics. By deeply understanding FinTech regulations and corporate HR integrations, we were able to design a frictionless checkout experience.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Link to="/" style={{ color: 'var(--bg-color)', background: 'var(--text-primary)', padding: '16px 32px', borderRadius: '100px', textDecoration: 'none', fontWeight: 600, fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase' }}>
