@@ -211,11 +211,12 @@ export const SmartEPPCaseStudy = () => {
         <div style={{ position: 'relative', zIndex: 20, width: '100%', maxWidth: '1100px', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '60px' }}>
           
           <motion.img 
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, type: 'spring', bounce: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             src="/images/Mockup2_EPP.png" 
             alt="Smart EPP" 
+            fetchPriority="high"
             style={{ width: '100%', maxWidth: '900px', filter: 'drop-shadow(0 40px 100px rgba(0,0,0,0.8))', position: 'relative', zIndex: 10, objectFit: 'contain' }} 
           />
 
@@ -228,10 +229,10 @@ export const SmartEPPCaseStudy = () => {
               { class: 'chip-4', icon: <AlertCircle size={14}/>, title: "Constraint", val: "Strict KYC & NBFC", delay: 0.7 }
             ].map((chip, idx) => (
               <motion.div key={idx} className={`chip-wrapper ${chip.class}`}
-                initial={{ scale: 0.8, opacity: 0 }} 
-                animate={{ scale: 1, opacity: 1 }} 
-                transition={{ delay: chip.delay, type: 'spring' }}
-                whileHover={{ scale: 1.05 }}
+                initial={{ scale: 0.9, opacity: 0, y: 20 }} 
+                animate={{ scale: 1, opacity: 1, y: 0 }} 
+                transition={{ delay: chip.delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
                 <div style={{
                   background: 'rgba(20, 20, 20, 0.75)',
