@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
 const SmartEPPPrototype = () => {
@@ -131,6 +131,9 @@ const SmartEPPPrototype = () => {
 };
 
 export const SmartEPPCaseStudy = () => {
+  const { scrollY } = useScroll();
+  const heroY = useTransform(scrollY, [0, 1000], [0, 300]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -145,19 +148,40 @@ export const SmartEPPCaseStudy = () => {
             <ArrowLeft size={16} /> Back
           </Link>
         </div>
-        
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%)' }} />
-        <img src="/images/Mockup2_EPP.png" alt="Smart EPP Cover" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', position: 'absolute', inset: 0, zIndex: 0, opacity: 0.7 }} />
-        
-        <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '0 4vw' }}>
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span style={{ display: 'inline-block', color: '#fff', background: 'var(--accent-color)', padding: '6px 16px', borderRadius: '100px', fontSize: '12px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px' }}>
-              B2B2C FinTech Case Study
-            </span>
-            <h1 className="text-hero" style={{ fontSize: 'clamp(3.5rem, 8vw, 6rem)', lineHeight: 1, marginBottom: '24px', letterSpacing: '-0.03em', color: '#fff', textShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+           {/* Background Image with Parallax & Overlay */}
+        <motion.div 
+          style={{ y: heroY, position: 'absolute', width: '100%', height: '120%', top: '-10%', left: 0, zIndex: 1 }}
+        >
+          {/* Enhanced gradient for better contrast */}
+          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, #0a0a0a 100%)', zIndex: 2 }} />
+          <img src="/images/epp/EPP_CaseStudy_01.png" alt="Smart EPP Cover" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.5 }} />
+        </motion.div>
+
+        {/* Hero Content */}
+        <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 0.2 }}
+            style={{ 
+              background: 'rgba(10, 10, 10, 0.5)', 
+              backdropFilter: 'blur(24px)',
+              WebkitBackdropFilter: 'blur(24px)',
+              padding: '56px 64px',
+              borderRadius: '32px',
+              border: '1px solid rgba(255,255,255,0.08)',
+              boxShadow: '0 32px 64px rgba(0,0,0,0.6)',
+              maxWidth: '900px',
+              width: '100%'
+            }}
+          >
+            <div style={{ display: 'inline-flex', background: 'rgba(229, 9, 20, 0.15)', color: 'var(--accent-color)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', marginBottom: '24px', border: '1px solid rgba(229, 9, 20, 0.3)' }}>
+              B2B2C FINTECH CASE STUDY
+            </div>
+            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 6vw, 5.5rem)', fontWeight: 800, color: '#fff', margin: '0 0 24px 0', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
               Smart EPP
             </h1>
-            <p style={{ fontSize: 'clamp(18px, 2vw, 24px)', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.5 }}>
+            <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1.1rem, 1.5vw, 1.25rem)', color: '#d4d4d4', margin: '0 auto', lineHeight: 1.6, fontWeight: 400 }}>
               Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
             </p>
           </motion.div>
