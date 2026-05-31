@@ -8,7 +8,7 @@ import { CaseStudiesSectionAlt } from '../components/CaseStudiesSectionAlt';
 import { CaseStudiesSectionFinal } from '../components/CaseStudiesSectionFinal';
 import { CaseStudiesSectionSideBySide } from '../components/CaseStudiesSectionSideBySide';
 import { MoreCaseStudiesSection } from '../components/MoreCaseStudiesSection';
-import { LogoRevealSpin } from '../components/ui/LogoRevealSpin';
+import { LogoRevealOrbital2 } from '../components/ui/LogoRevealOrbital2';
 import { ServicesSection } from '../components/ServicesSection';
 import { Testimonials } from '../components/Testimonials';
 import { HowItWorks } from '../components/HowItWorks';
@@ -252,7 +252,7 @@ export const Home = () => {
           <FAQ />
 
           {/* 9. Close: Final CTA / Logo Reveal Section */}
-          <LogoRevealSpin />
+          <LogoRevealOrbital2 />
         </>
       )}
     </>

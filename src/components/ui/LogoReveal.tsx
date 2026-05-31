@@ -119,7 +119,7 @@ export const LogoReveal = () => {
         {text.split('').map((char, i) => (
           <span 
             key={i} 
-            ref={el => charRefs.current[i] = el}
+            ref={el => { charRefs.current[i] = el; }}
             className="inline-block origin-center"
             style={{ 
               color: i === 6 ? 'var(--accent-color)' : '#ffffff',

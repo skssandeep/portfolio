@@ -134,7 +134,7 @@ export const LogoRevealSpin = () => {
           {text.split('').map((char, i) => (
             <span 
               key={i} 
-              ref={el => charRefs.current[i] = el}
+              ref={el => { charRefs.current[i] = el; }}
               className="inline-block origin-center"
               style={{ 
                 color: i === 6 ? 'var(--accent-color)' : '#ffffff',
@@ -156,23 +156,21 @@ export const LogoRevealSpin = () => {
           className="z-10 flex flex-col items-center gap-8 mt-[2vh]"
         >
           <p className="text-[#a0a0a0] font-mono text-center leading-relaxed text-[13px] sm:text-[15px] max-w-[420px] mx-auto px-4">
-            Ready to turn your website into your<br/>
-            best salesperson? Let's build a standout<br/>
-            brand and high-converting interface.
+            Ready to level up with Sandstormify?
           </p>
 
           <button 
-            className="px-8 py-3 rounded-full text-[11px] sm:text-[13px] text-[#ddd] font-mono hover:text-white relative overflow-hidden group cursor-pointer"
+            className="rounded-full text-[11px] sm:text-[13px] text-[#ddd] font-mono hover:text-white relative overflow-hidden group cursor-pointer whitespace-nowrap inline-flex items-center justify-center min-w-[320px] min-h-[64px]"
             style={{ 
+              padding: '24px 80px',
               background: 'linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%)', 
-              border: '1px solid rgba(255,255,255,0.15)',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.5), inset 0 -10px 20px rgba(255,255,255,0.03)',
+              boxShadow: '0px 0px 20px rgba(255, 255, 255, 0.05), inset 0px 1px 1px rgba(255, 255, 255, 0.1)',
               transition: 'all 0.3s var(--apple-easing)'
             }}
             onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent)' }} />
-            <span className="relative z-10">Book Your Free Strategy Call</span>
+            <span className="relative z-10">Click to supercharge your brand!</span>
           </button>
         </div>
       </section>

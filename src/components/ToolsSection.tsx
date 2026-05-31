@@ -73,18 +73,18 @@ export const ToolsSection = () => {
                 border: '1px solid rgba(255,255,255,0.05)',
                 overflow: 'hidden'
               }}>
-                {tool.useIcon ? (
-                  <tool.icon 
+                {tool.useIcon && Icon ? (
+                  <Icon 
                     size={20} 
                     style={{ 
-                      color: tool.color.startsWith('url') ? undefined : tool.color,
+                      color: tool.color?.startsWith('url') ? undefined : tool.color,
                       transition: 'all 0.3s ease' 
                     }} 
-                    fill={tool.color.startsWith('url') ? tool.color : "currentColor"}
+                    fill={tool.color?.startsWith('url') ? tool.color : "currentColor"}
                   />
                 ) : (
                   <img 
-                    src={tool.customImage || `https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`} 
+                    src={tool.customImage} 
                     alt={`${tool.name} logo`} 
                     style={{ 
                       width: '20px', 

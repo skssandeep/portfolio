@@ -10,6 +10,9 @@ import { FooterCreative } from '../components/FooterCreative';
 import { FooterHalo } from '../components/FooterHalo';
 import { FooterCurtain } from '../components/FooterCurtain';
 import { FooterSchematic } from '../components/FooterSchematic';
+import { LogoRevealSpin } from '../components/drafts/LogoRevealSpin';
+import { LogoRevealCinematic } from '../components/drafts/LogoRevealCinematic';
+import { LogoRevealOrbital } from '../components/drafts/LogoRevealOrbital';
 
 export const Drafts = () => {
   useEffect(() => {
@@ -207,6 +210,31 @@ export const Drafts = () => {
                 <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>The Blueprint Schematic</h3>
               </div>
               <FooterSchematic />
+            </div>
+
+            {/* Logo Reveal Variants */}
+            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
+              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 07</span>
+                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Spin</h3>
+              </div>
+              <LogoRevealSpin />
+            </div>
+
+            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
+              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 08</span>
+                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Cinematic</h3>
+              </div>
+              <LogoRevealCinematic />
+            </div>
+
+            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
+              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 09</span>
+                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Orbital (V1)</h3>
+              </div>
+              <LogoRevealOrbital />
             </div>
 
           </div>

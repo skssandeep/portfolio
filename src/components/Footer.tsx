@@ -68,7 +68,7 @@ export const Footer = () => {
               Links
             </h4>
             <ul 
-              style={{ listStyle: 'none', padding: 0, margin: '0', display: 'flex', flexDirection: 'column', gap: '4px' }}
+              style={{ listStyle: 'none', padding: 0, margin: '0 0 0 -16px', display: 'flex', flexDirection: 'column', gap: '4px' }}
               onMouseLeave={() => setHoveredFooter(null)}
             >
               {footerLinks.map((link) => (
