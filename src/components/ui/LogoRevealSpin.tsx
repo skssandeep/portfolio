@@ -27,7 +27,7 @@ export const LogoRevealSpin = () => {
           trigger: containerRef.current,
           start: 'top top',
           end: '+=200%', // Increased scroll duration to fit the extra spin
-          scrub: 1,
+          scrub: 1, // Reduced scrub from 2 back to 1 so it doesn't lag too far behind fast scrolling
           pin: true,
           anticipatePin: 1
         }
@@ -70,12 +70,12 @@ export const LogoRevealSpin = () => {
         tl.to(data, {
           progress: 1,
           duration: 1,
-          ease: 'power2.inOut', // Changed from power3 to power2 for a less aggressive, smoother speed curve
+          ease: 'none', // Removed power2 ease to prevent velocity spikes in the middle of the scroll
           onUpdate: () => {
-            // Clockwise smooth orbital revolutions
-            const currentAngle = data.startAngle + data.progress * Math.PI * 6;
+            // Clockwise smooth orbital revolutions. Reduced from PI*6 (3 circles) to PI*3 (1.5 circles) to prevent jerky velocity leaps on small scrolls
+            const currentAngle = data.startAngle + data.progress * Math.PI * 3;
             
-            // Reduced the exponent from 2.0 to 1.4 so the radius shrinks more smoothly and gradually, avoiding a harsh snap at the end
+            // Smoother radius curve
             const currentRadius = data.startRadius * (1 - Math.pow(data.progress, 1.4));
             
             const centerX = dx * (1 - data.progress);
@@ -84,8 +84,8 @@ export const LogoRevealSpin = () => {
             gsap.set(char, {
               x: centerX + Math.cos(currentAngle) * currentRadius,
               y: centerY + Math.sin(currentAngle) * currentRadius,
-              // Spin clockwise on their own axis before settling to 0
-              rotation: -(1 - data.progress) * 720,
+              // Spin clockwise on their own axis before settling to 0. Reduced to 360 to avoid wild spinning
+              rotation: -(1 - data.progress) * 360,
               opacity: Math.min(1, data.progress * 1.5)
             });
           }
@@ -101,6 +101,11 @@ export const LogoRevealSpin = () => {
           ease: 'power2.out'
         }, "-=0.2");
       }
+
+      // Add a 0.3s "dead zone" buffer at the end of the timeline.
+      // This forces the section to remain pinned on the screen for a bit more scrolling AFTER the animation completes,
+      // giving the scrub time to catch up and letting the user read the text before it scrolls away.
+      tl.to({}, { duration: 0.3 });
     });
 
     return () => ctx.revert();

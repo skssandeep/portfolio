@@ -39,11 +39,10 @@ export const Preloader = () => {
           }}
         >
           <motion.div
-            initial={{ scale: 0.95, letterSpacing: '2px', opacity: 0, filter: 'blur(10px)' }}
-            animate={{ scale: 1.25, letterSpacing: '12px', opacity: 1, filter: 'blur(0px)' }}
+            initial={{ scale: 0.85, opacity: 0, filter: 'blur(10px)' }}
+            animate={{ scale: 1.15, opacity: 1, filter: 'blur(0px)' }}
             transition={{
-              scale: { duration: 3.4, ease: 'easeOut' }, // Butter smooth curve
-              letterSpacing: { duration: 3.4, ease: 'easeOut' }, // Fixes jerkiness on layout animations
+              scale: { duration: 3.4, ease: 'easeOut' }, // Butter smooth curve on GPU
               opacity: { duration: 1.2, ease: 'easeOut' },
               filter: { duration: 1.2, ease: 'easeOut' }
             }}
@@ -54,7 +53,9 @@ export const Preloader = () => {
               fontSize: 'clamp(32px, 6vw, 64px)',
               fontWeight: 'bold',
               textTransform: 'uppercase',
-              willChange: 'transform, filter, letter-spacing' // Hint browser for GPU acceleration
+              letterSpacing: '16px', // Fixed wide spacing. The scaling effect will naturally expand this without layout thrashing!
+              willChange: 'transform, filter, opacity', // Hint browser for GPU acceleration
+              marginLeft: '16px' // offset for the letter spacing to center it perfectly
             }}
           >
             <span>S</span>

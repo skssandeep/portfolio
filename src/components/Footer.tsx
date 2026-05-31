@@ -24,11 +24,9 @@ export const Footer = () => {
 
   const footerLinks = [
     { label: 'Drafts', path: '/drafts' },
-    { label: 'Brand Identity', path: '/brand-identity' },
     { label: 'Top 1%', path: '/top-1-percent' },
     { label: 'Project Post-Mortems', path: '/post-mortems' },
     { label: 'Brand Avatars', path: '/avatars' },
-    { label: 'Vector Pad Hero', path: '/vector-home' },
     { label: 'Cursors', path: '/cursors' },
   ];
 

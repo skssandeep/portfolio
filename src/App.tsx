@@ -5,7 +5,6 @@ import { Footer } from './components/Footer';
 import { LiquidButton } from './components/ui/liquid-glass-button';
 import { Preloader } from './components/ui/Preloader';
 import { Home } from './pages/Home';
-import { BrandIdentity } from './pages/BrandIdentity';
 import { Drafts } from './pages/Drafts';
 import { CaseStudy } from './pages/CaseStudy';
 import { Top1Percent } from './pages/Top1Percent';
@@ -15,7 +14,6 @@ import { Essays } from './pages/Essays';
 import { Process } from './pages/Process';
 import { PostMortems } from './pages/PostMortems';
 import { Avatars } from './pages/Avatars';
-import { VectorHome } from './pages/VectorHome';
 import { Cursors } from './pages/Cursors';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css';
@@ -196,7 +194,6 @@ function App() {
         <ErrorBoundary>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/brand-identity" element={<BrandIdentity />} />
             <Route path="/drafts" element={<Drafts />} />
             <Route path="/case-study/:id" element={<CaseStudy />} />
             <Route path="/top-1-percent" element={<Top1Percent />} />
@@ -206,7 +203,6 @@ function App() {
             <Route path="/process" element={<Process />} />
             <Route path="/post-mortems" element={<PostMortems />} />
             <Route path="/avatars" element={<Avatars />} />
-            <Route path="/vector-home" element={<VectorHome />} />
             <Route path="/cursors" element={<Cursors />} />
           </Routes>
         </ErrorBoundary>
