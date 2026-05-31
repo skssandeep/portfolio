@@ -198,7 +198,7 @@ export const SmartEPPCaseStudy = () => {
             <div style={{ display: 'inline-flex', background: 'rgba(229, 9, 20, 0.15)', color: 'var(--accent-color)', padding: '8px 24px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '3px', marginBottom: '24px', border: '1px solid rgba(229, 9, 20, 0.3)' }}>
               B2B2C FINTECH CASE STUDY
             </div>
-            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(4rem, 13vw, 11rem)', fontWeight: 800, color: '#fff', margin: '0', letterSpacing: '-0.06em', lineHeight: 0.85, opacity: 0.95 }}>
+            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 10vw, 8rem)', fontWeight: 800, color: '#fff', margin: '0', letterSpacing: '-0.04em', lineHeight: 1, opacity: 0.95, whiteSpace: 'nowrap' }}>
               SMART EPP
             </h1>
             <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1rem, 1.5vw, 1.3rem)', color: '#a3a3a3', maxWidth: '600px', margin: '32px auto 0 auto', lineHeight: 1.6, fontWeight: 400 }}>
