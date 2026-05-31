@@ -189,25 +189,48 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 2. Context */}
-      <section style={{ padding: '80px 0', borderBottom: '1px solid var(--glass-border)' }}>
-        <div className="container" style={{ maxWidth: '1000px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
-            <div>
-              <div style={{ color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '12px', fontWeight: 600 }}>My Role</div>
-              <div style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 500, lineHeight: 1.4 }}>Lead Product Designer<br/><span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>(UX/UI, Prototyping)</span></div>
-            </div>
-            <div>
-              <div style={{ color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '12px', fontWeight: 600 }}>Timeline</div>
-              <div style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 500, lineHeight: 1.4 }}>4 Months<br/><span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>Concept to Launch</span></div>
-            </div>
-            <div>
-              <div style={{ color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '12px', fontWeight: 600 }}>Platform</div>
-              <div style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 500, lineHeight: 1.4 }}>Progressive Web App<br/><span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>Mobile-First E-Commerce</span></div>
-            </div>
-            <div>
-              <div style={{ color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '12px', fontWeight: 600 }}>Constraints</div>
-              <div style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 500, lineHeight: 1.4 }}>NBFC Integration<br/><span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>Strict Compliance & KYC</span></div>
-            </div>
+      <section style={{ padding: '64px 0', borderBottom: '1px solid var(--glass-border)', background: 'var(--bg-color)' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', 
+            gap: '24px' 
+          }}>
+            {[
+              { label: 'My Role', value: 'Lead Product Designer', sub: 'UX/UI, Prototyping', icon: <Target size={18} /> },
+              { label: 'Timeline', value: '4 Months', sub: 'Concept to Launch', icon: <Clock size={18} /> },
+              { label: 'Platform', value: 'Progressive Web App', sub: 'Mobile-First E-Commerce', icon: <Smartphone size={18} /> },
+              { label: 'Constraints', value: 'NBFC Integration', sub: 'Strict Compliance & KYC', icon: <AlertCircle size={18} /> }
+            ].map((item, idx) => (
+              <div key={idx} style={{ 
+                background: 'rgba(255,255,255,0.02)', 
+                padding: '32px', 
+                borderRadius: '24px', 
+                border: '1px solid rgba(255,255,255,0.05)',
+                transition: 'transform 0.3s ease, background 0.3s ease',
+                cursor: 'default'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.04)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+              }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontWeight: 600 }}>
+                  {item.icon}
+                  {item.label}
+                </div>
+                <div style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', fontSize: '20px', fontWeight: 600, lineHeight: 1.3, marginBottom: '8px', letterSpacing: '-0.02em' }}>
+                  {item.value}
+                </div>
+                <div style={{ fontFamily: 'var(--font-system)', color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5 }}>
+                  {item.sub}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
