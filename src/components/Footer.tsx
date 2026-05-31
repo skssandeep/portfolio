@@ -23,15 +23,6 @@ export const Footer = () => {
     { label: "Instagram", href: "#" },
   ];
 
-  const footerLinks = [
-    { label: 'Drafts', path: '/drafts' },
-    { label: 'Top 1%', path: '/top-1-percent' },
-    { label: 'Project Post-Mortems', path: '/post-mortems' },
-    { label: 'Brand Avatars', path: '/avatars' },
-    { label: 'Cursors', path: '/cursors' },
-  ];
-
-  const [hoveredFooter, setHoveredFooter] = useState<string | null>(null);
   const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
 
   return (
@@ -60,51 +51,6 @@ export const Footer = () => {
             <p style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
               Sandstormify is a premium UI/UX design studio focused on process over polish.
             </p>
-          </div>
-
-          {/* Quick Links section */}
-          <div>
-            <h4 style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 600, marginBottom: '24px' }}>
-              Links
-            </h4>
-            <ul 
-              style={{ listStyle: 'none', padding: 0, margin: '0 0 0 -16px', display: 'flex', flexDirection: 'column', gap: '4px' }}
-              onMouseLeave={() => setHoveredFooter(null)}
-            >
-              {footerLinks.map((link) => (
-                <li key={link.path} style={{ display: 'flex' }}>
-                  <Link 
-                    to={link.path} 
-                    style={{ 
-                      color: hoveredFooter === link.path ? 'var(--text-primary)' : 'var(--text-secondary)', 
-                      fontSize: '15px',
-                      position: 'relative',
-                      padding: '8px 16px',
-                      borderRadius: '100px',
-                      transition: 'color 0.2s ease',
-                      width: 'fit-content',
-                      zIndex: 1
-                    }}
-                    onMouseEnter={() => setHoveredFooter(link.path)}
-                  >
-                    {hoveredFooter === link.path && (
-                      <motion.div
-                        layoutId="footer-hover"
-                        style={{
-                          position: 'absolute',
-                          inset: 0,
-                          background: 'rgba(255, 255, 255, 0.08)',
-                          borderRadius: '100px',
-                          zIndex: -1
-                        }}
-                        transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Contact section */}

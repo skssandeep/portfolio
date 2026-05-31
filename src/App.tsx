@@ -26,10 +26,11 @@ const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
 };
 
 const navLinks = [
-  { label: 'Projects', id: 'projects' },
-  { label: 'Services', id: 'services' },
-  { label: 'How it works', id: 'how-it-works' },
-  { label: 'FAQs', id: 'faq' }
+  { label: 'Projects', path: '/#projects', id: 'projects' },
+  { label: 'Services', path: '/#services', id: 'services' },
+  { label: 'How it works', path: '/#how-it-works', id: 'how-it-works' },
+  { label: 'Drafts', path: '/drafts', id: 'drafts' },
+  { label: 'FAQs', path: '/#faq', id: 'faq' }
 ];
 
 function App() {
@@ -104,8 +105,12 @@ function App() {
                 {navLinks.map((link) => (
                   <Link 
                     key={link.id}
-                    to={`/#${link.id}`} 
-                    onClick={(e) => handleScrollTo(e, link.id)} 
+                    to={link.path} 
+                    onClick={(e) => {
+                      if (link.path.startsWith('/#')) {
+                        handleScrollTo(e, link.id);
+                      }
+                    }} 
                     style={{ 
                       position: 'relative',
                       padding: '8px 16px',
