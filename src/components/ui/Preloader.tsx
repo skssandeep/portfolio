@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Preloader = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  // Only show the preloader if the user initially lands on or hard-refreshes the root homepage
+  const [isLoading, setIsLoading] = useState(window.location.pathname === '/');
 
   useEffect(() => {
+    if (!isLoading) return;
+
     // Hide scrollbar while preloader is active
     document.body.style.overflow = 'hidden';
     
