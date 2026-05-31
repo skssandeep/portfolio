@@ -45,19 +45,21 @@ export const Drafts = () => {
       <div className="container" style={{ textAlign: 'center', paddingTop: '64px', paddingBottom: '32px' }}>
         <h1 className="text-headline" style={{ marginBottom: '16px' }}>Drafts</h1>
         <p className="text-body-large" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-          A temporary space for work-in-progress sections and incomplete content.
+          A categorized repository of experimental UI components, previous layout iterations, and creative concepts.
         </p>
       </div>
 
       {/* Render the legacy global CursorEffect ONLY on the Drafts page */}
       <CursorEffect />
 
-      {/* Draft Component Display Showcase */}
+      {/* =========================================
+          CATEGORY: HERO CONCEPTS
+          ========================================= */}
       <section style={{ backgroundColor: '#020202', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>Original Home Hero (Glitch Orb)</h2>
-            <p className="text-body-large" style={{ color: 'var(--text-secondary)' }}>The original hero layout featuring the glitch circle background.</p>
+            <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>Hero Concepts</h2>
+            <p className="text-body-large" style={{ color: 'var(--text-secondary)' }}>Experimental hero sections and above-the-fold layouts.</p>
           </div>
 
           <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)', position: 'relative' }}>
@@ -117,48 +119,55 @@ export const Drafts = () => {
         </div>
       </section>
 
-      {/* Featured Work (Case Studies) */}
-      <section id="work" className="section-padding">
+      {/* =========================================
+          CATEGORY: LOGO ANIMATIONS
+          ========================================= */}
+      <section style={{ backgroundColor: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="container">
-          <div className="scroll-reveal" style={{ marginBottom: '80px', textAlign: 'center' }}>
-            <h2 className="text-headline" style={{ marginBottom: '24px' }}>Case Studies that Drive Revenue.</h2>
-            <p className="text-body-large" style={{ maxWidth: '600px', margin: '0 auto' }}>
-              Deep dives into complex problems, showing how strategic design translates directly into measurable business growth.
-            </p>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>Logo Animations</h2>
+            <p className="text-body-large" style={{ color: 'var(--text-secondary)' }}>Various iterations of the final CTA logo reveal.</p>
           </div>
 
-          <div className="grid-2 scroll-reveal delay-200">
-            <CaseStudyCard 
-              title="Enterprise Dashboard Redesign"
-              role="Lead Product Designer"
-              problem="Legacy reporting tools were causing a 40% drop-off in enterprise user engagement due to data density."
-              impact="Increased DAU by 28% and reduced time-to-insight from 5 mins to 45 seconds through a customizable widget architecture."
-              imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000"
-            />
-            <CaseStudyCard 
-              title="AI-Powered Onboarding"
-              role="UX Designer"
-              problem="High friction in the B2B signup flow resulted in a 65% bounce rate before completing profile setup."
-              impact="Implemented a conversational AI onboarding agent that dynamically adapted to user context, increasing completion rate by 42%."
-              imageUrl="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000"
-            />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '120px' }}>
+            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
+              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 01</span>
+                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Spin</h3>
+              </div>
+              <LogoRevealSpin />
+            </div>
+
+            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
+              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 02</span>
+                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Cinematic</h3>
+              </div>
+              <LogoRevealCinematic />
+            </div>
+
+            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
+              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 03</span>
+                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Orbital (V1)</h3>
+              </div>
+              <LogoRevealOrbital />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Under The Hood / Performance Section */}
-      <PerformanceSection />
-      
-      {/* Draft Component Display Showcase */}
+      {/* =========================================
+          CATEGORY: FOOTER LAYOUTS
+          ========================================= */}
       <section style={{ backgroundColor: '#020202', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>UI Component Archive</h2>
-            <p className="text-body-large" style={{ color: 'var(--text-secondary)' }}>A collection of experimental footer designs and layouts.</p>
+            <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>Footer Layouts</h2>
+            <p className="text-body-large" style={{ color: 'var(--text-secondary)' }}>Experimental footer designs and navigational concepts.</p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '120px' }}>
-            
             <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
               <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
                 <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 01</span>
@@ -199,7 +208,6 @@ export const Drafts = () => {
                 <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>The Sticky Curtain</h3>
               </div>
               <div style={{ height: '600px' }}>
-                {/* Embedded inside a fixed-height container so the sticky hack doesn't break the page layout */}
                 <FooterCurtain />
               </div>
             </div>
@@ -211,35 +219,61 @@ export const Drafts = () => {
               </div>
               <FooterSchematic />
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Logo Reveal Variants */}
+      {/* =========================================
+          CATEGORY: CONTENT LAYOUTS
+          ========================================= */}
+      <section style={{ backgroundColor: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>Content Layouts</h2>
+            <p className="text-body-large" style={{ color: 'var(--text-secondary)' }}>Archived content sections including Case Studies and Performance metrics.</p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+            
             <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
               <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 07</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Spin</h3>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 01</span>
+                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Case Studies Grid</h3>
               </div>
-              <LogoRevealSpin />
+              <div className="section-padding">
+                <div className="container">
+                  <div className="grid-2 scroll-reveal">
+                    <CaseStudyCard 
+                      title="Enterprise Dashboard Redesign"
+                      role="Lead Product Designer"
+                      problem="Legacy reporting tools were causing a 40% drop-off in enterprise user engagement due to data density."
+                      impact="Increased DAU by 28% and reduced time-to-insight from 5 mins to 45 seconds through a customizable widget architecture."
+                      imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000"
+                    />
+                    <CaseStudyCard 
+                      title="AI-Powered Onboarding"
+                      role="UX Designer"
+                      problem="High friction in the B2B signup flow resulted in a 65% bounce rate before completing profile setup."
+                      impact="Implemented a conversational AI onboarding agent that dynamically adapted to user context, increasing completion rate by 42%."
+                      imageUrl="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
               <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 08</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Cinematic</h3>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 02</span>
+                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Performance Section</h3>
               </div>
-              <LogoRevealCinematic />
-            </div>
-
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 09</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Orbital (V1)</h3>
-              </div>
-              <LogoRevealOrbital />
+              <PerformanceSection />
             </div>
 
           </div>
         </div>
       </section>
+
     </div>
   );
 };
