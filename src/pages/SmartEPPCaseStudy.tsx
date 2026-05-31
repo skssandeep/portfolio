@@ -131,8 +131,7 @@ const SmartEPPPrototype = () => {
 };
 
 export const SmartEPPCaseStudy = () => {
-  const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 1000], [0, 300]);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -212,11 +211,12 @@ export const SmartEPPCaseStudy = () => {
           
           <motion.img 
             initial={{ y: 60, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={imageLoaded ? { y: 0, opacity: 1 } : { y: 60, opacity: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             src="/images/Mockup2_EPP.png" 
             alt="Smart EPP" 
             fetchPriority="high"
+            onLoad={() => setImageLoaded(true)}
             style={{ width: '100%', maxWidth: '900px', filter: 'drop-shadow(0 40px 100px rgba(0,0,0,0.8))', position: 'relative', zIndex: 10, objectFit: 'contain' }} 
           />
 
@@ -230,8 +230,8 @@ export const SmartEPPCaseStudy = () => {
             ].map((chip, idx) => (
               <motion.div key={idx} className={`chip-wrapper ${chip.class}`}
                 initial={{ scale: 0.9, opacity: 0, y: 20 }} 
-                animate={{ scale: 1, opacity: 1, y: 0 }} 
-                transition={{ delay: chip.delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                animate={imageLoaded ? { scale: 1, opacity: 1, y: 0 } : { scale: 0.9, opacity: 0, y: 20 }} 
+                transition={{ delay: imageLoaded ? chip.delay : 0, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
                 <div style={{
