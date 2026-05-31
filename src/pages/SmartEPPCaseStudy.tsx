@@ -293,6 +293,80 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
+      {/* 4.5 The Visual Ecosystem (Bento Gallery) */}
+      <section style={{ padding: '80px 0', borderBottom: '1px solid var(--glass-border)' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Visual Ecosystem</h2>
+            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
+              A unified design language that scales from high-density desktop dashboards down to the pocket-sized employee mobile experience.
+            </p>
+          </div>
+
+          {/* Custom Bento Grid for 9 Images */}
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+            gap: '24px',
+            alignItems: 'start'
+          }}>
+            <div style={{ display: 'grid', gap: '24px' }}>
+              <motion.img 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+                src="/images/EPP_CaseStudy_01.png" alt="Smart EPP Mobile Flow" 
+                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
+              />
+              <motion.img 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+                src="/images/EPP_CaseStudy_04.png" alt="Smart EPP Components" 
+                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
+              />
+              <motion.img 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
+                src="/images/EPP_CaseStudy_07.png" alt="Smart EPP Dashboard" 
+                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
+              />
+            </div>
+            
+            <div style={{ display: 'grid', gap: '24px', paddingTop: '40px' }}>
+              <motion.img 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+                src="/images/EPP_CaseStudy_02.png" alt="Smart EPP Handheld" 
+                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
+              />
+              <motion.img 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
+                src="/images/EPP_CaseStudy_05.png" alt="Smart EPP UI Details" 
+                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
+              />
+              <motion.img 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
+                src="/images/EPP_CaseStudy_08.png" alt="Smart EPP Settings" 
+                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
+              />
+            </div>
+
+            <div style={{ display: 'grid', gap: '24px', paddingTop: '80px' }}>
+              <motion.img 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
+                src="/images/EPP_CaseStudy_03.png" alt="Smart EPP Screens" 
+                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
+              />
+              <motion.img 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
+                src="/images/EPP_CaseStudy_06.png" alt="Smart EPP Interface" 
+                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
+              />
+              <motion.img 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }}
+                src="/images/EPP_CaseStudy_09.png" alt="Smart EPP Approvals" 
+                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 5. Interactive Prototype */}
       <section style={{ padding: '120px 0' }}>
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
