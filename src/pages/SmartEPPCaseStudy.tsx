@@ -141,11 +141,50 @@ export const SmartEPPCaseStudy = () => {
   return (
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px' }}>
       
-      {/* 1 & 2. Integrated Hero & Context Section */}
-      <section style={{ width: '100%', minHeight: '100vh', paddingTop: '120px', paddingBottom: '64px', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', background: '#0a0a0a' }}>
+      {/* 1 & 2. Out-of-the-box Hero Section */}
+      <section style={{ width: '100%', minHeight: '100vh', paddingTop: '140px', paddingBottom: '64px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#0a0a0a' }}>
         
+        <style>
+          {`
+            .floating-chips {
+              position: absolute; 
+              inset: 0; 
+              pointer-events: none;
+              z-index: 15;
+            }
+            .chip-wrapper {
+              position: absolute; 
+              pointer-events: auto;
+            }
+            .chip-1 { top: 15%; left: 5%; }
+            .chip-2 { top: 30%; right: 0%; }
+            .chip-3 { bottom: 30%; left: 0%; }
+            .chip-4 { bottom: 15%; right: 5%; }
+            
+            @media (max-width: 900px) {
+              .floating-chips {
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+                padding: 24px;
+                margin-top: -20px;
+                z-index: 20;
+              }
+              .chip-wrapper {
+                position: relative; 
+                top: auto !important; 
+                left: auto !important; 
+                right: auto !important; 
+                bottom: auto !important;
+              }
+            }
+          `}
+        </style>
+
         {/* Subtle background glow */}
-        <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle at 0% 50%, rgba(229,9,20,0.1) 0%, rgba(0,0,0,0) 60%)', zIndex: 1, pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%, -50%)', width: '80vw', height: '80vw', background: 'radial-gradient(circle, rgba(229,9,20,0.15) 0%, rgba(0,0,0,0) 50%)', zIndex: 1, pointerEvents: 'none' }} />
 
         <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100 }}>
           <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px' }}>
@@ -153,96 +192,69 @@ export const SmartEPPCaseStudy = () => {
           </Link>
         </div>
 
-        <div className="container" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '1400px' }}>
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))', 
-            gap: '64px', 
-            alignItems: 'center' 
-          }}>
-            
-            {/* Left Column: Hero Text + Context Bento */}
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              
-              {/* Header Info */}
-              <div style={{ marginBottom: '48px' }}>
-                <div style={{ display: 'inline-flex', background: 'rgba(229, 9, 20, 0.15)', color: 'var(--accent-color)', padding: '8px 20px', borderRadius: '100px', fontSize: '12px', fontWeight: 700, letterSpacing: '2px', marginBottom: '24px', border: '1px solid rgba(229, 9, 20, 0.3)' }}>
-                  B2B2C FINTECH CASE STUDY
-                </div>
-                <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 800, color: '#fff', margin: '0 0 24px 0', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
-                  Smart EPP
-                </h1>
-                <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1.1rem, 1.2vw, 1.3rem)', color: '#d4d4d4', maxWidth: '600px', lineHeight: 1.6, fontWeight: 400 }}>
-                  Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
-                </p>
-              </div>
+        {/* Massive Typography */}
+        <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', marginBottom: '-6vw', width: '100%', padding: '0 24px' }}>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <div style={{ display: 'inline-flex', background: 'rgba(229, 9, 20, 0.15)', color: 'var(--accent-color)', padding: '8px 24px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '3px', marginBottom: '24px', border: '1px solid rgba(229, 9, 20, 0.3)' }}>
+              B2B2C FINTECH CASE STUDY
+            </div>
+            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(4rem, 13vw, 11rem)', fontWeight: 800, color: '#fff', margin: '0', letterSpacing: '-0.06em', lineHeight: 0.85, opacity: 0.95 }}>
+              SMART EPP
+            </h1>
+            <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1rem, 1.5vw, 1.3rem)', color: '#a3a3a3', maxWidth: '600px', margin: '32px auto 0 auto', lineHeight: 1.6, fontWeight: 400 }}>
+              Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
+            </p>
+          </motion.div>
+        </div>
 
-              {/* Context Mini-Bento Grid */}
-              <div style={{ 
-                display: 'grid', 
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-                gap: '16px' 
-              }}>
-                {[
-                  { label: 'My Role', value: 'Lead Product Designer', sub: 'UX/UI, Prototyping', icon: <Target size={16} /> },
-                  { label: 'Timeline', value: '4 Months', sub: 'Concept to Launch', icon: <Clock size={16} /> },
-                  { label: 'Platform', value: 'PWA', sub: 'Mobile-First E-Commerce', icon: <Smartphone size={16} /> },
-                  { label: 'Constraints', value: 'NBFC Rules', sub: 'Strict Compliance & KYC', icon: <AlertCircle size={16} /> }
-                ].map((item, idx) => (
-                  <div key={idx} style={{ 
-                    background: 'rgba(255,255,255,0.02)', 
-                    padding: '24px', 
-                    borderRadius: '20px', 
-                    border: '1px solid rgba(255,255,255,0.05)',
-                    transition: 'transform 0.3s ease, background 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
-                  }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px', fontWeight: 600 }}>
-                      {item.icon}
-                      {item.label}
-                    </div>
-                    <div style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', fontSize: '18px', fontWeight: 600, lineHeight: 1.2, marginBottom: '6px', letterSpacing: '-0.02em' }}>
-                      {item.value}
-                    </div>
-                    <div style={{ fontFamily: 'var(--font-system)', color: 'var(--text-secondary)', fontSize: '13px', lineHeight: 1.4 }}>
-                      {item.sub}
-                    </div>
+        {/* The Floating Ecosystem */}
+        <div style={{ position: 'relative', zIndex: 20, width: '100%', maxWidth: '1100px', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '60px' }}>
+          
+          <motion.img 
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, type: 'spring', bounce: 0.2 }}
+            src="/images/Mockup2_EPP.png" 
+            alt="Smart EPP" 
+            style={{ width: '100%', maxWidth: '900px', filter: 'drop-shadow(0 40px 100px rgba(0,0,0,0.8))', position: 'relative', zIndex: 10, objectFit: 'contain' }} 
+          />
+
+          {/* Floating Context Cards (Chips) */}
+          <div className="floating-chips">
+            {[
+              { class: 'chip-1', icon: <Target size={14}/>, title: "My Role", val: "Lead Product Designer", delay: 0.4 },
+              { class: 'chip-2', icon: <Clock size={14}/>, title: "Timeline", val: "4 Months", delay: 0.5 },
+              { class: 'chip-3', icon: <Smartphone size={14}/>, title: "Platform", val: "PWA Mobile-First", delay: 0.6 },
+              { class: 'chip-4', icon: <AlertCircle size={14}/>, title: "Constraint", val: "Strict KYC & NBFC", delay: 0.7 }
+            ].map((chip, idx) => (
+              <motion.div key={idx} className={`chip-wrapper ${chip.class}`}
+                initial={{ scale: 0.8, opacity: 0 }} 
+                animate={{ scale: 1, opacity: 1 }} 
+                transition={{ delay: chip.delay, type: 'spring' }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div style={{
+                  background: 'rgba(20, 20, 20, 0.75)',
+                  backdropFilter: 'blur(24px)',
+                  WebkitBackdropFilter: 'blur(24px)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  padding: '16px 24px',
+                  borderRadius: '100px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '4px',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+                  whiteSpace: 'nowrap'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-color)', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+                    {chip.icon} {chip.title}
                   </div>
-                ))}
-              </div>
-
-            </motion.div>
-
-            {/* Right Column: Dynamic Mockup Image */}
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              transition={{ duration: 0.8, delay: 0.2 }}
-              style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}
-            >
-              <img 
-                src="/images/Mockup2_EPP.png" 
-                alt="Smart EPP Mockup" 
-                style={{ 
-                  width: '110%', 
-                  maxWidth: '800px',
-                  height: 'auto', 
-                  objectFit: 'contain', 
-                  filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.6))',
-                  transform: 'scale(1.05) translateX(5%)'
-                }} 
-              />
-            </motion.div>
-
+                  <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500, letterSpacing: '0.5px' }}>{chip.val}</div>
+                </div>
+              </motion.div>
+            ))}
           </div>
+
         </div>
       </section>
 
