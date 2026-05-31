@@ -140,7 +140,7 @@ export const SmartEPPCaseStudy = () => {
       
       {/* 1. Full Width Cover Image */}
       <section style={{ width: '100%', height: '80vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0a0a' }}>
-        <div style={{ position: 'absolute', top: '24px', left: '4vw', zIndex: 20 }}>
+        <div style={{ position: 'fixed', top: '24px', left: '4vw', zIndex: 100 }}>
           <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px' }}>
             <ArrowLeft size={16} /> Back
           </Link>
