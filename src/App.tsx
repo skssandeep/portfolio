@@ -12,6 +12,7 @@ import { Prototypes } from './pages/Prototypes';
 import { Essays } from './pages/Essays';
 import { Process } from './pages/Process';
 import { SmartEPPCaseStudy } from './pages/SmartEPPCaseStudy';
+import { UXDocs } from './pages/UXDocs';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css';
 
@@ -31,6 +32,7 @@ const navLinks = [
   { label: 'Services', path: '/#services', id: 'services' },
   { label: 'How it works', path: '/#how-it-works', id: 'how-it-works' },
   { label: 'Drafts', path: '/drafts', id: 'drafts' },
+  { label: 'UX Docs', path: '/ux-docs', id: 'ux-docs' },
   { label: 'FAQs', path: '/#faq', id: 'faq' }
 ];
 
@@ -203,6 +205,7 @@ function App() {
             <Route path="/prototypes" element={<Prototypes />} />
             <Route path="/essays" element={<Essays />} />
             <Route path="/process" element={<Process />} />
+            <Route path="/ux-docs" element={<UXDocs />} />
           </Routes>
         </ErrorBoundary>
 
