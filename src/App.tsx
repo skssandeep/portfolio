@@ -30,9 +30,9 @@ const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
 };
 
 const navLinks = [
-  { label: 'How it works', id: 'how-it-works' },
   { label: 'Projects', id: 'projects' },
   { label: 'Services', id: 'services' },
+  { label: 'How it works', id: 'how-it-works' },
   { label: 'FAQs', id: 'faq' }
 ];
 

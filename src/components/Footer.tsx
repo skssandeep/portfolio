@@ -10,8 +10,8 @@ export const Footer = () => {
   const contactInfo = [
     {
       icon: <Mail size={18} style={{ color: 'var(--accent-color)' }} />,
-      text: "hello@sandstormify.com",
-      href: "mailto:hello@sandstormify.com",
+      text: "sandeeps66400@gmail.com",
+      href: "mailto:sandeeps66400@gmail.com",
     }
   ];
 
@@ -20,6 +20,7 @@ export const Footer = () => {
     { label: "X", href: "#" },
     { label: "LinkedIn", href: "#" },
     { label: "Upwork", href: "https://www.upwork.com/freelancers/~01b0aab6d05f52f81e" },
+    { label: "Instagram", href: "#" },
   ];
 
   const footerLinks = [

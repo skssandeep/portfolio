@@ -1,143 +1,160 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight, Globe } from "lucide-react";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 
 export const FooterCurtain = () => {
-  const [time, setTime] = useState("");
+  const containerRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLElement>(null);
+  
+  // Create a deep parallax reveal effect (the curtain effect)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, { damping: 30, stiffness: 100 });
+  
+  // The footer sits still in the back, but we can give it a slight scale-up as it's revealed
+  const scale = useTransform(smoothProgress, [0, 1], [0.95, 1]);
+  const opacity = useTransform(smoothProgress, [0.5, 1], [0.5, 1]);
+
+  const socialLinks = [
+    { label: "X", href: "#" },
+    { label: "LinkedIn", href: "#" },
+    { label: "Upwork", href: "https://www.upwork.com/freelancers/~01b0aab6d05f52f81e" },
+    { label: "Instagram", href: "#" }
+  ];
+
+  // Flashlight / Mouse tracking effect
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const updateTime = () => {
-      // Get current time in a cool format (e.g., "14:05:22 GMT")
-      const now = new Date();
-      const timeString = now.toLocaleTimeString('en-US', { 
-        hour12: false, 
-        hour: '2-digit', 
-        minute: '2-digit',
-        second: '2-digit',
-        timeZoneName: 'short'
-      });
-      setTime(timeString);
+    const handleMouseMove = (e: MouseEvent) => {
+      if (footerRef.current) {
+        const rect = footerRef.current.getBoundingClientRect();
+        // Calculate mouse position relative to the footer element itself
+        mouseX.set(e.clientX - rect.left);
+        mouseY.set(e.clientY - rect.top);
+      }
     };
-    
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
-    // The wrapper acts as a mask for the fixed child.
-    // It takes up physical space in the document (800px tall), 
-    // but the clipPath ensures anything outside it is hidden.
-    <footer style={{ 
-      position: 'relative', 
-      height: '100vh',
-      minHeight: '600px',
-      clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' 
-    }}>
-      
-      {/* The actual footer content is FIXED to the bottom of the screen. */}
-      {/* It will be revealed as the parent wrapper scrolls into view. */}
-      <div style={{ 
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        width: '100%',
-        height: '100vh',
-        minHeight: '600px',
-        backgroundColor: '#0a0a0a', // Slightly off-black
-        color: 'var(--text-primary)',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        padding: '64px',
-        borderTop: '1px solid rgba(255,255,255,0.05)'
-      }}>
+    <div ref={containerRef} style={{ position: 'relative', height: '100vh', clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}>
+      <motion.footer 
+        ref={footerRef}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        style={{ 
+          position: 'fixed', 
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '100vh', 
+          backgroundColor: '#0a0a0a',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: -1, // Kept behind the page content
+          scale,
+          opacity,
+          overflow: 'hidden'
+        }}
+      >
         
-        {/* Top Header Row */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-              Local Time
-            </span>
-            <span style={{ fontFamily: 'monospace', fontSize: '16px', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Globe size={16} /> {time}
-            </span>
-          </div>
+        {/* Flashlight Spotlight Effect */}
+        <motion.div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'none',
+            background: useTransform(
+              [mouseX, mouseY],
+              ([x, y]) => `radial-gradient(600px circle at ${x}px ${y}px, rgba(255,255,255,0.06), transparent 40%)`
+            ),
+            opacity: isHovering ? 1 : 0,
+            transition: 'opacity 0.5s ease'
+          }}
+        />
 
-          <div style={{ display: 'flex', gap: '64px', textAlign: 'right' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Socials</span>
-              <a href="#" className="btn-link" style={{ fontSize: '15px' }}>Twitter</a>
-              <a href="#" className="btn-link" style={{ fontSize: '15px' }}>LinkedIn</a>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Navigation</span>
-              <Link to="/#work" className="btn-link" style={{ fontSize: '15px' }}>Projects</Link>
-              <Link to="/brand-identity" className="btn-link" style={{ fontSize: '15px' }}>Brand System</Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Massive Center Typography */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, gap: '32px' }}>
-          <div style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            gap: '12px', 
-            padding: '12px 24px', 
-            borderRadius: '100px', 
-            backgroundColor: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(255,255,255,0.1)'
-          }}>
-            <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#22c55e', boxShadow: '0 0 10px #22c55e', animation: 'pulse 2s infinite' }} />
-            <span style={{ fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase' }}>Taking on new projects</span>
-          </div>
-
-          <a href="mailto:hello@sandstormify.com" style={{
-            textDecoration: 'none',
-            color: 'var(--text-primary)',
-            fontSize: 'clamp(4rem, 8vw, 10rem)',
-            fontWeight: 700,
-            letterSpacing: '-3px',
-            lineHeight: 1,
-            transition: 'color 0.3s ease',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '24px'
-          }} className="hover:text-[var(--accent-color)]">
-            Say Hello <ArrowRight size={80} strokeWidth={3} />
+        {/* Center Content: Massive Magnetic Button */}
+        <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '40px' }}>
+            Got an idea?
+          </p>
+          
+          {/* We simulate a magnetic button visually here by making it huge and interactive */}
+          <a href="mailto:hello@sandstormify.com" style={{ textDecoration: 'none' }}>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              style={{
+                width: '300px',
+                height: '300px',
+                borderRadius: '50%',
+                background: 'var(--accent-color)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                fontSize: '32px',
+                fontFamily: "'Syne', sans-serif",
+                fontWeight: 700,
+                boxShadow: '0 20px 50px rgba(255, 60, 0, 0.3)',
+                cursor: 'pointer'
+              }}
+            >
+              Let's Talk
+            </motion.div>
           </a>
         </div>
 
-        {/* Bottom Info Row */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '32px' }}>
-          <div style={{ fontFamily: "'Dune Rise', var(--font-system)", fontSize: '24px', letterSpacing: '2px' }}>
-            SANDST<span style={{ color: 'var(--accent-color)' }}>o</span>RMIFY
+        {/* Absolute Edges Content */}
+        <div style={{ position: 'absolute', bottom: '40px', left: '40px', right: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 10 }}>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <span style={{ color: 'var(--text-primary)', fontSize: '16px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '1px' }}>
+              SANDST<span style={{ color: 'var(--accent-color)' }}>o</span>RMIFY
+            </span>
+            <span style={{ color: 'var(--text-secondary)', fontSize: '12px' }}>
+              &copy; {new Date().getFullYear()} All rights reserved.
+            </span>
+          </div>
+
+          <div style={{ display: 'flex', gap: '32px' }}>
+            {socialLinks.map(link => (
+              <a 
+                key={link.label}
+                href={link.href}
+                style={{
+                  color: 'var(--text-primary)',
+                  fontSize: '14px',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  opacity: 0.7,
+                  transition: 'opacity 0.2s ease'
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.7')}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
           
-          <div style={{ color: 'var(--text-secondary)', fontSize: '14px', display: 'flex', gap: '32px' }}>
-            <span>&copy; {new Date().getFullYear()} Sandstormify.</span>
-            <a href="#" className="btn-link" style={{ color: 'inherit' }}>Privacy Policy</a>
-          </div>
         </div>
 
-      </div>
-
-      <style>
-        {`
-          @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-          }
-          /* Hack for inline hover style */
-          a:hover.hover\\:text-\\[var\\(--accent-color\\)\\] {
-            color: var(--accent-color) !important;
-          }
-        `}
-      </style>
-    </footer>
+      </motion.footer>
+    </div>
   );
-}
-
-
+};
