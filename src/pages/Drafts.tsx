@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CursorEffect } from '../components/CursorEffect';
 import { GlitchOrbBackground } from '../components/ui/GlitchOrbBackground';
 import { LiquidButton } from '../components/ui/liquid-glass-button';
@@ -15,6 +15,9 @@ import { LogoRevealCinematic } from '../components/drafts/LogoRevealCinematic';
 import { LogoRevealOrbital } from '../components/drafts/LogoRevealOrbital';
 
 export const Drafts = () => {
+  const [activeCategory, setActiveCategory] = useState('All');
+  const categories = ['All', 'Hero Concepts', 'Logo Animations', 'Footer Layouts', 'Content Layouts'];
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -47,6 +50,44 @@ export const Drafts = () => {
         <p className="text-body-large" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
           A categorized repository of experimental UI components, previous layout iterations, and creative concepts.
         </p>
+
+        {/* Filter Bar */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center', marginTop: '40px' }}>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              style={{
+                padding: '8px 24px',
+                borderRadius: '100px',
+                border: `1px solid ${activeCategory === cat ? 'var(--accent-color)' : 'rgba(255,255,255,0.1)'}`,
+                backgroundColor: activeCategory === cat ? 'var(--accent-color)' : 'rgba(255,255,255,0.02)',
+                color: activeCategory === cat ? '#000' : 'var(--text-secondary)',
+                fontWeight: activeCategory === cat ? 600 : 400,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '12px',
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                if (activeCategory !== cat) {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)';
+                  e.currentTarget.style.color = 'white';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeCategory !== cat) {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.02)';
+                  e.currentTarget.style.color = 'var(--text-secondary)';
+                }
+              }}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Render the legacy global CursorEffect ONLY on the Drafts page */}
@@ -55,14 +96,15 @@ export const Drafts = () => {
       {/* =========================================
           CATEGORY: HERO CONCEPTS
           ========================================= */}
-      <section style={{ backgroundColor: '#020202', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
+      {(activeCategory === 'All' || activeCategory === 'Hero Concepts') && (
+        <section style={{ backgroundColor: '#020202', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>Hero Concepts</h2>
             <p className="text-body-large" style={{ color: 'var(--text-secondary)' }}>Experimental hero sections and above-the-fold layouts.</p>
           </div>
 
-          <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)', position: 'relative' }}>
+          <div style={{ position: 'relative', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '80px' }}>
             {/* Embedded Original Hero Section */}
             <section style={{ position: 'relative', minHeight: '800px', display: 'flex', alignItems: 'center', paddingTop: '128px', paddingBottom: '128px', textAlign: 'center', overflow: 'hidden' }}>
               <GlitchOrbBackground />
@@ -118,115 +160,121 @@ export const Drafts = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* =========================================
           CATEGORY: LOGO ANIMATIONS
           ========================================= */}
-      <section style={{ backgroundColor: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
+      {(activeCategory === 'All' || activeCategory === 'Logo Animations') && (
+        <section style={{ backgroundColor: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>Logo Animations</h2>
             <p className="text-body-large" style={{ color: 'var(--text-secondary)' }}>Various iterations of the final CTA logo reveal.</p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '120px' }}>
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 01</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Spin</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 01</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Logo Reveal - Spin</h3>
               </div>
               <LogoRevealSpin />
             </div>
 
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 02</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Cinematic</h3>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 02</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Logo Reveal - Cinematic</h3>
               </div>
               <LogoRevealCinematic />
             </div>
 
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 03</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Logo Reveal - Orbital (V1)</h3>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 03</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Logo Reveal - Orbital (V1)</h3>
               </div>
               <LogoRevealOrbital />
             </div>
           </div>
         </div>
       </section>
+      )}
 
       {/* =========================================
           CATEGORY: FOOTER LAYOUTS
           ========================================= */}
-      <section style={{ backgroundColor: '#020202', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
+      {(activeCategory === 'All' || activeCategory === 'Footer Layouts') && (
+        <section style={{ backgroundColor: '#020202', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>Footer Layouts</h2>
             <p className="text-body-large" style={{ color: 'var(--text-secondary)' }}>Experimental footer designs and navigational concepts.</p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '120px' }}>
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 01</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>The Modern Grid</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 01</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Modern Grid</h3>
               </div>
               <FooterModern />
             </div>
 
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 02</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>The Bento Box</h3>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 02</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Bento Box</h3>
               </div>
               <FooterUnique />
             </div>
 
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 03</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>The Kinetic Marquee</h3>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 03</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Kinetic Marquee</h3>
               </div>
               <FooterCreative />
             </div>
 
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 04</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>The Interactive Halo</h3>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 04</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Interactive Halo</h3>
               </div>
               <div style={{ position: 'relative', height: '600px' }}>
                 <FooterHalo />
               </div>
             </div>
 
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)', position: 'relative', zIndex: 10 }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 05</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>The Sticky Curtain</h3>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px', position: 'relative', zIndex: 10 }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 05</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Sticky Curtain</h3>
               </div>
               <div style={{ height: '600px' }}>
                 <FooterCurtain />
               </div>
             </div>
 
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 06</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>The Blueprint Schematic</h3>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 06</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Blueprint Schematic</h3>
               </div>
               <FooterSchematic />
             </div>
           </div>
         </div>
       </section>
+      )}
 
       {/* =========================================
           CATEGORY: CONTENT LAYOUTS
           ========================================= */}
-      <section style={{ backgroundColor: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
+      {(activeCategory === 'All' || activeCategory === 'Content Layouts') && (
+        <section style={{ backgroundColor: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 className="text-headline" style={{ fontSize: '40px', marginBottom: '16px' }}>Content Layouts</h2>
@@ -235,10 +283,10 @@ export const Drafts = () => {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
             
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 01</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Case Studies Grid</h3>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 01</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Case Studies Grid</h3>
               </div>
               <div className="section-padding">
                 <div className="container">
@@ -262,10 +310,10 @@ export const Drafts = () => {
               </div>
             </div>
 
-            <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
-              <div style={{ padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Variant 02</span>
-                <h3 style={{ fontSize: '20px', margin: '4px 0 0 0' }}>Performance Section</h3>
+            <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 02</span>
+                <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Performance Section</h3>
               </div>
               <PerformanceSection />
             </div>
@@ -273,6 +321,7 @@ export const Drafts = () => {
           </div>
         </div>
       </section>
+      )}
 
     </div>
   );
