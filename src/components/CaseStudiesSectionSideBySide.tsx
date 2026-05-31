@@ -9,7 +9,8 @@ const caseStudies = [
     description: 'An entirely new Employee Purchase Program ecosystem letting employees lease premium devices through salary-linked EMIs. Featuring an elegant mobile experience built from the ground up to maximize user conversion.',
     tags: ['Product Design', 'Fintech', 'B2B2C'],
     image: '/images/Mockup2_EPP.png',
-    bgColor: '#161618'
+    bgColor: '#161618',
+    customLink: '/smart-epp'
   },
   {
     id: 4,
@@ -98,7 +99,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
         </div>
 
         <button 
-          onClick={() => navigate(`/case-study/${study.id}`)}
+          onClick={() => navigate(study.customLink || `/case-study/${study.id}`)}
           style={{
             background: '#fff',
             border: 'none',
@@ -164,7 +165,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
         transformPerspective: 1200,
         transformOrigin: 'bottom center',
       }}
-      onClick={() => navigate(`/case-study/${study.id}`)}
+      onClick={() => navigate(study.customLink || `/case-study/${study.id}`)}
       onMouseOver={(e: any) => {
         const img = e.currentTarget.querySelector('img');
         if (img) img.style.filter = 'drop-shadow(0 0 60px rgba(239,68,68,0.4))';

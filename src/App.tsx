@@ -11,6 +11,7 @@ import { AIWorkflow } from './pages/AIWorkflow';
 import { Prototypes } from './pages/Prototypes';
 import { Essays } from './pages/Essays';
 import { Process } from './pages/Process';
+import { SmartEPPCaseStudy } from './pages/SmartEPPCaseStudy';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css';
 
@@ -197,6 +198,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/drafts" element={<Drafts />} />
             <Route path="/case-study/:id" element={<CaseStudy />} />
+            <Route path="/smart-epp" element={<SmartEPPCaseStudy />} />
             <Route path="/ai-workflow" element={<AIWorkflow />} />
             <Route path="/prototypes" element={<Prototypes />} />
             <Route path="/essays" element={<Essays />} />
