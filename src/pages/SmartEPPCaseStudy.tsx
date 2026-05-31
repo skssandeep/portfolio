@@ -141,51 +141,61 @@ export const SmartEPPCaseStudy = () => {
   return (
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px' }}>
       
-      {/* 1. Full Width Cover Image */}
-      <section style={{ width: '100%', height: '80vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0a0a' }}>
+      {/* 1. Hero Section */}
+      <section style={{ width: '100%', minHeight: '100vh', paddingTop: '160px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#0a0a0a' }}>
+        
         <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100 }}>
           <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px' }}>
             <ArrowLeft size={16} /> Back
           </Link>
         </div>
-           {/* Background Image with Parallax & Overlay */}
-        <motion.div 
-          style={{ y: heroY, position: 'absolute', width: '100%', height: '120%', top: '-10%', left: 0, zIndex: 1 }}
-        >
-          {/* Enhanced gradient for better contrast */}
-          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, #0a0a0a 100%)', zIndex: 2 }} />
-          <img src="/images/epp/EPP_CaseStudy_01.png" alt="Smart EPP Cover" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.5 }} />
-        </motion.div>
 
         {/* Hero Content */}
         <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <motion.div 
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8, delay: 0.2 }}
-            style={{ 
-              background: 'rgba(10, 10, 10, 0.5)', 
-              backdropFilter: 'blur(24px)',
-              WebkitBackdropFilter: 'blur(24px)',
-              padding: '56px 64px',
-              borderRadius: '32px',
-              border: '1px solid rgba(255,255,255,0.08)',
-              boxShadow: '0 32px 64px rgba(0,0,0,0.6)',
-              maxWidth: '900px',
-              width: '100%'
-            }}
+            transition={{ duration: 0.8 }}
           >
             <div style={{ display: 'inline-flex', background: 'rgba(229, 9, 20, 0.15)', color: 'var(--accent-color)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', marginBottom: '24px', border: '1px solid rgba(229, 9, 20, 0.3)' }}>
               B2B2C FINTECH CASE STUDY
             </div>
-            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 6vw, 5.5rem)', fontWeight: 800, color: '#fff', margin: '0 0 24px 0', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
+            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3.5rem, 8vw, 7rem)', fontWeight: 800, color: '#fff', margin: '0 0 24px 0', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
               Smart EPP
             </h1>
-            <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1.1rem, 1.5vw, 1.25rem)', color: '#d4d4d4', margin: '0 auto', lineHeight: 1.6, fontWeight: 400 }}>
+            <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1.1rem, 1.5vw, 1.4rem)', color: '#d4d4d4', maxWidth: '700px', margin: '0 auto 64px auto', lineHeight: 1.6, fontWeight: 400 }}>
               Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
             </p>
           </motion.div>
         </div>
+
+        {/* Mockup Image */}
+        <div className="container" style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 100 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 1, delay: 0.2 }}
+            style={{ width: '100%', maxWidth: '1200px' }}
+          >
+            <img 
+              src="/images/Mockup2_EPP.png" 
+              alt="Smart EPP Mockup" 
+              style={{ 
+                width: '100%', 
+                height: 'auto', 
+                objectFit: 'contain', 
+                borderRadius: '24px 24px 0 0',
+                border: '1px solid rgba(255,255,255,0.05)',
+                borderBottom: 'none',
+                boxShadow: '0 -20px 60px rgba(0,0,0,0.5)',
+                background: '#111'
+              }} 
+            />
+          </motion.div>
+        </div>
+        
+        {/* Subtle background glow */}
+        <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(229,9,20,0.15) 0%, rgba(0,0,0,0) 70%)', zIndex: 1, pointerEvents: 'none' }} />
       </section>
 
       {/* 2. Context */}
