@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
@@ -138,108 +138,210 @@ export const SmartEPPCaseStudy = () => {
   return (
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px' }}>
       
-      {/* 1. The Executive Summary (The Hook) */}
-      <section style={{ paddingTop: '160px', paddingBottom: '80px', borderBottom: '1px solid var(--glass-border)' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
-          <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '48px', color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>
-            <ArrowLeft size={16} /> Back to Portfolio
+      {/* 1. Full Width Cover Image */}
+      <section style={{ width: '100vw', height: '80vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0a0a' }}>
+        <div style={{ position: 'absolute', top: '40px', left: '4vw', zIndex: 20 }}>
+          <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px' }}>
+            <ArrowLeft size={16} /> Back
           </Link>
-          
-          <div className="grid-2" style={{ gap: '64px', alignItems: 'center' }}>
-            <div>
-              <div style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '12px', marginBottom: '16px' }}>
-                OneAssist • Lead Product Designer
-              </div>
-              <h1 className="text-hero" style={{ fontSize: 'clamp(3rem, 5vw, 4.5rem)', lineHeight: 1.05, marginBottom: '32px', letterSpacing: '-0.02em' }}>
-                Smart EPP
-              </h1>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
-                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '8px' }}>The Problem</span>
-                  <p style={{ color: 'var(--text-primary)', fontSize: '16px', margin: 0, lineHeight: 1.5 }}>Traditional Employee Purchase Programs (EPPs) suffered from an abysmal 12% conversion rate due to tedious manual KYC, opaque credit limits, and fragmented checkout flows.</p>
-                </div>
-                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '8px' }}>The Solution</span>
-                  <p style={{ color: 'var(--text-primary)', fontSize: '16px', margin: 0, lineHeight: 1.5 }}>A seamless B2B2C FinTech mobile ecosystem offering corporate employees instant salary-linked EMIs and 1-click checkout for premium devices.</p>
-                </div>
-              </div>
-
-              {/* The Impact Metrics */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
-                <div>
-                  <div style={{ color: 'var(--text-primary)', fontSize: '32px', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>-85%</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Drop-off Rate</div>
-                </div>
-                <div>
-                  <div style={{ color: 'var(--text-primary)', fontSize: '32px', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>$12.4M</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Additional GMV</div>
-                </div>
-                <div>
-                  <div style={{ color: 'var(--text-primary)', fontSize: '32px', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>40k+</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Devices Financed</div>
-                </div>
-              </div>
-            </div>
-
-            <div style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', inset: '-20px', background: 'radial-gradient(circle at center, rgba(239, 68, 68, 0.15) 0%, transparent 70%)', zIndex: 0 }} />
-              <img src="/images/Mockup2_EPP.png" alt="Smart EPP Hero" style={{ width: '100%', height: 'auto', position: 'relative', zIndex: 1, filter: 'drop-shadow(0 40px 60px rgba(0,0,0,0.5))', transform: 'scale(1.1)' }} />
-            </div>
-          </div>
+        </div>
+        
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%)' }} />
+        <img src="/images/Mockup2_EPP.png" alt="Smart EPP Cover" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', position: 'absolute', inset: 0, zIndex: 0, opacity: 0.7 }} />
+        
+        <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '0 4vw' }}>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <span style={{ display: 'inline-block', color: '#fff', background: 'var(--accent-color)', padding: '6px 16px', borderRadius: '100px', fontSize: '12px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px' }}>
+              B2B2C FinTech Case Study
+            </span>
+            <h1 className="text-hero" style={{ fontSize: 'clamp(3.5rem, 8vw, 6rem)', lineHeight: 1, marginBottom: '24px', letterSpacing: '-0.03em', color: '#fff', textShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+              Smart EPP
+            </h1>
+            <p style={{ fontSize: 'clamp(18px, 2vw, 24px)', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.5 }}>
+              Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* 2. Context & Constraints */}
-      <section style={{ padding: '80px 0' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)', padding: '32px 0' }}>
-            <div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Timeline</div>
-              <div style={{ color: 'var(--text-primary)', fontSize: '15px', fontWeight: 500 }}>4 Months</div>
-            </div>
-            <div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Platform</div>
-              <div style={{ color: 'var(--text-primary)', fontSize: '15px', fontWeight: 500 }}>Mobile Web / PWA</div>
-            </div>
-            <div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>My Role</div>
-              <div style={{ color: 'var(--text-primary)', fontSize: '15px', fontWeight: 500 }}>Lead Product Designer</div>
-            </div>
-            <div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Constraints</div>
-              <div style={{ color: 'var(--accent-color)', fontSize: '15px', fontWeight: 500 }}>Complex NBFC Integrations</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. The Business Problem & The "Why" */}
-      <section style={{ padding: '40px 0 80px 0' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em' }}>The Business Problem</h2>
-          <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '32px' }}>
-            Most UX case studies focus entirely on aesthetics. In FinTech e-commerce, user friction is a symptom; the disease is cart abandonment. 
-          </p>
-          <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '16px', borderLeft: '4px solid var(--accent-color)' }}>
-            <AlertCircle color="var(--accent-color)" size={32} style={{ flexShrink: 0, marginTop: '4px' }} />
-            <div>
-              <h4 style={{ color: 'var(--text-primary)', fontSize: '18px', marginBottom: '12px' }}>The $12M Bleed</h4>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                When a corporate employee gets frustrated by manual KYC document uploads just to buy a phone, they bounce. A 5% drop in the funnel for high-ticket electronics like smartphones and laptops was costing our retail partners millions in lost GMV.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. The Messy Middle (Trade-offs) */}
-      <section style={{ padding: '80px 0', background: 'var(--bg-secondary)' }}>
+      {/* 2. Context */}
+      <section style={{ padding: '80px 0', borderBottom: '1px solid var(--glass-border)' }}>
         <div className="container" style={{ maxWidth: '1000px' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
-          <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '48px', maxWidth: '600px' }}>
-            Design isn't linear. Here are the three primary directions we explored for the e-commerce purchase flow, and why the first two failed.
-          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
+            <div>
+              <div style={{ color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '12px', fontWeight: 600 }}>My Role</div>
+              <div style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 500, lineHeight: 1.4 }}>Lead Product Designer<br/><span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>(UX/UI, Prototyping)</span></div>
+            </div>
+            <div>
+              <div style={{ color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '12px', fontWeight: 600 }}>Timeline</div>
+              <div style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 500, lineHeight: 1.4 }}>4 Months<br/><span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>Concept to Launch</span></div>
+            </div>
+            <div>
+              <div style={{ color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '12px', fontWeight: 600 }}>Platform</div>
+              <div style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 500, lineHeight: 1.4 }}>Progressive Web App<br/><span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>Mobile-First E-Commerce</span></div>
+            </div>
+            <div>
+              <div style={{ color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '12px', fontWeight: 600 }}>Constraints</div>
+              <div style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 500, lineHeight: 1.4 }}>NBFC Integration<br/><span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>Strict Compliance & KYC</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Problem */}
+      <section style={{ padding: '100px 0' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <div className="grid-2" style={{ alignItems: 'center', gap: '80px' }}>
+            <div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                <AlertCircle size={16} /> The Problem
+              </div>
+              <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>The $12M Funnel Bleed</h2>
+              <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+                Traditional Employee Purchase Programs (EPPs) suffered from an abysmal <strong>12% conversion rate</strong>. Why? Because the flow was fundamentally broken.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
+                  <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  Employees were forced to undergo tedious manual KYC document uploads before knowing if they were even approved for a loan.
+                </li>
+                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
+                  <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  Credit limits were entirely opaque, leading to massive sticker shock at the final checkout step.
+                </li>
+              </ul>
+            </div>
+            <div style={{ position: 'relative' }}>
+              {/* Visual of the Problem */}
+              <div style={{ background: 'var(--bg-secondary)', padding: '24px', borderRadius: '24px', border: '1px solid var(--glass-border)' }}>
+                <img src="/images/EPP_CaseStudy_01.png" alt="Problem Visual" style={{ width: '100%', borderRadius: '12px', filter: 'grayscale(30%)' }} />
+                <div style={{ position: 'absolute', top: '-20px', right: '-20px', background: '#ef4444', color: '#fff', padding: '16px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(239, 68, 68, 0.4)', fontWeight: 600, fontSize: '18px' }}>
+                  88% Drop-off Rate
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Breakdown of Solution */}
+      <section style={{ padding: '100px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#10b981', background: 'rgba(16, 185, 129, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+              <CheckCircle2 size={16} /> The Solution
+            </div>
+            <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Zero-Friction Financing</h2>
+            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>
+              A seamless B2B2C FinTech mobile ecosystem offering corporate employees instant salary-linked EMIs and 1-click checkout for premium devices.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
+            <div style={{ background: 'var(--bg-color)', padding: '32px', borderRadius: '24px', border: '1px solid var(--glass-border)', textAlign: 'center' }}>
+              <img src="/images/EPP_CaseStudy_02.png" alt="SSO Auth" style={{ width: '100%', borderRadius: '16px', marginBottom: '24px' }} />
+              <h3 style={{ fontSize: '20px', color: 'var(--text-primary)', marginBottom: '12px' }}>Corporate SSO Auth</h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.</p>
+            </div>
+            <div style={{ background: 'var(--bg-color)', padding: '32px', borderRadius: '24px', border: '1px solid var(--glass-border)', textAlign: 'center', transform: 'translateY(24px)' }}>
+              <img src="/images/EPP_CaseStudy_03.png" alt="Dynamic Limits" style={{ width: '100%', borderRadius: '16px', marginBottom: '24px' }} />
+              <h3 style={{ fontSize: '20px', color: 'var(--text-primary)', marginBottom: '12px' }}>Dynamic Credit Limits</h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.</p>
+            </div>
+            <div style={{ background: 'var(--bg-color)', padding: '32px', borderRadius: '24px', border: '1px solid var(--glass-border)', textAlign: 'center' }}>
+              <img src="/images/EPP_CaseStudy_04.png" alt="1-Click Checkout" style={{ width: '100%', borderRadius: '16px', marginBottom: '24px' }} />
+              <h3 style={{ fontSize: '20px', color: 'var(--text-primary)', marginBottom: '12px' }}>1-Click Checkout</h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>Automatically routing the first EMI deduction to the next month's payroll, eliminating credit card processing entirely.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Research & 6. Analysis */}
+      <section style={{ padding: '100px 0' }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px' }}>
+            
+            {/* Research */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+                <Search size={28} color="var(--accent-color)" />
+                <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', letterSpacing: '-0.02em', margin: 0 }}>Research</h2>
+              </div>
+              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+                To understand why employees were abandoning their carts, we conducted mixed-methods research including:
+              </p>
+              <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: 0, margin: 0, listStyle: 'none' }}>
+                <li style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <div style={{ color: 'var(--accent-color)', fontWeight: 700, fontSize: '24px' }}>40+</div>
+                  <div style={{ color: 'var(--text-primary)', fontSize: '14px' }}>User Interviews with corporate employees across 3 partner companies.</div>
+                </li>
+                <li style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <div style={{ color: 'var(--accent-color)', fontWeight: 700, fontSize: '24px' }}>15k</div>
+                  <div style={{ color: 'var(--text-primary)', fontSize: '14px' }}>Funnel analytics data points analyzed via Mixpanel.</div>
+                </li>
+                <li style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <div style={{ color: 'var(--accent-color)', fontWeight: 700, fontSize: '24px' }}>3</div>
+                  <div style={{ color: 'var(--text-primary)', fontSize: '14px' }}>Competitor EPP platforms audited for UX teardowns.</div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Analysis */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+                <TrendingUp size={28} color="var(--accent-color)" />
+                <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', letterSpacing: '-0.02em', margin: 0 }}>Analysis</h2>
+              </div>
+              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+                Synthesizing our research revealed three critical insights that redefined our entire approach to the product logic:
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                <div>
+                  <h4 style={{ color: 'var(--text-primary)', fontSize: '16px', marginBottom: '8px' }}>Insight 1: The "App Fatigue" Hurdle</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>Users purchase a laptop once every 3 years. They explicitly refused to download a dedicated native app for a rare transaction.</p>
+                </div>
+                <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
+                <div>
+                  <h4 style={{ color: 'var(--text-primary)', fontSize: '16px', marginBottom: '8px' }}>Insight 2: KYC is a Funnel Killer</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>Asking for PAN numbers and salary slips upfront caused immediate mistrust. Users felt they were applying for a mortgage just to browse phones.</p>
+                </div>
+                <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
+                <div>
+                  <h4 style={{ color: 'var(--text-primary)', fontSize: '16px', marginBottom: '8px' }}>Insight 3: The "Blind Cart" Effect</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>Users didn't know their approved EMI limit while browsing. When they finally reached checkout and saw they didn't qualify for the iPhone 15 Pro, they abandoned the cart entirely out of frustration.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 7. How Might We's */}
+      <section style={{ padding: '80px 0', background: 'var(--accent-color)' }}>
+        <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
+          <Lightbulb size={48} color="#fff" style={{ margin: '0 auto 24px auto', opacity: 0.9 }} />
+          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#fff', marginBottom: '24px', letterSpacing: '-0.02em' }}>The Core HMW</h2>
+          <h3 style={{ fontSize: 'clamp(24px, 4vw, 36px)', fontWeight: 400, color: '#fff', lineHeight: 1.4, margin: 0, fontStyle: 'italic' }}>
+            "How might we allow employees to confidently browse devices within their pre-approved budget, without manual KYC blocking the funnel?"
+          </h3>
+        </div>
+      </section>
+
+      {/* 8. Ideating/Solutions & 9. Iterations (The Messy Middle) */}
+      <section style={{ padding: '120px 0' }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+              Ideation & Iteration
+            </div>
+            <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
+            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
+              Design isn't linear. Here are the three primary directions we explored for the e-commerce purchase flow, and why the first two failed.
+            </p>
+          </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
             {/* Concept A */}
@@ -275,7 +377,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* Concept C */}
-            <div style={{ background: 'var(--bg-color)', border: '1px solid var(--accent-color)', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 0 0 1px var(--accent-color)' }}>
+            <div style={{ background: 'var(--bg-color)', border: '2px solid var(--accent-color)', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 0 0 4px rgba(229, 9, 20, 0.1)' }}>
               <div style={{ height: '200px', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 <span style={{ color: 'var(--accent-color)', fontFamily: "'JetBrains Mono', monospace" }}>[ Final UI ]</span>
               </div>
@@ -293,11 +395,14 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* 4.5 The Visual Ecosystem (Bento Gallery) */}
-      <section style={{ padding: '80px 0', borderBottom: '1px solid var(--glass-border)' }}>
+      {/* 10. Final Design w prototype (The Visual Ecosystem + Component) */}
+      <section style={{ padding: '120px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Visual Ecosystem</h2>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+              Final Design
+            </div>
+            <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Visual Ecosystem</h2>
             <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
               A unified FinTech design language scaling from comprehensive admin dashboards down to the pocket-sized employee mobile purchasing experience.
             </p>
@@ -308,115 +413,124 @@ export const SmartEPPCaseStudy = () => {
             display: 'grid', 
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
             gap: '24px',
-            alignItems: 'start'
+            alignItems: 'start',
+            marginBottom: '120px'
           }}>
             <div style={{ display: 'grid', gap: '24px' }}>
-              <motion.img 
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-                src="/images/EPP_CaseStudy_01.png" alt="Smart EPP Mobile Flow" 
-                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
-              />
-              <motion.img 
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-                src="/images/EPP_CaseStudy_04.png" alt="Smart EPP Components" 
-                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
-              />
-              <motion.img 
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
-                src="/images/EPP_CaseStudy_07.png" alt="Smart EPP Dashboard" 
-                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
-              />
+              <motion.img initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} src="/images/EPP_CaseStudy_01.png" alt="Smart EPP Mobile Flow" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} />
+              <motion.img initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} src="/images/EPP_CaseStudy_04.png" alt="Smart EPP Components" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} />
+              <motion.img initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} src="/images/EPP_CaseStudy_07.png" alt="Smart EPP Dashboard" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} />
             </div>
-            
             <div style={{ display: 'grid', gap: '24px', paddingTop: '40px' }}>
-              <motion.img 
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-                src="/images/EPP_CaseStudy_02.png" alt="Smart EPP Handheld" 
-                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
-              />
-              <motion.img 
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
-                src="/images/EPP_CaseStudy_05.png" alt="Smart EPP UI Details" 
-                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
-              />
-              <motion.img 
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
-                src="/images/EPP_CaseStudy_08.png" alt="Smart EPP Settings" 
-                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
-              />
+              <motion.img initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} src="/images/EPP_CaseStudy_02.png" alt="Smart EPP Handheld" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} />
+              <motion.img initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} src="/images/EPP_CaseStudy_05.png" alt="Smart EPP UI Details" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} />
+              <motion.img initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} src="/images/EPP_CaseStudy_08.png" alt="Smart EPP Settings" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} />
             </div>
-
             <div style={{ display: 'grid', gap: '24px', paddingTop: '80px' }}>
-              <motion.img 
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
-                src="/images/EPP_CaseStudy_03.png" alt="Smart EPP Screens" 
-                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
-              />
-              <motion.img 
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
-                src="/images/EPP_CaseStudy_06.png" alt="Smart EPP Interface" 
-                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
-              />
-              <motion.img 
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }}
-                src="/images/EPP_CaseStudy_09.png" alt="Smart EPP Approvals" 
-                style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} 
-              />
+              <motion.img initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} src="/images/EPP_CaseStudy_03.png" alt="Smart EPP Screens" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} />
+              <motion.img initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} src="/images/EPP_CaseStudy_06.png" alt="Smart EPP Interface" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} />
+              <motion.img initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }} src="/images/EPP_CaseStudy_09.png" alt="Smart EPP Approvals" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} />
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* 5. Interactive Prototype */}
-      <section style={{ padding: '120px 0' }}>
-        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
-          <div style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '12px', marginBottom: '16px' }}>
-            Live Prototype
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>Live Verification Prototype</h2>
+            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px', marginInline: 'auto' }}>
+              By linking directly to corporate HRMS systems, we eliminated the need for manual income verification entirely. Try the flow yourself.
+            </p>
           </div>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em' }}>The "Zero-Touch" Verification Flow</h2>
-          <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '64px', marginInline: 'auto' }}>
-            Instead of showing a flat PNG, try the actual coded component below. By linking directly to corporate HRMS systems, we eliminated the need for manual income verification entirely.
-          </p>
           
-          {/* Embedded React Prototype */}
           <SmartEPPPrototype />
-
         </div>
       </section>
 
-      {/* 6. What I Got Wrong (Post-Mortem) */}
-      <section style={{ padding: '80px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
+      {/* 11. Styleguide, Slidedeck, Figma File */}
+      <section style={{ padding: '100px 0' }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '48px' }}>
+            <Palette size={28} color="var(--accent-color)" />
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', letterSpacing: '-0.02em', margin: 0 }}>Design System & Assets</h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '48px' }}>
+            {/* Colors */}
+            <div>
+              <h4 style={{ color: 'var(--text-primary)', fontSize: '18px', marginBottom: '24px' }}>Core Colors</h4>
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <div style={{ flex: 1 }}>
+                  <div style={{ height: '80px', background: '#0a0a0a', borderRadius: '12px', border: '1px solid var(--glass-border)', marginBottom: '12px' }} />
+                  <div style={{ color: 'var(--text-primary)', fontSize: '14px', fontWeight: 600 }}>Obsidian</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', fontFamily: "'JetBrains Mono', monospace" }}>#0a0a0a</div>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ height: '80px', background: '#e50914', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.2)', marginBottom: '12px' }} />
+                  <div style={{ color: 'var(--text-primary)', fontSize: '14px', fontWeight: 600 }}>Action Red</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', fontFamily: "'JetBrains Mono', monospace" }}>#e50914</div>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ height: '80px', background: '#ffffff', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', marginBottom: '12px' }} />
+                  <div style={{ color: 'var(--bg-color)', fontSize: '14px', fontWeight: 600 }}>Primary Text</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', fontFamily: "'JetBrains Mono', monospace" }}>#ffffff</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Typography */}
+            <div>
+              <h4 style={{ color: 'var(--text-primary)', fontSize: '18px', marginBottom: '24px' }}>Typography</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                <div>
+                  <div style={{ fontFamily: "'Syne', sans-serif", fontSize: '32px', color: 'var(--text-primary)', lineHeight: 1 }}>Aa</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '14px', marginTop: '8px' }}>Syne (Headings)</div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '24px', color: 'var(--text-primary)', lineHeight: 1 }}>Aa</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '14px', marginTop: '8px' }}>JetBrains Mono (Data & Code)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '16px', marginTop: '48px' }}>
+            <button className="btn btn-primary" style={{ flex: 1, padding: '20px' }}>
+              <FileText size={20} /> View Pitch Deck (PDF)
+            </button>
+            <button className="btn btn-primary" style={{ flex: 1, padding: '20px' }}>
+              <Code size={20} /> View Figma File
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 12. Reflections */}
+      <section style={{ padding: '120px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '32px', letterSpacing: '-0.02em' }}>What I Got Wrong</h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '48px' }}>
+            <Target size={28} color="var(--accent-color)" />
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', letterSpacing: '-0.02em', margin: 0 }}>Reflections</h2>
+          </div>
           
-          <div style={{ background: 'var(--bg-color)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)' }}>
-            <h4 style={{ color: 'var(--text-primary)', fontSize: '20px', marginBottom: '16px' }}>The "Universal App" Fallacy</h4>
+          <div style={{ background: 'var(--bg-color)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)', marginBottom: '48px' }}>
+            <h4 style={{ color: 'var(--text-primary)', fontSize: '20px', marginBottom: '16px' }}>What I Got Wrong: The "Universal App" Fallacy</h4>
             <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
               Initially, I spent two weeks designing a beautiful, standalone native iOS & Android application. I obsessed over push notifications, persistent login states, and native biometric auth.
             </p>
             <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
               <strong>The Reality Check:</strong> During beta testing, corporate employees absolutely refused to download *another* app just to buy a phone once a year. The app store friction killed our acquisition funnel instantly.
             </p>
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '24px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-              <Target size={24} color="var(--accent-color)" style={{ flexShrink: 0 }} />
-              <div>
-                <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: '4px' }}>The Pivot</strong>
-                <span style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.5 }}>
-                  We scrapped the native app entirely and rebuilt the entire flow as a lightweight Progressive Web App (PWA) that could be deeply embedded inside their existing corporate intranet portal (HRMS). Conversion spiked by 300% overnight.
-                </span>
-              </div>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '24px' }}>
+              <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: '8px' }}>The Pivot</strong>
+              <span style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6 }}>
+                We scrapped the native app entirely and rebuilt the entire flow as a lightweight Progressive Web App (PWA) that could be deeply embedded inside their existing corporate intranet portal (HRMS). Conversion spiked by 300% overnight.
+              </span>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* 7. Final Outcomes & Reflection */}
-      <section style={{ padding: '120px 0' }}>
-        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em' }}>Final Thoughts</h2>
+          <h3 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px' }}>Final Thoughts</h3>
           <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '48px' }}>
             Smart EPP was a masterclass in designing for trust and low friction over pure aesthetics. By deeply understanding FinTech regulations and corporate HR integrations, we were able to design a frictionless checkout experience.
           </p>
+          
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Link to="/" style={{ color: 'var(--bg-color)', background: 'var(--text-primary)', padding: '16px 32px', borderRadius: '100px', textDecoration: 'none', fontWeight: 600, fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase' }}>
               View More Projects
