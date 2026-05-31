@@ -141,106 +141,107 @@ export const SmartEPPCaseStudy = () => {
   return (
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px' }}>
       
-      {/* 1. Hero Section */}
-      <section style={{ width: '100%', minHeight: '100vh', paddingTop: '160px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#0a0a0a' }}>
+      {/* 1 & 2. Integrated Hero & Context Section */}
+      <section style={{ width: '100%', minHeight: '100vh', paddingTop: '120px', paddingBottom: '64px', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', background: '#0a0a0a' }}>
         
+        {/* Subtle background glow */}
+        <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle at 0% 50%, rgba(229,9,20,0.1) 0%, rgba(0,0,0,0) 60%)', zIndex: 1, pointerEvents: 'none' }} />
+
         <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100 }}>
           <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px' }}>
             <ArrowLeft size={16} /> Back
           </Link>
         </div>
 
-        {/* Hero Content */}
-        <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8 }}
-          >
-            <div style={{ display: 'inline-flex', background: 'rgba(229, 9, 20, 0.15)', color: 'var(--accent-color)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', marginBottom: '24px', border: '1px solid rgba(229, 9, 20, 0.3)' }}>
-              B2B2C FINTECH CASE STUDY
-            </div>
-            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3.5rem, 8vw, 7rem)', fontWeight: 800, color: '#fff', margin: '0 0 24px 0', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
-              Smart EPP
-            </h1>
-            <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1.1rem, 1.5vw, 1.4rem)', color: '#d4d4d4', maxWidth: '700px', margin: '0 auto 64px auto', lineHeight: 1.6, fontWeight: 400 }}>
-              Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Mockup Image */}
-        <div className="container" style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
-          <motion.div 
-            initial={{ opacity: 0, y: 100 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 1, delay: 0.2 }}
-            style={{ width: '100%', maxWidth: '1200px' }}
-          >
-            <img 
-              src="/images/Mockup2_EPP.png" 
-              alt="Smart EPP Mockup" 
-              style={{ 
-                width: '100%', 
-                height: 'auto', 
-                objectFit: 'contain', 
-                borderRadius: '24px 24px 0 0',
-                border: '1px solid rgba(255,255,255,0.05)',
-                borderBottom: 'none',
-                boxShadow: '0 -20px 60px rgba(0,0,0,0.5)',
-                background: '#111'
-              }} 
-            />
-          </motion.div>
-        </div>
-        
-        {/* Subtle background glow */}
-        <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(229,9,20,0.15) 0%, rgba(0,0,0,0) 70%)', zIndex: 1, pointerEvents: 'none' }} />
-      </section>
-
-      {/* 2. Context */}
-      <section style={{ padding: '64px 0', borderBottom: '1px solid var(--glass-border)', background: 'var(--bg-color)' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '1400px' }}>
           <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', 
-            gap: '24px' 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))', 
+            gap: '64px', 
+            alignItems: 'center' 
           }}>
-            {[
-              { label: 'My Role', value: 'Lead Product Designer', sub: 'UX/UI, Prototyping', icon: <Target size={18} /> },
-              { label: 'Timeline', value: '4 Months', sub: 'Concept to Launch', icon: <Clock size={18} /> },
-              { label: 'Platform', value: 'Progressive Web App', sub: 'Mobile-First E-Commerce', icon: <Smartphone size={18} /> },
-              { label: 'Constraints', value: 'NBFC Integration', sub: 'Strict Compliance & KYC', icon: <AlertCircle size={18} /> }
-            ].map((item, idx) => (
-              <div key={idx} style={{ 
-                background: 'rgba(255,255,255,0.02)', 
-                padding: '32px', 
-                borderRadius: '24px', 
-                border: '1px solid rgba(255,255,255,0.05)',
-                transition: 'transform 0.3s ease, background 0.3s ease',
-                cursor: 'default'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.background = 'rgba(255,255,255,0.04)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
-              }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontWeight: 600 }}>
-                  {item.icon}
-                  {item.label}
+            
+            {/* Left Column: Hero Text + Context Bento */}
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              
+              {/* Header Info */}
+              <div style={{ marginBottom: '48px' }}>
+                <div style={{ display: 'inline-flex', background: 'rgba(229, 9, 20, 0.15)', color: 'var(--accent-color)', padding: '8px 20px', borderRadius: '100px', fontSize: '12px', fontWeight: 700, letterSpacing: '2px', marginBottom: '24px', border: '1px solid rgba(229, 9, 20, 0.3)' }}>
+                  B2B2C FINTECH CASE STUDY
                 </div>
-                <div style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', fontSize: '20px', fontWeight: 600, lineHeight: 1.3, marginBottom: '8px', letterSpacing: '-0.02em' }}>
-                  {item.value}
-                </div>
-                <div style={{ fontFamily: 'var(--font-system)', color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5 }}>
-                  {item.sub}
-                </div>
+                <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 800, color: '#fff', margin: '0 0 24px 0', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
+                  Smart EPP
+                </h1>
+                <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1.1rem, 1.2vw, 1.3rem)', color: '#d4d4d4', maxWidth: '600px', lineHeight: 1.6, fontWeight: 400 }}>
+                  Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
+                </p>
               </div>
-            ))}
+
+              {/* Context Mini-Bento Grid */}
+              <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                gap: '16px' 
+              }}>
+                {[
+                  { label: 'My Role', value: 'Lead Product Designer', sub: 'UX/UI, Prototyping', icon: <Target size={16} /> },
+                  { label: 'Timeline', value: '4 Months', sub: 'Concept to Launch', icon: <Clock size={16} /> },
+                  { label: 'Platform', value: 'PWA', sub: 'Mobile-First E-Commerce', icon: <Smartphone size={16} /> },
+                  { label: 'Constraints', value: 'NBFC Rules', sub: 'Strict Compliance & KYC', icon: <AlertCircle size={16} /> }
+                ].map((item, idx) => (
+                  <div key={idx} style={{ 
+                    background: 'rgba(255,255,255,0.02)', 
+                    padding: '24px', 
+                    borderRadius: '20px', 
+                    border: '1px solid rgba(255,255,255,0.05)',
+                    transition: 'transform 0.3s ease, background 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+                  }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px', fontWeight: 600 }}>
+                      {item.icon}
+                      {item.label}
+                    </div>
+                    <div style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', fontSize: '18px', fontWeight: 600, lineHeight: 1.2, marginBottom: '6px', letterSpacing: '-0.02em' }}>
+                      {item.value}
+                    </div>
+                    <div style={{ fontFamily: 'var(--font-system)', color: 'var(--text-secondary)', fontSize: '13px', lineHeight: 1.4 }}>
+                      {item.sub}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </motion.div>
+
+            {/* Right Column: Dynamic Mockup Image */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}
+            >
+              <img 
+                src="/images/Mockup2_EPP.png" 
+                alt="Smart EPP Mockup" 
+                style={{ 
+                  width: '110%', 
+                  maxWidth: '800px',
+                  height: 'auto', 
+                  objectFit: 'contain', 
+                  filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.6))',
+                  transform: 'scale(1.05) translateX(5%)'
+                }} 
+              />
+            </motion.div>
+
           </div>
         </div>
       </section>
