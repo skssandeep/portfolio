@@ -222,7 +222,7 @@ export const SmartEPPCaseStudy = () => {
           {/* Floating Context Cards (Chips) */}
           <div className="floating-chips">
             {[
-              { class: 'chip-1', icon: <Target size={14}/>, title: "My Role", val: "Lead Product Designer", delay: 0.4 },
+              { class: 'chip-1', icon: <Target size={14}/>, title: "My Role", val: "UX Designer", delay: 0.4 },
               { class: 'chip-2', icon: <Clock size={14}/>, title: "Timeline", val: "4 Months", delay: 0.5 },
               { class: 'chip-3', icon: <Smartphone size={14}/>, title: "Platform", val: "PWA Mobile-First", delay: 0.6 },
               { class: 'chip-4', icon: <AlertCircle size={14}/>, title: "Constraint", val: "Strict KYC & NBFC", delay: 0.7 }
