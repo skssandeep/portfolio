@@ -1,5 +1,5 @@
 import React from "react";
-import { TubesCursor } from "../components/ui/tube-cursor";
+import { TubesCursor } from "../ui/tube-cursor";
 
 export const Cursors = () => {
   return (

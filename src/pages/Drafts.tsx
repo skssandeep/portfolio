@@ -13,10 +13,15 @@ import { FooterSchematic } from '../components/FooterSchematic';
 import { LogoRevealSpin } from '../components/drafts/LogoRevealSpin';
 import { LogoRevealCinematic } from '../components/drafts/LogoRevealCinematic';
 import { LogoRevealOrbital } from '../components/drafts/LogoRevealOrbital';
+import { Top1Percent } from '../components/drafts/Top1Percent';
+import { PostMortems } from '../components/drafts/PostMortems';
+import { Avatars } from '../components/drafts/Avatars';
+import { Cursors } from '../components/drafts/Cursors';
+
 
 export const Drafts = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const categories = ['All', 'Hero Concepts', 'Logo Animations', 'Footer Layouts', 'Content Layouts'];
+  const categories = ['All', 'Hero Concepts', 'Logo Animations', 'Footer Layouts', 'Content Layouts', 'Top 1%', 'Post-Mortems', 'Brand Avatars', 'Cursors'];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -321,6 +326,35 @@ export const Drafts = () => {
           </div>
         </div>
       </section>
+      )}
+
+
+      {/* =========================================
+          CATEGORY: TOP 1%
+          ========================================= */}
+      {(activeCategory === 'All' || activeCategory === 'Top 1%') && (
+        <Top1Percent />
+      )}
+
+      {/* =========================================
+          CATEGORY: POST-MORTEMS
+          ========================================= */}
+      {(activeCategory === 'All' || activeCategory === 'Post-Mortems') && (
+        <PostMortems />
+      )}
+
+      {/* =========================================
+          CATEGORY: BRAND AVATARS
+          ========================================= */}
+      {(activeCategory === 'All' || activeCategory === 'Brand Avatars') && (
+        <Avatars />
+      )}
+
+      {/* =========================================
+          CATEGORY: CURSORS
+          ========================================= */}
+      {(activeCategory === 'All' || activeCategory === 'Cursors') && (
+        <Cursors />
       )}
 
     </div>

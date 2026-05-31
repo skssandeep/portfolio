@@ -7,14 +7,10 @@ import { Preloader } from './components/ui/Preloader';
 import { Home } from './pages/Home';
 import { Drafts } from './pages/Drafts';
 import { CaseStudy } from './pages/CaseStudy';
-import { Top1Percent } from './pages/Top1Percent';
 import { AIWorkflow } from './pages/AIWorkflow';
 import { Prototypes } from './pages/Prototypes';
 import { Essays } from './pages/Essays';
 import { Process } from './pages/Process';
-import { PostMortems } from './pages/PostMortems';
-import { Avatars } from './pages/Avatars';
-import { Cursors } from './pages/Cursors';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css';
 
@@ -196,14 +192,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/drafts" element={<Drafts />} />
             <Route path="/case-study/:id" element={<CaseStudy />} />
-            <Route path="/top-1-percent" element={<Top1Percent />} />
             <Route path="/ai-workflow" element={<AIWorkflow />} />
             <Route path="/prototypes" element={<Prototypes />} />
             <Route path="/essays" element={<Essays />} />
             <Route path="/process" element={<Process />} />
-            <Route path="/post-mortems" element={<PostMortems />} />
-            <Route path="/avatars" element={<Avatars />} />
-            <Route path="/cursors" element={<Cursors />} />
           </Routes>
         </ErrorBoundary>
 

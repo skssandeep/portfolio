@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { AvatarDiamondSquare } from '../components/ui/AvatarDiamondSquare';
+import { AvatarDiamondSquare } from '../ui/AvatarDiamondSquare';
 
 export const Avatars = () => {
   useEffect(() => {
