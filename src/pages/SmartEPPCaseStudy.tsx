@@ -266,47 +266,65 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ marginTop: '80px', maxWidth: '900px', margin: '80px auto 0' }}>
+          <div style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             
-            {/* The Huge Pull Quote */}
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ borderLeft: '4px solid #ef4444', paddingLeft: '32px', marginBottom: '64px' }}>
-               <h3 style={{ fontSize: '36px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.3, letterSpacing: '-0.02em', margin: 0 }}>
-                 "Enterprises want to offer premium perks, but <span style={{ color: '#ef4444' }}>admin overhead</span> and <span style={{ color: '#ef4444' }}>opaque credit limits</span> create a deeply broken experience for both sides."
-               </h3>
+            {/* Widget 1: Budget Deficit */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(30,30,30,0.5)', borderRadius: '24px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
+               <h4 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Building2 size={18} color="var(--text-secondary)" /> Enterprise Budgets
+               </h4>
+               {/* CSS Bar Chart */}
+               <div style={{ display: 'flex', alignItems: 'flex-end', gap: '16px', height: '120px', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div style={{ flex: 1, background: 'rgba(255,255,255,0.1)', height: '100%', borderRadius: '8px 8px 0 0', position: 'relative' }}>
+                    <span style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', fontSize: '12px', color: 'var(--text-secondary)' }}>Req.</span>
+                  </div>
+                  <div style={{ flex: 1, background: '#ef4444', height: '30%', borderRadius: '8px 8px 0 0', position: 'relative' }}>
+                    <span style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', fontSize: '12px', color: '#ef4444', fontWeight: 'bold' }}>Appr.</span>
+                  </div>
+               </div>
+               <h5 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Limited Funds</h5>
+               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Unable to fund premium perks, leading to generic offerings.</p>
             </motion.div>
 
-            {/* The Breakdown */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px' }}>
-               {/* HR Side */}
-               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-                  <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <Building2 size={16} /> Enterprise & HR
-                  </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                    <div>
-                      <h5 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '8px' }}>Limited Budgets</h5>
-                      <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Forced to cut back on meaningful benefits, failing to differentiate the employer brand.</p>
-                    </div>
-                    <div>
-                      <h5 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '8px' }}>Admin Overhead</h5>
-                      <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Manual tracking and approvals significantly slow down benefit delivery.</p>
-                    </div>
+            {/* Widget 2: Admin Overhead */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(30,30,30,0.5)', borderRadius: '24px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
+               <h4 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Clock size={18} color="var(--text-secondary)" /> Admin Overhead
+               </h4>
+               {/* Progress Bar Chart */}
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '4px' }}><span>Manual Tracking</span><span>75%</span></div>
+                    <div style={{ height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '75%', height: '100%', background: '#ef4444' }}/></div>
                   </div>
-               </motion.div>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '4px' }}><span>Approvals</span><span>20%</span></div>
+                    <div style={{ height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '20%', height: '100%', background: '#f59e0b' }}/></div>
+                  </div>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '4px' }}><span>Strategic Work</span><span>5%</span></div>
+                    <div style={{ height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '5%', height: '100%', background: '#10b981' }}/></div>
+                  </div>
+               </div>
+               <h5 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Time Sink</h5>
+               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Manual tracking severely delays benefit delivery.</p>
+            </motion.div>
 
-               {/* Employee Side */}
-               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-                  <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <Users size={16} /> Employees
-                  </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                    <div>
-                      <h5 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '8px' }}>Opaque Credit Limits</h5>
-                      <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Hidden limits leading to massive sticker shock at the final checkout step.</p>
-                    </div>
+            {/* Widget 3: Employee Friction */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(30,30,30,0.5)', borderRadius: '24px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
+               <h4 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Users size={18} color="var(--text-secondary)" /> Employee UX
+               </h4>
+               {/* KPI Card */}
+               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '120px', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div style={{ fontSize: '48px', fontWeight: 700, color: '#ef4444', lineHeight: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <AlertCircle size={32} /> ?
                   </div>
-               </motion.div>
-            </div>
+                  <div style={{ fontSize: '12px', color: 'var(--text-secondary)', letterSpacing: '1px', marginTop: '8px', textTransform: 'uppercase', textAlign: 'center' }}>Opaque limit</div>
+               </div>
+               <h5 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Opaque Limits</h5>
+               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Hidden credit limits lead to massive sticker shock.</p>
+            </motion.div>
 
           </div>
         </div>
