@@ -257,38 +257,52 @@ export const SmartEPPCaseStudy = () => {
       <section style={{ padding: '100px 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div className="grid-2" style={{ alignItems: 'center', gap: '80px' }}>
-            <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
-                <AlertCircle size={16} /> The Problem
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              <div>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                  <AlertCircle size={16} /> The Problem
+                </div>
+                <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>A Two-Sided Dilemma</h2>
+                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Traditional Employee Purchase Programs (EPPs) were fundamentally broken for both the enterprises trying to offer them and the employees trying to use them.
+                </p>
               </div>
-              <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>A Two-Sided Dilemma</h2>
-              <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                Traditional Employee Purchase Programs (EPPs) were fundamentally broken for both the enterprises trying to offer them and the employees trying to use them.
-              </p>
-              
-              <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px' }}>For Enterprises & HR</h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
-                  <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <div><strong>Limited Budgets:</strong> Tight budgets force HR to cut back on meaningful benefits, resulting in generic offerings that fail to differentiate the employer brand.</div>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
-                  <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <div><strong>Administrative Overhead:</strong> Manual tracking, approvals, and coordination drain HR resources and significantly slow down benefit delivery.</div>
-                </li>
-              </ul>
 
-              <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px' }}>For Employees (12% Conversion Rate)</h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
-                  <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <div><strong>Manual KYC Friction:</strong> Employees were forced to undergo tedious document uploads before knowing if they were even approved.</div>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
-                  <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <div><strong>Opaque Credit Limits:</strong> Limits were entirely hidden until the end, leading to massive sticker shock at the final checkout step.</div>
-                </li>
-              </ul>
+              {/* HR Card */}
+              <div style={{ background: 'linear-gradient(145deg, rgba(30,30,30,0.6) 0%, rgba(15,15,15,0.8) 100%)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                   <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(255,255,255,0.05)' }}>🏢</span> 
+                   For Enterprises & HR
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ef4444', marginTop: '8px', flexShrink: 0 }} />
+                    <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.5 }}><strong>Limited Budgets:</strong> Forced to cut back on meaningful benefits, failing to differentiate the employer brand.</p>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ef4444', marginTop: '8px', flexShrink: 0 }} />
+                    <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.5 }}><strong>Admin Overhead:</strong> Manual tracking and approvals significantly slow down benefit delivery.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Employee Card */}
+              <div style={{ background: 'linear-gradient(145deg, rgba(30,30,30,0.6) 0%, rgba(15,15,15,0.8) 100%)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                   <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(255,255,255,0.05)' }}>👥</span> 
+                   For Employees <span style={{ fontSize: '13px', fontWeight: 600, color: '#ef4444', background: 'rgba(239, 68, 68, 0.1)', padding: '6px 12px', borderRadius: '100px', marginLeft: 'auto', letterSpacing: '0.5px' }}>12% CONVERSION</span>
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ef4444', marginTop: '8px', flexShrink: 0 }} />
+                    <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.5 }}><strong>Manual KYC Friction:</strong> Tedious document uploads required before knowing loan approval status.</p>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ef4444', marginTop: '8px', flexShrink: 0 }} />
+                    <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.5 }}><strong>Opaque Credit Limits:</strong> Hidden limits leading to massive sticker shock at the final checkout step.</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div style={{ position: 'relative' }}>
               {/* Visual of the Problem */}
