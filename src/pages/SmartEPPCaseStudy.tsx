@@ -585,13 +585,15 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 7. How Might We's */}
-      <section style={{ padding: '120px 0', background: '#e50914', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', left: '32px', bottom: '32px', transform: 'rotate(-90deg)', transformOrigin: 'left bottom', color: 'rgba(255,255,255,0.4)', letterSpacing: '8px', fontSize: '11px', textTransform: 'uppercase', fontWeight: 500 }}>
+      <section style={{ padding: '120px 0', background: '#050505', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 60%)', borderRadius: '50%', pointerEvents: 'none' }} />
+        
+        <div style={{ position: 'absolute', left: '32px', bottom: '32px', transform: 'rotate(-90deg)', transformOrigin: 'left bottom', color: '#3b82f6', letterSpacing: '8px', fontSize: '11px', textTransform: 'uppercase', fontWeight: 600, opacity: 0.8 }}>
           Explore
         </div>
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
-          <Lightbulb size={40} color="#fff" style={{ margin: '0 auto 24px auto', display: 'block' }} />
-          <h2 style={{ fontSize: '24px', fontWeight: 500, color: '#fff', marginBottom: '32px', letterSpacing: '0.02em' }}>The Core HMW</h2>
+        <div className="container" style={{ maxWidth: '900px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+          <Lightbulb size={40} color="#3b82f6" style={{ margin: '0 auto 24px auto', display: 'block' }} />
+          <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#3b82f6', marginBottom: '32px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>The Core HMW</h2>
           <h3 style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, color: '#fff', lineHeight: 1.5, margin: 0, fontStyle: 'italic', letterSpacing: '-0.01em' }}>
             "How might we allow employees to confidently browse devices within their pre-approved budget, without manual KYC blocking the funnel?"
           </h3>
