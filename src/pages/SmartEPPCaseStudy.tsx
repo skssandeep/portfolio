@@ -585,11 +585,14 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 7. How Might We's */}
-      <section style={{ padding: '80px 0', background: 'var(--accent-color)' }}>
+      <section style={{ padding: '120px 0', background: '#e50914', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', left: '32px', bottom: '32px', transform: 'rotate(-90deg)', transformOrigin: 'left bottom', color: 'rgba(255,255,255,0.4)', letterSpacing: '8px', fontSize: '11px', textTransform: 'uppercase', fontWeight: 500 }}>
+          Explore
+        </div>
         <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
-          <Lightbulb size={48} color="#fff" style={{ margin: '0 auto 24px auto', opacity: 0.9 }} />
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#fff', marginBottom: '24px', letterSpacing: '-0.02em' }}>The Core HMW</h2>
-          <h3 style={{ fontSize: 'clamp(24px, 4vw, 36px)', fontWeight: 400, color: '#fff', lineHeight: 1.4, margin: 0, fontStyle: 'italic' }}>
+          <Lightbulb size={40} color="#fff" style={{ margin: '0 auto 24px auto', display: 'block' }} />
+          <h2 style={{ fontSize: '24px', fontWeight: 500, color: '#fff', marginBottom: '32px', letterSpacing: '0.02em' }}>The Core HMW</h2>
+          <h3 style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, color: '#fff', lineHeight: 1.5, margin: 0, fontStyle: 'italic', letterSpacing: '-0.01em' }}>
             "How might we allow employees to confidently browse devices within their pre-approved budget, without manual KYC blocking the funnel?"
           </h3>
         </div>
