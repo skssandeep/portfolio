@@ -271,7 +271,7 @@ export const SmartEPPCaseStudy = () => {
             {/* The Huge Pull Quote */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ borderLeft: '4px solid #ef4444', paddingLeft: '32px', marginBottom: '64px' }}>
                <h3 style={{ fontSize: '36px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.3, letterSpacing: '-0.02em', margin: 0 }}>
-                 "Enterprises want to offer premium perks, but <span style={{ color: '#ef4444' }}>admin overhead</span> and <span style={{ color: '#ef4444' }}>KYC friction</span> create a deeply broken experience for both sides."
+                 "Enterprises want to offer premium perks, but <span style={{ color: '#ef4444' }}>admin overhead</span> and <span style={{ color: '#ef4444' }}>opaque credit limits</span> create a deeply broken experience for both sides."
                </h3>
             </motion.div>
 
@@ -300,10 +300,6 @@ export const SmartEPPCaseStudy = () => {
                     <Users size={16} /> Employees
                   </h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                    <div>
-                      <h5 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '8px' }}>Manual KYC Friction</h5>
-                      <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Tedious document uploads required before knowing loan approval status.</p>
-                    </div>
                     <div>
                       <h5 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '8px' }}>Opaque Credit Limits</h5>
                       <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Hidden limits leading to massive sticker shock at the final checkout step.</p>
