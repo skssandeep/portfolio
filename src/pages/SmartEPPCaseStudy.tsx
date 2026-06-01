@@ -337,23 +337,49 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
-            <div style={{ background: 'var(--bg-color)', padding: '32px', borderRadius: '24px', border: '1px solid var(--glass-border)', textAlign: 'center' }}>
-              <img src="/images/EPP_CaseStudy_02.png" alt="SSO Auth" style={{ width: '100%', borderRadius: '16px', marginBottom: '24px' }} />
-              <h3 style={{ fontSize: '20px', color: 'var(--text-primary)', marginBottom: '12px' }}>Corporate SSO Auth</h3>
-              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.</p>
+          {/* Unified Solution Showcase */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(20,20,20,0.6)', backdropFilter: 'blur(20px)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', overflow: 'hidden', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+            
+            {/* Feature 1 */}
+            <div style={{ padding: '48px', paddingBottom: 0, borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
+                <Fingerprint size={24} />
+              </div>
+              <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Corporate SSO Auth</h3>
+              <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '40px' }}>Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.</p>
+              
+              <div style={{ marginTop: 'auto', background: 'rgba(255,255,255,0.02)', borderTopLeftRadius: '24px', borderTopRightRadius: '24px', padding: '24px 24px 0 24px', border: '1px solid rgba(255,255,255,0.05)', borderBottom: 'none' }}>
+                <img src="/images/EPP_CaseStudy_02.png" alt="SSO Auth" style={{ width: '100%', display: 'block', borderRadius: '8px 8px 0 0' }} />
+              </div>
             </div>
-            <div style={{ background: 'var(--bg-color)', padding: '32px', borderRadius: '24px', border: '1px solid var(--glass-border)', textAlign: 'center', transform: 'translateY(24px)' }}>
-              <img src="/images/EPP_CaseStudy_03.png" alt="Dynamic Limits" style={{ width: '100%', borderRadius: '16px', marginBottom: '24px' }} />
-              <h3 style={{ fontSize: '20px', color: 'var(--text-primary)', marginBottom: '12px' }}>Dynamic Credit Limits</h3>
-              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.</p>
+
+            {/* Feature 2 */}
+            <div style={{ padding: '48px', paddingBottom: 0, borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
+                <Wallet size={24} />
+              </div>
+              <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Dynamic Credit Limits</h3>
+              <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '40px' }}>Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.</p>
+              
+              <div style={{ marginTop: 'auto', background: 'rgba(255,255,255,0.02)', borderTopLeftRadius: '24px', borderTopRightRadius: '24px', padding: '24px 24px 0 24px', border: '1px solid rgba(255,255,255,0.05)', borderBottom: 'none' }}>
+                <img src="/images/EPP_CaseStudy_03.png" alt="Dynamic Limits" style={{ width: '100%', display: 'block', borderRadius: '8px 8px 0 0' }} />
+              </div>
             </div>
-            <div style={{ background: 'var(--bg-color)', padding: '32px', borderRadius: '24px', border: '1px solid var(--glass-border)', textAlign: 'center' }}>
-              <img src="/images/EPP_CaseStudy_04.png" alt="1-Click Checkout" style={{ width: '100%', borderRadius: '16px', marginBottom: '24px' }} />
-              <h3 style={{ fontSize: '20px', color: 'var(--text-primary)', marginBottom: '12px' }}>1-Click Checkout</h3>
-              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>Automatically routing the first EMI deduction to the next month's payroll, eliminating credit card processing entirely.</p>
+
+            {/* Feature 3 */}
+            <div style={{ padding: '48px', paddingBottom: 0, display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
+                <Zap size={24} />
+              </div>
+              <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>1-Click Checkout</h3>
+              <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '40px' }}>Automatically routing the first EMI deduction to the next month's payroll, eliminating credit card processing entirely.</p>
+              
+              <div style={{ marginTop: 'auto', background: 'rgba(255,255,255,0.02)', borderTopLeftRadius: '24px', borderTopRightRadius: '24px', padding: '24px 24px 0 24px', border: '1px solid rgba(255,255,255,0.05)', borderBottom: 'none' }}>
+                <img src="/images/EPP_CaseStudy_04.png" alt="1-Click Checkout" style={{ width: '100%', display: 'block', borderRadius: '8px 8px 0 0' }} />
+              </div>
             </div>
-          </div>
+
+          </motion.div>
         </div>
       </section>
 
