@@ -345,8 +345,8 @@ export const SmartEPPCaseStudy = () => {
              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '48px' }}>
                 {/* Pillar 1 */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                     <img src="/images/EPP_CaseStudy_02.png" alt="SSO Auth" style={{ width: '100%', borderRadius: '8px', display: 'block' }} />
+                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
+                     <img src="/images/EPP_CaseStudy_02.png" alt="SSO Auth" style={{ width: '100%', maxWidth: '280px', borderRadius: '8px', display: 'block' }} />
                    </div>
                    <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
@@ -359,8 +359,8 @@ export const SmartEPPCaseStudy = () => {
 
                 {/* Pillar 2 */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                     <img src="/images/EPP_CaseStudy_03.png" alt="Dynamic Limits" style={{ width: '100%', borderRadius: '8px', display: 'block' }} />
+                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
+                     <img src="/images/EPP_CaseStudy_03.png" alt="Dynamic Limits" style={{ width: '100%', maxWidth: '280px', borderRadius: '8px', display: 'block' }} />
                    </div>
                    <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
@@ -373,8 +373,8 @@ export const SmartEPPCaseStudy = () => {
 
                 {/* Pillar 3 */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                     <img src="/images/EPP_CaseStudy_04.png" alt="1-Click Checkout" style={{ width: '100%', borderRadius: '8px', display: 'block' }} />
+                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
+                     <img src="/images/EPP_CaseStudy_04.png" alt="1-Click Checkout" style={{ width: '100%', maxWidth: '280px', borderRadius: '8px', display: 'block' }} />
                    </div>
                    <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
