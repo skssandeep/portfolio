@@ -254,93 +254,77 @@ export const SmartEPPCaseStudy = () => {
 
 
       {/* 3. Problem */}
-      <section style={{ padding: '100px 0' }}>
+      <section style={{ padding: '120px 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
-              <AlertCircle size={16} /> The Problem
-            </div>
-            <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>A Two-Sided Dilemma</h2>
-            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: '0 auto', maxWidth: '700px' }}>
-              Traditional Employee Purchase Programs (EPPs) were fundamentally broken for both the enterprises trying to offer them and the employees trying to use them.
-            </p>
-          </div>
-
-          <div style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'auto auto', gap: '24px' }}>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '100px', alignItems: 'start' }}>
             
-            {/* Bento 1: Enterprise Budgets (Wide, Top Left) */}
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} style={{ gridColumn: '1 / 3', gridRow: '1 / 2', background: 'rgba(30,30,30,0.5)', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '48px' }}>
-               <div style={{ flex: 1 }}>
-                 <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <Building2 size={16} /> Enterprise Budgets
-                 </h4>
-                 <h5 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.5px' }}>Limited Funds</h5>
-                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Unable to fund premium perks upfront, leading to generic offerings.</p>
-               </div>
+            {/* Sticky Left Sidebar */}
+            <div style={{ position: 'sticky', top: '120px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#ef4444', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                  <AlertCircle size={16} /> The Problem
+                </div>
+                <h2 style={{ fontSize: '48px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+                  A system designed to fail.
+                </h2>
+                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                  Traditional Employee Purchase Programs (EPPs) were fundamentally broken, creating immense friction for both the enterprises offering them and the employees using them.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Scrolling Right Content - Swiss Poster Style */}
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
                
-               {/* Horizontal CSS Bar Chart */}
-               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '16px', paddingLeft: '48px', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '8px' }}><span>Requested Budget</span><span>100%</span></div>
-                    <div style={{ height: '12px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '100%', height: '100%', background: 'rgba(255,255,255,0.2)' }}/></div>
+               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '48px', paddingBottom: '64px' }}>
+                  <div style={{ display: 'flex', gap: '48px' }}>
+                     <div style={{ fontSize: '120px', fontWeight: 700, color: 'rgba(255,255,255,0.03)', lineHeight: 0.8, letterSpacing: '-0.05em', userSelect: 'none' }}>01</div>
+                     <div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px', fontWeight: 600 }}>
+                          <Building2 size={14}/> Enterprise & HR
+                        </div>
+                        <h3 style={{ fontSize: '32px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>Limited Budgets</h3>
+                        <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '500px', margin: 0 }}>
+                          Companies are unable to fund premium perks upfront, leading them to offer generic, uninspiring alternatives that fail to differentiate their employer brand.
+                        </p>
+                     </div>
                   </div>
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#ef4444', fontWeight: 600, marginBottom: '8px' }}><span>Approved Funds</span><span>30%</span></div>
-                    <div style={{ height: '12px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '30%', height: '100%', background: '#ef4444', boxShadow: '0 0 20px rgba(239,68,68,0.4)' }}/></div>
-                  </div>
-               </div>
-            </motion.div>
+               </motion.div>
 
-            {/* Bento 2: Admin Overhead (Wide, Bottom Left) */}
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ gridColumn: '1 / 3', gridRow: '2 / 3', background: 'rgba(30,30,30,0.5)', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '48px' }}>
-               <div style={{ flex: 1 }}>
-                 <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <Clock size={16} /> Admin Overhead
-                 </h4>
-                 <h5 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.5px' }}>Massive Time Sink</h5>
-                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Manual tracking and multi-stage approvals severely delay benefit delivery.</p>
-               </div>
-               
-               {/* Minimalist Grid Chart */}
-               <div style={{ flex: 1, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', paddingLeft: '48px', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <div style={{ fontSize: '24px', fontWeight: 600, color: '#ef4444' }}>75%</div>
-                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>Manual Tracking</div>
+               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '48px', paddingBottom: '64px' }}>
+                  <div style={{ display: 'flex', gap: '48px' }}>
+                     <div style={{ fontSize: '120px', fontWeight: 700, color: 'rgba(255,255,255,0.03)', lineHeight: 0.8, letterSpacing: '-0.05em', userSelect: 'none' }}>02</div>
+                     <div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px', fontWeight: 600 }}>
+                          <Clock size={14}/> Enterprise & HR
+                        </div>
+                        <h3 style={{ fontSize: '32px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>Admin Overhead</h3>
+                        <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '500px', margin: 0 }}>
+                          Managing an EPP internally involves manual tracking and multi-stage approvals. This severe administrative burden slows benefit delivery to a crawl.
+                        </p>
+                     </div>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <div style={{ fontSize: '24px', fontWeight: 600, color: '#f59e0b' }}>20%</div>
-                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>Approvals</div>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <div style={{ fontSize: '24px', fontWeight: 600, color: '#10b981' }}>5%</div>
-                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>Strategic HR</div>
-                  </div>
-               </div>
-            </motion.div>
+               </motion.div>
 
-            {/* Bento 3: Employee Friction (Tall, Right) */}
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ gridColumn: '3 / 4', gridRow: '1 / 3', background: 'linear-gradient(145deg, rgba(30,30,30,0.8), rgba(20,20,20,0.9))', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
-               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '40%', background: 'radial-gradient(circle at 50% 0%, rgba(239,68,68,0.15) 0%, transparent 70%)' }} />
-               <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 'auto', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Users size={16} /> Employee UX
-               </h4>
-               
-               <div style={{ margin: '64px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                  <div style={{ fontSize: '80px', fontWeight: 700, color: '#ef4444', lineHeight: 1, display: 'flex', alignItems: 'center', gap: '12px', textShadow: '0 0 40px rgba(239,68,68,0.3)' }}>
-                    <AlertCircle size={48} /> ?
+               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '48px', paddingBottom: '64px' }}>
+                  <div style={{ display: 'flex', gap: '48px' }}>
+                     <div style={{ fontSize: '120px', fontWeight: 700, color: '#ef4444', opacity: 0.15, lineHeight: 0.8, letterSpacing: '-0.05em', userSelect: 'none' }}>03</div>
+                     <div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ef4444', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px', fontWeight: 600 }}>
+                          <Users size={14}/> Employee UX
+                        </div>
+                        <h3 style={{ fontSize: '32px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>Opaque Credit Limits</h3>
+                        <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '500px', margin: 0 }}>
+                          Employees go through the entire funnel blind. Hidden credit limits prevent them from knowing what they can actually afford, leading to massive sticker shock at the final checkout step.
+                        </p>
+                     </div>
                   </div>
-                  <div style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '8px 16px', borderRadius: '100px', fontSize: '12px', fontWeight: 700, letterSpacing: '1px', marginTop: '24px', border: '1px solid rgba(239,68,68,0.2)' }}>
-                    OPAQUE LIMITS
-                  </div>
-               </div>
+               </motion.div>
 
-               <div>
-                 <h5 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.5px' }}>Massive Sticker Shock</h5>
-                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Hidden credit limits prevent employees from knowing what they can afford until the final checkout step.</p>
-               </div>
-            </motion.div>
-
+            </div>
           </div>
+
         </div>
       </section>
 
