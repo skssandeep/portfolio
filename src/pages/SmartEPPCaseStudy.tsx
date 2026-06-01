@@ -266,48 +266,49 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1px 1fr', gap: '48px', marginTop: '64px', alignItems: 'start' }}>
+          <div style={{ marginTop: '80px', maxWidth: '900px', margin: '80px auto 0' }}>
             
-            {/* Enterprise / HR Side */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-                  <div style={{ width: '56px', height: '56px', borderRadius: '16px', background: 'rgba(255,255,255,0.03)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <Building2 size={24} color="var(--text-primary)" />
+            {/* The Huge Pull Quote */}
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ borderLeft: '4px solid #ef4444', paddingLeft: '32px', marginBottom: '64px' }}>
+               <h3 style={{ fontSize: '36px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.3, letterSpacing: '-0.02em', margin: 0 }}>
+                 "Enterprises want to offer premium perks, but <span style={{ color: '#ef4444' }}>admin overhead</span> and <span style={{ color: '#ef4444' }}>KYC friction</span> create a deeply broken experience for both sides."
+               </h3>
+            </motion.div>
+
+            {/* The Breakdown */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px' }}>
+               {/* HR Side */}
+               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+                  <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Building2 size={16} /> Enterprise & HR
+                  </h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                    <div>
+                      <h5 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '8px' }}>Limited Budgets</h5>
+                      <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Forced to cut back on meaningful benefits, failing to differentiate the employer brand.</p>
+                    </div>
+                    <div>
+                      <h5 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '8px' }}>Admin Overhead</h5>
+                      <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Manual tracking and approvals significantly slow down benefit delivery.</p>
+                    </div>
                   </div>
-                  <h3 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>Enterprise & HR</h3>
-               </div>
-               
-               <motion.div whileHover={{ y: -2 }} style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.2s' }}>
-                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Limited Budgets</h4>
-                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Forced to cut back on meaningful benefits, failing to differentiate the employer brand.</p>
                </motion.div>
 
-               <motion.div whileHover={{ y: -2 }} style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.2s' }}>
-                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Admin Overhead</h4>
-                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Manual tracking and approvals significantly slow down benefit delivery.</p>
-               </motion.div>
-            </div>
-
-            {/* Divider */}
-            <div style={{ width: '1px', height: '100%', background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.1) 80%, transparent)' }} />
-
-            {/* Employee Side */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-                  <div style={{ width: '56px', height: '56px', borderRadius: '16px', background: 'rgba(255,255,255,0.03)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <Users size={24} color="var(--text-primary)" />
+               {/* Employee Side */}
+               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+                  <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Users size={16} /> Employees
+                  </h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                    <div>
+                      <h5 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '8px' }}>Manual KYC Friction</h5>
+                      <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Tedious document uploads required before knowing loan approval status.</p>
+                    </div>
+                    <div>
+                      <h5 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '8px' }}>Opaque Credit Limits</h5>
+                      <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Hidden limits leading to massive sticker shock at the final checkout step.</p>
+                    </div>
                   </div>
-                  <h3 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>Employees</h3>
-               </div>
-               
-               <motion.div whileHover={{ y: -2 }} style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.2s' }}>
-                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Manual KYC Friction</h4>
-                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Tedious document uploads required before knowing loan approval status.</p>
-               </motion.div>
-
-               <motion.div whileHover={{ y: -2 }} style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.2s' }}>
-                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Opaque Credit Limits</h4>
-                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Hidden limits leading to massive sticker shock at the final checkout step.</p>
                </motion.div>
             </div>
 
