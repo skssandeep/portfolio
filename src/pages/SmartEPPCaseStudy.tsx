@@ -179,15 +179,15 @@ export const SmartEPPCaseStudy = () => {
 
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (modalIndex !== null) {
-      setModalIndex((modalIndex + 1) % modalImages.length);
+    if (modalIndex !== null && modalIndex < modalImages.length - 1) {
+      setModalIndex(modalIndex + 1);
     }
   };
 
   const handlePrevImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (modalIndex !== null) {
-      setModalIndex((modalIndex - 1 + modalImages.length) % modalImages.length);
+    if (modalIndex !== null && modalIndex > 0) {
+      setModalIndex(modalIndex - 1);
     }
   };
 
@@ -198,10 +198,10 @@ export const SmartEPPCaseStudy = () => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (modalIndex === null) return;
-      if (e.key === 'ArrowRight') {
-        setModalIndex((prev) => (prev !== null ? (prev + 1) % modalImages.length : null));
-      } else if (e.key === 'ArrowLeft') {
-        setModalIndex((prev) => (prev !== null ? (prev - 1 + modalImages.length) % modalImages.length : null));
+      if (e.key === 'ArrowRight' && modalIndex < modalImages.length - 1) {
+        setModalIndex(modalIndex + 1);
+      } else if (e.key === 'ArrowLeft' && modalIndex > 0) {
+        setModalIndex(modalIndex - 1);
       } else if (e.key === 'Escape') {
         setModalIndex(null);
       }
@@ -245,14 +245,16 @@ export const SmartEPPCaseStudy = () => {
             </button>
 
             {/* Prev Button */}
-            <button 
-              onClick={handlePrevImage}
-              style={{ position: 'absolute', left: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000 }}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
-            >
-              <ChevronLeft size={32} />
-            </button>
+            {modalIndex > 0 && (
+              <button 
+                onClick={handlePrevImage}
+                style={{ position: 'absolute', left: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000 }}
+                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+              >
+                <ChevronLeft size={32} />
+              </button>
+            )}
 
             <motion.img 
                key={modalIndex} // Add key to trigger animation on index change
@@ -266,14 +268,16 @@ export const SmartEPPCaseStudy = () => {
             />
 
             {/* Next Button */}
-            <button 
-              onClick={handleNextImage}
-              style={{ position: 'absolute', right: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000 }}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
-            >
-              <ChevronRight size={32} />
-            </button>
+            {modalIndex < modalImages.length - 1 && (
+              <button 
+                onClick={handleNextImage}
+                style={{ position: 'absolute', right: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000 }}
+                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+              >
+                <ChevronRight size={32} />
+              </button>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
