@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
 const SmartEPPPrototype = () => {
@@ -131,6 +131,7 @@ const SmartEPPPrototype = () => {
 };
 
 export const SmartEPPCaseStudy = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -139,6 +140,48 @@ export const SmartEPPCaseStudy = () => {
   return (
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px' }}>
       
+      {/* Fullscreen Image Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }} 
+            onClick={() => setSelectedImage(null)}
+            style={{ 
+              position: 'fixed', 
+              inset: 0, 
+              zIndex: 9999, 
+              background: 'rgba(0,0,0,0.9)', 
+              backdropFilter: 'blur(10px)', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              padding: '40px',
+              cursor: 'zoom-out'
+            }}
+          >
+            <button 
+              onClick={() => setSelectedImage(null)}
+              style={{ position: 'absolute', top: '40px', right: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '12px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease' }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+            >
+              <XCircle size={32} />
+            </button>
+            <motion.img 
+               initial={{ scale: 0.9, opacity: 0, y: 20 }} 
+               animate={{ scale: 1, opacity: 1, y: 0 }} 
+               exit={{ scale: 0.9, opacity: 0, y: 20 }}
+               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+               src={selectedImage} 
+               style={{ maxHeight: '90vh', maxWidth: '90vw', objectFit: 'contain', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))' }} 
+               onClick={(e) => e.stopPropagation()} 
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* 1 & 2. Out-of-the-box Hero Section */}
       <section style={{ width: '100%', minHeight: '100vh', paddingTop: '140px', paddingBottom: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#0a0a0a' }}>
         
@@ -346,7 +389,14 @@ export const SmartEPPCaseStudy = () => {
                 {/* Pillar 1 */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                    <div style={{ background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
-                     <img src="/images/EPP_CaseStudy_02.png" alt="SSO Auth" style={{ width: '100%', maxWidth: '280px', borderRadius: '8px', display: 'block' }} />
+                     <img 
+                        src="/images/EPP_CaseStudy_02.png" 
+                        alt="SSO Auth" 
+                        style={{ width: '100%', maxWidth: '280px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
+                        onClick={() => setSelectedImage("/images/EPP_CaseStudy_02.png")}
+                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                     />
                    </div>
                    <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
@@ -360,7 +410,14 @@ export const SmartEPPCaseStudy = () => {
                 {/* Pillar 2 */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                    <div style={{ background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
-                     <img src="/images/EPP_CaseStudy_03.png" alt="Dynamic Limits" style={{ width: '100%', maxWidth: '280px', borderRadius: '8px', display: 'block' }} />
+                     <img 
+                        src="/images/EPP_CaseStudy_03.png" 
+                        alt="Dynamic Limits" 
+                        style={{ width: '100%', maxWidth: '280px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
+                        onClick={() => setSelectedImage("/images/EPP_CaseStudy_03.png")}
+                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                     />
                    </div>
                    <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
@@ -374,7 +431,14 @@ export const SmartEPPCaseStudy = () => {
                 {/* Pillar 3 */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                    <div style={{ background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
-                     <img src="/images/EPP_CaseStudy_04.png" alt="1-Click Checkout" style={{ width: '100%', maxWidth: '280px', borderRadius: '8px', display: 'block' }} />
+                     <img 
+                        src="/images/EPP_CaseStudy_04.png" 
+                        alt="1-Click Checkout" 
+                        style={{ width: '100%', maxWidth: '280px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
+                        onClick={() => setSelectedImage("/images/EPP_CaseStudy_04.png")}
+                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                     />
                    </div>
                    <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
