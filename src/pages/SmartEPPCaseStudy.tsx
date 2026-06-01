@@ -266,64 +266,78 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+          <div style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'auto auto', gap: '24px' }}>
             
-            {/* Widget 1: Budget Deficit */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(30,30,30,0.5)', borderRadius: '24px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
-               <h4 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Building2 size={18} color="var(--text-secondary)" /> Enterprise Budgets
+            {/* Bento 1: Employee Friction (Tall) */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} style={{ gridColumn: '1 / 2', gridRow: '1 / 3', background: 'linear-gradient(145deg, rgba(30,30,30,0.8), rgba(20,20,20,0.9))', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
+               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '40%', background: 'radial-gradient(circle at 50% 0%, rgba(239,68,68,0.15) 0%, transparent 70%)' }} />
+               <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 'auto', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Users size={16} /> Employee UX
                </h4>
-               {/* CSS Bar Chart */}
-               <div style={{ display: 'flex', alignItems: 'flex-end', gap: '16px', height: '120px', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                  <div style={{ flex: 1, background: 'rgba(255,255,255,0.1)', height: '100%', borderRadius: '8px 8px 0 0', position: 'relative' }}>
-                    <span style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', fontSize: '12px', color: 'var(--text-secondary)' }}>Req.</span>
+               
+               <div style={{ margin: '64px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ fontSize: '80px', fontWeight: 700, color: '#ef4444', lineHeight: 1, display: 'flex', alignItems: 'center', gap: '12px', textShadow: '0 0 40px rgba(239,68,68,0.3)' }}>
+                    <AlertCircle size={48} /> ?
                   </div>
-                  <div style={{ flex: 1, background: '#ef4444', height: '30%', borderRadius: '8px 8px 0 0', position: 'relative' }}>
-                    <span style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', fontSize: '12px', color: '#ef4444', fontWeight: 'bold' }}>Appr.</span>
+                  <div style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '8px 16px', borderRadius: '100px', fontSize: '12px', fontWeight: 700, letterSpacing: '1px', marginTop: '24px', border: '1px solid rgba(239,68,68,0.2)' }}>
+                    OPAQUE LIMITS
                   </div>
                </div>
-               <h5 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Limited Funds</h5>
-               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Unable to fund premium perks, leading to generic offerings.</p>
+
+               <div>
+                 <h5 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.5px' }}>Massive Sticker Shock</h5>
+                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Hidden credit limits prevent employees from knowing what they can afford until the final checkout step.</p>
+               </div>
             </motion.div>
 
-            {/* Widget 2: Admin Overhead */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(30,30,30,0.5)', borderRadius: '24px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
-               <h4 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Clock size={18} color="var(--text-secondary)" /> Admin Overhead
-               </h4>
-               {/* Progress Bar Chart */}
-               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+            {/* Bento 2: Enterprise Budgets (Wide) */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ gridColumn: '2 / 4', gridRow: '1 / 2', background: 'rgba(30,30,30,0.5)', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '48px' }}>
+               <div style={{ flex: 1 }}>
+                 <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Building2 size={16} /> Enterprise Budgets
+                 </h4>
+                 <h5 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.5px' }}>Limited Funds</h5>
+                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Unable to fund premium perks upfront, leading to generic offerings.</p>
+               </div>
+               
+               {/* Horizontal CSS Bar Chart */}
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '16px', paddingLeft: '48px', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
                   <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '4px' }}><span>Manual Tracking</span><span>75%</span></div>
-                    <div style={{ height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '75%', height: '100%', background: '#ef4444' }}/></div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '8px' }}><span>Requested Budget</span><span>100%</span></div>
+                    <div style={{ height: '12px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '100%', height: '100%', background: 'rgba(255,255,255,0.2)' }}/></div>
                   </div>
                   <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '4px' }}><span>Approvals</span><span>20%</span></div>
-                    <div style={{ height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '20%', height: '100%', background: '#f59e0b' }}/></div>
-                  </div>
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '4px' }}><span>Strategic Work</span><span>5%</span></div>
-                    <div style={{ height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '5%', height: '100%', background: '#10b981' }}/></div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#ef4444', fontWeight: 600, marginBottom: '8px' }}><span>Approved Funds</span><span>30%</span></div>
+                    <div style={{ height: '12px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '30%', height: '100%', background: '#ef4444', boxShadow: '0 0 20px rgba(239,68,68,0.4)' }}/></div>
                   </div>
                </div>
-               <h5 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Time Sink</h5>
-               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Manual tracking severely delays benefit delivery.</p>
             </motion.div>
 
-            {/* Widget 3: Employee Friction */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(30,30,30,0.5)', borderRadius: '24px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
-               <h4 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Users size={18} color="var(--text-secondary)" /> Employee UX
-               </h4>
-               {/* KPI Card */}
-               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '120px', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                  <div style={{ fontSize: '48px', fontWeight: 700, color: '#ef4444', lineHeight: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <AlertCircle size={32} /> ?
-                  </div>
-                  <div style={{ fontSize: '12px', color: 'var(--text-secondary)', letterSpacing: '1px', marginTop: '8px', textTransform: 'uppercase', textAlign: 'center' }}>Opaque limit</div>
+            {/* Bento 3: Admin Overhead (Wide) */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ gridColumn: '2 / 4', gridRow: '2 / 3', background: 'rgba(30,30,30,0.5)', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '48px' }}>
+               <div style={{ flex: 1 }}>
+                 <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Clock size={16} /> Admin Overhead
+                 </h4>
+                 <h5 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.5px' }}>Massive Time Sink</h5>
+                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Manual tracking and multi-stage approvals severely delay benefit delivery.</p>
                </div>
-               <h5 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Opaque Limits</h5>
-               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Hidden credit limits lead to massive sticker shock.</p>
+               
+               {/* Minimalist Grid Chart */}
+               <div style={{ flex: 1, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', paddingLeft: '48px', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ fontSize: '24px', fontWeight: 600, color: '#ef4444' }}>75%</div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>Manual Tracking</div>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ fontSize: '24px', fontWeight: 600, color: '#f59e0b' }}>20%</div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>Approvals</div>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ fontSize: '24px', fontWeight: 600, color: '#10b981' }}>5%</div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>Strategic HR</div>
+                  </div>
+               </div>
             </motion.div>
 
           </div>
