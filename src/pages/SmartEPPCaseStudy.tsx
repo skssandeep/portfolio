@@ -194,7 +194,7 @@ export const SmartEPPCaseStudy = () => {
         {/* Massive Typography */}
         <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', marginBottom: '-6vw', width: '100%', padding: '0 24px' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div style={{ display: 'inline-flex', background: 'rgba(229, 9, 20, 0.15)', color: 'var(--accent-color)', padding: '8px 24px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '3px', marginBottom: '24px', border: '1px solid rgba(229, 9, 20, 0.3)' }}>
+            <div style={{ display: 'inline-flex', background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-secondary)', padding: '8px 24px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '3px', marginBottom: '24px', border: '1px solid rgba(255, 255, 255, 0.15)' }}>
               B2B2C FINTECH CASE STUDY
             </div>
             <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 10vw, 8rem)', fontWeight: 800, color: '#fff', margin: '0', letterSpacing: '-0.04em', lineHeight: 1, opacity: 0.95, whiteSpace: 'nowrap' }}>
@@ -277,7 +277,7 @@ export const SmartEPPCaseStudy = () => {
           
           {/* Left Content */}
           <div style={{ padding: '80px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 2 }}>
-            <div style={{ display: 'inline-flex', background: 'rgba(229, 9, 20, 0.15)', color: 'var(--accent-color)', padding: '6px 16px', borderRadius: '100px', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', marginBottom: '24px', border: '1px solid rgba(229, 9, 20, 0.3)', alignSelf: 'flex-start' }}>
+            <div style={{ display: 'inline-flex', background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-secondary)', padding: '6px 16px', borderRadius: '100px', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', marginBottom: '24px', border: '1px solid rgba(255, 255, 255, 0.15)', alignSelf: 'flex-start' }}>
               B2B2C FINTECH CASE STUDY
             </div>
             
