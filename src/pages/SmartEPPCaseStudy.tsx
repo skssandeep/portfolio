@@ -268,30 +268,8 @@ export const SmartEPPCaseStudy = () => {
 
           <div style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'auto auto', gap: '24px' }}>
             
-            {/* Bento 1: Employee Friction (Tall) */}
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} style={{ gridColumn: '1 / 2', gridRow: '1 / 3', background: 'linear-gradient(145deg, rgba(30,30,30,0.8), rgba(20,20,20,0.9))', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
-               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '40%', background: 'radial-gradient(circle at 50% 0%, rgba(239,68,68,0.15) 0%, transparent 70%)' }} />
-               <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 'auto', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Users size={16} /> Employee UX
-               </h4>
-               
-               <div style={{ margin: '64px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                  <div style={{ fontSize: '80px', fontWeight: 700, color: '#ef4444', lineHeight: 1, display: 'flex', alignItems: 'center', gap: '12px', textShadow: '0 0 40px rgba(239,68,68,0.3)' }}>
-                    <AlertCircle size={48} /> ?
-                  </div>
-                  <div style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '8px 16px', borderRadius: '100px', fontSize: '12px', fontWeight: 700, letterSpacing: '1px', marginTop: '24px', border: '1px solid rgba(239,68,68,0.2)' }}>
-                    OPAQUE LIMITS
-                  </div>
-               </div>
-
-               <div>
-                 <h5 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.5px' }}>Massive Sticker Shock</h5>
-                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Hidden credit limits prevent employees from knowing what they can afford until the final checkout step.</p>
-               </div>
-            </motion.div>
-
-            {/* Bento 2: Enterprise Budgets (Wide) */}
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ gridColumn: '2 / 4', gridRow: '1 / 2', background: 'rgba(30,30,30,0.5)', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '48px' }}>
+            {/* Bento 1: Enterprise Budgets (Wide, Top Left) */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} style={{ gridColumn: '1 / 3', gridRow: '1 / 2', background: 'rgba(30,30,30,0.5)', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '48px' }}>
                <div style={{ flex: 1 }}>
                  <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <Building2 size={16} /> Enterprise Budgets
@@ -313,8 +291,8 @@ export const SmartEPPCaseStudy = () => {
                </div>
             </motion.div>
 
-            {/* Bento 3: Admin Overhead (Wide) */}
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ gridColumn: '2 / 4', gridRow: '2 / 3', background: 'rgba(30,30,30,0.5)', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '48px' }}>
+            {/* Bento 2: Admin Overhead (Wide, Bottom Left) */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ gridColumn: '1 / 3', gridRow: '2 / 3', background: 'rgba(30,30,30,0.5)', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '48px' }}>
                <div style={{ flex: 1 }}>
                  <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <Clock size={16} /> Admin Overhead
@@ -337,6 +315,28 @@ export const SmartEPPCaseStudy = () => {
                     <div style={{ fontSize: '24px', fontWeight: 600, color: '#10b981' }}>5%</div>
                     <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>Strategic HR</div>
                   </div>
+               </div>
+            </motion.div>
+
+            {/* Bento 3: Employee Friction (Tall, Right) */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ gridColumn: '3 / 4', gridRow: '1 / 3', background: 'linear-gradient(145deg, rgba(30,30,30,0.8), rgba(20,20,20,0.9))', borderRadius: '32px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
+               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '40%', background: 'radial-gradient(circle at 50% 0%, rgba(239,68,68,0.15) 0%, transparent 70%)' }} />
+               <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 'auto', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Users size={16} /> Employee UX
+               </h4>
+               
+               <div style={{ margin: '64px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ fontSize: '80px', fontWeight: 700, color: '#ef4444', lineHeight: 1, display: 'flex', alignItems: 'center', gap: '12px', textShadow: '0 0 40px rgba(239,68,68,0.3)' }}>
+                    <AlertCircle size={48} /> ?
+                  </div>
+                  <div style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '8px 16px', borderRadius: '100px', fontSize: '12px', fontWeight: 700, letterSpacing: '1px', marginTop: '24px', border: '1px solid rgba(239,68,68,0.2)' }}>
+                    OPAQUE LIMITS
+                  </div>
+               </div>
+
+               <div>
+                 <h5 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.5px' }}>Massive Sticker Shock</h5>
+                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Hidden credit limits prevent employees from knowing what they can afford until the final checkout step.</p>
                </div>
             </motion.div>
 
