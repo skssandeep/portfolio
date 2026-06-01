@@ -439,12 +439,14 @@ export const SmartEPPCaseStudy = () => {
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                      />
                    </div>
-                   <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                        <Fingerprint size={20} color="#10b981" />
-                        <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0 }}>Corporate SSO Auth</h4>
+                   <div style={{ padding: '24px', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', flexGrow: 1 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                        <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(16, 185, 129, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'inset 0 0 0 1px rgba(16, 185, 129, 0.2)' }}>
+                          <Fingerprint size={20} color="#10b981" />
+                        </div>
+                        <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0, letterSpacing: '-0.01em' }}>Corporate SSO Auth</h4>
                       </div>
-                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.</p>
+                      <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, margin: 0 }}>Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.</p>
                    </div>
                 </div>
 
@@ -460,12 +462,14 @@ export const SmartEPPCaseStudy = () => {
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                      />
                    </div>
-                   <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                        <Wallet size={20} color="#10b981" />
-                        <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0 }}>Dynamic Limits</h4>
+                   <div style={{ padding: '24px', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', flexGrow: 1 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                        <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(16, 185, 129, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'inset 0 0 0 1px rgba(16, 185, 129, 0.2)' }}>
+                          <Wallet size={20} color="#10b981" />
+                        </div>
+                        <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0, letterSpacing: '-0.01em' }}>Dynamic Limits</h4>
                       </div>
-                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.</p>
+                      <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, margin: 0 }}>Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.</p>
                    </div>
                 </div>
 
@@ -481,12 +485,14 @@ export const SmartEPPCaseStudy = () => {
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                      />
                    </div>
-                   <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                        <Zap size={20} color="#10b981" />
-                        <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0 }}>1-Click Checkout</h4>
+                   <div style={{ padding: '24px', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', flexGrow: 1 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                        <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(16, 185, 129, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'inset 0 0 0 1px rgba(16, 185, 129, 0.2)' }}>
+                          <Zap size={20} color="#10b981" />
+                        </div>
+                        <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0, letterSpacing: '-0.01em' }}>1-Click Checkout</h4>
                       </div>
-                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Automatically routing the first EMI deduction to the next month's payroll, eliminating credit cards entirely.</p>
+                      <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, margin: 0 }}>Automatically routing the first EMI deduction to the next month's payroll, eliminating credit cards entirely.</p>
                    </div>
                 </div>
              </div>
