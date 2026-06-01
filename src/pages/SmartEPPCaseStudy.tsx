@@ -814,6 +814,7 @@ export const SmartEPPCaseStudy = () => {
                 }}
                 src={src} 
                 alt={`Smart EPP Screen ${idx + 1}`} 
+                draggable={false}
                 style={{ 
                   height: isGridView ? 'auto' : '640px', 
                   width: isGridView ? '100%' : 'auto', 
@@ -825,7 +826,9 @@ export const SmartEPPCaseStudy = () => {
                   boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
                   background: '#0a0a0a',
                   pointerEvents: 'auto',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none'
                 }} 
               />
             ))}
