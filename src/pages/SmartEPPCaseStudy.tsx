@@ -486,59 +486,68 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 5. Research & 6. Analysis */}
-      <section style={{ padding: '100px 0' }}>
-        <div className="container" style={{ maxWidth: '1000px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px' }}>
+      <section style={{ padding: '120px 0', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
             
             {/* Research */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-                <Search size={28} color="var(--accent-color)" />
-                <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', letterSpacing: '-0.02em', margin: 0 }}>Research</h2>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+                <Search size={28} color="#ef4444" />
+                <h2 style={{ fontSize: '32px', fontWeight: 500, color: '#fff', letterSpacing: '-0.02em', margin: 0 }}>Research</h2>
               </div>
-              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ fontFamily: "'Space Mono', 'JetBrains Mono', monospace", fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '40px' }}>
                 To understand why employees were abandoning their carts, we conducted mixed-methods research including:
               </p>
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: 0, margin: 0, listStyle: 'none' }}>
-                <li style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ color: 'var(--accent-color)', fontWeight: 700, fontSize: '24px' }}>40+</div>
-                  <div style={{ color: 'var(--text-primary)', fontSize: '14px' }}>User Interviews with corporate employees across 3 partner companies.</div>
-                </li>
-                <li style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ color: 'var(--accent-color)', fontWeight: 700, fontSize: '24px' }}>15k</div>
-                  <div style={{ color: 'var(--text-primary)', fontSize: '14px' }}>Funnel analytics data points analyzed via Mixpanel.</div>
-                </li>
-                <li style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ color: 'var(--accent-color)', fontWeight: 700, fontSize: '24px' }}>3</div>
-                  <div style={{ color: 'var(--text-primary)', fontSize: '14px' }}>Competitor EPP platforms audited for UX teardowns.</div>
-                </li>
-              </ul>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {/* Stat 1 */}
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '24px 32px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '24px', transition: 'all 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}>
+                  <div style={{ color: '#ef4444', fontWeight: 600, fontSize: '32px', minWidth: '70px' }}>40+</div>
+                  <div style={{ fontFamily: "'Space Mono', 'JetBrains Mono', monospace", color: 'rgba(255,255,255,0.8)', fontSize: '13px', lineHeight: 1.6 }}>User Interviews with corporate employees across 3 partner companies.</div>
+                </div>
+                
+                {/* Stat 2 */}
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '24px 32px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '24px', transition: 'all 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}>
+                  <div style={{ color: '#ef4444', fontWeight: 600, fontSize: '32px', minWidth: '70px' }}>15k</div>
+                  <div style={{ fontFamily: "'Space Mono', 'JetBrains Mono', monospace", color: 'rgba(255,255,255,0.8)', fontSize: '13px', lineHeight: 1.6 }}>Funnel analytics data points analyzed via Mixpanel.</div>
+                </div>
+                
+                {/* Stat 3 */}
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '24px 32px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '24px', transition: 'all 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}>
+                  <div style={{ color: '#ef4444', fontWeight: 600, fontSize: '32px', minWidth: '70px' }}>3</div>
+                  <div style={{ fontFamily: "'Space Mono', 'JetBrains Mono', monospace", color: 'rgba(255,255,255,0.8)', fontSize: '13px', lineHeight: 1.6 }}>Competitor EPP platforms audited for UX teardowns.</div>
+                </div>
+              </div>
             </div>
 
             {/* Analysis */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-                <TrendingUp size={28} color="var(--accent-color)" />
-                <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', letterSpacing: '-0.02em', margin: 0 }}>Analysis</h2>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+                <TrendingUp size={28} color="#ef4444" />
+                <h2 style={{ fontSize: '32px', fontWeight: 500, color: '#fff', letterSpacing: '-0.02em', margin: 0 }}>Analysis</h2>
               </div>
-              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+              <p style={{ fontFamily: "'Space Mono', 'JetBrains Mono', monospace", fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '40px' }}>
                 Synthesizing our research revealed three critical insights that redefined our entire approach to the product logic:
               </p>
               
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <div>
-                  <h4 style={{ color: 'var(--text-primary)', fontSize: '16px', marginBottom: '8px' }}>Insight 1: The "App Fatigue" Hurdle</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>Users purchase a laptop once every 3 years. They explicitly refused to download a dedicated native app for a rare transaction.</p>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                {/* Insight 1 */}
+                <div style={{ paddingBottom: '32px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 500, marginBottom: '12px' }}>Insight 1: The "App Fatigue" Hurdle</h4>
+                  <p style={{ fontFamily: "'Space Mono', 'JetBrains Mono', monospace", color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.7, margin: 0 }}>Users purchase a laptop once every 3 years. They explicitly refused to download a dedicated native app for a rare transaction.</p>
                 </div>
-                <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
-                <div>
-                  <h4 style={{ color: 'var(--text-primary)', fontSize: '16px', marginBottom: '8px' }}>Insight 2: KYC is a Funnel Killer</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>Asking for PAN numbers and salary slips upfront caused immediate mistrust. Users felt they were applying for a mortgage just to browse phones.</p>
+                
+                {/* Insight 2 */}
+                <div style={{ padding: '32px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 500, marginBottom: '12px' }}>Insight 2: KYC is a Funnel Killer</h4>
+                  <p style={{ fontFamily: "'Space Mono', 'JetBrains Mono', monospace", color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.7, margin: 0 }}>Asking for PAN numbers and salary slips upfront caused immediate mistrust. Users felt they were applying for a mortgage just to browse phones.</p>
                 </div>
-                <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
-                <div>
-                  <h4 style={{ color: 'var(--text-primary)', fontSize: '16px', marginBottom: '8px' }}>Insight 3: The "Blind Cart" Effect</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>Users didn't know their approved EMI limit while browsing. When they finally reached checkout and saw they didn't qualify for the iPhone 15 Pro, they abandoned the cart entirely out of frustration.</p>
+                
+                {/* Insight 3 */}
+                <div style={{ paddingTop: '32px' }}>
+                  <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 500, marginBottom: '12px' }}>Insight 3: The "Blind Cart" Effect</h4>
+                  <p style={{ fontFamily: "'Space Mono', 'JetBrains Mono', monospace", color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.7, margin: 0 }}>Users didn't know their approved EMI limit while browsing. When they finally reached checkout and saw they didn't qualify for the iPhone 15 Pro, they abandoned the cart entirely out of frustration.</p>
                 </div>
               </div>
             </div>
