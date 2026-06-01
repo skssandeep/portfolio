@@ -266,50 +266,51 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '800px', margin: '64px auto 0' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1px 1fr', gap: '48px', marginTop: '64px', alignItems: 'start' }}>
             
-            {/* Step 1: HR Side */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ display: 'flex', gap: '24px', alignItems: 'center', background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
-               <div style={{ background: 'rgba(255,255,255,0.05)', width: '64px', height: '64px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                 <Building2 size={28} color="var(--text-primary)" />
+            {/* Enterprise / HR Side */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ width: '56px', height: '56px', borderRadius: '16px', background: 'rgba(255,255,255,0.03)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+                    <Building2 size={24} color="var(--text-primary)" />
+                  </div>
+                  <h3 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>Enterprise & HR</h3>
                </div>
-               <div style={{ flex: 1 }}>
-                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>1. Program Setup (Enterprise & HR)</h4>
-                 <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>HR attempts to launch the benefit, but is constrained by tight budgets and overwhelmed by the manual tracking & approvals required.</p>
-               </div>
-               <div style={{ color: '#f59e0b', fontSize: '12px', fontWeight: 700, padding: '8px 16px', background: 'rgba(245, 158, 11, 0.1)', borderRadius: '100px', letterSpacing: '0.5px' }}>FRICTION</div>
-            </motion.div>
+               
+               <motion.div whileHover={{ y: -2 }} style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.2s' }}>
+                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Limited Budgets</h4>
+                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Forced to cut back on meaningful benefits, failing to differentiate the employer brand.</p>
+               </motion.div>
 
-            {/* Connection Line */}
-            <motion.div initial={{ opacity: 0, height: 0 }} whileInView={{ opacity: 1, height: '32px' }} viewport={{ once: true }} style={{ width: '2px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.3))', margin: '0 auto' }} />
+               <motion.div whileHover={{ y: -2 }} style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.2s' }}>
+                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Admin Overhead</h4>
+                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Manual tracking and approvals significantly slow down benefit delivery.</p>
+               </motion.div>
+            </div>
 
-            {/* Step 2: Employee Interest */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ display: 'flex', gap: '24px', alignItems: 'center', background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
-               <div style={{ background: 'rgba(255,255,255,0.05)', width: '64px', height: '64px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                 <Smartphone size={28} color="var(--text-primary)" />
-               </div>
-               <div style={{ flex: 1 }}>
-                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>2. Device Selection (Employee)</h4>
-                 <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Employee discovers the program and excitedly selects a premium device on the corporate portal.</p>
-               </div>
-               <div style={{ color: '#10b981', fontSize: '12px', fontWeight: 700, padding: '8px 16px', background: 'rgba(16, 185, 129, 0.1)', borderRadius: '100px', letterSpacing: '0.5px' }}>SMOOTH</div>
-            </motion.div>
+            {/* Divider */}
+            <div style={{ width: '1px', height: '100%', background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.1) 80%, transparent)' }} />
 
-            {/* Connection Line */}
-            <motion.div initial={{ opacity: 0, height: 0 }} whileInView={{ opacity: 1, height: '32px' }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ width: '2px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(239,68,68,0.5))', margin: '0 auto' }} />
+            {/* Employee Side */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ width: '56px', height: '56px', borderRadius: '16px', background: 'rgba(255,255,255,0.03)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+                    <Users size={24} color="var(--text-primary)" />
+                  </div>
+                  <h3 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>Employees</h3>
+               </div>
+               
+               <motion.div whileHover={{ y: -2 }} style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.2s' }}>
+                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Manual KYC Friction</h4>
+                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Tedious document uploads required before knowing loan approval status.</p>
+               </motion.div>
 
-            {/* Step 3: Checkout Drop-off */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ display: 'flex', gap: '24px', alignItems: 'center', background: 'rgba(239,68,68,0.05)', padding: '32px', borderRadius: '24px', border: '1px solid rgba(239,68,68,0.2)' }}>
-               <div style={{ background: 'rgba(239,68,68,0.1)', width: '64px', height: '64px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                 <XCircle size={28} color="#ef4444" />
-               </div>
-               <div style={{ flex: 1 }}>
-                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>3. The Funnel Drop-off</h4>
-                 <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Tedious manual document uploads for KYC and opaque credit limits cause massive sticker shock and abandonment.</p>
-               </div>
-               <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, padding: '8px 16px', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '100px', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>12% CONVERTED</div>
-            </motion.div>
-            
+               <motion.div whileHover={{ y: -2 }} style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)', transition: 'all 0.2s' }}>
+                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Opaque Credit Limits</h4>
+                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Hidden limits leading to massive sticker shock at the final checkout step.</p>
+               </motion.div>
+            </div>
+
           </div>
         </div>
       </section>
