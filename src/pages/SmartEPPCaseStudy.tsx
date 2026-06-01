@@ -158,6 +158,8 @@ export const SmartEPPCaseStudy = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const hasDragged = useRef(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   
   // Layout toggle logic
   const [isGridView, setIsGridView] = useState(false);
@@ -186,6 +188,21 @@ export const SmartEPPCaseStudy = () => {
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    // Initial check
+    setTimeout(checkScroll, 100);
+    window.addEventListener('resize', checkScroll);
+    return () => window.removeEventListener('resize', checkScroll);
+  }, []);
 
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -222,7 +239,7 @@ export const SmartEPPCaseStudy = () => {
   }, [modalIndex, modalImages.length]);
 
   return (
-    <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px' }}>
+    <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px', overflowX: 'hidden' }}>
       
       {/* Fullscreen Image Modal */}
       <AnimatePresence>
@@ -792,7 +809,7 @@ export const SmartEPPCaseStudy = () => {
             marginBottom: '80px'
           }}>
             {/* Left Scroll Button */}
-            {!isGridView && (
+            {!isGridView && canScrollLeft && (
               <button 
                 onClick={() => handleCarouselScroll('left')}
                 style={{ position: 'absolute', left: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
@@ -810,6 +827,7 @@ export const SmartEPPCaseStudy = () => {
               onMouseLeave={!isGridView ? handleMouseLeave : undefined}
               onMouseUp={!isGridView ? handleMouseUp : undefined}
               onMouseMove={!isGridView ? handleMouseMove : undefined}
+              onScroll={!isGridView ? checkScroll : undefined}
               style={{ 
                 display: isGridView ? 'grid' : 'flex', 
                 gridTemplateColumns: isGridView ? 'repeat(auto-fit, minmax(280px, 1fr))' : undefined,
@@ -858,7 +876,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* Right Scroll Button */}
-            {!isGridView && (
+            {!isGridView && canScrollRight && (
               <button 
                 onClick={() => handleCarouselScroll('right')}
                 style={{ position: 'absolute', right: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
