@@ -261,18 +261,22 @@ export const SmartEPPCaseStudy = () => {
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
                 <AlertCircle size={16} /> The Problem
               </div>
-              <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>The $12M Funnel Bleed</h2>
+              <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>The HR Benefit Dilemma</h2>
               <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                Traditional Employee Purchase Programs (EPPs) suffered from an abysmal <strong>12% conversion rate</strong>. Why? Because the flow was fundamentally broken.
+                Enterprises face mounting pressure to offer premium perks to retain top talent, but HR teams are severely constrained.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
                   <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  Employees were forced to undergo tedious manual KYC document uploads before knowing if they were even approved for a loan.
+                  <div><strong>Limited Budgets:</strong> Tight budgets force HR to cut back on meaningful benefits, resulting in generic offerings that fail to differentiate the employer brand.</div>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
                   <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  Credit limits were entirely opaque, leading to massive sticker shock at the final checkout step.
+                  <div><strong>Administrative Overhead:</strong> Manual tracking, approvals, and coordination drain HR resources and significantly slow down benefit delivery.</div>
+                </li>
+                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.5 }}>
+                  <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <div><strong>Retention Challenges:</strong> Top talent seeks more than just compensation. Without impactful perks, keeping employees engaged and loyal becomes increasingly difficult.</div>
                 </li>
               </ul>
             </div>
@@ -281,7 +285,7 @@ export const SmartEPPCaseStudy = () => {
               <div style={{ background: 'var(--bg-secondary)', padding: '24px', borderRadius: '24px', border: '1px solid var(--glass-border)' }}>
                 <img src="/images/EPP_CaseStudy_01.png" alt="Problem Visual" style={{ width: '100%', borderRadius: '12px', filter: 'grayscale(30%)' }} />
                 <div style={{ position: 'absolute', top: '-20px', right: '-20px', background: '#ef4444', color: '#fff', padding: '16px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(239, 68, 68, 0.4)', fontWeight: 600, fontSize: '18px' }}>
-                  88% Drop-off Rate
+                  High Admin Overhead
                 </div>
               </div>
             </div>
