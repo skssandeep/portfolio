@@ -613,67 +613,83 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
-            {/* Concept A */}
-            <motion.div 
-               whileHover={{ y: -10 }}
-               style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
-            >
-              <div style={{ height: '260px', background: '#0a0a0a', borderBottom: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
-                <img src="/images/wireframe_v1.png" alt="Standard E-Commerce Wireframe" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
-                <div style={{ position: 'absolute', top: '16px', left: '16px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(10px)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: '#fff', fontWeight: 500, border: '1px solid rgba(255,255,255,0.1)' }}>Wireframe v1</div>
-              </div>
-              <div style={{ padding: '32px', flexGrow: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                  <XCircle size={20} color="#ef4444" />
-                  <h3 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: 0 }}>Standard Flow</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            
+            {/* The Failures Row */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px' }}>
+              
+              {/* Concept A */}
+              <motion.div 
+                 whileHover={{ y: -5 }}
+                 style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative' }}
+              >
+                <div style={{ height: '320px', background: '#0a0a0a', position: 'relative', overflow: 'hidden' }}>
+                  <img src="/images/wireframe_v1.png" alt="Standard E-Commerce Wireframe" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.5, filter: 'grayscale(100%)' }} />
+                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, transparent 40%, #0a0a0a 100%)' }} />
+                  <div style={{ position: 'absolute', top: '24px', left: '24px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(10px)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: '#fff', fontWeight: 500, border: '1px solid rgba(255,255,255,0.1)' }}>v1: Standard Flow</div>
                 </div>
-                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                  <strong style={{ color: '#ef4444' }}>Why it failed:</strong> Ignored the B2B context. Employees didn't know their pre-approved EMI credit limits upfront, resulting in sticker shock at checkout.
+                <div style={{ padding: '0 32px 32px 32px', marginTop: '-80px', position: 'relative', zIndex: 1 }}>
+                  <div style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.2)', padding: '24px', borderRadius: '16px', backdropFilter: 'blur(10px)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                      <XCircle size={18} color="#ef4444" />
+                      <h3 style={{ color: '#ef4444', fontSize: '16px', fontWeight: 600, margin: 0 }}>Why it failed</h3>
+                    </div>
+                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                      Ignored the B2B context. Employees didn't know their pre-approved EMI credit limits upfront, resulting in sticker shock at checkout.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Concept B */}
+              <motion.div 
+                 whileHover={{ y: -5 }}
+                 style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative' }}
+              >
+                <div style={{ height: '320px', background: '#0a0a0a', position: 'relative', overflow: 'hidden' }}>
+                  <img src="/images/wireframe_v2.png" alt="Heavy KYC Wireframe" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.5, filter: 'grayscale(100%)' }} />
+                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, transparent 40%, #0a0a0a 100%)' }} />
+                  <div style={{ position: 'absolute', top: '24px', left: '24px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(10px)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: '#fff', fontWeight: 500, border: '1px solid rgba(255,255,255,0.1)' }}>v2: KYC Wizard</div>
+                </div>
+                <div style={{ padding: '0 32px 32px 32px', marginTop: '-80px', position: 'relative', zIndex: 1 }}>
+                  <div style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.2)', padding: '24px', borderRadius: '16px', backdropFilter: 'blur(10px)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                      <XCircle size={18} color="#ef4444" />
+                      <h3 style={{ color: '#ef4444', fontSize: '16px', fontWeight: 600, margin: 0 }}>Why it failed</h3>
+                    </div>
+                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                      Asked for PAN cards and salary slips before users even browsed the product catalog. The friction caused an immediate 70% bounce rate.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Concept C (The Winner) - Full Width Horizontal Card */}
+            <motion.div 
+               whileHover={{ y: -5 }}
+               style={{ background: 'rgba(16,185,129,0.03)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '32px', overflow: 'hidden', display: 'flex', alignItems: 'stretch', position: 'relative', boxShadow: '0 20px 40px rgba(16,185,129,0.05)' }}
+            >
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #10b981, #3b82f6)', zIndex: 10 }} />
+              
+              {/* Text Side (Left) */}
+              <div style={{ padding: '64px', flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 1 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', alignSelf: 'flex-start' }}>
+                  <CheckCircle2 size={16} /> The Winner
+                </div>
+                <h3 style={{ color: '#fff', fontSize: '32px', fontWeight: 600, marginBottom: '24px', lineHeight: 1.2 }}>Progressive Disclosure & SSO Auth</h3>
+                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
+                  Instead of blocking the funnel with technical KYC, we used Corporate SSO to instantly authenticate the employee and fetch their pre-approved EMI limit. This allowed them to browse confidently with their personalized budget, delaying the heavy documentation until the final checkout step.
                 </p>
               </div>
-            </motion.div>
 
-            {/* Concept B */}
-            <motion.div 
-               whileHover={{ y: -10 }}
-               style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
-            >
-              <div style={{ height: '260px', background: '#0a0a0a', borderBottom: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
-                <img src="/images/wireframe_v2.png" alt="Heavy KYC Wireframe" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
-                <div style={{ position: 'absolute', top: '16px', left: '16px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(10px)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: '#fff', fontWeight: 500, border: '1px solid rgba(255,255,255,0.1)' }}>Wireframe v2</div>
-              </div>
-              <div style={{ padding: '32px', flexGrow: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                  <XCircle size={20} color="#ef4444" />
-                  <h3 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: 0 }}>Heavy KYC Wizard</h3>
-                </div>
-                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                  <strong style={{ color: '#ef4444' }}>Why it failed:</strong> Asked for PAN cards and salary slips before users even browsed the product catalog. The friction caused an immediate 70% bounce rate.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Concept C */}
-            <motion.div 
-               whileHover={{ y: -10 }}
-               style={{ background: 'rgba(16,185,129,0.02)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative', boxShadow: '0 8px 32px rgba(16,185,129,0.1)' }}
-            >
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #10b981, #3b82f6)' }} />
-              <div style={{ height: '260px', background: '#0a0a0a', borderBottom: '1px solid rgba(16,185,129,0.1)', position: 'relative', overflow: 'hidden' }}>
+              {/* Image Side (Right) */}
+              <div style={{ flex: '1.2', background: '#0a0a0a', position: 'relative', borderLeft: '1px solid rgba(16,185,129,0.1)' }}>
                 <img src="/images/wireframe_final.png" alt="Progressive Disclosure UI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                <div style={{ position: 'absolute', top: '16px', left: '16px', background: '#10b981', color: '#000', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', fontWeight: 700 }}>Final UI</div>
-              </div>
-              <div style={{ padding: '32px', flexGrow: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                  <CheckCircle2 size={20} color="#10b981" />
-                  <h3 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: 0 }}>Progressive Disclosure</h3>
-                </div>
-                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                  <strong style={{ color: '#10b981' }}>The Winner:</strong> Authenticate via Corporate SSO to show instant credit limits, letting them browse confidently. We delayed technical KYC until checkout.
-                </p>
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #050505, transparent 20%)' }} />
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
