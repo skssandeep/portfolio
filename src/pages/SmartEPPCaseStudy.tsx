@@ -609,7 +609,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
             <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
             <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
-              Design isn't linear. Here are the three primary directions we explored for the e-commerce purchase flow, and why the first two failed.
+              Design isn't linear. 3 Iterations. 1 Clear Winner.
             </p>
           </div>
 
@@ -635,7 +635,7 @@ export const SmartEPPCaseStudy = () => {
                       <h3 style={{ color: '#ef4444', fontSize: '16px', fontWeight: 600, margin: 0 }}>Why it failed</h3>
                     </div>
                     <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                      Ignored the B2B context. Employees didn't know their pre-approved EMI credit limits upfront, resulting in sticker shock at checkout.
+                      <strong style={{ color: '#fff' }}>Sticker Shock.</strong> Employees discovered their credit limits too late, causing mass cart abandonment.
                     </p>
                   </div>
                 </div>
@@ -658,7 +658,7 @@ export const SmartEPPCaseStudy = () => {
                       <h3 style={{ color: '#ef4444', fontSize: '16px', fontWeight: 600, margin: 0 }}>Why it failed</h3>
                     </div>
                     <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                      Asked for PAN cards and salary slips before users even browsed the product catalog. The friction caused an immediate 70% bounce rate.
+                      <strong style={{ color: '#fff' }}>High Friction.</strong> Forcing KYC document uploads before browsing caused a fatal 70% bounce rate.
                     </p>
                   </div>
                 </div>
@@ -677,9 +677,9 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', alignSelf: 'flex-start' }}>
                   <CheckCircle2 size={16} /> The Winner
                 </div>
-                <h3 style={{ color: '#fff', fontSize: '32px', fontWeight: 600, marginBottom: '24px', lineHeight: 1.2 }}>Progressive Disclosure & SSO Auth</h3>
+                <h3 style={{ color: '#fff', fontSize: '32px', fontWeight: 600, marginBottom: '24px', lineHeight: 1.2 }}>Frictionless SSO & Instant Credit</h3>
                 <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
-                  Instead of blocking the funnel with technical KYC, we used Corporate SSO to instantly authenticate the employee and fetch their pre-approved EMI limit. This allowed them to browse confidently with their personalized budget, delaying the heavy documentation until the final checkout step.
+                  By syncing Corporate SSO, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout—boosting confidence and skyrocketing conversions.
                 </p>
               </div>
 
