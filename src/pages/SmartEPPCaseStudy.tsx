@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
@@ -131,7 +131,26 @@ const SmartEPPPrototype = () => {
 };
 
 export const SmartEPPCaseStudy = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const solutionImages = [
+    "/images/EPP_CaseStudy_02.png",
+    "/images/EPP_CaseStudy_03.png",
+    "/images/EPP_CaseStudy_04.png"
+  ];
+
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex + 1) % solutionImages.length);
+    }
+  };
+
+  const handlePrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex - 1 + solutionImages.length) % solutionImages.length);
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -142,12 +161,12 @@ export const SmartEPPCaseStudy = () => {
       
       {/* Fullscreen Image Modal */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedImageIndex !== null && (
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }} 
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setSelectedImageIndex(null)}
             style={{ 
               position: 'fixed', 
               inset: 0, 
@@ -162,22 +181,44 @@ export const SmartEPPCaseStudy = () => {
             }}
           >
             <button 
-              onClick={() => setSelectedImage(null)}
-              style={{ position: 'absolute', top: '40px', right: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '12px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease' }}
+              onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(null); }}
+              style={{ position: 'absolute', top: '40px', right: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '12px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000 }}
               onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
               onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
             >
               <XCircle size={32} />
             </button>
+
+            {/* Prev Button */}
+            <button 
+              onClick={handlePrevImage}
+              style={{ position: 'absolute', left: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000 }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+            >
+              <ChevronLeft size={32} />
+            </button>
+
             <motion.img 
-               initial={{ scale: 0.9, opacity: 0, y: 20 }} 
-               animate={{ scale: 1, opacity: 1, y: 0 }} 
-               exit={{ scale: 0.9, opacity: 0, y: 20 }}
+               key={selectedImageIndex} // Add key to trigger animation on index change
+               initial={{ scale: 0.9, opacity: 0, x: 50 }} 
+               animate={{ scale: 1, opacity: 1, x: 0 }} 
+               exit={{ scale: 0.9, opacity: 0, x: -50 }}
                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-               src={selectedImage} 
-               style={{ maxHeight: '90vh', maxWidth: '90vw', objectFit: 'contain', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))' }} 
+               src={solutionImages[selectedImageIndex]} 
+               style={{ maxHeight: '90vh', maxWidth: '80vw', objectFit: 'contain', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))' }} 
                onClick={(e) => e.stopPropagation()} 
             />
+
+            {/* Next Button */}
+            <button 
+              onClick={handleNextImage}
+              style={{ position: 'absolute', right: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000 }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+            >
+              <ChevronRight size={32} />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -393,7 +434,7 @@ export const SmartEPPCaseStudy = () => {
                         src="/images/EPP_CaseStudy_02.png" 
                         alt="SSO Auth" 
                         style={{ width: '100%', maxWidth: '180px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
-                        onClick={() => setSelectedImage("/images/EPP_CaseStudy_02.png")}
+                        onClick={() => setSelectedImageIndex(0)}
                         onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                      />
@@ -414,7 +455,7 @@ export const SmartEPPCaseStudy = () => {
                         src="/images/EPP_CaseStudy_03.png" 
                         alt="Dynamic Limits" 
                         style={{ width: '100%', maxWidth: '180px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
-                        onClick={() => setSelectedImage("/images/EPP_CaseStudy_03.png")}
+                        onClick={() => setSelectedImageIndex(1)}
                         onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                      />
@@ -435,7 +476,7 @@ export const SmartEPPCaseStudy = () => {
                         src="/images/EPP_CaseStudy_04.png" 
                         alt="1-Click Checkout" 
                         style={{ width: '100%', maxWidth: '180px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
-                        onClick={() => setSelectedImage("/images/EPP_CaseStudy_04.png")}
+                        onClick={() => setSelectedImageIndex(2)}
                         onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                      />
