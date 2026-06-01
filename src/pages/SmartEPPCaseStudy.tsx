@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
@@ -131,24 +131,63 @@ const SmartEPPPrototype = () => {
 };
 
 export const SmartEPPCaseStudy = () => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [modalImages, setModalImages] = useState<string[]>([]);
+  const [modalIndex, setModalIndex] = useState<number | null>(null);
+  
   const solutionImages = [
     "/images/EPP_CaseStudy_02.png",
     "/images/EPP_CaseStudy_03.png",
     "/images/EPP_CaseStudy_04.png"
   ];
 
+  const ecosystemImages = [
+    "/images/EPP_CaseStudy_01.png",
+    "/images/EPP_CaseStudy_02.png",
+    "/images/EPP_CaseStudy_03.png",
+    "/images/EPP_CaseStudy_04.png",
+    "/images/EPP_CaseStudy_05.png",
+    "/images/EPP_CaseStudy_06.png",
+    "/images/EPP_CaseStudy_07.png",
+    "/images/EPP_CaseStudy_08.png",
+    "/images/EPP_CaseStudy_09.png"
+  ];
+
+  // Drag-to-scroll logic
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const hasDragged = useRef(false);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    setIsDragging(true);
+    hasDragged.current = false;
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+  const handleMouseLeave = () => setIsDragging(false);
+  const handleMouseUp = () => setIsDragging(false);
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    hasDragged.current = true;
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2.5; // Scroll speed multiplier
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex + 1) % solutionImages.length);
+    if (modalIndex !== null) {
+      setModalIndex((modalIndex + 1) % modalImages.length);
     }
   };
 
   const handlePrevImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex - 1 + solutionImages.length) % solutionImages.length);
+    if (modalIndex !== null) {
+      setModalIndex((modalIndex - 1 + modalImages.length) % modalImages.length);
     }
   };
 
@@ -161,12 +200,12 @@ export const SmartEPPCaseStudy = () => {
       
       {/* Fullscreen Image Modal */}
       <AnimatePresence>
-        {selectedImageIndex !== null && (
+        {modalIndex !== null && (
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }} 
-            onClick={() => setSelectedImageIndex(null)}
+            onClick={() => setModalIndex(null)}
             style={{ 
               position: 'fixed', 
               inset: 0, 
@@ -181,7 +220,7 @@ export const SmartEPPCaseStudy = () => {
             }}
           >
             <button 
-              onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(null); }}
+              onClick={(e) => { e.stopPropagation(); setModalIndex(null); }}
               style={{ position: 'absolute', top: '40px', right: '40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '12px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000 }}
               onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
               onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
@@ -200,12 +239,12 @@ export const SmartEPPCaseStudy = () => {
             </button>
 
             <motion.img 
-               key={selectedImageIndex} // Add key to trigger animation on index change
+               key={modalIndex} // Add key to trigger animation on index change
                initial={{ scale: 0.9, opacity: 0, x: 50 }} 
                animate={{ scale: 1, opacity: 1, x: 0 }} 
                exit={{ scale: 0.9, opacity: 0, x: -50 }}
                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-               src={solutionImages[selectedImageIndex]} 
+               src={modalImages[modalIndex]} 
                style={{ maxHeight: '90vh', maxWidth: '80vw', objectFit: 'contain', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))' }} 
                onClick={(e) => e.stopPropagation()} 
             />
@@ -434,7 +473,7 @@ export const SmartEPPCaseStudy = () => {
                         src="/images/EPP_CaseStudy_02.png" 
                         alt="SSO Auth" 
                         style={{ width: '100%', maxWidth: '180px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
-                        onClick={() => setSelectedImageIndex(0)}
+                        onClick={() => { setModalImages(solutionImages); setModalIndex(0); }}
                         onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                      />
@@ -452,7 +491,7 @@ export const SmartEPPCaseStudy = () => {
                         src="/images/EPP_CaseStudy_03.png" 
                         alt="Dynamic Limits" 
                         style={{ width: '100%', maxWidth: '180px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
-                        onClick={() => setSelectedImageIndex(1)}
+                        onClick={() => { setModalImages(solutionImages); setModalIndex(1); }}
                         onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                      />
@@ -470,7 +509,7 @@ export const SmartEPPCaseStudy = () => {
                         src="/images/EPP_CaseStudy_04.png" 
                         alt="1-Click Checkout" 
                         style={{ width: '100%', maxWidth: '180px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
-                        onClick={() => setSelectedImageIndex(2)}
+                        onClick={() => { setModalImages(solutionImages); setModalIndex(2); }}
                         onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                      />
@@ -699,28 +738,26 @@ export const SmartEPPCaseStudy = () => {
             .ecosystem-scroll { -ms-overflow-style: none; scrollbar-width: none; }
           `}</style>
           
-          <div className="ecosystem-scroll" style={{ 
-            display: 'flex', 
-            gap: '48px',
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            padding: '60px 10vw',
-            marginBottom: '80px',
-            width: '100vw',
-            marginLeft: 'calc(-50vw + 50%)',
-            alignItems: 'center'
+          <div 
+            className="ecosystem-scroll" 
+            ref={scrollRef}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            style={{ 
+              display: 'flex', 
+              gap: '48px',
+              overflowX: 'auto',
+              scrollSnapType: isDragging ? 'none' : 'x mandatory',
+              padding: '60px 10vw',
+              marginBottom: '80px',
+              width: '100vw',
+              marginLeft: 'calc(-50vw + 50%)',
+              alignItems: 'center',
+              cursor: isDragging ? 'grabbing' : 'grab'
           }}>
-            {[
-              "/images/EPP_CaseStudy_01.png",
-              "/images/EPP_CaseStudy_02.png",
-              "/images/EPP_CaseStudy_03.png",
-              "/images/EPP_CaseStudy_04.png",
-              "/images/EPP_CaseStudy_05.png",
-              "/images/EPP_CaseStudy_06.png",
-              "/images/EPP_CaseStudy_07.png",
-              "/images/EPP_CaseStudy_08.png",
-              "/images/EPP_CaseStudy_09.png"
-            ].map((src, idx) => (
+            {ecosystemImages.map((src, idx) => (
               <motion.img 
                 key={idx}
                 initial={{ opacity: 0, y: 30 }} 
@@ -728,6 +765,12 @@ export const SmartEPPCaseStudy = () => {
                 viewport={{ once: true, margin: "0px" }} 
                 transition={{ delay: (idx % 3) * 0.15, duration: 0.6 }} 
                 whileHover={{ y: -10, scale: 1.02 }}
+                onClick={() => {
+                  if (!hasDragged.current) {
+                    setModalImages(ecosystemImages);
+                    setModalIndex(idx);
+                  }
+                }}
                 src={src} 
                 alt={`Smart EPP Screen ${idx + 1}`} 
                 style={{ 
@@ -740,7 +783,7 @@ export const SmartEPPCaseStudy = () => {
                   border: '1px solid rgba(255,255,255,0.05)', 
                   boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
                   background: '#0a0a0a',
-                  cursor: 'grab'
+                  pointerEvents: 'auto'
                 }} 
               />
             ))}
