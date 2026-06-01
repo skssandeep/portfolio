@@ -266,51 +266,41 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
-            {/* HR Card */}
-            <div style={{ background: 'var(--bg-secondary)', border: '1px solid var(--glass-border)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                   <div style={{ width: '48px', height: '48px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)' }}>
-                      <Building2 size={24} />
-                   </div>
-                   <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>Enterprise & HR</h3>
-                </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', marginTop: '64px' }}>
+            {/* HR Side */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px', color: 'var(--text-secondary)' }}>
+                <Building2 size={20} />
+                <span style={{ fontSize: '14px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Enterprise & HR</span>
               </div>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                 <div style={{ padding: '16px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.03)' }}>
-                    <h4 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>Constrained Budgets</h4>
-                    <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Unable to fund premium perks, leading to generic offerings.</p>
-                 </div>
-                 <div style={{ padding: '16px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.03)' }}>
-                    <h4 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>High Admin Overhead</h4>
-                    <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Manual tracking and approvals slow down benefit delivery.</p>
-                 </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                <div>
+                  <h4 style={{ fontSize: '22px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.01em' }}>Limited Budgets</h4>
+                  <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>HR struggles to fund premium perks, resulting in generic, uninspiring employer benefits.</p>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '22px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.01em' }}>Admin Overhead</h4>
+                  <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Manual tracking, endless emails, and approvals create bottlenecks in benefit delivery.</p>
+                </div>
               </div>
             </div>
 
-            {/* Employee Card */}
-            <div style={{ background: 'var(--bg-secondary)', border: '1px solid var(--glass-border)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                   <div style={{ width: '48px', height: '48px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)' }}>
-                      <Users size={24} />
-                   </div>
-                   <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>Employees</h3>
-                </div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: '#ef4444', background: 'rgba(239, 68, 68, 0.1)', padding: '6px 12px', borderRadius: '100px', letterSpacing: '0.5px' }}>12% CONVERSION</div>
+            {/* Employee Side */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px', color: 'var(--text-secondary)' }}>
+                <Users size={20} />
+                <span style={{ fontSize: '14px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Employees</span>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: '#ef4444', background: 'rgba(239, 68, 68, 0.1)', padding: '6px 12px', borderRadius: '100px', marginLeft: 'auto', letterSpacing: '0.5px' }}>12% CONVERSION</span>
               </div>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                 <div style={{ padding: '16px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.03)' }}>
-                    <h4 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>Manual KYC Friction</h4>
-                    <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Tedious document uploads required before knowing loan status.</p>
-                 </div>
-                 <div style={{ padding: '16px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.03)' }}>
-                    <h4 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>Opaque Credit Limits</h4>
-                    <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>Hidden limits leading to massive sticker shock at checkout.</p>
-                 </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                <div>
+                  <h4 style={{ fontSize: '22px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.01em' }}>KYC Friction</h4>
+                  <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Tedious manual document uploads cause massive user drop-offs before loan approval.</p>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '22px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.01em' }}>Hidden Credit Limits</h4>
+                  <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Employees face sticker shock and abandon checkout due to completely opaque limits.</p>
+                </div>
               </div>
             </div>
           </div>
