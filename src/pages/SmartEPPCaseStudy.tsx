@@ -251,67 +251,7 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* 1.5 Alternative Compact Hero Layout */}
-      <section style={{ width: '100%', padding: '80px 4vw', display: 'flex', justifyContent: 'center', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div style={{ 
-          width: '100%', 
-          maxWidth: '1200px', 
-          background: 'linear-gradient(135deg, rgba(30,30,30,0.4) 0%, rgba(10,10,10,0.8) 100%)',
-          borderRadius: '32px',
-          border: '1px solid rgba(255,255,255,0.08)',
-          boxShadow: '0 40px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-          gap: '0px',
-          overflow: 'hidden',
-          position: 'relative'
-        }}>
-          
-          {/* Left Content */}
-          <div style={{ padding: '80px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 2 }}>
-            <div style={{ display: 'inline-flex', background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-secondary)', padding: '6px 16px', borderRadius: '100px', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', marginBottom: '24px', border: '1px solid rgba(255, 255, 255, 0.15)', alignSelf: 'flex-start' }}>
-              B2B2C FINTECH CASE STUDY
-            </div>
-            
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 800, color: '#fff', margin: '0 0 16px 0', letterSpacing: '-0.04em', lineHeight: 1 }}>
-              SMART EPP
-            </h2>
-            
-            <p style={{ fontFamily: 'var(--font-system)', fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, marginBottom: '48px', maxWidth: '480px' }}>
-              Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
-            </p>
 
-            {/* Compact Context Row */}
-            <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap' }}>
-              {[
-                { title: "My Role", val: "UX Designer" },
-                { title: "Timeline", val: "4 Months" },
-                { title: "Platform", val: "Mobile App" },
-                { title: "Constraint", val: "Strict KYC" }
-              ].map((item, i) => (
-                <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  <div style={{ color: 'var(--accent-color)', fontSize: '10px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase' }}>{item.title}</div>
-                  <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500 }}>{item.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Image (Bleeding off bottom) */}
-          <div style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', background: 'radial-gradient(circle at 50% 50%, rgba(229,9,20,0.08) 0%, transparent 70%)' }}>
-             <motion.img 
-              initial={{ y: 40, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              src="/images/Mockup2_EPP.png" 
-              alt="Smart EPP" 
-              style={{ width: '120%', maxWidth: '600px', marginBottom: '-15%', transform: 'translateX(5%)', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.8))' }} 
-            />
-          </div>
-
-        </div>
-      </section>
 
       {/* 3. Problem */}
       <section style={{ padding: '100px 0' }}>
