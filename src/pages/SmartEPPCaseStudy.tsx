@@ -131,7 +131,6 @@ const SmartEPPPrototype = () => {
 };
 
 export const SmartEPPCaseStudy = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -193,7 +192,7 @@ export const SmartEPPCaseStudy = () => {
 
         {/* Massive Typography */}
         <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', marginBottom: '-6vw', width: '100%', padding: '0 24px' }}>
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <div>
             <div style={{ display: 'inline-flex', background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-secondary)', padding: '8px 24px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '3px', marginBottom: '24px', border: '1px solid rgba(255, 255, 255, 0.15)' }}>
               B2B2C FINTECH CASE STUDY
             </div>
@@ -203,20 +202,16 @@ export const SmartEPPCaseStudy = () => {
             <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1rem, 1.5vw, 1.3rem)', color: '#a3a3a3', maxWidth: '600px', margin: '32px auto 0 auto', lineHeight: 1.6, fontWeight: 400 }}>
               Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* The Floating Ecosystem */}
         <div style={{ position: 'relative', zIndex: 20, width: '100%', maxWidth: '1100px', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '60px' }}>
           
-          <motion.img 
-            initial={{ y: 60, opacity: 0 }}
-            animate={imageLoaded ? { y: 0, opacity: 1 } : { y: 60, opacity: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          <img 
             src="/images/Mockup2_EPP.png" 
             alt="Smart EPP" 
             fetchPriority="high"
-            onLoad={() => setImageLoaded(true)}
             style={{ width: '100%', maxWidth: '900px', filter: 'drop-shadow(0 40px 100px rgba(0,0,0,0.8))', position: 'relative', zIndex: 10, objectFit: 'contain' }} 
           />
 
@@ -229,9 +224,6 @@ export const SmartEPPCaseStudy = () => {
               { class: 'chip-4', icon: <AlertCircle size={14}/>, title: "Constraint", val: "Strict KYC & NBFC", delay: 0.7 }
             ].map((chip, idx) => (
               <motion.div key={idx} className={`chip-wrapper ${chip.class}`}
-                initial={{ scale: 0.9, opacity: 0, y: 20 }} 
-                animate={imageLoaded ? { scale: 1, opacity: 1, y: 0 } : { scale: 0.9, opacity: 0, y: 20 }} 
-                transition={{ delay: imageLoaded ? chip.delay : 0, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
                 <div style={{
