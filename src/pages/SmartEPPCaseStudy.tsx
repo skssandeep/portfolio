@@ -326,7 +326,7 @@ export const SmartEPPCaseStudy = () => {
 
       {/* 4. Breakdown of Solution (Single Pitch Slide) */}
       <section style={{ padding: '80px 0' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
+        <div className="container" style={{ maxWidth: '1600px' }}>
           
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(30,30,30,0.8) 0%, rgba(10,10,10,0.9) 100%)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', padding: '64px', display: 'flex', flexDirection: 'column', gap: '64px', boxShadow: '0 40px 80px rgba(0,0,0,0.4)' }}>
              
