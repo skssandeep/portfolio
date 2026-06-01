@@ -266,60 +266,50 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginTop: '64px' }}>
-               {/* Massive Focus Card - Employee Drop-off */}
-               <motion.div 
-                 whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(239,68,68,0.1)' }}
-                 style={{ gridColumn: 'span 2', background: 'linear-gradient(135deg, rgba(30,30,30,0.8) 0%, rgba(10,10,10,0.9) 100%)', borderRadius: '32px', padding: '48px', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}
-               >
-                  <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(239,68,68,0.15) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0 }} />
-                  <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
-                     <div>
-                       <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#ef4444', fontWeight: 600, letterSpacing: '1px', fontSize: '13px', textTransform: 'uppercase', marginBottom: '24px' }}>
-                          <Users size={16} /> Employee Experience
-                       </div>
-                       <h3 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', lineHeight: 1.2 }}>
-                         Friction-heavy KYC & <br/>Opaque Credit Limits
-                       </h3>
-                       <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '400px', lineHeight: 1.6 }}>
-                         Tedious manual document uploads and hidden limits caused massive sticker shock, leading to devastating user drop-offs before checkout.
-                       </p>
-                     </div>
-                     <div>
-                       <div style={{ fontSize: '80px', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.04em', lineHeight: 1, marginTop: '40px' }}>
-                         12<span style={{ color: '#ef4444' }}>%</span>
-                       </div>
-                       <div style={{ fontSize: '14px', color: 'var(--text-secondary)', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', marginTop: '12px' }}>Funnel Conversion Rate</div>
-                     </div>
-                  </div>
-               </motion.div>
-
-               {/* HR Cards - Stacked vertically */}
-               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                 {/* Card 1 */}
-                 <motion.div 
-                   whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
-                   style={{ flex: 1, background: 'linear-gradient(135deg, rgba(30,30,30,0.4) 0%, rgba(10,10,10,0.6) 100%)', borderRadius: '32px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}
-                 >
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontWeight: 600, letterSpacing: '1px', fontSize: '12px', textTransform: 'uppercase', marginBottom: '16px' }}>
-                       <Building2 size={14} /> HR Constraints
-                    </div>
-                    <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Limited Budgets</h4>
-                    <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>HR struggles to fund premium perks, resulting in generic, uninspiring employer benefits.</p>
-                 </motion.div>
-
-                 {/* Card 2 */}
-                 <motion.div 
-                   whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
-                   style={{ flex: 1, background: 'linear-gradient(135deg, rgba(30,30,30,0.4) 0%, rgba(10,10,10,0.6) 100%)', borderRadius: '32px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}
-                 >
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontWeight: 600, letterSpacing: '1px', fontSize: '12px', textTransform: 'uppercase', marginBottom: '16px' }}>
-                       <Building2 size={14} /> HR Constraints
-                    </div>
-                    <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Admin Overhead</h4>
-                    <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Manual tracking, endless emails, and approvals create massive bottlenecks.</p>
-                 </motion.div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '800px', margin: '64px auto 0' }}>
+            
+            {/* Step 1: HR Side */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ display: 'flex', gap: '24px', alignItems: 'center', background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
+               <div style={{ background: 'rgba(255,255,255,0.05)', width: '64px', height: '64px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                 <Building2 size={28} color="var(--text-primary)" />
                </div>
+               <div style={{ flex: 1 }}>
+                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>1. Program Setup (Enterprise & HR)</h4>
+                 <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>HR attempts to launch the benefit, but is constrained by tight budgets and overwhelmed by the manual tracking & approvals required.</p>
+               </div>
+               <div style={{ color: '#f59e0b', fontSize: '12px', fontWeight: 700, padding: '8px 16px', background: 'rgba(245, 158, 11, 0.1)', borderRadius: '100px', letterSpacing: '0.5px' }}>FRICTION</div>
+            </motion.div>
+
+            {/* Connection Line */}
+            <motion.div initial={{ opacity: 0, height: 0 }} whileInView={{ opacity: 1, height: '32px' }} viewport={{ once: true }} style={{ width: '2px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.3))', margin: '0 auto' }} />
+
+            {/* Step 2: Employee Interest */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ display: 'flex', gap: '24px', alignItems: 'center', background: 'rgba(255,255,255,0.02)', padding: '32px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)' }}>
+               <div style={{ background: 'rgba(255,255,255,0.05)', width: '64px', height: '64px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                 <Smartphone size={28} color="var(--text-primary)" />
+               </div>
+               <div style={{ flex: 1 }}>
+                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>2. Device Selection (Employee)</h4>
+                 <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Employee discovers the program and excitedly selects a premium device on the corporate portal.</p>
+               </div>
+               <div style={{ color: '#10b981', fontSize: '12px', fontWeight: 700, padding: '8px 16px', background: 'rgba(16, 185, 129, 0.1)', borderRadius: '100px', letterSpacing: '0.5px' }}>SMOOTH</div>
+            </motion.div>
+
+            {/* Connection Line */}
+            <motion.div initial={{ opacity: 0, height: 0 }} whileInView={{ opacity: 1, height: '32px' }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ width: '2px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(239,68,68,0.5))', margin: '0 auto' }} />
+
+            {/* Step 3: Checkout Drop-off */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ display: 'flex', gap: '24px', alignItems: 'center', background: 'rgba(239,68,68,0.05)', padding: '32px', borderRadius: '24px', border: '1px solid rgba(239,68,68,0.2)' }}>
+               <div style={{ background: 'rgba(239,68,68,0.1)', width: '64px', height: '64px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                 <XCircle size={28} color="#ef4444" />
+               </div>
+               <div style={{ flex: 1 }}>
+                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>3. The Funnel Drop-off</h4>
+                 <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Tedious manual document uploads for KYC and opaque credit limits cause massive sticker shock and abandonment.</p>
+               </div>
+               <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700, padding: '8px 16px', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '100px', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>12% CONVERTED</div>
+            </motion.div>
+            
           </div>
         </div>
       </section>
