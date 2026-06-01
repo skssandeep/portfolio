@@ -324,71 +324,68 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* 4. Breakdown of Solution (Keynote Presentation Stack) */}
-      <section style={{ padding: '160px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
+      {/* 4. Breakdown of Solution (Single Pitch Slide) */}
+      <section style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           
-          <div style={{ textAlign: 'center', marginBottom: '160px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#10b981', background: 'rgba(16, 185, 129, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
-              <CheckCircle2 size={16} /> The Solution
-            </div>
-            <h2 style={{ fontSize: '56px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Zero-Friction Financing</h2>
-            <p style={{ fontSize: '22px', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto', lineHeight: 1.5 }}>
-              A seamless B2B2C FinTech mobile ecosystem offering corporate employees instant salary-linked EMIs and 1-click checkout for premium devices.
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '200px' }}>
-            
-            {/* Slide 1 */}
-            <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-20%" }} style={{ display: 'flex', alignItems: 'center', gap: '80px' }}>
-              <div style={{ flex: 1 }}>
-                <div style={{ color: 'rgba(255,255,255,0.03)', fontSize: '200px', fontFamily: 'var(--font-heading)', fontWeight: 800, lineHeight: 0.8, letterSpacing: '-0.05em', marginBottom: '-40px', position: 'relative', zIndex: 0 }}>01</div>
-                <div style={{ position: 'relative', zIndex: 10 }}>
-                  <h3 style={{ fontSize: '48px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Corporate SSO Auth</h3>
-                  <p style={{ fontSize: '20px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '480px' }}>
-                    Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal. One click, total verification.
-                  </p>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(30,30,30,0.8) 0%, rgba(10,10,10,0.9) 100%)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', padding: '64px', display: 'flex', flexDirection: 'column', gap: '64px', boxShadow: '0 40px 80px rgba(0,0,0,0.4)' }}>
+             
+             {/* Slide Header */}
+             <div style={{ textAlign: 'center' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#10b981', background: 'rgba(16, 185, 129, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                  <CheckCircle2 size={16} /> The Solution
                 </div>
-              </div>
-              <div style={{ flex: 1.2 }}>
-                <img src="/images/EPP_CaseStudy_02.png" alt="SSO Auth" style={{ width: '100%', borderRadius: '24px', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.3))', border: '1px solid rgba(255,255,255,0.1)' }} />
-              </div>
-            </motion.div>
+                <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Zero-Friction Financing</h2>
+                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>
+                  A seamless B2B2C FinTech mobile ecosystem offering corporate employees instant salary-linked EMIs and 1-click checkout for premium devices.
+                </p>
+             </div>
 
-            {/* Slide 2 */}
-            <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-20%" }} style={{ display: 'flex', alignItems: 'center', gap: '80px', flexDirection: 'row-reverse' }}>
-              <div style={{ flex: 1 }}>
-                <div style={{ color: 'rgba(255,255,255,0.03)', fontSize: '200px', fontFamily: 'var(--font-heading)', fontWeight: 800, lineHeight: 0.8, letterSpacing: '-0.05em', marginBottom: '-40px', position: 'relative', zIndex: 0 }}>02</div>
-                <div style={{ position: 'relative', zIndex: 10 }}>
-                  <h3 style={{ fontSize: '48px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Dynamic Limits</h3>
-                  <p style={{ fontSize: '20px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '480px' }}>
-                    Pre-calculating maximum EMIs based on verified salary bands so users can browse with total financial confidence. No more sticker shock at checkout.
-                  </p>
+             {/* The 3 Pillars */}
+             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '48px' }}>
+                {/* Pillar 1 */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                     <img src="/images/EPP_CaseStudy_02.png" alt="SSO Auth" style={{ width: '100%', borderRadius: '8px', display: 'block' }} />
+                   </div>
+                   <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                        <Fingerprint size={20} color="#10b981" />
+                        <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0 }}>Corporate SSO Auth</h4>
+                      </div>
+                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.</p>
+                   </div>
                 </div>
-              </div>
-              <div style={{ flex: 1.2 }}>
-                <img src="/images/EPP_CaseStudy_03.png" alt="Dynamic Limits" style={{ width: '100%', borderRadius: '24px', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.3))', border: '1px solid rgba(255,255,255,0.1)' }} />
-              </div>
-            </motion.div>
 
-            {/* Slide 3 */}
-            <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-20%" }} style={{ display: 'flex', alignItems: 'center', gap: '80px' }}>
-              <div style={{ flex: 1 }}>
-                <div style={{ color: 'rgba(255,255,255,0.03)', fontSize: '200px', fontFamily: 'var(--font-heading)', fontWeight: 800, lineHeight: 0.8, letterSpacing: '-0.05em', marginBottom: '-40px', position: 'relative', zIndex: 0 }}>03</div>
-                <div style={{ position: 'relative', zIndex: 10 }}>
-                  <h3 style={{ fontSize: '48px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>1-Click Checkout</h3>
-                  <p style={{ fontSize: '20px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '480px' }}>
-                    Automatically routing the first EMI deduction to the next month's payroll. This eliminates credit card processing entirely, creating a true 1-click purchase experience.
-                  </p>
+                {/* Pillar 2 */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                     <img src="/images/EPP_CaseStudy_03.png" alt="Dynamic Limits" style={{ width: '100%', borderRadius: '8px', display: 'block' }} />
+                   </div>
+                   <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                        <Wallet size={20} color="#10b981" />
+                        <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0 }}>Dynamic Limits</h4>
+                      </div>
+                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.</p>
+                   </div>
                 </div>
-              </div>
-              <div style={{ flex: 1.2 }}>
-                <img src="/images/EPP_CaseStudy_04.png" alt="1-Click Checkout" style={{ width: '100%', borderRadius: '24px', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.3))', border: '1px solid rgba(255,255,255,0.1)' }} />
-              </div>
-            </motion.div>
 
-          </div>
+                {/* Pillar 3 */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                     <img src="/images/EPP_CaseStudy_04.png" alt="1-Click Checkout" style={{ width: '100%', borderRadius: '8px', display: 'block' }} />
+                   </div>
+                   <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                        <Zap size={20} color="#10b981" />
+                        <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0 }}>1-Click Checkout</h4>
+                      </div>
+                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Automatically routing the first EMI deduction to the next month's payroll, eliminating credit cards entirely.</p>
+                   </div>
+                </div>
+             </div>
+          </motion.div>
         </div>
       </section>
 
