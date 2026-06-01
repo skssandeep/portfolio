@@ -180,6 +180,13 @@ export const SmartEPPCaseStudy = () => {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  const handleCarouselScroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -600 : 600; // Approximate width of one image
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (modalIndex !== null && modalIndex < modalImages.length - 1) {
@@ -778,60 +785,89 @@ export const SmartEPPCaseStudy = () => {
             .ecosystem-scroll { -ms-overflow-style: none; scrollbar-width: none; }
           `}</style>
           
-          <div 
-            className={!isGridView ? "ecosystem-scroll" : ""}
-            ref={!isGridView ? scrollRef : null}
-            onMouseDown={!isGridView ? handleMouseDown : undefined}
-            onMouseLeave={!isGridView ? handleMouseLeave : undefined}
-            onMouseUp={!isGridView ? handleMouseUp : undefined}
-            onMouseMove={!isGridView ? handleMouseMove : undefined}
-            style={{ 
-              display: isGridView ? 'grid' : 'flex', 
-              gridTemplateColumns: isGridView ? 'repeat(auto-fit, minmax(280px, 1fr))' : undefined,
-              gap: isGridView ? '32px' : '48px',
-              overflowX: isGridView ? 'visible' : 'auto',
-              scrollSnapType: isGridView ? 'none' : (isDragging ? 'none' : 'x mandatory'),
-              padding: isGridView ? '0' : '60px 10vw',
-              marginBottom: '80px',
-              width: isGridView ? '100%' : '100vw',
-              marginLeft: isGridView ? '0' : 'calc(-50vw + 50%)',
-              alignItems: isGridView ? 'start' : 'center',
-              cursor: isGridView ? 'default' : (isDragging ? 'grabbing' : 'pointer')
+          <div style={{ 
+            position: 'relative',
+            width: isGridView ? '100%' : '100vw',
+            marginLeft: isGridView ? '0' : 'calc(-50vw + 50%)',
+            marginBottom: '80px'
           }}>
-            {ecosystemImages.map((src, idx) => (
-              <motion.img 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true, margin: "0px" }} 
-                transition={{ delay: (idx % 3) * 0.15, duration: 0.6 }} 
-                whileHover={{ y: -10, scale: 1.02 }}
-                onClick={() => {
-                  if (!hasDragged.current) {
-                    setModalImages(ecosystemImages);
-                    setModalIndex(idx);
-                  }
-                }}
-                src={src} 
-                alt={`Smart EPP Screen ${idx + 1}`} 
-                draggable={false}
-                style={{ 
-                  height: isGridView ? 'auto' : '640px', 
-                  width: isGridView ? '100%' : 'auto', 
-                  objectFit: 'contain',
-                  flexShrink: 0, 
-                  scrollSnapAlign: isGridView ? 'none' : 'center', 
-                  borderRadius: '24px', 
-                  border: '1px solid rgba(255,255,255,0.05)', 
-                  boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
-                  background: '#0a0a0a',
-                  pointerEvents: 'auto',
-                  cursor: 'pointer',
-                  userSelect: 'none',
-                  WebkitUserSelect: 'none'
-                }} 
-              />
-            ))}
+            {/* Left Scroll Button */}
+            {!isGridView && (
+              <button 
+                onClick={() => handleCarouselScroll('left')}
+                style={{ position: 'absolute', left: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.9)'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
+              >
+                <ChevronLeft size={32} />
+              </button>
+            )}
+
+            <div 
+              className={!isGridView ? "ecosystem-scroll" : ""}
+              ref={!isGridView ? scrollRef : null}
+              onMouseDown={!isGridView ? handleMouseDown : undefined}
+              onMouseLeave={!isGridView ? handleMouseLeave : undefined}
+              onMouseUp={!isGridView ? handleMouseUp : undefined}
+              onMouseMove={!isGridView ? handleMouseMove : undefined}
+              style={{ 
+                display: isGridView ? 'grid' : 'flex', 
+                gridTemplateColumns: isGridView ? 'repeat(auto-fit, minmax(280px, 1fr))' : undefined,
+                gap: isGridView ? '32px' : '48px',
+                overflowX: isGridView ? 'visible' : 'auto',
+                scrollSnapType: isGridView ? 'none' : (isDragging ? 'none' : 'x mandatory'),
+                padding: isGridView ? '0' : '60px 10vw',
+                width: '100%',
+                alignItems: isGridView ? 'start' : 'center',
+                cursor: isGridView ? 'default' : (isDragging ? 'grabbing' : 'pointer')
+            }}>
+              {ecosystemImages.map((src, idx) => (
+                <motion.img 
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }} 
+                  whileInView={{ opacity: 1, y: 0 }} 
+                  viewport={{ once: true, margin: "0px" }} 
+                  transition={{ delay: (idx % 3) * 0.15, duration: 0.6 }} 
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  onClick={() => {
+                    if (!hasDragged.current) {
+                      setModalImages(ecosystemImages);
+                      setModalIndex(idx);
+                    }
+                  }}
+                  src={src} 
+                  alt={`Smart EPP Screen ${idx + 1}`} 
+                  draggable={false}
+                  style={{ 
+                    height: isGridView ? 'auto' : '640px', 
+                    width: isGridView ? '100%' : 'auto', 
+                    objectFit: 'contain',
+                    flexShrink: 0, 
+                    scrollSnapAlign: isGridView ? 'none' : 'center', 
+                    borderRadius: '24px', 
+                    border: '1px solid rgba(255,255,255,0.05)', 
+                    boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
+                    background: '#0a0a0a',
+                    pointerEvents: 'auto',
+                    cursor: 'pointer',
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none'
+                  }} 
+                />
+              ))}
+            </div>
+
+            {/* Right Scroll Button */}
+            {!isGridView && (
+              <button 
+                onClick={() => handleCarouselScroll('right')}
+                style={{ position: 'absolute', right: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.9)'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
+              >
+                <ChevronRight size={32} />
+              </button>
+            )}
           </div>
 
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
