@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
@@ -158,6 +158,9 @@ export const SmartEPPCaseStudy = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const hasDragged = useRef(false);
+  
+  // Layout toggle logic
+  const [isGridView, setIsGridView] = useState(false);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
@@ -750,32 +753,50 @@ export const SmartEPPCaseStudy = () => {
             <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
               A unified FinTech design language scaling from comprehensive admin dashboards down to the pocket-sized employee mobile purchasing experience.
             </p>
+            
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+              <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', padding: '6px' }}>
+                <button 
+                  onClick={() => setIsGridView(false)}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: !isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: !isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '14px', fontWeight: 500 }}
+                >
+                  <Columns size={16} /> Carousel
+                </button>
+                <button 
+                  onClick={() => setIsGridView(true)}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '14px', fontWeight: 500 }}
+                >
+                  <LayoutGrid size={16} /> Grid View
+                </button>
+              </div>
+            </div>
           </div>
 
-          {/* Horizontal Scrolling Ecosystem Showcase */}
+          {/* Ecosystem Showcase */}
           <style>{`
             .ecosystem-scroll::-webkit-scrollbar { display: none; }
             .ecosystem-scroll { -ms-overflow-style: none; scrollbar-width: none; }
           `}</style>
           
           <div 
-            className="ecosystem-scroll" 
-            ref={scrollRef}
-            onMouseDown={handleMouseDown}
-            onMouseLeave={handleMouseLeave}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
+            className={!isGridView ? "ecosystem-scroll" : ""}
+            ref={!isGridView ? scrollRef : null}
+            onMouseDown={!isGridView ? handleMouseDown : undefined}
+            onMouseLeave={!isGridView ? handleMouseLeave : undefined}
+            onMouseUp={!isGridView ? handleMouseUp : undefined}
+            onMouseMove={!isGridView ? handleMouseMove : undefined}
             style={{ 
-              display: 'flex', 
-              gap: '48px',
-              overflowX: 'auto',
-              scrollSnapType: isDragging ? 'none' : 'x mandatory',
-              padding: '60px 10vw',
+              display: isGridView ? 'grid' : 'flex', 
+              gridTemplateColumns: isGridView ? 'repeat(auto-fit, minmax(280px, 1fr))' : undefined,
+              gap: isGridView ? '32px' : '48px',
+              overflowX: isGridView ? 'visible' : 'auto',
+              scrollSnapType: isGridView ? 'none' : (isDragging ? 'none' : 'x mandatory'),
+              padding: isGridView ? '0' : '60px 10vw',
               marginBottom: '80px',
-              width: '100vw',
-              marginLeft: 'calc(-50vw + 50%)',
-              alignItems: 'center',
-              cursor: isDragging ? 'grabbing' : 'pointer'
+              width: isGridView ? '100%' : '100vw',
+              marginLeft: isGridView ? '0' : 'calc(-50vw + 50%)',
+              alignItems: isGridView ? 'start' : 'center',
+              cursor: isGridView ? 'default' : (isDragging ? 'grabbing' : 'pointer')
           }}>
             {ecosystemImages.map((src, idx) => (
               <motion.img 
@@ -794,16 +815,17 @@ export const SmartEPPCaseStudy = () => {
                 src={src} 
                 alt={`Smart EPP Screen ${idx + 1}`} 
                 style={{ 
-                  height: '640px', 
-                  width: 'auto', 
+                  height: isGridView ? 'auto' : '640px', 
+                  width: isGridView ? '100%' : 'auto', 
                   objectFit: 'contain',
                   flexShrink: 0, 
-                  scrollSnapAlign: 'center', 
+                  scrollSnapAlign: isGridView ? 'none' : 'center', 
                   borderRadius: '24px', 
                   border: '1px solid rgba(255,255,255,0.05)', 
                   boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
                   background: '#0a0a0a',
-                  pointerEvents: 'auto'
+                  pointerEvents: 'auto',
+                  cursor: 'pointer'
                 }} 
               />
             ))}
