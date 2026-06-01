@@ -270,34 +270,35 @@ export const SmartEPPCaseStudy = () => {
           {/* Unified Horizontal Console */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ display: 'flex', background: 'rgba(20,20,20,0.6)', backdropFilter: 'blur(20px)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
             
-            {/* Col 1: Budgets */}
-            <div style={{ flex: 1, padding: '40px', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
+            {/* Col 1: Enterprise & HR (Combined) */}
+            <div style={{ flex: 2, padding: '40px', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '32px', fontWeight: 600 }}>
                  <Building2 size={14}/> Enterprise & HR
                </div>
-               <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Limited Budgets</h3>
-               <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Enterprises struggle to secure upfront funding, resulting in a watered-down, generic perk catalog.</p>
                
-               {/* Mini Visual */}
-               <div style={{ marginTop: 'auto', paddingTop: '32px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '8px' }}><span>Funded</span><span>30%</span></div>
-                  <div style={{ height: '4px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '30%', height: '100%', background: 'var(--text-secondary)' }}/></div>
-               </div>
-            </div>
+               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', height: '100%' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                     <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Limited Budgets</h3>
+                     <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Enterprises struggle to secure upfront funding, resulting in a watered-down, generic perk catalog.</p>
+                     
+                     {/* Mini Visual */}
+                     <div style={{ marginTop: 'auto', paddingTop: '32px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '8px' }}><span>Funded</span><span>30%</span></div>
+                        <div style={{ height: '4px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '30%', height: '100%', background: 'var(--text-secondary)' }}/></div>
+                     </div>
+                  </div>
 
-            {/* Col 2: Admin */}
-            <div style={{ flex: 1, padding: '40px', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
-               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '32px', fontWeight: 600 }}>
-                 <Clock size={14}/> Enterprise & HR
-               </div>
-               <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Admin Overhead</h3>
-               <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>HR is bogged down by manual tracking and multi-stage approvals, slowing the process to a crawl.</p>
-               
-               {/* Mini Visual */}
-               <div style={{ marginTop: 'auto', paddingTop: '32px', display: 'flex', gap: '8px' }}>
-                  <div style={{ flex: 3, height: '4px', background: 'rgba(255,255,255,0.2)', borderRadius: '100px' }} />
-                  <div style={{ flex: 1, height: '4px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px' }} />
-                  <div style={{ flex: 1, height: '4px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                     <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Admin Overhead</h3>
+                     <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>HR is bogged down by manual tracking and multi-stage approvals, slowing the process to a crawl.</p>
+                     
+                     {/* Mini Visual */}
+                     <div style={{ marginTop: 'auto', paddingTop: '32px', display: 'flex', gap: '8px' }}>
+                        <div style={{ flex: 3, height: '4px', background: 'rgba(255,255,255,0.2)', borderRadius: '100px' }} />
+                        <div style={{ flex: 1, height: '4px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px' }} />
+                        <div style={{ flex: 1, height: '4px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px' }} />
+                     </div>
+                  </div>
                </div>
             </div>
 
