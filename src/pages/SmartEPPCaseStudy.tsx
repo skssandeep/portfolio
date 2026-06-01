@@ -266,43 +266,60 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', marginTop: '64px' }}>
-            {/* HR Side */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px', color: 'var(--text-secondary)' }}>
-                <Building2 size={20} />
-                <span style={{ fontSize: '14px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Enterprise & HR</span>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                <div>
-                  <h4 style={{ fontSize: '22px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.01em' }}>Limited Budgets</h4>
-                  <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>HR struggles to fund premium perks, resulting in generic, uninspiring employer benefits.</p>
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '22px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.01em' }}>Admin Overhead</h4>
-                  <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Manual tracking, endless emails, and approvals create bottlenecks in benefit delivery.</p>
-                </div>
-              </div>
-            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginTop: '64px' }}>
+               {/* Massive Focus Card - Employee Drop-off */}
+               <motion.div 
+                 whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(239,68,68,0.1)' }}
+                 style={{ gridColumn: 'span 2', background: 'linear-gradient(135deg, rgba(30,30,30,0.8) 0%, rgba(10,10,10,0.9) 100%)', borderRadius: '32px', padding: '48px', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}
+               >
+                  <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(239,68,68,0.15) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0 }} />
+                  <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
+                     <div>
+                       <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#ef4444', fontWeight: 600, letterSpacing: '1px', fontSize: '13px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                          <Users size={16} /> Employee Experience
+                       </div>
+                       <h3 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', lineHeight: 1.2 }}>
+                         Friction-heavy KYC & <br/>Opaque Credit Limits
+                       </h3>
+                       <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '400px', lineHeight: 1.6 }}>
+                         Tedious manual document uploads and hidden limits caused massive sticker shock, leading to devastating user drop-offs before checkout.
+                       </p>
+                     </div>
+                     <div>
+                       <div style={{ fontSize: '80px', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.04em', lineHeight: 1, marginTop: '40px' }}>
+                         12<span style={{ color: '#ef4444' }}>%</span>
+                       </div>
+                       <div style={{ fontSize: '14px', color: 'var(--text-secondary)', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', marginTop: '12px' }}>Funnel Conversion Rate</div>
+                     </div>
+                  </div>
+               </motion.div>
 
-            {/* Employee Side */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px', color: 'var(--text-secondary)' }}>
-                <Users size={20} />
-                <span style={{ fontSize: '14px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Employees</span>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: '#ef4444', background: 'rgba(239, 68, 68, 0.1)', padding: '6px 12px', borderRadius: '100px', marginLeft: 'auto', letterSpacing: '0.5px' }}>12% CONVERSION</span>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                <div>
-                  <h4 style={{ fontSize: '22px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.01em' }}>KYC Friction</h4>
-                  <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Tedious manual document uploads cause massive user drop-offs before loan approval.</p>
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '22px', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '12px', letterSpacing: '-0.01em' }}>Hidden Credit Limits</h4>
-                  <p style={{ fontSize: '16px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>Employees face sticker shock and abandon checkout due to completely opaque limits.</p>
-                </div>
-              </div>
-            </div>
+               {/* HR Cards - Stacked vertically */}
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                 {/* Card 1 */}
+                 <motion.div 
+                   whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
+                   style={{ flex: 1, background: 'linear-gradient(135deg, rgba(30,30,30,0.4) 0%, rgba(10,10,10,0.6) 100%)', borderRadius: '32px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}
+                 >
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontWeight: 600, letterSpacing: '1px', fontSize: '12px', textTransform: 'uppercase', marginBottom: '16px' }}>
+                       <Building2 size={14} /> HR Constraints
+                    </div>
+                    <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Limited Budgets</h4>
+                    <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>HR struggles to fund premium perks, resulting in generic, uninspiring employer benefits.</p>
+                 </motion.div>
+
+                 {/* Card 2 */}
+                 <motion.div 
+                   whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
+                   style={{ flex: 1, background: 'linear-gradient(135deg, rgba(30,30,30,0.4) 0%, rgba(10,10,10,0.6) 100%)', borderRadius: '32px', padding: '32px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}
+                 >
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontWeight: 600, letterSpacing: '1px', fontSize: '12px', textTransform: 'uppercase', marginBottom: '16px' }}>
+                       <Building2 size={14} /> HR Constraints
+                    </div>
+                    <h4 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Admin Overhead</h4>
+                    <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Manual tracking, endless emails, and approvals create massive bottlenecks.</p>
+                 </motion.div>
+               </div>
           </div>
         </div>
       </section>
