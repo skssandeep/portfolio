@@ -613,80 +613,66 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 0', flexWrap: 'wrap', gap: '20px' }}>
             
-            {/* The Failures Row */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px' }}>
-              
-              {/* Concept A */}
-              <motion.div 
-                 whileHover={{ y: -5 }}
-                 style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative' }}
-              >
-                <div style={{ height: '320px', background: '#0a0a0a', position: 'relative', overflow: 'hidden' }}>
-                  <img src="/images/wireframe_v1.png" alt="Standard E-Commerce Wireframe" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.5, filter: 'grayscale(100%)' }} />
-                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, transparent 40%, #0a0a0a 100%)' }} />
-                  <div style={{ position: 'absolute', top: '24px', left: '24px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(10px)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: '#fff', fontWeight: 500, border: '1px solid rgba(255,255,255,0.1)' }}>v1: Standard Flow</div>
-                </div>
-                <div style={{ padding: '0 32px 32px 32px', marginTop: '-80px', position: 'relative', zIndex: 1 }}>
-                  <div style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.2)', padding: '24px', borderRadius: '16px', backdropFilter: 'blur(10px)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                      <XCircle size={18} color="#ef4444" />
-                      <h3 style={{ color: '#ef4444', fontSize: '16px', fontWeight: 600, margin: 0 }}>Why it failed</h3>
-                    </div>
-                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                      <strong style={{ color: '#fff' }}>Sticker Shock.</strong> Employees discovered their credit limits too late, causing mass cart abandonment.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Concept B */}
-              <motion.div 
-                 whileHover={{ y: -5 }}
-                 style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative' }}
-              >
-                <div style={{ height: '320px', background: '#0a0a0a', position: 'relative', overflow: 'hidden' }}>
-                  <img src="/images/wireframe_v2.png" alt="Heavy KYC Wireframe" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.5, filter: 'grayscale(100%)' }} />
-                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, transparent 40%, #0a0a0a 100%)' }} />
-                  <div style={{ position: 'absolute', top: '24px', left: '24px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(10px)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: '#fff', fontWeight: 500, border: '1px solid rgba(255,255,255,0.1)' }}>v2: KYC Wizard</div>
-                </div>
-                <div style={{ padding: '0 32px 32px 32px', marginTop: '-80px', position: 'relative', zIndex: 1 }}>
-                  <div style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.2)', padding: '24px', borderRadius: '16px', backdropFilter: 'blur(10px)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                      <XCircle size={18} color="#ef4444" />
-                      <h3 style={{ color: '#ef4444', fontSize: '16px', fontWeight: 600, margin: 0 }}>Why it failed</h3>
-                    </div>
-                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                      <strong style={{ color: '#fff' }}>High Friction.</strong> Forcing KYC document uploads before browsing caused a fatal 70% bounce rate.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Concept C (The Winner) - Full Width Horizontal Card */}
+            {/* Draft 1 (Failed) */}
             <motion.div 
-               whileHover={{ y: -5 }}
-               style={{ background: 'rgba(16,185,129,0.03)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '32px', overflow: 'hidden', display: 'flex', alignItems: 'stretch', position: 'relative', boxShadow: '0 20px 40px rgba(16,185,129,0.05)' }}
+               whileHover={{ y: -5, rotate: 0, opacity: 1, filter: 'grayscale(0%)', zIndex: 10 }}
+               style={{ width: '280px', transform: 'rotate(-6deg)', opacity: 0.5, filter: 'grayscale(100%)', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 1 }}
             >
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #10b981, #3b82f6)', zIndex: 10 }} />
-              
-              {/* Text Side (Left) */}
-              <div style={{ padding: '64px', flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 1 }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', alignSelf: 'flex-start' }}>
-                  <CheckCircle2 size={16} /> The Winner
+              <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
+                <img src="/images/wireframe_v1.png" alt="Draft 1" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
+              </div>
+              <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
+                  <XCircle size={12} /> Draft 01
                 </div>
-                <h3 style={{ color: '#fff', fontSize: '32px', fontWeight: 600, marginBottom: '24px', lineHeight: 1.2 }}>Frictionless SSO & Instant Credit</h3>
-                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
-                  By syncing Corporate SSO, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout—boosting confidence and skyrocketing conversions.
+                <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>Sticker Shock</h4>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                  Credit limits were hidden until checkout, causing mass cart abandonment.
                 </p>
               </div>
+            </motion.div>
 
-              {/* Image Side (Right) */}
-              <div style={{ flex: '1.2', background: '#0a0a0a', position: 'relative', borderLeft: '1px solid rgba(16,185,129,0.1)' }}>
-                <img src="/images/wireframe_final.png" alt="Progressive Disclosure UI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #050505, transparent 20%)' }} />
+            {/* Draft 2 (Failed) */}
+            <motion.div 
+               whileHover={{ y: -5, rotate: 0, opacity: 1, filter: 'grayscale(0%)', zIndex: 10 }}
+               style={{ width: '280px', transform: 'rotate(4deg)', opacity: 0.5, filter: 'grayscale(100%)', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 2, marginLeft: '-40px' }}
+            >
+              <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
+                <img src="/images/wireframe_v2.png" alt="Draft 2" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
+              </div>
+              <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
+                  <XCircle size={12} /> Draft 02
+                </div>
+                <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>High Friction</h4>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                  Forcing KYC uploads before browsing caused a fatal 70% bounce rate.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* The Winner */}
+            <motion.div 
+               whileHover={{ y: -10, scale: 1.02 }}
+               style={{ width: '560px', background: 'rgba(16,185,129,0.02)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 3, marginLeft: '20px', boxShadow: '0 20px 40px rgba(16,185,129,0.15)', position: 'relative' }}
+            >
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '3px', background: 'linear-gradient(90deg, #10b981, #3b82f6)', zIndex: 10 }} />
+              <div style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
+                <img src="/images/wireframe_final.png" alt="Winner" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '120px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
+              </div>
+              <div style={{ padding: '32px', background: '#0a0a0a', marginTop: '-60px', position: 'relative' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px' }}>
+                  <CheckCircle2 size={16} /> The Winner
+                </div>
+                <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless SSO & Instant Credit</h4>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                  By syncing Corporate SSO, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout—boosting confidence and skyrocketing conversions.
+                </p>
               </div>
             </motion.div>
 
