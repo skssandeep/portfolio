@@ -195,6 +195,22 @@ export const SmartEPPCaseStudy = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (modalIndex === null) return;
+      if (e.key === 'ArrowRight') {
+        setModalIndex((prev) => (prev !== null ? (prev + 1) % modalImages.length : null));
+      } else if (e.key === 'ArrowLeft') {
+        setModalIndex((prev) => (prev !== null ? (prev - 1 + modalImages.length) % modalImages.length : null));
+      } else if (e.key === 'Escape') {
+        setModalIndex(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [modalIndex, modalImages.length]);
+
   return (
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px' }}>
       
