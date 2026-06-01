@@ -140,7 +140,7 @@ export const SmartEPPCaseStudy = () => {
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px' }}>
       
       {/* 1 & 2. Out-of-the-box Hero Section */}
-      <section style={{ width: '100%', minHeight: '100vh', paddingTop: '140px', paddingBottom: '64px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#0a0a0a' }}>
+      <section style={{ width: '100%', minHeight: '100vh', paddingTop: '140px', paddingBottom: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#0a0a0a' }}>
         
         <style>
           {`
@@ -206,13 +206,13 @@ export const SmartEPPCaseStudy = () => {
         </div>
 
         {/* The Floating Ecosystem */}
-        <div style={{ position: 'relative', zIndex: 20, width: '100%', maxWidth: '1100px', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '60px' }}>
+        <div style={{ position: 'relative', zIndex: 20, width: '100%', maxWidth: '1100px', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 'auto' }}>
           
           <img 
             src="/images/Mockup2_EPP.png" 
             alt="Smart EPP" 
             fetchPriority="high"
-            style={{ width: '100%', maxWidth: '900px', filter: 'drop-shadow(0 40px 100px rgba(0,0,0,0.8))', position: 'relative', zIndex: 10, objectFit: 'contain' }} 
+            style={{ width: '100%', maxWidth: '900px', filter: 'drop-shadow(0 40px 100px rgba(0,0,0,0.8))', position: 'relative', zIndex: 10, objectFit: 'contain', marginBottom: '-5%' }} 
           />
 
           {/* Floating Context Cards (Chips) */}
