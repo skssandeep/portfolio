@@ -602,65 +602,78 @@ export const SmartEPPCaseStudy = () => {
 
       {/* 8. Ideating/Solutions & 9. Iterations (The Messy Middle) */}
       <section style={{ padding: '120px 0' }}>
-        <div className="container" style={{ maxWidth: '1000px' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', background: 'rgba(255, 255, 255, 0.05)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#3b82f6', background: 'rgba(59,130,246,0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
               Ideation & Iteration
             </div>
-            <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
-            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
+            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
               Design isn't linear. Here are the three primary directions we explored for the e-commerce purchase flow, and why the first two failed.
             </p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
             {/* Concept A */}
-            <div style={{ background: 'var(--bg-color)', border: '1px solid var(--glass-border)', borderRadius: '16px', overflow: 'hidden' }}>
-              <div style={{ height: '200px', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--glass-border)' }}>
-                <span style={{ color: 'rgba(255,255,255,0.2)', fontFamily: "'JetBrains Mono', monospace" }}>[ Wireframe v1 ]</span>
+            <motion.div 
+               whileHover={{ y: -10 }}
+               style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+            >
+              <div style={{ height: '260px', background: '#0a0a0a', borderBottom: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+                <img src="/images/wireframe_v1.png" alt="Standard E-Commerce Wireframe" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+                <div style={{ position: 'absolute', top: '16px', left: '16px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(10px)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: '#fff', fontWeight: 500, border: '1px solid rgba(255,255,255,0.1)' }}>Wireframe v1</div>
               </div>
-              <div style={{ padding: '24px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                  <XCircle size={16} color="#ef4444" />
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Standard E-Commerce Flow</span>
+              <div style={{ padding: '32px', flexGrow: 1 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+                  <XCircle size={20} color="#ef4444" />
+                  <h3 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: 0 }}>Standard Flow</h3>
                 </div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>
-                  <strong>Why it failed:</strong> Ignored the B2B context. Employees didn't know their pre-approved EMI credit limits upfront, resulting in sticker shock at checkout.
+                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                  <strong style={{ color: '#ef4444' }}>Why it failed:</strong> Ignored the B2B context. Employees didn't know their pre-approved EMI credit limits upfront, resulting in sticker shock at checkout.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Concept B */}
-            <div style={{ background: 'var(--bg-color)', border: '1px solid var(--glass-border)', borderRadius: '16px', overflow: 'hidden' }}>
-              <div style={{ height: '200px', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--glass-border)' }}>
-                <span style={{ color: 'rgba(255,255,255,0.2)', fontFamily: "'JetBrains Mono', monospace" }}>[ Wireframe v2 ]</span>
+            <motion.div 
+               whileHover={{ y: -10 }}
+               style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+            >
+              <div style={{ height: '260px', background: '#0a0a0a', borderBottom: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+                <img src="/images/wireframe_v2.png" alt="Heavy KYC Wireframe" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+                <div style={{ position: 'absolute', top: '16px', left: '16px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(10px)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: '#fff', fontWeight: 500, border: '1px solid rgba(255,255,255,0.1)' }}>Wireframe v2</div>
               </div>
-              <div style={{ padding: '24px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                  <XCircle size={16} color="#ef4444" />
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>The Heavy KYC Wizard</span>
+              <div style={{ padding: '32px', flexGrow: 1 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+                  <XCircle size={20} color="#ef4444" />
+                  <h3 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: 0 }}>Heavy KYC Wizard</h3>
                 </div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>
-                  <strong>Why it failed:</strong> Asked for PAN cards and salary slips before users even browsed the product catalog. The friction caused an immediate 70% bounce rate.
+                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                  <strong style={{ color: '#ef4444' }}>Why it failed:</strong> Asked for PAN cards and salary slips before users even browsed the product catalog. The friction caused an immediate 70% bounce rate.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Concept C */}
-            <div style={{ background: 'var(--bg-color)', border: '2px solid var(--accent-color)', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 0 0 4px rgba(229, 9, 20, 0.1)' }}>
-              <div style={{ height: '200px', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                <span style={{ color: 'var(--accent-color)', fontFamily: "'JetBrains Mono', monospace" }}>[ Final UI ]</span>
+            <motion.div 
+               whileHover={{ y: -10 }}
+               style={{ background: 'rgba(16,185,129,0.02)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative', boxShadow: '0 8px 32px rgba(16,185,129,0.1)' }}
+            >
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #10b981, #3b82f6)' }} />
+              <div style={{ height: '260px', background: '#0a0a0a', borderBottom: '1px solid rgba(16,185,129,0.1)', position: 'relative', overflow: 'hidden' }}>
+                <img src="/images/wireframe_final.png" alt="Progressive Disclosure UI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div style={{ position: 'absolute', top: '16px', left: '16px', background: '#10b981', color: '#000', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', fontWeight: 700 }}>Final UI</div>
               </div>
-              <div style={{ padding: '24px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                  <CheckCircle2 size={16} color="var(--accent-color)" />
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Progressive Disclosure</span>
+              <div style={{ padding: '32px', flexGrow: 1 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+                  <CheckCircle2 size={20} color="#10b981" />
+                  <h3 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: 0 }}>Progressive Disclosure</h3>
                 </div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>
-                  <strong>The Winner:</strong> Authenticate via Corporate SSO to show instant credit limits, letting them browse confidently. We delayed technical KYC until checkout.
+                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                  <strong style={{ color: '#10b981' }}>The Winner:</strong> Authenticate via Corporate SSO to show instant credit limits, letting them browse confidently. We delayed technical KYC until checkout.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
