@@ -130,6 +130,82 @@ const SmartEPPPrototype = () => {
   );
 };
 
+const InteractiveSolutionTabs = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  const features = [
+    {
+      id: 0,
+      title: "Corporate SSO Auth",
+      desc: "Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.",
+      icon: <Fingerprint size={24} />,
+      img: "/images/EPP_CaseStudy_02.png"
+    },
+    {
+      id: 1,
+      title: "Dynamic Credit Limits",
+      desc: "Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.",
+      icon: <Wallet size={24} />,
+      img: "/images/EPP_CaseStudy_03.png"
+    },
+    {
+      id: 2,
+      title: "1-Click Checkout",
+      desc: "Automatically routing the first EMI deduction to the next month's payroll, eliminating credit card processing entirely.",
+      icon: <Zap size={24} />,
+      img: "/images/EPP_CaseStudy_04.png"
+    }
+  ];
+
+  return (
+    <section style={{ padding: '100px 0', background: 'var(--bg-color)', borderBottom: '1px solid var(--glass-border)' }}>
+      <div className="container" style={{ maxWidth: '1200px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#8b5cf6', background: 'rgba(139, 92, 246, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+            <Zap size={16} /> Alternative Layout
+          </div>
+          <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Interactive Feature Spotlight</h2>
+          <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>
+            A highly engaging, space-efficient Mac OS style spotlight layout. Click the tabs to explore the core features.
+          </p>
+        </div>
+
+        <div style={{ display: 'flex', gap: '48px', background: 'rgba(20,20,20,0.6)', backdropFilter: 'blur(20px)', padding: '48px', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+          {/* Sidebar Controls */}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '16px', justifyContent: 'center' }}>
+             {features.map((f, i) => (
+                <div key={f.id} onClick={() => setActiveTab(i)} style={{ padding: '24px', borderRadius: '24px', background: activeTab === i ? 'rgba(255,255,255,0.03)' : 'transparent', border: `1px solid ${activeTab === i ? 'rgba(255,255,255,0.08)' : 'transparent'}`, cursor: 'pointer', transition: 'all 0.3s ease' }}>
+                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: activeTab === i ? '12px' : '0' }}>
+                      <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: activeTab === i ? 'rgba(139, 92, 246, 0.1)' : 'transparent', color: activeTab === i ? '#8b5cf6' : 'var(--text-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}>
+                        {f.icon}
+                      </div>
+                      <h3 style={{ fontSize: '20px', fontWeight: 600, color: activeTab === i ? 'var(--text-primary)' : 'var(--text-secondary)', margin: 0, transition: 'all 0.3s' }}>{f.title}</h3>
+                   </div>
+                   {activeTab === i && (
+                     <motion.p initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0, paddingLeft: '64px' }}>
+                        {f.desc}
+                     </motion.p>
+                   )}
+                </div>
+             ))}
+          </div>
+          {/* Visual Display */}
+          <div style={{ flex: 1.5, background: 'rgba(255,255,255,0.02)', borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', minHeight: '400px' }}>
+             <motion.img 
+                key={activeTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                src={features[activeTab].img} 
+                alt={features[activeTab].title}
+                style={{ width: '100%', maxWidth: '300px', borderRadius: '12px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }}
+             />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export const SmartEPPCaseStudy = () => {
 
   useEffect(() => {
@@ -382,6 +458,9 @@ export const SmartEPPCaseStudy = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Alternative Solution Section */}
+      <InteractiveSolutionTabs />
 
       {/* 5. Research & 6. Analysis */}
       <section style={{ padding: '100px 0' }}>
