@@ -755,7 +755,7 @@ export const SmartEPPCaseStudy = () => {
               width: '100vw',
               marginLeft: 'calc(-50vw + 50%)',
               alignItems: 'center',
-              cursor: isDragging ? 'grabbing' : 'grab'
+              cursor: isDragging ? 'grabbing' : 'pointer'
           }}>
             {ecosystemImages.map((src, idx) => (
               <motion.img 
