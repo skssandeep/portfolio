@@ -453,7 +453,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.1 }}
               style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '32px', letterSpacing: '-0.02em' }}
             >
-              Up to 40% of that phone is just tax. <span style={{ color: '#a3a3a3', fontWeight: 500 }}>We built the system that gives it back.</span>
+              Up to 40% of that phone is just tax. <span style={{ color: '#34d399', fontWeight: 500 }}>We built the system that gives it back.</span>
             </motion.h2>
 
             {/* Description */}
