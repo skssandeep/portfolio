@@ -584,32 +584,45 @@ export const SmartEPPCaseStudy = () => {
                   THE CONSTRAINTS
                 </div>
                 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
                   
-                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Platforms (Employee, HR, Financier, Seller)</div>
-                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>4</div>
+                  {/* Card 1 */}
+                  <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px' }}>
+                    <div style={{ color: '#fff', fontSize: '28px', fontWeight: 500, marginBottom: '8px', lineHeight: 1 }}>4</div>
+                    <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500, marginBottom: '4px' }}>Platforms</div>
+                    <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>Employee, HR, Financier, Seller</div>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Distinct user types</div>
-                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>4</div>
+                  {/* Card 2 */}
+                  <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px' }}>
+                    <div style={{ color: '#fff', fontSize: '28px', fontWeight: 500, marginBottom: '8px', lineHeight: 1 }}>4</div>
+                    <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500, marginBottom: '4px' }}>User Types</div>
+                    <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>Distinct actors in one flow</div>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Shared operational backbone</div>
-                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>1</div>
+                  {/* Card 3 */}
+                  <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px' }}>
+                    <div style={{ color: '#fff', fontSize: '28px', fontWeight: 500, marginBottom: '8px', lineHeight: 1 }}>1</div>
+                    <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500, marginBottom: '4px' }}>Backbone</div>
+                    <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>Shared operational backend</div>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>OneAssist consumer-app design system</div>
-                    <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500, letterSpacing: '1px' }}>UI</div>
+                  {/* Card 4 */}
+                  <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px' }}>
+                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500, marginBottom: '8px', lineHeight: 1, letterSpacing: '1px', height: '28px', display: 'flex', alignItems: 'flex-end' }}>UI</div>
+                    <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500, marginBottom: '4px' }}>Design System</div>
+                    <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>Existing consumer components</div>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Months to ship MVP</div>
-                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>5</div>
+                  {/* Card 5 (Full Width) */}
+                  <div style={{ gridColumn: '1 / -1', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500 }}>Months to Ship</div>
+                      <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>To design and ship the MVP</div>
+                    </div>
+                    <div style={{ color: '#fff', fontSize: '28px', fontWeight: 500 }}>5</div>
                   </div>
+
                 </div>
                 
                 {/* Highlight Pill */}
