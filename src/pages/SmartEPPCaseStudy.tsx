@@ -584,43 +584,31 @@ export const SmartEPPCaseStudy = () => {
                   THE CONSTRAINTS
                 </div>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '48px', borderTop: '1px solid rgba(255,255,255,0.1)', borderBottom: '1px solid rgba(255,255,255,0.1)', padding: '32px 0' }}>
                   
-                  {/* Card 1 */}
-                  <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px' }}>
-                    <div style={{ color: '#fff', fontSize: '28px', fontWeight: 500, marginBottom: '8px', lineHeight: 1 }}>4</div>
-                    <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500, marginBottom: '4px' }}>Platforms</div>
-                    <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>Employee, HR, Financier, Seller</div>
+                  <div style={{ flex: '1 1 auto' }}>
+                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>4</div>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Platforms</div>
                   </div>
 
-                  {/* Card 2 */}
-                  <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px' }}>
-                    <div style={{ color: '#fff', fontSize: '28px', fontWeight: 500, marginBottom: '8px', lineHeight: 1 }}>4</div>
-                    <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500, marginBottom: '4px' }}>User Types</div>
-                    <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>Distinct actors in one flow</div>
+                  <div style={{ flex: '1 1 auto' }}>
+                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>4</div>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>User Types</div>
                   </div>
 
-                  {/* Card 3 */}
-                  <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px' }}>
-                    <div style={{ color: '#fff', fontSize: '28px', fontWeight: 500, marginBottom: '8px', lineHeight: 1 }}>1</div>
-                    <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500, marginBottom: '4px' }}>Backbone</div>
-                    <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>Shared operational backend</div>
+                  <div style={{ flex: '1 1 auto' }}>
+                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>1</div>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Backbone</div>
                   </div>
 
-                  {/* Card 4 */}
-                  <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px' }}>
-                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500, marginBottom: '8px', lineHeight: 1, letterSpacing: '1px', height: '28px', display: 'flex', alignItems: 'flex-end' }}>UI</div>
-                    <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500, marginBottom: '4px' }}>Design System</div>
-                    <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>Existing consumer components</div>
+                  <div style={{ flex: '1 1 auto' }}>
+                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>UI</div>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Design System</div>
                   </div>
 
-                  {/* Card 5 (Full Width) */}
-                  <div style={{ gridColumn: '1 / -1', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                      <div style={{ color: '#e5e5e5', fontSize: '13px', fontWeight: 500 }}>Months to Ship</div>
-                      <div style={{ color: '#888', fontSize: '12px', lineHeight: 1.4 }}>To design and ship the MVP</div>
-                    </div>
-                    <div style={{ color: '#fff', fontSize: '28px', fontWeight: 500 }}>5</div>
+                  <div style={{ flex: '1 1 auto' }}>
+                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>5</div>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</div>
                   </div>
 
                 </div>
