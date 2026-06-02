@@ -582,154 +582,107 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Stats (Right) */}
               <div className="lg:col-span-5 font-mono" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
-                  THE CONSTRAINTS
+                <div style={{ fontSize: '11px', color: '#f95738', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px', fontWeight: 600 }}>
+                  The Constraints
                 </div>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
                   
-                  {/* Card 1 */}
-                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
-                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>4</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Platforms</span>
-                    </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Employee, HR, Financier, Seller.</div>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Platforms</div>
+                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>4</div>
+                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Employee, HR, Financier, Seller.</div>
                   </div>
 
-                  {/* Card 2 */}
-                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
-                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>4</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>User Types</span>
-                    </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Distinct actors in one shared flow.</div>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>User Types</div>
+                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>4</div>
+                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Distinct actors in one shared flow.</div>
                   </div>
 
-                  {/* Card 3 */}
-                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
-                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>1</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Backbone</span>
-                    </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Unified operational backend.</div>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Backbone</div>
+                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>1</div>
+                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Unified operational backend.</div>
                   </div>
 
-                  {/* Card 4 */}
-                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
-                      <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500, lineHeight: 1 }}>UI</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Design System</span>
-                    </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Built on OneAssist's library.</div>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Design System</div>
+                    <div style={{ color: '#fff', fontSize: '16px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>Existing</div>
+                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Built on OneAssist's library.</div>
                   </div>
 
-                  {/* Card 5 */}
-                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
-                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>5</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</span>
-                    </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Deadline to design and ship the MVP.</div>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Timeline</div>
+                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>5 mo</div>
+                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Blank canvas to shipped MVP.</div>
                   </div>
 
-                  {/* Card 6 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #444', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
-                      <span style={{ color: '#666', fontSize: '16px', fontWeight: 500, lineHeight: 1 }}>OUT</span>
-                      <span style={{ color: '#666', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Of Scope</span>
-                    </div>
-                    <div style={{ color: '#666', fontSize: '12px', lineHeight: 1.4 }}>Brand identity, backend, payment gateway.</div>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #333', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                    <div style={{ color: '#555', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Out of Scope</div>
+                    <div style={{ color: '#555', fontSize: '12px', fontWeight: 400, lineHeight: 1.4, marginTop: '6px' }}>Brand identity, backend, payments.</div>
                   </div>
 
                 </div>
                 
-                {/* Highlight Pill */}
-                <div style={{ marginTop: '24px', display: 'flex', alignItems: 'flex-start', gap: '12px', width: '100%', background: 'rgba(249, 87, 56, 0.05)', color: '#f95738', padding: '16px 20px', borderRadius: '12px', fontSize: '13px', border: '1px solid rgba(249, 87, 56, 0.2)' }}>
-                  <div style={{ width: '6px', height: '6px', background: '#f95738', borderRadius: '50%', marginTop: '6px', flexShrink: 0 }} />
-                  <div style={{ lineHeight: 1.5 }}>Ship in under 6 months, or lose the tax-year timing to a competitor.</div>
+                <div style={{ marginTop: '16px', display: 'flex', alignItems: 'flex-start', gap: '10px', width: '100%', background: 'rgba(249, 87, 56, 0.05)', color: '#f95738', padding: '14px 16px', borderRadius: '10px', fontSize: '12px', border: '1px solid rgba(249, 87, 56, 0.2)', lineHeight: 1.5 }}>
+                  <div style={{ width: '5px', height: '5px', background: '#f95738', borderRadius: '50%', marginTop: '5px', flexShrink: 0 }} />
+                  <div>Ship in under 6 months, or lose the tax-year timing to a competitor.</div>
                 </div>
               </div>
             </div>
 
-            {/* Creative Bridge Divider */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', margin: '80px 0' }}>
-              <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, transparent, rgba(249,87,56,0.2))' }} />
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(249,87,56,0.08)', border: '1px solid rgba(249,87,56,0.2)', borderRadius: '100px', padding: '6px 14px', flexShrink: 0 }}>
-                <Zap size={12} color="#f95738" />
-                <span style={{ color: '#f95738', fontSize: '11px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>Which made things hard</span>
-              </div>
-              <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to left, transparent, rgba(249,87,56,0.2))' }} />
+            {/* Bridge: clean divider */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', margin: '64px 0 48px 0' }}>
+              <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.06)' }} />
+              <span style={{ color: '#555', fontSize: '11px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', flexShrink: 0 }}>5 Core Challenges</span>
+              <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.06)' }} />
             </div>
 
-            {/* Zone C: The 5 Problems */}
+            {/* Zone C: Challenges */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '48px' }}>
-                <h3 style={{ fontSize: '28px', fontWeight: 500, color: '#fff', margin: 0 }}>
-                  Why it was hard
-                </h3>
-                <div className="font-mono" style={{ color: '#666', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '2px' }}>
-                  5 Core Challenges
-                </div>
-              </div>
+              <h3 style={{ fontSize: '28px', fontWeight: 500, color: '#fff', margin: '0 0 40px 0' }}>
+                Why it was hard
+              </h3>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               
               {/* Challenge 1 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
-                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>01</span>
-                  Tax savings are abstract. Money feels real.
-                </h4>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Employees don't think in slabs and GST credits. They think "what do I actually save?" The math had to become one personal, immediate number.
-                </p>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <div style={{ color: '#f95738', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Abstract savings</div>
+                <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', marginBottom: '10px', lineHeight: 1.3, margin: '0 0 10px 0' }}>Tax savings are abstract. Money feels real.</h4>
+                <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Employees don't think in slabs. They think "what do I actually save?" The math had to become one personal, immediate number.</p>
               </motion.div>
 
               {/* Challenge 2 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
-                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>02</span>
-                  Salary deduction is terrifying without trust.
-                </h4>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Committing months of salary to a device is a high-trust act. Without confidence at every step, people abandon at the product page.
-                </p>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <div style={{ color: '#f95738', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>High-trust commitment</div>
+                <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', margin: '0 0 10px 0', lineHeight: 1.3 }}>Salary deduction is terrifying without trust signals.</h4>
+                <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Committing months of salary is a high-trust act. Without confidence at every step, people abandon at the product page.</p>
               </motion.div>
 
               {/* Challenge 3 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
-                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>03</span>
-                  HR needs control without overhead.
-                </h4>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Approving device requests at scale breaks without tooling. Approvals had to take seconds, not minutes, or HR walks.
-                </p>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <div style={{ color: '#f95738', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Scale without friction</div>
+                <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', margin: '0 0 10px 0', lineHeight: 1.3 }}>HR needs to approve hundreds of requests in seconds.</h4>
+                <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Approvals at scale break without proper tooling — and if approval is slow, HR simply stops using it.</p>
               </motion.div>
 
               {/* Challenge 4 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
-                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>04</span>
-                  Four user types. Zero shared vocabulary.
-                </h4>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Employees think products. HR thinks policy. Lessors think risk. Sellers think fulfillment. One order, four meanings.
-                </p>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <div style={{ color: '#f95738', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>No shared vocabulary</div>
+                <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', margin: '0 0 10px 0', lineHeight: 1.3 }}>Four user types. One order. Four completely different meanings.</h4>
+                <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Employees think products. HR thinks policy. Lessors think risk. Sellers think fulfillment.</p>
               </motion.div>
 
               {/* Challenge 5 - Full Width Hero Card */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'linear-gradient(135deg, rgba(249, 87, 56, 0.05) 0%, rgba(255,255,255,0.02) 100%)', borderLeft: '3px solid #f95738', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
-                <div className="font-mono" style={{ fontSize: '12px', color: '#f95738', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
-                  THE HARDEST ONE
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'linear-gradient(135deg, rgba(249, 87, 56, 0.07) 0%, rgba(249,87,56,0.02) 100%)', borderLeft: '3px solid #f95738', borderRadius: '4px 16px 16px 4px', padding: '32px 40px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'center' }}>
+                <div>
+                  <div style={{ color: '#f95738', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>The Hardest One</div>
+                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3 }}>The invisible 4-party chain.</h4>
                 </div>
-                <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '16px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
-                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '18px', fontWeight: 500 }}>05</span>
-                  The invisible 4-party chain.
-                </h4>
-                <p style={{ fontSize: '18px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, maxWidth: '1000px' }}>
-                  15+ order states across 4 parties. Three days of silence kills trust even when nothing's wrong. The fix: employees see a clean 5-step progress bar; the chain stays hidden.
+                <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>
+                  15+ order states across 4 parties. Three days of silence kills trust even when nothing's wrong. The fix: employees see a clean 5-step progress bar — the chain stays hidden.
                 </p>
               </motion.div>
 
