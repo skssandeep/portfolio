@@ -430,7 +430,7 @@ export const SmartEPPCaseStudy = () => {
         <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px' }}>
           
           {/* Left Text Block */}
-          <div style={{ flex: '0 1 500px', zIndex: 10, paddingBottom: '80px' }}>
+          <div style={{ flex: '1 1 700px', zIndex: 10, paddingBottom: '80px', maxWidth: '800px' }}>
             {/* Pre-header Pill (Drafted) */}
             {false && (
             <motion.div 
@@ -484,9 +484,9 @@ export const SmartEPPCaseStudy = () => {
           </div>
 
           {/* Right Mockup Block */}
-          <div style={{ flex: '1 1 700px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 5 }}>
+          <div style={{ flex: '1 1 400px', position: 'relative', zIndex: 5, minHeight: '600px' }}>
             {/* Soft Glow Behind Image */}
-            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '120%', height: '120%', background: 'radial-gradient(circle, rgba(249,87,56,0.15) 0%, transparent 60%)', zIndex: 0 }} />
+            <div style={{ position: 'absolute', top: '50%', left: '30%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(249,87,56,0.15) 0%, transparent 60%)', zIndex: 0 }} />
             
             <motion.img 
               initial={{ opacity: 0, x: 40 }}
@@ -495,7 +495,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.4, duration: 0.6, type: 'spring', stiffness: 100 }}
               src="/images/Mockup2_EPP.png" 
               alt="Smart EPP Mobile App Mockup" 
-              style={{ width: '100%', maxWidth: '1000px', transform: 'scale(1.3) translateX(20px)', objectFit: 'contain', position: 'relative', zIndex: 2, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
+              style={{ position: 'absolute', top: '0', left: '-10%', width: '180%', maxWidth: '1200px', transform: 'translateY(-10%)', objectFit: 'contain', zIndex: 2, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
             />
           </div>
 
