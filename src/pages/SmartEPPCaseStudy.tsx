@@ -552,17 +552,22 @@ export const SmartEPPCaseStudy = () => {
       <section style={{ padding: '160px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container" style={{ maxWidth: '1400px' }}>
           
-          {/* Zone A: Headline */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '64px' }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em', maxWidth: '1400px', margin: 0 }}>
+          {/* Zone A & B: The Setup Block */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px', marginBottom: '120px' }}>
+            
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#34d399', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+              <div style={{ width: '6px', height: '6px', background: '#34d399', borderRadius: '50%' }} />
+              The Problem
+            </div>
+
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', maxWidth: '1100px', margin: 0 }}>
               A 4-party financial product that had to feel as simple as shopping on Amazon.
             </h2>
-          </motion.div>
+            
+            {/* Horizontal Rule */}
+            <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.1)', margin: '64px 0 48px 0' }} />
 
-          {/* Zone B: The Brief */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ marginBottom: '120px' }}>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '48px' }}>
-              
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
               {/* Narrative (Left) */}
               <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <p style={{ fontSize: '18px', color: '#e5e5e5', lineHeight: 1.7, margin: 0, marginBottom: '24px' }}>
@@ -610,22 +615,27 @@ export const SmartEPPCaseStudy = () => {
             </div>
             
             {/* Footnote */}
-            <div style={{ marginTop: '16px', fontSize: '14px', color: '#666', paddingLeft: '48px' }}>
+            <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.05)', fontSize: '14px', color: '#666' }}>
               <span style={{ color: '#a3a3a3' }}>Out of scope:</span> brand identity, backend architecture, payment gateway design.
             </div>
           </motion.div>
 
           {/* Zone C: The 5 Problems */}
           <div>
-            <h3 style={{ fontSize: '24px', fontWeight: 500, color: '#fff', marginBottom: '40px' }}>
-              Why it was hard
-            </h3>
+            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '24px', marginBottom: '48px' }}>
+              <h3 style={{ fontSize: '28px', fontWeight: 500, color: '#fff', margin: 0 }}>
+                Why it was hard
+              </h3>
+              <div className="font-mono" style={{ color: '#666', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                5 Core Challenges
+              </div>
+            </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5 rounded-3xl overflow-hidden border border-white/10" style={{ background: 'rgba(255,255,255,0.05)' }}>
               
               {/* Challenge 1 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0a0a0a', padding: '56px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                   <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>01</span>
                   Tax savings are abstract. Money feels real.
                 </h4>
@@ -635,8 +645,8 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 2 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0a0a0a', padding: '56px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                   <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>02</span>
                   Salary deduction is terrifying without trust.
                 </h4>
@@ -646,8 +656,8 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 3 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0a0a0a', padding: '56px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                   <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>03</span>
                   HR needs control without overhead.
                 </h4>
@@ -657,8 +667,8 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 4 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: '#0a0a0a', padding: '56px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                   <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>04</span>
                   Four user types. Zero shared vocabulary.
                 </h4>
@@ -668,11 +678,11 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 5 - Full Width Hero Card */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'radial-gradient(150% 100% at top left, rgba(249, 87, 56, 0.08) 0%, rgba(20,20,20,0) 100%)', border: '1px solid rgba(249, 87, 56, 0.2)', borderRadius: '24px', padding: '40px' }}>
-                <div className="font-mono" style={{ fontSize: '12px', color: '#f95738', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'radial-gradient(150% 100% at top left, rgba(249, 87, 56, 0.08) 0%, #0a0a0a 100%)', backgroundColor: '#0a0a0a', padding: '56px' }}>
+                <div className="font-mono" style={{ fontSize: '12px', color: '#f95738', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
                   THE HARDEST ONE
                 </div>
-                <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '16px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                   <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '18px', fontWeight: 500 }}>05</span>
                   The invisible 4-party chain.
                 </h4>
