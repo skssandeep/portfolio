@@ -584,51 +584,53 @@ export const SmartEPPCaseStudy = () => {
                   THE CONSTRAINTS
                 </div>
                 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
                   
                   {/* Card 1 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
-                      <span style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1 }}>4</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Platforms</span>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
+                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>4</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Platforms</span>
                     </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Employee App, HR Portal, Financier Portal, and Seller Portal.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Employee, HR, Financier, Seller.</div>
                   </div>
 
                   {/* Card 2 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
-                      <span style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1 }}>4</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>User Types</span>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
+                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>4</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>User Types</span>
                     </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Distinct actors interacting within a single shared order lifecycle.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Distinct actors in one shared flow.</div>
                   </div>
 
                   {/* Card 3 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
-                      <span style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1 }}>1</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Shared Backbone</span>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
+                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>1</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Backbone</span>
                     </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>A unified operational backend supporting all platforms simultaneously.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Unified operational backend.</div>
                   </div>
 
                   {/* Card 4 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
-                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>UI</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Design System</span>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
+                      <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500, lineHeight: 1 }}>UI</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Design System</span>
                     </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Strictly built on OneAssist's existing consumer-app component library.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Built on OneAssist's library.</div>
                   </div>
 
-                  {/* Card 5 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
-                      <span style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1 }}>5</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</span>
+                  {/* Card 5 (Full Width) */}
+                  <div style={{ gridColumn: '1 / -1', background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
+                        <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>5</span>
+                        <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</span>
+                      </div>
+                      <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Absolute deadline to design, build, and ship the MVP.</div>
                     </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>The absolute deadline to design, build, and ship the entire MVP.</div>
                   </div>
 
                 </div>
