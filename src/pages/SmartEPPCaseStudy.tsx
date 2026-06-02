@@ -725,7 +725,8 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
 
         </div>
       </section>
