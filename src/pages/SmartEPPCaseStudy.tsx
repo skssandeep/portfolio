@@ -495,7 +495,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.4, duration: 0.6, type: 'spring', stiffness: 100 }}
               src="/images/Mockup2_EPP.png" 
               alt="Smart EPP Mobile App Mockup" 
-              style={{ position: 'absolute', top: '-20%', left: '-15%', width: '165%', maxWidth: '1100px', objectFit: 'contain', zIndex: 2, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
+              style={{ position: 'absolute', top: '-20%', left: '-25%', width: '165%', maxWidth: '1100px', objectFit: 'contain', zIndex: 2, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
             />
           </div>
 
