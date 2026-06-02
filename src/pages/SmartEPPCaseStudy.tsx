@@ -629,6 +629,83 @@ export const SmartEPPCaseStudy = () => {
             </motion.div>
 
           </div>
+
+          {/* 5 Core UX Challenges */}
+          <div style={{ marginTop: '120px' }}>
+            <h3 style={{ fontSize: '24px', fontWeight: 500, color: '#fff', marginBottom: '40px' }}>
+              The Core UX Challenges
+            </h3>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              
+              {/* Challenge 1 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
+                <div className="font-mono" style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
+                  CHALLENGE 01
+                </div>
+                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
+                  Tax savings are abstract. Money feels real.
+                </h4>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  Employees don't think in income slabs and GST credits. They think in "how much do I actually save?" The app needed to translate complex tax math into a concrete number that felt personal and immediate.
+                </p>
+              </motion.div>
+
+              {/* Challenge 2 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
+                <div className="font-mono" style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
+                  CHALLENGE 02
+                </div>
+                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
+                  Salary deduction is terrifying without trust
+                </h4>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  Asking employees to commit to a multi-month salary deduction for a device is a high-trust action. The app needed to build exceptional confidence at every step — or people would abandon at the product detail page.
+                </p>
+              </motion.div>
+
+              {/* Challenge 3 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
+                <div className="font-mono" style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
+                  CHALLENGE 03
+                </div>
+                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
+                  HR needs control without overhead
+                </h4>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  HR approving individual device requests at scale is a nightmare without the right tooling. The dashboard needed to enable informed approval in seconds, not minutes — or HR would push back on adopting the program.
+                </p>
+              </motion.div>
+
+              {/* Challenge 4 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
+                <div className="font-mono" style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
+                  CHALLENGE 04
+                </div>
+                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
+                  Four user types. Zero shared vocabulary.
+                </h4>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  Employees think about products. HR thinks about policy. Lessors think about credit risk. Sellers think about fulfillment. The same operational event (an order) means something completely different to each party.
+                </p>
+              </motion.div>
+
+              {/* Challenge 5 - Full Width */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'radial-gradient(150% 100% at top left, rgba(249, 87, 56, 0.08) 0%, rgba(20,20,20,0) 100%)', border: '1px solid rgba(249, 87, 56, 0.15)', borderRadius: '24px', padding: '40px' }}>
+                <div className="font-mono" style={{ fontSize: '11px', color: '#f95738', opacity: 0.8, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
+                  CHALLENGE 05 — THE HARDEST ONE
+                </div>
+                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
+                  The status tracking problem: a 4-party chain that employees can't see but absolutely feel when something goes wrong
+                </h4>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '1000px' }}>
+                  With 4 parties involved, there are 15+ distinct order states. An employee who submits a request and hears nothing for 3 days will lose trust — even if everything is on track. The tracking experience needed to acknowledge complexity without exposing it: the employee sees a clear 5-step progress bar; the 4-party chain is invisible.
+                </p>
+              </motion.div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
