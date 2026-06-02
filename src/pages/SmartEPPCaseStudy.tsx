@@ -455,30 +455,18 @@ export const SmartEPPCaseStudy = () => {
             >
               Up to 40% of that <span style={{ position: 'relative', display: 'inline-block' }}>
                 phone
-                <svg className="hidden lg:block" width="280" height="140" viewBox="0 0 280 140" fill="none" style={{ position: 'absolute', left: '70%', bottom: '70%', overflow: 'visible', zIndex: 0, pointerEvents: 'none' }}>
-                  <motion.path 
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
-                    d="M 20 120 Q 140 -20 270 90" 
-                    stroke="rgba(255,255,255,0.25)" 
-                    strokeWidth="1.5" 
-                    strokeLinecap="round" 
-                    fill="none"
-                  />
-                  <motion.polyline 
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 1.8 }}
-                    points="250,60 272,92 235,95" 
-                    stroke="rgba(255,255,255,0.25)" 
-                    strokeWidth="1.5" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    fill="none"
-                  />
+                <svg className="hidden lg:block" width="280" height="120" viewBox="0 0 280 120" fill="none" style={{ position: 'absolute', left: '100%', top: '50%', overflow: 'visible', zIndex: 0, pointerEvents: 'none' }}>
+                  {/* The Track */}
+                  <path d="M 10 0 L 250 0 L 250 100" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="none" />
+                  
+                  {/* Endpoints */}
+                  <circle cx="10" cy="0" r="2" fill="rgba(255,255,255,0.4)" />
+                  <rect x="247" y="97" width="6" height="6" fill="transparent" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
+                  
+                  {/* The Traveling Data Packet */}
+                  <circle r="3" fill="var(--accent-color)" style={{ filter: 'drop-shadow(0 0 8px #f95738)' }}>
+                    <animateMotion dur="2.5s" repeatCount="indefinite" path="M 10 0 L 250 0 L 250 100" />
+                  </circle>
                 </svg>
               </span> is just tax. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
             </motion.h2>
