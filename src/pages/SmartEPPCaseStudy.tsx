@@ -579,37 +579,43 @@ export const SmartEPPCaseStudy = () => {
               </div>
 
               {/* Stats (Right) */}
-              <div className="lg:col-span-5 font-mono" style={{ display: 'flex', flexDirection: 'column', gap: '16px', justifyContent: 'center' }}>
-                <div style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '8px' }}>
+              <div className="lg:col-span-5 font-mono" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
                   THE CONSTRAINTS
                 </div>
                 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
-                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>4</span>
-                    <span>platforms — employee app (iOS + Android), HR portal, financier portal, seller portal</span>
-                  </div>
-                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
-                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>4</span>
-                    <span>user types</span>
-                  </div>
-                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
-                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>1</span>
-                    <span>shared operational backbone</span>
-                  </div>
-                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
-                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>Built</span>
-                    <span>on OneAssist's existing consumer-app design system</span>
-                  </div>
-                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
-                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>5</span>
-                    <span>months to ship MVP</span>
-                  </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
                   
-                  {/* Highlight Pill */}
-                  <div style={{ marginTop: '8px', display: 'block', width: '100%', background: 'rgba(249, 87, 56, 0.1)', color: '#f95738', padding: '16px', borderRadius: '8px', fontSize: '14px', border: '1px solid rgba(249, 87, 56, 0.2)' }}>
-                    Ship in under 6 months, or lose the tax-year timing to a competitor.
+                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
+                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>4</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Platforms (Employee, HR, Financier, Seller)</div>
                   </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
+                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>4</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Distinct user types</div>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
+                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>1</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Shared operational backbone</div>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
+                    <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500 }}>UI</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>OneAssist consumer-app design system</div>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
+                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>5</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Months to ship MVP</div>
+                  </div>
+                </div>
+                
+                {/* Highlight Pill */}
+                <div style={{ marginTop: '24px', display: 'flex', alignItems: 'flex-start', gap: '12px', width: '100%', background: 'rgba(249, 87, 56, 0.05)', color: '#f95738', padding: '16px 20px', borderRadius: '12px', fontSize: '13px', border: '1px solid rgba(249, 87, 56, 0.2)' }}>
+                  <div style={{ width: '6px', height: '6px', background: '#f95738', borderRadius: '50%', marginTop: '6px', flexShrink: 0 }} />
+                  <div style={{ lineHeight: 1.5 }}>Ship in under 6 months, or lose the tax-year timing to a competitor.</div>
                 </div>
               </div>
             </div>
