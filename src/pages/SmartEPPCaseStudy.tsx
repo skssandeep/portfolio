@@ -652,7 +652,7 @@ export const SmartEPPCaseStudy = () => {
           </motion.div>
 
           {/* Zone C: The 5 Problems */}
-          <div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0a0a0a', borderRadius: '32px', padding: '64px', border: '1px solid rgba(255,255,255,0.05)' }}>
             <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '24px', marginBottom: '48px' }}>
               <h3 style={{ fontSize: '28px', fontWeight: 500, color: '#fff', margin: 0 }}>
                 Why it was hard
@@ -723,7 +723,7 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </section>
