@@ -456,30 +456,30 @@ export const SmartEPPCaseStudy = () => {
               Up to 40% of that phone is just tax. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
             </motion.h2>
 
-            {/* Description & Bullet Points */}
-            <motion.div
+            {/* Description */}
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '40px', maxWidth: '100%' }}
             >
-              <p style={{ marginBottom: '24px' }}>
-                SmartEPP lets employees lease premium phones and reclaim that 40%. Paid from salary, covered by insurance. I designed it end to end from a blank canvas:
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
-                {[
-                  { icon: '📱', text: 'Employee App' },
-                  { icon: '📊', text: 'HR Dashboard' },
-                  { icon: '🏦', text: 'Lessor Portal' },
-                  { icon: '🏪', text: 'Seller Portal' }
-                ].map((item, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e0e0e0', fontWeight: 500, fontSize: '16px', background: 'rgba(255,255,255,0.03)', padding: '12px 20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <span style={{ fontSize: '20px' }}>{item.icon}</span>
-                    {item.text}
-                  </li>
-                ))}
-              </ul>
+              SmartEPP lets employees lease premium phones and reclaim that 40%. Paid from salary, covered by insurance. I designed it end to end: employee app, HR dashboard, lessor portal, seller portal. From a blank canvas.
+            </motion.p>
+
+            {/* Pills */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}
+            >
+              {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal'].map((tag, idx) => (
+                <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
+                  {tag}
+                </div>
+              ))}
             </motion.div>
           </div>
 
