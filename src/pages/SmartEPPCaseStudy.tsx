@@ -309,7 +309,15 @@ export const SmartEPPCaseStudy = () => {
         )}
       </AnimatePresence>
 
-      {/* 1 & 2. Out-of-the-box Hero Section */}
+      {/* Floating Back Button */}
+      <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100 }}>
+        <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px' }}>
+          <ArrowLeft size={16} /> Back
+        </Link>
+      </div>
+
+      {/* 1. Out-of-the-box Hero Section (Moved to Drafts) */}
+      {false && (
       <section style={{ width: '100%', minHeight: '100vh', paddingTop: '140px', paddingBottom: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#0a0a0a' }}>
         
         <style>
@@ -354,11 +362,6 @@ export const SmartEPPCaseStudy = () => {
         {/* Subtle background glow */}
         <div style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%, -50%)', width: '80vw', height: '80vw', background: 'radial-gradient(circle, rgba(229,9,20,0.15) 0%, rgba(0,0,0,0) 50%)', zIndex: 1, pointerEvents: 'none' }} />
 
-        <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100 }}>
-          <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px' }}>
-            <ArrowLeft size={16} /> Back
-          </Link>
-        </div>
 
         {/* Massive Typography */}
         <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', marginBottom: '-6vw', width: '100%', padding: '0 24px' }}>
@@ -420,6 +423,7 @@ export const SmartEPPCaseStudy = () => {
 
         </div>
       </section>
+      )}
 
       {/* 2. Intro & Stats Section */}
       <section style={{ paddingTop: '100px', paddingBottom: '0', background: 'var(--bg-color)', position: 'relative', overflow: 'hidden' }}>
