@@ -553,7 +553,7 @@ export const SmartEPPCaseStudy = () => {
         <div className="container">
           
           {/* Zone A & B: The Setup Block */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px', marginBottom: '120px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
             
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#34d399', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
               <div style={{ width: '6px', height: '6px', background: '#34d399', borderRadius: '50%' }} />
@@ -649,11 +649,13 @@ export const SmartEPPCaseStudy = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
 
-          {/* Zone C: The 5 Problems */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0a0a0a', borderRadius: '32px', padding: '64px', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '24px', marginBottom: '48px' }}>
+            {/* Divider */}
+            <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.05)', margin: '80px 0' }} />
+
+            {/* Zone C: The 5 Problems */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '24px', marginBottom: '48px' }}>
               <h3 style={{ fontSize: '28px', fontWeight: 500, color: '#fff', margin: 0 }}>
                 Why it was hard
               </h3>
