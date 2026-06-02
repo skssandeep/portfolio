@@ -502,7 +502,7 @@ export const SmartEPPCaseStudy = () => {
         </div>
 
         {/* Stats - Top-Border Metric Style */}
-        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20 }}>
+        <div className="container" style={{ position: 'relative', zIndex: 20 }}>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -510,8 +510,8 @@ export const SmartEPPCaseStudy = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             style={{ 
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '40px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+              gap: '24px',
               marginTop: '40px'
             }}
           >
