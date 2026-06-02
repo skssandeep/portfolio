@@ -843,6 +843,126 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
+      {/* Design Exploration */}
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+
+            {/* Header */}
+            <div style={{ display: 'grid', gridTemplateColumns: '55% 45%', gap: '48px', alignItems: 'end', marginBottom: '56px' }}>
+              <div>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
+                  <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>04 — Design Exploration</span>
+                </div>
+                <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
+                  Principles, then pixels.
+                </h2>
+              </div>
+              <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.75, margin: 0 }}>
+                Five principles set before wireframes began — derived directly from research, not assumptions.
+              </p>
+            </div>
+
+            {/* Principles */}
+            <div style={{ marginBottom: '64px' }}>
+              {[
+                { n: '1', title: 'Show the rupee, hide the formula', desc: 'Present ₹38,257 saved — not tax slab math. Outcomes in the primary view. Mechanics on demand.' },
+                { n: '2', title: 'Compare Smart EPP to Amazon, not to nothing', desc: 'Savings need contrast to land. Comparison is a first-class feature on the PDP — not a marketing footnote.' },
+                { n: '3', title: 'Every anxious question answered before it\'s asked', desc: 'What if it breaks? What if I leave? Every anxiety surfaced in-context — before the user has to search.' },
+                { n: '4', title: 'HR approves in seconds, not minutes', desc: 'Name, role, device, eligibility, policy — one card, one click. No tab-switching.' },
+                { n: '5', title: 'Order status must never be silent', desc: 'Every state change triggers a notification. The app answers "where is my order?" before they ask.' },
+              ].map((p, i) => (
+                <div key={p.n} style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '24px', alignItems: 'start', padding: '24px 0', borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>
+                  <div style={{ fontSize: '52px', fontWeight: 900, color: 'rgba(255,255,255,0.05)', lineHeight: 0.9, letterSpacing: '-0.04em', userSelect: 'none' as const }}>{p.n}</div>
+                  <div style={{ paddingTop: '2px' }}>
+                    <h4 style={{ fontSize: '15px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 6px 0', lineHeight: 1.35 }}>{p.title}</h4>
+                    <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.65, margin: 0 }}>{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bridge */}
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '40px', marginBottom: '28px' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#e5e5e5', margin: 0, letterSpacing: '-0.01em' }}>
+                Three directions explored. One chosen. Two killed with data.
+              </h3>
+            </div>
+
+            {/* Direction cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '32px' }}>
+
+              {/* Direction A — REJECTED */}
+              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '24px', opacity: 0.75 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 10px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px', marginBottom: '20px' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Rejected</span>
+                </div>
+                {/* Wireframe: Minimal PDP */}
+                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '16px', marginBottom: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '8px', height: '72px' }} />
+                  <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '4px', height: '10px', width: '70%' }} />
+                  <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '4px', height: '8px', width: '40%' }} />
+                  <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '6px', height: '32px', marginTop: '8px' }} />
+                </div>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#aaa', margin: '0 0 8px 0' }}>Direction A — Minimal PDP</div>
+                <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.6, margin: 0 }}>Image, name, price, one CTA. Clean and fast. Rejected: 28% conversion vs 68% — without a savings number, a salary deduction felt like a leap of faith.</p>
+              </motion.div>
+
+              {/* Direction B — CHOSEN */}
+              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(249,87,56,0.04)', border: '1px solid rgba(249,87,56,0.3)', borderRadius: '20px', padding: '24px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 10px', background: '#f95738', borderRadius: '100px', marginBottom: '20px' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#fff', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Chosen</span>
+                </div>
+                {/* Wireframe: Contextual Detail */}
+                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '16px', marginBottom: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '8px', height: '44px' }} />
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                      <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '3px', height: '7px' }} />
+                      <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '3px', height: '7px', width: '80%' }} />
+                      <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '3px', height: '7px', width: '60%' }} />
+                    </div>
+                    <div style={{ background: 'rgba(249,87,56,0.15)', border: '1px solid rgba(249,87,56,0.2)', borderRadius: '6px', height: '42px' }} />
+                  </div>
+                  <div style={{ background: 'rgba(249,87,56,0.25)', borderRadius: '6px', height: '28px', marginTop: '4px' }} />
+                </div>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#e5e5e5', margin: '0 0 8px 0' }}>Direction B — Contextual Detail</div>
+                <p style={{ fontSize: '13px', color: '#888', lineHeight: 1.6, margin: 0 }}>Savings calculator, inline comparison, protection summary — one scrollable PDP. Chosen: 2.4× the conversion of Direction A. Completeness built confidence.</p>
+              </motion.div>
+
+              {/* Direction C — REJECTED */}
+              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '24px', opacity: 0.75 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 10px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px', marginBottom: '20px' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Rejected</span>
+                </div>
+                {/* Wireframe: Guided Wizard */}
+                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '16px', marginBottom: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ display: 'flex', gap: '5px', justifyContent: 'center' }}>
+                    {[1,2,3,4,5].map(s => <div key={s} style={{ width: '20px', height: '4px', borderRadius: '2px', background: s === 1 ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.07)' }} />)}
+                  </div>
+                  <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '6px', height: '28px', width: '75%', margin: '0 auto' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                    {[1,2,3].map(o => <div key={o} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '6px', height: '22px' }} />)}
+                  </div>
+                  <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '6px', height: '28px', width: '50%', margin: '0 auto' }} />
+                </div>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#aaa', margin: '0 0 8px 0' }}>Direction C — Guided Wizard</div>
+                <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.6, margin: 0 }}>Tax slab → storage → colour → savings → CTA. Rejected: 44% abandoned at step 1. People want to browse before they configure.</p>
+              </motion.div>
+
+            </div>
+
+            {/* Low-fidelity process note */}
+            <div style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: '28px' }}>
+              <p style={{ fontSize: '13px', color: '#444', lineHeight: 1.75, margin: 0, fontFamily: 'var(--font-mono)' }}>
+                <span style={{ color: '#666' }}>Low-fidelity process:</span> All three tested as paper prototypes before any pixel work. Direction A was cut before a single hi-fi frame — 5 of 6 testers abandoned it before the CTA.
+              </p>
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
+
       {/* 4. Breakdown of Solution (Single Pitch Slide) */}
       <section style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1600px' }}>
