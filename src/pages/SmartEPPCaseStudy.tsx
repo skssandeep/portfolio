@@ -501,22 +501,22 @@ export const SmartEPPCaseStudy = () => {
 
         </div>
 
-        {/* Stats - Editorial Specs Table */}
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20 }}>
+        {/* Stats - Top-Border Metric Style */}
+        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20 }}>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.8 }}
             style={{ 
-              display: 'flex', 
-              flexDirection: 'column',
-              borderTop: '1px solid rgba(255,255,255,0.1)',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '40px',
               marginTop: '40px'
             }}
           >
             {[
-              { label: 'MY ROLE', value: 'Lead UX Designer', subtext: 'Solo designer on the product' },
+              { label: 'MY ROLE', value: 'Lead UX Designer', subtext: 'Solo designer' },
               { label: 'I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
               { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS' },
               { label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
@@ -527,19 +527,19 @@ export const SmartEPPCaseStudy = () => {
                 key={i}
                 style={{ 
                   display: 'flex', 
-                  flexWrap: 'wrap',
-                  alignItems: 'baseline',
-                  padding: '32px 0',
-                  borderBottom: '1px solid rgba(255,255,255,0.05)'
+                  flexDirection: 'column',
+                  paddingTop: '20px',
+                  borderTop: '2px solid',
+                  borderColor: stat.highlight ? 'var(--accent-color)' : 'rgba(255,255,255,0.15)'
                 }}
               >
-                <div style={{ flex: '1 1 200px', color: '#888', fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', paddingRight: '24px', marginBottom: '8px' }}>
+                <div style={{ color: '#888', fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>
                   {stat.label}
                 </div>
-                <div style={{ flex: '2 1 300px', color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '22px', fontWeight: 500, letterSpacing: '-0.01em', fontFamily: 'var(--font-heading)', paddingRight: '24px', marginBottom: '8px' }}>
+                <div style={{ color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '20px', fontWeight: 500, marginBottom: '6px', letterSpacing: '-0.01em', fontFamily: 'var(--font-heading)' }}>
                   {stat.value}
                 </div>
-                <div style={{ flex: '2 1 300px', color: '#666', fontSize: '15px', lineHeight: 1.5 }}>
+                <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.5 }}>
                   {stat.subtext}
                 </div>
               </div>
