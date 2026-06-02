@@ -501,8 +501,8 @@ export const SmartEPPCaseStudy = () => {
 
         </div>
 
-        {/* Stats Grid - Ultra Minimal Architectural Style */}
-        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20, marginTop: '-40px' }}>
+        {/* Stats Grid - Minimal & Clean */}
+        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20 }}>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -510,42 +510,31 @@ export const SmartEPPCaseStudy = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
-              borderTop: '1px solid rgba(255,255,255,0.08)',
-              borderLeft: '1px solid rgba(255,255,255,0.08)',
-              background: 'rgba(5,5,5,0.85)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '60px 40px',
+              paddingTop: '60px',
+              borderTop: '1px solid rgba(255,255,255,0.1)'
             }}
           >
             {[
-              { label: '01 // MY ROLE', value: 'Lead UX Designer', subtext: 'Solo designer on the product' },
-              { label: '02 // I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
-              { label: '03 // PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS' },
-              { label: '04 // TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
-              { label: '05 // USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types', highlight: true },
-              { label: '06 // DESIGN SYSTEM', value: '28 components', subtext: 'Shared across all 4 portals', highlight: true },
+              { label: 'MY ROLE', value: 'Lead UX Designer', subtext: 'Solo designer on the product' },
+              { label: 'I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
+              { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS' },
+              { label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
+              { label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types', highlight: true },
+              { label: 'DESIGN SYSTEM', value: '28 components', subtext: 'Shared across all 4 portals', highlight: true },
             ].map((stat, i) => (
-              <motion.div 
+              <div 
                 key={i}
-                whileHover={{ backgroundColor: 'rgba(255,255,255,0.03)' }}
-                transition={{ duration: 0.3 }}
                 style={{ 
-                  padding: '40px', 
-                  borderRight: '1px solid rgba(255,255,255,0.08)', 
-                  borderBottom: '1px solid rgba(255,255,255,0.08)',
                   display: 'flex', 
                   flexDirection: 'column',
-                  position: 'relative'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-                  <div style={{ width: '6px', height: '6px', background: stat.highlight ? 'var(--accent-color)' : 'rgba(255,255,255,0.2)' }} />
-                  <div style={{ color: '#888', fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>{stat.label}</div>
-                </div>
-                <div style={{ color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '22px', fontWeight: 500, marginBottom: '8px', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>{stat.value}</div>
+                <div style={{ color: '#888', fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px' }}>{stat.label}</div>
+                <div style={{ color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '24px', fontWeight: 500, marginBottom: '8px', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>{stat.value}</div>
                 <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.5 }}>{stat.subtext}</div>
-              </motion.div>
+              </div>
             ))}
           </motion.div>
         </div>
