@@ -423,57 +423,71 @@ export const SmartEPPCaseStudy = () => {
 
       {/* 2. Intro & Stats Section */}
       <section style={{ paddingTop: '80px', paddingBottom: '40px', background: 'var(--bg-color)' }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '60px' }}>
           
-          {/* Pre-header */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px' }}
-          >
-            <div style={{ width: '40px', height: '1px', background: '#f95738' }}></div>
-            <div style={{ color: '#f95738', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>
-              0→1 APP DESIGN • ONEASSIST
-            </div>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '40px', letterSpacing: '-0.02em' }}
-          >
-            Indian employees lose lakhs to income tax buying the phone in their pocket. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
-          </motion.h2>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            style={{ fontSize: '20px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '48px', maxWidth: '800px' }}
-          >
-            SmartEPP is a device leasing program where employees get premium phones with up to 40% savings through tax and GST benefits — deducted from salary, protected by insurance. I designed the end-to-end system: employee app, HR dashboard, lessor portal, and seller portal. From a blank canvas.
-          </motion.p>
-
-          {/* Pills */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '80px' }}
-          >
-            {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal', '0→1 Product'].map((tag, idx) => (
-              <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '10px 24px', borderRadius: '100px', fontSize: '14px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
-                {tag}
+          <div style={{ flex: '1 1 500px' }}>
+            {/* Pre-header */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px' }}
+            >
+              <div style={{ width: '40px', height: '1px', background: '#f95738' }}></div>
+              <div style={{ color: '#f95738', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>
+                0→1 APP DESIGN • ONEASSIST
               </div>
-            ))}
-          </motion.div>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '32px', letterSpacing: '-0.02em' }}
+            >
+              Indian employees lose lakhs to income tax buying the phone in their pocket. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
+            </motion.h2>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '40px', maxWidth: '100%' }}
+            >
+              SmartEPP is a device leasing program where employees get premium phones with up to 40% savings through tax and GST benefits — deducted from salary, protected by insurance. I designed the end-to-end system: employee app, HR dashboard, lessor portal, and seller portal. From a blank canvas.
+            </motion.p>
+
+            {/* Pills */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '40px' }}
+            >
+              {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal', '0→1 Product'].map((tag, idx) => (
+                <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
+                  {tag}
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}>
+            <motion.img 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              src="/images/Mockup2_EPP.png" 
+              alt="Smart EPP Mobile App" 
+              style={{ width: '100%', maxWidth: '450px', objectFit: 'contain', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }} 
+            />
+          </div>
 
         </div>
 
