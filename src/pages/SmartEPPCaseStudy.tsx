@@ -549,73 +549,71 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 3. Problem */}
-      <section style={{ padding: '80px 0' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
+      <section style={{ padding: '120px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container" style={{ maxWidth: '1400px' }}>
           
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
-              <AlertCircle size={16} /> The Problem
-            </div>
-            <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>A Two-Sided Dilemma</h2>
-            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: '0 auto', maxWidth: '700px' }}>
-              A compromise at the enterprise level triggers a cascading breakdown that completely ruins the employee experience.
-            </p>
-          </div>
-
-          {/* Unified Horizontal Console */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ display: 'flex', background: 'rgba(20,20,20,0.6)', backdropFilter: 'blur(20px)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             
-            {/* Col 1: Enterprise & HR (Combined) */}
-            <div style={{ flex: 2, padding: '40px', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
-               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '32px', fontWeight: 600 }}>
-                 <Building2 size={14}/> Enterprise & HR
-               </div>
-               
-               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', height: '100%' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column' }}>
-                     <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Limited Budgets</h3>
-                     <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Enterprises struggle to secure upfront funding, resulting in a watered-down, generic perk catalog.</p>
-                     
-                     {/* Mini Visual */}
-                     <div style={{ marginTop: 'auto', paddingTop: '32px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '8px' }}><span>Funded</span><span>30%</span></div>
-                        <div style={{ height: '4px', background: 'rgba(255,255,255,0.1)', borderRadius: '100px', overflow: 'hidden' }}><div style={{ width: '30%', height: '100%', background: 'var(--text-secondary)' }}/></div>
-                     </div>
-                  </div>
+            {/* Left: Heading & Context */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', background: 'rgba(255,255,255,0.05)', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', width: 'fit-content' }}>
+                01 — The Problem
+              </div>
+              
+              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 600, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+                A 4-party financial product that had to feel as simple as shopping on Amazon.
+              </h2>
+              
+              <p style={{ fontSize: '20px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                OneAssist was launching a completely new product category — employee device leasing. Employees lease premium devices through their employer, saving up to 40% through tax and GST exemptions, with monthly deductions from salary. The employer pays nothing. OneAssist earns lease management fees and deepens its enterprise relationships.
+              </p>
+            </motion.div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column' }}>
-                     <h3 style={{ fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '12px' }}>Admin Overhead</h3>
-                     <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>HR is bogged down by manual tracking and multi-stage approvals, slowing the process to a crawl.</p>
-                     
-                     {/* Mini Visual */}
-                     <div style={{ marginTop: 'auto', paddingTop: '32px', display: 'flex', gap: '8px' }}>
-                        <div style={{ flex: 3, height: '4px', background: 'rgba(255,255,255,0.2)', borderRadius: '100px' }} />
-                        <div style={{ flex: 1, height: '4px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px' }} />
-                        <div style={{ flex: 1, height: '4px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px' }} />
-                     </div>
-                  </div>
-               </div>
+            {/* Right: Scope & Urgency */}
+            <div className="lg:col-span-5" style={{ display: 'flex', flexDirection: 'column', gap: '40px', marginTop: '12px' }}>
+              
+              {/* Scope Block */}
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ padding: '40px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px' }}>
+                <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '2px', color: '#fff', fontWeight: 600, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <Target size={16} color="#34d399" /> The Design Scope
+                </h3>
+                
+                <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
+                  Employee mobile app (iOS + Android), HR manager web portal, lease financier portal, and seller/distributor portal.
+                </p>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  {[
+                    'Four different user types.',
+                    'One shared operational backbone.',
+                    'Zero existing design system to build on.',
+                    'Five months to ship MVP.'
+                  ].map((item, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#d4d4d4', fontSize: '15px' }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#34d399', flexShrink: 0 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                
+                <div style={{ marginTop: '24px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.05)', fontSize: '14px', color: 'var(--text-secondary)' }}>
+                  <span style={{ color: '#fff' }}>Out of scope:</span> brand identity, backend architecture, payment gateway design.
+                </div>
+              </motion.div>
+
+              {/* Why Now Block */}
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ padding: '40px', background: 'radial-gradient(120% 100% at top left, rgba(249, 87, 56, 0.05) 0%, transparent 100%)', border: '1px solid rgba(249, 87, 56, 0.1)', borderRadius: '24px' }}>
+                <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '2px', color: '#fff', fontWeight: 600, marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <Clock size={16} color="#f95738" /> Why Now
+                </h3>
+                <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
+                  A new Indian tax regime (FY 2023–24) made flexi-benefit device leasing significantly more attractive for salaried employees — up to 30% of a device's cost could be shielded from income tax. OneAssist had the enterprise relationships and the protection infrastructure. <strong style={{ color: '#fff', fontWeight: 500 }}>The window to capture this market before a competitor did was narrow. The product had to ship in under 6 months or the tax-year timing advantage was lost.</strong>
+                </p>
+              </motion.div>
+
             </div>
-
-            {/* Col 3: Employee */}
-            <div style={{ flex: 1, padding: '40px', background: 'radial-gradient(circle at top right, rgba(239,68,68,0.1) 0%, transparent 70%)', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-               <div style={{ position: 'absolute', top: 0, left: 0, width: '2px', height: '100%', background: 'linear-gradient(to bottom, transparent, #ef4444, transparent)', opacity: 0.5 }} />
-               
-               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ef4444', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '32px', fontWeight: 600 }}>
-                 <Users size={14}/> Employee UX
-               </div>
-               <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '12px' }}>Opaque Credit Limits</h3>
-               <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>Employees navigate the funnel blind. Hidden limits cause massive sticker shock at checkout.</p>
-               
-               {/* Mini Visual */}
-               <div style={{ marginTop: 'auto', paddingTop: '32px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ color: '#ef4444' }}><AlertCircle size={20} /></div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#ef4444', letterSpacing: '1px' }}>HIGH DROP-OFF</div>
-               </div>
-            </div>
-
-          </motion.div>
-
+            
+          </div>
         </div>
       </section>
 
