@@ -706,35 +706,35 @@ export const SmartEPPCaseStudy = () => {
 
             {/* Heading */}
             <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', maxWidth: '900px', margin: '0 0 24px 0' }}>
-              What each user type actually needed — and where they were anxious.
+              What users needed — and what made them anxious.
             </h2>
-            <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.7, maxWidth: '680px', margin: '0 0 64px 0' }}>
-              Research ran across all four user types before a single screen was designed. Employee interviews (12), HR manager walkthroughs (8), lessor ops team shadowing (2 sessions), seller ops interviews (4).
+            <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.7, maxWidth: '600px', margin: '0 0 56px 0' }}>
+              26 sessions across all 4 user types. No screens designed until research was done.
             </p>
 
             {/* Stat Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5" style={{ marginBottom: '48px' }}>
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
                 <div style={{ fontSize: '52px', fontWeight: 700, color: '#f95738', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>73%</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>of employees couldn't explain how the "40% saving" worked after reading competitor descriptions.</p>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>couldn't explain the "40% saving" after reading competitor copy.</p>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
-                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ The savings calculator wasn't a nice-to-have. It was the core trust mechanism — without a personal number, no decision was possible.</p>
+                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ No personal number → no decision. The calculator was the trust mechanism.</p>
                 </div>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
                 <div style={{ fontSize: '52px', fontWeight: 700, color: '#f95738', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>8/12</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>employees flagged 'salary deduction' as anxiety-inducing — "What if I leave the company? What if the device breaks?"</p>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>flagged 'salary deduction' as their top anxiety. What if I leave? What if it breaks?</p>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
-                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ Trust had to be built at every step of the flow, not just at checkout. Anxiety questions needed in-context answers, not an FAQ.</p>
+                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ Answers needed in-context — not buried in an FAQ.</p>
                 </div>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
                 <div style={{ fontSize: '52px', fontWeight: 700, color: '#f95738', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>6/8</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>HR managers said the workflow would only scale if each request took under 30 seconds to process.</p>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>HR managers: approvals only scale under 30 seconds per request.</p>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
-                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ The approval card had to surface all required information in one row — eligibility, device, cost, tenure — without any tab-switching.</p>
+                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ One row: eligibility, device, cost, tenure. No tab-switching.</p>
                 </div>
               </motion.div>
             </div>
@@ -753,14 +753,14 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* Insights */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '40px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '40px' }}>
               <div>
-                <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>The central tension: </span>
-                <span style={{ fontSize: '15px', color: '#777', lineHeight: 1.8 }}>Employees wanted radical simplicity — "show me my saving, let me pick a colour and order." But the product had genuine complexity: tax slabs, flexi benefit rules, GST credits, lease terms. Stripping complexity too far meant employees making uninformed decisions. Too much complexity meant they'd bounce before ordering. The design had to be simple on the surface and detailed on demand.</span>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>The central tension</div>
+                <p style={{ fontSize: '15px', color: '#777', lineHeight: 1.8, margin: 0 }}>Employees wanted simplicity. The product had real complexity — tax slabs, GST credits, lease terms. The design had to be <em style={{ color: '#e5e5e5', fontStyle: 'normal' }}>simple on the surface, detailed on demand.</em></p>
               </div>
               <div>
-                <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>What I didn't research — and why it mattered later: </span>
-                <span style={{ fontSize: '15px', color: '#777', lineHeight: 1.8 }}>I didn't study employees who had previously used a competitor device-leasing program. My sample was all first-time users of this product category, which likely inflated the "confusion" signals. Post-launch, we saw a subset of power users (typically in engineering bands) who wanted more raw data — actual tax calculation breakdowns, not just the final number. That user type wasn't represented in research and took us two post-launch iterations to serve well.</span>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>What I missed</div>
+                <p style={{ fontSize: '15px', color: '#777', lineHeight: 1.8, margin: 0 }}>My sample was all first-time users — likely inflating confusion signals. Post-launch, power users (engineering bands) wanted raw tax breakdowns. Took two more iterations to serve them well.</p>
               </div>
             </div>
 
