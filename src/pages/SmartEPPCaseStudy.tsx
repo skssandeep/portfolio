@@ -552,154 +552,132 @@ export const SmartEPPCaseStudy = () => {
       <section style={{ padding: '160px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container" style={{ maxWidth: '1400px' }}>
           
-          {/* Top: Huge Headline */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '100px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', color: '#fff', fontSize: '14px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '40px' }}>
-              <div style={{ width: '8px', height: '8px', background: '#34d399', borderRadius: '50%' }} />
-              The Problem
-            </div>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em', maxWidth: '1200px', margin: 0 }}>
+          {/* Zone A: Headline */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '64px' }}>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em', maxWidth: '1400px', margin: 0 }}>
               A 4-party financial product that had to feel as simple as shopping on Amazon.
             </h2>
           </motion.div>
 
-          {/* Bottom: 3-Column Editorial Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-20">
+          {/* Zone B: The Brief */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ marginBottom: '120px' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '48px' }}>
+              
+              {/* Narrative (Left) */}
+              <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <p style={{ fontSize: '18px', color: '#e5e5e5', lineHeight: 1.7, margin: 0, marginBottom: '24px' }}>
+                  OneAssist launched a new category: employee device leasing. Staff lease premium devices through their employer and save up to 40% via tax and GST benefits, deducted from salary. The employer pays nothing. OneAssist earns on a mandatory theft-and-damage protection plan attached to every lease.
+                </p>
+                <p style={{ fontSize: '18px', color: '#e5e5e5', lineHeight: 1.7, margin: 0 }}>
+                  A new tax regime (FY 2023–24) opened the window: 30% income-tax relief plus 18% GST, netting ~40% after financier interest.
+                </p>
+              </div>
+
+              {/* Stats (Right) */}
+              <div className="lg:col-span-5 font-mono" style={{ display: 'flex', flexDirection: 'column', gap: '16px', justifyContent: 'center' }}>
+                <div style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '8px' }}>
+                  THE CONSTRAINTS
+                </div>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
+                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>4</span>
+                    <span>platforms — employee app (iOS + Android), HR portal, financier portal, seller portal</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
+                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>4</span>
+                    <span>user types</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
+                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>1</span>
+                    <span>shared operational backbone</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
+                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>Built</span>
+                    <span>on OneAssist's existing consumer-app design system</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#a3a3a3', fontSize: '14px' }}>
+                    <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>5</span>
+                    <span>months to ship MVP</span>
+                  </div>
+                  
+                  {/* Highlight Pill */}
+                  <div style={{ marginTop: '8px', display: 'inline-block', background: 'rgba(249, 87, 56, 0.1)', color: '#f95738', padding: '12px 16px', borderRadius: '8px', fontSize: '14px', border: '1px solid rgba(249, 87, 56, 0.2)' }}>
+                    Ship in under 6 months, or lose the tax-year timing to a competitor.
+                  </div>
+                </div>
+              </div>
+            </div>
             
-            {/* Column 1: Context */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-              <h3 style={{ fontSize: '13px', color: '#a3a3a3', textTransform: 'uppercase', letterSpacing: '2px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '20px', margin: 0, display: 'flex', justifyContent: 'space-between' }}>
-                <span>Context</span>
-                <span style={{ color: 'rgba(255,255,255,0.2)' }}>01</span>
-              </h3>
-              <p style={{ fontSize: '20px', color: '#fff', lineHeight: 1.6, margin: 0 }}>
-                OneAssist was launching a new product category: employee device leasing. Employees lease premium devices through their employer and save up to 40% via combined tax and GST benefits, deducted monthly from salary. The employer pays nothing. OneAssist earns on a mandatory theft-and-damage protection plan attached to every lease.
-              </p>
-            </motion.div>
+            {/* Footnote */}
+            <div style={{ marginTop: '16px', fontSize: '14px', color: '#666', paddingLeft: '48px' }}>
+              <span style={{ color: '#a3a3a3' }}>Out of scope:</span> brand identity, backend architecture, payment gateway design.
+            </div>
+          </motion.div>
 
-            {/* Column 2: The Scope */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-              <h3 style={{ fontSize: '13px', color: '#34d399', textTransform: 'uppercase', letterSpacing: '2px', borderBottom: '1px solid rgba(52, 211, 153, 0.2)', paddingBottom: '20px', margin: 0, display: 'flex', justifyContent: 'space-between' }}>
-                <span>The Scope</span>
-                <span style={{ color: 'rgba(52, 211, 153, 0.2)' }}>02</span>
-              </h3>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Employee mobile app (iOS + Android), HR manager web portal, lease financier portal, and seller/distributor portal.
-                </p>
-                
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-                  {[
-                    'Four different user types.',
-                    'One shared operational backbone.',
-                    "Built on OneAssist's existing consumer-app design system.",
-                    'Five months to ship MVP.'
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', color: '#d4d4d4', fontSize: '15px', padding: '16px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                      <span style={{ color: '#34d399', fontSize: '12px', marginTop: '2px' }}>0{i+1}</span>
-                      <span style={{ lineHeight: 1.5 }}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div style={{ fontSize: '14px', color: '#a3a3a3', padding: '16px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                  <strong style={{ color: '#fff', fontWeight: 500 }}>Out of scope:</strong> brand identity, backend architecture, payment gateway design.
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Column 3: Why Now */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-              <h3 style={{ fontSize: '13px', color: '#f95738', textTransform: 'uppercase', letterSpacing: '2px', borderBottom: '1px solid rgba(249, 87, 56, 0.2)', paddingBottom: '20px', margin: 0, display: 'flex', justifyContent: 'space-between' }}>
-                <span>Why Now</span>
-                <span style={{ color: 'rgba(249, 87, 56, 0.2)' }}>03</span>
-              </h3>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.8, margin: 0 }}>
-                  A new tax regime (FY 2023–24) made device leasing far more attractive for salaried employees: 30% income-tax relief plus an 18% GST benefit, netting ~40% after financier interest. OneAssist had the enterprise relationships and protection infrastructure.
-                </p>
-                <div style={{ padding: '24px', background: 'rgba(249, 87, 56, 0.05)', borderRadius: '12px', borderLeft: '2px solid #f95738' }}>
-                  <p style={{ fontSize: '16px', color: '#fff', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
-                    But the window was narrow — ship in under 6 months, or lose the tax-year timing advantage to a competitor.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-
-          {/* 5 Core UX Challenges */}
-          <div style={{ marginTop: '120px' }}>
+          {/* Zone C: The 5 Problems */}
+          <div>
             <h3 style={{ fontSize: '24px', fontWeight: 500, color: '#fff', marginBottom: '40px' }}>
-              The Core UX Challenges
+              Why it was hard
             </h3>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               
               {/* Challenge 1 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
-                <div className="font-mono" style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
-                  CHALLENGE 01
-                </div>
-                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>01</span>
                   Tax savings are abstract. Money feels real.
                 </h4>
                 <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Employees don't think in income slabs and GST credits. They think in "how much do I actually save?" The app needed to translate complex tax math into a concrete number that felt personal and immediate.
+                  Employees don't think in slabs and GST credits. They think "what do I actually save?" The math had to become one personal, immediate number.
                 </p>
               </motion.div>
 
               {/* Challenge 2 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
-                <div className="font-mono" style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
-                  CHALLENGE 02
-                </div>
-                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
-                  Salary deduction is terrifying without trust
+                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>02</span>
+                  Salary deduction is terrifying without trust.
                 </h4>
                 <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Asking employees to commit to a multi-month salary deduction for a device is a high-trust action. The app needed to build exceptional confidence at every step — or people would abandon at the product detail page.
+                  Committing months of salary to a device is a high-trust act. Without confidence at every step, people abandon at the product page.
                 </p>
               </motion.div>
 
               {/* Challenge 3 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
-                <div className="font-mono" style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
-                  CHALLENGE 03
-                </div>
-                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
-                  HR needs control without overhead
+                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>03</span>
+                  HR needs control without overhead.
                 </h4>
                 <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  HR approving individual device requests at scale is a nightmare without the right tooling. The dashboard needed to enable informed approval in seconds, not minutes — or HR would push back on adopting the program.
+                  Approving device requests at scale breaks without tooling. Approvals had to take seconds, not minutes, or HR walks.
                 </p>
               </motion.div>
 
               {/* Challenge 4 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
-                <div className="font-mono" style={{ fontSize: '11px', color: '#666', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
-                  CHALLENGE 04
-                </div>
-                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>04</span>
                   Four user types. Zero shared vocabulary.
                 </h4>
                 <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Employees think about products. HR thinks about policy. Lessors think about credit risk. Sellers think about fulfillment. The same operational event (an order) means something completely different to each party.
+                  Employees think products. HR thinks policy. Lessors think risk. Sellers think fulfillment. One order, four meanings.
                 </p>
               </motion.div>
 
-              {/* Challenge 5 - Full Width */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'radial-gradient(150% 100% at top left, rgba(249, 87, 56, 0.08) 0%, rgba(20,20,20,0) 100%)', border: '1px solid rgba(249, 87, 56, 0.15)', borderRadius: '24px', padding: '40px' }}>
-                <div className="font-mono" style={{ fontSize: '11px', color: '#f95738', opacity: 0.8, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
-                  CHALLENGE 05 — THE HARDEST ONE
+              {/* Challenge 5 - Full Width Hero Card */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'radial-gradient(150% 100% at top left, rgba(249, 87, 56, 0.08) 0%, rgba(20,20,20,0) 100%)', border: '1px solid rgba(249, 87, 56, 0.2)', borderRadius: '24px', padding: '40px' }}>
+                <div className="font-mono" style={{ fontSize: '12px', color: '#f95738', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px' }}>
+                  THE HARDEST ONE
                 </div>
-                <h4 style={{ fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '16px', lineHeight: 1.4 }}>
-                  The status tracking problem: a 4-party chain that employees can't see but absolutely feel when something goes wrong
+                <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '18px', fontWeight: 500 }}>05</span>
+                  The invisible 4-party chain.
                 </h4>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '1000px' }}>
-                  With 4 parties involved, there are 15+ distinct order states. An employee who submits a request and hears nothing for 3 days will lose trust — even if everything is on track. The tracking experience needed to acknowledge complexity without exposing it: the employee sees a clear 5-step progress bar; the 4-party chain is invisible.
+                <p style={{ fontSize: '18px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, maxWidth: '1000px' }}>
+                  15+ order states across 4 parties. Three days of silence kills trust even when nothing's wrong. The fix: employees see a clean 5-step progress bar; the chain stays hidden.
                 </p>
               </motion.div>
 
