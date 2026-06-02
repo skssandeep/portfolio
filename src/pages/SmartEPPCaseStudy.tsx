@@ -460,21 +460,21 @@ export const SmartEPPCaseStudy = () => {
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
                     d="M 20 120 Q 140 -20 270 90" 
-                    stroke="var(--accent-color)" 
-                    strokeWidth="4" 
+                    stroke="rgba(255,255,255,0.25)" 
+                    strokeWidth="1.5" 
                     strokeLinecap="round" 
                     fill="none"
                   />
                   <motion.polyline 
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 1.5, type: 'spring' }}
+                    transition={{ duration: 0.5, delay: 1.8 }}
                     points="250,60 272,92 235,95" 
-                    stroke="var(--accent-color)" 
-                    strokeWidth="4" 
+                    stroke="rgba(255,255,255,0.25)" 
+                    strokeWidth="1.5" 
                     strokeLinecap="round" 
                     strokeLinejoin="round" 
                     fill="none"
