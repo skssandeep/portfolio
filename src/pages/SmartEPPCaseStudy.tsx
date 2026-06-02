@@ -662,10 +662,10 @@ export const SmartEPPCaseStudy = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5 rounded-3xl overflow-hidden border border-white/10" style={{ background: 'rgba(255,255,255,0.05)' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               
               {/* Challenge 1 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0a0a0a', padding: '56px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                   <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>01</span>
                   Tax savings are abstract. Money feels real.
@@ -676,7 +676,7 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 2 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0a0a0a', padding: '56px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                   <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>02</span>
                   Salary deduction is terrifying without trust.
@@ -687,7 +687,7 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 3 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0a0a0a', padding: '56px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                   <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>03</span>
                   HR needs control without overhead.
@@ -698,7 +698,7 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 4 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: '#0a0a0a', padding: '56px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                   <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>04</span>
                   Four user types. Zero shared vocabulary.
@@ -709,7 +709,7 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 5 - Full Width Hero Card */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'radial-gradient(150% 100% at top left, rgba(249, 87, 56, 0.08) 0%, #0a0a0a 100%)', backgroundColor: '#0a0a0a', padding: '56px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'linear-gradient(135deg, rgba(249, 87, 56, 0.05) 0%, rgba(255,255,255,0.02) 100%)', borderLeft: '3px solid #f95738', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
                 <div className="font-mono" style={{ fontSize: '12px', color: '#f95738', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '24px' }}>
                   THE HARDEST ONE
                 </div>
