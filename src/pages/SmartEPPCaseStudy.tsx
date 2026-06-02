@@ -622,15 +622,22 @@ export const SmartEPPCaseStudy = () => {
                     <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Built on OneAssist's library.</div>
                   </div>
 
-                  {/* Card 5 (Full Width) */}
-                  <div style={{ gridColumn: '1 / -1', background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
-                        <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>5</span>
-                        <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</span>
-                      </div>
-                      <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Absolute deadline to design, build, and ship the MVP.</div>
+                  {/* Card 5 */}
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
+                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>5</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</span>
                     </div>
+                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Deadline to design and ship the MVP.</div>
+                  </div>
+
+                  {/* Card 6 */}
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
+                      <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500, lineHeight: 1 }}>OUT</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Of Scope</span>
+                    </div>
+                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Brand identity, backend, payment gateway.</div>
                   </div>
 
                 </div>
@@ -641,11 +648,6 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ lineHeight: 1.5 }}>Ship in under 6 months, or lose the tax-year timing to a competitor.</div>
                 </div>
               </div>
-            </div>
-            
-            {/* Footnote */}
-            <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.05)', fontSize: '14px', color: '#666' }}>
-              <span style={{ color: '#a3a3a3' }}>Out of scope:</span> brand identity, backend architecture, payment gateway design.
             </div>
           </motion.div>
 
