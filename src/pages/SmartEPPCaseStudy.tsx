@@ -650,18 +650,18 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* Divider */}
-            <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.05)', margin: '80px 0' }} />
+            <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.08)', margin: '80px 0' }} />
 
             {/* Zone C: The 5 Problems */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '24px', marginBottom: '48px' }}>
-              <h3 style={{ fontSize: '28px', fontWeight: 500, color: '#fff', margin: 0 }}>
-                Why it was hard
-              </h3>
-              <div className="font-mono" style={{ color: '#666', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '2px' }}>
-                5 Core Challenges
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '48px' }}>
+                <h3 style={{ fontSize: '28px', fontWeight: 500, color: '#fff', margin: 0 }}>
+                  Why it was hard
+                </h3>
+                <div className="font-mono" style={{ color: '#666', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                  5 Core Challenges
+                </div>
               </div>
-            </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               
