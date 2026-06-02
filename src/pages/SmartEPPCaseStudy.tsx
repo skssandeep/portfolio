@@ -958,39 +958,79 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 12. Reflections */}
-      <section style={{ padding: '120px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '48px' }}>
-            <Target size={28} color="var(--accent-color)" />
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', letterSpacing: '-0.02em', margin: 0 }}>Reflections</h2>
-          </div>
+      <section style={{ padding: '120px 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '800px', background: 'radial-gradient(ellipse at top, rgba(59,130,246,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        
+        <div className="container" style={{ maxWidth: '1000px', position: 'relative', zIndex: 1 }}>
           
-          <div style={{ background: 'var(--bg-color)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)', marginBottom: '48px' }}>
-            <h4 style={{ color: 'var(--text-primary)', fontSize: '20px', marginBottom: '16px' }}>What I Got Wrong: The "Universal App" Fallacy</h4>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
-              Initially, I spent two weeks designing a beautiful, standalone native iOS & Android application. I obsessed over push notifications, persistent login states, and native biometric auth.
-            </p>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
-              <strong>The Reality Check:</strong> During beta testing, corporate employees absolutely refused to download *another* app just to buy a phone once a year. The app store friction killed our acquisition funnel instantly.
-            </p>
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '24px' }}>
-              <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: '8px' }}>The Pivot</strong>
-              <span style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6 }}>
-                We scrapped the native app entirely and rebuilt the entire flow as a lightweight Progressive Web App (PWA) that could be deeply embedded inside their existing corporate intranet portal (HRMS). Conversion spiked by 300% overnight.
-              </span>
-            </div>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', letterSpacing: '-0.02em', marginBottom: '16px' }}>Hindsight is 20/20</h2>
+            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', maxWidth: '600px', margin: '0 auto' }}>The biggest breakthroughs often come from our biggest failures. Here is what I learned.</p>
           </div>
 
-          <h3 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px' }}>Final Thoughts</h3>
-          <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '48px' }}>
-            Smart EPP was a masterclass in designing for trust and low friction over pure aesthetics. By deeply understanding FinTech regulations and corporate HR integrations, we were able to design a frictionless checkout experience.
-          </p>
-          
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link to="/" style={{ color: 'var(--bg-color)', background: 'var(--text-primary)', padding: '16px 32px', borderRadius: '100px', textDecoration: 'none', fontWeight: 600, fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase' }}>
-              View More Projects
-            </Link>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '32px', marginBottom: '80px' }}>
+            {/* The Mistake Card */}
+            <motion.div 
+              whileHover={{ y: -5 }}
+              style={{ background: 'rgba(239,68,68,0.03)', border: '1px solid rgba(239,68,68,0.15)', borderRadius: '24px', padding: '40px', position: 'relative', overflow: 'hidden' }}
+            >
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '24px' }}>
+                <AlertCircle size={16} /> The Fallacy
+              </div>
+              <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '16px', lineHeight: 1.3 }}>The "Universal App" Obsession</h3>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '24px' }}>
+                Initially, I spent two weeks designing a beautiful, standalone native iOS & Android application. I obsessed over push notifications, persistent login states, and native biometric auth.
+              </p>
+              <div style={{ background: 'rgba(0,0,0,0.4)', padding: '20px', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+                <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', margin: 0, fontStyle: 'italic', lineHeight: 1.6 }}>
+                  "Corporate employees absolutely refused to download another heavy app just to buy a phone once a year. The app store friction killed our acquisition funnel instantly."
+                </p>
+              </div>
+            </motion.div>
+
+            {/* The Pivot Card */}
+            <motion.div 
+              whileHover={{ y: -5 }}
+              style={{ background: 'rgba(16,185,129,0.03)', border: '1px solid rgba(16,185,129,0.15)', borderRadius: '24px', padding: '40px', position: 'relative', overflow: 'hidden' }}
+            >
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '24px' }}>
+                <Zap size={16} /> The Pivot
+              </div>
+              <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '16px', lineHeight: 1.3 }}>Embedded PWA Integration</h3>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '24px' }}>
+                We scrapped the native app entirely and rebuilt the flow as a lightweight Progressive Web App (PWA) that could be deeply embedded inside their existing corporate intranet portal.
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', background: 'rgba(0,0,0,0.4)', padding: '20px', borderRadius: '12px', borderLeft: '4px solid #10b981' }}>
+                <TrendingUp size={32} color="#10b981" />
+                <div>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#10b981' }}>+300%</div>
+                  <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '1px' }}>Conversion Spike</div>
+                </div>
+              </div>
+            </motion.div>
           </div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ background: 'linear-gradient(145deg, rgba(30,30,30,0.8) 0%, rgba(10,10,10,0.9) 100%)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', padding: '64px', textAlign: 'center', boxShadow: '0 40px 80px rgba(0,0,0,0.4)' }}
+          >
+            <Target size={40} color="#3b82f6" style={{ margin: '0 auto 24px auto', display: 'block' }} />
+            <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '24px' }}>Final Thoughts</h3>
+            <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, maxWidth: '800px', margin: '0 auto 48px auto', fontStyle: 'italic' }}>
+              "Smart EPP was a masterclass in designing for trust and low friction over pure aesthetics. By deeply understanding FinTech regulations and corporate HR integrations, we were able to engineer a truly frictionless checkout experience."
+            </p>
+            <Link 
+              to="/" 
+              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#0a0a0a', background: '#fff', padding: '16px 40px', borderRadius: '100px', textDecoration: 'none', fontWeight: 600, fontSize: '15px', letterSpacing: '1px', textTransform: 'uppercase', transition: 'all 0.3s ease' }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            >
+              Back to All Projects
+            </Link>
+          </motion.div>
+
         </div>
       </section>
 
