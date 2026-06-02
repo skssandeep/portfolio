@@ -512,7 +512,7 @@ export const SmartEPPCaseStudy = () => {
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
               gap: '24px',
-              marginTop: '40px'
+              marginTop: '0px'
             }}
           >
             {[
