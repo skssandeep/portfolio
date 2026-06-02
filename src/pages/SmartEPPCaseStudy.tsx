@@ -552,67 +552,66 @@ export const SmartEPPCaseStudy = () => {
       <section style={{ padding: '120px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container" style={{ maxWidth: '1400px' }}>
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
-            {/* Left: Heading & Context */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', background: 'rgba(255,255,255,0.05)', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', width: 'fit-content' }}>
+            {/* 1. Headline Box */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-8" style={{ background: 'linear-gradient(145deg, rgba(30,30,30,0.4) 0%, rgba(10,10,10,0.8) 100%)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', padding: '56px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', background: 'rgba(255,255,255,0.05)', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '40px' }}>
                 01 — The Problem
               </div>
-              
-              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 600, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+              <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 600, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', margin: 0 }}>
                 A 4-party financial product that had to feel as simple as shopping on Amazon.
               </h2>
-              
-              <p style={{ fontSize: '20px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                OneAssist was launching a completely new product category: employee device leasing. Employees lease premium devices through their employer, saving up to 40% through combined tax and GST benefits, with monthly deductions from salary. The employer pays nothing. OneAssist earns by attaching its mandatory theft and damage protection plan to every lease.
+            </motion.div>
+
+            {/* 2. Context Box */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="lg:col-span-4" style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', padding: '56px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ color: '#fff', fontWeight: 500 }}>OneAssist was launching a completely new product category:</strong> employee device leasing. Employees lease premium devices through their employer, saving up to 40% through combined tax and GST benefits, with monthly deductions from salary. The employer pays nothing. OneAssist earns by attaching its mandatory theft and damage protection plan to every lease.
               </p>
             </motion.div>
 
-            {/* Right: Scope & Urgency */}
-            <div className="lg:col-span-5" style={{ display: 'flex', flexDirection: 'column', gap: '40px', marginTop: '12px' }}>
+            {/* 3. Scope Box */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="lg:col-span-6" style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', padding: '56px' }}>
+              <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '2px', color: '#fff', fontWeight: 600, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <Target size={18} color="#34d399" /> The Design Scope
+              </h3>
               
-              {/* Scope Block */}
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ padding: '40px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px' }}>
-                <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '2px', color: '#fff', fontWeight: 600, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <Target size={16} color="#34d399" /> The Design Scope
-                </h3>
-                
-                <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                  Employee mobile app (iOS + Android), HR manager web portal, lease financier portal, and seller/distributor portal.
-                </p>
-                
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  {[
-                    'Four different user types.',
-                    'One shared operational backbone.',
-                    "Built on OneAssist's existing consumer-app design system.",
-                    'Five months to ship MVP.'
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#d4d4d4', fontSize: '15px' }}>
-                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#34d399', flexShrink: 0 }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                
-                <div style={{ marginTop: '24px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.05)', fontSize: '14px', color: 'var(--text-secondary)' }}>
-                  <span style={{ color: '#fff' }}>Out of scope:</span> brand identity, backend architecture, payment gateway design.
-                </div>
-              </motion.div>
+              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '32px' }}>
+                Employee mobile app (iOS + Android), HR manager web portal, lease financier portal, and seller/distributor portal.
+              </p>
+              
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {[
+                  'Four different user types.',
+                  'One shared operational backbone.',
+                  "Built on OneAssist's existing consumer-app design system.",
+                  'Five months to ship MVP.'
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d4d4d4', fontSize: '16px' }}>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#34d399', flexShrink: 0 }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              
+              <div style={{ marginTop: '32px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.05)', fontSize: '15px', color: 'var(--text-secondary)' }}>
+                <span style={{ color: '#fff' }}>Out of scope:</span> brand identity, backend architecture, payment gateway design.
+              </div>
+            </motion.div>
 
-              {/* Why Now Block */}
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ padding: '40px', background: 'radial-gradient(120% 100% at top left, rgba(249, 87, 56, 0.05) 0%, transparent 100%)', border: '1px solid rgba(249, 87, 56, 0.1)', borderRadius: '24px' }}>
-                <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '2px', color: '#fff', fontWeight: 600, marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <Clock size={16} color="#f95738" /> Why Now
-                </h3>
-                <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
-                  A new Indian tax regime (FY 2023–24) made flexi-benefit device leasing significantly more attractive for salaried employees. The income-tax slab alone could shield up to 30% of a device's cost, and stacking the 18% GST benefit on top pushed total savings toward 40% after financier interest. OneAssist had the enterprise relationships and the protection infrastructure. <strong style={{ color: '#fff', fontWeight: 500 }}>The window to capture this market before a competitor did was narrow: the product had to ship in under 6 months or the tax-year timing advantage was lost.</strong>
-                </p>
-              </motion.div>
+            {/* 4. Urgency Box */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="lg:col-span-6" style={{ background: 'radial-gradient(150% 100% at top left, rgba(249, 87, 56, 0.08) 0%, rgba(20,20,20,0) 100%)', borderRadius: '32px', border: '1px solid rgba(249, 87, 56, 0.15)', padding: '56px', position: 'relative', overflow: 'hidden' }}>
+              <h3 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '2px', color: '#fff', fontWeight: 600, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <Clock size={18} color="#f95738" /> Why Now
+              </h3>
+              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.8, margin: 0 }}>
+                A new Indian tax regime (FY 2023–24) made flexi-benefit device leasing significantly more attractive for salaried employees. The income-tax slab alone could shield up to 30% of a device's cost, and stacking the 18% GST benefit on top pushed total savings toward 40% after financier interest. OneAssist had the enterprise relationships and the protection infrastructure. 
+                <br/><br/>
+                <strong style={{ color: '#fff', fontWeight: 500 }}>The window to capture this market before a competitor did was narrow: the product had to ship in under 6 months or the tax-year timing advantage was lost.</strong>
+              </p>
+            </motion.div>
 
-            </div>
-            
           </div>
         </div>
       </section>
