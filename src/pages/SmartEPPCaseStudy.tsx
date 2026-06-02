@@ -447,7 +447,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.1 }}
               style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '32px', letterSpacing: '-0.02em' }}
             >
-              Indian employees lose lakhs in tax on the phone in their pocket. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
+              Up to 40% of that phone is just tax. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
             </motion.h2>
 
             {/* Description */}
@@ -458,7 +458,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.2 }}
               style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '40px', maxWidth: '100%' }}
             >
-              SmartEPP lets employees lease premium phones and save up to 40% through tax and GST benefits — paid from salary, covered by insurance. I designed the full system end to end: employee app, HR dashboard, lessor portal, and seller portal. From a blank canvas.
+              SmartEPP lets employees lease premium phones and reclaim that 40% through tax and GST benefits — paid from salary, covered by insurance. So nobody loses lakhs on the device in their pocket again. I designed the full system end to end: employee app, HR dashboard, lessor portal, and seller portal. From a blank canvas.
             </motion.p>
 
             {/* Pills */}
