@@ -501,52 +501,53 @@ export const SmartEPPCaseStudy = () => {
 
         </div>
 
-        {/* Stats Grid - Floating Overlap Container */}
-        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20, marginTop: '-60px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+        {/* Stats Grid - Ultra Minimal Architectural Style */}
+        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20, marginTop: '-40px' }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+              borderTop: '1px solid rgba(255,255,255,0.08)',
+              borderLeft: '1px solid rgba(255,255,255,0.08)',
+              background: 'rgba(5,5,5,0.85)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+            }}
+          >
             {[
-              { label: 'MY ROLE', value: 'Lead UX Designer', subtext: 'Solo designer on the product', icon: <Fingerprint size={20} color="var(--accent-color)" /> },
-              { label: 'I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst', icon: <Users size={20} color="var(--accent-color)" /> },
-              { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS', icon: <Smartphone size={20} color="var(--accent-color)" /> },
-              { label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP', icon: <Clock size={20} color="var(--accent-color)" /> },
-              { label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types', icon: <Search size={20} color="var(--accent-color)" />, highlight: true },
-              { label: 'DESIGN SYSTEM', value: '28 components', subtext: 'Shared across all 4 portals', icon: <LayoutGrid size={20} color="var(--accent-color)" />, highlight: true },
+              { label: '01 // MY ROLE', value: 'Lead UX Designer', subtext: 'Solo designer on the product' },
+              { label: '02 // I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
+              { label: '03 // PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS' },
+              { label: '04 // TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
+              { label: '05 // USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types', highlight: true },
+              { label: '06 // DESIGN SYSTEM', value: '28 components', subtext: 'Shared across all 4 portals', highlight: true },
             ].map((stat, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i, type: 'spring', stiffness: 100 }}
-                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(229, 9, 20, 0.15)', borderColor: 'rgba(229, 9, 20, 0.3)' }}
+                whileHover={{ backgroundColor: 'rgba(255,255,255,0.03)' }}
+                transition={{ duration: 0.3 }}
                 style={{ 
-                  background: 'rgba(20,20,20,0.85)', 
-                  backdropFilter: 'blur(32px)', 
-                  WebkitBackdropFilter: 'blur(32px)', 
-                  border: '1px solid rgba(255,255,255,0.08)', 
-                  borderRadius: '24px', 
-                  padding: '32px', 
+                  padding: '40px', 
+                  borderRight: '1px solid rgba(255,255,255,0.08)', 
+                  borderBottom: '1px solid rgba(255,255,255,0.08)',
                   display: 'flex', 
-                  flexDirection: 'column', 
-                  gap: '16px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
-                  cursor: 'default',
-                  transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
+                  flexDirection: 'column',
+                  position: 'relative'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ background: 'rgba(229, 9, 20, 0.1)', padding: '10px', borderRadius: '12px' }}>
-                    {stat.icon}
-                  </div>
-                  <div style={{ color: '#888', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>{stat.label}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+                  <div style={{ width: '6px', height: '6px', background: stat.highlight ? 'var(--accent-color)' : 'rgba(255,255,255,0.2)' }} />
+                  <div style={{ color: '#888', fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>{stat.label}</div>
                 </div>
-                <div>
-                  <div style={{ color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '8px', letterSpacing: '-0.02em' }}>{stat.value}</div>
-                  <div style={{ color: '#888', fontSize: '14px', lineHeight: 1.5 }}>{stat.subtext}</div>
-                </div>
+                <div style={{ color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '22px', fontWeight: 500, marginBottom: '8px', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>{stat.value}</div>
+                <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.5 }}>{stat.subtext}</div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
