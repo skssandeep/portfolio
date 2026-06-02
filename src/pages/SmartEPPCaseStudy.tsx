@@ -501,19 +501,18 @@ export const SmartEPPCaseStudy = () => {
 
         </div>
 
-        {/* Stats Grid - Minimal & Clean */}
-        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20 }}>
+        {/* Stats - Editorial Specs Table */}
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20 }}>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.8 }}
             style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-              gap: '60px 40px',
-              paddingTop: '60px',
-              borderTop: '1px solid rgba(255,255,255,0.1)'
+              display: 'flex', 
+              flexDirection: 'column',
+              borderTop: '1px solid rgba(255,255,255,0.1)',
+              marginTop: '40px'
             }}
           >
             {[
@@ -528,12 +527,21 @@ export const SmartEPPCaseStudy = () => {
                 key={i}
                 style={{ 
                   display: 'flex', 
-                  flexDirection: 'column',
+                  flexWrap: 'wrap',
+                  alignItems: 'baseline',
+                  padding: '32px 0',
+                  borderBottom: '1px solid rgba(255,255,255,0.05)'
                 }}
               >
-                <div style={{ color: '#888', fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px' }}>{stat.label}</div>
-                <div style={{ color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '24px', fontWeight: 500, marginBottom: '8px', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>{stat.value}</div>
-                <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.5 }}>{stat.subtext}</div>
+                <div style={{ flex: '1 1 200px', color: '#888', fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', paddingRight: '24px', marginBottom: '8px' }}>
+                  {stat.label}
+                </div>
+                <div style={{ flex: '2 1 300px', color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '22px', fontWeight: 500, letterSpacing: '-0.01em', fontFamily: 'var(--font-heading)', paddingRight: '24px', marginBottom: '8px' }}>
+                  {stat.value}
+                </div>
+                <div style={{ flex: '2 1 300px', color: '#666', fontSize: '15px', lineHeight: 1.5 }}>
+                  {stat.subtext}
+                </div>
               </div>
             ))}
           </motion.div>
