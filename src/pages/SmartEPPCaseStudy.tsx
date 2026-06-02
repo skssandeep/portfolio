@@ -503,59 +503,50 @@ export const SmartEPPCaseStudy = () => {
 
         {/* Stats Grid - Floating Overlap Container */}
         <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20, marginTop: '-60px' }}>
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            style={{ background: 'rgba(20,20,20,0.85)', backdropFilter: 'blur(32px)', WebkitBackdropFilter: 'blur(32px)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '24px', padding: '48px', boxShadow: '0 30px 60px rgba(0,0,0,0.5)' }}
-          >
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '40px' }}>
-              
-              {/* Stat 1 */}
-              <div>
-                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>MY ROLE</div>
-                <div style={{ color: '#fff', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>Lead UX Designer</div>
-                <div style={{ color: '#666', fontSize: '13px' }}>Solo designer on the product</div>
-              </div>
-
-              {/* Stat 2 */}
-              <div>
-                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>I WORKED WITH</div>
-                <div style={{ color: '#fff', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>1 PM • 2 FE • 1 BE</div>
-                <div style={{ color: '#666', fontSize: '13px' }}>1 QA • 1 Business Analyst</div>
-              </div>
-
-              {/* Stat 3 */}
-              <div>
-                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>PLATFORMS</div>
-                <div style={{ color: '#fff', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>iOS • Android • Web</div>
-                <div style={{ color: '#666', fontSize: '13px' }}>4 portals • 2 mobile OS</div>
-              </div>
-
-              {/* Stat 4 */}
-              <div>
-                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>TIMELINE</div>
-                <div style={{ color: '#fff', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>5 months</div>
-                <div style={{ color: '#666', fontSize: '13px' }}>Blank canvas → shipped MVP</div>
-              </div>
-
-              {/* Stat 5 */}
-              <div>
-                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>USER RESEARCH</div>
-                <div style={{ color: '#f95738', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>26 interviews</div>
-                <div style={{ color: '#666', fontSize: '13px' }}>Across all 4 actor types</div>
-              </div>
-
-              {/* Stat 6 */}
-              <div>
-                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>DESIGN SYSTEM</div>
-                <div style={{ color: '#f95738', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>28 components</div>
-                <div style={{ color: '#666', fontSize: '13px' }}>Shared across all 4 portals</div>
-              </div>
-
-            </div>
-          </motion.div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+            {[
+              { label: 'MY ROLE', value: 'Lead UX Designer', subtext: 'Solo designer on the product', icon: <Fingerprint size={20} color="var(--accent-color)" /> },
+              { label: 'I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst', icon: <Users size={20} color="var(--accent-color)" /> },
+              { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS', icon: <Smartphone size={20} color="var(--accent-color)" /> },
+              { label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP', icon: <Clock size={20} color="var(--accent-color)" /> },
+              { label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types', icon: <Search size={20} color="var(--accent-color)" />, highlight: true },
+              { label: 'DESIGN SYSTEM', value: '28 components', subtext: 'Shared across all 4 portals', icon: <LayoutGrid size={20} color="var(--accent-color)" />, highlight: true },
+            ].map((stat, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * i, type: 'spring', stiffness: 100 }}
+                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(229, 9, 20, 0.15)', borderColor: 'rgba(229, 9, 20, 0.3)' }}
+                style={{ 
+                  background: 'rgba(20,20,20,0.85)', 
+                  backdropFilter: 'blur(32px)', 
+                  WebkitBackdropFilter: 'blur(32px)', 
+                  border: '1px solid rgba(255,255,255,0.08)', 
+                  borderRadius: '24px', 
+                  padding: '32px', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  gap: '16px',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                  cursor: 'default',
+                  transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div style={{ background: 'rgba(229, 9, 20, 0.1)', padding: '10px', borderRadius: '12px' }}>
+                    {stat.icon}
+                  </div>
+                  <div style={{ color: '#888', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>{stat.label}</div>
+                </div>
+                <div>
+                  <div style={{ color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '8px', letterSpacing: '-0.02em' }}>{stat.value}</div>
+                  <div style={{ color: '#888', fontSize: '14px', lineHeight: 1.5 }}>{stat.subtext}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
