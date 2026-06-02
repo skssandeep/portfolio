@@ -553,10 +553,13 @@ export const SmartEPPCaseStudy = () => {
         <div className="container">
           
           {/* Zone A & B: The Setup Block */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(249,87,56,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(249,87,56,0.12)', borderRadius: '32px', padding: '64px', position: 'relative', overflow: 'hidden' }}>
             
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#34d399', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
-              <div style={{ width: '6px', height: '6px', background: '#34d399', borderRadius: '50%' }} />
+            {/* Background watermark */}
+            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(249,87,56,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
+
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#f95738', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+              <AlertCircle size={14} strokeWidth={2.5} />
               The Problem
             </div>
 
@@ -586,7 +589,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
                   
                   {/* Card 1 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>4</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Platforms</span>
@@ -595,7 +598,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Card 2 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>4</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>User Types</span>
@@ -604,7 +607,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Card 3 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>1</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Backbone</span>
@@ -613,7 +616,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Card 4 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500, lineHeight: 1 }}>UI</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Design System</span>
@@ -622,7 +625,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Card 5 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(249,87,56,0.04)', borderLeft: '3px solid rgba(249,87,56,0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>5</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</span>
@@ -631,12 +634,12 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Card 6 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #444', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
-                      <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500, lineHeight: 1 }}>OUT</span>
-                      <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Of Scope</span>
+                      <span style={{ color: '#666', fontSize: '16px', fontWeight: 500, lineHeight: 1 }}>OUT</span>
+                      <span style={{ color: '#666', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Of Scope</span>
                     </div>
-                    <div style={{ color: '#a3a3a3', fontSize: '12px', lineHeight: 1.4 }}>Brand identity, backend, payment gateway.</div>
+                    <div style={{ color: '#666', fontSize: '12px', lineHeight: 1.4 }}>Brand identity, backend, payment gateway.</div>
                   </div>
 
                 </div>
@@ -649,8 +652,15 @@ export const SmartEPPCaseStudy = () => {
               </div>
             </div>
 
-            {/* Divider */}
-            <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.08)', margin: '80px 0' }} />
+            {/* Creative Bridge Divider */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', margin: '80px 0' }}>
+              <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, transparent, rgba(249,87,56,0.2))' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(249,87,56,0.08)', border: '1px solid rgba(249,87,56,0.2)', borderRadius: '100px', padding: '6px 14px', flexShrink: 0 }}>
+                <Zap size={12} color="#f95738" />
+                <span style={{ color: '#f95738', fontSize: '11px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>Which made things hard</span>
+              </div>
+              <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to left, transparent, rgba(249,87,56,0.2))' }} />
+            </div>
 
             {/* Zone C: The 5 Problems */}
             <div>
@@ -666,9 +676,9 @@ export const SmartEPPCaseStudy = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               
               {/* Challenge 1 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
-                  <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>01</span>
+                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>01</span>
                   Tax savings are abstract. Money feels real.
                 </h4>
                 <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
@@ -677,9 +687,9 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 2 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
-                  <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>02</span>
+                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>02</span>
                   Salary deduction is terrifying without trust.
                 </h4>
                 <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
@@ -688,9 +698,9 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 3 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
-                  <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>03</span>
+                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>03</span>
                   HR needs control without overhead.
                 </h4>
                 <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
@@ -699,9 +709,9 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Challenge 4 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '40px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
-                  <span style={{ color: '#666', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>04</span>
+                  <span style={{ color: '#f95738', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500 }}>04</span>
                   Four user types. Zero shared vocabulary.
                 </h4>
                 <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
