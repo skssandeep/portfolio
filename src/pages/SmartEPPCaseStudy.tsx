@@ -421,7 +421,119 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
+      {/* 2. Intro & Stats Section */}
+      <section style={{ paddingTop: '80px', paddingBottom: '40px', background: 'var(--bg-color)' }}>
+        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
+          
+          {/* Pre-header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px' }}
+          >
+            <div style={{ width: '40px', height: '1px', background: '#f95738' }}></div>
+            <div style={{ color: '#f95738', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>
+              0→1 APP DESIGN • ONEASSIST
+            </div>
+          </motion.div>
 
+          {/* Headline */}
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '40px', letterSpacing: '-0.02em' }}
+          >
+            Indian employees lose lakhs to income tax buying the phone in their pocket. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
+          </motion.h2>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            style={{ fontSize: '20px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '48px', maxWidth: '800px' }}
+          >
+            SmartEPP is a device leasing program where employees get premium phones with up to 40% savings through tax and GST benefits — deducted from salary, protected by insurance. I designed the end-to-end system: employee app, HR dashboard, lessor portal, and seller portal. From a blank canvas.
+          </motion.p>
+
+          {/* Pills */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '80px' }}
+          >
+            {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal', '0→1 Product'].map((tag, idx) => (
+              <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '10px 24px', borderRadius: '100px', fontSize: '14px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
+                {tag}
+              </div>
+            ))}
+          </motion.div>
+
+        </div>
+
+        {/* Stats Grid - Full Width Container */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          style={{ borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '40px 0', background: 'rgba(0,0,0,0.2)' }}
+        >
+          <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '32px' }}>
+              
+              {/* Stat 1 */}
+              <div>
+                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>MY ROLE</div>
+                <div style={{ color: '#fff', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>Lead UX Designer</div>
+                <div style={{ color: '#666', fontSize: '13px' }}>Solo designer on the product</div>
+              </div>
+
+              {/* Stat 2 */}
+              <div>
+                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>I WORKED WITH</div>
+                <div style={{ color: '#fff', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>1 PM • 2 FE • 1 BE</div>
+                <div style={{ color: '#666', fontSize: '13px' }}>1 QA • 1 Business Analyst</div>
+              </div>
+
+              {/* Stat 3 */}
+              <div>
+                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>PLATFORMS</div>
+                <div style={{ color: '#fff', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>iOS • Android • Web</div>
+                <div style={{ color: '#666', fontSize: '13px' }}>4 portals • 2 mobile OS</div>
+              </div>
+
+              {/* Stat 4 */}
+              <div>
+                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>TIMELINE</div>
+                <div style={{ color: '#fff', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>5 months</div>
+                <div style={{ color: '#666', fontSize: '13px' }}>Blank canvas → shipped MVP</div>
+              </div>
+
+              {/* Stat 5 */}
+              <div>
+                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>USER RESEARCH</div>
+                <div style={{ color: '#f95738', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>26 interviews</div>
+                <div style={{ color: '#666', fontSize: '13px' }}>Across all 4 actor types</div>
+              </div>
+
+              {/* Stat 6 */}
+              <div>
+                <div style={{ color: '#666', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>DESIGN SYSTEM</div>
+                <div style={{ color: '#f95738', fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>28 components</div>
+                <div style={{ color: '#666', fontSize: '13px' }}>Shared across all 4 portals</div>
+              </div>
+
+            </div>
+          </div>
+        </motion.div>
+      </section>
 
       {/* 3. Problem */}
       <section style={{ padding: '80px 0' }}>
