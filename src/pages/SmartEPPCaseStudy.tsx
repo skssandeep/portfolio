@@ -427,15 +427,14 @@ export const SmartEPPCaseStudy = () => {
           
           {/* Left Text Block */}
           <div style={{ flex: '1 1 600px', zIndex: 10, paddingBottom: '80px' }}>
-            {/* Pre-header */}
+            {/* Pre-header Pill */}
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}
+              style={{ display: 'inline-block', padding: '10px 28px', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '100px', background: 'rgba(255,255,255,0.03)', marginBottom: '32px' }}
             >
-              <div style={{ width: '40px', height: '1px', background: '#f95738' }}></div>
-              <div style={{ color: '#f95738', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>
+              <div style={{ color: '#e0e0e0', fontSize: '13px', fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase' }}>
                 0→1 APP DESIGN • ONEASSIST
               </div>
             </motion.div>
