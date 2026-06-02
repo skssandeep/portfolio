@@ -567,7 +567,7 @@ export const SmartEPPCaseStudy = () => {
             {/* 2. Context Box */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="lg:col-span-4" style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', padding: '56px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
-                <strong style={{ color: '#fff', fontWeight: 500 }}>OneAssist was launching a completely new product category:</strong> employee device leasing. Employees lease premium devices through their employer, saving up to 40% through combined tax and GST benefits, with monthly deductions from salary. The employer pays nothing. OneAssist earns by attaching its mandatory theft and damage protection plan to every lease.
+                <strong style={{ color: '#fff', fontWeight: 500 }}>OneAssist was launching a new product category:</strong> employee device leasing. Employees lease premium devices through their employer and save up to 40% via combined tax and GST benefits, deducted monthly from salary. The employer pays nothing. OneAssist earns on a mandatory theft-and-damage protection plan attached to every lease.
               </p>
             </motion.div>
 
@@ -606,9 +606,9 @@ export const SmartEPPCaseStudy = () => {
                 <Clock size={18} color="#f95738" /> Why Now
               </h3>
               <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.8, margin: 0 }}>
-                A new Indian tax regime (FY 2023–24) made flexi-benefit device leasing significantly more attractive for salaried employees. The income-tax slab alone could shield up to 30% of a device's cost, and stacking the 18% GST benefit on top pushed total savings toward 40% after financier interest. OneAssist had the enterprise relationships and the protection infrastructure. 
+                A new tax regime (FY 2023–24) made device leasing far more attractive for salaried employees: 30% income-tax relief plus an 18% GST benefit, netting ~40% after financier interest. OneAssist had the enterprise relationships and protection infrastructure.
                 <br/><br/>
-                <strong style={{ color: '#fff', fontWeight: 500 }}>The window to capture this market before a competitor did was narrow: the product had to ship in under 6 months or the tax-year timing advantage was lost.</strong>
+                <strong style={{ color: '#fff', fontWeight: 500 }}>But the window was narrow — ship in under 6 months, or lose the tax-year timing advantage to a competitor.</strong>
               </p>
             </motion.div>
 
