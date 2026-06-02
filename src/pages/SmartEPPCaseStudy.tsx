@@ -328,7 +328,6 @@ export const SmartEPPCaseStudy = () => {
             .chip-2 { top: 30%; right: 0%; }
             .chip-3 { bottom: 30%; left: 0%; }
             .chip-4 { bottom: 15%; right: 5%; }
-            .chip-5 { top: 5%; right: 15%; }
             
             @media (max-width: 900px) {
               .floating-chips {
@@ -392,8 +391,7 @@ export const SmartEPPCaseStudy = () => {
               { class: 'chip-1', icon: <Target size={14}/>, title: "My Role", val: "UX Designer", delay: 0.4 },
               { class: 'chip-2', icon: <Clock size={14}/>, title: "Timeline", val: "4 Months", delay: 0.5 },
               { class: 'chip-3', icon: <Smartphone size={14}/>, title: "Platform", val: "Mobile App", delay: 0.6 },
-              { class: 'chip-4', icon: <AlertCircle size={14}/>, title: "Constraint", val: "Strict KYC & NBFC", delay: 0.7 },
-              { class: 'chip-5', icon: <Palette size={14}/>, title: "Tools", val: "Figma, Claude, UX Pilot", delay: 0.8 }
+              { class: 'chip-4', icon: <AlertCircle size={14}/>, title: "Constraint", val: "Strict KYC & NBFC", delay: 0.7 }
             ].map((chip, idx) => (
               <motion.div key={idx} className={`chip-wrapper ${chip.class}`}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
@@ -1023,6 +1021,14 @@ export const SmartEPPCaseStudy = () => {
             <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, maxWidth: '800px', margin: '0 auto 48px auto', fontStyle: 'italic' }}>
               "Smart EPP was a masterclass in designing for trust and low friction over pure aesthetics. By deeply understanding FinTech regulations and corporate HR integrations, we were able to engineer a truly frictionless checkout experience."
             </p>
+
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '48px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px 24px', borderRadius: '100px', fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
+                <Palette size={18} color="var(--accent-color)" /> 
+                <span><strong style={{ color: '#fff' }}>Built with:</strong> Figma, Claude, & UX Pilot</span>
+              </div>
+            </div>
+
             <Link 
               to="/" 
               style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#0a0a0a', background: '#fff', padding: '16px 40px', borderRadius: '100px', textDecoration: 'none', fontWeight: 600, fontSize: '15px', letterSpacing: '1px', textTransform: 'uppercase', transition: 'all 0.3s ease' }}
