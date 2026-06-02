@@ -550,7 +550,7 @@ export const SmartEPPCaseStudy = () => {
 
       {/* 3. Problem */}
       <section style={{ padding: '160px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container" style={{ maxWidth: '1400px' }}>
+        <div className="container">
           
           {/* Zone A & B: The Setup Block */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px', marginBottom: '120px' }}>
