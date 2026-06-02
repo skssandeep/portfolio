@@ -453,7 +453,34 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.1 }}
               style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '32px', letterSpacing: '-0.02em' }}
             >
-              Up to 40% of that phone is just tax. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
+              Up to 40% of that <span style={{ position: 'relative', display: 'inline-block' }}>
+                phone
+                <svg className="hidden lg:block" width="280" height="140" viewBox="0 0 280 140" fill="none" style={{ position: 'absolute', left: '70%', bottom: '70%', overflow: 'visible', zIndex: 0, pointerEvents: 'none' }}>
+                  <motion.path 
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+                    d="M 20 120 Q 140 -20 270 90" 
+                    stroke="var(--accent-color)" 
+                    strokeWidth="4" 
+                    strokeLinecap="round" 
+                    fill="none"
+                  />
+                  <motion.polyline 
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 1.5, type: 'spring' }}
+                    points="250,60 272,92 235,95" 
+                    stroke="var(--accent-color)" 
+                    strokeWidth="4" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    fill="none"
+                  />
+                </svg>
+              </span> is just tax. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
             </motion.h2>
 
             {/* Description */}
