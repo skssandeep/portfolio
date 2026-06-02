@@ -564,8 +564,7 @@ export const SmartEPPCaseStudy = () => {
               A 4-party financial product that had to feel as simple as shopping on Amazon.
             </h2>
             
-            {/* Horizontal Rule */}
-            <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.1)', margin: '64px 0 48px 0' }} />
+            <div style={{ marginTop: '64px' }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
               {/* Narrative (Left) */}
