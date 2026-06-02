@@ -457,20 +457,15 @@ export const SmartEPPCaseStudy = () => {
             </motion.h2>
 
             {/* Description */}
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '40px', maxWidth: '100%' }}
             >
-              <ul style={{ margin: 0, paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <li>SmartEPP lets employees lease premium phones and reclaim that 40%.</li>
-                <li>Paid from salary, covered by insurance.</li>
-                <li>I designed it end to end: employee app, HR dashboard, lessor portal, seller portal.</li>
-                <li>From a blank canvas.</li>
-              </ul>
-            </motion.div>
+              SmartEPP lets employees lease premium phones and reclaim that 40%. Paid from salary, covered by insurance. I designed it end to end: employee app, HR dashboard, lessor portal, seller portal. From a blank canvas.
+            </motion.p>
 
             {/* Pills */}
             <motion.div 
