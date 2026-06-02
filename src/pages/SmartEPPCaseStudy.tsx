@@ -422,10 +422,10 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 2. Intro & Stats Section */}
-      <section style={{ paddingTop: '80px', paddingBottom: '40px', background: 'var(--bg-color)' }}>
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '60px' }}>
+      <section style={{ paddingTop: '80px', paddingBottom: '40px', background: 'var(--bg-color)', overflow: 'hidden' }}>
+        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '60px' }}>
           
-          <div style={{ flex: '1 1 500px' }}>
+          <div style={{ flex: '1 1 500px', maxWidth: '700px' }}>
             {/* Pre-header */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -477,7 +477,7 @@ export const SmartEPPCaseStudy = () => {
             </motion.div>
           </div>
 
-          <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}>
+          <div style={{ flex: '1 1 600px', display: 'flex', justifyContent: 'center', position: 'relative', zIndex: 10 }}>
             <motion.img 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -485,7 +485,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.4, duration: 0.5 }}
               src="/images/Mockup2_EPP.png" 
               alt="Smart EPP Mobile App" 
-              style={{ width: '100%', maxWidth: '450px', objectFit: 'contain', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }} 
+              style={{ width: '130%', maxWidth: '800px', objectFit: 'contain', filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.7))', transform: 'translateX(10%) scale(1.15)' }} 
             />
           </div>
 
