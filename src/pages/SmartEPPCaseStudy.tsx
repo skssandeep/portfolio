@@ -565,7 +565,7 @@ export const SmartEPPCaseStudy = () => {
               </h2>
               
               <p style={{ fontSize: '20px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                OneAssist was launching a completely new product category — employee device leasing. Employees lease premium devices through their employer, saving up to 40% through tax and GST exemptions, with monthly deductions from salary. The employer pays nothing. OneAssist earns lease management fees and deepens its enterprise relationships.
+                OneAssist was launching a completely new product category: employee device leasing. Employees lease premium devices through their employer, saving up to 40% through combined tax and GST benefits, with monthly deductions from salary. The employer pays nothing. OneAssist earns by attaching its mandatory theft and damage protection plan to every lease.
               </p>
             </motion.div>
 
@@ -586,7 +586,7 @@ export const SmartEPPCaseStudy = () => {
                   {[
                     'Four different user types.',
                     'One shared operational backbone.',
-                    'Zero existing design system to build on.',
+                    "Built on OneAssist's existing consumer-app design system.",
                     'Five months to ship MVP.'
                   ].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#d4d4d4', fontSize: '15px' }}>
@@ -607,7 +607,7 @@ export const SmartEPPCaseStudy = () => {
                   <Clock size={16} color="#f95738" /> Why Now
                 </h3>
                 <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
-                  A new Indian tax regime (FY 2023–24) made flexi-benefit device leasing significantly more attractive for salaried employees — up to 30% of a device's cost could be shielded from income tax. OneAssist had the enterprise relationships and the protection infrastructure. <strong style={{ color: '#fff', fontWeight: 500 }}>The window to capture this market before a competitor did was narrow. The product had to ship in under 6 months or the tax-year timing advantage was lost.</strong>
+                  A new Indian tax regime (FY 2023–24) made flexi-benefit device leasing significantly more attractive for salaried employees. The income-tax slab alone could shield up to 30% of a device's cost, and stacking the 18% GST benefit on top pushed total savings toward 40% after financier interest. OneAssist had the enterprise relationships and the protection infrastructure. <strong style={{ color: '#fff', fontWeight: 500 }}>The window to capture this market before a competitor did was narrow: the product had to ship in under 6 months or the tax-year timing advantage was lost.</strong>
                 </p>
               </motion.div>
 
