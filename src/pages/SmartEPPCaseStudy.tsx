@@ -587,7 +587,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
                   
                   {/* Card 1 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>4</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Platforms</span>
@@ -596,7 +596,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Card 2 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>4</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>User Types</span>
@@ -605,7 +605,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Card 3 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>1</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Backbone</span>
@@ -614,7 +614,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Card 4 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '16px', fontWeight: 500, lineHeight: 1 }}>UI</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Design System</span>
@@ -623,7 +623,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Card 5 */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #555', borderRadius: '4px 12px 12px 4px', padding: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '4px' }}>
                       <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>5</span>
                       <span style={{ color: '#e5e5e5', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</span>
