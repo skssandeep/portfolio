@@ -422,7 +422,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 2. Intro & Stats Section */}
-      <section style={{ paddingTop: '100px', paddingBottom: '0', background: 'var(--bg-color)', position: 'relative' }}>
+      <section style={{ paddingTop: '100px', paddingBottom: '0', background: 'var(--bg-color)', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px' }}>
           
           {/* Left Text Block */}
@@ -480,7 +480,7 @@ export const SmartEPPCaseStudy = () => {
 
           {/* Right Mockup Block */}
           <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 5 }}>
-            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '100%', height: '100%', background: 'radial-gradient(circle, rgba(249,87,56,0.15) 0%, transparent 70%)', zIndex: 0 }} />
+            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '120%', height: '120%', background: 'radial-gradient(circle, rgba(249,87,56,0.2) 0%, transparent 60%)', zIndex: 0 }} />
             <motion.img 
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -488,7 +488,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.4, duration: 0.6, type: 'spring', stiffness: 100 }}
               src="/images/Mockup2_EPP.png" 
               alt="Smart EPP Mobile App" 
-              style={{ width: '100%', maxWidth: '600px', objectFit: 'contain', zIndex: 5, filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.5))', transform: 'scale(1.1) translateY(20px)' }} 
+              style={{ width: '140%', maxWidth: '900px', objectFit: 'contain', zIndex: 5, filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.5))', transform: 'scale(1.4) translateY(5%) translateX(5%)' }} 
             />
           </div>
 
