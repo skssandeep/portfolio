@@ -607,7 +607,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
                   
                   {/* Highlight Pill */}
-                  <div style={{ marginTop: '8px', display: 'inline-block', background: 'rgba(249, 87, 56, 0.1)', color: '#f95738', padding: '12px 16px', borderRadius: '8px', fontSize: '14px', border: '1px solid rgba(249, 87, 56, 0.2)' }}>
+                  <div style={{ marginTop: '8px', display: 'block', width: '100%', background: 'rgba(249, 87, 56, 0.1)', color: '#f95738', padding: '16px', borderRadius: '8px', fontSize: '14px', border: '1px solid rgba(249, 87, 56, 0.2)' }}>
                     Ship in under 6 months, or lose the tax-year timing to a competitor.
                   </div>
                 </div>
