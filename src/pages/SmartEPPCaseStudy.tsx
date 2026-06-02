@@ -469,7 +469,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.3 }}
               style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}
             >
-              {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal', '0→1 Product'].map((tag, idx) => (
+              {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal'].map((tag, idx) => (
                 <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
                   {tag}
                 </div>
