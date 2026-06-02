@@ -584,31 +584,51 @@ export const SmartEPPCaseStudy = () => {
                   THE CONSTRAINTS
                 </div>
                 
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '48px', borderTop: '1px solid rgba(255,255,255,0.1)', borderBottom: '1px solid rgba(255,255,255,0.1)', padding: '32px 0' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   
-                  <div style={{ flex: '1 1 auto' }}>
-                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>4</div>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Platforms</div>
+                  {/* Card 1 */}
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
+                      <span style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1 }}>4</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Platforms</span>
+                    </div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Employee App, HR Portal, Financier Portal, and Seller Portal.</div>
                   </div>
 
-                  <div style={{ flex: '1 1 auto' }}>
-                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>4</div>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>User Types</div>
+                  {/* Card 2 */}
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
+                      <span style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1 }}>4</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>User Types</span>
+                    </div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Distinct actors interacting within a single shared order lifecycle.</div>
                   </div>
 
-                  <div style={{ flex: '1 1 auto' }}>
-                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>1</div>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Backbone</div>
+                  {/* Card 3 */}
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
+                      <span style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1 }}>1</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Shared Backbone</span>
+                    </div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>A unified operational backend supporting all platforms simultaneously.</div>
                   </div>
 
-                  <div style={{ flex: '1 1 auto' }}>
-                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>UI</div>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Design System</div>
+                  {/* Card 4 */}
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
+                      <span style={{ color: '#fff', fontSize: '20px', fontWeight: 500, lineHeight: 1 }}>UI</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Design System</span>
+                    </div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Strictly built on OneAssist's existing consumer-app component library.</div>
                   </div>
 
-                  <div style={{ flex: '1 1 auto' }}>
-                    <div style={{ color: '#fff', fontSize: '48px', fontWeight: 200, lineHeight: 1, letterSpacing: '-2px', marginBottom: '12px' }}>5</div>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</div>
+                  {/* Card 5 */}
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #34d399', borderRadius: '4px 12px 12px 4px', padding: '20px 24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
+                      <span style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1 }}>5</span>
+                      <span style={{ color: '#e5e5e5', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>Months</span>
+                    </div>
+                    <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>The absolute deadline to design, build, and ship the entire MVP.</div>
                   </div>
 
                 </div>
