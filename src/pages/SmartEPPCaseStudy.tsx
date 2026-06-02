@@ -516,7 +516,7 @@ export const SmartEPPCaseStudy = () => {
             }}
           >
             {[
-              { label: 'MY ROLE', value: 'Lead UX Designer', subtext: 'Solo designer' },
+              { label: 'MY ROLE', value: 'UX Designer', subtext: 'Solo designer' },
               { label: 'I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
               { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS' },
               { label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
