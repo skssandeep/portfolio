@@ -453,22 +453,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.1 }}
               style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '32px', letterSpacing: '-0.02em' }}
             >
-              Up to 40% of that <span style={{ position: 'relative', display: 'inline-block' }}>
-                phone
-                <svg className="hidden lg:block" width="280" height="120" viewBox="0 0 280 120" fill="none" style={{ position: 'absolute', left: '100%', top: '50%', overflow: 'visible', zIndex: 0, pointerEvents: 'none' }}>
-                  {/* The Track */}
-                  <path d="M 10 0 L 250 0 L 250 100" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="none" />
-                  
-                  {/* Endpoints */}
-                  <circle cx="10" cy="0" r="2" fill="rgba(255,255,255,0.4)" />
-                  <rect x="247" y="97" width="6" height="6" fill="transparent" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
-                  
-                  {/* The Traveling Data Packet */}
-                  <circle r="3" fill="var(--accent-color)" style={{ filter: 'drop-shadow(0 0 8px #f95738)' }}>
-                    <animateMotion dur="2.5s" repeatCount="indefinite" path="M 10 0 L 250 0 L 250 100" />
-                  </circle>
-                </svg>
-              </span> is just tax. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
+              Up to 40% of that phone is just tax. <span style={{ color: '#f95738' }}>We built the system that gives it back.</span>
             </motion.h2>
 
             {/* Description */}
