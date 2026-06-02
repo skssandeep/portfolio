@@ -425,13 +425,13 @@ export const SmartEPPCaseStudy = () => {
       <section style={{ paddingTop: '80px', paddingBottom: '40px', background: 'var(--bg-color)', overflow: 'hidden' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
           
-          <div style={{ width: '100%' }}>
+          <div style={{ width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             {/* Pre-header */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px' }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '40px' }}
             >
               <div style={{ width: '40px', height: '1px', background: '#f95738' }}></div>
               <div style={{ color: '#f95738', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>
@@ -467,7 +467,7 @@ export const SmartEPPCaseStudy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '40px' }}
+              style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '12px', marginBottom: '40px' }}
             >
               {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal', '0→1 Product'].map((tag, idx) => (
                 <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
