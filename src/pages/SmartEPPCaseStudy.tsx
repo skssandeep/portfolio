@@ -586,29 +586,29 @@ export const SmartEPPCaseStudy = () => {
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
                   
-                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
-                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>4</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
                     <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Platforms (Employee, HR, Financier, Seller)</div>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
                     <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>4</div>
+                  </div>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
                     <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Distinct user types</div>
+                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>4</div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
-                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>1</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
                     <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Shared operational backbone</div>
+                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>1</div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
-                    <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500 }}>UI</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
                     <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>OneAssist consumer-app design system</div>
+                    <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500, letterSpacing: '1px' }}>UI</div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
-                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>5</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', background: '#0a0a0a', padding: '16px 20px', alignItems: 'center' }}>
                     <div style={{ color: '#a3a3a3', fontSize: '13px', lineHeight: 1.5 }}>Months to ship MVP</div>
+                    <div style={{ color: '#fff', fontSize: '20px', fontWeight: 500 }}>5</div>
                   </div>
                 </div>
                 
