@@ -706,7 +706,7 @@ export const SmartEPPCaseStudy = () => {
 
             {/* Heading */}
             <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', maxWidth: '900px', margin: '0 0 24px 0' }}>
-              What users needed — and what made them anxious.
+              What users needed, and what made them anxious.
             </h2>
             <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.7, maxWidth: '600px', margin: '0 0 56px 0' }}>
               26 sessions across all 4 user types. No screens designed until research was done.
@@ -714,54 +714,129 @@ export const SmartEPPCaseStudy = () => {
 
             {/* Stat Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5" style={{ marginBottom: '48px' }}>
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '52px', fontWeight: 700, color: '#f95738', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>73%</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>couldn't explain the "40% saving" after reading competitor copy.</p>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ fontSize: '52px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>73%</div>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0', flex: 1 }}>couldn't explain the "40% saving" after reading competitor copy.</p>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
-                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ No personal number → no decision. The calculator was the trust mechanism.</p>
+                  <p style={{ fontSize: '13px', color: '#d4a017', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ No personal number → no decision. The calculator was the trust mechanism.</p>
                 </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '52px', fontWeight: 700, color: '#f95738', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>8/12</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>flagged 'salary deduction' as their top anxiety. What if I leave? What if it breaks?</p>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ fontSize: '52px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>8/12</div>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0', flex: 1 }}>flagged 'salary deduction' as their top anxiety. What if I leave? What if it breaks?</p>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
-                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ Answers needed in-context — not buried in an FAQ.</p>
+                  <p style={{ fontSize: '13px', color: '#d4a017', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ Answers needed in-context, not buried in an FAQ.</p>
                 </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '52px', fontWeight: 700, color: '#f95738', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>6/8</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>HR managers: approvals only scale under 30 seconds per request.</p>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ fontSize: '52px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>6/8</div>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0', flex: 1 }}>HR managers: approvals only scale under 30 seconds per request.</p>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
-                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ One row: eligibility, device, cost, tenure. No tab-switching.</p>
+                  <p style={{ fontSize: '13px', color: '#d4a017', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ One row: eligibility, device, cost, tenure. No tab-switching.</p>
                 </div>
               </motion.div>
             </div>
 
             {/* Quotes */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '56px' }}>
-              <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(249,87,56,0.5)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 16px 0', fontStyle: 'italic' }}>"I need to see exactly how much I'll save before I commit. Not a percentage — actual rupees, based on my salary slab."</p>
-                <div style={{ fontSize: '12px', color: '#555', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>— Software Engineer, 4 years experience, Bengaluru</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
+              <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(212,160,23,0.35)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 16px 0', fontStyle: 'italic' }}>"I need to see exactly how much I'll save before I commit. Not a percentage: actual rupees, based on my salary slab."</p>
+                <div style={{ fontSize: '12px', color: '#888', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>Software Engineer, 4 years experience, Bengaluru</div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(249,87,56,0.5)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+              <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(212,160,23,0.35)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
                 <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 16px 0', fontStyle: 'italic' }}>"If I'm approving 50 requests a week, I need the right information at a glance. I can't open 50 individual profiles to check eligibility."</p>
-                <div style={{ fontSize: '12px', color: '#555', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>— HR Manager, 1,200-person IT company, Pune</div>
+                <div style={{ fontSize: '12px', color: '#888', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>HR Manager, 1,200-person IT company, Pune</div>
               </motion.div>
             </div>
 
             {/* Insights */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '40px' }}>
-              <div>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>The central tension</div>
-                <p style={{ fontSize: '15px', color: '#777', lineHeight: 1.8, margin: 0 }}>Employees wanted simplicity. The product had real complexity — tax slabs, GST credits, lease terms. The design had to be <em style={{ color: '#e5e5e5', fontStyle: 'normal' }}>simple on the surface, detailed on demand.</em></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>The central tension</div>
+                <p style={{ fontSize: '15px', color: '#777', lineHeight: 1.8, margin: 0 }}>Employees wanted simplicity. The product had real complexity: tax slabs, GST credits, lease terms. The design had to be <em style={{ color: '#e5e5e5', fontStyle: 'normal' }}>simple on the surface, detailed on demand.</em></p>
               </div>
-              <div>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>What I missed</div>
-                <p style={{ fontSize: '15px', color: '#777', lineHeight: 1.8, margin: 0 }}>My sample was all first-time users — likely inflating confusion signals. Post-launch, power users (engineering bands) wanted raw tax breakdowns. Took two more iterations to serve them well.</p>
+              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>What I missed</div>
+                <p style={{ fontSize: '15px', color: '#777', lineHeight: 1.8, margin: 0 }}>My sample was all first-time users, likely inflating confusion signals. Post-launch, power users (engineering bands) wanted raw tax breakdowns. Took two more iterations to serve them well.</p>
               </div>
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Problem Reframe */}
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+
+            {/* Row 1: heading left + comparison cards right */}
+            <div style={{ display: 'grid', gridTemplateColumns: '55% 45%', gap: '64px', alignItems: 'center', marginBottom: '64px' }}>
+
+              {/* Left: chip + heading */}
+              <div>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
+                  <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>03 — Problem Reframe</span>
+                </div>
+                <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
+                  Not four separate products. One system with four different access points.
+                </h2>
+              </div>
+
+              {/* Right: stacked before/after cards */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '24px 28px' }}>
+                  <div style={{ fontSize: '10px', fontWeight: 700, color: '#444', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-mono)' }}>Original Framing</div>
+                  <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.65, margin: 0 }}>
+                    Four separate products for four user types: employee app, HR portal, lessor portal, seller portal.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '4px 16px' }}>
+                  <div style={{ width: '20px', height: '1px', background: 'rgba(255,255,255,0.08)' }} />
+                  <span style={{ fontSize: '10px', color: '#3a3a3a', fontFamily: 'var(--font-mono)', letterSpacing: '1.5px', textTransform: 'uppercase' }}>reframed as</span>
+                </div>
+                <div style={{ background: 'rgba(249,87,56,0.04)', border: '1px solid rgba(249,87,56,0.2)', borderRadius: '16px', padding: '24px 28px' }}>
+                  <div style={{ fontSize: '10px', fontWeight: 700, color: '#f95738', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-mono)' }}>Reframed</div>
+                  <p style={{ fontSize: '14px', color: '#aaa', lineHeight: 1.65, margin: 0 }}>
+                    One operational system. Each user type sees <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>only their relevant window</strong> — shielded from everything else.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2: body — narrow, centered */}
+            <div style={{ maxWidth: '700px', margin: '0 auto 56px' }}>
+              <p style={{ fontSize: '16px', color: '#777', lineHeight: 1.85, margin: '0 0 20px 0' }}>
+                One order moves through 4 parties. Different versions of the same object — with different terminology — compound inconsistency and multiply errors. Designing the shared data model first, then each portal as a view into it, gave us consistency for free and cut design time by ~30%.
+              </p>
+              <p style={{ fontSize: '16px', color: '#777', lineHeight: 1.85, margin: 0 }}>
+                The calculator started as a nice-to-have. Research proved it was the most critical element in the product. <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>No personal savings number — no confident decision.</strong> It became the centrepiece of the product page, not a footnote.
+              </p>
+            </div>
+
+            {/* Row 3: HMW card — full width climax */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ background: 'rgba(12,16,30,0.95)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '24px', padding: '56px 64px', textAlign: 'center', marginBottom: '40px' }}
+            >
+              <div style={{ fontSize: '10px', fontWeight: 700, color: '#444', letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-mono)' }}>How Might We</div>
+              <p style={{ fontSize: 'clamp(1.3rem, 2.2vw, 1.7rem)', color: '#e5e5e5', lineHeight: 1.5, fontWeight: 700, margin: '0 auto', letterSpacing: '-0.01em', maxWidth: '760px' }}>
+                Design each interface so users see{' '}
+                <span style={{ color: '#f95738' }}>exactly what they need</span>
+                {' '}to act — nothing that creates doubt — while all four portals share a single source of truth?
+              </p>
+            </motion.div>
+
+            {/* Row 4: why this — right-anchored annotation */}
+            <div style={{ maxWidth: '580px', marginLeft: 'auto' }}>
+              <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.85, margin: 0, borderLeft: '1px solid rgba(255,255,255,0.06)', paddingLeft: '20px' }}>
+                <strong style={{ color: '#888', fontWeight: 600 }}>Why this over the alternatives:</strong> Two framings were rejected — one scoped only to the calculator (ignoring HR and partner portals), one misrepresented the product (employees need to know approval exists; it sets their expectations during the wait). This was the only HMW that worked for all four user types at once.
+              </p>
             </div>
 
           </motion.div>
