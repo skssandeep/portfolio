@@ -422,16 +422,17 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 2. Intro & Stats Section */}
-      <section style={{ paddingTop: '80px', paddingBottom: '40px', background: 'var(--bg-color)', overflow: 'hidden' }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
+      <section style={{ paddingTop: '100px', paddingBottom: '0', background: 'var(--bg-color)', position: 'relative' }}>
+        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px' }}>
           
-          <div style={{ width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          {/* Left Text Block */}
+          <div style={{ flex: '1 1 600px', zIndex: 10, paddingBottom: '80px' }}>
             {/* Pre-header */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '40px' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}
             >
               <div style={{ width: '40px', height: '1px', background: '#f95738' }}></div>
               <div style={{ color: '#f95738', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>
@@ -467,7 +468,7 @@ export const SmartEPPCaseStudy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '12px', marginBottom: '40px' }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}
             >
               {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal', '0→1 Product'].map((tag, idx) => (
                 <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
@@ -477,30 +478,32 @@ export const SmartEPPCaseStudy = () => {
             </motion.div>
           </div>
 
-          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', position: 'relative', zIndex: 10 }}>
+          {/* Right Mockup Block */}
+          <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 5 }}>
+            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '100%', height: '100%', background: 'radial-gradient(circle, rgba(249,87,56,0.15) 0%, transparent 70%)', zIndex: 0 }} />
             <motion.img 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
+              transition={{ delay: 0.4, duration: 0.6, type: 'spring', stiffness: 100 }}
               src="/images/Mockup2_EPP.png" 
               alt="Smart EPP Mobile App" 
-              style={{ width: '100%', maxWidth: '800px', objectFit: 'contain', filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.7))' }} 
+              style={{ width: '100%', maxWidth: '600px', objectFit: 'contain', zIndex: 5, filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.5))', transform: 'scale(1.1) translateY(20px)' }} 
             />
           </div>
 
         </div>
 
-        {/* Stats Grid - Full Width Container */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          style={{ borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '40px 0', background: 'rgba(0,0,0,0.2)' }}
-        >
-          <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '32px' }}>
+        {/* Stats Grid - Floating Overlap Container */}
+        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 20, marginTop: '-60px' }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            style={{ background: 'rgba(20,20,20,0.85)', backdropFilter: 'blur(32px)', WebkitBackdropFilter: 'blur(32px)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '24px', padding: '48px', boxShadow: '0 30px 60px rgba(0,0,0,0.5)' }}
+          >
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '40px' }}>
               
               {/* Stat 1 */}
               <div>
@@ -545,8 +548,8 @@ export const SmartEPPCaseStudy = () => {
               </div>
 
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* 3. Problem */}
