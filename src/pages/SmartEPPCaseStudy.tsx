@@ -427,7 +427,7 @@ export const SmartEPPCaseStudy = () => {
 
       {/* 2. Intro & Stats Section */}
       <section style={{ paddingTop: '100px', paddingBottom: '0', background: 'var(--bg-color)', position: 'relative', overflow: 'hidden' }}>
-        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px' }}>
+        <div className="container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px' }}>
           
           {/* Left Text Block */}
           <div style={{ flex: '1 1 700px', zIndex: 10, paddingBottom: '80px', maxWidth: '800px' }}>
