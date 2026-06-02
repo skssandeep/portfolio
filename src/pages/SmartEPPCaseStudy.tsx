@@ -693,6 +693,81 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
+      {/* Research Section */}
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+
+            {/* Section Label */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+              <div style={{ width: '6px', height: '6px', background: '#a3a3a3', borderRadius: '50%' }} />
+              Research
+            </div>
+
+            {/* Heading */}
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', maxWidth: '900px', margin: '0 0 24px 0' }}>
+              What each user type actually needed — and where they were anxious.
+            </h2>
+            <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.7, maxWidth: '680px', margin: '0 0 64px 0' }}>
+              Research ran across all four user types before a single screen was designed. Employee interviews (12), HR manager walkthroughs (8), lessor ops team shadowing (2 sessions), seller ops interviews (4).
+            </p>
+
+            {/* Stat Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5" style={{ marginBottom: '48px' }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '52px', fontWeight: 700, color: '#f95738', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>73%</div>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>of employees couldn't explain how the "40% saving" worked after reading competitor descriptions.</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
+                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ The savings calculator wasn't a nice-to-have. It was the core trust mechanism — without a personal number, no decision was possible.</p>
+                </div>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '52px', fontWeight: 700, color: '#f95738', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>8/12</div>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>employees flagged 'salary deduction' as anxiety-inducing — "What if I leave the company? What if the device breaks?"</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
+                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ Trust had to be built at every step of the flow, not just at checkout. Anxiety questions needed in-context answers, not an FAQ.</p>
+                </div>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '52px', fontWeight: 700, color: '#f95738', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>6/8</div>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0' }}>HR managers said the workflow would only scale if each request took under 30 seconds to process.</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
+                  <p style={{ fontSize: '13px', color: '#f95738', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ The approval card had to surface all required information in one row — eligibility, device, cost, tenure — without any tab-switching.</p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Quotes */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '56px' }}>
+              <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(249,87,56,0.5)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 16px 0', fontStyle: 'italic' }}>"I need to see exactly how much I'll save before I commit. Not a percentage — actual rupees, based on my salary slab."</p>
+                <div style={{ fontSize: '12px', color: '#555', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>— Software Engineer, 4 years experience, Bengaluru</div>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(249,87,56,0.5)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 16px 0', fontStyle: 'italic' }}>"If I'm approving 50 requests a week, I need the right information at a glance. I can't open 50 individual profiles to check eligibility."</p>
+                <div style={{ fontSize: '12px', color: '#555', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>— HR Manager, 1,200-person IT company, Pune</div>
+              </motion.div>
+            </div>
+
+            {/* Insights */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '40px' }}>
+              <div>
+                <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>The central tension: </span>
+                <span style={{ fontSize: '15px', color: '#777', lineHeight: 1.8 }}>Employees wanted radical simplicity — "show me my saving, let me pick a colour and order." But the product had genuine complexity: tax slabs, flexi benefit rules, GST credits, lease terms. Stripping complexity too far meant employees making uninformed decisions. Too much complexity meant they'd bounce before ordering. The design had to be simple on the surface and detailed on demand.</span>
+              </div>
+              <div>
+                <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>What I didn't research — and why it mattered later: </span>
+                <span style={{ fontSize: '15px', color: '#777', lineHeight: 1.8 }}>I didn't study employees who had previously used a competitor device-leasing program. My sample was all first-time users of this product category, which likely inflated the "confusion" signals. Post-launch, we saw a subset of power users (typically in engineering bands) who wanted more raw data — actual tax calculation breakdowns, not just the final number. That user type wasn't represented in research and took us two post-launch iterations to serve well.</span>
+              </div>
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
+
       {/* 4. Breakdown of Solution (Single Pitch Slide) */}
       <section style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1600px' }}>
