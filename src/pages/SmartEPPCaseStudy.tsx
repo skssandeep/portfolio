@@ -629,12 +629,7 @@ export const SmartEPPCaseStudy = () => {
               </div>
             </div>
 
-            {/* Bridge: clean divider */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', margin: '64px 0 48px 0' }}>
-              <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.06)' }} />
-              <span style={{ color: '#555', fontSize: '11px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', flexShrink: 0 }}>5 Core Challenges</span>
-              <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.06)' }} />
-            </div>
+
 
             {/* Zone C: Challenges */}
             <div>
