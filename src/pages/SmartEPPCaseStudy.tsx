@@ -722,7 +722,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
                 <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                   <div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
                     <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Personalized calculator. Math must be immediate.</p>
                   </div>
                   <div 
@@ -755,7 +755,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
                 <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                   <div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
                     <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>In-context trust signals. No hidden FAQs.</p>
                   </div>
                   <div 
@@ -788,7 +788,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
                 <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                   <div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
                     <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Single-row approval dashboard. Zero tab-switching.</p>
                   </div>
                   <div 
