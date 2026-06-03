@@ -1061,7 +1061,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 05. Final Solution: The Visual Ecosystem */}
-      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <section style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
