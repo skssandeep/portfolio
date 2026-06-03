@@ -1132,10 +1132,10 @@ export const SmartEPPCaseStudy = () => {
 
 
           {/* Ecosystem Showcase */}
-          <style>{`
+          <style dangerouslySetInnerHTML={{ __html: `
             .ecosystem-scroll::-webkit-scrollbar { display: none; }
             .ecosystem-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-          `}</style>
+          `}} />
           
           <div style={{ 
             position: 'relative',
