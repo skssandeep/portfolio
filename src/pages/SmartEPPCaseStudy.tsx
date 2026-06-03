@@ -133,6 +133,7 @@ const SmartEPPPrototype = () => {
 export const SmartEPPCaseStudy = () => {
   const [modalImages, setModalImages] = useState<string[]>([]);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
+  const [showHeroPill, setShowHeroPill] = useState(true);
   
   const solutionImages = [
     "/images/EPP_CaseStudy_02.png",
@@ -550,6 +551,75 @@ export const SmartEPPCaseStudy = () => {
             ))}
           </motion.div>
         </div>
+
+        <AnimatePresence>
+          {showHeroPill && (
+            <motion.div
+              initial={{ opacity: 0, y: 50, x: '-50%' }}
+              animate={{ opacity: 1, y: 0, x: '-50%' }}
+              exit={{ opacity: 0, y: 50, scale: 0.9, x: '-50%' }}
+              transition={{ delay: 1.5, type: 'spring', stiffness: 200, damping: 20 }}
+              style={{
+                position: 'fixed',
+                bottom: '40px',
+                left: '50%',
+                zIndex: 100,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <button
+                onClick={() => {
+                  setShowHeroPill(false);
+                  const el = document.getElementById('final-designs');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                style={{
+                  background: 'rgba(20, 20, 20, 0.85)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '100px',
+                  padding: '10px 10px 10px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  color: '#fff',
+                  cursor: 'pointer',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(30, 30, 30, 0.95)';
+                  e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(20, 20, 20, 0.85)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)';
+                }}
+              >
+                <span style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.5px' }}>Skip to Final Designs</span>
+                <div style={{
+                  background: 'var(--semantic-success)',
+                  color: '#000',
+                  borderRadius: '50%',
+                  width: '32px',
+                  height: '32px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <ArrowDown size={16} strokeWidth={2.5} />
+                </div>
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* 3. Problem */}
