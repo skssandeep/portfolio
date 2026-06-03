@@ -625,10 +625,7 @@ export const SmartEPPCaseStudy = () => {
 
                 </div>
                 
-                <div style={{ marginTop: '16px', display: 'flex', alignItems: 'flex-start', gap: '10px', width: '100%', background: 'rgba(var(--semantic-error-rgb), 0.05)', color: 'var(--semantic-error)', padding: '14px 16px', borderRadius: '10px', fontSize: '12px', border: '1px solid rgba(var(--semantic-error-rgb), 0.2)', lineHeight: 1.5 }}>
-                  <div style={{ width: '5px', height: '5px', background: 'var(--semantic-error)', borderRadius: '50%', marginTop: '5px', flexShrink: 0 }} />
-                  <div>Ship in under 6 months, or lose the tax-year timing to a competitor.</div>
-                </div>
+
               </div>
             </div>
 
