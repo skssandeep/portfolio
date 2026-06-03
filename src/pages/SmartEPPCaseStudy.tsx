@@ -1451,31 +1451,31 @@ export const SmartEPPCaseStudy = () => {
                 <div className="md:col-span-1 flex flex-col justify-center" style={{ padding: '24px 0' }}>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--semantic-info)' }} />
-                    <span style={{ fontSize: '11px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '1px', textTransform: 'uppercase' }}>Appendix</span>
+                    <span style={{ fontSize: '11px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '1px', textTransform: 'uppercase' }}>Behind the Scenes</span>
                   </div>
                   <h3 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                     System Foundations.
                   </h3>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6, maxWidth: '90%' }}>
-                    The underlying architecture and principles powering all four platforms.
+                    The core design principles powering all four platforms.
                   </p>
                 </div>
 
                 {/* Card 1: Design System */}
                 <div className="md:col-span-2 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Design System</div>
-                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Portals. Zero Inconsistency.</h4>
-                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.7, margin: 0, maxWidth: '500px' }}>
-                    Built a unified 28-component architecture. By defining complex elements—like our 21-variant order status badge—just once, we eliminated design debt and accelerated engineering delivery.
+                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Portals.</h4>
+                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
+                    A unified component library keeps every screen perfectly in sync. We designed once to scale everywhere.
                   </p>
                 </div>
 
                 {/* Card 2: Accessibility */}
                 <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Accessibility</div>
-                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Inclusive by Default.</h4>
-                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.7, margin: 0 }}>
-                    High-contrast typography (7:2:1), 44px+ touch targets, and multi-sensory error states ensure WCAG AA compliance isn't an afterthought.
+                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Inclusive by Design.</h4>
+                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
+                    Built for everyone. High-contrast text and large touch targets ensure a frictionless experience.
                   </p>
                 </div>
 
@@ -1484,8 +1484,8 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Edge Cases Designed</div>
                     <h4 style={{ fontSize: '24px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Zero Dead Ends.</h4>
-                    <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.7, margin: 0 }}>
-                      Designed for failure states, not just the happy path. We turn errors into actionable next steps.
+                    <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
+                      We mapped out failure states so users never hit a wall. Every error offers a way forward.
                     </p>
                   </div>
                   
@@ -1494,14 +1494,14 @@ export const SmartEPPCaseStudy = () => {
                       <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-error)' }} /> HR Rejections
                       </div>
-                      <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.6, margin: 0 }}>Provides clear reasoning and a direct action prompt. No dead ends.</p>
+                      <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.5, margin: 0 }}>Clear feedback & instant next steps.</p>
                     </div>
                     
                     <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)' }}>
                       <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} /> Out of Stock
                       </div>
-                      <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.6, margin: 0 }}>Real-time comparable alternatives and restock estimates. No blank screens.</p>
+                      <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.5, margin: 0 }}>Smart alternatives. No blank screens.</p>
                     </div>
                   </div>
                 </div>
