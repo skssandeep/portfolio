@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase} from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
@@ -163,6 +163,7 @@ export const SmartEPPCaseStudy = () => {
   
   // Layout toggle logic
   const [isGridView, setIsGridView] = useState(false);
+  const [activePortalTab, setActivePortalTab] = useState<'hr' | 'financier' | 'seller'>('hr');
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
@@ -1184,78 +1185,263 @@ export const SmartEPPCaseStudy = () => {
             {/* Divider */}
             <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '80px' }} />
 
-            {/* Screen 03: HR Approval Dashboard */}
+            
+            {/* Admin Portals Section */}
             <div style={{ marginBottom: '80px' }}>
-              <div style={{ fontSize: '11px', color: '#555', fontFamily: 'var(--font-mono)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
-                Screen 03: HR Approval Dashboard
+              <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <h3 style={{ fontSize: '32px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>Powering the B2B Ecosystem</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
+                  Beyond the employee app, we designed three specialized web portals to handle approvals, financing, and logistics perfectly.
+                </p>
               </div>
 
-              {/* Browser chrome mockup */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                style={{ background: '#1a1a1a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', marginBottom: '40px', boxShadow: '0 24px 60px rgba(0,0,0,0.6)' }}
-              >
-                {/* Browser toolbar */}
-                <div style={{ background: '#141414', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  <div style={{ display: 'flex', gap: '6px' }}>
-                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ef4444' }} />
-                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f59e0b' }} />
-                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#22c55e' }} />
-                  </div>
-                  <div style={{ flex: 1, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '6px', padding: '4px 12px', fontSize: '12px', color: '#555', fontFamily: 'var(--font-mono)' }}>
-                    smartepp.oneassist.in/hr
-                  </div>
-                </div>
-                <img
-                  src="/images/EPP_CaseStudy_05.png"
-                  alt="HR Approval Dashboard"
-                  style={{ width: '100%', display: 'block', objectFit: 'cover', objectPosition: 'top', maxHeight: '320px' }}
-                />
-              </motion.div>
-
-              {/* HR annotations */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+              {/* Tabs */}
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '48px' }}>
                 {[
-                  {
-                    n: '5',
-                    title: 'Every approval row shows exactly what HR needs.',
-                    body: 'Employee name + role + band → device + monthly cost + tenure → submitted time. No tab-switching. No opening a profile. The approve/reject decision is informed and takes under 12 seconds.',
-                  },
-                  {
-                    n: '6',
-                    title: 'Band-based eligibility is visible without being gatekeeping.',
-                    body: 'The employee\'s band appears in the request row. HR immediately knows if the device is within policy, without a separate lookup. Requests outside band limits are flagged with a yellow indicator.',
-                  },
-                  {
-                    n: '7',
-                    title: 'Total employee savings as a dashboard metric.',
-                    body: '₹18.4L saved is a metric HR can take to their CHRO. It reframes their role from "admin who approves requests" to "champion who delivered real employee value." This was a deliberate emotional design choice.',
-                  },
-                ].map((item) => (
-                  <motion.div
-                    key={item.n}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    style={{ display: 'flex', gap: '14px', alignItems: 'flex-start', background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}
+                  { id: 'hr', label: 'HR Dashboard', icon: <Users size={16} /> },
+                  { id: 'financier', label: 'Financier Portal', icon: <Landmark size={16} /> },
+                  { id: 'seller', label: 'Seller Hub', icon: <Package size={16} /> }
+                ].map(tab => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActivePortalTab(tab.id as any)}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '8px',
+                      padding: '10px 24px', borderRadius: '100px',
+                      background: activePortalTab === tab.id ? 'rgba(255,255,255,0.1)' : 'transparent',
+                      border: `1px solid ${activePortalTab === tab.id ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.05)'}`,
+                      color: activePortalTab === tab.id ? '#fff' : '#777',
+                      cursor: 'pointer', transition: 'all 0.3s ease',
+                      fontWeight: 500, fontSize: '14px'
+                    }}
                   >
-                    <div style={{ flexShrink: 0, width: '26px', height: '26px', borderRadius: '50%', background: 'var(--semantic-success)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: 700, color: '#fff', marginTop: '2px' }}>
-                      {item.n}
-                    </div>
-                    <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>
-                      <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px' }}>{item.title}</strong>{item.body}
-                    </p>
-                  </motion.div>
+                    {tab.icon} {tab.label}
+                  </button>
                 ))}
               </div>
+
+              {/* Portal Content */}
+              <motion.div 
+                key={activePortalTab}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {activePortalTab === 'hr' && (
+                  <div>
+                    {/* CSS Mockup for HR */}
+                    <div style={{ background: '#111', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', overflow: 'hidden', marginBottom: '40px', boxShadow: '0 24px 60px rgba(0,0,0,0.6)' }}>
+                      <div style={{ background: '#1a1a1a', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                          <div style={{ display: 'flex', gap: '6px' }}>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ef4444' }} />
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f59e0b' }} />
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#22c55e' }} />
+                          </div>
+                          <span style={{ color: '#fff', fontWeight: 600, fontSize: '15px', letterSpacing: '-0.01em' }}>HR Portal</span>
+                        </div>
+                        <div style={{ display: 'flex', gap: '16px' }}>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>Total Savings: <strong style={{color: '#fff'}}>₹18.4L</strong></div>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>Pending: <strong style={{color: '#fff'}}>12</strong></div>
+                        </div>
+                      </div>
+                      <div style={{ padding: '24px' }}>
+                        {/* Table Header */}
+                        <div style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr 1fr', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#666', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
+                          <div>Employee</div>
+                          <div>Request</div>
+                          <div>Eligibility</div>
+                          <div style={{ textAlign: 'right' }}>Action</div>
+                        </div>
+                        {/* Rows */}
+                        {[
+                          { name: 'Arjun Mehta', role: 'Sr. Engineer (Band 4)', device: 'iPhone 17 Pro Max', cost: '₹11,500/mo', status: 'In Policy', statusColor: '#22c55e' },
+                          { name: 'Priya Sharma', role: 'Design Lead (Band 3)', device: 'MacBook Pro 16"', cost: '₹14,200/mo', status: 'Requires Review', statusColor: '#f59e0b' },
+                          { name: 'Rahul Desai', role: 'Marketing (Band 2)', device: 'iPad Air', cost: '₹3,400/mo', status: 'In Policy', statusColor: '#22c55e' }
+                        ].map((row, i) => (
+                          <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr 1fr', alignItems: 'center', padding: '16px 0', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                            <div>
+                              <div style={{ color: '#fff', fontWeight: 500, fontSize: '14px', marginBottom: '4px' }}>{row.name}</div>
+                              <div style={{ color: '#666', fontSize: '12px' }}>{row.role}</div>
+                            </div>
+                            <div>
+                              <div style={{ color: '#e5e5e5', fontSize: '14px', marginBottom: '4px' }}>{row.device}</div>
+                              <div style={{ color: '#888', fontSize: '12px' }}>{row.cost}</div>
+                            </div>
+                            <div>
+                              <span style={{ display: 'inline-block', padding: '4px 8px', borderRadius: '4px', background: `${row.statusColor}22`, color: row.statusColor, fontSize: '11px', fontWeight: 600 }}>{row.status}</span>
+                            </div>
+                            <div style={{ textAlign: 'right', display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
+                              <button style={{ background: 'rgba(255,255,255,0.05)', border: 'none', color: '#fff', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', cursor: 'pointer' }}>Reject</button>
+                              <button style={{ background: 'var(--semantic-success)', border: 'none', color: '#fff', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 500, cursor: 'pointer' }}>Approve</button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Everything at a glance.</strong>
+                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Employee name, role, band, and requested device cost are visible in a single row. No tab-switching or profile opening required.</p>
+                      </div>
+                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Band-based eligibility.</strong>
+                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>HR immediately knows if the device is within policy. Requests outside band limits are automatically flagged for review.</p>
+                      </div>
+                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Emotional reframing.</strong>
+                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Showing "Total Savings" reframes HR from an admin approving requests to a champion delivering real employee value.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activePortalTab === 'financier' && (
+                  <div>
+                    {/* CSS Mockup for Financier */}
+                    <div style={{ background: '#111', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', overflow: 'hidden', marginBottom: '40px', boxShadow: '0 24px 60px rgba(0,0,0,0.6)' }}>
+                      <div style={{ background: '#1a1a1a', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                          <div style={{ display: 'flex', gap: '6px' }}>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ef4444' }} />
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f59e0b' }} />
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#22c55e' }} />
+                          </div>
+                          <span style={{ color: '#fff', fontWeight: 600, fontSize: '15px', letterSpacing: '-0.01em' }}>Financier Portal</span>
+                        </div>
+                        <div style={{ display: 'flex', gap: '16px' }}>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>Disbursed (Mtd): <strong style={{color: '#fff'}}>₹1.2Cr</strong></div>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>Avg EMI: <strong style={{color: '#fff'}}>12 Mo</strong></div>
+                        </div>
+                      </div>
+                      <div style={{ padding: '24px' }}>
+                        {/* Top Widgets */}
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
+                           <div style={{ background: 'linear-gradient(135deg, rgba(168,85,247,0.1) 0%, rgba(168,85,247,0.02) 100%)', border: '1px solid rgba(168,85,247,0.2)', padding: '20px', borderRadius: '8px' }}>
+                              <div style={{ color: '#a855f7', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Active Loans</div>
+                              <div style={{ color: '#fff', fontSize: '28px', fontWeight: 700 }}>1,432</div>
+                           </div>
+                           <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '20px', borderRadius: '8px' }}>
+                              <div style={{ color: '#777', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Risk Assessment</div>
+                              <div style={{ color: '#22c55e', fontSize: '24px', fontWeight: 600 }}>Low (Corporate)</div>
+                           </div>
+                           <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '20px', borderRadius: '8px' }}>
+                              <div style={{ color: '#777', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Upcoming EMI Collection</div>
+                              <div style={{ color: '#fff', fontSize: '24px', fontWeight: 600 }}>Oct 1st</div>
+                           </div>
+                        </div>
+                        {/* Table Header */}
+                        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#666', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
+                          <div>Corporate Partner</div>
+                          <div>Approved Amount</div>
+                          <div>Tenure</div>
+                          <div style={{ textAlign: 'right' }}>Status</div>
+                        </div>
+                        {/* Rows */}
+                        {[
+                          { corp: 'Infosys Ltd', amount: '₹4,50,000', tenure: '12 Months', status: 'Disbursed', statusColor: '#22c55e' },
+                          { corp: 'Wipro', amount: '₹1,20,000', tenure: '24 Months', status: 'Pending KYC', statusColor: '#f59e0b' }
+                        ].map((row, i) => (
+                          <div key={i} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', alignItems: 'center', padding: '16px 0', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                            <div style={{ color: '#fff', fontWeight: 500, fontSize: '14px' }}>{row.corp}</div>
+                            <div style={{ color: '#e5e5e5', fontSize: '14px' }}>{row.amount}</div>
+                            <div style={{ color: '#888', fontSize: '13px' }}>{row.tenure}</div>
+                            <div style={{ textAlign: 'right' }}>
+                              <span style={{ display: 'inline-block', padding: '4px 8px', borderRadius: '4px', background: `${row.statusColor}22`, color: row.statusColor, fontSize: '11px', fontWeight: 600 }}>{row.status}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Corporate Risk Profiling.</strong>
+                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Financiers can evaluate loan books based on corporate partner risk rather than individual retail risk, enabling better rates.</p>
+                      </div>
+                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Automated Disbursals.</strong>
+                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Once HR approves and KYC is complete, capital is automatically routed to sellers without manual intervention.</p>
+                      </div>
+                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>EMI Collection Sync.</strong>
+                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Direct integration with corporate payroll systems ensures EMI collections are perfectly synced with salary cycles.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activePortalTab === 'seller' && (
+                  <div>
+                    {/* CSS Mockup for Seller */}
+                    <div style={{ background: '#111', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', overflow: 'hidden', marginBottom: '40px', boxShadow: '0 24px 60px rgba(0,0,0,0.6)' }}>
+                      <div style={{ background: '#1a1a1a', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                          <div style={{ display: 'flex', gap: '6px' }}>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ef4444' }} />
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f59e0b' }} />
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#22c55e' }} />
+                          </div>
+                          <span style={{ color: '#fff', fontWeight: 600, fontSize: '15px', letterSpacing: '-0.01em' }}>Seller Hub</span>
+                        </div>
+                        <div style={{ display: 'flex', gap: '16px' }}>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>To Dispatch: <strong style={{color: '#fff'}}>45</strong></div>
+                        </div>
+                      </div>
+                      <div style={{ display: 'flex' }}>
+                        {/* Sidebar */}
+                        <div style={{ width: '200px', borderRight: '1px solid rgba(255,255,255,0.06)', padding: '24px' }}>
+                          <div style={{ color: '#eab308', fontWeight: 600, fontSize: '13px', marginBottom: '16px', padding: '8px', background: 'rgba(234,179,8,0.1)', borderRadius: '6px' }}>Active Orders</div>
+                          <div style={{ color: '#777', fontWeight: 500, fontSize: '13px', marginBottom: '16px', padding: '8px' }}>Inventory Sync</div>
+                          <div style={{ color: '#777', fontWeight: 500, fontSize: '13px', marginBottom: '16px', padding: '8px' }}>Logistics</div>
+                        </div>
+                        {/* Main Content */}
+                        <div style={{ flex: 1, padding: '24px' }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr 1fr', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#666', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
+                            <div>Order ID</div>
+                            <div>Product</div>
+                            <div>Shipping</div>
+                            <div style={{ textAlign: 'right' }}>Action</div>
+                          </div>
+                          {[
+                            { id: '#ORD-8821', product: 'iPhone 17 Pro Max (256GB)', shipping: 'Express (1 Day)', status: 'Generate AWB' },
+                            { id: '#ORD-8822', product: 'MacBook Pro 16" (M4)', shipping: 'Standard (3 Days)', status: 'Pack Order' }
+                          ].map((row, i) => (
+                            <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr 1fr', alignItems: 'center', padding: '16px 0', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                              <div style={{ color: '#a3a3a3', fontSize: '13px', fontFamily: 'var(--font-mono)' }}>{row.id}</div>
+                              <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500 }}>{row.product}</div>
+                              <div style={{ color: '#888', fontSize: '13px' }}>{row.shipping}</div>
+                              <div style={{ textAlign: 'right' }}>
+                                <button style={{ background: 'var(--semantic-info)', border: 'none', color: '#fff', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 500, cursor: 'pointer' }}>{row.status}</button>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Inventory Protection.</strong>
+                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Devices are temporarily reserved during the HR approval window to prevent out-of-stock scenarios for approved requests.</p>
+                      </div>
+                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Streamlined Fulfillment.</strong>
+                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Sellers only see fully funded, approved orders. Financing and corporate approvals are abstracted away completely.</p>
+                      </div>
+                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>B2B Tax Invoicing.</strong>
+                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>GST invoices are automatically generated in the correct B2B format to ensure corporate tax benefits can be claimed.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </motion.div>
             </div>
-
             {/* Divider */}
-            <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '48px' }} />
-
-            {/* Bottom 3 cards: Design System / Accessibility / Edge Cases */}
+            <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '80px' }} />
+{/* Bottom 3 cards: Design System / Accessibility / Edge Cases */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
 
               <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px' }}>
