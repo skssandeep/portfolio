@@ -817,75 +817,64 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* Problem Reframe */}
-      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <section style={{ padding: '0 0 160px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
-            {/* Row 1: heading left + comparison cards right */}
-            <div style={{ display: 'grid', gridTemplateColumns: '55% 45%', gap: '64px', alignItems: 'center', marginBottom: '64px' }}>
-
-              {/* Left: chip + heading */}
-              <div>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                  <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>03: Problem Reframe</span>
-                </div>
-                <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
-                  Not four separate products. One system with four different access points.
-                </h2>
-              </div>
-
-              {/* Right: stacked before/after cards */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '24px 28px' }}>
-                  <div style={{ fontSize: '10px', fontWeight: 700, color: '#444', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-mono)' }}>Original Framing</div>
-                  <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.65, margin: 0 }}>
-                    Four separate products for four user types: employee app, HR portal, lessor portal, seller portal.
-                  </p>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '4px 16px' }}>
-                  <div style={{ width: '20px', height: '1px', background: 'rgba(255,255,255,0.08)' }} />
-                  <span style={{ fontSize: '10px', color: '#3a3a3a', fontFamily: 'var(--font-mono)', letterSpacing: '1.5px', textTransform: 'uppercase' }}>reframed as</span>
-                </div>
-                <div style={{ background: 'rgba(var(--semantic-brand-rgb),0.04)', border: '1px solid rgba(var(--semantic-brand-rgb),0.2)', borderRadius: '16px', padding: '24px 28px' }}>
-                  <div style={{ fontSize: '10px', fontWeight: 700, color: 'var(--semantic-brand)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-mono)' }}>Reframed</div>
-                  <p style={{ fontSize: '14px', color: '#aaa', lineHeight: 1.65, margin: 0 }}>
-                    One operational system. Each user type sees <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>only their relevant window</strong>, shielded from everything else.
-                  </p>
-                </div>
-              </div>
+            {/* Section Label */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '48px' }}>
+              <Target size={14} strokeWidth={2.5} />
+              Problem Reframe
             </div>
 
-            {/* Row 2: body, narrow, centered */}
-            <div style={{ maxWidth: '700px', margin: '0 auto 56px' }}>
-              <p style={{ fontSize: '16px', color: '#777', lineHeight: 1.85, margin: '0 0 20px 0' }}>
-                One order moves through 4 parties. Different versions of the same object, with different terminology, compound inconsistency and multiply errors. Designing the shared data model first, then each portal as a view into it, gave us consistency for free and cut design time by ~30%.
-              </p>
-              <p style={{ fontSize: '16px', color: '#777', lineHeight: 1.85, margin: 0 }}>
-                The calculator started as a nice-to-have. Research proved it was the most critical element in the product. <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>No personal savings number, no confident decision.</strong> It became the centrepiece of the product page, not a footnote.
+            {/* 2-Column Mindset Shift */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              
+              {/* The Trap */}
+              <div style={{ background: 'rgba(var(--semantic-error-rgb),0.03)', border: '1px solid rgba(var(--semantic-error-rgb),0.15)', borderRadius: '24px', padding: '40px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                  <XCircle size={14} strokeWidth={2.5} />
+                  The Trap
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: '0 0 16px 0' }}>Building 4 isolated products.</h3>
+                <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  Separate apps for the employee, HR, lessor, and seller. Different versions of the same object, compound inconsistency, and multiplied errors.
+                </p>
+              </div>
+
+              {/* The Unlock */}
+              <div style={{ background: 'rgba(var(--semantic-brand-rgb),0.05)', border: '1px solid rgba(var(--semantic-brand-rgb),0.3)', borderRadius: '24px', padding: '40px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-brand)', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                  <CheckCircle2 size={14} strokeWidth={2.5} />
+                  The Unlock
+                </div>
+                <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: '0 0 16px 0' }}>Building 1 shared system.</h3>
+                <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  One single operational engine. Each user type sees only their specific window into the truth, shielded from the backend complexity.
+                </p>
+              </div>
+
+            </div>
+
+            {/* The ROI Callout */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px', textAlign: 'center', maxWidth: '800px', margin: '0 auto 64px auto' }}>
+              <p style={{ fontSize: '15px', color: '#e5e5e5', lineHeight: 1.6, margin: 0 }}>
+                <strong style={{ color: 'var(--semantic-success)' }}>The Result:</strong> Designing the shared data model first cut design time by ~30% and completely eliminated cross-portal mapping errors.
               </p>
             </div>
 
-            {/* Row 3: HMW card, full width climax */}
+            {/* HMW Card - The North Star */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              style={{ background: 'rgba(12,16,30,0.95)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '24px', padding: '56px 64px', textAlign: 'center', marginBottom: '40px' }}
+              style={{ background: '#0a0d14', border: '1px solid rgba(var(--semantic-brand-rgb),0.2)', borderRadius: '24px', padding: '56px 40px', textAlign: 'center' }}
             >
-              <div style={{ fontSize: '10px', fontWeight: 700, color: '#444', letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-mono)' }}>How Might We</div>
-              <p style={{ fontSize: 'clamp(1.3rem, 2.2vw, 1.7rem)', color: '#e5e5e5', lineHeight: 1.5, fontWeight: 700, margin: '0 auto', letterSpacing: '-0.01em', maxWidth: '760px' }}>
-                Design each interface so users see{' '}
-                <span style={{ color: 'var(--semantic-brand)' }}>exactly what they need</span>
-                {' '}to act, nothing that creates doubt, while all four portals share a single source of truth?
+              <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-brand)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-mono)' }}>North Star / How Might We</div>
+              <p style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)', color: '#fff', lineHeight: 1.3, fontWeight: 700, margin: '0 auto', letterSpacing: '-0.01em', maxWidth: '900px' }}>
+                How might we design <span style={{ color: 'var(--semantic-brand)' }}>one single source of truth</span> where four completely different user types see only the exact data they need to act?
               </p>
             </motion.div>
-
-            {/* Row 4: why this, right-anchored annotation */}
-            <div style={{ maxWidth: '580px', marginLeft: 'auto' }}>
-              <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.85, margin: 0, borderLeft: '1px solid rgba(255,255,255,0.06)', paddingLeft: '20px' }}>
-                <strong style={{ color: '#888', fontWeight: 600 }}>Why this over the alternatives:</strong> Two framings were rejected: one scoped only to the calculator (ignoring HR and partner portals), one misrepresented the product (employees need to know approval exists; it sets their expectations during the wait). This was the only HMW that worked for all four user types at once.
-              </p>
-            </div>
 
           </motion.div>
         </div>
