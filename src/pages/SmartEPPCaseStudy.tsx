@@ -828,7 +828,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* 2-Column Mindset Shift */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8" style={{ marginBottom: '48px' }}>
               
               {/* The Trap */}
               <div style={{ background: 'rgba(var(--semantic-error-rgb),0.03)', border: '1px solid rgba(var(--semantic-error-rgb),0.15)', borderRadius: '24px', padding: '40px' }}>
@@ -857,7 +857,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* The ROI Callout */}
-            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px', textAlign: 'center', maxWidth: '800px', margin: '0 auto 64px auto' }}>
+            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px', textAlign: 'center', maxWidth: '800px', margin: '48px auto 64px auto' }}>
               <p style={{ fontSize: '15px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                 <strong style={{ color: 'var(--semantic-success)' }}>The Result:</strong> Designing the shared data model first cut design time by ~30% and completely eliminated cross-portal mapping errors.
               </p>
