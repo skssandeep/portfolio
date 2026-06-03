@@ -19,10 +19,19 @@
   
   /* Semantic Colors for Design System */
   --semantic-brand: #f95738;    /* Vibrant Tomato Red - Action, Identity */
+  --semantic-brand-rgb: 249, 87, 56;
+  
   --semantic-error: #e11d48;    /* Deep Crimson - Problems, Destructive */
+  --semantic-error-rgb: 225, 29, 72;
+  
   --semantic-success: #10b981;  /* Emerald - Solutions, Positive Metrics */
+  --semantic-success-rgb: 16, 185, 129;
+  
   --semantic-warning: #f5a623;  /* Golden Amber - Constraints, Caution */
+  --semantic-warning-rgb: 245, 166, 35;
+  
   --semantic-info: #3b82f6;     /* Ice Blue - Neutral Data, Links */
+  --semantic-info-rgb: 59, 130, 246;
   --glass-bg: rgba(10, 10, 10, 0.85);
   --glass-border: rgba(229, 9, 20, 0.25);
   --glass-shadow: 0 8px 32px rgba(239, 68, 68, 0.1);
