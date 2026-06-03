@@ -1440,34 +1440,50 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
             {/* Bottom 3 cards Divider */}
             <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '80px' }} />
-{/* Bottom 3 cards: Design System / Accessibility / Edge Cases */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+            {/* Bottom 3 cards: Design System / Accessibility / Edge Cases */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px' }}>
+              {/* Card 1: Design System */}
+              <div className="md:col-span-2 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                 <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Design System</div>
-                <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.8, margin: 0 }}>
-                  Built a 28-component system shared across all 4 portals: buttons, form fields, status badges, notification toasts, data tables. The order status badge (7 states × 3 visual weights) was the most-reused component. Defining it once eliminated the inconsistency that would have emerged from 4 independent implementations.
+                <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Portals. Zero Inconsistency.</h4>
+                <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.7, margin: 0, maxWidth: '500px' }}>
+                  Built a unified 28-component architecture. By defining complex elements—like our 21-variant order status badge—just once, we eliminated design debt and accelerated engineering delivery.
                 </p>
               </div>
 
-              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px' }}>
+              {/* Card 2: Accessibility */}
+              <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                 <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Accessibility</div>
-                <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.8, margin: 0 }}>
-                  All text meets WCAG AA (4.5:1 minimum). The savings amount (₹38,257) uses a 28px bold typeface at 7:2:1 contrast on white. All interactive elements meet 44×44px minimum touch target. The green/red comparison panel uses icons (✓/✗) in addition to colour so the distinction is not colour-only. Screen reader labels applied to all icon-only buttons in the HR dashboard.
+                <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Inclusive by Default.</h4>
+                <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.7, margin: 0 }}>
+                  High-contrast typography (7:2:1), 44px+ touch targets, and multi-sensory error states ensure WCAG AA compliance isn't an afterthought.
                 </p>
               </div>
 
-              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Edge Cases Designed</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <div>
-                    <div style={{ fontSize: '12px', fontWeight: 600, color: '#e5e5e5', marginBottom: '6px' }}>HR rejects a request:</div>
-                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.7, margin: 0 }}>Employee receives an in-app notification with the rejection reason (required field for HR) and a prompt to contact HR, not a dead end.</p>
+              {/* Card 3: Edge Cases Designed */}
+              <div className="md:col-span-3 flex flex-col md:flex-row gap-8 items-start md:items-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Edge Cases Designed</div>
+                  <h4 style={{ fontSize: '24px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Zero Dead Ends.</h4>
+                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.7, margin: 0 }}>
+                    Designed for failure states, not just the happy path. We turn errors into actionable next steps.
+                  </p>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4" style={{ flex: 1.5 }}>
+                  <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)' }}>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-error)' }} /> HR Rejections
+                    </div>
+                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.6, margin: 0 }}>Provides clear reasoning and a direct action prompt. No dead ends.</p>
                   </div>
-                  <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)' }} />
-                  <div>
-                    <div style={{ fontSize: '12px', fontWeight: 600, color: '#e5e5e5', marginBottom: '6px' }}>Device goes out of stock after cart:</div>
-                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.7, margin: 0 }}>Employee is notified with an estimated restock date and offered comparable alternatives, not a blank error state.</p>
+                  
+                  <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)' }}>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} /> Out of Stock
+                    </div>
+                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.6, margin: 0 }}>Real-time comparable alternatives and restock estimates. No blank screens.</p>
                   </div>
                 </div>
               </div>
