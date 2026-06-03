@@ -726,17 +726,12 @@ export const SmartEPPCaseStudy = () => {
                     <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Personalized calculator. Math must be immediate.</p>
                   </div>
                   <div 
-                    onClick={() => { setModalImages(['/images/EPP_CaseStudy_02.png']); setModalIndex(0); }}
+                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
                     style={{ width: '48px', height: '64px', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.3)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative' }}
                     onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.3)'; }}
                   >
-                    {/* Placeholder Thumbnail */}
-                    <div style={{ position: 'absolute', inset: 0, background: 'rgba(var(--semantic-warning-rgb), 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--semantic-warning)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-                      </svg>
-                    </div>
+                    <img src="/images/smart-epp-calculator-screen.png" alt="Calculator Screen" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8, filter: 'grayscale(20%)' }} />
                   </div>
                 </div>
               </motion.div>
