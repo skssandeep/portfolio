@@ -1063,7 +1063,7 @@ export const SmartEPPCaseStudy = () => {
       {/* 05. Final Solution: The Visual Ecosystem */}
       <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
               <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>05: Final Solution</span>
             </div>
@@ -1112,7 +1112,7 @@ export const SmartEPPCaseStudy = () => {
               {activePortalTab === 'employee' && (
                 <div>
                   {/* Grid/Carousel Toggle */}
-                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
                     <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', padding: '6px' }}>
                       <button 
                         onClick={() => setIsGridView(false)}
