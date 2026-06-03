@@ -553,12 +553,12 @@ export const SmartEPPCaseStudy = () => {
         <div className="container">
           
           {/* Zone A & B: The Setup Block */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(var(--semantic-brand-rgb),0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(var(--semantic-brand-rgb),0.12)', borderRadius: '32px', padding: '64px', position: 'relative', overflow: 'hidden' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(var(--semantic-error-rgb),0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(var(--semantic-error-rgb),0.12)', borderRadius: '32px', padding: '64px', position: 'relative', overflow: 'hidden' }}>
             
             {/* Background watermark */}
-            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(var(--semantic-brand-rgb),0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(var(--semantic-error-rgb),0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-brand)', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
               <AlertCircle size={14} strokeWidth={2.5} />
               The Problem
             </div>
@@ -582,37 +582,37 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Stats (Right) */}
               <div className="lg:col-span-5 font-mono" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ fontSize: '11px', color: 'var(--semantic-brand)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px', fontWeight: 600 }}>
+                <div style={{ fontSize: '11px', color: 'var(--semantic-error)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px', fontWeight: 600 }}>
                   Project Scope
                 </div>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
                   
-                  <div style={{ background: 'rgba(var(--semantic-brand-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-brand-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
                     <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Platforms</div>
                     <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>4</div>
                     <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Employee, HR, Financier, Seller.</div>
                   </div>
 
-                  <div style={{ background: 'rgba(var(--semantic-brand-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-brand-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
                     <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>User Types</div>
                     <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>4</div>
                     <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Distinct actors in one shared flow.</div>
                   </div>
 
-                  <div style={{ background: 'rgba(var(--semantic-brand-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-brand-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
                     <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Backbone</div>
                     <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>1</div>
                     <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Unified operational backend.</div>
                   </div>
 
-                  <div style={{ background: 'rgba(var(--semantic-brand-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-brand-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
                     <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Design System</div>
                     <div style={{ color: '#fff', fontSize: '16px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>Existing</div>
                     <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Built on OneAssist's library.</div>
                   </div>
 
-                  <div style={{ background: 'rgba(var(--semantic-brand-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-brand-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
                     <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Timeline</div>
                     <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>5 mo</div>
                     <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Blank canvas to shipped MVP.</div>
@@ -642,37 +642,37 @@ export const SmartEPPCaseStudy = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               
               {/* Challenge 1 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(var(--semantic-brand-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-brand-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{ color: 'var(--semantic-brand)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Abstract savings</div>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <div style={{ color: 'var(--semantic-error)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Abstract savings</div>
                 <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', marginBottom: '10px', lineHeight: 1.3, margin: '0 0 10px 0' }}>Tax savings are abstract. Money feels real.</h4>
                 <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Employees don't think in slabs. They think "what do I actually save?" The math had to become one personal, immediate number.</p>
               </motion.div>
 
               {/* Challenge 2 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(var(--semantic-brand-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-brand-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{ color: 'var(--semantic-brand)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>High-trust commitment</div>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <div style={{ color: 'var(--semantic-error)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>High-trust commitment</div>
                 <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', margin: '0 0 10px 0', lineHeight: 1.3 }}>A monthly salary EMI is terrifying without trust signals.</h4>
                 <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Committing months of salary is a high-trust act. Without confidence at every step, people abandon at the product page.</p>
               </motion.div>
 
               {/* Challenge 3 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(var(--semantic-brand-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-brand-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{ color: 'var(--semantic-brand)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Scale without friction</div>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <div style={{ color: 'var(--semantic-error)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Scale without friction</div>
                 <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', margin: '0 0 10px 0', lineHeight: 1.3 }}>HR needs to approve hundreds of requests in seconds.</h4>
                 <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Approvals at scale break without proper tooling. If approval is slow, HR simply stops using it.</p>
               </motion.div>
 
               {/* Challenge 4 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(var(--semantic-brand-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-brand-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{ color: 'var(--semantic-brand)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>No shared vocabulary</div>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
+                <div style={{ color: 'var(--semantic-error)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>No shared vocabulary</div>
                 <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', margin: '0 0 10px 0', lineHeight: 1.3 }}>Four user types. One order. Four completely different meanings.</h4>
                 <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Employees think products. HR thinks policy. Lessors think risk. Sellers think fulfillment.</p>
               </motion.div>
 
               {/* Challenge 5 - Full Width Hero Card */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'linear-gradient(135deg, rgba(var(--semantic-brand-rgb), 0.07) 0%, rgba(var(--semantic-brand-rgb),0.02) 100%)', borderLeft: '3px solid var(--semantic-brand)', borderRadius: '4px 16px 16px 4px', padding: '32px 40px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'center' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ background: 'linear-gradient(135deg, rgba(var(--semantic-error-rgb), 0.07) 0%, rgba(var(--semantic-error-rgb),0.02) 100%)', borderLeft: '3px solid var(--semantic-error)', borderRadius: '4px 16px 16px 4px', padding: '32px 40px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'center' }}>
                 <div>
-                  <div style={{ color: 'var(--semantic-brand)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>The Hardest One</div>
+                  <div style={{ color: 'var(--semantic-error)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>The Hardest One</div>
                   <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3 }}>The invisible 4-party chain.</h4>
                 </div>
                 <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>
