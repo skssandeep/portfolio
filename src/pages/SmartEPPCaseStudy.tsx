@@ -500,60 +500,7 @@ export const SmartEPPCaseStudy = () => {
               style={{ position: 'absolute', top: '-20%', left: '-25%', width: '165%', maxWidth: '1100px', objectFit: 'contain', zIndex: 2, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
             />
             
-            {/* Sleek Floating CTA */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-              style={{
-                position: 'absolute',
-                bottom: '5%',
-                left: '0',
-                zIndex: 20,
-              }}
-            >
-              <button 
-                onClick={() => {
-                  const el = document.getElementById('final-designs');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                style={{ 
-                  background: 'rgba(20, 20, 20, 0.75)', 
-                  backdropFilter: 'blur(24px)',
-                  WebkitBackdropFilter: 'blur(24px)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)', 
-                  padding: '12px 16px', 
-                  borderRadius: '24px', 
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '16px',
-                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.05)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(30, 30, 30, 0.85)';
-                  e.currentTarget.style.transform = 'translateY(-4px) scale(1.02)';
-                  e.currentTarget.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255,255,255,0.15)';
-                  e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(20, 20, 20, 0.75)';
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.05)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                }}
-              >
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '8px' }}>
-                  <span style={{ fontSize: '10px', color: 'var(--semantic-success)', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 700, marginBottom: '2px' }}>Fast Track</span>
-                  <span style={{ fontSize: '14px', color: '#fff', fontWeight: 500, letterSpacing: '0.5px' }}>Scroll to Final Designs</span>
-                </div>
-                <div style={{ background: 'var(--semantic-success)', color: '#000', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <ArrowDown size={18} strokeWidth={2.5} />
-                </div>
-              </button>
-            </motion.div>
+            {/* CTA Removed */}
           </div>
 
         </div>
@@ -573,33 +520,76 @@ export const SmartEPPCaseStudy = () => {
             }}
           >
             {[
-              { label: 'MY ROLE', value: 'UX Designer', subtext: 'Solo designer' },
-              { label: 'I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
-              { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS' },
-              { label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
-              { label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types' },
-              { label: 'DESIGN SYSTEM', value: '44 components', subtext: 'Shared across all 4 portals' },
-            ].map((stat, i) => (
-              <div 
-                key={i}
-                style={{ 
-                  display: 'flex', 
-                  flexDirection: 'column',
-                  paddingTop: '20px',
-                  borderTop: '2px solid',
-                  borderColor: stat.highlight ? 'var(--accent-color)' : 'rgba(255,255,255,0.15)'
-                }}
-              >
-                <div style={{ color: '#888', fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>
-                  {stat.label}
+              { type: 'stat', label: 'MY ROLE', value: 'UX Designer', subtext: 'Solo designer' },
+              { type: 'stat', label: 'I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
+              { type: 'cta' },
+              { type: 'stat', label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
+              { type: 'stat', label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types' },
+              { type: 'stat', label: 'DESIGN SYSTEM', value: '44 components', subtext: 'Shared across all 4 portals' },
+            ].map((stat: any, i) => (
+              stat.type === 'cta' ? (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '10px' }}>
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('final-designs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    style={{
+                      width: '90px',
+                      height: '90px',
+                      borderRadius: '50%',
+                      background: 'rgba(255,255,255,0.03)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      color: 'var(--semantic-success)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'var(--semantic-success)';
+                      e.currentTarget.style.color = '#000';
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                      e.currentTarget.style.boxShadow = '0 10px 30px rgba(16, 185, 129, 0.4)';
+                      e.currentTarget.style.border = '1px solid var(--semantic-success)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
+                      e.currentTarget.style.color = 'var(--semantic-success)';
+                      e.currentTarget.style.transform = 'scale(1)';
+                      e.currentTarget.style.boxShadow = 'none';
+                      e.currentTarget.style.border = '1px solid rgba(255,255,255,0.1)';
+                    }}
+                  >
+                    <ArrowDown size={24} />
+                    <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600, textAlign: 'center', lineHeight: 1.1 }}>Skip To<br/>Designs</span>
+                  </button>
                 </div>
-                <div style={{ color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '20px', fontWeight: 500, marginBottom: '6px', letterSpacing: '-0.01em', fontFamily: 'var(--font-heading)' }}>
-                  {stat.value}
+              ) : (
+                <div 
+                  key={i}
+                  style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    paddingTop: '20px',
+                    borderTop: '2px solid',
+                    borderColor: stat.highlight ? 'var(--accent-color)' : 'rgba(255,255,255,0.15)'
+                  }}
+                >
+                  <div style={{ color: '#888', fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>
+                    {stat.label}
+                  </div>
+                  <div style={{ color: stat.highlight ? 'var(--accent-color)' : '#fff', fontSize: '20px', fontWeight: 500, marginBottom: '6px', letterSpacing: '-0.01em', fontFamily: 'var(--font-heading)' }}>
+                    {stat.value}
+                  </div>
+                  <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.5 }}>
+                    {stat.subtext}
+                  </div>
                 </div>
-                <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.5 }}>
-                  {stat.subtext}
-                </div>
-              </div>
+              )
             ))}
           </motion.div>
         </div>
