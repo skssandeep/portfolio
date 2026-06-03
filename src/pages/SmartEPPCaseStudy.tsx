@@ -141,15 +141,10 @@ export const SmartEPPCaseStudy = () => {
   ];
 
   const ecosystemImages = [
-    "/images/EPP_CaseStudy_01.png",
-    "/images/EPP_CaseStudy_02.png",
-    "/images/EPP_CaseStudy_03.png",
-    "/images/EPP_CaseStudy_04.png",
-    "/images/EPP_CaseStudy_05.png",
-    "/images/EPP_CaseStudy_06.png",
-    "/images/EPP_CaseStudy_07.png",
-    "/images/EPP_CaseStudy_08.png",
-    "/images/EPP_CaseStudy_09.png"
+    "/images/EPP - 01.jpg",
+    "/images/EPP - 02.jpg",
+    "/images/EPP - 03.jpg",
+    "/images/EPP - 04.jpg"
   ];
 
   // Drag-to-scroll logic
@@ -1063,13 +1058,12 @@ export const SmartEPPCaseStudy = () => {
       <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
-              Final Design
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
+              <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>05: Final Solution</span>
             </div>
-            <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Visual Ecosystem</h2>
-            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
-              A unified FinTech design language scaling from comprehensive admin dashboards down to the pocket-sized employee mobile purchasing experience.
-            </p>
+            <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.03em', margin: 0 }}>
+              The product, screen by screen.
+            </h2>
             
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
               <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', padding: '6px' }}>
@@ -1155,10 +1149,6 @@ export const SmartEPPCaseStudy = () => {
                     objectFit: 'contain',
                     flexShrink: 0, 
                     scrollSnapAlign: isGridView ? 'none' : 'center', 
-                    borderRadius: '24px', 
-                    border: '1px solid rgba(255,255,255,0.05)', 
-                    boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
-                    background: '#0a0a0a',
                     pointerEvents: 'auto',
                     cursor: 'pointer',
                     userSelect: 'none',
