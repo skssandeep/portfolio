@@ -1747,33 +1747,38 @@ export const SmartEPPCaseStudy = () => {
               </h2>
             </div>
 
-            {/* Reflection cards */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {/* Reflection Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  title: 'The lessor and seller portals deserved more research time',
-                  body: 'The employee app and HR dashboard got the majority of research investment. The lessor and seller portals were designed primarily from stakeholder workshops rather than direct user observation. Post-launch, both portals received significantly more change requests than the employee-facing screens, a signal that the workshop-only research wasn\'t sufficient for those user types.',
-                  highlight: false,
+                  title: 'Research gaps cost time',
+                  body: 'Lessor and seller portals relied on stakeholder workshops instead of user observation, resulting in significantly higher post-launch change requests.',
+                  colSpan: 1,
+                  highlight: false
                 },
                 {
-                  title: 'Build the design system before the first feature screen',
-                  body: 'We started building feature screens and extracted components into a design system halfway through. This created inconsistencies between early screens (employee onboarding) and later ones (order tracking) that took two weeks of cleanup to resolve. Starting with a 20-component design system first . even before the full IA was set . would have saved that time and improved consistency.',
-                  highlight: false,
+                  title: 'System before screens',
+                  body: 'Extracting components halfway through caused inconsistencies that took 2 weeks to fix. A foundational design system must always come first.',
+                  colSpan: 1,
+                  highlight: false
                 },
                 {
-                  title: 'The "What if I leave the company?" question needed a full flow, not a tooltip',
-                  body: 'Employee anxiety about salary EMIs in the context of job changes was the most common question in testing. We handled it with a tooltip and an FAQ entry. What it deserved was a dedicated "end-of-tenure" flow that walked employees through their options. Post-launch support tickets confirmed this was the #1 source of employee confusion.',
-                  highlight: false,
+                  title: 'Tooltips aren\'t flows',
+                  body: 'We answered "What if I leave the company?" with a tooltip. It instantly became the #1 support ticket. It desperately needed a dedicated user flow.',
+                  colSpan: 1,
+                  highlight: false
                 },
                 {
-                  title: 'What I learned about my own process',
-                  body: 'I default to solving the "happy path" first and treating edge cases as cleanup. This project, with its 15-state order model and 4-party failure modes, taught me that for B2B operational products, edge cases are the product. The anxiety a user feels when their order is stuck in "processing" for 3 days is not an edge case. It\'s a core UX problem that deserves the same design rigour as the checkout flow. I now audit edge cases and failure states as part of the initial problem definition, not as a final polish pass.',
-                  highlight: true,
+                  title: 'Edge cases are the product',
+                  body: 'I used to treat edge cases as final cleanup. This project taught me that in B2B operations, failure states (like a stuck order) are core UX problems. I now audit edge cases during initial problem definition, not as a polish pass.',
+                  colSpan: 2,
+                  highlight: true
                 },
                 {
-                  title: 'What the next iteration would address',
-                  body: 'Three things earned by the data: (1) A "power user" mode for the savings calculator . full tax breakdown with editable inputs for employees who want to verify the math themselves, not just see the output. (2) A dedicated "end-of-tenure" flow for employees leaving the company . the #1 support query post-launch, currently handled by a tooltip. (3) Redesign the lessor and seller portals from scratch with actual user research . the missed success criteria from v1 is a clear mandate.',
-                  highlight: false,
+                  title: 'The Next Iteration',
+                  body: '(1) Power-user tax calculator mode. (2) Full end-of-tenure flow. (3) Complete redesign of lessor/seller portals backed by actual user research.',
+                  colSpan: 1,
+                  highlight: false
                 },
               ].map((item, i) => (
                 <motion.div
@@ -1782,25 +1787,24 @@ export const SmartEPPCaseStudy = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07 }}
+                  className={`md:col-span-${item.colSpan}`}
                   style={{
                     background: item.highlight ? 'rgba(249,87,56,0.04)' : '#0d0d0d',
                     border: `1px solid ${item.highlight ? 'rgba(249,87,56,0.15)' : 'rgba(255,255,255,0.06)'}`,
                     borderRadius: '20px',
-                    padding: '28px 32px',
+                    padding: '32px',
                     display: 'flex',
-                    gap: '16px',
-                    alignItems: 'flex-start',
+                    flexDirection: 'column',
+                    gap: '12px',
                   }}
                 >
-                  <div style={{ flexShrink: 0, marginTop: '3px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8h10M9 4l4 4-4 4" stroke="var(--semantic-brand)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke={item.highlight ? 'var(--semantic-brand)' : '#555'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
+                    <h4 style={{ fontSize: '15px', fontWeight: 700, color: item.highlight ? 'var(--semantic-brand)' : '#e5e5e5', margin: 0, lineHeight: 1.35 }}>{item.title}</h4>
                   </div>
-                  <div>
-                    <h4 style={{ fontSize: '15px', fontWeight: 700, color: '#e5e5e5', margin: '0 0 10px 0', lineHeight: 1.35 }}>{item.title}</h4>
-                    <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.8, margin: 0 }}>{item.body}</p>
-                  </div>
+                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>{item.body}</p>
                 </motion.div>
               ))}
             </div>
