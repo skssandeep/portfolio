@@ -548,7 +548,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 3. Problem */}
-      <section style={{ padding: '160px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <section style={{ padding: '160px 0' }}>
         <div className="container">
           
           {/* Zone A & B: The Setup Block */}
