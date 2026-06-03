@@ -1440,7 +1440,8 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
             {/* System Foundations Block - Integrated as Appendix */}
-            <div style={{ marginTop: '40px', paddingBottom: '40px' }}>
+            {/* System Foundations Block - Integrated as Appendix */}
+            <div style={{ marginTop: '40px', paddingBottom: '40px', maxWidth: '100%', margin: '0 auto' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
                 <div style={{ height: '1px', flex: 1, background: 'linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.05))' }} />
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '100px', padding: '6px 14px' }}>
@@ -1449,7 +1450,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ height: '1px', flex: 1, background: 'linear-gradient(270deg, rgba(255,255,255,0), rgba(255,255,255,0.05))' }} />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Card 1: Design System */}
                 <div className="md:col-span-2 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Design System</div>
