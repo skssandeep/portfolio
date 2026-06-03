@@ -753,9 +753,27 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
                   <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"What if I leave the company? What if the device breaks?"</p>
                 </div>
-                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
-                  <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>In-context trust signals. No hidden FAQs.</p>
+                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
+                  <div>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
+                    <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>In-context trust signals. No hidden FAQs.</p>
+                  </div>
+                  <div 
+                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
+                    style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
+                  >
+                    <img src="/images/smart-epp-calculator-screen.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
@@ -768,9 +786,27 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
                   <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I can't open 50 profiles a week to check eligibility."</p>
                 </div>
-                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
-                  <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Single-row approval dashboard. Zero tab-switching.</p>
+                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
+                  <div>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
+                    <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Single-row approval dashboard. Zero tab-switching.</p>
+                  </div>
+                  <div 
+                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
+                    style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
+                  >
+                    <img src="/images/smart-epp-calculator-screen.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
