@@ -485,8 +485,7 @@ export const SmartEPPCaseStudy = () => {
 
           {/* Right Mockup Block */}
           <div style={{ flex: '1 1 400px', position: 'relative', zIndex: 5, minHeight: '600px' }}>
-            {/* Soft Glow Behind Image */}
-            <div style={{ position: 'absolute', top: '50%', left: '30%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(249,87,56,0.15) 0%, transparent 60%)', zIndex: 0 }} />
+            {/* Removed the 800px radial glow that was spilling over */}
             
             <motion.img 
               initial={{ opacity: 0, x: 40 }}
