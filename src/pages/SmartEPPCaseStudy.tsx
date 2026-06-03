@@ -1813,7 +1813,8 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* 4. Breakdown of Solution (Single Pitch Slide) */}
+      {/* 4. Breakdown of Solution (Single Pitch Slide) - MOVED TO DRAFTS */}
+      {false && (
       <section style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1600px' }}>
           
@@ -1889,7 +1890,11 @@ export const SmartEPPCaseStudy = () => {
           </motion.div>
         </div>
       </section>
+      )}
 
+      {/* Moved to drafts */}
+      {false && (
+      <>
       {/* 5. Research & 6. Analysis */}
       <section style={{ padding: '120px 0', position: 'relative' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
@@ -2084,8 +2089,11 @@ export const SmartEPPCaseStudy = () => {
           </div>
         </div>
       </section>
+      </>
+      )}
 
-      {/* 10. Final Design w prototype (Live Verification Prototype) */}
+      {/* 10. Final Design w prototype (Live Verification Prototype) - MOVED TO DRAFTS */}
+      {false && (
       <section style={{ padding: '120px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
 
@@ -2099,6 +2107,7 @@ export const SmartEPPCaseStudy = () => {
           <SmartEPPPrototype />
         </div>
       </section>
+      )}
 
       {/* 11. Styleguide, Slidedeck, Figma File */}
       <section style={{ padding: '100px 0' }}>
@@ -2164,6 +2173,9 @@ export const SmartEPPCaseStudy = () => {
         
         <div className="container" style={{ maxWidth: '1000px', position: 'relative', zIndex: 1 }}>
           
+          {/* Moved Hindsight to Drafts */}
+          {false && (
+          <>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', letterSpacing: '-0.02em', marginBottom: '16px' }}>Hindsight is 20/20</h2>
             <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', maxWidth: '600px', margin: '0 auto' }}>The biggest breakthroughs often come from our biggest failures. Here is what I learned.</p>
@@ -2210,6 +2222,8 @@ export const SmartEPPCaseStudy = () => {
               </div>
             </motion.div>
           </div>
+          </>
+          )}
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
