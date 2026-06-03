@@ -525,7 +525,7 @@ export const SmartEPPCaseStudy = () => {
               { type: 'cta' },
               { type: 'stat', label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
               { type: 'stat', label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types' },
-              { type: 'stat', label: 'DESIGN SYSTEM', value: '44 components', subtext: 'Shared across all 4 portals' },
+
             ].map((stat: any, i) => (
               stat.type === 'cta' ? (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '10px' }}>
