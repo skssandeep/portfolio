@@ -620,7 +620,7 @@ export const SmartEPPCaseStudy = () => {
 
                   <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #333', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
                     <div style={{ color: '#555', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Out of Scope</div>
-                    <div style={{ color: '#555', fontSize: '12px', fontWeight: 400, lineHeight: 1.4, marginTop: '6px' }}>Brand identity, payment gateways (handled via Salary EMI).</div>
+                    <div style={{ color: '#555', fontSize: '12px', fontWeight: 400, lineHeight: 1.4, marginTop: '6px' }}>Brand identity.</div>
                   </div>
 
                 </div>
