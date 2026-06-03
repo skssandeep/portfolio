@@ -713,7 +713,7 @@ export const SmartEPPCaseStudy = () => {
               
               {/* Card 1: Employee Confusion */}
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>73%</div>
                   <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>failed to calculate their savings using the initial concept.</div>
                 </div>
@@ -746,7 +746,7 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Card 2: Employee Anxiety */}
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>8/12</div>
                   <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>flagged salary EMIs as their top fear.</div>
                 </div>
@@ -761,7 +761,7 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Card 3: HR Friction */}
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>&lt;30s</div>
                   <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>required per HR approval to survive at scale.</div>
                 </div>
