@@ -1665,27 +1665,44 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Qualitative */}
               <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
-                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Qualitative Outcomes</div>
-                <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.8, margin: 0 }}>
-                  4.4★ combined app store rating. Top user review theme: "Finally understand how the tax saving works" (appeared in 34% of written reviews). Support ticket volume for "how do I calculate my saving?" dropped to near-zero after the calculator launched . the previous version generated this as the #1 inbound query. HR managers at 3 enterprise clients specifically cited the dashboard's one-row approval design in renewal conversations with the OneAssist sales team.
-                </p>
+                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: 'var(--font-mono)' }}>Qualitative Wins</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                  <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
+                    <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.6, margin: 0 }}>
+                      <strong style={{ color: '#e5e5e5' }}>Top user review:</strong> "Finally understand how the tax saving works."
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
+                    <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.6, margin: 0 }}>
+                      <strong style={{ color: '#e5e5e5' }}>Support tickets:</strong> "How do I calculate savings?" queries dropped to near-zero.
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
+                    <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.6, margin: 0 }}>
+                      <strong style={{ color: '#e5e5e5' }}>Sales impact:</strong> 3 enterprise clients cited the HR dashboard during renewals.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Success criteria */}
               <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
-                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: 'var(--font-mono)' }}>Success Criteria Check</div>
+                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: 'var(--font-mono)' }}>Success Criteria</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   {[
-                    { text: 'Target: Employee cart conversion ≥ 50% → Hit at 68%', hit: true },
-                    { text: 'Target: HR approval time ≤ 30s → Hit at 12s', hit: true },
-                    { text: 'Target: 0 enterprise clients dropping post-launch → Hit', hit: true },
-                    { text: 'Target: Lessor + seller portal change requests ≤ 5 per portal in 90 days → Missed (11 and 8 respectively) . the cost of skipping validation on those two portals.', hit: false },
+                    { text: 'Employee cart conversion ≥ 50% → Hit (68%)', hit: true },
+                    { text: 'HR approval time ≤ 30s → Hit (12s)', hit: true },
+                    { text: 'Zero enterprise client drop-offs → Hit', hit: true },
+                    { text: 'Lessor/Seller change requests ≤ 5 → Missed (Cost of skipping validation)', hit: false },
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                       <span style={{ fontSize: '13px', fontWeight: 700, color: item.hit ? 'var(--semantic-success)' : 'var(--semantic-error)', flexShrink: 0, marginTop: '1px' }}>
                         {item.hit ? '✓' : '✗'}
                       </span>
-                      <p style={{ fontSize: '13px', color: item.hit ? '#777' : '#666', lineHeight: 1.65, margin: 0, fontStyle: item.hit ? 'normal' : 'italic' }}>
+                      <p style={{ fontSize: '13px', color: item.hit ? '#777' : '#666', lineHeight: 1.6, margin: 0, fontStyle: item.hit ? 'normal' : 'italic' }}>
                         {item.text}
                       </p>
                     </div>
