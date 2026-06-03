@@ -16,6 +16,7 @@ import { FAQ } from '../components/FAQ';
 import { CTASection } from '../components/CTASection';
 import { ToolsSection } from '../components/ToolsSection';
 import { AboutSection } from '../components/AboutSection';
+import { DesignSystemSection } from '../components/DesignSystemSection';
 import { motion, useScroll, useTransform, useMotionValue, useMotionTemplate } from 'motion/react';
 
 const TUBES_COLORS = ["#f967fb", "#53bc28", "#6958d5"];
@@ -227,6 +228,9 @@ export const Home = () => {
       {/* Sections and below */}
       {!figmaMode && (
         <>
+          {/* 1.5 Design System: Semantic Colors */}
+          <DesignSystemSection />
+
           {/* 2. Visual Proof: Gallery / Projects Carousel */}
           <ProjectsSection />
 

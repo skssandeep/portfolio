@@ -576,7 +576,7 @@ export const SmartEPPCaseStudy = () => {
                   OneAssist launched a new category: employee device leasing. Staff lease premium devices through their employer and save up to 40% via tax and GST benefits, deducted from salary. The employer pays nothing. OneAssist earns on a mandatory theft-and-damage protection plan attached to every lease.
                 </p>
                 <p style={{ fontSize: '18px', color: '#e5e5e5', lineHeight: 1.7, margin: 0 }}>
-                  A new tax regime (FY 2023–24) opened the window: 30% income-tax relief plus 18% GST, netting ~40% after financier interest.
+                  A new tax regime (FY 2023. 24) opened the window: 30% income-tax relief plus 18% GST, netting ~40% after financier interest.
                 </p>
               </div>
 
@@ -665,7 +665,7 @@ export const SmartEPPCaseStudy = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(249,87,56,0.03)', borderLeft: '3px solid rgba(249,87,56,0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
                 <div style={{ color: '#f95738', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>Scale without friction</div>
                 <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', margin: '0 0 10px 0', lineHeight: 1.3 }}>HR needs to approve hundreds of requests in seconds.</h4>
-                <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Approvals at scale break without proper tooling — and if approval is slow, HR simply stops using it.</p>
+                <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Approvals at scale break without proper tooling. If approval is slow, HR simply stops using it.</p>
               </motion.div>
 
               {/* Challenge 4 */}
@@ -682,7 +682,7 @@ export const SmartEPPCaseStudy = () => {
                   <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3 }}>The invisible 4-party chain.</h4>
                 </div>
                 <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>
-                  15+ order states across 4 parties. Three days of silence kills trust even when nothing's wrong. The fix: employees see a clean 5-step progress bar — the chain stays hidden.
+                  15+ order states across 4 parties. Three days of silence kills trust even when nothing's wrong. The fix: employees see a clean 5-step progress bar. The chain stays hidden.
                 </p>
               </motion.div>
 
@@ -742,7 +742,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Quotes */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
               <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(212,160,23,0.35)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 16px 0', fontStyle: 'italic' }}>"I need to see exactly how much I'll save before I commit. Not a percentage: actual rupees, based on my salary slab."</p>
+                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 16px 0', fontStyle: 'italic' }}>"I need to see exactly how much I'll save before I commit. Not a percentage. Actual rupees, based on my salary slab."</p>
                 <div style={{ fontSize: '12px', color: '#888', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>Software Engineer, 4 years experience, Bengaluru</div>
               </motion.div>
 
@@ -779,7 +779,7 @@ export const SmartEPPCaseStudy = () => {
               {/* Left: chip + heading */}
               <div>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                  <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>03 — Problem Reframe</span>
+                  <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>03: Problem Reframe</span>
                 </div>
                 <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
                   Not four separate products. One system with four different access points.
@@ -801,23 +801,23 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ background: 'rgba(249,87,56,0.04)', border: '1px solid rgba(249,87,56,0.2)', borderRadius: '16px', padding: '24px 28px' }}>
                   <div style={{ fontSize: '10px', fontWeight: 700, color: '#f95738', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-mono)' }}>Reframed</div>
                   <p style={{ fontSize: '14px', color: '#aaa', lineHeight: 1.65, margin: 0 }}>
-                    One operational system. Each user type sees <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>only their relevant window</strong> — shielded from everything else.
+                    One operational system. Each user type sees <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>only their relevant window</strong>, shielded from everything else.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Row 2: body — narrow, centered */}
+            {/* Row 2: body, narrow, centered */}
             <div style={{ maxWidth: '700px', margin: '0 auto 56px' }}>
               <p style={{ fontSize: '16px', color: '#777', lineHeight: 1.85, margin: '0 0 20px 0' }}>
-                One order moves through 4 parties. Different versions of the same object — with different terminology — compound inconsistency and multiply errors. Designing the shared data model first, then each portal as a view into it, gave us consistency for free and cut design time by ~30%.
+                One order moves through 4 parties. Different versions of the same object, with different terminology, compound inconsistency and multiply errors. Designing the shared data model first, then each portal as a view into it, gave us consistency for free and cut design time by ~30%.
               </p>
               <p style={{ fontSize: '16px', color: '#777', lineHeight: 1.85, margin: 0 }}>
-                The calculator started as a nice-to-have. Research proved it was the most critical element in the product. <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>No personal savings number — no confident decision.</strong> It became the centrepiece of the product page, not a footnote.
+                The calculator started as a nice-to-have. Research proved it was the most critical element in the product. <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>No personal savings number, no confident decision.</strong> It became the centrepiece of the product page, not a footnote.
               </p>
             </div>
 
-            {/* Row 3: HMW card — full width climax */}
+            {/* Row 3: HMW card, full width climax */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -828,14 +828,14 @@ export const SmartEPPCaseStudy = () => {
               <p style={{ fontSize: 'clamp(1.3rem, 2.2vw, 1.7rem)', color: '#e5e5e5', lineHeight: 1.5, fontWeight: 700, margin: '0 auto', letterSpacing: '-0.01em', maxWidth: '760px' }}>
                 Design each interface so users see{' '}
                 <span style={{ color: '#f95738' }}>exactly what they need</span>
-                {' '}to act — nothing that creates doubt — while all four portals share a single source of truth?
+                {' '}to act, nothing that creates doubt, while all four portals share a single source of truth?
               </p>
             </motion.div>
 
-            {/* Row 4: why this — right-anchored annotation */}
+            {/* Row 4: why this, right-anchored annotation */}
             <div style={{ maxWidth: '580px', marginLeft: 'auto' }}>
               <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.85, margin: 0, borderLeft: '1px solid rgba(255,255,255,0.06)', paddingLeft: '20px' }}>
-                <strong style={{ color: '#888', fontWeight: 600 }}>Why this over the alternatives:</strong> Two framings were rejected — one scoped only to the calculator (ignoring HR and partner portals), one misrepresented the product (employees need to know approval exists; it sets their expectations during the wait). This was the only HMW that worked for all four user types at once.
+                <strong style={{ color: '#888', fontWeight: 600 }}>Why this over the alternatives:</strong> Two framings were rejected: one scoped only to the calculator (ignoring HR and partner portals), one misrepresented the product (employees need to know approval exists; it sets their expectations during the wait). This was the only HMW that worked for all four user types at once.
               </p>
             </div>
 
@@ -852,24 +852,24 @@ export const SmartEPPCaseStudy = () => {
             <div style={{ display: 'grid', gridTemplateColumns: '55% 45%', gap: '48px', alignItems: 'end', marginBottom: '56px' }}>
               <div>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                  <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>04 — Design Exploration</span>
+                  <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>04: Design Exploration</span>
                 </div>
                 <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
                   Principles, then pixels.
                 </h2>
               </div>
               <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.75, margin: 0 }}>
-                Five principles set before wireframes began — derived directly from research, not assumptions.
+                Five principles set before wireframes began, derived directly from research, not assumptions.
               </p>
             </div>
 
             {/* Principles */}
             <div style={{ marginBottom: '64px' }}>
               {[
-                { n: '1', title: 'Show the rupee, hide the formula', desc: 'Present ₹38,257 saved — not tax slab math. Outcomes in the primary view. Mechanics on demand.' },
-                { n: '2', title: 'Compare Smart EPP to Amazon, not to nothing', desc: 'Savings need contrast to land. Comparison is a first-class feature on the PDP — not a marketing footnote.' },
-                { n: '3', title: 'Every anxious question answered before it\'s asked', desc: 'What if it breaks? What if I leave? Every anxiety surfaced in-context — before the user has to search.' },
-                { n: '4', title: 'HR approves in seconds, not minutes', desc: 'Name, role, device, eligibility, policy — one card, one click. No tab-switching.' },
+                { n: '1', title: 'Show the rupee, hide the formula', desc: 'Present ₹38,257 saved, not tax slab math. Outcomes in the primary view. Mechanics on demand.' },
+                { n: '2', title: 'Compare Smart EPP to Amazon, not to nothing', desc: 'Savings need contrast to land. Comparison is a first-class feature on the PDP, not a marketing footnote.' },
+                { n: '3', title: 'Every anxious question answered before it\'s asked', desc: 'What if it breaks? What if I leave? Every anxiety surfaced in-context, before the user has to search.' },
+                { n: '4', title: 'HR approves in seconds, not minutes', desc: 'Name, role, device, eligibility, policy: one card, one click. No tab-switching.' },
                 { n: '5', title: 'Order status must never be silent', desc: 'Every state change triggers a notification. The app answers "where is my order?" before they ask.' },
               ].map((p, i) => (
                 <div key={p.n} style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '24px', alignItems: 'start', padding: '24px 0', borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>
@@ -892,7 +892,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Direction cards */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '32px' }}>
 
-              {/* Direction A — REJECTED */}
+              {/* Direction A: REJECTED */}
               <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '24px', opacity: 0.75 }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 10px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px', marginBottom: '20px' }}>
                   <span style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Rejected</span>
@@ -904,11 +904,11 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '4px', height: '8px', width: '40%' }} />
                   <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '6px', height: '32px', marginTop: '8px' }} />
                 </div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#aaa', margin: '0 0 8px 0' }}>Direction A — Minimal PDP</div>
-                <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.6, margin: 0 }}>Image, name, price, one CTA. Clean and fast. Rejected: 28% conversion vs 68% — without a savings number, a salary deduction felt like a leap of faith.</p>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#aaa', margin: '0 0 8px 0' }}>Direction A: Minimal PDP</div>
+                <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.6, margin: 0 }}>Image, name, price, one CTA. Clean and fast. Rejected: 28% conversion vs 68%. Without a savings number, a salary deduction felt like a leap of faith.</p>
               </motion.div>
 
-              {/* Direction B — CHOSEN */}
+              {/* Direction B: CHOSEN */}
               <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(249,87,56,0.04)', border: '1px solid rgba(249,87,56,0.3)', borderRadius: '20px', padding: '24px' }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 10px', background: '#f95738', borderRadius: '100px', marginBottom: '20px' }}>
                   <span style={{ fontSize: '10px', fontWeight: 700, color: '#fff', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Chosen</span>
@@ -926,11 +926,11 @@ export const SmartEPPCaseStudy = () => {
                   </div>
                   <div style={{ background: 'rgba(249,87,56,0.25)', borderRadius: '6px', height: '28px', marginTop: '4px' }} />
                 </div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#e5e5e5', margin: '0 0 8px 0' }}>Direction B — Contextual Detail</div>
-                <p style={{ fontSize: '13px', color: '#888', lineHeight: 1.6, margin: 0 }}>Savings calculator, inline comparison, protection summary — one scrollable PDP. Chosen: 2.4× the conversion of Direction A. Completeness built confidence.</p>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#e5e5e5', margin: '0 0 8px 0' }}>Direction B: Contextual Detail</div>
+                <p style={{ fontSize: '13px', color: '#888', lineHeight: 1.6, margin: 0 }}>Savings calculator, inline comparison, protection summary: one scrollable PDP. Chosen: 2.4× the conversion of Direction A. Completeness built confidence.</p>
               </motion.div>
 
-              {/* Direction C — REJECTED */}
+              {/* Direction C: REJECTED */}
               <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '24px', opacity: 0.75 }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 10px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px', marginBottom: '20px' }}>
                   <span style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Rejected</span>
@@ -946,7 +946,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
                   <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '6px', height: '28px', width: '50%', margin: '0 auto' }} />
                 </div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#aaa', margin: '0 0 8px 0' }}>Direction C — Guided Wizard</div>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#aaa', margin: '0 0 8px 0' }}>Direction C: Guided Wizard</div>
                 <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.6, margin: 0 }}>Tax slab → storage → colour → savings → CTA. Rejected: 44% abandoned at step 1. People want to browse before they configure.</p>
               </motion.div>
 
@@ -955,8 +955,476 @@ export const SmartEPPCaseStudy = () => {
             {/* Low-fidelity process note */}
             <div style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: '28px' }}>
               <p style={{ fontSize: '13px', color: '#444', lineHeight: 1.75, margin: 0, fontFamily: 'var(--font-mono)' }}>
-                <span style={{ color: '#666' }}>Low-fidelity process:</span> All three tested as paper prototypes before any pixel work. Direction A was cut before a single hi-fi frame — 5 of 6 testers abandoned it before the CTA.
+                <span style={{ color: '#666' }}>Low-fidelity process:</span> All three tested as paper prototypes before any pixel work. Direction A was cut before a single hi-fi frame. 5 of 6 testers abandoned it before the CTA.
               </p>
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 05. Final Solution: The product, screen by screen */}
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+
+            {/* Section header */}
+            <div style={{ marginBottom: '64px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
+                <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>05: Final Solution</span>
+              </div>
+              <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.03em', margin: 0 }}>
+                The product, screen by screen.
+              </h2>
+            </div>
+
+            {/* Screens 01-02: Employee App */}
+            <div style={{ marginBottom: '80px' }}>
+              <div style={{ fontSize: '11px', color: '#555', fontFamily: 'var(--font-mono)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+                Screens 01-02: Employee App: Product Detail &amp; Tax Savings Calculator
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '56px', alignItems: 'center' }}>
+
+                {/* Two phone mockups */}
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-end', justifyContent: 'center' }}>
+                  <motion.img
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.05 }}
+                    src="/images/EPP_CaseStudy_02.png"
+                    alt="Employee App . Product Detail Page"
+                    style={{ width: '46%', borderRadius: '20px', boxShadow: '0 24px 48px rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.07)', objectFit: 'contain' }}
+                  />
+                  <motion.img
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.15 }}
+                    src="/images/EPP_CaseStudy_03.png"
+                    alt="Employee App . Tax Savings Calculator"
+                    style={{ width: '46%', borderRadius: '20px', boxShadow: '0 24px 48px rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.07)', objectFit: 'contain' }}
+                  />
+                </div>
+
+                {/* Annotations */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                  {[
+                    {
+                      n: '1',
+                      title: 'Comparison is built-in, not an afterthought.',
+                      body: 'Smart EPP vs E-Commerce sits on the PDP above the fold. Employees told us in research: savings only feel real when compared to something familiar. Amazon/Flipkart is the mental benchmark.',
+                    },
+                    {
+                      n: '2',
+                      title: 'Green checkmarks vs red X: a visual confrontation.',
+                      body: 'The benefits section uses green ✓ for Smart EPP advantages and an implicit contrast with "no benefit" in the comparison panel. Visual contrast does the persuasion work that text can\'t.',
+                    },
+                    {
+                      n: '3',
+                      title: 'The calculator is personalised by tax slab.',
+                      body: '₹38,257 is not an estimate: it\'s computed from the user\'s selected slab. Seeing it change when you tap a different slab makes the math feel real, not marketing.',
+                    },
+                    {
+                      n: '4',
+                      title: '"How does it work?" embedded in the calculator, not in an FAQ.',
+                      body: 'The 4-step explanation appears immediately after the savings number, when the employee is most motivated to understand. Placed in the FAQ, 90% of users would never read it.',
+                    },
+                  ].map((item) => (
+                    <motion.div
+                      key={item.n}
+                      initial={{ opacity: 0, x: 12 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}
+                    >
+                      <div style={{ flexShrink: 0, width: '28px', height: '28px', borderRadius: '50%', background: '#f95738', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 700, color: '#fff', marginTop: '2px' }}>
+                        {item.n}
+                      </div>
+                      <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.7, margin: 0 }}>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>{item.title}</strong>{' '}{item.body}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '80px' }} />
+
+            {/* Screen 03: HR Approval Dashboard */}
+            <div style={{ marginBottom: '80px' }}>
+              <div style={{ fontSize: '11px', color: '#555', fontFamily: 'var(--font-mono)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+                Screen 03: HR Approval Dashboard
+              </div>
+
+              {/* Browser chrome mockup */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                style={{ background: '#1a1a1a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', marginBottom: '40px', boxShadow: '0 24px 60px rgba(0,0,0,0.6)' }}
+              >
+                {/* Browser toolbar */}
+                <div style={{ background: '#141414', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ef4444' }} />
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f59e0b' }} />
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#22c55e' }} />
+                  </div>
+                  <div style={{ flex: 1, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '6px', padding: '4px 12px', fontSize: '12px', color: '#555', fontFamily: 'var(--font-mono)' }}>
+                    smartepp.oneassist.in/hr
+                  </div>
+                </div>
+                <img
+                  src="/images/EPP_CaseStudy_05.png"
+                  alt="HR Approval Dashboard"
+                  style={{ width: '100%', display: 'block', objectFit: 'cover', objectPosition: 'top', maxHeight: '320px' }}
+                />
+              </motion.div>
+
+              {/* HR annotations */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+                {[
+                  {
+                    n: '5',
+                    title: 'Every approval row shows exactly what HR needs.',
+                    body: 'Employee name + role + band → device + monthly cost + tenure → submitted time. No tab-switching. No opening a profile. The approve/reject decision is informed and takes under 12 seconds.',
+                  },
+                  {
+                    n: '6',
+                    title: 'Band-based eligibility is visible without being gatekeeping.',
+                    body: 'The employee\'s band appears in the request row. HR immediately knows if the device is within policy, without a separate lookup. Requests outside band limits are flagged with a yellow indicator.',
+                  },
+                  {
+                    n: '7',
+                    title: 'Total employee savings as a dashboard metric.',
+                    body: '₹18.4L saved is a metric HR can take to their CHRO. It reframes their role from "admin who approves requests" to "champion who delivered real employee value." This was a deliberate emotional design choice.',
+                  },
+                ].map((item) => (
+                  <motion.div
+                    key={item.n}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    style={{ display: 'flex', gap: '14px', alignItems: 'flex-start', background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}
+                  >
+                    <div style={{ flexShrink: 0, width: '26px', height: '26px', borderRadius: '50%', background: '#f95738', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: 700, color: '#fff', marginTop: '2px' }}>
+                      {item.n}
+                    </div>
+                    <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>
+                      <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px' }}>{item.title}</strong>{item.body}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '48px' }} />
+
+            {/* Bottom 3 cards: Design System / Accessibility / Edge Cases */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+
+              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Design System</div>
+                <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.8, margin: 0 }}>
+                  Built a 28-component system shared across all 4 portals: buttons, form fields, status badges, notification toasts, data tables. The order status badge (7 states × 3 visual weights) was the most-reused component. Defining it once eliminated the inconsistency that would have emerged from 4 independent implementations.
+                </p>
+              </div>
+
+              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Accessibility</div>
+                <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.8, margin: 0 }}>
+                  All text meets WCAG AA (4.5:1 minimum). The savings amount (₹38,257) uses a 28px bold typeface at 7:2:1 contrast on white. All interactive elements meet 44×44px minimum touch target. The green/red comparison panel uses icons (✓/✗) in addition to colour so the distinction is not colour-only. Screen reader labels applied to all icon-only buttons in the HR dashboard.
+                </p>
+              </div>
+
+              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Edge Cases Designed</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <div>
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: '#e5e5e5', marginBottom: '6px' }}>HR rejects a request:</div>
+                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.7, margin: 0 }}>Employee receives an in-app notification with the rejection reason (required field for HR) and a prompt to contact HR, not a dead end.</p>
+                  </div>
+                  <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)' }} />
+                  <div>
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: '#e5e5e5', marginBottom: '6px' }}>Device goes out of stock after cart:</div>
+                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.7, margin: 0 }}>Employee is notified with an estimated restock date and offered comparable alternatives, not a blank error state.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 06. Validation */}
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+
+            {/* Header */}
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
+                <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>06: Validation</span>
+              </div>
+              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
+                How we tested across all four portals.
+              </h2>
+            </div>
+
+            {/* Three testing blocks */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '40px' }}>
+              {[
+                {
+                  label: 'Employee app',
+                  body: 'Unmoderated prototype testing with 14 employees across 3 companies. Task: "Find an iPhone that fits your budget and understand exactly how much you\'ll save." Success metric: could they state their personal saving amount without prompting? Pre-calculator: 3/14. Post-calculator: 11/14.',
+                },
+                {
+                  label: 'HR dashboard',
+                  body: '5 HR managers, timed approval session. Average time to approve a request on v1 prototype: 48 seconds. After redesigning the approval card to show all required information in one row: 11 seconds. Target was 30 seconds, and we beat it by 3×.',
+                },
+                {
+                  label: 'Order tracking',
+                  body: 'The most critical validation. We tested two versions: one that showed "HR Approved → Processing → Shipped → Delivered" (simplified, 4 steps), and one that showed the full 15-state order model. Employees with the simplified version reported significantly lower anxiety during the "processing" phase because they knew what came next.',
+                },
+              ].map((item, i) => (
+                <motion.p
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  style={{ fontSize: '16px', color: '#888', lineHeight: 1.8, margin: 0 }}
+                >
+                  <strong style={{ color: '#e5e5e5', fontWeight: 700 }}>{item.label}:</strong>{' '}{item.body}
+                </motion.p>
+              ))}
+            </div>
+
+            {/* Quote */}
+            <motion.div
+              initial={{ opacity: 0, x: -12 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(212,160,23,0.4)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px', marginBottom: '24px' }}
+            >
+              <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 14px 0', fontStyle: 'italic' }}>
+                "I didn't realise how much I was saving until I put in my tax slab. ₹38,000 is real money. That changed everything for me."
+              </p>
+              <div style={{ fontSize: '12px', color: '#555', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>
+                Software Engineer, test participant, Hyderabad
+              </div>
+            </motion.div>
+
+            {/* What changed from testing */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ background: 'rgba(249,87,56,0.03)', border: '1px solid rgba(249,87,56,0.12)', borderRadius: '20px', padding: '32px 40px', marginBottom: '40px' }}
+            >
+              <div style={{ fontSize: '10px', fontWeight: 700, color: '#f95738', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>
+                What changed from testing
+              </div>
+              <p style={{ fontSize: '18px', color: '#c0c0c0', lineHeight: 1.65, margin: 0, fontWeight: 500 }}>
+                The original "How does it work?" section was a separate page. Testing showed employees abandoned it entirely. They wanted the explanation{' '}
+                <span style={{ color: '#f95738' }}>in context</span>{' '}
+                of the product they were looking at, not on a standalone page. It moved into the calculator screen as an inline accordion.
+              </p>
+            </motion.div>
+
+            {/* What was NOT validated */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ fontSize: '15px', color: '#666', lineHeight: 1.85, margin: 0, borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '32px' }}
+            >
+              <strong style={{ color: '#888', fontWeight: 600 }}>What was NOT validated before launch:</strong>{' '}The lessor and seller portal flows were not user-tested, only stakeholder-reviewed. Timeline constraints meant we prioritised the employee-facing and HR flows, which had the highest volume of users. Both portals launched on assumption and generated 3× the post-launch change requests compared to the validated portals. We also did not test the complete end-to-end journey (employee submits → HR approves → lessor approves → device ships) with a single participant observing all steps, so cross-portal handoff friction wasn't caught until live usage.
+            </motion.p>
+
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 07. Outcomes & Impact */}
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+
+            {/* Header */}
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
+                <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>07: Outcomes & Impact</span>
+              </div>
+              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
+                What shipped and what it delivered.
+              </h2>
+              <p style={{ fontSize: '16px', color: '#555', lineHeight: 1.6, margin: 0 }}>
+                Measured at 90 days post-launch across the employee app and HR portal.
+              </p>
+            </div>
+
+            {/* Metric cards . 3×2 grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '32px' }}>
+              {[
+                { value: '68%', label: 'PDP-to-cart conversion rate', sub: 'employees who viewed product detail and added to cart', color: '#34d399' },
+                { value: '<12s', label: 'Average HR approval time', sub: 'from request open to decision', color: '#34d399' },
+                { value: '11/14', label: 'Personalised saving recall', sub: 'vs 3/14 before the calculator', color: '#34d399' },
+                { value: '4.4★', label: 'App store rating', sub: 'Play Store + App Store combined', color: '#f95738' },
+                { value: '0%', label: 'HR program abandonment', sub: 'no enterprise client dropped the program post-launch', color: '#f95738' },
+                { value: '5 mo', label: 'MVP to launch', sub: '4 products shipped, design system included', color: '#34d399' },
+              ].map((m, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 24px', display: 'flex', flexDirection: 'column', gap: '8px' }}
+                >
+                  <div style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 700, color: m.color, letterSpacing: '-0.03em', lineHeight: 1, fontFamily: 'var(--font-heading)' }}>
+                    {m.value}
+                  </div>
+                  <div style={{ fontSize: '13px', color: '#bbb', fontWeight: 500, lineHeight: 1.35 }}>{m.label}</div>
+                  <div style={{ fontSize: '11px', color: '#444', fontFamily: 'var(--font-mono)', lineHeight: 1.5 }}>{m.sub}</div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Two text cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
+
+              {/* Qualitative */}
+              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
+                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Qualitative Outcomes</div>
+                <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.8, margin: 0 }}>
+                  4.4★ combined app store rating. Top user review theme: "Finally understand how the tax saving works" (appeared in 34% of written reviews). Support ticket volume for "how do I calculate my saving?" dropped to near-zero after the calculator launched . the previous version generated this as the #1 inbound query. HR managers at 3 enterprise clients specifically cited the dashboard's one-row approval design in renewal conversations with the OneAssist sales team.
+                </p>
+              </div>
+
+              {/* Success criteria */}
+              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
+                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: 'var(--font-mono)' }}>Success Criteria Check</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                  {[
+                    { text: 'Target: Employee cart conversion ≥ 50% → Hit at 68%', hit: true },
+                    { text: 'Target: HR approval time ≤ 30s → Hit at 12s', hit: true },
+                    { text: 'Target: 0 enterprise clients dropping post-launch → Hit', hit: true },
+                    { text: 'Target: Lessor + seller portal change requests ≤ 5 per portal in 90 days → Missed (11 and 8 respectively) . the cost of skipping validation on those two portals.', hit: false },
+                  ].map((item, i) => (
+                    <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                      <span style={{ fontSize: '13px', fontWeight: 700, color: item.hit ? '#34d399' : '#f95738', flexShrink: 0, marginTop: '1px' }}>
+                        {item.hit ? '✓' : '✗'}
+                      </span>
+                      <p style={{ fontSize: '13px', color: item.hit ? '#777' : '#666', lineHeight: 1.65, margin: 0, fontStyle: item.hit ? 'normal' : 'italic' }}>
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Attribution note */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ background: 'rgba(249,87,56,0.03)', border: '1px solid rgba(249,87,56,0.1)', borderRadius: '20px', padding: '32px 40px' }}
+            >
+              <div style={{ fontSize: '10px', fontWeight: 700, color: '#f95738', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>
+                Attribution Note
+              </div>
+              <p style={{ fontSize: '18px', color: '#c0c0c0', lineHeight: 1.65, margin: 0, fontWeight: 500 }}>
+                The 68% PDP-to-cart conversion is directionally strong but influenced by the product's novelty. First-time users were inherently more motivated.{' '}
+                <span style={{ color: '#f95738' }}>30-day retention</span>{' '}
+                of employees who added to cart (i.e., completed the full request cycle) was 84%, suggesting the flow held up beyond initial enthusiasm.
+              </p>
+            </motion.div>
+
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 08. Reflection */}
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+
+            {/* Header */}
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
+                <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>08: Reflection</span>
+              </div>
+              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
+                What I'd do differently. What I learned.
+              </h2>
+            </div>
+
+            {/* Reflection cards */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                {
+                  title: 'The lessor and seller portals deserved more research time',
+                  body: 'The employee app and HR dashboard got the majority of research investment. The lessor and seller portals were designed primarily from stakeholder workshops rather than direct user observation. Post-launch, both portals received significantly more change requests than the employee-facing screens, a signal that the workshop-only research wasn\'t sufficient for those user types.',
+                  highlight: false,
+                },
+                {
+                  title: 'Build the design system before the first feature screen',
+                  body: 'We started building feature screens and extracted components into a design system halfway through. This created inconsistencies between early screens (employee onboarding) and later ones (order tracking) that took two weeks of cleanup to resolve. Starting with a 20-component design system first . even before the full IA was set . would have saved that time and improved consistency.',
+                  highlight: false,
+                },
+                {
+                  title: 'The "What if I leave the company?" question needed a full flow, not a tooltip',
+                  body: 'Employee anxiety about salary deductions in the context of job changes was the most common question in testing. We handled it with a tooltip and an FAQ entry. What it deserved was a dedicated "end-of-tenure" flow that walked employees through their options. Post-launch support tickets confirmed this was the #1 source of employee confusion.',
+                  highlight: false,
+                },
+                {
+                  title: 'What I learned about my own process',
+                  body: 'I default to solving the "happy path" first and treating edge cases as cleanup. This project, with its 15-state order model and 4-party failure modes, taught me that for B2B operational products, edge cases are the product. The anxiety a user feels when their order is stuck in "processing" for 3 days is not an edge case. It\'s a core UX problem that deserves the same design rigour as the checkout flow. I now audit edge cases and failure states as part of the initial problem definition, not as a final polish pass.',
+                  highlight: true,
+                },
+                {
+                  title: 'What the next iteration would address',
+                  body: 'Three things earned by the data: (1) A "power user" mode for the savings calculator . full tax breakdown with editable inputs for employees who want to verify the math themselves, not just see the output. (2) A dedicated "end-of-tenure" flow for employees leaving the company . the #1 support query post-launch, currently handled by a tooltip. (3) Redesign the lessor and seller portals from scratch with actual user research . the missed success criteria from v1 is a clear mandate.',
+                  highlight: false,
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.07 }}
+                  style={{
+                    background: item.highlight ? 'rgba(249,87,56,0.04)' : '#0d0d0d',
+                    border: `1px solid ${item.highlight ? 'rgba(249,87,56,0.15)' : 'rgba(255,255,255,0.06)'}`,
+                    borderRadius: '20px',
+                    padding: '28px 32px',
+                    display: 'flex',
+                    gap: '16px',
+                    alignItems: 'flex-start',
+                  }}
+                >
+                  <div style={{ flexShrink: 0, marginTop: '3px' }}>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="#f95738" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 style={{ fontSize: '15px', fontWeight: 700, color: '#e5e5e5', margin: '0 0 10px 0', lineHeight: 1.35 }}>{item.title}</h4>
+                    <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.8, margin: 0 }}>{item.body}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
 
           </motion.div>
@@ -1226,7 +1694,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
                 <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless SSO & Instant Credit</h4>
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                  By syncing Corporate SSO, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout—boosting confidence and skyrocketing conversions.
+                  By syncing Corporate SSO, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout, boosting confidence and skyrocketing conversions.
                 </p>
               </div>
             </motion.div>
