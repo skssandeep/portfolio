@@ -483,46 +483,6 @@ export const SmartEPPCaseStudy = () => {
               ))}
             </motion.div>
 
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              style={{ marginTop: '32px' }}
-            >
-              <button 
-                onClick={() => {
-                  const el = document.getElementById('final-designs');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                style={{ 
-                  background: 'var(--semantic-success)', 
-                  color: '#000', 
-                  border: 'none', 
-                  padding: '14px 32px', 
-                  borderRadius: '100px', 
-                  fontSize: '15px', 
-                  fontWeight: 700, 
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  boxShadow: '0 8px 20px rgba(16, 185, 129, 0.25)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(16, 185, 129, 0.35)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(16, 185, 129, 0.25)';
-                }}
-              >
-                Jump to Final Solution
-              </button>
-            </motion.div>
           </div>
 
           {/* Right Mockup Block */}
@@ -539,6 +499,61 @@ export const SmartEPPCaseStudy = () => {
               alt="Smart EPP Mobile App Mockup" 
               style={{ position: 'absolute', top: '-20%', left: '-25%', width: '165%', maxWidth: '1100px', objectFit: 'contain', zIndex: 2, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
             />
+            
+            {/* Sleek Floating CTA */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              style={{
+                position: 'absolute',
+                bottom: '15%',
+                right: '5%',
+                zIndex: 20,
+              }}
+            >
+              <button 
+                onClick={() => {
+                  const el = document.getElementById('final-designs');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                style={{ 
+                  background: 'rgba(20, 20, 20, 0.75)', 
+                  backdropFilter: 'blur(24px)',
+                  WebkitBackdropFilter: 'blur(24px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)', 
+                  padding: '12px 16px', 
+                  borderRadius: '24px', 
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '16px',
+                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.05)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(30, 30, 30, 0.85)';
+                  e.currentTarget.style.transform = 'translateY(-4px) scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255,255,255,0.15)';
+                  e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(20, 20, 20, 0.75)';
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                }}
+              >
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '8px' }}>
+                  <span style={{ fontSize: '10px', color: 'var(--semantic-success)', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 700, marginBottom: '2px' }}>Fast Track</span>
+                  <span style={{ fontSize: '14px', color: '#fff', fontWeight: 500, letterSpacing: '0.5px' }}>View Final Designs</span>
+                </div>
+                <div style={{ background: 'var(--semantic-success)', color: '#000', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Zap size={16} fill="#000" />
+                </div>
+              </button>
+            </motion.div>
           </div>
 
         </div>
