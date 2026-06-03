@@ -694,7 +694,7 @@ export const SmartEPPCaseStudy = () => {
 
             {/* Section Label */}
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
-              <div style={{ width: '6px', height: '6px', background: '#a3a3a3', borderRadius: '50%' }} />
+              <Search size={14} strokeWidth={2.5} />
               Research
             </div>
 
