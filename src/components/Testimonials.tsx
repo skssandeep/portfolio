@@ -86,7 +86,7 @@ export const Testimonials = () => {
       {/* Outer wrapper to handle the Addverb-style card padding */}
       <div style={{ 
         padding: '0 32px', // Dark space on left and right
-        maxWidth: '1600px',
+        maxWidth: '1312px',
         margin: '0 auto',
         position: 'relative'
       }}>

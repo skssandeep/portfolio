@@ -221,7 +221,7 @@ export const CaseStudiesSectionSideBySide = () => {
 
   return (
     <section id="case-studies" className="section-padding" style={{ position: 'relative', zIndex: 10, marginTop: '60px', paddingBottom: '160px', background: 'transparent' }}>
-      <div className="container" style={{ maxWidth: '1600px', position: 'relative', zIndex: 1 }}>
+      <div className="container" style={{ maxWidth: '1312px', position: 'relative', zIndex: 1 }}>
         
         <motion.div 
           initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
