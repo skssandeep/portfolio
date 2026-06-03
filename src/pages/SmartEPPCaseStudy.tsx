@@ -453,7 +453,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.1 }}
               style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '32px', letterSpacing: '-0.02em' }}
             >
-              Up to 40% of that phone is just tax. <span style={{ color: 'var(--semantic-success)', fontWeight: 500 }}>We built the system that gives it back.</span>
+              Up to 40% of that device is just tax. <span style={{ color: 'var(--semantic-success)', fontWeight: 500 }}>We built the system that gives it back.</span>
             </motion.h2>
 
             {/* Description */}
@@ -464,7 +464,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.2 }}
               style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '40px', maxWidth: '100%' }}
             >
-              SmartEPP lets employees lease premium phones and reclaim that 40%. Paid from salary, covered by insurance. I designed it end to end: employee app, HR dashboard, lessor portal, seller portal. From a blank canvas.
+              SmartEPP lets employees lease premium devices and reclaim that 40%. Paid from salary, covered by insurance. I designed it end to end: employee app, HR dashboard, lessor portal, seller portal. From a blank canvas.
             </motion.p>
 
             {/* Pills */}
@@ -1583,7 +1583,7 @@ export const SmartEPPCaseStudy = () => {
                       <Fingerprint size={24} color="#3b82f6" style={{ opacity: 0.6 }} />
                     </div>
                     <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '12px', paddingRight: '20px' }}>KYC is a Funnel Killer</h4>
-                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>Asking for PAN numbers and salary slips upfront caused immediate mistrust. Users felt they were applying for a mortgage just to browse phones.</p>
+                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>Asking for PAN numbers and salary slips upfront caused immediate mistrust. Users felt they were applying for a mortgage just to browse devices.</p>
                   </motion.div>
 
                   {/* Insight 3 */}
@@ -1920,7 +1920,7 @@ export const SmartEPPCaseStudy = () => {
               </p>
               <div style={{ background: 'rgba(0,0,0,0.4)', padding: '20px', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
                 <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', margin: 0, fontStyle: 'italic', lineHeight: 1.6 }}>
-                  "Corporate employees absolutely refused to download another heavy app just to buy a phone once a year. The app store friction killed our acquisition funnel instantly."
+                  "Corporate employees absolutely refused to download another heavy app just to buy a device once a year. The app store friction killed our acquisition funnel instantly."
                 </p>
               </div>
             </motion.div>
