@@ -32,7 +32,7 @@ const SmartEPPPrototype = () => {
       <div style={{ minHeight: '200px' }}>
         {step === 1 && (
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>Select a premium device to calculate your pre-approved salary deduction.</p>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>Select a premium device to calculate your pre-approved monthly EMI.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {devices.map(device => (
                 <div 
@@ -573,7 +573,7 @@ export const SmartEPPCaseStudy = () => {
               {/* Narrative (Left) */}
               <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <p style={{ fontSize: '18px', color: '#e5e5e5', lineHeight: 1.7, margin: 0, marginBottom: '24px' }}>
-                  OneAssist launched a new category: employee device leasing. Employees lease premium phones through work and save up to 40%, deducted from salary. The employer pays nothing and gains a zero-cost retention perk; OneAssist earns on the mandatory theft-and-damage protection bundled into every lease.
+                  OneAssist launched a new category: employee device leasing. Employees lease premium phones through work and save up to 40%, paid via monthly salary EMIs. The employer pays nothing and gains a zero-cost retention perk; OneAssist earns on the mandatory theft-and-damage protection bundled into every lease.
                 </p>
                 <p style={{ fontSize: '18px', color: '#e5e5e5', lineHeight: 1.7, margin: 0 }}>
                   Why now: a 2023–24 tax change unlocked the savings. 30% income-tax relief plus 18% GST nets ~40% after financier interest.
@@ -657,7 +657,7 @@ export const SmartEPPCaseStudy = () => {
               {/* Challenge 2 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
                 <div style={{ color: 'var(--semantic-error)', fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>High-trust commitment</div>
-                <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', margin: '0 0 10px 0', lineHeight: 1.3 }}>Salary deduction is terrifying without trust signals.</h4>
+                <h4 style={{ fontSize: '17px', fontWeight: 600, color: '#fff', margin: '0 0 10px 0', lineHeight: 1.3 }}>A monthly salary EMI is terrifying without trust signals.</h4>
                 <p style={{ fontSize: '14px', color: '#777', lineHeight: 1.6, margin: 0 }}>Committing months of salary is a high-trust act. Without confidence at every step, people abandon at the product page.</p>
               </motion.div>
 
@@ -724,7 +724,7 @@ export const SmartEPPCaseStudy = () => {
 
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ fontSize: '52px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>8/12</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0', flex: 1 }}>flagged 'salary deduction' as their top anxiety. What if I leave? What if it breaks?</p>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0', flex: 1 }}>flagged 'salary EMIs' as their top anxiety. What if I leave? What if it breaks?</p>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
                   <p style={{ fontSize: '13px', color: 'var(--semantic-warning)', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ Answers needed in-context, not buried in an FAQ.</p>
                 </div>
@@ -905,7 +905,7 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '6px', height: '32px', marginTop: '8px' }} />
                 </div>
                 <div style={{ fontSize: '13px', fontWeight: 700, color: '#aaa', margin: '0 0 8px 0' }}>Direction A: Minimal PDP</div>
-                <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.6, margin: 0 }}>Image, name, price, one CTA. Clean and fast. Rejected: 28% conversion vs 68%. Without a savings number, a salary deduction felt like a leap of faith.</p>
+                <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.6, margin: 0 }}>Image, name, price, one CTA. Clean and fast. Rejected: 28% conversion vs 68%. Without a savings number, a monthly salary EMI felt like a leap of faith.</p>
               </motion.div>
 
               {/* Direction B: CHOSEN */}
@@ -1384,7 +1384,7 @@ export const SmartEPPCaseStudy = () => {
                 },
                 {
                   title: 'The "What if I leave the company?" question needed a full flow, not a tooltip',
-                  body: 'Employee anxiety about salary deductions in the context of job changes was the most common question in testing. We handled it with a tooltip and an FAQ entry. What it deserved was a dedicated "end-of-tenure" flow that walked employees through their options. Post-launch support tickets confirmed this was the #1 source of employee confusion.',
+                  body: 'Employee anxiety about salary EMIs in the context of job changes was the most common question in testing. We handled it with a tooltip and an FAQ entry. What it deserved was a dedicated "end-of-tenure" flow that walked employees through their options. Post-launch support tickets confirmed this was the #1 source of employee confusion.',
                   highlight: false,
                 },
                 {
