@@ -844,10 +844,10 @@ export const SmartEPPCaseStudy = () => {
                   Before: Fragmented Apps
                 </div>
                 
-                {/* 4 disconnected red boxes */}
+                {/* 4 disconnected red boxes (now neutral) */}
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
                   {['Employee App', 'HR Portal', 'Lessor Dashboard', 'Seller System'].map(sys => (
-                    <div key={sys} style={{ flex: '1 1 140px', background: 'rgba(225, 29, 72, 0.06)', border: '1px dashed rgba(225, 29, 72, 0.3)', borderRadius: '12px', padding: '20px', textAlign: 'center', color: '#e5e5e5', fontSize: '13px', fontWeight: 500, fontFamily: 'var(--font-system)' }}>
+                    <div key={sys} style={{ flex: '1 1 140px', background: 'rgba(255, 255, 255, 0.02)', border: '1px dashed rgba(255, 255, 255, 0.15)', borderRadius: '12px', padding: '20px', textAlign: 'center', color: '#e5e5e5', fontSize: '13px', fontWeight: 500, fontFamily: 'var(--font-system)' }}>
                       {sys}
                     </div>
                   ))}
