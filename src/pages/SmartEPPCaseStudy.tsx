@@ -1445,15 +1445,22 @@ export const SmartEPPCaseStudy = () => {
         <div className="container">
             {/* System Foundations Block - Integrated as Appendix */}
             <div style={{ marginTop: '40px', paddingBottom: '40px', maxWidth: '100%', margin: '0 auto' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
-                <div style={{ height: '1px', flex: 1, background: 'linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.05))' }} />
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '100px', padding: '6px 14px' }}>
-                  <span style={{ fontSize: '11px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '1px', textTransform: 'uppercase' }}>System Foundations</span>
-                </div>
-                <div style={{ height: '1px', flex: 1, background: 'linear-gradient(270deg, rgba(255,255,255,0), rgba(255,255,255,0.05))' }} />
-              </div>
-
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                {/* Title Block (Inside Grid) */}
+                <div className="md:col-span-1 flex flex-col justify-center" style={{ padding: '24px 0' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--semantic-info)' }} />
+                    <span style={{ fontSize: '11px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '1px', textTransform: 'uppercase' }}>Appendix</span>
+                  </div>
+                  <h3 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+                    System Foundations.
+                  </h3>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6, maxWidth: '90%' }}>
+                    The underlying architecture and principles powering all four platforms.
+                  </p>
+                </div>
+
                 {/* Card 1: Design System */}
                 <div className="md:col-span-2 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Design System</div>
@@ -1473,7 +1480,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
 
                 {/* Card 3: Edge Cases Designed */}
-                <div className="md:col-span-3 flex flex-col md:flex-row gap-8 items-start md:items-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                <div className="md:col-span-2 flex flex-col xl:flex-row gap-8 items-start xl:items-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Edge Cases Designed</div>
                     <h4 style={{ fontSize: '24px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Zero Dead Ends.</h4>
