@@ -816,116 +816,84 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* Problem Reframe (Logic & Psychology Diagram) */}
+      {/* Problem Reframe (Simplified Before/After) */}
       <section style={{ padding: '0 0 160px 0' }}>
         <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '80px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
             {/* Section Label */}
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '80px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>
                 <Target size={14} strokeWidth={2.5} />
                 Problem Reframe
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '80px', alignItems: 'center' }}>
+            <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+              <h3 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, margin: '0 0 16px 0', fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em' }}>
+                Stop designing 4 products.<br/>Design 1 system.
+              </h3>
+            </div>
 
-              {/* Part 1: The Trap (Psychology) */}
-              <div style={{ width: '100%', maxWidth: '900px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
-                  <XCircle size={14} strokeWidth={2.5} />
-                  The Psychological Trap
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '64px', maxWidth: '900px', margin: '0 auto' }}>
+
+              {/* Before */}
+              <div style={{ background: 'rgba(225, 29, 72, 0.02)', border: '1px solid rgba(225, 29, 72, 0.15)', borderRadius: '24px', padding: '40px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '12px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
+                  <XCircle size={16} strokeWidth={2.5} />
+                  Before: Fragmented Apps
                 </div>
                 
-                <h3 style={{ fontSize: 'clamp(1.8rem, 2.5vw, 2.4rem)', fontWeight: 600, color: '#fff', lineHeight: 1.2, margin: '0 0 16px 0', fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em' }}>
-                  Four isolated products = Cognitive Chaos.
-                </h3>
-                
-                <p style={{ fontSize: '16px', color: '#888', lineHeight: 1.7, margin: '0 auto 40px auto', maxWidth: '600px', fontFamily: 'var(--font-system)' }}>
-                  When four different users look at four distinct systems, they develop conflicting mental models of the exact same transaction. The result is endless support tickets and a total loss of trust.
-                </p>
+                {/* 4 disconnected red boxes */}
+                <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
+                  {['Employee App', 'HR Portal', 'Lessor Dashboard', 'Seller System'].map(sys => (
+                    <div key={sys} style={{ flex: '1 1 140px', background: 'rgba(225, 29, 72, 0.06)', border: '1px dashed rgba(225, 29, 72, 0.3)', borderRadius: '12px', padding: '20px', textAlign: 'center', color: '#e5e5e5', fontSize: '13px', fontWeight: 500, fontFamily: 'var(--font-system)' }}>
+                      {sys}
+                    </div>
+                  ))}
+                </div>
 
-                {/* The Diagram: 4 separate boxes */}
-                <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                  {['Employee App', 'HR Portal', 'Lessor Dashboard', 'Seller System'].map((sys, i) => (
-                    <div key={sys} style={{ width: '150px', height: '110px', background: 'rgba(225, 29, 72, 0.05)', border: '1px dashed rgba(225, 29, 72, 0.3)', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '12px' }}>
-                      <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(225, 29, 72, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--semantic-error)' }}>
-                        {i === 0 ? <Smartphone size={18} /> : i === 1 ? <Users size={18} /> : i === 2 ? <Building2 size={18} /> : <Wallet size={18} />}
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                  If we build four separate apps, the data gets out of sync. HR sees <span style={{ color: '#fff' }}>"Pending"</span> while the Employee sees <span style={{ color: '#fff' }}>"Processing"</span>. Nobody trusts the software, resulting in endless support calls.
+                </p>
+              </div>
+
+              {/* After */}
+              <div style={{ background: 'rgba(16, 185, 129, 0.03)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '24px', padding: '40px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '12px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
+                  <CheckCircle2 size={16} strokeWidth={2.5} />
+                  After: Unified System
+                </div>
+                
+                {/* 1 solid foundation with 4 tabs */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '32px' }}>
+                  <div style={{ display: 'flex', gap: '8px', padding: '0 16px' }}>
+                    {['Employee', 'HR', 'Lessor', 'Seller'].map(tab => (
+                      <div key={tab} style={{ flex: 1, background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', borderBottom: 'none', borderRadius: '12px 12px 0 0', padding: '12px', textAlign: 'center', color: '#fff', fontSize: '13px', fontWeight: 500, fontFamily: 'var(--font-system)' }}>
+                        {tab} View
                       </div>
-                      <div style={{ fontSize: '12px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)', textAlign: 'center' }}>{sys}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* The Connector (Arrow down) */}
-              <div style={{ height: '80px', width: '2px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(16, 185, 129, 0.5))' }} />
-
-              {/* Part 2: The Unlock (Logic) */}
-              <div style={{ width: '100%', maxWidth: '900px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: 'rgba(16, 185, 129, 0.02)', border: '1px solid rgba(16, 185, 129, 0.1)', borderRadius: '32px', padding: '64px' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
-                  <CheckCircle2 size={14} strokeWidth={2.5} />
-                  The Logical Unlock
-                </div>
-                
-                <h3 style={{ fontSize: 'clamp(1.8rem, 2.5vw, 2.4rem)', fontWeight: 600, color: '#fff', lineHeight: 1.2, margin: '0 0 16px 0', fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em' }}>
-                  One core engine. Four tailored views.
-                </h3>
-                
-                <p style={{ fontSize: '16px', color: '#888', lineHeight: 1.7, margin: '0 auto 64px auto', maxWidth: '650px', fontFamily: 'var(--font-system)' }}>
-                  We built a single source of truth at the backend. Then, we designed four distinct interfaces that act as highly-filtered "windows" into that truth—showing exactly what the user needs to act, and shielding them from the rest.
-                </p>
-
-                {/* The Diagram: Central Hub */}
-                <div style={{ position: 'relative', width: '100%', maxWidth: '500px', height: '240px', margin: '0 auto' }}>
-                  
-                  {/* Central Node */}
-                  <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '120px', height: '120px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.05))', border: '1px solid rgba(16, 185, 129, 0.4)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', zIndex: 10, boxShadow: '0 0 40px rgba(16, 185, 129, 0.15)' }}>
-                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#fff', fontFamily: 'var(--font-system)', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center', lineHeight: 1.2 }}>Core<br/>Engine</div>
+                    ))}
                   </div>
-
-                  {/* Satellite Nodes */}
-                  {[
-                    { pos: { top: '10%', left: '15%' }, label: 'Employee View', icon: <Smartphone size={14} /> },
-                    { pos: { top: '10%', left: '85%' }, label: 'HR View', icon: <Users size={14} /> },
-                    { pos: { top: '90%', left: '15%' }, label: 'Lessor View', icon: <Building2 size={14} /> },
-                    { pos: { top: '90%', left: '85%' }, label: 'Seller View', icon: <Wallet size={14} /> },
-                  ].map((node, i) => (
-                    <div key={i} style={{ position: 'absolute', top: node.pos.top, left: node.pos.left, transform: 'translate(-50%, -50%)', display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(20,20,20,1)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 16px', borderRadius: '100px', zIndex: 10, whiteSpace: 'nowrap' }}>
-                      <div style={{ color: 'var(--semantic-success)' }}>{node.icon}</div>
-                      <div style={{ fontSize: '12px', color: '#e5e5e5', fontWeight: 500, fontFamily: 'var(--font-system)' }}>{node.label}</div>
-                    </div>
-                  ))}
-
-                  {/* Connecting Lines (SVG) */}
-                  <svg viewBox="0 0 500 240" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0 }}>
-                    <path d="M 250 120 L 75 24" stroke="rgba(16, 185, 129, 0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                    <path d="M 250 120 L 425 24" stroke="rgba(16, 185, 129, 0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                    <path d="M 250 120 L 75 216" stroke="rgba(16, 185, 129, 0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                    <path d="M 250 120 L 425 216" stroke="rgba(16, 185, 129, 0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                  </svg>
+                  <div style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05))', border: '1px solid rgba(16, 185, 129, 0.4)', borderRadius: '16px', padding: '24px', textAlign: 'center', color: '#fff', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-system)' }}>
+                    Single Source of Truth (Database)
+                  </div>
                 </div>
 
-                <div style={{ marginTop: '64px', background: 'rgba(16, 185, 129, 0.05)', padding: '16px 24px', borderRadius: '100px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
-                  <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1, margin: 0, fontFamily: 'var(--font-system)' }}>
-                    <strong style={{ color: 'var(--semantic-success)' }}>The Result:</strong> Cut design time by ~30% and eliminated cross-portal mapping errors completely.
-                  </p>
-                </div>
-              </div>
-
-              {/* Part 3: The HMW Thesis */}
-              <div style={{ width: '100%', maxWidth: '800px', display: 'flex', gap: '32px', alignItems: 'flex-start', paddingTop: '40px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                <div style={{ fontSize: '80px', color: 'rgba(255,255,255,0.05)', fontFamily: 'var(--font-heading)', lineHeight: 0.8, fontWeight: 800 }}>"</div>
-                <div>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#777', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-system)' }}>The North Star</div>
-                  <h3 style={{ fontSize: 'clamp(1.5rem, 2.2vw, 2rem)', color: '#e5e5e5', lineHeight: 1.4, fontWeight: 500, margin: 0, fontFamily: 'var(--font-system)', letterSpacing: '-0.01em' }}>
-                    How might we design <span style={{ color: '#fff', fontWeight: 700, borderBottom: '2px solid var(--semantic-brand)' }}>one single source of truth</span> where four completely different user types see only the exact data they need to act?
-                  </h3>
-                </div>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                  We designed a single central database. The four apps are just "windows" looking at the exact same data. When HR hits approve, the employee's screen updates instantly.
+                </p>
               </div>
 
             </div>
+            
+            <div style={{ marginTop: '64px', textAlign: 'center' }}>
+              <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '100px', padding: '16px 32px' }}>
+                <p style={{ fontSize: '15px', color: '#e5e5e5', lineHeight: 1, margin: 0, fontFamily: 'var(--font-system)' }}>
+                  <strong style={{ color: 'var(--semantic-success)' }}>The Result:</strong> Designing this shared data model first cut design time by ~30%.
+                </p>
+              </div>
+            </div>
+
           </motion.div>
         </div>
       </section>
