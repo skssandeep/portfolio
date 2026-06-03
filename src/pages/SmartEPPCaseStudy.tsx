@@ -535,7 +535,7 @@ export const SmartEPPCaseStudy = () => {
               { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS' },
               { label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
               { label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types' },
-              { label: 'DESIGN SYSTEM', value: "Built on OneAssist's existing library", subtext: 'Shared across all 4 portals' },
+              { label: 'DESIGN SYSTEM', value: '44 components', subtext: "Built on OneAssist's existing library" },
             ].map((stat, i) => (
               <div 
                 key={i}
