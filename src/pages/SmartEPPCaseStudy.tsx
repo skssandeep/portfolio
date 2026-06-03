@@ -918,23 +918,64 @@ export const SmartEPPCaseStudy = () => {
               </p>
             </div>
 
-            {/* Principles */}
-            <div style={{ marginBottom: '64px' }}>
-              {[
-                { n: '1', title: 'Show the rupee, hide the formula', desc: 'Present ₹38,257 saved, not tax slab math. Outcomes in the primary view. Mechanics on demand.' },
-                { n: '2', title: 'Compare Smart EPP to Amazon, not to nothing', desc: 'Savings need contrast to land. Comparison is a first-class feature on the PDP, not a marketing footnote.' },
-                { n: '3', title: 'Every anxious question answered before it\'s asked', desc: 'What if it breaks? What if I leave? Every anxiety surfaced in-context, before the user has to search.' },
-                { n: '4', title: 'HR approves in seconds, not minutes', desc: 'Name, role, device, eligibility, policy: one card, one click. No tab-switching.' },
-                { n: '5', title: 'Order status must never be silent', desc: 'Every state change triggers a notification. The app answers "where is my order?" before they ask.' },
-              ].map((p, i) => (
-                <div key={p.n} style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '24px', alignItems: 'start', padding: '24px 0', borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>
-                  <div style={{ fontSize: '52px', fontWeight: 900, color: 'rgba(255,255,255,0.05)', lineHeight: 0.9, letterSpacing: '-0.04em', userSelect: 'none' as const }}>{p.n}</div>
-                  <div style={{ paddingTop: '2px' }}>
-                    <h4 style={{ fontSize: '15px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 6px 0', lineHeight: 1.35 }}>{p.title}</h4>
-                    <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.65, margin: 0 }}>{p.desc}</p>
-                  </div>
+            {/* Principles - Bento Box Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+              
+              {/* Principle 1: Hero Card (Spans 2 cols) */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="md:col-span-2 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '24px', padding: '48px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ position: 'absolute', right: '-20px', bottom: '-50px', fontSize: '240px', fontWeight: 900, color: 'rgba(255,255,255,0.03)', lineHeight: 0.8, letterSpacing: '-0.04em', userSelect: 'none', fontFamily: 'var(--font-heading)' }}>
+                  1
                 </div>
-              ))}
+                <div style={{ position: 'relative', zIndex: 10 }}>
+                  <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 12px 0', lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>Show the rupee, hide the formula</h4>
+                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0, maxWidth: '600px', fontFamily: 'var(--font-system)' }}>Present ₹38,257 saved, not tax slab math. Outcomes in the primary view. Mechanics on demand.</p>
+                </div>
+              </motion.div>
+
+              {/* Principle 2 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="relative overflow-hidden" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ position: 'absolute', right: '-10px', bottom: '-20px', fontSize: '140px', fontWeight: 900, color: 'rgba(255,255,255,0.03)', lineHeight: 0.8, letterSpacing: '-0.04em', userSelect: 'none', fontFamily: 'var(--font-heading)' }}>
+                  2
+                </div>
+                <div style={{ position: 'relative', zIndex: 10 }}>
+                  <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Compare Smart EPP to Amazon, not to nothing</h4>
+                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>Savings need contrast to land. Comparison is a first-class feature on the PDP, not a marketing footnote.</p>
+                </div>
+              </motion.div>
+
+              {/* Principle 3 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="relative overflow-hidden" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ position: 'absolute', right: '-10px', bottom: '-20px', fontSize: '140px', fontWeight: 900, color: 'rgba(255,255,255,0.03)', lineHeight: 0.8, letterSpacing: '-0.04em', userSelect: 'none', fontFamily: 'var(--font-heading)' }}>
+                  3
+                </div>
+                <div style={{ position: 'relative', zIndex: 10 }}>
+                  <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Every anxious question answered before it's asked</h4>
+                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>What if it breaks? What if I leave? Every anxiety surfaced in-context, before the user has to search.</p>
+                </div>
+              </motion.div>
+
+              {/* Principle 4 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="relative overflow-hidden" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ position: 'absolute', right: '-10px', bottom: '-20px', fontSize: '140px', fontWeight: 900, color: 'rgba(255,255,255,0.03)', lineHeight: 0.8, letterSpacing: '-0.04em', userSelect: 'none', fontFamily: 'var(--font-heading)' }}>
+                  4
+                </div>
+                <div style={{ position: 'relative', zIndex: 10 }}>
+                  <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>HR approves in seconds, not minutes</h4>
+                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>Name, role, device, eligibility, policy: one card, one click. No tab-switching.</p>
+                </div>
+              </motion.div>
+
+              {/* Principle 5 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="relative overflow-hidden" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ position: 'absolute', right: '-10px', bottom: '-20px', fontSize: '140px', fontWeight: 900, color: 'rgba(255,255,255,0.03)', lineHeight: 0.8, letterSpacing: '-0.04em', userSelect: 'none', fontFamily: 'var(--font-heading)' }}>
+                  5
+                </div>
+                <div style={{ position: 'relative', zIndex: 10 }}>
+                  <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Order status must never be silent</h4>
+                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>Every state change triggers a notification. The app answers "where is my order?" before they ask.</p>
+                </div>
+              </motion.div>
+
             </div>
 
             {/* Design Exploration - Asymmetrical Split */}
