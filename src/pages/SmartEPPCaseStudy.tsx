@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Layers, ArrowLeft, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase} from 'lucide-react';
+import { Layers, ArrowLeft, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase} from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
@@ -508,8 +508,8 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.8, duration: 0.5 }}
               style={{
                 position: 'absolute',
-                bottom: '15%',
-                right: '5%',
+                bottom: '5%',
+                left: '0',
                 zIndex: 20,
               }}
             >
@@ -547,10 +547,10 @@ export const SmartEPPCaseStudy = () => {
               >
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '8px' }}>
                   <span style={{ fontSize: '10px', color: 'var(--semantic-success)', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 700, marginBottom: '2px' }}>Fast Track</span>
-                  <span style={{ fontSize: '14px', color: '#fff', fontWeight: 500, letterSpacing: '0.5px' }}>View Final Designs</span>
+                  <span style={{ fontSize: '14px', color: '#fff', fontWeight: 500, letterSpacing: '0.5px' }}>Scroll to Final Designs</span>
                 </div>
                 <div style={{ background: 'var(--semantic-success)', color: '#000', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Zap size={16} fill="#000" />
+                  <ArrowDown size={18} strokeWidth={2.5} />
                 </div>
               </button>
             </motion.div>
