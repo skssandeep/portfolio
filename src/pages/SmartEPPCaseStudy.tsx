@@ -464,7 +464,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.2 }}
               style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '40px', maxWidth: '100%' }}
             >
-              SmartEPP lets employees lease premium devices and reclaim that 40%. Paid from salary, covered by insurance. I designed it end to end: employee app, HR dashboard, lessor portal, seller portal. From a blank canvas.
+              SmartEPP lets employees lease premium devices and reclaim that 40%. Paid via monthly Salary EMIs, covered by insurance. I designed it end to end: employee app, HR dashboard, lessor portal, seller portal. From a blank canvas.
             </motion.p>
 
             {/* Pills */}
