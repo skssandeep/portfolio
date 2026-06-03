@@ -704,7 +704,7 @@ export const SmartEPPCaseStudy = () => {
                 What drove user anxiety.
               </h2>
               <p style={{ fontSize: '17px', color: '#888', lineHeight: 1.6, margin: 0 }}>
-                26 sessions revealed a central tension: Employees wanted consumer-app simplicity, but the product possessed B2B complexity. We had to build an interface that was <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>simple on the surface, detailed on demand.</strong>
+                26 user sessions revealed a core tension: B2B complexity vs. consumer simplicity. The interface had to be <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>simple on the surface, detailed on demand.</strong>
               </p>
             </div>
 
