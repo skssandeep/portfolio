@@ -1438,8 +1438,6 @@ export const SmartEPPCaseStudy = () => {
                   </div>
                 )}
               </motion.div>
-            </div>
-
             {/* Bottom 3 cards Divider */}
             <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '80px' }} />
 {/* Bottom 3 cards: Design System / Accessibility / Edge Cases */}
@@ -1475,8 +1473,6 @@ export const SmartEPPCaseStudy = () => {
               </div>
 
             </div>
-
-          </motion.div>
         </div>
       </section>
 
