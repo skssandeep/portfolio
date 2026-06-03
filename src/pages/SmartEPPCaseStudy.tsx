@@ -1112,7 +1112,7 @@ export const SmartEPPCaseStudy = () => {
               {activePortalTab === 'employee' && (
                 <div>
                   {/* Grid/Carousel Toggle */}
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px', paddingRight: '12px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
                     <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', padding: '6px' }}>
                       <button 
                         onClick={() => setIsGridView(false)}
