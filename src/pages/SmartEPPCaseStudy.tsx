@@ -522,51 +522,63 @@ export const SmartEPPCaseStudy = () => {
             {[
               { type: 'stat', label: 'MY ROLE', value: 'UX Designer', subtext: 'Solo designer' },
               { type: 'stat', label: 'I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
-              { type: 'cta' },
               { type: 'stat', label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
               { type: 'stat', label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types' },
-
+              { type: 'cta', label: 'FAST TRACK' },
             ].map((stat: any, i) => (
               stat.type === 'cta' ? (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '10px' }}>
-                  <button
-                    onClick={() => {
-                      const el = document.getElementById('final-designs');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    style={{
-                      width: '90px',
-                      height: '90px',
-                      borderRadius: '50%',
-                      background: 'rgba(255,255,255,0.03)',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                      color: 'var(--semantic-success)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--semantic-success)';
-                      e.currentTarget.style.color = '#000';
-                      e.currentTarget.style.transform = 'scale(1.05)';
-                      e.currentTarget.style.boxShadow = '0 10px 30px rgba(16, 185, 129, 0.4)';
-                      e.currentTarget.style.border = '1px solid var(--semantic-success)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
-                      e.currentTarget.style.color = 'var(--semantic-success)';
-                      e.currentTarget.style.transform = 'scale(1)';
-                      e.currentTarget.style.boxShadow = 'none';
-                      e.currentTarget.style.border = '1px solid rgba(255,255,255,0.1)';
-                    }}
-                  >
-                    <ArrowDown size={24} />
-                    <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600, textAlign: 'center', lineHeight: 1.1 }}>Skip To<br/>Designs</span>
-                  </button>
+                <div 
+                  key={i} 
+                  style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    paddingTop: '20px',
+                    borderTop: '2px solid rgba(255,255,255,0.15)'
+                  }}
+                >
+                  <div style={{ color: 'var(--semantic-success)', fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>
+                    {stat.label}
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById('final-designs');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      style={{
+                        width: '72px',
+                        height: '72px',
+                        borderRadius: '50%',
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        color: 'var(--semantic-success)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '4px',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'var(--semantic-success)';
+                        e.currentTarget.style.color = '#000';
+                        e.currentTarget.style.transform = 'scale(1.05)';
+                        e.currentTarget.style.boxShadow = '0 10px 30px rgba(16, 185, 129, 0.4)';
+                        e.currentTarget.style.border = '1px solid var(--semantic-success)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
+                        e.currentTarget.style.color = 'var(--semantic-success)';
+                        e.currentTarget.style.transform = 'scale(1)';
+                        e.currentTarget.style.boxShadow = 'none';
+                        e.currentTarget.style.border = '1px solid rgba(255,255,255,0.1)';
+                      }}
+                    >
+                      <ArrowDown size={20} strokeWidth={2.5} />
+                      <span style={{ fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700, textAlign: 'center', lineHeight: 1.1 }}>Skip To<br/>Designs</span>
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <div 
