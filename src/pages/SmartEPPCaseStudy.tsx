@@ -603,7 +603,7 @@ export const SmartEPPCaseStudy = () => {
                   e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)';
                 }}
               >
-                <span style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.5px' }}>Skip to Final Designs</span>
+                <span style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.5px' }}>Scroll to final designs</span>
                 <div style={{
                   background: 'var(--semantic-success)',
                   color: '#000',
