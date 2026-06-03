@@ -698,64 +698,64 @@ export const SmartEPPCaseStudy = () => {
               Research
             </div>
 
-            {/* Heading */}
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', maxWidth: '900px', margin: '0 0 24px 0' }}>
-              What users needed, and what made them anxious.
-            </h2>
-            <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.7, maxWidth: '600px', margin: '0 0 56px 0' }}>
-              26 sessions across all 4 user types. No screens designed until research was done.
-            </p>
-
-            {/* Stat Cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5" style={{ marginBottom: '48px' }}>
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ fontSize: '52px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>73%</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0', flex: 1 }}>couldn't explain the "40% saving" after reading competitor copy.</p>
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--semantic-warning)', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ No personal number → no decision. The calculator was the trust mechanism.</p>
-                </div>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ fontSize: '52px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>8/12</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0', flex: 1 }}>flagged 'salary EMIs' as their top anxiety. What if I leave? What if it breaks?</p>
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--semantic-warning)', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ Answers needed in-context, not buried in an FAQ.</p>
-                </div>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ fontSize: '52px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>6/8</div>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: '0 0 20px 0', flex: 1 }}>HR managers: approvals only scale under 30 seconds per request.</p>
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--semantic-warning)', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>→ One row: eligibility, device, cost, tenure. No tab-switching.</p>
-                </div>
-              </motion.div>
+            {/* Heading & Central Tension */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', margin: 0 }}>
+                What drove user anxiety.
+              </h2>
+              <p style={{ fontSize: '17px', color: '#888', lineHeight: 1.6, margin: 0 }}>
+                26 sessions revealed a central tension: Employees wanted consumer-app simplicity, but the product possessed B2B complexity. We had to build an interface that was <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>simple on the surface, detailed on demand.</strong>
+              </p>
             </div>
 
-            {/* Quotes */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
-              <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(var(--semantic-warning-rgb),0.35)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 16px 0', fontStyle: 'italic' }}>"I need to see exactly how much I'll save before I commit. Not a percentage. Actual rupees, based on my salary slab."</p>
-                <div style={{ fontSize: '12px', color: '#888', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>Software Engineer, 4 years experience, Bengaluru</div>
+            {/* Unified 3-Column Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+              
+              {/* Card 1: Employee Confusion */}
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '24px' }}>
+                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>73%</div>
+                  <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>couldn't calculate their actual savings.</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
+                  <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I need actual rupees based on my salary, not a generic percentage."</p>
+                </div>
+                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
+                  <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Personalized calculator. Math must be immediate.</p>
+                </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(var(--semantic-warning-rgb),0.35)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.7, margin: '0 0 16px 0', fontStyle: 'italic' }}>"If I'm approving 50 requests a week, I need the right information at a glance. I can't open 50 individual profiles to check eligibility."</p>
-                <div style={{ fontSize: '12px', color: '#888', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>HR Manager, 1,200-person IT company, Pune</div>
+              {/* Card 2: Employee Anxiety */}
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '24px' }}>
+                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>8/12</div>
+                  <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>flagged salary EMIs as their top fear.</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
+                  <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"What if I leave the company? What if the device breaks?"</p>
+                </div>
+                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
+                  <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>In-context trust signals. No hidden FAQs.</p>
+                </div>
               </motion.div>
-            </div>
 
-            {/* Insights */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>The central tension</div>
-                <p style={{ fontSize: '15px', color: '#777', lineHeight: 1.8, margin: 0 }}>Employees wanted simplicity. The product had real complexity: tax slabs, GST credits, lease terms. The design had to be <em style={{ color: '#e5e5e5', fontStyle: 'normal' }}>simple on the surface, detailed on demand.</em></p>
-              </div>
-              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>What I missed</div>
-                <p style={{ fontSize: '15px', color: '#777', lineHeight: 1.8, margin: 0 }}>My sample was all first-time users, likely inflating confusion signals. Post-launch, power users (engineering bands) wanted raw tax breakdowns. Took two more iterations to serve them well.</p>
-              </div>
+              {/* Card 3: HR Friction */}
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '24px' }}>
+                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>&lt;30s</div>
+                  <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>required per HR approval to survive at scale.</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
+                  <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I can't open 50 profiles a week to check eligibility."</p>
+                </div>
+                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
+                  <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Single-row approval dashboard. Zero tab-switching.</p>
+                </div>
+              </motion.div>
+
             </div>
 
           </motion.div>
