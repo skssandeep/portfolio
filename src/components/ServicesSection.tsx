@@ -52,7 +52,7 @@ export const ServicesSection = () => {
           
           {/* Service 01 */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '48px', alignItems: 'start', marginBottom: '32px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '48px', alignItems: 'start', marginBottom: '32px' }}>
               <h3 className="text-title" style={{ fontSize: '40px', margin: 0, fontWeight: 700, display: 'flex', gap: '12px' }}>
                 <span style={{ color: 'var(--accent-color)' }}>01.</span> <span style={{ color: '#ffffff' }}>Visual Design</span>
               </h3>
@@ -93,7 +93,7 @@ export const ServicesSection = () => {
 
           {/* Service 02 */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '48px', alignItems: 'start', marginBottom: '32px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '48px', alignItems: 'start', marginBottom: '32px' }}>
               <h3 className="text-title" style={{ fontSize: '40px', margin: 0, fontWeight: 700, display: 'flex', gap: '12px' }}>
                 <span style={{ color: 'var(--accent-color)' }}>02.</span> <span style={{ color: '#ffffff' }}>Framer Development</span>
               </h3>

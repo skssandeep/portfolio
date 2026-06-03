@@ -56,7 +56,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
   return (
     <div ref={ref} className="case-study-row" style={{
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))',
       gap: '80px',
       alignItems: 'center',
       width: '100%',

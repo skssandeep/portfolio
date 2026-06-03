@@ -41,7 +41,7 @@ export const CaseStudiesSection = () => {
         {/* CSS Grid for Case Studies */}
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', 
           gap: '32px' 
         }}>
           {caseStudies.map((study) => (
