@@ -522,63 +522,57 @@ export const SmartEPPCaseStudy = () => {
             {[
               { type: 'stat', label: 'MY ROLE', value: 'UX Designer', subtext: 'Solo designer' },
               { type: 'stat', label: 'I WORKED WITH', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
+              { type: 'cta' },
               { type: 'stat', label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
               { type: 'stat', label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types' },
-              { type: 'cta', label: 'FAST TRACK' },
             ].map((stat: any, i) => (
               stat.type === 'cta' ? (
                 <div 
                   key={i} 
                   style={{ 
                     display: 'flex', 
-                    flexDirection: 'column',
-                    paddingTop: '20px',
-                    borderTop: '2px solid rgba(255,255,255,0.15)'
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: '100%'
                   }}
                 >
-                  <div style={{ color: 'var(--semantic-success)', fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>
-                    {stat.label}
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <button
-                      onClick={() => {
-                        const el = document.getElementById('final-designs');
-                        if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                      style={{
-                        width: '72px',
-                        height: '72px',
-                        borderRadius: '50%',
-                        background: 'rgba(255,255,255,0.03)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        color: 'var(--semantic-success)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '4px',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'var(--semantic-success)';
-                        e.currentTarget.style.color = '#000';
-                        e.currentTarget.style.transform = 'scale(1.05)';
-                        e.currentTarget.style.boxShadow = '0 10px 30px rgba(16, 185, 129, 0.4)';
-                        e.currentTarget.style.border = '1px solid var(--semantic-success)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
-                        e.currentTarget.style.color = 'var(--semantic-success)';
-                        e.currentTarget.style.transform = 'scale(1)';
-                        e.currentTarget.style.boxShadow = 'none';
-                        e.currentTarget.style.border = '1px solid rgba(255,255,255,0.1)';
-                      }}
-                    >
-                      <ArrowDown size={20} strokeWidth={2.5} />
-                      <span style={{ fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700, textAlign: 'center', lineHeight: 1.1 }}>Skip To<br/>Designs</span>
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('final-designs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    style={{
+                      width: '88px',
+                      height: '88px',
+                      borderRadius: '50%',
+                      background: 'radial-gradient(145deg, rgba(30,30,30,1) 0%, rgba(10,10,10,1) 100%)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      color: 'var(--semantic-success)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '4px',
+                      cursor: 'pointer',
+                      transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.8), inset 0 2px 0 rgba(255,255,255,0.1)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-6px) scale(1.05)';
+                      e.currentTarget.style.boxShadow = '0 30px 60px rgba(16, 185, 129, 0.25), inset 0 2px 0 rgba(255,255,255,0.2)';
+                      e.currentTarget.style.border = '1px solid rgba(16, 185, 129, 0.5)';
+                      e.currentTarget.style.background = 'radial-gradient(145deg, rgba(40,40,40,1) 0%, rgba(15,15,15,1) 100%)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                      e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.8), inset 0 2px 0 rgba(255,255,255,0.1)';
+                      e.currentTarget.style.border = '1px solid rgba(255,255,255,0.08)';
+                      e.currentTarget.style.background = 'radial-gradient(145deg, rgba(30,30,30,1) 0%, rgba(10,10,10,1) 100%)';
+                    }}
+                  >
+                    <ArrowDown size={22} strokeWidth={2.5} />
+                    <span style={{ fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 800, textAlign: 'center', lineHeight: 1.2, marginTop: '2px', opacity: 0.9 }}>Skip To<br/>Designs</span>
+                  </button>
                 </div>
               ) : (
                 <div 
