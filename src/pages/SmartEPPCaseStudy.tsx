@@ -1439,13 +1439,14 @@ export const SmartEPPCaseStudy = () => {
                 )}
               </motion.div>
 
-            {/* System Foundations Block */}
-            <div style={{ marginTop: '100px' }}>
-              <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '12px', letterSpacing: '-0.01em' }}>System Foundations</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '15px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
-                  The underlying architecture and principles powering all four platforms.
-                </p>
+            {/* System Foundations Block - Integrated as Appendix */}
+            <div style={{ marginTop: '40px', paddingBottom: '40px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+                <div style={{ height: '1px', flex: 1, background: 'linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.05))' }} />
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '100px', padding: '6px 14px' }}>
+                  <span style={{ fontSize: '11px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '1px', textTransform: 'uppercase' }}>System Foundations</span>
+                </div>
+                <div style={{ height: '1px', flex: 1, background: 'linear-gradient(270deg, rgba(255,255,255,0), rgba(255,255,255,0.05))' }} />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
