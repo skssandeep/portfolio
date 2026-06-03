@@ -1462,7 +1462,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
 
                 {/* Card 1: Design System */}
-                <div className="md:col-span-2 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Design System</div>
                   <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Portals.</h4>
                   <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
@@ -1480,8 +1480,8 @@ export const SmartEPPCaseStudy = () => {
                 </div>
 
                 {/* Card 3: Edge Cases Designed */}
-                <div className="md:col-span-2 flex flex-col xl:flex-row gap-8 items-start xl:items-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                  <div style={{ flex: 1 }}>
+                <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                  <div className="flex flex-col justify-center">
                     <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Edge Cases Designed</div>
                     <h4 style={{ fontSize: '24px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Zero Dead Ends.</h4>
                     <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
@@ -1489,20 +1489,18 @@ export const SmartEPPCaseStudy = () => {
                     </p>
                   </div>
                   
-                  <div className="flex flex-col sm:flex-row gap-4" style={{ flex: 1.5 }}>
-                    <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)' }}>
-                      <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-error)' }} /> HR Rejections
-                      </div>
-                      <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.5, margin: 0 }}>Clear feedback & instant next steps.</p>
+                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-error)' }} /> HR Rejections
                     </div>
-                    
-                    <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)' }}>
-                      <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} /> Out of Stock
-                      </div>
-                      <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.5, margin: 0 }}>Smart alternatives. No blank screens.</p>
+                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.5, margin: 0 }}>Clear feedback & instant next steps.</p>
+                  </div>
+                  
+                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} /> Out of Stock
                     </div>
+                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.5, margin: 0 }}>Smart alternatives. No blank screens.</p>
                   </div>
                 </div>
               </div>
