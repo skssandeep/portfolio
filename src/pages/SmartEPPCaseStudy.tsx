@@ -1440,6 +1440,9 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
             {/* System Foundations Block - Integrated as Appendix */}
+        </div>
+
+        <div className="container">
             {/* System Foundations Block - Integrated as Appendix */}
             <div style={{ marginTop: '40px', paddingBottom: '40px', maxWidth: '100%', margin: '0 auto' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
