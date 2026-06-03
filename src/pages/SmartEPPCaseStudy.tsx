@@ -937,81 +937,81 @@ export const SmartEPPCaseStudy = () => {
               ))}
             </div>
 
-            {/* Bridge */}
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '40px', marginBottom: '28px' }}>
-              <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#e5e5e5', margin: 0, letterSpacing: '-0.01em' }}>
-                Three directions explored. One chosen. Two killed with data.
-              </h3>
-            </div>
+            {/* Design Exploration - Asymmetrical Split */}
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '80px', marginBottom: '80px' }}>
+              <div style={{ marginBottom: '48px' }}>
+                <h3 style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', fontWeight: 700, color: '#fff', margin: '0 0 16px 0', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>
+                  The Winning Formula: 2.4x Higher Conversion
+                </h3>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '800px', fontFamily: 'var(--font-system)' }}>
+                  Users didn't want a "minimal" interface. They wanted <strong style={{ color: '#fff' }}>proof</strong>. By embedding a real-time savings calculator directly into the product page, we built immediate trust.
+                </p>
+              </div>
 
-            {/* Direction cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '32px' }}>
-
-              {/* Direction A: REJECTED */}
-              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '24px', opacity: 0.75 }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 10px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px', marginBottom: '20px' }}>
-                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Rejected</span>
-                </div>
-                {/* Wireframe: Minimal PDP */}
-                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '16px', marginBottom: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '8px', height: '72px' }} />
-                  <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '4px', height: '10px', width: '70%' }} />
-                  <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '4px', height: '8px', width: '40%' }} />
-                  <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '6px', height: '32px', marginTop: '8px' }} />
-                </div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#aaa', margin: '0 0 8px 0' }}>Direction A: Minimal PDP</div>
-                <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.6, margin: 0 }}>Image, name, price, one CTA. Clean and fast. Rejected: 28% conversion vs 68%. Without a savings number, a monthly salary EMI felt like a leap of faith.</p>
-              </motion.div>
-
-              {/* Direction B: CHOSEN */}
-              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(var(--semantic-success-rgb),0.04)', border: '1px solid rgba(var(--semantic-success-rgb),0.3)', borderRadius: '20px', padding: '24px' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 10px', background: 'var(--semantic-success)', borderRadius: '100px', marginBottom: '20px' }}>
-                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#fff', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Chosen</span>
-                </div>
-                {/* Wireframe: Contextual Detail */}
-                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '16px', marginBottom: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '8px', height: '44px' }} />
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                      <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '3px', height: '7px' }} />
-                      <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '3px', height: '7px', width: '80%' }} />
-                      <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '3px', height: '7px', width: '60%' }} />
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                {/* The Winner (Left Side) */}
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2" style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '24px', padding: '48px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                  
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '24px' }}>
+                    <div>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', background: 'var(--semantic-success)', borderRadius: '100px', marginBottom: '16px' }}>
+                        <span style={{ fontSize: '11px', fontWeight: 700, color: '#fff', letterSpacing: '1px', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>The Winner</span>
+                      </div>
+                      <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Contextual Detail</h4>
+                      <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '400px', fontFamily: 'var(--font-system)' }}>
+                        Savings calculator, inline comparison, and protection summary built into one scrollable PDP. Completeness built confidence.
+                      </p>
                     </div>
-                    <div style={{ background: 'rgba(var(--semantic-success-rgb),0.15)', border: '1px solid rgba(var(--semantic-success-rgb),0.2)', borderRadius: '6px', height: '42px' }} />
+                    
+                    <div style={{ textAlign: 'right' }}>
+                      <div style={{ fontSize: '48px', fontWeight: 700, color: 'var(--semantic-success)', lineHeight: 1, fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>68%</div>
+                      <div style={{ fontSize: '13px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)', marginTop: '4px' }}>Conversion Rate</div>
+                    </div>
                   </div>
-                  <div style={{ background: 'rgba(var(--semantic-success-rgb),0.25)', borderRadius: '6px', height: '28px', marginTop: '4px' }} />
-                </div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#e5e5e5', margin: '0 0 8px 0' }}>Direction B: Contextual Detail</div>
-                <p style={{ fontSize: '13px', color: '#888', lineHeight: 1.6, margin: 0 }}>Savings calculator, inline comparison, protection summary: one scrollable PDP. Chosen: 2.4× the conversion of Direction A. Completeness built confidence.</p>
-              </motion.div>
 
-              {/* Direction C: REJECTED */}
-              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '24px', opacity: 0.75 }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 10px', background: 'rgba(255,255,255,0.05)', borderRadius: '100px', marginBottom: '20px' }}>
-                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '1.5px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Rejected</span>
-                </div>
-                {/* Wireframe: Guided Wizard */}
-                <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '16px', marginBottom: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div style={{ display: 'flex', gap: '5px', justifyContent: 'center' }}>
-                    {[1,2,3,4,5].map(s => <div key={s} style={{ width: '20px', height: '4px', borderRadius: '2px', background: s === 1 ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.07)' }} />)}
+                  {/* Wireframe: Contextual Detail */}
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '16px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                    <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '12px', height: '60px' }} />
+                    <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '12px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '6px', height: '12px', width: '90%' }} />
+                        <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '6px', height: '12px', width: '70%' }} />
+                        <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '6px', height: '12px', width: '50%' }} />
+                      </div>
+                      <div style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.05))', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '8px', height: '60px' }} />
+                    </div>
+                    <div style={{ background: 'rgba(16, 185, 129, 0.15)', borderRadius: '8px', height: '40px', marginTop: '8px' }} />
                   </div>
-                  <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '6px', height: '28px', width: '75%', margin: '0 auto' }} />
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                    {[1,2,3].map(o => <div key={o} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '6px', height: '22px' }} />)}
-                  </div>
-                  <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '6px', height: '28px', width: '50%', margin: '0 auto' }} />
+                </motion.div>
+
+                {/* The Losers (Right Side) */}
+                <div className="lg:col-span-1" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  
+                  <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#777', fontSize: '10px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-system)' }}>
+                      <XCircle size={14} strokeWidth={2.5} /> Rejected Concept
+                    </div>
+                    <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Minimal PDP</h4>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>28% <span style={{ fontSize: '14px', color: '#777', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Conversion</span></div>
+                    <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                      Too bare. Without seeing exact savings upfront, users wouldn't convert. A monthly salary EMI felt like a leap of faith.
+                    </p>
+                  </motion.div>
+
+                  <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#777', fontSize: '10px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-system)' }}>
+                      <XCircle size={14} strokeWidth={2.5} /> Rejected Concept
+                    </div>
+                    <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Guided Wizard</h4>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>44% <span style={{ fontSize: '14px', color: '#777', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Drop-off</span></div>
+                    <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                      Too much friction. People want to browse before they configure. Abandoned at step 1.
+                    </p>
+                  </motion.div>
+
                 </div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#aaa', margin: '0 0 8px 0' }}>Direction C: Guided Wizard</div>
-                <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.6, margin: 0 }}>Tax slab → storage → colour → savings → CTA. Rejected: 44% abandoned at step 1. People want to browse before they configure.</p>
-              </motion.div>
-
-            </div>
-
-            {/* Low-fidelity process note */}
-            <div style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: '28px' }}>
-              <p style={{ fontSize: '13px', color: '#444', lineHeight: 1.75, margin: 0, fontFamily: 'var(--font-mono)' }}>
-                <span style={{ color: '#666' }}>Low-fidelity process:</span> All three tested as paper prototypes before any pixel work. Direction A was cut before a single hi-fi frame. 5 of 6 testers abandoned it before the CTA.
-              </p>
+              </div>
             </div>
 
           </motion.div>
