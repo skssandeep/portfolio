@@ -376,39 +376,6 @@ export const SmartEPPCaseStudy = () => {
             <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1rem, 1.5vw, 1.3rem)', color: '#a3a3a3', maxWidth: '600px', margin: '32px auto 0 auto', lineHeight: 1.6, fontWeight: 400 }}>
               Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
             </p>
-            <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
-              <button 
-                onClick={() => {
-                  const el = document.getElementById('final-designs');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                style={{ 
-                  background: 'var(--accent-color)', 
-                  color: '#fff', 
-                  border: '1px solid rgba(229, 9, 20, 0.5)', 
-                  padding: '14px 32px', 
-                  borderRadius: '100px', 
-                  fontSize: '15px', 
-                  fontWeight: 600, 
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  boxShadow: '0 8px 20px rgba(229, 9, 20, 0.25)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(229, 9, 20, 0.35)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(229, 9, 20, 0.25)';
-                }}
-              >
-                Jump to Final Solution
-              </button>
-            </div>
           </div>
         </div>
 
@@ -514,6 +481,47 @@ export const SmartEPPCaseStudy = () => {
                   {tag}
                 </div>
               ))}
+            </motion.div>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              style={{ marginTop: '32px' }}
+            >
+              <button 
+                onClick={() => {
+                  const el = document.getElementById('final-designs');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                style={{ 
+                  background: 'var(--semantic-success)', 
+                  color: '#000', 
+                  border: 'none', 
+                  padding: '14px 32px', 
+                  borderRadius: '100px', 
+                  fontSize: '15px', 
+                  fontWeight: 700, 
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  boxShadow: '0 8px 20px rgba(16, 185, 129, 0.25)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(16, 185, 129, 0.35)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(16, 185, 129, 0.25)';
+                }}
+              >
+                Jump to Final Solution
+              </button>
             </motion.div>
           </div>
 
