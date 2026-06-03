@@ -701,10 +701,10 @@ export const SmartEPPCaseStudy = () => {
             {/* Heading & Central Tension */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
               <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', margin: 0 }}>
-                What drove user anxiety.
+                Validating the prototype.
               </h2>
               <p style={{ fontSize: '17px', color: '#888', lineHeight: 1.6, margin: 0 }}>
-                26 user sessions revealed a core tension: B2B complexity vs. consumer simplicity. The interface had to be <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>simple on the surface, detailed on demand.</strong>
+                26 early prototype testing sessions revealed a core tension: B2B complexity vs. consumer simplicity. The interface had to be <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>simple on the surface, detailed on demand.</strong>
               </p>
             </div>
 
@@ -715,7 +715,7 @@ export const SmartEPPCaseStudy = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>73%</div>
-                  <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>couldn't calculate their actual savings.</div>
+                  <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>failed to calculate their savings using the initial concept.</div>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
                   <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I need actual rupees based on my salary, not a generic percentage."</p>
