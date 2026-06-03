@@ -141,10 +141,15 @@ export const SmartEPPCaseStudy = () => {
   ];
 
   const ecosystemImages = [
-    "/images/EPP - 01.jpg",
-    "/images/EPP - 02.jpg",
-    "/images/EPP - 03.jpg",
-    "/images/EPP - 04.jpg"
+    "/images/EPP_CaseStudy_01.png",
+    "/images/EPP_CaseStudy_02.png",
+    "/images/EPP_CaseStudy_03.png",
+    "/images/EPP_CaseStudy_04.png",
+    "/images/EPP_CaseStudy_05.png",
+    "/images/EPP_CaseStudy_06.png",
+    "/images/EPP_CaseStudy_07.png",
+    "/images/EPP_CaseStudy_08.png",
+    "/images/EPP_CaseStudy_09.png"
   ];
 
   // Drag-to-scroll logic
@@ -1149,6 +1154,10 @@ export const SmartEPPCaseStudy = () => {
                     objectFit: 'contain',
                     flexShrink: 0, 
                     scrollSnapAlign: isGridView ? 'none' : 'center', 
+                    borderRadius: '24px', 
+                    border: '1px solid rgba(255,255,255,0.05)', 
+                    boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
+                    background: '#0a0a0a',
                     pointerEvents: 'auto',
                     cursor: 'pointer',
                     userSelect: 'none',
