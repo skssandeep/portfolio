@@ -141,15 +141,10 @@ export const SmartEPPCaseStudy = () => {
   ];
 
   const ecosystemImages = [
-    "/images/EPP_CaseStudy_01.png",
-    "/images/EPP_CaseStudy_02.png",
-    "/images/EPP_CaseStudy_03.png",
-    "/images/EPP_CaseStudy_04.png",
-    "/images/EPP_CaseStudy_05.png",
-    "/images/EPP_CaseStudy_06.png",
-    "/images/EPP_CaseStudy_07.png",
-    "/images/EPP_CaseStudy_08.png",
-    "/images/EPP_CaseStudy_09.png"
+    "/images/EPP - 01.jpg",
+    "/images/EPP - 02.jpg",
+    "/images/EPP - 03.jpg",
+    "/images/EPP - 04.jpg"
   ];
 
   // Drag-to-scroll logic
@@ -1059,94 +1054,127 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* 05. Final Solution: The product, screen by screen */}
+      {/* 05. Final Solution: The Visual Ecosystem */}
       <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
-
-            {/* Section header */}
-            <div style={{ marginBottom: '64px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>05: Final Solution</span>
-              </div>
-              <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.03em', margin: 0 }}>
-                The product, screen by screen.
-              </h2>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+              Final Design
             </div>
-
-            {/* Screens 01-02: Employee App */}
-            <div style={{ marginBottom: '80px' }}>
-              <div style={{ fontSize: '11px', color: '#555', fontFamily: 'var(--font-mono)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
-                Screens 01-02: Employee App: Product Detail &amp; Tax Savings Calculator
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '56px', alignItems: 'center' }}>
-
-                {/* Two phone mockups */}
-                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-end', justifyContent: 'center' }}>
-                  <motion.img
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.05 }}
-                    src="/images/EPP_CaseStudy_02.png"
-                    alt="Employee App . Product Detail Page"
-                    style={{ width: '46%', borderRadius: '20px', boxShadow: '0 24px 48px rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.07)', objectFit: 'contain' }}
-                  />
-                  <motion.img
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.15 }}
-                    src="/images/EPP_CaseStudy_03.png"
-                    alt="Employee App . Tax Savings Calculator"
-                    style={{ width: '46%', borderRadius: '20px', boxShadow: '0 24px 48px rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.07)', objectFit: 'contain' }}
-                  />
-                </div>
-
-                {/* Annotations */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                  {[
-                    {
-                      n: '1',
-                      title: 'Comparison is built-in, not an afterthought.',
-                      body: 'Smart EPP vs E-Commerce sits on the PDP above the fold. Employees told us in research: savings only feel real when compared to something familiar. Amazon/Flipkart is the mental benchmark.',
-                    },
-                    {
-                      n: '2',
-                      title: 'Green checkmarks vs red X: a visual confrontation.',
-                      body: 'The benefits section uses green ✓ for Smart EPP advantages and an implicit contrast with "no benefit" in the comparison panel. Visual contrast does the persuasion work that text can\'t.',
-                    },
-                    {
-                      n: '3',
-                      title: 'The calculator is personalised by tax slab.',
-                      body: '₹38,257 is not an estimate: it\'s computed from the user\'s selected slab. Seeing it change when you tap a different slab makes the math feel real, not marketing.',
-                    },
-                    {
-                      n: '4',
-                      title: '"How does it work?" embedded in the calculator, not in an FAQ.',
-                      body: 'The 4-step explanation appears immediately after the savings number, when the employee is most motivated to understand. Placed in the FAQ, 90% of users would never read it.',
-                    },
-                  ].map((item) => (
-                    <motion.div
-                      key={item.n}
-                      initial={{ opacity: 0, x: 12 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}
-                    >
-                      <div style={{ flexShrink: 0, width: '28px', height: '28px', borderRadius: '50%', background: 'var(--semantic-success)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 700, color: '#fff', marginTop: '2px' }}>
-                        {item.n}
-                      </div>
-                      <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.7, margin: 0 }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>{item.title}</strong>{' '}{item.body}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-
+            <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Visual Ecosystem</h2>
+            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
+              A unified FinTech design language scaling from comprehensive admin dashboards down to the pocket-sized employee mobile purchasing experience.
+            </p>
+            
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+              <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', padding: '6px' }}>
+                <button 
+                  onClick={() => setIsGridView(false)}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: !isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: !isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '14px', fontWeight: 500 }}
+                >
+                  <Columns size={16} /> Carousel
+                </button>
+                <button 
+                  onClick={() => setIsGridView(true)}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '14px', fontWeight: 500 }}
+                >
+                  <LayoutGrid size={16} /> Grid View
+                </button>
               </div>
             </div>
+          </div>
+
+          {/* Ecosystem Showcase */}
+          <style>{`
+            .ecosystem-scroll::-webkit-scrollbar { display: none; }
+            .ecosystem-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+          `}</style>
+          
+          <div style={{ 
+            position: 'relative',
+            width: isGridView ? '100%' : '100vw',
+            marginLeft: isGridView ? '0' : 'calc(-50vw + 50%)',
+            marginBottom: '80px'
+          }}>
+            {/* Left Scroll Button */}
+            {!isGridView && canScrollLeft && (
+              <button 
+                onClick={() => handleCarouselScroll('left')}
+                style={{ position: 'absolute', left: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.9)'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
+              >
+                <ChevronLeft size={32} />
+              </button>
+            )}
+
+            <div 
+              className={!isGridView ? "ecosystem-scroll" : ""}
+              ref={!isGridView ? scrollRef : null}
+              onMouseDown={!isGridView ? handleMouseDown : undefined}
+              onMouseLeave={!isGridView ? handleMouseLeave : undefined}
+              onMouseUp={!isGridView ? handleMouseUp : undefined}
+              onMouseMove={!isGridView ? handleMouseMove : undefined}
+              onScroll={!isGridView ? checkScroll : undefined}
+              style={{ 
+                display: isGridView ? 'grid' : 'flex', 
+                gridTemplateColumns: isGridView ? 'repeat(auto-fit, minmax(280px, 1fr))' : undefined,
+                gap: isGridView ? '32px' : '48px',
+                overflowX: isGridView ? 'visible' : 'auto',
+                scrollSnapType: isGridView ? 'none' : (isDragging ? 'none' : 'x mandatory'),
+                padding: isGridView ? '0' : '60px 10vw',
+                width: '100%',
+                alignItems: isGridView ? 'start' : 'center',
+                cursor: isGridView ? 'default' : (isDragging ? 'grabbing' : 'pointer')
+            }}>
+              {ecosystemImages.map((src, idx) => (
+                <motion.img 
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }} 
+                  whileInView={{ opacity: 1, y: 0 }} 
+                  viewport={{ once: true, margin: "0px" }} 
+                  transition={{ delay: (idx % 3) * 0.15, duration: 0.6 }} 
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  onClick={() => {
+                    if (!hasDragged.current) {
+                      setModalImages(ecosystemImages);
+                      setModalIndex(idx);
+                    }
+                  }}
+                  src={src} 
+                  alt={`Smart EPP Screen ${idx + 1}`} 
+                  draggable={false}
+                  style={{ 
+                    height: isGridView ? 'auto' : '640px', 
+                    width: isGridView ? '100%' : 'auto', 
+                    objectFit: 'contain',
+                    flexShrink: 0, 
+                    scrollSnapAlign: isGridView ? 'none' : 'center', 
+                    borderRadius: '24px', 
+                    border: '1px solid rgba(255,255,255,0.05)', 
+                    boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
+                    background: '#0a0a0a',
+                    pointerEvents: 'auto',
+                    cursor: 'pointer',
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none'
+                  }} 
+                />
+              ))}
+            </div>
+
+            {/* Right Scroll Button */}
+            {!isGridView && canScrollRight && (
+              <button 
+                onClick={() => handleCarouselScroll('right')}
+                style={{ position: 'absolute', right: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.9)'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
+              >
+                <ChevronRight size={32} />
+              </button>
+            )}
+          </div>
 
             {/* Divider */}
             <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', marginBottom: '80px' }} />
@@ -1799,127 +1827,9 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* 10. Final Design w prototype (The Visual Ecosystem + Component) */}
+      {/* 10. Final Design w prototype (Live Verification Prototype) */}
       <section style={{ padding: '120px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
-              Final Design
-            </div>
-            <h2 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Visual Ecosystem</h2>
-            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
-              A unified FinTech design language scaling from comprehensive admin dashboards down to the pocket-sized employee mobile purchasing experience.
-            </p>
-            
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
-              <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', padding: '6px' }}>
-                <button 
-                  onClick={() => setIsGridView(false)}
-                  style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: !isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: !isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '14px', fontWeight: 500 }}
-                >
-                  <Columns size={16} /> Carousel
-                </button>
-                <button 
-                  onClick={() => setIsGridView(true)}
-                  style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '14px', fontWeight: 500 }}
-                >
-                  <LayoutGrid size={16} /> Grid View
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Ecosystem Showcase */}
-          <style>{`
-            .ecosystem-scroll::-webkit-scrollbar { display: none; }
-            .ecosystem-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-          `}</style>
-          
-          <div style={{ 
-            position: 'relative',
-            width: isGridView ? '100%' : '100vw',
-            marginLeft: isGridView ? '0' : 'calc(-50vw + 50%)',
-            marginBottom: '80px'
-          }}>
-            {/* Left Scroll Button */}
-            {!isGridView && canScrollLeft && (
-              <button 
-                onClick={() => handleCarouselScroll('left')}
-                style={{ position: 'absolute', left: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
-                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.9)'}
-                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
-              >
-                <ChevronLeft size={32} />
-              </button>
-            )}
-
-            <div 
-              className={!isGridView ? "ecosystem-scroll" : ""}
-              ref={!isGridView ? scrollRef : null}
-              onMouseDown={!isGridView ? handleMouseDown : undefined}
-              onMouseLeave={!isGridView ? handleMouseLeave : undefined}
-              onMouseUp={!isGridView ? handleMouseUp : undefined}
-              onMouseMove={!isGridView ? handleMouseMove : undefined}
-              onScroll={!isGridView ? checkScroll : undefined}
-              style={{ 
-                display: isGridView ? 'grid' : 'flex', 
-                gridTemplateColumns: isGridView ? 'repeat(auto-fit, minmax(280px, 1fr))' : undefined,
-                gap: isGridView ? '32px' : '48px',
-                overflowX: isGridView ? 'visible' : 'auto',
-                scrollSnapType: isGridView ? 'none' : (isDragging ? 'none' : 'x mandatory'),
-                padding: isGridView ? '0' : '60px 10vw',
-                width: '100%',
-                alignItems: isGridView ? 'start' : 'center',
-                cursor: isGridView ? 'default' : (isDragging ? 'grabbing' : 'pointer')
-            }}>
-              {ecosystemImages.map((src, idx) => (
-                <motion.img 
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }} 
-                  whileInView={{ opacity: 1, y: 0 }} 
-                  viewport={{ once: true, margin: "0px" }} 
-                  transition={{ delay: (idx % 3) * 0.15, duration: 0.6 }} 
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  onClick={() => {
-                    if (!hasDragged.current) {
-                      setModalImages(ecosystemImages);
-                      setModalIndex(idx);
-                    }
-                  }}
-                  src={src} 
-                  alt={`Smart EPP Screen ${idx + 1}`} 
-                  draggable={false}
-                  style={{ 
-                    height: isGridView ? 'auto' : '640px', 
-                    width: isGridView ? '100%' : 'auto', 
-                    objectFit: 'contain',
-                    flexShrink: 0, 
-                    scrollSnapAlign: isGridView ? 'none' : 'center', 
-                    borderRadius: '24px', 
-                    border: '1px solid rgba(255,255,255,0.05)', 
-                    boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
-                    background: '#0a0a0a',
-                    pointerEvents: 'auto',
-                    cursor: 'pointer',
-                    userSelect: 'none',
-                    WebkitUserSelect: 'none'
-                  }} 
-                />
-              ))}
-            </div>
-
-            {/* Right Scroll Button */}
-            {!isGridView && canScrollRight && (
-              <button 
-                onClick={() => handleCarouselScroll('right')}
-                style={{ position: 'absolute', right: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
-                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.9)'}
-                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
-              >
-                <ChevronRight size={32} />
-              </button>
-            )}
-          </div>
 
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '-0.02em' }}>Live Verification Prototype</h2>
