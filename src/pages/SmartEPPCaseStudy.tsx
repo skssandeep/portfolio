@@ -630,6 +630,8 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
 
+            {/* Bridge: clean divider */}
+            <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.06)', margin: '64px 0 48px 0' }} />
 
             {/* Zone C: Challenges */}
             <div>
