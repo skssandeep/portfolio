@@ -228,9 +228,6 @@ export const Home = () => {
       {/* Sections and below */}
       {!figmaMode && (
         <>
-          {/* 1.5 Design System: Semantic Colors */}
-          <DesignSystemSection />
-
           {/* 2. Visual Proof: Gallery / Projects Carousel */}
           <ProjectsSection />
 
@@ -254,6 +251,9 @@ export const Home = () => {
 
           {/* 8. Objection Handling: FAQ */}
           <FAQ />
+
+          {/* 8.5 Design System: Semantic Colors */}
+          <DesignSystemSection />
 
           {/* 9. Close: Final CTA / Logo Reveal Section */}
           <LogoRevealOrbital2 />
