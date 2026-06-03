@@ -832,24 +832,24 @@ export const SmartEPPCaseStudy = () => {
               
               {/* The Trap */}
               <div style={{ background: 'rgba(var(--semantic-error-rgb),0.03)', border: '1px solid rgba(var(--semantic-error-rgb),0.15)', borderRadius: '24px', padding: '40px' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
                   <XCircle size={14} strokeWidth={2.5} />
                   The Trap
                 </div>
-                <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: '0 0 16px 0' }}>Building 4 isolated products.</h3>
-                <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: '0 0 16px 0', fontFamily: 'var(--font-heading)' }}>Building 4 isolated products.</h3>
+                <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Separate apps for the employee, HR, lessor, and seller. Different versions of the same object, compound inconsistency, and multiplied errors.
                 </p>
               </div>
 
               {/* The Unlock */}
-              <div style={{ background: 'rgba(var(--semantic-brand-rgb),0.05)', border: '1px solid rgba(var(--semantic-brand-rgb),0.3)', borderRadius: '24px', padding: '40px' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-brand)', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '24px' }}>
+              <div style={{ background: 'rgba(var(--semantic-success-rgb),0.05)', border: '1px solid rgba(var(--semantic-success-rgb),0.3)', borderRadius: '24px', padding: '40px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
                   <CheckCircle2 size={14} strokeWidth={2.5} />
                   The Unlock
                 </div>
-                <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: '0 0 16px 0' }}>Building 1 shared system.</h3>
-                <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: '0 0 16px 0', fontFamily: 'var(--font-heading)' }}>Building 1 shared system.</h3>
+                <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   One single operational engine. Each user type sees only their specific window into the truth, shielded from the backend complexity.
                 </p>
               </div>
@@ -858,7 +858,7 @@ export const SmartEPPCaseStudy = () => {
 
             {/* The ROI Callout */}
             <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px', textAlign: 'center', maxWidth: '800px', margin: '0 auto 64px auto' }}>
-              <p style={{ fontSize: '15px', color: '#e5e5e5', lineHeight: 1.6, margin: 0 }}>
+              <p style={{ fontSize: '15px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                 <strong style={{ color: 'var(--semantic-success)' }}>The Result:</strong> Designing the shared data model first cut design time by ~30% and completely eliminated cross-portal mapping errors.
               </p>
             </div>
@@ -870,10 +870,10 @@ export const SmartEPPCaseStudy = () => {
               viewport={{ once: true }}
               style={{ background: '#0a0d14', border: '1px solid rgba(var(--semantic-brand-rgb),0.2)', borderRadius: '24px', padding: '56px 40px', textAlign: 'center' }}
             >
-              <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-brand)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-mono)' }}>North Star / How Might We</div>
-              <p style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)', color: '#fff', lineHeight: 1.3, fontWeight: 700, margin: '0 auto', letterSpacing: '-0.01em', maxWidth: '900px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>North Star / How Might We</div>
+              <h3 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)', color: '#fff', lineHeight: 1.3, fontWeight: 700, margin: '0 auto', letterSpacing: '-0.01em', maxWidth: '900px', fontFamily: 'var(--font-heading)' }}>
                 How might we design <span style={{ color: 'var(--semantic-brand)' }}>one single source of truth</span> where four completely different user types see only the exact data they need to act?
-              </p>
+              </h3>
             </motion.div>
 
           </motion.div>
