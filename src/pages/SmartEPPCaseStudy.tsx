@@ -141,10 +141,15 @@ export const SmartEPPCaseStudy = () => {
   ];
 
   const ecosystemImages = [
-    "/images/EPP - 01.jpg",
-    "/images/EPP - 02.jpg",
-    "/images/EPP - 03.jpg",
-    "/images/EPP - 04.jpg"
+    "/images/EPP_CaseStudy_01.png",
+    "/images/EPP_CaseStudy_02.png",
+    "/images/EPP_CaseStudy_03.png",
+    "/images/EPP_CaseStudy_04.png",
+    "/images/EPP_CaseStudy_05.png",
+    "/images/EPP_CaseStudy_06.png",
+    "/images/EPP_CaseStudy_07.png",
+    "/images/EPP_CaseStudy_08.png",
+    "/images/EPP_CaseStudy_09.png"
   ];
 
   // Drag-to-scroll logic
