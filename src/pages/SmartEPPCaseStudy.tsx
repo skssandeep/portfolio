@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Layers, ArrowLeft, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase} from 'lucide-react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
 const SmartEPPPrototype = () => {
@@ -134,6 +134,15 @@ export const SmartEPPCaseStudy = () => {
   const [modalImages, setModalImages] = useState<string[]>([]);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
   const [showHeroPill, setShowHeroPill] = useState(true);
+  
+  const finalDesignsRef = useRef<HTMLElement>(null);
+  const isFinalDesignsInView = useInView(finalDesignsRef, { margin: "0px 0px -20% 0px" });
+
+  useEffect(() => {
+    if (isFinalDesignsInView) {
+      setShowHeroPill(false);
+    }
+  }, [isFinalDesignsInView]);
   
   const solutionImages = [
     "/images/EPP_CaseStudy_02.png",
@@ -1134,7 +1143,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 05. Final Solution: The Visual Ecosystem */}
-      <section id="final-designs" style={{ padding: '80px 0' }}>
+      <section id="final-designs" ref={finalDesignsRef} style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
