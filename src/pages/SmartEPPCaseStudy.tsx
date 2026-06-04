@@ -473,7 +473,7 @@ export const SmartEPPCaseStudy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              style={{ fontFamily: "'Jost', sans-serif", fontSize: '22px', color: '#a3a3a3', lineHeight: 1.6, marginBottom: '40px', maxWidth: '100%' }}
+              style={{ fontFamily: "'Jost', sans-serif", fontSize: '24px', color: '#a3a3a3', lineHeight: 1.6, marginBottom: '40px', maxWidth: '100%' }}
             >
               SmartEPP lets employees lease premium devices and reclaim that 40%. Paid via monthly Salary EMIs, covered by insurance. I designed all 4 platforms end to end, from a blank canvas.
             </motion.p>
