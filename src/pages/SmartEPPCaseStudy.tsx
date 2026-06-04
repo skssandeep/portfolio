@@ -718,7 +718,7 @@ export const SmartEPPCaseStudy = () => {
             <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.06)', margin: '64px 0 48px 0' }} />
 
             {/* Zone C: Challenges */}
-            <div>
+            <div style={{ fontFamily: "'Jost', sans-serif" }}>
               <h3 style={{ fontSize: '28px', fontWeight: 500, color: '#fff', margin: '0 0 40px 0' }}>
                 Why it was hard
               </h3>
