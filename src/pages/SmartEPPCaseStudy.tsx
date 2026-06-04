@@ -777,7 +777,7 @@ export const SmartEPPCaseStudy = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
             {/* Section Label */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '14px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
               <Search size={14} strokeWidth={2.5} />
               Research
             </div>
@@ -787,8 +787,8 @@ export const SmartEPPCaseStudy = () => {
               <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', margin: 0 }}>
                 Validating the prototype.
               </h2>
-              <p style={{ fontSize: '17px', color: '#888', lineHeight: 1.6, margin: 0 }}>
-                26 early prototype testing sessions revealed a core tension: B2B complexity vs. consumer simplicity. The interface had to be <strong style={{ color: '#e5e5e5', fontWeight: 600 }}>simple on the surface, detailed on demand.</strong>
+              <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                26 early prototype testing sessions revealed a core tension: B2B complexity vs. consumer simplicity. The interface had to be <strong style={{ color: '#fff', fontWeight: 600 }}>simple on the surface, detailed on demand.</strong>
               </p>
             </div>
 
@@ -797,17 +797,17 @@ export const SmartEPPCaseStudy = () => {
               
               {/* Card 1: Employee Confusion */}
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>73%</div>
-                  <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>failed to calculate their savings using the initial concept.</div>
+                  <div style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>failed to calculate their savings using the initial concept.</div>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
-                  <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I need actual rupees based on my salary, not a generic percentage."</p>
+                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I need actual rupees based on my salary, not a generic percentage."</p>
                 </div>
                 <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                   <div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
-                    <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Personalized calculator. Math must be immediate.</p>
+                    <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '4px' }}>The Fix</div>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Personalized calculator. Math must be immediate.</p>
                   </div>
                   <div 
                     onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
@@ -830,17 +830,17 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Card 2: Employee Anxiety */}
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>8/12</div>
-                  <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>flagged salary EMIs as their top fear.</div>
+                  <div style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>flagged salary EMIs as their top fear.</div>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
-                  <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"What if I leave the company? What if the device breaks?"</p>
+                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"What if I leave the company? What if the device breaks?"</p>
                 </div>
                 <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                   <div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
-                    <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>In-context trust signals. No hidden FAQs.</p>
+                    <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '4px' }}>The Fix</div>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>In-context trust signals. No hidden FAQs.</p>
                   </div>
                   <div 
                     onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
@@ -863,17 +863,17 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Card 3: HR Friction */}
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>&lt;30s</div>
-                  <div style={{ fontSize: '13px', color: '#777', lineHeight: 1.4, flex: 1 }}>required per HR approval to survive at scale.</div>
+                  <div style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>required per HR approval to survive at scale.</div>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
-                  <p style={{ fontSize: '14px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I can't open 50 profiles a week to check eligibility."</p>
+                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I can't open 50 profiles a week to check eligibility."</p>
                 </div>
                 <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                   <div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>The Fix</div>
-                    <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Single-row approval dashboard. Zero tab-switching.</p>
+                    <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '4px' }}>The Fix</div>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Single-row approval dashboard. Zero tab-switching.</p>
                   </div>
                   <div 
                     onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
