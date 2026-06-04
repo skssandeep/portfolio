@@ -462,7 +462,7 @@ export const SmartEPPCaseStudy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '32px', letterSpacing: '-0.02em' }}
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-0.02em' }}
             >
               Up to 40% of that phone is just tax. <span style={{ color: 'var(--semantic-success)', fontWeight: 500 }}>We built the system that gives it back.</span>
             </motion.h2>
@@ -473,7 +473,7 @@ export const SmartEPPCaseStudy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              style={{ fontFamily: "'Jost', sans-serif", fontSize: '24px', color: '#a3a3a3', lineHeight: 1.6, marginBottom: '40px', maxWidth: '100%' }}
+              style={{ fontFamily: "'Jost', sans-serif", fontSize: '24px', color: '#a3a3a3', lineHeight: 1.6, marginBottom: '32px', maxWidth: '100%' }}
             >
               SmartEPP lets employees lease premium devices and reclaim that 40%. Paid via monthly Salary EMIs, covered by insurance. I designed all 4 platforms end to end, from a blank canvas.
             </motion.p>
