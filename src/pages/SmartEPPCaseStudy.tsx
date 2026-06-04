@@ -655,10 +655,10 @@ export const SmartEPPCaseStudy = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
               {/* Narrative (Left) */}
               <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <p style={{ fontFamily: "'Spectral', serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 1.7, margin: 0, marginBottom: '24px' }}>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 1.7, margin: 0, marginBottom: '24px' }}>
                   OneAssist launched a new category: employee device leasing. Employees lease premium phones through work and save up to 40%, paid via monthly salary EMIs. The employer pays nothing and gains a zero-cost retention perk; OneAssist earns on the mandatory theft-and-damage protection bundled into every lease.
                 </p>
-                <p style={{ fontFamily: "'Spectral', serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 1.7, margin: 0 }}>
                   Why now: a 2023–24 tax change unlocked the savings. 30% income-tax relief plus 18% GST nets ~40% after financier interest.
                 </p>
               </div>
