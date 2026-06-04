@@ -729,28 +729,28 @@ export const SmartEPPCaseStudy = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
                 <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Abstract savings</div>
                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '6px', lineHeight: 1.3, margin: '0 0 6px 0' }}>Tax savings are abstract. Money feels real.</h4>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Employees don't think in slabs. They think "what do I actually save?" The math had to become one personal, immediate number.</p>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Employees don't think in slabs. They think "what do I actually save?" The math had to become one personal, immediate number.</p>
               </motion.div>
 
               {/* Challenge 2 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
                 <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>High-trust commitment</div>
                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>A monthly salary EMI is terrifying without trust signals.</h4>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Committing months of salary is a high-trust act. Without confidence at every step, people abandon at the product page.</p>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Committing months of salary is a high-trust act. Without confidence at every step, people abandon at the product page.</p>
               </motion.div>
 
               {/* Challenge 3 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
                 <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Scale without friction</div>
                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>HR needs to approve hundreds of requests in seconds.</h4>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Approvals at scale break without proper tooling. If approval is slow, HR simply stops using it.</p>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Approvals at scale break without proper tooling. If approval is slow, HR simply stops using it.</p>
               </motion.div>
 
               {/* Challenge 4 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
                 <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>No shared vocabulary</div>
                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>Four user types. One order. Four completely different meanings.</h4>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Employees think products. HR thinks policy. Lessors think risk. Sellers think fulfillment.</p>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Employees think products. HR thinks policy. Lessors think risk. Sellers think fulfillment.</p>
               </motion.div>
 
               {/* Challenge 5 - Full Width Hero Card */}
