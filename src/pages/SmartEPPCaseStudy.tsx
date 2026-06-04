@@ -990,7 +990,7 @@ export const SmartEPPCaseStudy = () => {
             <div style={{ display: 'grid', gridTemplateColumns: '55% 45%', gap: '48px', alignItems: 'end', marginBottom: '56px' }}>
               <div>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                  <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>04: Design Exploration</span>
+                  <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>04: Design Exploration</span>
                 </div>
                 <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
                   Principles, then pixels.
@@ -1147,7 +1147,7 @@ export const SmartEPPCaseStudy = () => {
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-              <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>05: Final Solution</span>
+              <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>05: Final Solution</span>
             </div>
             <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.03em', margin: 0 }}>
               The product, screen by screen.
@@ -1491,7 +1491,7 @@ export const SmartEPPCaseStudy = () => {
                             { id: '#ORD-8822', product: 'MacBook Pro 16" (M4)', shipping: 'Standard (3 Days)', status: 'Pack Order' }
                           ].map((row, i) => (
                             <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr 1fr', alignItems: 'center', padding: '16px 0', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-                              <div style={{ color: '#a3a3a3', fontSize: '13px', fontFamily: 'var(--font-mono)' }}>{row.id}</div>
+                              <div style={{ color: '#a3a3a3', fontSize: '13px', fontFamily: "'Jost', sans-serif" }}>{row.id}</div>
                               <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500 }}>{row.product}</div>
                               <div style={{ color: '#888', fontSize: '13px' }}>{row.shipping}</div>
                               <div style={{ textAlign: 'right' }}>
@@ -1533,7 +1533,7 @@ export const SmartEPPCaseStudy = () => {
                 <div className="md:col-span-1 flex flex-col justify-center" style={{ padding: '24px 0' }}>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--semantic-info)' }} />
-                    <span style={{ fontSize: '11px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '1px', textTransform: 'uppercase' }}>Behind the Scenes</span>
+                    <span style={{ fontSize: '11px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '1px', textTransform: 'uppercase' }}>Behind the Scenes</span>
                   </div>
                   <h3 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                     System Foundations.
@@ -1545,7 +1545,7 @@ export const SmartEPPCaseStudy = () => {
 
                 {/* Card 1: Design System */}
                 <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Design System</div>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Design System</div>
                   <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Portals.</h4>
                   <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
                     A unified component library keeps every screen perfectly in sync. We designed once to scale everywhere.
@@ -1554,7 +1554,7 @@ export const SmartEPPCaseStudy = () => {
 
                 {/* Card 2: Accessibility */}
                 <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Accessibility</div>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Accessibility</div>
                   <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Inclusive by Design.</h4>
                   <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
                     Built for everyone. High-contrast text and large touch targets ensure a frictionless experience.
@@ -1564,7 +1564,7 @@ export const SmartEPPCaseStudy = () => {
                 {/* Card 3: Edge Cases Designed */}
                 <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                   <div className="flex flex-col justify-center">
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Edge Cases Designed</div>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Edge Cases Designed</div>
                     <h4 style={{ fontSize: '24px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Zero Dead Ends.</h4>
                     <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
                       We mapped out failure states so users never hit a wall. Every error offers a way forward.
@@ -1598,7 +1598,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Header */}
             <div style={{ marginBottom: '48px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>06: Validation</span>
+                <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>06: Validation</span>
               </div>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
                 How we tested across all four portals.
@@ -1610,7 +1610,7 @@ export const SmartEPPCaseStudy = () => {
               
               {/* Metric 1 */}
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Employee App</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Employee App</div>
                 <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px' }}>
                   11<span style={{ color: '#555', fontSize: '0.6em' }}>/14</span>
                 </div>
@@ -1621,7 +1621,7 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Metric 2 */}
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>HR Dashboard</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>HR Dashboard</div>
                 <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '4px' }}>
                   11<span style={{ color: 'var(--semantic-success)', fontSize: '0.4em', letterSpacing: 0, fontWeight: 600 }}>sec</span>
                 </div>
@@ -1632,7 +1632,7 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Metric 3 */}
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>Order Tracking</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Order Tracking</div>
                 <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px' }}>
                   -60<span style={{ color: 'var(--semantic-success)', fontSize: '0.6em' }}>%</span>
                 </div>
@@ -1655,7 +1655,7 @@ export const SmartEPPCaseStudy = () => {
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#1a1a1a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 600, color: '#888' }}>SE</div>
-                  <div style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>
+                  <div style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>
                     Software Engineer, Hyderabad
                   </div>
                 </div>
@@ -1670,7 +1670,7 @@ export const SmartEPPCaseStudy = () => {
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
                   <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} />
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: "'Jost', sans-serif" }}>
                     Key Pivot
                   </div>
                 </div>
@@ -1705,7 +1705,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Header */}
             <div style={{ marginBottom: '48px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>07: Outcomes & Impact</span>
+                <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>07: Outcomes & Impact</span>
               </div>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
                 What shipped and what it delivered.
@@ -1737,7 +1737,7 @@ export const SmartEPPCaseStudy = () => {
                     {m.value}
                   </div>
                   <div style={{ fontSize: '13px', color: '#bbb', fontWeight: 500, lineHeight: 1.35 }}>{m.label}</div>
-                  <div style={{ fontSize: '11px', color: '#444', fontFamily: 'var(--font-mono)', lineHeight: 1.5 }}>{m.sub}</div>
+                  <div style={{ fontSize: '11px', color: '#444', fontFamily: "'Jost', sans-serif", lineHeight: 1.5 }}>{m.sub}</div>
                 </motion.div>
               ))}
             </div>
@@ -1747,7 +1747,7 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Qualitative */}
               <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
-                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: 'var(--font-mono)' }}>Qualitative Wins</div>
+                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: "'Jost', sans-serif" }}>Qualitative Wins</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                     <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
@@ -1772,7 +1772,7 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Success criteria */}
               <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
-                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: 'var(--font-mono)' }}>Success Criteria</div>
+                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: "'Jost', sans-serif" }}>Success Criteria</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   {[
                     { text: 'Employee cart conversion ≥ 50% → Hit (68%)', hit: true },
@@ -1800,7 +1800,7 @@ export const SmartEPPCaseStudy = () => {
               viewport={{ once: true }}
               style={{ background: 'rgba(var(--semantic-info-rgb),0.03)', border: '1px solid rgba(var(--semantic-info-rgb),0.1)', borderRadius: '20px', padding: '32px 40px' }}
             >
-              <div style={{ fontSize: '10px', fontWeight: 700, color: 'var(--semantic-info)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ fontSize: '10px', fontWeight: 700, color: 'var(--semantic-info)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>
                 Attribution Note
               </div>
               <p style={{ fontSize: '18px', color: '#c0c0c0', lineHeight: 1.65, margin: 0, fontWeight: 500 }}>
@@ -1822,7 +1822,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Header */}
             <div style={{ marginBottom: '48px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                <span style={{ fontSize: '12px', color: '#777', fontFamily: 'var(--font-mono)', letterSpacing: '0.5px' }}>08: Reflection</span>
+                <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>08: Reflection</span>
               </div>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
                 What I'd do differently. What I learned.
