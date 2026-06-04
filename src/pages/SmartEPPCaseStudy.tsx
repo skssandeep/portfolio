@@ -473,7 +473,7 @@ export const SmartEPPCaseStudy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '40px', maxWidth: '100%' }}
+              style={{ fontFamily: "'Jost', sans-serif", fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, marginBottom: '40px', maxWidth: '100%' }}
             >
               SmartEPP lets employees lease premium devices and reclaim that 40%. Paid via monthly Salary EMIs, covered by insurance. I designed all 4 platforms end to end, from a blank canvas.
             </motion.p>
@@ -487,7 +487,7 @@ export const SmartEPPCaseStudy = () => {
               style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}
             >
               {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal'].map((tag, idx) => (
-                <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
+                <div key={idx} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
                   {tag}
                 </div>
               ))}
