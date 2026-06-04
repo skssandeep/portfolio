@@ -671,39 +671,39 @@ export const SmartEPPCaseStudy = () => {
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
                   
-                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
-                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Core Features</div>
-                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>12+</div>
-                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>End-to-end leasing workflows.</div>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Core Features</div>
+                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>12+</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>End-to-end leasing workflows.</div>
                   </div>
 
-                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
-                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>User Types</div>
-                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>4</div>
-                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Distinct actors in one shared flow.</div>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>User Types</div>
+                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>4</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>Distinct actors in one shared flow.</div>
                   </div>
 
-                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
-                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Backbone</div>
-                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>1</div>
-                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Unified operational backend.</div>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Backbone</div>
+                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>1</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>Unified operational backend.</div>
                   </div>
 
-                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
-                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Integrations</div>
-                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>3</div>
-                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>HRMS, Payment Gateway & IAM.</div>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Integrations</div>
+                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>3</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>HRMS, Payment Gateway & IAM.</div>
                   </div>
 
-                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
-                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Key Deliverables</div>
-                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>250+</div>
-                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>High-fidelity screens & flows.</div>
+                  <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
+                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Key Deliverables</div>
+                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>250+</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>High-fidelity screens & flows.</div>
                   </div>
 
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #333', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
-                    <div style={{ color: '#555', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Out of Scope</div>
-                    <div style={{ color: '#555', fontSize: '12px', fontWeight: 400, lineHeight: 1.4, marginTop: '6px' }}>Brand identity.</div>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #333', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
+                    <div style={{ color: '#666', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Out of Scope</div>
+                    <div style={{ color: '#666', fontSize: '14px', fontWeight: 400, lineHeight: 1.5, marginTop: '6px' }}>Brand identity.</div>
                   </div>
 
                 </div>
