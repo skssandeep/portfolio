@@ -672,9 +672,9 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
                   
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
-                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Platforms</div>
-                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>4</div>
-                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Employee, HR, Financier, Seller.</div>
+                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Core Features</div>
+                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>12+</div>
+                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>End-to-end leasing workflows.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
@@ -690,15 +690,15 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
-                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Design System</div>
-                    <div style={{ color: '#fff', fontSize: '16px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>Existing</div>
-                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Built on OneAssist's library.</div>
+                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Integrations</div>
+                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>3</div>
+                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>HRMS, Payment Gateway & IAM.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
-                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Timeline</div>
-                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>5 mo</div>
-                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>Blank canvas to shipped MVP.</div>
+                    <div style={{ color: '#888', fontSize: '10px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '6px' }}>Key Deliverables</div>
+                    <div style={{ color: '#fff', fontSize: '22px', fontWeight: 500, lineHeight: 1, marginBottom: '4px' }}>250+</div>
+                    <div style={{ color: '#666', fontSize: '11px', lineHeight: 1.4 }}>High-fidelity screens & flows.</div>
                   </div>
 
                   <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #333', borderRadius: '4px 12px 12px 4px', padding: '14px 16px' }}>
