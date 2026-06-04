@@ -26,7 +26,7 @@ const SmartEPPPrototype = () => {
     }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px' }}>
         <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)' }}>Instant Eligibility Check</h3>
-        <span style={{ fontSize: '14px', color: 'var(--accent-color)', fontWeight: 500 }}>Step {step} of 3</span>
+        <span style={{ fontSize: '16px', color: 'var(--accent-color)', fontWeight: 500 }}>Step {step} of 3</span>
       </div>
 
       <div style={{ minHeight: '200px' }}>
@@ -52,7 +52,7 @@ const SmartEPPPrototype = () => {
                 >
                   <div>
                     <div style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{device.name}</div>
-                    <div style={{ color: 'var(--text-secondary)', fontSize: '13px' }}>{device.specs}</div>
+                    <div style={{ color: 'var(--text-secondary)', fontSize: '16px' }}>{device.specs}</div>
                   </div>
                   <div style={{ color: 'var(--text-primary)', fontFamily: "'JetBrains Mono', monospace" }}>{device.price}</div>
                 </div>
@@ -87,7 +87,7 @@ const SmartEPPPrototype = () => {
               borderRadius: '8px',
               border: '1px solid rgba(255,255,255,0.05)',
               color: 'var(--text-secondary)',
-              fontSize: '14px',
+              fontSize: '16px',
               lineHeight: 1.6,
               marginBottom: '24px'
             }}>
@@ -114,12 +114,12 @@ const SmartEPPPrototype = () => {
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ textAlign: 'center', padding: '32px 0' }}>
             <CheckCircle2 size={48} color="var(--accent-color)" style={{ margin: '0 auto 16px auto' }} />
             <h4 style={{ color: 'var(--text-primary)', fontSize: '20px', marginBottom: '8px' }}>Purchase Approved</h4>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.6 }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6 }}>
               Your new device is being dispatched. The first EMI will be automatically deducted from your next month's payroll.
             </p>
             <button 
                 onClick={() => { setStep(1); setSelectedDevice(null); }}
-                style={{ marginTop: '24px', padding: '8px 16px', background: 'transparent', border: '1px solid rgba(255,255,255,0.2)', color: 'var(--text-primary)', borderRadius: '100px', cursor: 'pointer', fontSize: '13px' }}
+                style={{ marginTop: '24px', padding: '8px 16px', background: 'transparent', border: '1px solid rgba(255,255,255,0.2)', color: 'var(--text-primary)', borderRadius: '100px', cursor: 'pointer', fontSize: '16px' }}
               >
                 Reset Prototype
             </button>
@@ -322,7 +322,7 @@ export const SmartEPPCaseStudy = () => {
 
       {/* Floating Back Button */}
       <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100 }}>
-        <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px' }}>
+        <Link to="/#case-studies" className="btn-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px' }}>
           <ArrowLeft size={16} /> Back
         </Link>
       </div>
@@ -377,7 +377,7 @@ export const SmartEPPCaseStudy = () => {
         {/* Massive Typography */}
         <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', marginBottom: '-6vw', width: '100%', padding: '0 24px' }}>
           <div>
-            <div style={{ display: 'inline-flex', background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-secondary)', padding: '8px 24px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, letterSpacing: '3px', marginBottom: '24px', border: '1px solid rgba(255, 255, 255, 0.15)' }}>
+            <div style={{ display: 'inline-flex', background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-secondary)', padding: '8px 24px', borderRadius: '100px', fontSize: '16px', fontWeight: 700, letterSpacing: '3px', marginBottom: '24px', border: '1px solid rgba(255, 255, 255, 0.15)' }}>
               B2B2C FINTECH CASE STUDY
             </div>
             <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 10vw, 8rem)', fontWeight: 800, color: '#fff', margin: '0', letterSpacing: '-0.04em', lineHeight: 1, opacity: 0.95, whiteSpace: 'nowrap' }}>
@@ -423,10 +423,10 @@ export const SmartEPPCaseStudy = () => {
                   boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
                   whiteSpace: 'nowrap'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-color)', fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-color)', fontSize: '16px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase' }}>
                     {chip.icon} {chip.title}
                   </div>
-                  <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500, letterSpacing: '0.5px' }}>{chip.val}</div>
+                  <div style={{ color: '#fff', fontSize: '16px', fontWeight: 500, letterSpacing: '0.5px' }}>{chip.val}</div>
                 </div>
               </motion.div>
             ))}
@@ -450,7 +450,7 @@ export const SmartEPPCaseStudy = () => {
               viewport={{ once: true }}
               style={{ display: 'inline-block', padding: '10px 28px', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '100px', background: 'rgba(255,255,255,0.03)', marginBottom: '32px' }}
             >
-              <div style={{ color: '#e0e0e0', fontSize: '13px', fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase' }}>
+              <div style={{ color: '#e0e0e0', fontSize: '16px', fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase' }}>
                 0→1 APP DESIGN • ONEASSIST
               </div>
             </motion.div>
@@ -548,13 +548,13 @@ export const SmartEPPCaseStudy = () => {
                   fontFamily: "'Jost', sans-serif"
                 }}
               >
-                <div style={{ color: '#a3a3a3', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>
+                <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>
                   {stat.label}
                 </div>
                 <div style={{ color: (stat as any).highlight ? 'var(--accent-color)' : '#fff', fontSize: '22px', fontWeight: 500, marginBottom: '4px', letterSpacing: '-0.01em' }}>
                   {stat.value}
                 </div>
-                <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>
+                <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>
                   {stat.subtext}
                 </div>
               </div>
@@ -613,7 +613,7 @@ export const SmartEPPCaseStudy = () => {
                   e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)';
                 }}
               >
-                <span style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.5px' }}>Scroll to final designs</span>
+                <span style={{ fontSize: '16px', fontWeight: 600, letterSpacing: '0.5px' }}>Scroll to final designs</span>
                 <div style={{
                   background: 'var(--semantic-success)',
                   color: '#000',
@@ -642,7 +642,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Background watermark */}
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(var(--semantic-error-rgb),0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
               <AlertCircle size={14} strokeWidth={2.5} />
               The Problem
             </div>
@@ -666,45 +666,45 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Stats (Right) */}
               <div className="lg:col-span-5" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', fontFamily: "'Jost', sans-serif" }}>
-                <div style={{ fontSize: '14px', color: 'var(--semantic-error)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px', fontWeight: 600 }}>
+                <div style={{ fontSize: '16px', color: 'var(--semantic-error)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px', fontWeight: 600 }}>
                   Project Scope
                 </div>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
                   
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Core Features</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Core Features</div>
                     <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>12+</div>
-                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>End-to-end leasing workflows.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>End-to-end leasing workflows.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>User Types</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>User Types</div>
                     <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>4</div>
-                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>Distinct actors in one shared flow.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>Distinct actors in one shared flow.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Backbone</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Backbone</div>
                     <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>1</div>
-                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>Unified operational backend.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>Unified operational backend.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Integrations</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Integrations</div>
                     <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>3</div>
-                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>HRMS, Payment Gateway & IAM.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>HRMS, Payment Gateway & IAM.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Key Deliverables</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Key Deliverables</div>
                     <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>250+</div>
-                    <div style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: 1.5 }}>High-fidelity screens & flows.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>High-fidelity screens & flows.</div>
                   </div>
 
                   <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #333', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{ color: '#666', fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Out of Scope</div>
-                    <div style={{ color: '#666', fontSize: '14px', fontWeight: 400, lineHeight: 1.5, marginTop: '6px' }}>Brand identity.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Out of Scope</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 400, lineHeight: 1.5, marginTop: '6px' }}>Brand identity.</div>
                   </div>
 
                 </div>
@@ -727,28 +727,28 @@ export const SmartEPPCaseStudy = () => {
               
               {/* Challenge 1 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Abstract savings</div>
+                <div style={{ color: 'var(--semantic-error)', fontSize: '16px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Abstract savings</div>
                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '6px', lineHeight: 1.3, margin: '0 0 6px 0' }}>Tax savings are abstract. Money feels real.</h4>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Employees don't think in slabs. They think "what do I actually save?" The math had to become one personal, immediate number.</p>
               </motion.div>
 
               {/* Challenge 2 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>High-trust commitment</div>
+                <div style={{ color: 'var(--semantic-error)', fontSize: '16px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>High-trust commitment</div>
                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>A monthly salary EMI is terrifying without trust signals.</h4>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Committing months of salary is a high-trust act. Without confidence at every step, people abandon at the product page.</p>
               </motion.div>
 
               {/* Challenge 3 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Scale without friction</div>
+                <div style={{ color: 'var(--semantic-error)', fontSize: '16px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Scale without friction</div>
                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>HR needs to approve hundreds of requests in seconds.</h4>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Approvals at scale break without proper tooling. If approval is slow, HR simply stops using it.</p>
               </motion.div>
 
               {/* Challenge 4 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>No shared vocabulary</div>
+                <div style={{ color: 'var(--semantic-error)', fontSize: '16px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>No shared vocabulary</div>
                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>Four user types. One order. Four completely different meanings.</h4>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Employees think products. HR thinks policy. Lessors think risk. Sellers think fulfillment.</p>
               </motion.div>
@@ -756,7 +756,7 @@ export const SmartEPPCaseStudy = () => {
               {/* Challenge 5 - Full Width Hero Card */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ fontFamily: "'Jost', sans-serif", background: 'linear-gradient(135deg, rgba(var(--semantic-error-rgb), 0.07) 0%, rgba(var(--semantic-error-rgb),0.02) 100%)', borderLeft: '3px solid var(--semantic-error)', borderRadius: '4px 16px 16px 4px', padding: '32px 40px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'center' }}>
                 <div>
-                  <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>The Hardest One</div>
+                  <div style={{ color: 'var(--semantic-error)', fontSize: '16px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>The Hardest One</div>
                   <h4 style={{ fontSize: '28px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3 }}>The invisible 4-party chain.</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>
@@ -777,7 +777,7 @@ export const SmartEPPCaseStudy = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
             {/* Section Label */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '14px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
               <Search size={14} strokeWidth={2.5} />
               Research
             </div>
@@ -799,14 +799,14 @@ export const SmartEPPCaseStudy = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>73%</div>
-                  <div style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>failed to calculate their savings using the initial concept.</div>
+                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>failed to calculate their savings using the initial concept.</div>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
                   <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I need actual rupees based on my salary, not a generic percentage."</p>
                 </div>
                 <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                   <div>
-                    <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '4px' }}>The Fix</div>
+                    <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '4px' }}>The Fix</div>
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Personalized calculator. Math must be immediate.</p>
                   </div>
                   <div 
@@ -832,14 +832,14 @@ export const SmartEPPCaseStudy = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>8/12</div>
-                  <div style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>flagged salary EMIs as their top fear.</div>
+                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>flagged salary EMIs as their top fear.</div>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
                   <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"What if I leave the company? What if the device breaks?"</p>
                 </div>
                 <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                   <div>
-                    <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '4px' }}>The Fix</div>
+                    <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '4px' }}>The Fix</div>
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>In-context trust signals. No hidden FAQs.</p>
                   </div>
                   <div 
@@ -865,14 +865,14 @@ export const SmartEPPCaseStudy = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '-0.03em', lineHeight: 1 }}>&lt;30s</div>
-                  <div style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>required per HR approval to survive at scale.</div>
+                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>required per HR approval to survive at scale.</div>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px', flex: 1 }}>
                   <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I can't open 50 profiles a week to check eligibility."</p>
                 </div>
                 <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                   <div>
-                    <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '4px' }}>The Fix</div>
+                    <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '4px' }}>The Fix</div>
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Single-row approval dashboard. Zero tab-switching.</p>
                   </div>
                   <div 
@@ -907,7 +907,7 @@ export const SmartEPPCaseStudy = () => {
 
             {/* Section Label */}
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '13px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>
                 <Target size={14} strokeWidth={2.5} />
                 Problem Reframe
               </div>
@@ -923,7 +923,7 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Before */}
               <div style={{ background: 'rgba(225, 29, 72, 0.02)', border: '1px solid rgba(225, 29, 72, 0.15)', borderRadius: '24px', padding: '40px' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '12px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
                   <XCircle size={16} strokeWidth={2.5} />
                   Before: Fragmented Apps
                 </div>
@@ -931,7 +931,7 @@ export const SmartEPPCaseStudy = () => {
                 {/* 4 disconnected red boxes (now neutral) */}
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
                   {['Employee App', 'HR Portal', 'Lessor Dashboard', 'Seller System'].map(sys => (
-                    <div key={sys} style={{ flex: '1 1 140px', background: 'rgba(255, 255, 255, 0.02)', border: '1px dashed rgba(255, 255, 255, 0.15)', borderRadius: '12px', padding: '20px', textAlign: 'center', color: '#e5e5e5', fontSize: '13px', fontWeight: 500, fontFamily: 'var(--font-system)' }}>
+                    <div key={sys} style={{ flex: '1 1 140px', background: 'rgba(255, 255, 255, 0.02)', border: '1px dashed rgba(255, 255, 255, 0.15)', borderRadius: '12px', padding: '20px', textAlign: 'center', color: '#e5e5e5', fontSize: '16px', fontWeight: 500, fontFamily: 'var(--font-system)' }}>
                       {sys}
                     </div>
                   ))}
@@ -944,7 +944,7 @@ export const SmartEPPCaseStudy = () => {
 
               {/* After */}
               <div style={{ background: 'rgba(16, 185, 129, 0.03)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '24px', padding: '40px' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '12px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: 'var(--font-system)' }}>
                   <CheckCircle2 size={16} strokeWidth={2.5} />
                   After: Unified System
                 </div>
@@ -953,12 +953,12 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '32px' }}>
                   <div style={{ display: 'flex', gap: '8px', padding: '0 16px' }}>
                     {['Employee', 'HR', 'Lessor', 'Seller'].map(tab => (
-                      <div key={tab} style={{ flex: 1, background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', borderBottom: 'none', borderRadius: '12px 12px 0 0', padding: '12px', textAlign: 'center', color: '#fff', fontSize: '13px', fontWeight: 500, fontFamily: 'var(--font-system)' }}>
+                      <div key={tab} style={{ flex: 1, background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', borderBottom: 'none', borderRadius: '12px 12px 0 0', padding: '12px', textAlign: 'center', color: '#fff', fontSize: '16px', fontWeight: 500, fontFamily: 'var(--font-system)' }}>
                         {tab} View
                       </div>
                     ))}
                   </div>
-                  <div style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05))', border: '1px solid rgba(16, 185, 129, 0.4)', borderRadius: '16px', padding: '24px', textAlign: 'center', color: '#fff', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-system)' }}>
+                  <div style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05))', border: '1px solid rgba(16, 185, 129, 0.4)', borderRadius: '16px', padding: '24px', textAlign: 'center', color: '#fff', fontSize: '16px', fontWeight: 600, fontFamily: 'var(--font-system)' }}>
                     Single Source of Truth (Database)
                   </div>
                 </div>
@@ -972,7 +972,7 @@ export const SmartEPPCaseStudy = () => {
             
             <div style={{ marginTop: '64px', textAlign: 'center' }}>
               <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '100px', padding: '16px 32px' }}>
-                <p style={{ fontSize: '15px', color: '#e5e5e5', lineHeight: 1, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1, margin: 0, fontFamily: 'var(--font-system)' }}>
                   <strong style={{ color: 'var(--semantic-success)' }}>The Result:</strong> Designing this shared data model first cut design time by ~30%.
                 </p>
               </div>
@@ -991,13 +991,13 @@ export const SmartEPPCaseStudy = () => {
             <div style={{ display: 'grid', gridTemplateColumns: '55% 45%', gap: '48px', alignItems: 'end', marginBottom: '56px' }}>
               <div>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                  <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>04: Design Exploration</span>
+                  <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>04: Design Exploration</span>
                 </div>
                 <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
                   Principles, then pixels.
                 </h2>
               </div>
-              <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.75, margin: 0 }}>
+              <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.75, margin: 0 }}>
                 Five principles set before wireframes began, derived directly from research, not assumptions.
               </p>
             </div>
@@ -1023,7 +1023,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
                 <div style={{ position: 'relative', zIndex: 10 }}>
                   <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Compare Smart EPP to Amazon, not to nothing</h4>
-                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>Savings need contrast to land. Comparison is a first-class feature on the PDP, not a marketing footnote.</p>
+                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>Savings need contrast to land. Comparison is a first-class feature on the PDP, not a marketing footnote.</p>
                 </div>
               </motion.div>
 
@@ -1034,7 +1034,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
                 <div style={{ position: 'relative', zIndex: 10 }}>
                   <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Every anxious question answered before it's asked</h4>
-                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>What if it breaks? What if I leave? Every anxiety surfaced in-context, before the user has to search.</p>
+                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>What if it breaks? What if I leave? Every anxiety surfaced in-context, before the user has to search.</p>
                 </div>
               </motion.div>
 
@@ -1045,7 +1045,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
                 <div style={{ position: 'relative', zIndex: 10 }}>
                   <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>HR approves in seconds, not minutes</h4>
-                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>Name, role, device, eligibility, policy: one card, one click. No tab-switching.</p>
+                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>Name, role, device, eligibility, policy: one card, one click. No tab-switching.</p>
                 </div>
               </motion.div>
 
@@ -1056,7 +1056,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
                 <div style={{ position: 'relative', zIndex: 10 }}>
                   <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Order status must never be silent</h4>
-                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>Every state change triggers a notification. The app answers "where is my order?" before they ask.</p>
+                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>Every state change triggers a notification. The app answers "where is my order?" before they ask.</p>
                 </div>
               </motion.div>
 
@@ -1081,17 +1081,17 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '24px' }}>
                     <div>
                       <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', background: 'var(--semantic-success)', borderRadius: '100px', marginBottom: '16px' }}>
-                        <span style={{ fontSize: '11px', fontWeight: 700, color: '#fff', letterSpacing: '1px', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>The Winner</span>
+                        <span style={{ fontSize: '16px', fontWeight: 700, color: '#fff', letterSpacing: '1px', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>The Winner</span>
                       </div>
                       <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Contextual Detail</h4>
-                      <p style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '400px', fontFamily: 'var(--font-system)' }}>
+                      <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '400px', fontFamily: 'var(--font-system)' }}>
                         Savings calculator, inline comparison, and protection summary built into one scrollable PDP. Completeness built confidence.
                       </p>
                     </div>
                     
                     <div style={{ textAlign: 'right' }}>
                       <div style={{ fontSize: '48px', fontWeight: 700, color: 'var(--semantic-success)', lineHeight: 1, fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>68%</div>
-                      <div style={{ fontSize: '13px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)', marginTop: '4px' }}>Conversion Rate</div>
+                      <div style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)', marginTop: '4px' }}>Conversion Rate</div>
                     </div>
                   </div>
 
@@ -1114,23 +1114,23 @@ export const SmartEPPCaseStudy = () => {
                 <div className="lg:col-span-1" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   
                   <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#777', fontSize: '10px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-system)' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-system)' }}>
                       <XCircle size={14} strokeWidth={2.5} /> Rejected Concept
                     </div>
                     <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Minimal PDP</h4>
-                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>28% <span style={{ fontSize: '14px', color: '#777', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Conversion</span></div>
-                    <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>28% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Conversion</span></div>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                       Too bare. Without seeing exact savings upfront, users wouldn't convert. A monthly salary EMI felt like a leap of faith.
                     </p>
                   </motion.div>
 
                   <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#777', fontSize: '10px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-system)' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-system)' }}>
                       <XCircle size={14} strokeWidth={2.5} /> Rejected Concept
                     </div>
                     <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Guided Wizard</h4>
-                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>44% <span style={{ fontSize: '14px', color: '#777', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Drop-off</span></div>
-                    <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>44% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Drop-off</span></div>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                       Too much friction. People want to browse before they configure. Abandoned at step 1.
                     </p>
                   </motion.div>
@@ -1148,7 +1148,7 @@ export const SmartEPPCaseStudy = () => {
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-              <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>05: Final Solution</span>
+              <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>05: Final Solution</span>
             </div>
             <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.03em', margin: 0 }}>
               The product, screen by screen.
@@ -1174,7 +1174,7 @@ export const SmartEPPCaseStudy = () => {
                       color: activePortalTab === tab.id ? '#fff' : '#888',
                       border: 'none',
                       cursor: 'pointer', transition: 'all 0.3s ease',
-                      fontWeight: 500, fontSize: '14px'
+                      fontWeight: 500, fontSize: '16px'
                     }}
                   >
                     {tab.icon} {tab.label}
@@ -1199,13 +1199,13 @@ export const SmartEPPCaseStudy = () => {
                     <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', padding: '6px' }}>
                       <button 
                         onClick={() => setIsGridView(false)}
-                        style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: !isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: !isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '14px', fontWeight: 500 }}
+                        style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: !isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: !isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '16px', fontWeight: 500 }}
                       >
                         <Columns size={16} /> Carousel
                       </button>
                       <button 
                         onClick={() => setIsGridView(true)}
-                        style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '14px', fontWeight: 500 }}
+                        style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', borderRadius: '100px', background: isGridView ? 'rgba(255,255,255,0.1)' : 'transparent', color: isGridView ? '#fff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', fontSize: '16px', fontWeight: 500 }}
                       >
                         <LayoutGrid size={16} /> Grid View
                       </button>
@@ -1321,16 +1321,16 @@ export const SmartEPPCaseStudy = () => {
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f59e0b' }} />
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#22c55e' }} />
                           </div>
-                          <span style={{ color: '#fff', fontWeight: 600, fontSize: '15px', letterSpacing: '-0.01em' }}>HR Portal</span>
+                          <span style={{ color: '#fff', fontWeight: 600, fontSize: '16px', letterSpacing: '-0.01em' }}>HR Portal</span>
                         </div>
                         <div style={{ display: 'flex', gap: '16px' }}>
-                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>Total Savings: <strong style={{color: '#fff'}}>₹18.4L</strong></div>
-                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>Pending: <strong style={{color: '#fff'}}>12</strong></div>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '16px', color: '#aaa' }}>Total Savings: <strong style={{color: '#fff'}}>₹18.4L</strong></div>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '16px', color: '#aaa' }}>Pending: <strong style={{color: '#fff'}}>12</strong></div>
                         </div>
                       </div>
                       <div style={{ padding: '24px' }}>
                         {/* Table Header */}
-                        <div style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr 1fr', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#666', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr 1fr', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#a3a3a3', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
                           <div>Employee</div>
                           <div>Request</div>
                           <div>Eligibility</div>
@@ -1344,19 +1344,19 @@ export const SmartEPPCaseStudy = () => {
                         ].map((row, i) => (
                           <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr 1fr', alignItems: 'center', padding: '16px 0', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
                             <div>
-                              <div style={{ color: '#fff', fontWeight: 500, fontSize: '14px', marginBottom: '4px' }}>{row.name}</div>
-                              <div style={{ color: '#666', fontSize: '12px' }}>{row.role}</div>
+                              <div style={{ color: '#fff', fontWeight: 500, fontSize: '16px', marginBottom: '4px' }}>{row.name}</div>
+                              <div style={{ color: '#a3a3a3', fontSize: '16px' }}>{row.role}</div>
                             </div>
                             <div>
-                              <div style={{ color: '#e5e5e5', fontSize: '14px', marginBottom: '4px' }}>{row.device}</div>
-                              <div style={{ color: '#888', fontSize: '12px' }}>{row.cost}</div>
+                              <div style={{ color: '#e5e5e5', fontSize: '16px', marginBottom: '4px' }}>{row.device}</div>
+                              <div style={{ color: '#a3a3a3', fontSize: '16px' }}>{row.cost}</div>
                             </div>
                             <div>
-                              <span style={{ display: 'inline-block', padding: '4px 8px', borderRadius: '4px', background: `${row.statusColor}22`, color: row.statusColor, fontSize: '11px', fontWeight: 600 }}>{row.status}</span>
+                              <span style={{ display: 'inline-block', padding: '4px 8px', borderRadius: '4px', background: `${row.statusColor}22`, color: row.statusColor, fontSize: '16px', fontWeight: 600 }}>{row.status}</span>
                             </div>
                             <div style={{ textAlign: 'right', display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
-                              <button style={{ background: 'rgba(255,255,255,0.05)', border: 'none', color: '#fff', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', cursor: 'pointer' }}>Reject</button>
-                              <button style={{ background: 'var(--semantic-success)', border: 'none', color: '#fff', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 500, cursor: 'pointer' }}>Approve</button>
+                              <button style={{ background: 'rgba(255,255,255,0.05)', border: 'none', color: '#fff', padding: '6px 12px', borderRadius: '6px', fontSize: '16px', cursor: 'pointer' }}>Reject</button>
+                              <button style={{ background: 'var(--semantic-success)', border: 'none', color: '#fff', padding: '6px 12px', borderRadius: '6px', fontSize: '16px', fontWeight: 500, cursor: 'pointer' }}>Approve</button>
                             </div>
                           </div>
                         ))}
@@ -1365,16 +1365,16 @@ export const SmartEPPCaseStudy = () => {
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
                       <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Everything at a glance.</strong>
-                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Employee name, role, band, and requested device cost are visible in a single row. No tab-switching or profile opening required.</p>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Everything at a glance.</strong>
+                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Employee name, role, band, and requested device cost are visible in a single row. No tab-switching or profile opening required.</p>
                       </div>
                       <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Band-based eligibility.</strong>
-                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>HR immediately knows if the device is within policy. Requests outside band limits are automatically flagged for review.</p>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Band-based eligibility.</strong>
+                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>HR immediately knows if the device is within policy. Requests outside band limits are automatically flagged for review.</p>
                       </div>
                       <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Emotional reframing.</strong>
-                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Showing "Total Savings" reframes HR from an admin approving requests to a champion delivering real employee value.</p>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Emotional reframing.</strong>
+                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Showing "Total Savings" reframes HR from an admin approving requests to a champion delivering real employee value.</p>
                       </div>
                     </div>
                   </div>
@@ -1391,31 +1391,31 @@ export const SmartEPPCaseStudy = () => {
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f59e0b' }} />
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#22c55e' }} />
                           </div>
-                          <span style={{ color: '#fff', fontWeight: 600, fontSize: '15px', letterSpacing: '-0.01em' }}>Financier Portal</span>
+                          <span style={{ color: '#fff', fontWeight: 600, fontSize: '16px', letterSpacing: '-0.01em' }}>Financier Portal</span>
                         </div>
                         <div style={{ display: 'flex', gap: '16px' }}>
-                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>Disbursed (Mtd): <strong style={{color: '#fff'}}>₹1.2Cr</strong></div>
-                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>Avg EMI: <strong style={{color: '#fff'}}>12 Mo</strong></div>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '16px', color: '#aaa' }}>Disbursed (Mtd): <strong style={{color: '#fff'}}>₹1.2Cr</strong></div>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '16px', color: '#aaa' }}>Avg EMI: <strong style={{color: '#fff'}}>12 Mo</strong></div>
                         </div>
                       </div>
                       <div style={{ padding: '24px' }}>
                         {/* Top Widgets */}
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
                            <div style={{ background: 'linear-gradient(135deg, rgba(168,85,247,0.1) 0%, rgba(168,85,247,0.02) 100%)', border: '1px solid rgba(168,85,247,0.2)', padding: '20px', borderRadius: '8px' }}>
-                              <div style={{ color: '#a855f7', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Active Loans</div>
+                              <div style={{ color: '#a855f7', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Active Loans</div>
                               <div style={{ color: '#fff', fontSize: '28px', fontWeight: 700 }}>1,432</div>
                            </div>
                            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '20px', borderRadius: '8px' }}>
-                              <div style={{ color: '#777', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Risk Assessment</div>
+                              <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Risk Assessment</div>
                               <div style={{ color: '#22c55e', fontSize: '24px', fontWeight: 600 }}>Low (Corporate)</div>
                            </div>
                            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '20px', borderRadius: '8px' }}>
-                              <div style={{ color: '#777', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Upcoming EMI Collection</div>
+                              <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Upcoming EMI Collection</div>
                               <div style={{ color: '#fff', fontSize: '24px', fontWeight: 600 }}>Oct 1st</div>
                            </div>
                         </div>
                         {/* Table Header */}
-                        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#666', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#a3a3a3', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
                           <div>Corporate Partner</div>
                           <div>Approved Amount</div>
                           <div>Tenure</div>
@@ -1427,11 +1427,11 @@ export const SmartEPPCaseStudy = () => {
                           { corp: 'Wipro', amount: '₹1,20,000', tenure: '24 Months', status: 'Pending KYC', statusColor: '#f59e0b' }
                         ].map((row, i) => (
                           <div key={i} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', alignItems: 'center', padding: '16px 0', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-                            <div style={{ color: '#fff', fontWeight: 500, fontSize: '14px' }}>{row.corp}</div>
-                            <div style={{ color: '#e5e5e5', fontSize: '14px' }}>{row.amount}</div>
-                            <div style={{ color: '#888', fontSize: '13px' }}>{row.tenure}</div>
+                            <div style={{ color: '#fff', fontWeight: 500, fontSize: '16px' }}>{row.corp}</div>
+                            <div style={{ color: '#e5e5e5', fontSize: '16px' }}>{row.amount}</div>
+                            <div style={{ color: '#a3a3a3', fontSize: '16px' }}>{row.tenure}</div>
                             <div style={{ textAlign: 'right' }}>
-                              <span style={{ display: 'inline-block', padding: '4px 8px', borderRadius: '4px', background: `${row.statusColor}22`, color: row.statusColor, fontSize: '11px', fontWeight: 600 }}>{row.status}</span>
+                              <span style={{ display: 'inline-block', padding: '4px 8px', borderRadius: '4px', background: `${row.statusColor}22`, color: row.statusColor, fontSize: '16px', fontWeight: 600 }}>{row.status}</span>
                             </div>
                           </div>
                         ))}
@@ -1440,16 +1440,16 @@ export const SmartEPPCaseStudy = () => {
                     
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
                       <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Corporate Risk Profiling.</strong>
-                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Financiers can evaluate loan books based on corporate partner risk rather than individual retail risk, enabling better rates.</p>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Corporate Risk Profiling.</strong>
+                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Financiers can evaluate loan books based on corporate partner risk rather than individual retail risk, enabling better rates.</p>
                       </div>
                       <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Automated Disbursals.</strong>
-                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Once HR approves and KYC is complete, capital is automatically routed to sellers without manual intervention.</p>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Automated Disbursals.</strong>
+                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Once HR approves and KYC is complete, capital is automatically routed to sellers without manual intervention.</p>
                       </div>
                       <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>EMI Collection Sync.</strong>
-                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Direct integration with corporate payroll systems ensures EMI collections are perfectly synced with salary cycles.</p>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>EMI Collection Sync.</strong>
+                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Direct integration with corporate payroll systems ensures EMI collections are perfectly synced with salary cycles.</p>
                       </div>
                     </div>
                   </div>
@@ -1466,22 +1466,22 @@ export const SmartEPPCaseStudy = () => {
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f59e0b' }} />
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#22c55e' }} />
                           </div>
-                          <span style={{ color: '#fff', fontWeight: 600, fontSize: '15px', letterSpacing: '-0.01em' }}>Seller Hub</span>
+                          <span style={{ color: '#fff', fontWeight: 600, fontSize: '16px', letterSpacing: '-0.01em' }}>Seller Hub</span>
                         </div>
                         <div style={{ display: 'flex', gap: '16px' }}>
-                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>To Dispatch: <strong style={{color: '#fff'}}>45</strong></div>
+                          <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '6px', fontSize: '16px', color: '#aaa' }}>To Dispatch: <strong style={{color: '#fff'}}>45</strong></div>
                         </div>
                       </div>
                       <div style={{ display: 'flex' }}>
                         {/* Sidebar */}
                         <div style={{ width: '200px', borderRight: '1px solid rgba(255,255,255,0.06)', padding: '24px' }}>
-                          <div style={{ color: '#eab308', fontWeight: 600, fontSize: '13px', marginBottom: '16px', padding: '8px', background: 'rgba(234,179,8,0.1)', borderRadius: '6px' }}>Active Orders</div>
-                          <div style={{ color: '#777', fontWeight: 500, fontSize: '13px', marginBottom: '16px', padding: '8px' }}>Inventory Sync</div>
-                          <div style={{ color: '#777', fontWeight: 500, fontSize: '13px', marginBottom: '16px', padding: '8px' }}>Logistics</div>
+                          <div style={{ color: '#eab308', fontWeight: 600, fontSize: '16px', marginBottom: '16px', padding: '8px', background: 'rgba(234,179,8,0.1)', borderRadius: '6px' }}>Active Orders</div>
+                          <div style={{ color: '#a3a3a3', fontWeight: 500, fontSize: '16px', marginBottom: '16px', padding: '8px' }}>Inventory Sync</div>
+                          <div style={{ color: '#a3a3a3', fontWeight: 500, fontSize: '16px', marginBottom: '16px', padding: '8px' }}>Logistics</div>
                         </div>
                         {/* Main Content */}
                         <div style={{ flex: 1, padding: '24px' }}>
-                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr 1fr', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#666', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr 1fr', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#a3a3a3', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
                             <div>Order ID</div>
                             <div>Product</div>
                             <div>Shipping</div>
@@ -1492,11 +1492,11 @@ export const SmartEPPCaseStudy = () => {
                             { id: '#ORD-8822', product: 'MacBook Pro 16" (M4)', shipping: 'Standard (3 Days)', status: 'Pack Order' }
                           ].map((row, i) => (
                             <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr 1fr', alignItems: 'center', padding: '16px 0', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-                              <div style={{ color: '#a3a3a3', fontSize: '13px', fontFamily: "'Jost', sans-serif" }}>{row.id}</div>
-                              <div style={{ color: '#fff', fontSize: '14px', fontWeight: 500 }}>{row.product}</div>
-                              <div style={{ color: '#888', fontSize: '13px' }}>{row.shipping}</div>
+                              <div style={{ color: '#a3a3a3', fontSize: '16px', fontFamily: "'Jost', sans-serif" }}>{row.id}</div>
+                              <div style={{ color: '#fff', fontSize: '16px', fontWeight: 500 }}>{row.product}</div>
+                              <div style={{ color: '#a3a3a3', fontSize: '16px' }}>{row.shipping}</div>
                               <div style={{ textAlign: 'right' }}>
-                                <button style={{ background: 'var(--semantic-info)', border: 'none', color: '#fff', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 500, cursor: 'pointer' }}>{row.status}</button>
+                                <button style={{ background: 'var(--semantic-info)', border: 'none', color: '#fff', padding: '6px 12px', borderRadius: '6px', fontSize: '16px', fontWeight: 500, cursor: 'pointer' }}>{row.status}</button>
                               </div>
                             </div>
                           ))}
@@ -1506,16 +1506,16 @@ export const SmartEPPCaseStudy = () => {
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
                       <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Inventory Protection.</strong>
-                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Devices are temporarily reserved during the HR approval window to prevent out-of-stock scenarios for approved requests.</p>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Inventory Protection.</strong>
+                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Devices are temporarily reserved during the HR approval window to prevent out-of-stock scenarios for approved requests.</p>
                       </div>
                       <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>Streamlined Fulfillment.</strong>
-                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>Sellers only see fully funded, approved orders. Financing and corporate approvals are abstracted away completely.</p>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Streamlined Fulfillment.</strong>
+                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Sellers only see fully funded, approved orders. Financing and corporate approvals are abstracted away completely.</p>
                       </div>
                       <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '14px' }}>B2B Tax Invoicing.</strong>
-                        <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.7, margin: 0 }}>GST invoices are automatically generated in the correct B2B format to ensure corporate tax benefits can be claimed.</p>
+                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>B2B Tax Invoicing.</strong>
+                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>GST invoices are automatically generated in the correct B2B format to ensure corporate tax benefits can be claimed.</p>
                       </div>
                     </div>
                   </div>
@@ -1534,30 +1534,30 @@ export const SmartEPPCaseStudy = () => {
                 <div className="md:col-span-1 flex flex-col justify-center" style={{ padding: '24px 0' }}>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--semantic-info)' }} />
-                    <span style={{ fontSize: '11px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '1px', textTransform: 'uppercase' }}>Behind the Scenes</span>
+                    <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '1px', textTransform: 'uppercase' }}>Behind the Scenes</span>
                   </div>
                   <h3 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                     System Foundations.
                   </h3>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6, maxWidth: '90%' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6, maxWidth: '90%' }}>
                     The core design principles powering all four platforms.
                   </p>
                 </div>
 
                 {/* Card 1: Design System */}
                 <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Design System</div>
+                  <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Design System</div>
                   <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Portals.</h4>
-                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
+                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
                     A unified component library keeps every screen perfectly in sync. We designed once to scale everywhere.
                   </p>
                 </div>
 
                 {/* Card 2: Accessibility */}
                 <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Accessibility</div>
+                  <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Accessibility</div>
                   <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Inclusive by Design.</h4>
-                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
                     Built for everyone. High-contrast text and large touch targets ensure a frictionless experience.
                   </p>
                 </div>
@@ -1565,25 +1565,25 @@ export const SmartEPPCaseStudy = () => {
                 {/* Card 3: Edge Cases Designed */}
                 <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                   <div className="flex flex-col justify-center">
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Edge Cases Designed</div>
+                    <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Edge Cases Designed</div>
                     <h4 style={{ fontSize: '24px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Zero Dead Ends.</h4>
-                    <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
                       We mapped out failure states so users never hit a wall. Every error offers a way forward.
                     </p>
                   </div>
                   
                   <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <div style={{ fontSize: '16px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-error)' }} /> HR Rejections
                     </div>
-                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.5, margin: 0 }}>Clear feedback & instant next steps.</p>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Clear feedback & instant next steps.</p>
                   </div>
                   
                   <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <div style={{ fontSize: '16px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} /> Out of Stock
                     </div>
-                    <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.5, margin: 0 }}>Smart alternatives. No blank screens.</p>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Smart alternatives. No blank screens.</p>
                   </div>
                 </div>
               </div>
@@ -1599,7 +1599,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Header */}
             <div style={{ marginBottom: '48px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>06: Validation</span>
+                <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>06: Validation</span>
               </div>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
                 How we tested across all four portals.
@@ -1611,33 +1611,33 @@ export const SmartEPPCaseStudy = () => {
               
               {/* Metric 1 */}
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Employee App</div>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Employee App</div>
                 <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px' }}>
                   11<span style={{ color: '#555', fontSize: '0.6em' }}>/14</span>
                 </div>
-                <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
                   Employees instantly understood their exact tax savings, up from just 3/14 before we added the interactive calculator.
                 </p>
               </motion.div>
 
               {/* Metric 2 */}
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>HR Dashboard</div>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>HR Dashboard</div>
                 <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '4px' }}>
                   11<span style={{ color: 'var(--semantic-success)', fontSize: '0.4em', letterSpacing: 0, fontWeight: 600 }}>sec</span>
                 </div>
-                <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
                   Average request approval time. By redesigning the data hierarchy, we slashed this down from 48 seconds.
                 </p>
               </motion.div>
 
               {/* Metric 3 */}
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Order Tracking</div>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Order Tracking</div>
                 <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px' }}>
                   -60<span style={{ color: 'var(--semantic-success)', fontSize: '0.6em' }}>%</span>
                 </div>
-                <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
                   Lower reported anxiety during the "processing" phase by simplifying a complex 15-state model into 4 clear steps.
                 </p>
               </motion.div>
@@ -1655,8 +1655,8 @@ export const SmartEPPCaseStudy = () => {
                   "I didn't realise how much I was saving until I put in my tax slab. ₹38,000 is real money. That changed everything for me."
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#1a1a1a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 600, color: '#888' }}>SE</div>
-                  <div style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#1a1a1a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', fontWeight: 600, color: '#a3a3a3' }}>SE</div>
+                  <div style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>
                     Software Engineer, Hyderabad
                   </div>
                 </div>
@@ -1671,11 +1671,11 @@ export const SmartEPPCaseStudy = () => {
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
                   <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} />
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: "'Jost', sans-serif" }}>
+                  <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: "'Jost', sans-serif" }}>
                     Key Pivot
                   </div>
                 </div>
-                <p style={{ fontSize: '15px', color: '#c0c0c0', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '16px', color: '#c0c0c0', lineHeight: 1.6, margin: 0 }}>
                   Testing showed users completely ignored our standalone "How it works" page. We pivoted immediately, moving the explanation <span style={{ color: 'var(--semantic-warning)', fontWeight: 600 }}>in-context</span> as an inline accordion directly inside the calculator.
                 </p>
               </motion.div>
@@ -1688,8 +1688,8 @@ export const SmartEPPCaseStudy = () => {
               viewport={{ once: true }}
               style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '32px' }}
             >
-              <div style={{ fontSize: '13px', fontWeight: 600, color: '#888', marginBottom: '8px' }}>What we missed (The Reality Check)</div>
-              <p style={{ fontSize: '15px', color: '#666', lineHeight: 1.6, margin: 0 }}>
+              <div style={{ fontSize: '16px', fontWeight: 600, color: '#a3a3a3', marginBottom: '8px' }}>What we missed (The Reality Check)</div>
+              <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
                 Due to timeline constraints, the lessor and seller portals were only stakeholder-reviewed, not user-tested. Upon launch, they generated 3× more change requests than the validated employee apps. We also failed to test the full cross-portal handoff, catching friction only after going live.
               </p>
             </motion.div>
@@ -1706,7 +1706,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Header */}
             <div style={{ marginBottom: '48px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>07: Outcomes & Impact</span>
+                <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>07: Outcomes & Impact</span>
               </div>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
                 What shipped and what it delivered.
@@ -1737,8 +1737,8 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 700, color: m.color, letterSpacing: '-0.03em', lineHeight: 1, fontFamily: 'var(--font-heading)' }}>
                     {m.value}
                   </div>
-                  <div style={{ fontSize: '13px', color: '#bbb', fontWeight: 500, lineHeight: 1.35 }}>{m.label}</div>
-                  <div style={{ fontSize: '11px', color: '#444', fontFamily: "'Jost', sans-serif", lineHeight: 1.5 }}>{m.sub}</div>
+                  <div style={{ fontSize: '16px', color: '#bbb', fontWeight: 500, lineHeight: 1.35 }}>{m.label}</div>
+                  <div style={{ fontSize: '16px', color: '#444', fontFamily: "'Jost', sans-serif", lineHeight: 1.5 }}>{m.sub}</div>
                 </motion.div>
               ))}
             </div>
@@ -1748,23 +1748,23 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Qualitative */}
               <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
-                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: "'Jost', sans-serif" }}>Qualitative Wins</div>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: "'Jost', sans-serif" }}>Qualitative Wins</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                     <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
-                    <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
                       <strong style={{ color: '#e5e5e5' }}>Top user review:</strong> "Finally understand how the tax saving works."
                     </p>
                   </div>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                     <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
-                    <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
                       <strong style={{ color: '#e5e5e5' }}>Support tickets:</strong> "How do I calculate savings?" queries dropped to near-zero.
                     </p>
                   </div>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                     <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
-                    <p style={{ fontSize: '13px', color: '#777', lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
                       <strong style={{ color: '#e5e5e5' }}>Sales impact:</strong> 3 enterprise clients cited the HR dashboard during renewals.
                     </p>
                   </div>
@@ -1773,7 +1773,7 @@ export const SmartEPPCaseStudy = () => {
 
               {/* Success criteria */}
               <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
-                <div style={{ fontSize: '10px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: "'Jost', sans-serif" }}>Success Criteria</div>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: "'Jost', sans-serif" }}>Success Criteria</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   {[
                     { text: 'Employee cart conversion ≥ 50% → Hit (68%)', hit: true },
@@ -1782,10 +1782,10 @@ export const SmartEPPCaseStudy = () => {
                     { text: 'Lessor/Seller change requests ≤ 5 → Missed (Cost of skipping validation)', hit: false },
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                      <span style={{ fontSize: '13px', fontWeight: 700, color: item.hit ? 'var(--semantic-success)' : 'var(--semantic-error)', flexShrink: 0, marginTop: '1px' }}>
+                      <span style={{ fontSize: '16px', fontWeight: 700, color: item.hit ? 'var(--semantic-success)' : 'var(--semantic-error)', flexShrink: 0, marginTop: '1px' }}>
                         {item.hit ? '✓' : '✗'}
                       </span>
-                      <p style={{ fontSize: '13px', color: item.hit ? '#777' : '#666', lineHeight: 1.6, margin: 0, fontStyle: item.hit ? 'normal' : 'italic' }}>
+                      <p style={{ fontSize: '16px', color: item.hit ? '#777' : '#666', lineHeight: 1.6, margin: 0, fontStyle: item.hit ? 'normal' : 'italic' }}>
                         {item.text}
                       </p>
                     </div>
@@ -1801,7 +1801,7 @@ export const SmartEPPCaseStudy = () => {
               viewport={{ once: true }}
               style={{ background: 'rgba(var(--semantic-info-rgb),0.03)', border: '1px solid rgba(var(--semantic-info-rgb),0.1)', borderRadius: '20px', padding: '32px 40px' }}
             >
-              <div style={{ fontSize: '10px', fontWeight: 700, color: 'var(--semantic-info)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>
+              <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-info)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>
                 Attribution Note
               </div>
               <p style={{ fontSize: '18px', color: '#c0c0c0', lineHeight: 1.65, margin: 0, fontWeight: 500 }}>
@@ -1823,7 +1823,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Header */}
             <div style={{ marginBottom: '48px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                <span style={{ fontSize: '12px', color: '#777', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>08: Reflection</span>
+                <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>08: Reflection</span>
               </div>
               <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
                 What I'd do differently. What I learned.
@@ -1885,9 +1885,9 @@ export const SmartEPPCaseStudy = () => {
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path d="M3 8h10M9 4l4 4-4 4" stroke={item.highlight ? 'var(--semantic-brand)' : '#555'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                    <h4 style={{ fontSize: '15px', fontWeight: 700, color: item.highlight ? 'var(--semantic-brand)' : '#e5e5e5', margin: 0, lineHeight: 1.35 }}>{item.title}</h4>
+                    <h4 style={{ fontSize: '16px', fontWeight: 700, color: item.highlight ? 'var(--semantic-brand)' : '#e5e5e5', margin: 0, lineHeight: 1.35 }}>{item.title}</h4>
                   </div>
-                  <p style={{ fontSize: '14px', color: '#888', lineHeight: 1.6, margin: 0 }}>{item.body}</p>
+                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>{item.body}</p>
                 </motion.div>
               ))}
             </div>
@@ -1905,7 +1905,7 @@ export const SmartEPPCaseStudy = () => {
              
              {/* Slide Header */}
              <div style={{ textAlign: 'center' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#10b981', background: 'rgba(16, 185, 129, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#10b981', background: 'rgba(16, 185, 129, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
                   <CheckCircle2 size={16} /> The Solution
                 </div>
                 <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Zero-Friction Financing</h2>
@@ -1930,7 +1930,7 @@ export const SmartEPPCaseStudy = () => {
                    </div>
                    <div style={{ textAlign: 'center', padding: '0 16px' }}>
                       <h4 style={{ fontSize: '22px', fontWeight: 500, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>01. Corporate SSO Auth</h4>
-                      <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.</p>
+                      <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.</p>
                    </div>
                 </div>
 
@@ -1948,7 +1948,7 @@ export const SmartEPPCaseStudy = () => {
                    </div>
                    <div style={{ textAlign: 'center', padding: '0 16px' }}>
                       <h4 style={{ fontSize: '22px', fontWeight: 500, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>02. Dynamic Limits</h4>
-                      <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.</p>
+                      <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.</p>
                    </div>
                 </div>
 
@@ -1966,7 +1966,7 @@ export const SmartEPPCaseStudy = () => {
                    </div>
                    <div style={{ textAlign: 'center', padding: '0 16px' }}>
                       <h4 style={{ fontSize: '22px', fontWeight: 500, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>03. 1-Click Checkout</h4>
-                      <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Automatically routing the first EMI deduction to the next month's payroll, eliminating credit cards entirely.</p>
+                      <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Automatically routing the first EMI deduction to the next month's payroll, eliminating credit cards entirely.</p>
                    </div>
                 </div>
              </div>
@@ -2002,17 +2002,17 @@ export const SmartEPPCaseStudy = () => {
               >
                 <div>
                   <div style={{ fontSize: '48px', fontWeight: 700, lineHeight: 1, background: 'linear-gradient(135deg, #10b981, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px' }}>40+</div>
-                  <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.5 }}>In-depth user interviews across 3 massive partner companies.</div>
+                  <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.5 }}>In-depth user interviews across 3 massive partner companies.</div>
                 </div>
                 <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
                 <div>
                   <div style={{ fontSize: '48px', fontWeight: 700, lineHeight: 1, background: 'linear-gradient(135deg, #10b981, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px' }}>15k</div>
-                  <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.5 }}>Funnel data points analyzed via Mixpanel to find the drop-off.</div>
+                  <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.5 }}>Funnel data points analyzed via Mixpanel to find the drop-off.</div>
                 </div>
                 <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
                 <div>
                   <div style={{ fontSize: '48px', fontWeight: 700, lineHeight: 1, background: 'linear-gradient(135deg, #10b981, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px' }}>3</div>
-                  <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.5 }}>Competitor platforms fully audited for UX teardowns.</div>
+                  <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.5 }}>Competitor platforms fully audited for UX teardowns.</div>
                 </div>
               </motion.div>
             </div>
@@ -2035,7 +2035,7 @@ export const SmartEPPCaseStudy = () => {
                     <Smartphone size={32} color="#10b981" />
                   </div>
                   <div>
-                    <div style={{ color: '#10b981', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>Insight 01</div>
+                    <div style={{ color: '#10b981', fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>Insight 01</div>
                     <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, marginBottom: '12px' }}>The "App Fatigue" Hurdle</h4>
                     <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>Users purchase a laptop once every 3 years. They explicitly refused to download a dedicated, heavy native app for a rare transaction. We needed a lightweight web flow.</p>
                   </div>
@@ -2049,11 +2049,11 @@ export const SmartEPPCaseStudy = () => {
                   >
                     <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #3b82f6, transparent)' }} />
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                      <div style={{ color: '#3b82f6', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Insight 02</div>
+                      <div style={{ color: '#3b82f6', fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Insight 02</div>
                       <Fingerprint size={24} color="#3b82f6" style={{ opacity: 0.6 }} />
                     </div>
                     <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '12px', paddingRight: '20px' }}>KYC is a Funnel Killer</h4>
-                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>Asking for PAN numbers and salary slips upfront caused immediate mistrust. Users felt they were applying for a mortgage just to browse devices.</p>
+                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>Asking for PAN numbers and salary slips upfront caused immediate mistrust. Users felt they were applying for a mortgage just to browse devices.</p>
                   </motion.div>
 
                   {/* Insight 3 */}
@@ -2063,11 +2063,11 @@ export const SmartEPPCaseStudy = () => {
                   >
                     <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #f59e0b, transparent)' }} />
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                      <div style={{ color: '#f59e0b', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Insight 03</div>
+                      <div style={{ color: '#f59e0b', fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Insight 03</div>
                       <AlertCircle size={24} color="#f59e0b" style={{ opacity: 0.6 }} />
                     </div>
                     <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '12px', paddingRight: '20px' }}>The "Blind Cart" Effect</h4>
-                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>Users didn't know their approved EMI limit while browsing. Reaching checkout only to be rejected caused them to abandon the cart entirely.</p>
+                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>Users didn't know their approved EMI limit while browsing. Reaching checkout only to be rejected caused them to abandon the cart entirely.</p>
                   </motion.div>
                 </div>
               </div>
@@ -2081,7 +2081,7 @@ export const SmartEPPCaseStudy = () => {
       <section style={{ padding: '120px 0', background: '#050505', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 60%)', borderRadius: '50%', pointerEvents: 'none' }} />
         
-        <div style={{ position: 'absolute', left: '32px', bottom: '32px', transform: 'rotate(-90deg)', transformOrigin: 'left bottom', color: '#3b82f6', letterSpacing: '8px', fontSize: '11px', textTransform: 'uppercase', fontWeight: 600, opacity: 0.8 }}>
+        <div style={{ position: 'absolute', left: '32px', bottom: '32px', transform: 'rotate(-90deg)', transformOrigin: 'left bottom', color: '#3b82f6', letterSpacing: '8px', fontSize: '16px', textTransform: 'uppercase', fontWeight: 600, opacity: 0.8 }}>
           Explore
         </div>
         <div className="container" style={{ maxWidth: '900px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
@@ -2097,7 +2097,7 @@ export const SmartEPPCaseStudy = () => {
       <section style={{ padding: '120px 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#3b82f6', background: 'rgba(59,130,246,0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#3b82f6', background: 'rgba(59,130,246,0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
               Ideation & Iteration
             </div>
             <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
@@ -2118,11 +2118,11 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
               </div>
               <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
                   <XCircle size={12} /> Draft 01
                 </div>
                 <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>Sticker Shock</h4>
-                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>
                   Credit limits were hidden until checkout, causing mass cart abandonment.
                 </p>
               </div>
@@ -2138,11 +2138,11 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
               </div>
               <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
                   <XCircle size={12} /> Draft 02
                 </div>
                 <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>High Friction</h4>
-                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>
                   Forcing KYC uploads before browsing caused a fatal 70% bounce rate.
                 </p>
               </div>
@@ -2159,11 +2159,11 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '120px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
               </div>
               <div style={{ padding: '32px', background: '#0a0a0a', marginTop: '-60px', position: 'relative' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px' }}>
                   <CheckCircle2 size={16} /> The Winner
                 </div>
                 <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless SSO & Instant Credit</h4>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>
                   By syncing Corporate SSO, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout, boosting confidence and skyrocketing conversions.
                 </p>
               </div>
@@ -2207,18 +2207,18 @@ export const SmartEPPCaseStudy = () => {
               <div style={{ display: 'flex', gap: '16px' }}>
                 <div style={{ flex: 1 }}>
                   <div style={{ height: '80px', background: '#0a0a0a', borderRadius: '12px', border: '1px solid var(--glass-border)', marginBottom: '12px' }} />
-                  <div style={{ color: 'var(--text-primary)', fontSize: '14px', fontWeight: 600 }}>Obsidian</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', fontFamily: "'JetBrains Mono', monospace" }}>#0a0a0a</div>
+                  <div style={{ color: 'var(--text-primary)', fontSize: '16px', fontWeight: 600 }}>Obsidian</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '16px', fontFamily: "'JetBrains Mono', monospace" }}>#0a0a0a</div>
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ height: '80px', background: '#e50914', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.2)', marginBottom: '12px' }} />
-                  <div style={{ color: 'var(--text-primary)', fontSize: '14px', fontWeight: 600 }}>Action Red</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', fontFamily: "'JetBrains Mono', monospace" }}>#e50914</div>
+                  <div style={{ color: 'var(--text-primary)', fontSize: '16px', fontWeight: 600 }}>Action Red</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '16px', fontFamily: "'JetBrains Mono', monospace" }}>#e50914</div>
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ height: '80px', background: '#ffffff', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', marginBottom: '12px' }} />
-                  <div style={{ color: 'var(--bg-color)', fontSize: '14px', fontWeight: 600 }}>Primary Text</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '12px', fontFamily: "'JetBrains Mono', monospace" }}>#ffffff</div>
+                  <div style={{ color: 'var(--bg-color)', fontSize: '16px', fontWeight: 600 }}>Primary Text</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '16px', fontFamily: "'JetBrains Mono', monospace" }}>#ffffff</div>
                 </div>
               </div>
             </div>
@@ -2229,11 +2229,11 @@ export const SmartEPPCaseStudy = () => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                 <div>
                   <div style={{ fontFamily: "'Syne', sans-serif", fontSize: '32px', color: 'var(--text-primary)', lineHeight: 1 }}>Aa</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '14px', marginTop: '8px' }}>Syne (Headings)</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '16px', marginTop: '8px' }}>Syne (Headings)</div>
                 </div>
                 <div>
                   <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '24px', color: 'var(--text-primary)', lineHeight: 1 }}>Aa</div>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '14px', marginTop: '8px' }}>JetBrains Mono (Data & Code)</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '16px', marginTop: '8px' }}>JetBrains Mono (Data & Code)</div>
                 </div>
               </div>
             </div>
@@ -2270,7 +2270,7 @@ export const SmartEPPCaseStudy = () => {
               whileHover={{ y: -5 }}
               style={{ background: 'rgba(239,68,68,0.03)', border: '1px solid rgba(239,68,68,0.15)', borderRadius: '24px', padding: '40px', position: 'relative', overflow: 'hidden' }}
             >
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '24px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '6px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '24px' }}>
                 <AlertCircle size={16} /> The Fallacy
               </div>
               <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '16px', lineHeight: 1.3 }}>The "Universal App" Obsession</h3>
@@ -2278,7 +2278,7 @@ export const SmartEPPCaseStudy = () => {
                 Initially, I spent two weeks designing a beautiful, standalone native iOS & Android application. I obsessed over push notifications, persistent login states, and native biometric auth.
               </p>
               <div style={{ background: 'rgba(0,0,0,0.4)', padding: '20px', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
-                <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', margin: 0, fontStyle: 'italic', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', margin: 0, fontStyle: 'italic', lineHeight: 1.6 }}>
                   "Corporate employees absolutely refused to download another heavy app just to buy a device once a year. The app store friction killed our acquisition funnel instantly."
                 </p>
               </div>
@@ -2289,7 +2289,7 @@ export const SmartEPPCaseStudy = () => {
               whileHover={{ y: -5 }}
               style={{ background: 'rgba(16,185,129,0.03)', border: '1px solid rgba(16,185,129,0.15)', borderRadius: '24px', padding: '40px', position: 'relative', overflow: 'hidden' }}
             >
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '24px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '24px' }}>
                 <Zap size={16} /> The Pivot
               </div>
               <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '16px', lineHeight: 1.3 }}>Embedded PWA Integration</h3>
@@ -2300,7 +2300,7 @@ export const SmartEPPCaseStudy = () => {
                 <TrendingUp size={32} color="#10b981" />
                 <div>
                   <div style={{ fontSize: '24px', fontWeight: 700, color: '#10b981' }}>+300%</div>
-                  <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '1px' }}>Conversion Spike</div>
+                  <div style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '1px' }}>Conversion Spike</div>
                 </div>
               </div>
             </motion.div>
@@ -2321,7 +2321,7 @@ export const SmartEPPCaseStudy = () => {
             </p>
 
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '48px' }}>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px 24px', borderRadius: '100px', fontSize: '14px', color: 'rgba(255,255,255,0.7)', display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px 24px', borderRadius: '100px', fontSize: '16px', color: 'rgba(255,255,255,0.7)', display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
                 <Palette size={18} color="var(--accent-color)" /> 
                 <span><strong style={{ color: '#fff' }}>Built with:</strong> Figma, Claude, & UX Pilot</span>
               </div>
@@ -2329,7 +2329,7 @@ export const SmartEPPCaseStudy = () => {
 
             <Link 
               to="/" 
-              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#0a0a0a', background: '#fff', padding: '16px 40px', borderRadius: '100px', textDecoration: 'none', fontWeight: 600, fontSize: '15px', letterSpacing: '1px', textTransform: 'uppercase', transition: 'all 0.3s ease' }}
+              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#0a0a0a', background: '#fff', padding: '16px 40px', borderRadius: '100px', textDecoration: 'none', fontWeight: 600, fontSize: '16px', letterSpacing: '1px', textTransform: 'uppercase', transition: 'all 0.3s ease' }}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
             >
