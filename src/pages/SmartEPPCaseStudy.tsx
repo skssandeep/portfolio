@@ -664,7 +664,7 @@ export const SmartEPPCaseStudy = () => {
               </div>
 
               {/* Stats (Right) */}
-              <div className="lg:col-span-5 font-mono" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div className="lg:col-span-5" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', fontFamily: "'Jost', sans-serif" }}>
                 <div style={{ fontSize: '11px', color: 'var(--semantic-error)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '16px', fontWeight: 600 }}>
                   Project Scope
                 </div>
