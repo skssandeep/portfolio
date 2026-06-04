@@ -544,13 +544,14 @@ export const SmartEPPCaseStudy = () => {
                   flexDirection: 'column',
                   paddingTop: '20px',
                   borderTop: '2px solid',
-                  borderColor: (stat as any).highlight ? 'var(--accent-color)' : 'rgba(255,255,255,0.15)'
+                  borderColor: (stat as any).highlight ? 'var(--accent-color)' : 'rgba(255,255,255,0.15)',
+                  fontFamily: "'Jost', sans-serif"
                 }}
               >
-                <div style={{ color: '#888', fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>
+                <div style={{ color: '#888', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>
                   {stat.label}
                 </div>
-                <div style={{ color: (stat as any).highlight ? 'var(--accent-color)' : '#fff', fontSize: '20px', fontWeight: 500, marginBottom: '6px', letterSpacing: '-0.01em', fontFamily: 'var(--font-heading)' }}>
+                <div style={{ color: (stat as any).highlight ? 'var(--accent-color)' : '#fff', fontSize: '20px', fontWeight: 500, marginBottom: '6px', letterSpacing: '-0.01em' }}>
                   {stat.value}
                 </div>
                 <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.5 }}>
