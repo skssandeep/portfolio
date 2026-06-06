@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Layers, ArrowLeft, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase} from 'lucide-react';
+import { Layers, ArrowLeft, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase, FastForward } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
@@ -1763,83 +1763,98 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 08. Reflection */}
-      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+      <section style={{ padding: '120px 0', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+        {/* Subtle reflection background elements */}
+        <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: '50%', height: '80%', background: 'radial-gradient(ellipse, rgba(255,255,255,0.03) 0%, transparent 60%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '60%', height: '80%', background: 'radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 60%)', filter: 'blur(100px)', pointerEvents: 'none' }} />
 
-            {/* Header */}
-            <div style={{ marginBottom: '48px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            
+            {/* Left Column: Sticky Header */}
+            <div className="lg:col-span-4 lg:sticky lg:top-32" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', alignSelf: 'flex-start' }}>
                 <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>08: Reflection</span>
               </div>
-              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
-                What I'd do differently. What I learned.
+              <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, fontFamily: 'var(--font-heading)' }}>
+                Looking Back.
               </h2>
+              <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '400px' }}>
+                Five core lessons from designing a B2B2C FinTech product from scratch, where friction is the enemy and trust is the currency.
+              </p>
             </div>
 
-            {/* Reflection Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: 'Research gaps cost time',
-                  body: 'Lessor and seller portals relied on stakeholder workshops instead of user observation, resulting in significantly higher post-launch change requests.',
-                  colSpan: 1,
-                  highlight: false
-                },
-                {
-                  title: 'System before screens',
-                  body: 'Extracting components halfway through caused inconsistencies that took 2 weeks to fix. A foundational design system must always come first.',
-                  colSpan: 1,
-                  highlight: false
-                },
-                {
-                  title: 'Tooltips aren\'t flows',
-                  body: 'We answered "What if I leave the company?" with a tooltip. It instantly became the #1 support ticket. It desperately needed a dedicated user flow.',
-                  colSpan: 1,
-                  highlight: false
-                },
-                {
-                  title: 'Edge cases are the product',
-                  body: 'I used to treat edge cases as final cleanup. This project taught me that in B2B operations, failure states (like a stuck order) are core UX problems. I now audit edge cases during initial problem definition, not as a polish pass.',
-                  colSpan: 2,
-                  highlight: true
-                },
-                {
-                  title: 'The Next Iteration',
-                  body: '(1) Power-user tax calculator mode. (2) Full end-of-tenure flow. (3) Complete redesign of lessor/seller portals backed by actual user research.',
-                  colSpan: 1,
-                  highlight: false
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.07 }}
-                  className={`md:col-span-${item.colSpan}`}
-                  style={{
-                    background: item.highlight ? 'rgba(249,87,56,0.04)' : '#0d0d0d',
-                    border: `1px solid ${item.highlight ? 'rgba(249,87,56,0.15)' : 'rgba(255,255,255,0.06)'}`,
-                    borderRadius: '20px',
-                    padding: '32px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px',
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8h10M9 4l4 4-4 4" stroke={item.highlight ? 'var(--semantic-brand)' : '#555'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <h4 style={{ fontSize: '16px', fontWeight: 700, color: item.highlight ? 'var(--semantic-brand)' : '#e5e5e5', margin: 0, lineHeight: 1.35 }}>{item.title}</h4>
-                  </div>
-                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>{item.body}</p>
-                </motion.div>
-              ))}
-            </div>
+            {/* Right Column: Glass Insight Cards */}
+            <div className="lg:col-span-8" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              
+              {/* Card 1 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+                style={{ background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', gap: '24px', alignItems: 'flex-start', position: 'relative', overflow: 'hidden', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.01)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
+              >
+                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Search size={24} /></div>
+                <div>
+                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px' }}>Research gaps cost time</h3>
+                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Lessor and seller portals relied on stakeholder workshops instead of user observation, resulting in significantly higher post-launch change requests.</p>
+                </div>
+              </motion.div>
 
-          </motion.div>
+              {/* Card 2 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+                style={{ background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', gap: '24px', alignItems: 'flex-start', position: 'relative', overflow: 'hidden', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.01)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
+              >
+                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Layers size={24} /></div>
+                <div>
+                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px' }}>System before screens</h3>
+                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Extracting components halfway through caused inconsistencies that took 2 weeks to fix. A foundational design system must always come first.</p>
+                </div>
+              </motion.div>
+
+              {/* HERO CARD - Card 3 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
+                style={{ background: 'radial-gradient(120% 120% at 50% 0%, rgba(249,87,56,0.1) 0%, rgba(249,87,56,0.02) 100%)', backdropFilter: 'blur(30px)', border: '1px solid rgba(249,87,56,0.2)', borderRadius: '32px', padding: '56px', display: 'flex', flexDirection: 'column', gap: '24px', position: 'relative', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(249,87,56,0.4)'; e.currentTarget.style.boxShadow = '0 30px 60px rgba(249,87,56,0.1), inset 0 1px 0 rgba(255,255,255,0.2)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(249,87,56,0.2)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'var(--semantic-brand)' }} />
+                <div style={{ background: 'rgba(249,87,56,0.15)', padding: '20px', borderRadius: '20px', color: 'var(--semantic-brand)', alignSelf: 'flex-start' }}><AlertCircle size={32} /></div>
+                <div>
+                  <h3 style={{ fontSize: '32px', fontWeight: 600, color: '#fff', marginBottom: '16px', lineHeight: 1.2, fontFamily: 'var(--font-heading)' }}>Edge cases are the product</h3>
+                  <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, margin: 0 }}>I used to treat edge cases as final cleanup. This project taught me that in B2B operations, failure states (like a stuck order) are core UX problems. I now audit edge cases during initial problem definition, not as a polish pass.</p>
+                </div>
+              </motion.div>
+
+              {/* Card 4 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
+                style={{ background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', gap: '24px', alignItems: 'flex-start', position: 'relative', overflow: 'hidden', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.01)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
+              >
+                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Lightbulb size={24} /></div>
+                <div>
+                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px' }}>Tooltips aren't flows</h3>
+                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>We answered "What if I leave the company?" with a tooltip. It instantly became the #1 support ticket. It desperately needed a dedicated user flow.</p>
+                </div>
+              </motion.div>
+
+              {/* Card 5 */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }}
+                style={{ background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', gap: '24px', alignItems: 'flex-start', position: 'relative', overflow: 'hidden', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.01)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
+              >
+                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><FastForward size={24} /></div>
+                <div>
+                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px' }}>The Next Iteration</h3>
+                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>(1) Power-user tax calculator mode. (2) Full end-of-tenure flow. (3) Complete redesign of lessor/seller portals backed by actual user research.</p>
+                </div>
+              </motion.div>
+
+            </div>
+          </div>
         </div>
       </section>
 
