@@ -154,7 +154,7 @@ export const LogoReveal = () => {
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.5), inset 0 -10px 20px rgba(255,255,255,0.03)',
             transition: 'all 0.3s var(--apple-easing)'
           }}
-          onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+          data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
         >
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent)' }} />
           <span className="relative z-10">Book Your Free Strategy Call</span>

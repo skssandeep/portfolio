@@ -14,7 +14,7 @@ export const CTASection = () => {
         <LiquidButton 
           size="lg" 
           style={{ fontWeight: 600, letterSpacing: '1px', padding: '0 48px', fontSize: '0.9rem' }}
-          onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+          data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
         >
           Book Your Free Strategy Call
         </LiquidButton>

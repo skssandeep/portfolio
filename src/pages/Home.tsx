@@ -200,7 +200,8 @@ export const Home = () => {
                 
                 <LiquidButton 
                   size="lg" 
-                  onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+                  data-cal-link="sandeepks/15min"
+                  data-cal-config='{"layout":"month_view"}'
                   style={{ 
                     fontWeight: 700, 
                     letterSpacing: '2px', 

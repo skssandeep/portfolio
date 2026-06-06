@@ -250,7 +250,7 @@ export const LogoRevealOrbital2 = () => {
             <button 
               className="rounded-full bg-white text-black font-mono font-bold tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] cursor-pointer whitespace-nowrap inline-flex items-center justify-center"
               style={{ padding: '24px 80px', minWidth: '320px', minHeight: '64px', fontSize: '20px', fontFamily: "'JetBrains Mono', monospace" }}
-              onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+              data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
             >
               CLICK TO SUPERCHARGE YOUR BRAND!
             </button>

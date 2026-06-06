@@ -240,7 +240,7 @@ export const LogoRevealCinematic = () => {
           <button 
             className="group relative rounded-full overflow-hidden cursor-pointer bg-white text-black font-bold tracking-wide transition-transform hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.2)] whitespace-nowrap flex items-center justify-center mx-auto"
             style={{ padding: '20px 48px', minWidth: '320px', fontSize: '15px' }}
-            onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+            data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#ff0000] to-[#ff5555] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <span className="relative z-10 group-hover:text-white transition-colors duration-500" style={{ letterSpacing: '0.05em' }}>

@@ -141,7 +141,7 @@ export const AboutSection = () => {
               <div style={{ marginTop: '8px' }}>
                 <LiquidButton 
                   size="lg"
-                  onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')} 
+                  data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}' 
                   style={{
                     fontWeight: 800,
                     padding: '0 32px',

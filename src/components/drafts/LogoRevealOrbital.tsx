@@ -190,7 +190,7 @@ export const LogoRevealOrbital = () => {
           <button 
             className="group relative overflow-hidden cursor-pointer bg-transparent border border-cyan-500/50 text-cyan-300 font-mono font-bold tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,255,255,0.1)] hover:shadow-[0_0_40px_rgba(0,255,255,0.4)] hover:bg-cyan-950/50 whitespace-nowrap flex items-center justify-center mx-auto"
             style={{ padding: '20px 48px', minWidth: '320px', fontSize: '13px' }}
-            onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+            data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
           >
             <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(0,255,255,0.2),transparent)] -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
             <span className="relative z-10 flex items-center gap-3">

@@ -48,7 +48,7 @@ export const FooterUnique = () => {
           </div>
           
           <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-            <LiquidButton size="lg" style={{ padding: '0 40px', fontSize: '16px' }} onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}>
+            <LiquidButton size="lg" style={{ padding: '0 40px', fontSize: '16px' }} data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'>
               Book a Call <ArrowUpRight size={20} style={{ marginLeft: '8px' }} />
             </LiquidButton>
             <a href="mailto:hello@sandstormify.com" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '60px', height: '60px', borderRadius: '50%', background: 'var(--bg-secondary)', border: '1px solid var(--glass-border)', color: 'var(--text-primary)', transition: 'all 0.3s ease' }} className="hover-scale">

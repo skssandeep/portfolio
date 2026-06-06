@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
+import { getCalApi } from "@calcom/embed-react";
 import { Footer } from './components/Footer';
 import { LiquidButton } from './components/ui/liquid-glass-button';
 import { Preloader } from './components/ui/Preloader';
@@ -47,6 +48,13 @@ function App() {
     restDelta: 0.001
   });
   const scrollFillHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, []);
 
   useEffect(() => {
     const handleFigmaToggle = (e: any) => {
@@ -148,7 +156,8 @@ function App() {
                 <LiquidButton 
                   size="sm"
                   style={{ fontWeight: 600, fontSize: '14px', padding: '0 24px', minHeight: '40px', borderRadius: '100px' }}
-                  onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+                  data-cal-link="sandeepks/15min"
+                  data-cal-config='{"layout":"month_view"}'
                 >
                   Book a Call
                 </LiquidButton>

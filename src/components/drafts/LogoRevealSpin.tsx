@@ -167,7 +167,7 @@ export const LogoRevealSpin = () => {
               boxShadow: '0px 0px 20px rgba(255, 255, 255, 0.05), inset 0px 1px 1px rgba(255, 255, 255, 0.1)',
               transition: 'all 0.3s var(--apple-easing)'
             }}
-            onClick={() => window.open('https://cal.com/sandeepks/15min', '_blank')}
+            data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent)' }} />
             <span className="relative z-10">Click to supercharge your brand!</span>
