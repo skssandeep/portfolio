@@ -959,7 +959,7 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     01
                   </div>
-                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>Show the rupee, hide the formula</h4>
+                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3, fontFamily: "'Jost', sans-serif" }}>Show the rupee, hide the formula</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Present ₹38,257 saved, not tax slab math. Outcomes in the primary view. Mechanics on demand.
@@ -976,7 +976,7 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     02
                   </div>
-                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Compare to Amazon, not nothing</h4>
+                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>Compare to Amazon, not nothing</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Savings need contrast to land. Comparison is a first-class feature on the product page, not a marketing footnote.
@@ -993,7 +993,7 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     03
                   </div>
-                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Answer anxieties proactively</h4>
+                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>Answer anxieties proactively</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   What if it breaks? What if I leave? Every anxiety surfaced in-context.
@@ -1010,7 +1010,7 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     04
                   </div>
-                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>HR approves in seconds</h4>
+                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>HR approves in seconds</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Name, role, device, policy: one card, one click. No endless scrolling.
@@ -1027,7 +1027,7 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     05
                   </div>
-                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Status must never be silent</h4>
+                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>Status must never be silent</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Every state change triggers a notification to prevent anxiety.
