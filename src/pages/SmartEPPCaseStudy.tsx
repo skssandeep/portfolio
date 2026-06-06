@@ -1171,8 +1171,8 @@ export const SmartEPPCaseStudy = () => {
                   <Maximize size={16} /> Open Gallery
                 </motion.div>
                 
-                <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(4px)', padding: '6px 12px', borderRadius: '100px', color: '#fff', fontSize: '12px', fontWeight: 600, zIndex: 15 }}>
-                  8 Photos
+                <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(4px)', padding: '8px', borderRadius: '50%', color: '#fff', zIndex: 15, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
+                  <Maximize size={16} />
                 </div>
               </div>
               <div style={{ padding: '24px', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
@@ -1198,8 +1198,8 @@ export const SmartEPPCaseStudy = () => {
                   <Maximize size={16} /> Open Gallery
                 </motion.div>
                 
-                <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(4px)', padding: '6px 12px', borderRadius: '100px', color: '#fff', fontSize: '12px', fontWeight: 600, zIndex: 15 }}>
-                  5 Photos
+                <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(4px)', padding: '8px', borderRadius: '50%', color: '#fff', zIndex: 15, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
+                  <Maximize size={16} />
                 </div>
               </div>
               <div style={{ padding: '24px', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
