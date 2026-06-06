@@ -1154,13 +1154,13 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 0', flexWrap: 'wrap', gap: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', padding: '40px 0', flexWrap: 'wrap', gap: '20px' }}>
             
             {/* Phase 1: Initial Wireframes */}
             <motion.div 
                whileHover="hover"
                onClick={() => { setModalImages(Array.from({length: 8}, (_, idx) => `/images/wireframe${idx+1}.jpg`)); setModalIndex(0); }}
-               style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 1 }}
+               style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 1, display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '20px', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
                 <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe3.jpg" alt="Wireframe 3" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
@@ -1175,7 +1175,7 @@ export const SmartEPPCaseStudy = () => {
                   <Maximize size={16} />
                 </div>
               </div>
-              <div style={{ padding: '24px', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+              <div style={{ padding: '24px', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)', flex: 1 }}>
                 <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>Initial Wireframes</h4>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                   Initial wireframes of homepage, product page, and tax savings slider created using UX Pilot.
@@ -1187,7 +1187,7 @@ export const SmartEPPCaseStudy = () => {
             <motion.div 
                whileHover="hover"
                onClick={() => { setModalImages(Array.from({length: 5}, (_, idx) => `/images/prev0${idx+1}.jpg`)); setModalIndex(0); }}
-               style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 2 }}
+               style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 2, display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '20px', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
                 <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev03.jpg" alt="HiFi 3" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
@@ -1202,7 +1202,7 @@ export const SmartEPPCaseStudy = () => {
                   <Maximize size={16} />
                 </div>
               </div>
-              <div style={{ padding: '24px', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+              <div style={{ padding: '24px', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)', flex: 1 }}>
                 <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>Initial Version Hi-Fi</h4>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                   First Hi-Fi version of Smart EPP.
