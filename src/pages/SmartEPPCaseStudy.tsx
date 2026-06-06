@@ -1043,7 +1043,7 @@ export const SmartEPPCaseStudy = () => {
                     </div>
                     
                     <div style={{ textAlign: 'right' }}>
-                      <div style={{ fontSize: '48px', fontWeight: 700, color: 'var(--semantic-success)', lineHeight: 1, fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>68%</div>
+                      <div style={{ fontSize: '48px', fontWeight: 700, color: 'var(--semantic-success)', lineHeight: 1, fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>9.4%</div>
                       <div style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)', marginTop: '4px' }}>Conversion Rate</div>
                     </div>
                   </div>
@@ -1071,7 +1071,7 @@ export const SmartEPPCaseStudy = () => {
                       <XCircle size={14} strokeWidth={2.5} /> Rejected Concept
                     </div>
                     <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Minimal Product Page</h4>
-                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>28% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Conversion</span></div>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>2.1% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Conversion</span></div>
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                       Too bare. Without seeing exact savings upfront, users wouldn't convert. A monthly salary EMI felt like a leap of faith.
                     </p>
@@ -1753,7 +1753,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Hero Metrics - 3 Column */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
-                { value: '68%', label: 'Cart Conversion', sub: 'Target: ≥ 50%' },
+                { value: '9.4%', label: 'Total Conversion', sub: 'Target: ≥ 5%' },
                 { value: '<12s', label: 'HR Approval', sub: 'Target: ≤ 30s' },
                 { value: '0%', label: 'Client Churn', sub: 'Target: Zero drop-offs' }
               ].map((m, i) => (
