@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Layers, ArrowLeft, ArrowRight, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase, FastForward, Maximize } from 'lucide-react';
+import { Layers, ArrowLeft, ArrowRight, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns, Package, Landmark, Briefcase, FastForward, Maximize, ZoomIn, ZoomOut } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
@@ -133,6 +133,11 @@ const SmartEPPPrototype = () => {
 export const SmartEPPCaseStudy = () => {
   const [modalImages, setModalImages] = useState<string[]>([]);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
+  const [imageWidth, setImageWidth] = useState(500);
+
+  useEffect(() => {
+    setImageWidth(500);
+  }, [modalIndex]);
   const [showHeroPill, setShowHeroPill] = useState(true);
   
   const finalDesignsRef = useRef<HTMLElement>(null);
@@ -305,8 +310,19 @@ export const SmartEPPCaseStudy = () => {
                  exit={{ scale: 0.95, opacity: 0, y: -20 }}
                  transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                  src={modalImages[modalIndex]} 
-                 style={{ width: '100%', maxWidth: '500px', height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: '0 auto' }} 
+                 style={{ width: '100%', maxWidth: `${imageWidth}px`, height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: '0 auto', transition: 'max-width 0.3s ease' }} 
               />
+            </div>
+
+            {/* Zoom Controls */}
+            <div style={{ position: 'absolute', bottom: '40px', left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: '16px', zIndex: 10000, background: 'rgba(255,255,255,0.1)', padding: '12px 24px', borderRadius: '100px', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.2)' }} onClick={(e) => e.stopPropagation()}>
+              <button onClick={() => setImageWidth(w => Math.max(300, w - 200))} style={{ color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', opacity: imageWidth <= 300 ? 0.5 : 1 }} disabled={imageWidth <= 300} title="Zoom Out">
+                <ZoomOut size={24} />
+              </button>
+              <div style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.2)' }} />
+              <button onClick={() => setImageWidth(w => Math.min(1500, w + 200))} style={{ color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', opacity: imageWidth >= 1500 ? 0.5 : 1 }} disabled={imageWidth >= 1500} title="Zoom In">
+                <ZoomIn size={24} />
+              </button>
             </div>
 
             {/* Next Button */}
@@ -1146,9 +1162,9 @@ export const SmartEPPCaseStudy = () => {
                onClick={() => { setModalImages(Array.from({length: 8}, (_, idx) => `/images/wireframe${idx+1}.jpg`)); setModalIndex(0); }}
                style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 1 }}
             >
-              <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
-                <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe3.jpg" alt="Wireframe 3" style={{ position: 'absolute', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
-                <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe2.jpg" alt="Wireframe 2" style={{ position: 'absolute', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
+              <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '20px', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
+                <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe3.jpg" alt="Wireframe 3" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
+                <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe2.jpg" alt="Wireframe 2" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
                 <motion.img variants={{ hover: { scale: 1.05 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe1.jpg" alt="Wireframe 1" style={{ position: 'relative', width: '180px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 10 }} />
                 
                 <motion.div variants={{ hover: { opacity: 1, scale: 1 } }} initial={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} style={{ position: 'absolute', zIndex: 20, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(8px)', padding: '10px 20px', borderRadius: '100px', display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '14px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.2)', pointerEvents: 'none' }}>
@@ -1173,9 +1189,9 @@ export const SmartEPPCaseStudy = () => {
                onClick={() => { setModalImages(Array.from({length: 5}, (_, idx) => `/images/prev0${idx+1}.jpg`)); setModalIndex(0); }}
                style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 2 }}
             >
-              <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
-                <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev03.jpg" alt="HiFi 3" style={{ position: 'absolute', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
-                <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev02.jpg" alt="HiFi 2" style={{ position: 'absolute', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
+              <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '20px', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
+                <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev03.jpg" alt="HiFi 3" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
+                <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev02.jpg" alt="HiFi 2" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
                 <motion.img variants={{ hover: { scale: 1.05 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev01.jpg" alt="HiFi 1" style={{ position: 'relative', width: '180px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 10 }} />
                 
                 <motion.div variants={{ hover: { opacity: 1, scale: 1 } }} initial={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} style={{ position: 'absolute', zIndex: 20, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(8px)', padding: '10px 20px', borderRadius: '100px', display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '14px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.2)', pointerEvents: 'none' }}>
