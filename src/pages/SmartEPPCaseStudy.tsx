@@ -1797,7 +1797,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Search size={24} /></div>
                 <div>
                   <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Research gaps cost time</h3>
-                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Lessor and seller portals relied on stakeholder workshops instead of user observation, resulting in significantly higher post-launch change requests.</p>
+                  <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Lessor and seller portals relied on stakeholder workshops instead of user observation, resulting in significantly higher post-launch change requests.</p>
                 </div>
               </motion.div>
 
@@ -1810,7 +1810,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Layers size={24} /></div>
                 <div>
                   <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>System before screens</h3>
-                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Extracting components halfway through caused inconsistencies that took 2 weeks to fix. A foundational design system must always come first.</p>
+                  <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Extracting components halfway through caused inconsistencies that took 2 weeks to fix. A foundational design system must always come first.</p>
                 </div>
               </motion.div>
 
@@ -1837,7 +1837,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Lightbulb size={24} /></div>
                 <div>
                   <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Tooltips aren't flows</h3>
-                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>We answered "What if I leave the company?" with a tooltip. It instantly became the #1 support ticket. It desperately needed a dedicated user flow.</p>
+                  <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>We answered "What if I leave the company?" with a tooltip. It instantly became the #1 support ticket. It desperately needed a dedicated user flow.</p>
                 </div>
               </motion.div>
 
@@ -1850,7 +1850,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><FastForward size={24} /></div>
                 <div>
                   <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The Next Iteration</h3>
-                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>(1) Power-user tax calculator mode. (2) Full end-of-tenure flow. (3) Complete redesign of lessor/seller portals backed by actual user research.</p>
+                  <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>(1) Power-user tax calculator mode. (2) Full end-of-tenure flow. (3) Complete redesign of lessor/seller portals backed by actual user research.</p>
                 </div>
               </motion.div>
 
