@@ -1549,70 +1549,76 @@ export const SmartEPPCaseStudy = () => {
               {/* ROW 1: Metrics */}
               {[
                 { value: '9.4%', label: 'Total Conversion', sub: 'Target: ≥ 5%' },
-                { value: '<12s', label: 'HR Approval Time', sub: 'Target: ≤ 30s' },
+                { value: '<12S', label: 'HR Approval Time', sub: 'Target: ≤ 30s' },
                 { value: '0%', label: 'Client Churn', sub: 'Zero drop-offs' }
               ].map((m, i) => (
-                <div key={i} className="md:col-span-4" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', borderTop: '2px solid var(--semantic-success)', borderRadius: '20px', padding: '32px 24px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <div style={{ fontSize: 'clamp(3rem, 4vw, 4rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', lineHeight: 1, fontFamily: 'var(--font-heading)', marginBottom: '12px' }}>
+                <div key={i} className="md:col-span-4" style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '48px 32px', textAlign: 'center', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, transparent, var(--semantic-success), transparent)' }} />
+                  <div style={{ position: 'absolute', top: 0, left: '20%', right: '20%', height: '20px', background: 'var(--semantic-success)', filter: 'blur(20px)', opacity: 0.15 }} />
+                  
+                  <div style={{ fontSize: 'clamp(3rem, 4vw, 4.5rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', lineHeight: 1, fontFamily: 'var(--font-heading)', marginBottom: '16px' }}>
                     {m.value}
                   </div>
-                  <div style={{ fontSize: '18px', color: '#fff', fontWeight: 600, marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>{m.label}</div>
+                  <div style={{ fontSize: '18px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>{m.label}</div>
                   <div style={{ fontSize: '15px', color: 'var(--semantic-success)', fontWeight: 500 }}>{m.sub}</div>
                 </div>
               ))}
 
-              {/* ROW 2: Simplified Craft, Qualitative, and Trade-off */}
-              
-              {/* The Foundations (Merged craft) */}
-              <div className="md:col-span-4" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '14px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>System Foundations</div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  <li>
-                    <div style={{ fontSize: '16px', color: '#fff', fontWeight: 600, marginBottom: '4px' }}>1 System. 4 Platforms.</div>
-                    <div style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.5 }}>Unified components scale perfectly everywhere.</div>
-                  </li>
-                  <li>
-                    <div style={{ fontSize: '16px', color: '#fff', fontWeight: 600, marginBottom: '4px' }}>Inclusive by Design</div>
-                    <div style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.5 }}>High-contrast text and large touch targets.</div>
-                  </li>
-                  <li>
-                    <div style={{ fontSize: '16px', color: '#fff', fontWeight: 600, marginBottom: '4px' }}>Zero Dead Ends</div>
-                    <div style={{ fontSize: '15px', color: '#a3a3a3', lineHeight: 1.5 }}>Every error state mapped with clear next steps.</div>
-                  </li>
-                </ul>
+              {/* ROW 2: Craft & Trade-offs */}
+              {/* System Foundations */}
+              <div className="md:col-span-4" style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px', fontFamily: "'Jost', sans-serif" }}>System Foundations</div>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                  <div>
+                    <div style={{ fontSize: '16px', color: '#fff', fontWeight: 600, marginBottom: '8px' }}>1 System. 4 Platforms.</div>
+                    <div style={{ fontSize: '15px', color: '#888', lineHeight: 1.6 }}>Unified components scale perfectly everywhere.</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '16px', color: '#fff', fontWeight: 600, marginBottom: '8px' }}>Inclusive by Design</div>
+                    <div style={{ fontSize: '15px', color: '#888', lineHeight: 1.6 }}>High-contrast text and large touch targets.</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '16px', color: '#fff', fontWeight: 600, marginBottom: '8px' }}>Zero Dead Ends</div>
+                    <div style={{ fontSize: '15px', color: '#888', lineHeight: 1.6 }}>Every error state mapped with clear next steps.</div>
+                  </div>
+                </div>
               </div>
 
-              {/* Qualitative Wins */}
-              <div className="md:col-span-5" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>Beyond the Numbers</div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                     <CheckCircle2 size={18} color="var(--semantic-success)" style={{ marginTop: '2px', flexShrink: 0 }} />
-                     <span style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}><strong style={{ color: '#fff' }}>4.4★ Rating</strong> across App Store & Play Store.</span>
-                  </li>
-                  <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                     <CheckCircle2 size={18} color="var(--semantic-success)" style={{ marginTop: '2px', flexShrink: 0 }} />
-                     <span style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}><strong style={{ color: '#fff' }}>Massive Scale:</strong> Onboarded 20 Enterprises, 10 Financiers, and 10 Sellers in 90 days.</span>
-                  </li>
-                  <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                     <CheckCircle2 size={18} color="var(--semantic-success)" style={{ marginTop: '2px', flexShrink: 0 }} />
-                     <span style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}><strong style={{ color: '#fff' }}>Support tickets</strong> dropped to near-zero.</span>
-                  </li>
-                </ul>
+              {/* Beyond the Numbers */}
+              <div className="md:col-span-4" style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px', fontFamily: "'Jost', sans-serif" }}>Beyond the Numbers</div>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                  <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                     <div style={{ background: 'rgba(16, 185, 129, 0.1)', borderRadius: '50%', padding: '2px', marginTop: '2px', color: 'var(--semantic-success)' }}><CheckCircle2 size={16} /></div>
+                     <span style={{ color: '#888', fontSize: '15px', lineHeight: 1.6 }}><strong style={{ color: '#fff', fontWeight: 600 }}>4.4★ Rating</strong> across App Store & Play Store.</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                     <div style={{ background: 'rgba(16, 185, 129, 0.1)', borderRadius: '50%', padding: '2px', marginTop: '2px', color: 'var(--semantic-success)' }}><CheckCircle2 size={16} /></div>
+                     <span style={{ color: '#888', fontSize: '15px', lineHeight: 1.6 }}><strong style={{ color: '#fff', fontWeight: 600 }}>Massive Scale:</strong> Onboarded 20 Enterprises, 10 Financiers, and 10 Sellers in 90 days.</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                     <div style={{ background: 'rgba(16, 185, 129, 0.1)', borderRadius: '50%', padding: '2px', marginTop: '2px', color: 'var(--semantic-success)' }}><CheckCircle2 size={16} /></div>
+                     <span style={{ color: '#888', fontSize: '15px', lineHeight: 1.6 }}><strong style={{ color: '#fff', fontWeight: 600 }}>Support tickets</strong> dropped to near-zero.</span>
+                  </div>
+                </div>
               </div>
 
               {/* The Trade-off */}
-              <div className="md:col-span-3 flex flex-col justify-center" style={{ background: 'rgba(239,68,68,0.03)', border: '1px solid rgba(239,68,68,0.1)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--semantic-error)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: "'Jost', sans-serif" }}>The Trade-off</div>
-                <p style={{ fontSize: '15px', color: '#a3a3a3', margin: '0 0 16px 0', lineHeight: 1.6 }}>
-                  Skipped early validation on <strong style={{ color: '#fff' }}>Financier/Seller portals</strong> for speed.
+              <div className="md:col-span-4" style={{ background: '#0a0a0a', border: '1px solid rgba(239,68,68,0.1)', borderRadius: '24px', padding: '40px 32px', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(239,68,68,0.5), transparent)' }} />
+                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--semantic-error)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px', fontFamily: "'Jost', sans-serif" }}>The Trade-off</div>
+                
+                <p style={{ fontSize: '15px', color: '#888', margin: '0 0 32px 0', lineHeight: 1.6 }}>
+                  Skipped early validation on <strong style={{ color: '#fff', fontWeight: 600 }}>Financier/Seller portals</strong> for speed.
                 </p>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '12px', background: 'rgba(0,0,0,0.3)', borderRadius: '8px' }}>
-                  <XCircle size={16} color="var(--semantic-error)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span style={{ fontSize: '13px', color: '#e5e5e5', lineHeight: 1.4 }}>Resulted in excessive change requests and rework.</span>
+                
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginTop: 'auto' }}>
+                  <div style={{ color: 'var(--semantic-error)', marginTop: '2px' }}><XCircle size={16} /></div>
+                  <span style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5 }}>Resulted in excessive change requests and rework.</span>
                 </div>
               </div>
-              
             </div>
           </motion.div>
         </div>
