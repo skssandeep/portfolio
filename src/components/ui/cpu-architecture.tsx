@@ -1,2 +1,2 @@
 import React from 'react';
-export const CpuArchitecture = (props: any) => <div>CPU Architecture</div>;
+export const CpuArchitecture = (_props: Record<string, unknown>) => <div>CPU Architecture</div>;

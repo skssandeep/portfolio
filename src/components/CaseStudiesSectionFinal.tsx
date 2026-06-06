@@ -38,7 +38,7 @@ export const CaseStudiesSectionFinal = () => {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '160px' }}>
-          {caseStudies.map((study, index) => {
+          {caseStudies.map((study) => {
             return (
               <div key={study.id} className="scroll-reveal" style={{
                 display: 'flex',

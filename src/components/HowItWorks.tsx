@@ -19,7 +19,7 @@ const steps = [
   }
 ];
 
-export const HowItWorks = ({ variant = 'red' }: { variant?: 'white' | 'red' }) => {
+export const HowItWorks = ({ variant: _variant = 'red' }: { variant?: 'white' | 'red' }) => {
   const StepCard = ({ step }: { step: typeof steps[0] }) => (
     <div 
       className="step-card"
