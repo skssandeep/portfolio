@@ -662,6 +662,12 @@ export const SmartEPPCaseStudy = () => {
                 <p style={{ fontFamily: "'Jost', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 'normal', letterSpacing: '0px', margin: 0 }}>
                   Why now: a 2023–24 tax change unlocked the savings. 30% income-tax relief plus 18% GST nets ~40% after financier interest.
                 </p>
+                <div style={{ marginTop: '32px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '24px' }}>
+                  <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>Business Goal</div>
+                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Drive high adoption of the leasing program by eliminating friction, aiming to reduce HR support overhead and manual interventions by at least 40%.</p>
+                  <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>User Goal</div>
+                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>Provide absolute transparency on tax savings and eliminate anxiety surrounding the salary deduction and delivery mechanism.</p>
+                </div>
               </div>
 
               {/* Stats (Right) */}
@@ -896,6 +902,19 @@ export const SmartEPPCaseStudy = () => {
 
             </div>
 
+            {/* Navigating Constraints */}
+            <div style={{ marginTop: '48px', background: 'rgba(59, 130, 246, 0.05)', border: '1px solid rgba(59, 130, 246, 0.2)', borderRadius: '24px', padding: '40px', display: 'flex', gap: '24px', alignItems: 'flex-start' }}>
+              <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '16px', borderRadius: '16px', color: '#3b82f6' }}>
+                <Code size={24} />
+              </div>
+              <div>
+                <div style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '12px' }}>Navigating Engineering Constraints</div>
+                <p style={{ color: '#a3a3a3', fontSize: '18px', lineHeight: 1.6, margin: 0 }}>
+                  We didn't design in a vacuum. During our cross-functional syncs with engineering and product management, we discovered the third-party tax calculation API had a strict 3-4 second latency. To prevent employees from abandoning the flow while waiting for their exact EMI amounts, we designed optimistic loading skeletons and progressive disclosure states—ensuring the UI felt instantaneous even when the backend was crunching numbers.
+                </p>
+              </div>
+            </div>
+
           </motion.div>
         </div>
       </section>
@@ -1094,6 +1113,85 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
+      {/* 8. Ideating/Solutions & 9. Iterations (The Messy Middle) */}
+      <section style={{ padding: '120px 0' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#3b82f6', background: 'rgba(59,130,246,0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+              Ideation & Iteration
+            </div>
+            <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
+            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
+              Design isn't linear. 3 Iterations. 1 Clear Winner.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 0', flexWrap: 'wrap', gap: '20px' }}>
+            
+            {/* Draft 1 (Failed) */}
+            <motion.div 
+               whileHover={{ y: -5, rotate: 0, opacity: 1, filter: 'grayscale(0%)', zIndex: 10 }}
+               style={{ width: '280px', transform: 'rotate(-6deg)', opacity: 0.5, filter: 'grayscale(100%)', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 1 }}
+            >
+              <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
+                <img src="/images/wireframe_v1.png" alt="Draft 1" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
+              </div>
+              <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
+                  <XCircle size={12} /> Draft 01
+                </div>
+                <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>Sticker Shock</h4>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>
+                  Credit limits were hidden until checkout, causing mass cart abandonment.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Draft 2 (Failed) */}
+            <motion.div 
+               whileHover={{ y: -5, rotate: 0, opacity: 1, filter: 'grayscale(0%)', zIndex: 10 }}
+               style={{ width: '280px', transform: 'rotate(4deg)', opacity: 0.5, filter: 'grayscale(100%)', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 2, marginLeft: '-40px' }}
+            >
+              <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
+                <img src="/images/wireframe_v2.png" alt="Draft 2" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
+              </div>
+              <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
+                  <XCircle size={12} /> Draft 02
+                </div>
+                <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>High Friction</h4>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>
+                  Forcing KYC uploads before browsing caused a fatal 70% bounce rate.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* The Winner */}
+            <motion.div 
+               whileHover={{ y: -10, scale: 1.02 }}
+               style={{ width: '560px', background: 'rgba(16,185,129,0.02)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 3, marginLeft: '20px', boxShadow: '0 20px 40px rgba(16,185,129,0.15)', position: 'relative' }}
+            >
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '3px', background: 'linear-gradient(90deg, #10b981, #3b82f6)', zIndex: 10 }} />
+              <div style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
+                <img src="/images/wireframe_final.png" alt="Winner" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '120px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
+              </div>
+              <div style={{ padding: '32px', background: '#0a0a0a', marginTop: '-60px', position: 'relative' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px' }}>
+                  <CheckCircle2 size={16} /> The Winner
+                </div>
+                <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless SSO & Instant Credit</h4>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>
+                  By syncing Corporate SSO, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout, boosting confidence and skyrocketing conversions.
+                </p>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
       {/* 05. Validation */}
       <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container">
@@ -1744,7 +1842,7 @@ export const SmartEPPCaseStudy = () => {
                 Looking Back.
               </h2>
               <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '400px' }}>
-                Five core lessons from designing a B2B2C FinTech product from scratch, where friction is the enemy and trust is the currency.
+                Three core lessons from designing a B2B2C FinTech product from scratch, where friction is the enemy and trust is the currency.
               </p>
             </div>
 
@@ -1788,32 +1886,6 @@ export const SmartEPPCaseStudy = () => {
                 <div>
                   <h3 style={{ fontSize: '32px', fontWeight: 600, color: '#fff', marginBottom: '16px', lineHeight: 1.2, fontFamily: "'Jost', sans-serif" }}>Edge cases are the product</h3>
                   <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, margin: 0 }}>I used to treat edge cases as final cleanup. This project taught me that in B2B operations, failure states (like a stuck order) are core UX problems. I now audit edge cases during initial problem definition, not as a polish pass.</p>
-                </div>
-              </motion.div>
-
-              {/* Card 4 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
-                style={{ background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', gap: '24px', alignItems: 'flex-start', position: 'relative', overflow: 'hidden', transition: 'all 0.3s ease' }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.01)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
-              >
-                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Lightbulb size={24} /></div>
-                <div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Tooltips aren't flows</h3>
-                  <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>We answered "What if I leave the company?" with a tooltip. It instantly became the #1 support ticket. It desperately needed a dedicated user flow.</p>
-                </div>
-              </motion.div>
-
-              {/* Card 5 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }}
-                style={{ background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', gap: '24px', alignItems: 'flex-start', position: 'relative', overflow: 'hidden', transition: 'all 0.3s ease' }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.01)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
-              >
-                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><FastForward size={24} /></div>
-                <div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The Next Iteration</h3>
-                  <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>(1) Power-user tax calculator mode. (2) Full end-of-tenure flow. (3) Complete redesign of lessor/seller portals backed by actual user research.</p>
                 </div>
               </motion.div>
 
@@ -2019,85 +2091,6 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* 8. Ideating/Solutions & 9. Iterations (The Messy Middle) */}
-      <section style={{ padding: '120px 0' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#3b82f6', background: 'rgba(59,130,246,0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
-              Ideation & Iteration
-            </div>
-            <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
-            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
-              Design isn't linear. 3 Iterations. 1 Clear Winner.
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 0', flexWrap: 'wrap', gap: '20px' }}>
-            
-            {/* Draft 1 (Failed) */}
-            <motion.div 
-               whileHover={{ y: -5, rotate: 0, opacity: 1, filter: 'grayscale(0%)', zIndex: 10 }}
-               style={{ width: '280px', transform: 'rotate(-6deg)', opacity: 0.5, filter: 'grayscale(100%)', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 1 }}
-            >
-              <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
-                <img src="/images/wireframe_v1.png" alt="Draft 1" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
-              </div>
-              <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
-                  <XCircle size={12} /> Draft 01
-                </div>
-                <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>Sticker Shock</h4>
-                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>
-                  Credit limits were hidden until checkout, causing mass cart abandonment.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Draft 2 (Failed) */}
-            <motion.div 
-               whileHover={{ y: -5, rotate: 0, opacity: 1, filter: 'grayscale(0%)', zIndex: 10 }}
-               style={{ width: '280px', transform: 'rotate(4deg)', opacity: 0.5, filter: 'grayscale(100%)', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 2, marginLeft: '-40px' }}
-            >
-              <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
-                <img src="/images/wireframe_v2.png" alt="Draft 2" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
-              </div>
-              <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
-                  <XCircle size={12} /> Draft 02
-                </div>
-                <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>High Friction</h4>
-                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>
-                  Forcing KYC uploads before browsing caused a fatal 70% bounce rate.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* The Winner */}
-            <motion.div 
-               whileHover={{ y: -10, scale: 1.02 }}
-               style={{ width: '560px', background: 'rgba(16,185,129,0.02)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 3, marginLeft: '20px', boxShadow: '0 20px 40px rgba(16,185,129,0.15)', position: 'relative' }}
-            >
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '3px', background: 'linear-gradient(90deg, #10b981, #3b82f6)', zIndex: 10 }} />
-              <div style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
-                <img src="/images/wireframe_final.png" alt="Winner" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '120px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
-              </div>
-              <div style={{ padding: '32px', background: '#0a0a0a', marginTop: '-60px', position: 'relative' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px' }}>
-                  <CheckCircle2 size={16} /> The Winner
-                </div>
-                <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless SSO & Instant Credit</h4>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>
-                  By syncing Corporate SSO, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout, boosting confidence and skyrocketing conversions.
-                </p>
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
       </>
       )}
 
