@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Layers, ArrowLeft, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase, FastForward } from 'lucide-react';
+import { Layers, ArrowLeft, ArrowRight, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase, FastForward } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
@@ -533,7 +533,7 @@ export const SmartEPPCaseStudy = () => {
               { label: 'ROLE', value: 'UX Designer', subtext: 'Solo designer' },
               { label: 'TEAM', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
               { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 platforms' },
-              { label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
+              { label: 'TIMELINE', value: '5 months', subtext: <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Blank canvas <ArrowRight size={14} /> shipped MVP</span> },
               { label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types' },
               { label: 'DESIGN SYSTEM', value: '44 components', subtext: "Built on OneAssist's existing library" },
             ].map((stat, i) => (
