@@ -1036,7 +1036,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* Design Exploration - Asymmetrical Split */}
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '80px', marginBottom: '80px' }}>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '80px' }}>
               <div style={{ marginBottom: '48px' }}>
                 <h3 style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', fontWeight: 700, color: '#fff', margin: '0 0 16px 0', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>
                   User Testing: 80% Preference for Context
