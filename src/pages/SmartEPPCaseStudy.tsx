@@ -1522,7 +1522,7 @@ export const SmartEPPCaseStudy = () => {
 
         <div className="container">
             {/* System Foundations Block - Integrated as Appendix */}
-            <div style={{ marginTop: '40px', paddingBottom: '40px', maxWidth: '100%', margin: '0 auto' }}>
+            <div style={{ paddingBottom: '40px', maxWidth: '100%', margin: '120px auto 0' }}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
                 {/* Title Block (Inside Grid) */}
