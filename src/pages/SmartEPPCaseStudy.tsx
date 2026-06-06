@@ -1646,117 +1646,76 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 07. Outcomes & Impact */}
-      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+      <section style={{ padding: '120px 0', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative' }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
 
             {/* Header */}
-            <div style={{ marginBottom: '48px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>07: Outcomes & Impact</span>
+            <div style={{ textAlign: 'center', marginBottom: '64px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px' }}>
+                <Target size={14} strokeWidth={2.5} />
+                Outcomes & Impact
               </div>
-              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
-                What shipped and what it delivered.
+              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 20px 0', fontFamily: 'var(--font-heading)' }}>
+                High adoption. Zero churn.
               </h2>
-              <p style={{ fontSize: '16px', color: '#555', lineHeight: 1.6, margin: 0 }}>
-                Measured at 90 days post-launch across the employee app and HR portal.
+              <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '600px' }}>
+                Measured 90 days post-launch. The simplified 4-party flow delivered strong business results and dramatically reduced HR overhead.
               </p>
             </div>
 
-            {/* Metric cards . 3×2 grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '32px' }}>
+            {/* Hero Metrics - 3 Column */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
-                { value: '68%', label: 'PDP-to-cart conversion rate', sub: 'employees who viewed product detail and added to cart', color: 'var(--semantic-success)' },
-                { value: '<12s', label: 'Average HR approval time', sub: 'from request open to decision', color: 'var(--semantic-success)' },
-                { value: '11/14', label: 'Personalised saving recall', sub: 'vs 3/14 before the calculator', color: 'var(--semantic-success)' },
-                { value: '4.4★', label: 'App store rating', sub: 'Play Store + App Store combined', color: 'var(--semantic-success)' },
-                { value: '0%', label: 'HR program abandonment', sub: 'no enterprise client dropped the program post-launch', color: 'var(--semantic-success)' },
-                { value: '5 mo', label: 'MVP to launch', sub: '4 products shipped, design system included', color: 'var(--semantic-success)' },
+                { value: '68%', label: 'Cart Conversion', sub: 'Target: ≥ 50%' },
+                { value: '<12s', label: 'HR Approval', sub: 'Target: ≤ 30s' },
+                { value: '0%', label: 'Client Churn', sub: 'Target: Zero drop-offs' }
               ].map((m, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 24px', display: 'flex', flexDirection: 'column', gap: '8px' }}
-                >
-                  <div style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 700, color: m.color, letterSpacing: '-0.03em', lineHeight: 1, fontFamily: 'var(--font-heading)' }}>
+                <div key={i} style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', borderTop: '2px solid var(--semantic-success)', borderRadius: '16px', padding: '32px 24px', textAlign: 'center' }}>
+                  <div style={{ fontSize: 'clamp(3rem, 4vw, 4rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', lineHeight: 1, fontFamily: 'var(--font-heading)', marginBottom: '12px' }}>
                     {m.value}
                   </div>
-                  <div style={{ fontSize: '16px', color: '#bbb', fontWeight: 500, lineHeight: 1.35 }}>{m.label}</div>
-                  <div style={{ fontSize: '16px', color: '#444', fontFamily: "'Jost', sans-serif", lineHeight: 1.5 }}>{m.sub}</div>
-                </motion.div>
+                  <div style={{ fontSize: '18px', color: '#fff', fontWeight: 600, marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>{m.label}</div>
+                  <div style={{ fontSize: '15px', color: 'var(--semantic-success)', fontWeight: 500 }}>{m.sub}</div>
+                </div>
               ))}
             </div>
 
-            {/* Two text cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
+            {/* Secondary details in 2 columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+               {/* Qualitative Wins */}
+               <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
+                 <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>Beyond the Numbers</h3>
+                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                       <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
+                       <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>4.4★ Rating</strong> across App Store & Play Store.</p>
+                    </li>
+                    <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                       <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
+                       <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Support tickets</strong> for savings calculation dropped to near-zero.</p>
+                    </li>
+                    <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                       <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
+                       <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Sales impact:</strong> 3 enterprise clients cited the HR dashboard during renewals.</p>
+                    </li>
+                 </ul>
+               </div>
 
-              {/* Qualitative */}
-              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
-                <div style={{ fontSize: '16px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: "'Jost', sans-serif" }}>Qualitative Wins</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                  <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                      <strong style={{ color: '#e5e5e5' }}>Top user review:</strong> "Finally understand how the tax saving works."
+               {/* The Trade-off */}
+               <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column' }}>
+                 <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>The Trade-off</h3>
+                 <div style={{ flex: 1, background: 'rgba(239,68,68,0.05)', borderLeft: '3px solid var(--semantic-error)', padding: '24px', borderRadius: '4px 16px 16px 4px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', margin: '0 0 16px 0', lineHeight: 1.6 }}>
+                      We skipped early validation on the <strong style={{ color: '#fff' }}>Lessor/Seller portals</strong> to hit the 5-month MVP deadline.
                     </p>
-                  </div>
-                  <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                      <strong style={{ color: '#e5e5e5' }}>Support tickets:</strong> "How do I calculate savings?" queries dropped to near-zero.
-                    </p>
-                  </div>
-                  <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--semantic-success)', marginTop: '8px', flexShrink: 0 }} />
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                      <strong style={{ color: '#e5e5e5' }}>Sales impact:</strong> 3 enterprise clients cited the HR dashboard during renewals.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Success criteria */}
-              <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '28px 32px' }}>
-                <div style={{ fontSize: '16px', fontWeight: 700, color: '#555', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px', fontFamily: "'Jost', sans-serif" }}>Success Criteria</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                  {[
-                    { text: 'Employee cart conversion ≥ 50% → Hit (68%)', hit: true },
-                    { text: 'HR approval time ≤ 30s → Hit (12s)', hit: true },
-                    { text: 'Zero enterprise client drop-offs → Hit', hit: true },
-                    { text: 'Lessor/Seller change requests ≤ 5 → Missed (Cost of skipping validation)', hit: false },
-                  ].map((item, i) => (
-                    <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                      <span style={{ fontSize: '16px', fontWeight: 700, color: item.hit ? 'var(--semantic-success)' : 'var(--semantic-error)', flexShrink: 0, marginTop: '1px' }}>
-                        {item.hit ? '✓' : '✗'}
-                      </span>
-                      <p style={{ fontSize: '16px', color: item.hit ? '#777' : '#666', lineHeight: 1.6, margin: 0, fontStyle: item.hit ? 'normal' : 'italic' }}>
-                        {item.text}
-                      </p>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>
+                      <XCircle size={18} color="var(--semantic-error)" style={{ flexShrink: 0 }} />
+                      <span style={{ fontSize: '15px', color: '#fff', fontWeight: 500 }}>Missed target of ≤5 change requests, causing unplanned rework.</span>
                     </div>
-                  ))}
-                </div>
-              </div>
+                 </div>
+               </div>
             </div>
-
-            {/* Attribution note */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              style={{ background: 'rgba(var(--semantic-info-rgb),0.03)', border: '1px solid rgba(var(--semantic-info-rgb),0.1)', borderRadius: '20px', padding: '32px 40px' }}
-            >
-              <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-info)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>
-                Attribution Note
-              </div>
-              <p style={{ fontSize: '18px', color: '#c0c0c0', lineHeight: 1.65, margin: 0, fontWeight: 500 }}>
-                The 68% PDP-to-cart conversion is directionally strong but influenced by the product's novelty. First-time users were inherently more motivated.{' '}
-                <span style={{ color: 'var(--semantic-info)' }}>30-day retention</span>{' '}
-                of employees who added to cart (i.e., completed the full request cycle) was 84%, suggesting the flow held up beyond initial enthusiasm.
-              </p>
-            </motion.div>
 
           </motion.div>
         </div>
