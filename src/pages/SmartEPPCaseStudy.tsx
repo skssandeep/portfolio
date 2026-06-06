@@ -923,35 +923,58 @@ export const SmartEPPCaseStudy = () => {
               </p>
             </div>
 
-            {/* Principles - High Conversion Staggered Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-              
-              {/* Principle 1: Hero Card (Spans 2 cols) */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="md:col-span-2 group relative overflow-hidden transition-all duration-300" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', gap: '16px', cursor: 'default' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))'; }}
+            {/* Principles - Horizontal Scroll Carousel */}
+            <div 
+              className="mb-16 hide-scrollbar"
+              style={{ 
+                display: 'flex', 
+                gap: '24px', 
+                overflowX: 'auto', 
+                paddingBottom: '32px', 
+                scrollSnapType: 'x mandatory',
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                width: '100vw',
+                position: 'relative',
+                left: '50%',
+                right: '50%',
+                marginLeft: '-50vw',
+                marginRight: '-50vw',
+                paddingLeft: 'max(24px, calc((100vw - 1200px) / 2))',
+                paddingRight: 'max(24px, calc((100vw - 1200px) / 2))'
+              }}
+            >
+              <style>{`
+                .hide-scrollbar::-webkit-scrollbar { display: none; }
+              `}</style>
+
+              {/* Principle 1 */}
+              <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="group relative overflow-hidden transition-all duration-300"
+                style={{ flex: '0 0 min(85vw, 400px)', scrollSnapAlign: 'start', background: 'linear-gradient(135deg, rgba(var(--semantic-brand-rgb), 0.05), rgba(255,255,255,0.01))', border: '1px solid rgba(var(--semantic-brand-rgb), 0.2)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(var(--semantic-brand-rgb), 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--semantic-brand)', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(var(--semantic-brand-rgb), 0.05)' }}>
+                  <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(var(--semantic-brand-rgb), 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--semantic-brand)', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(var(--semantic-brand-rgb), 0.05)' }}>
                     01
                   </div>
-                  <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>Show the rupee, hide the formula</h4>
+                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>Show the rupee, hide the formula</h4>
                 </div>
-                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, margin: 0, maxWidth: '800px', fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Present ₹38,257 saved, not tax slab math. Outcomes in the primary view. Mechanics on demand.
                 </p>
               </motion.div>
 
               {/* Principle 2 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="group relative overflow-hidden transition-all duration-300" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; }}
+              <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="group relative overflow-hidden transition-all duration-300"
+                style={{ flex: '0 0 min(85vw, 400px)', scrollSnapAlign: 'start', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
+                  <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     02
                   </div>
-                  <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Compare to Amazon, not nothing</h4>
+                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Compare to Amazon, not nothing</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Savings need contrast to land. Comparison is a first-class feature on the PDP, not a marketing footnote.
@@ -959,15 +982,16 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Principle 3 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="group relative overflow-hidden transition-all duration-300" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; }}
+              <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="group relative overflow-hidden transition-all duration-300"
+                style={{ flex: '0 0 min(85vw, 400px)', scrollSnapAlign: 'start', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
+                  <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     03
                   </div>
-                  <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Answer anxieties proactively</h4>
+                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Answer anxieties proactively</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   What if it breaks? What if I leave? Every anxiety surfaced in-context, before the user has to search.
@@ -975,37 +999,38 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Principle 4 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="group relative overflow-hidden transition-all duration-300" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; }}
+              <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="group relative overflow-hidden transition-all duration-300"
+                style={{ flex: '0 0 min(85vw, 400px)', scrollSnapAlign: 'start', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
+                  <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     04
                   </div>
-                  <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>HR approves in seconds, not minutes</h4>
+                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>HR approves in seconds, not minutes</h4>
                 </div>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Name, role, device, eligibility, policy: one card, one click. No tab-switching or endless scrolling.
                 </p>
               </motion.div>
 
               {/* Principle 5 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="group relative overflow-hidden transition-all duration-300" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; }}
+              <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="group relative overflow-hidden transition-all duration-300"
+                style={{ flex: '0 0 min(85vw, 400px)', scrollSnapAlign: 'start', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
+                  <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     05
                   </div>
-                  <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Order status must never be silent</h4>
+                  <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Order status must never be silent</h4>
                 </div>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Every state change triggers a notification. The app answers "where is my order?" before they ask.
                 </p>
               </motion.div>
-
             </div>
 
             {/* Design Exploration - Asymmetrical Split */}
