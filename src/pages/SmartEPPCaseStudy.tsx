@@ -1772,7 +1772,7 @@ export const SmartEPPCaseStudy = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
             {/* Left Column: Sticky Header */}
-            <div className="lg:col-span-4 lg:sticky lg:top-32" style={{ display: 'flex', flexDirection: 'column', gap: '24px', paddingTop: '40px' }}>
+            <div className="lg:col-span-4 lg:sticky lg:top-32" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', alignSelf: 'flex-start' }}>
                 <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>08: Reflection</span>
               </div>
