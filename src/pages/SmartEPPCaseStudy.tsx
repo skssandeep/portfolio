@@ -1221,7 +1221,7 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
       {/* 05. Validation */}
-      <section id="final-designs" style={{ padding: '80px 0' }}>
+      <section style={{ padding: '80px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
