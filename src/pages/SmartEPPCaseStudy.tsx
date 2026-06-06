@@ -1139,20 +1139,26 @@ export const SmartEPPCaseStudy = () => {
             {/* Phase 1: Initial Wireframes */}
             <motion.div 
                whileHover="hover"
-               style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', zIndex: 1 }}
+               onClick={() => { setModalImages(Array.from({length: 8}, (_, idx) => `/images/wireframe${idx+1}.jpg`)); setModalIndex(0); }}
+               style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'zoom-in', zIndex: 1 }}
             >
               <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
                 <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe3.jpg" alt="Wireframe 3" style={{ position: 'absolute', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
                 <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe2.jpg" alt="Wireframe 2" style={{ position: 'absolute', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
                 <motion.img variants={{ hover: { scale: 1.05 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe1.jpg" alt="Wireframe 1" style={{ position: 'relative', width: '180px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 10 }} />
+                
+                <motion.div variants={{ hover: { opacity: 1, scale: 1 } }} initial={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} style={{ position: 'absolute', zIndex: 20, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(8px)', padding: '10px 20px', borderRadius: '100px', display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '14px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.2)', pointerEvents: 'none' }}>
+                  <Maximize size={16} /> Open Gallery
+                </motion.div>
+                
+                <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(4px)', padding: '6px 12px', borderRadius: '100px', color: '#fff', fontSize: '12px', fontWeight: 600, zIndex: 15 }}>
+                  8 Photos
+                </div>
               </div>
               <div style={{ padding: '24px', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#a3a3a3', fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '1px' }}>
-                  Phase 01
-                </div>
                 <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>Initial Wireframes</h4>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                  Exploring structural layouts and information hierarchy through rapid wireframing using UX Pilot.
+                  Initial wireframes of homepage, product page, and tax savings slider created using UX Pilot.
                 </p>
               </div>
             </motion.div>
@@ -1160,17 +1166,23 @@ export const SmartEPPCaseStudy = () => {
             {/* Phase 2: Initial Hi-Fi */}
             <motion.div 
                whileHover="hover"
-               style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', zIndex: 2 }}
+               onClick={() => { setModalImages(Array.from({length: 5}, (_, idx) => `/images/prev0${idx+1}.jpg`)); setModalIndex(0); }}
+               style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'zoom-in', zIndex: 2 }}
             >
               <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
                 <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev03.jpg" alt="HiFi 3" style={{ position: 'absolute', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
                 <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev02.jpg" alt="HiFi 2" style={{ position: 'absolute', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
                 <motion.img variants={{ hover: { scale: 1.05 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev01.jpg" alt="HiFi 1" style={{ position: 'relative', width: '180px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 10 }} />
+                
+                <motion.div variants={{ hover: { opacity: 1, scale: 1 } }} initial={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} style={{ position: 'absolute', zIndex: 20, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(8px)', padding: '10px 20px', borderRadius: '100px', display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '14px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.2)', pointerEvents: 'none' }}>
+                  <Maximize size={16} /> Open Gallery
+                </motion.div>
+                
+                <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(4px)', padding: '6px 12px', borderRadius: '100px', color: '#fff', fontSize: '12px', fontWeight: 600, zIndex: 15 }}>
+                  5 Photos
+                </div>
               </div>
               <div style={{ padding: '24px', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#a3a3a3', fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '1px' }}>
-                  Phase 02
-                </div>
                 <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>Initial Version Hi-Fi</h4>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
                   First visual drafts that revealed high friction points like early KYC requirements.
