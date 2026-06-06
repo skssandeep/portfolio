@@ -1354,16 +1354,32 @@ export const SmartEPPCaseStudy = () => {
                     key={tab.id}
                     onClick={() => setActivePortalTab(tab.id as any)}
                     style={{
+                      position: 'relative',
                       display: 'flex', alignItems: 'center', gap: '8px',
                       padding: '10px 24px', borderRadius: '100px',
-                      background: activePortalTab === tab.id ? 'rgba(255,255,255,0.1)' : 'transparent',
+                      background: 'transparent',
                       color: activePortalTab === tab.id ? '#fff' : '#888',
                       border: 'none',
-                      cursor: 'pointer', transition: 'all 0.3s ease',
+                      cursor: 'pointer', transition: 'color 0.3s ease',
                       fontWeight: 500, fontSize: '16px'
                     }}
                   >
-                    {tab.icon} {tab.label}
+                    {activePortalTab === tab.id && (
+                      <motion.div
+                        layoutId="portal-tab-active"
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background: 'rgba(255, 255, 255, 0.1)',
+                          borderRadius: '100px',
+                          zIndex: 0
+                        }}
+                        transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                    <span style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      {tab.icon} {tab.label}
+                    </span>
                   </button>
                 ))}
               </div>
