@@ -54,7 +54,13 @@ export const ServicesSection = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '48px', alignItems: 'start', marginBottom: '32px' }}>
               <h3 className="text-title" style={{ fontSize: '40px', margin: 0, fontWeight: 700, display: 'flex', gap: '12px' }}>
-                <span style={{ color: 'var(--accent-color)' }}>01.</span> <span style={{ color: '#ffffff' }}>Visual Design</span>
+                <span style={{ 
+                  background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  color: 'transparent'
+                }}>01.</span> <span style={{ color: '#ffffff' }}>Visual Design</span>
               </h3>
               <p className="text-body" style={{ color: '#a0a0a0', lineHeight: 1.6, fontSize: '18px', margin: 0 }}>
                 Using my Figma UI/UX design skills, I craft wireframes and prototypes that drive leads and boost conversions. I focus on creating standout brands with engaging, resonant messaging that convinces your audience to take action.
@@ -95,7 +101,13 @@ export const ServicesSection = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '48px', alignItems: 'start', marginBottom: '32px' }}>
               <h3 className="text-title" style={{ fontSize: '40px', margin: 0, fontWeight: 700, display: 'flex', gap: '12px' }}>
-                <span style={{ color: 'var(--accent-color)' }}>02.</span> <span style={{ color: '#ffffff' }}>Framer Development</span>
+                <span style={{ 
+                  background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  color: 'transparent'
+                }}>02.</span> <span style={{ color: '#ffffff' }}>Framer Development</span>
               </h3>
               <p className="text-body" style={{ color: '#a0a0a0', lineHeight: 1.6, fontSize: '18px', margin: 0 }}>
                 Leveraging my Framer development skills, I build CMS-driven, responsive sites that excel in SEO. I create multipage websites with custom animations, designed to drive leads and boost conversions.
