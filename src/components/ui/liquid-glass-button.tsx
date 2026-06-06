@@ -6,7 +6,7 @@ export const LiquidButton = ({ children, size, className, style, ...props }: any
     <motion.button 
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className={`relative overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full ${size === 'lg' ? 'px-8 py-4 text-lg' : 'px-6 py-3'} ${className || ''}`}
+      className={`cursor-pointer relative overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full ${size === 'lg' ? 'px-8 py-4 text-lg' : 'px-6 py-3'} ${className || ''}`}
       style={{ ...style, position: 'relative' }}
       {...props}
     >
