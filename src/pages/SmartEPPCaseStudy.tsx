@@ -1038,7 +1038,7 @@ export const SmartEPPCaseStudy = () => {
                     </div>
                     <h4 style={{ fontSize: '32px', fontWeight: 700, color: '#fff', margin: '0 0 16px 0', fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em' }}>Contextual Detail</h4>
                     <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '500px', fontFamily: 'var(--font-system)' }}>
-                      Savings calculator, inline comparison, and protection summary built into one scrollable product page. Completeness built confidence.
+                      The biggest UX challenge was communicating the difference between the actual deduction and the effective cost after tax savings. Since an employee's tax slab is highly confidential, we introduced an interactive slider. This empowered users to self-select their bracket and instantly reveal their true effective cost without sharing private data.
                     </p>
                     
                     <div>
