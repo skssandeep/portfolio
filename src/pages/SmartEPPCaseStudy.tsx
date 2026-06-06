@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Layers, ArrowLeft, ArrowRight, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase, FastForward } from 'lucide-react';
+import { Layers, ArrowLeft, ArrowRight, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns , Package, Landmark, Briefcase, FastForward, Maximize } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 
 // Mock Interactive Component for the Prototype Section
@@ -1049,12 +1049,20 @@ export const SmartEPPCaseStudy = () => {
 
                   {/* Image */}
                   <div style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center' }}>
-                    <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', padding: '32px', width: '100%', maxWidth: '380px', display: 'flex', justifyContent: 'center' }}>
+                    <div 
+                      style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', padding: '24px', width: '100%', maxWidth: '280px', display: 'flex', justifyContent: 'center', position: 'relative', cursor: 'zoom-in', transition: 'transform 0.3s ease' }}
+                      onClick={() => { setModalImages(['/images/EPP_CaseStudy_07.png']); setModalIndex(0); }}
+                      onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
+                      onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                    >
                       <img 
                         src="/images/EPP_CaseStudy_07.png" 
                         alt="Tax Calculator UI" 
                         style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} 
                       />
+                      <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', padding: '8px', borderRadius: '50%', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
+                        <Maximize size={16} />
+                      </div>
                     </div>
                   </div>
                 </motion.div>
