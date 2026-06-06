@@ -551,7 +551,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ color: '#a3a3a3', fontSize: '14px', fontWeight: 500, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>
                   {stat.label}
                 </div>
-                <div style={{ color: (stat as any).highlight ? 'var(--accent-color)' : '#fff', fontSize: '22px', fontWeight: 500, marginBottom: '4px', letterSpacing: '-0.01em' }}>
+                <div style={{ color: (stat as any).highlight ? 'var(--accent-color)' : '#fff', fontSize: '20px', fontWeight: 500, marginBottom: '4px', letterSpacing: '-0.01em' }}>
                   {stat.value}
                 </div>
                 <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>
