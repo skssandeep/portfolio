@@ -695,8 +695,8 @@ export const SmartEPPCaseStudy = () => {
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
                     <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Integrations</div>
-                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>2</div>
-                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>HRMS & Financier APIs.</div>
+                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>1</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>Backend HRMS sync.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
@@ -897,19 +897,6 @@ export const SmartEPPCaseStudy = () => {
                 </div>
               </motion.div>
 
-            </div>
-
-            {/* Navigating Constraints */}
-            <div style={{ marginTop: '48px', background: 'rgba(59, 130, 246, 0.05)', border: '1px solid rgba(59, 130, 246, 0.2)', borderRadius: '24px', padding: '40px', display: 'flex', gap: '24px', alignItems: 'flex-start' }}>
-              <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '16px', borderRadius: '16px', color: '#3b82f6' }}>
-                <Code size={24} />
-              </div>
-              <div>
-                <div style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '12px' }}>Navigating Engineering Constraints</div>
-                <p style={{ color: '#a3a3a3', fontSize: '18px', lineHeight: 1.6, margin: 0 }}>
-                  We didn't design in a vacuum. During our cross-functional syncs with engineering and product management, we discovered the third-party financier credit-check API had a strict 3-4 second latency. To prevent employees from abandoning the flow while waiting for their approved EMI limits, we designed optimistic loading skeletons and progressive disclosure states—ensuring the UI felt instantaneous even when the backend was crunching numbers.
-                </p>
-              </div>
             </div>
 
           </motion.div>
@@ -1179,9 +1166,9 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px' }}>
                   <CheckCircle2 size={16} /> The Winner
                 </div>
-                <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless Email OTP & Instant Credit</h4>
+                <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless Access & Context</h4>
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>
-                  By validating corporate email via a simple OTP, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout, boosting confidence and skyrocketing conversions.
+                  By seamlessly authenticating users into their employee profiles, we unlocked personalized context <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout, boosting confidence and skyrocketing conversions.
                 </p>
               </div>
             </motion.div>
@@ -1924,8 +1911,8 @@ export const SmartEPPCaseStudy = () => {
                      />
                    </div>
                    <div style={{ textAlign: 'center', padding: '0 16px' }}>
-                      <h4 style={{ fontSize: '22px', fontWeight: 500, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>01. Corporate SSO Auth</h4>
-                      <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Bypassing manual KYC entirely by authenticating directly through the employee's existing corporate HR portal.</p>
+                      <h4 style={{ fontSize: '22px', fontWeight: 500, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em' }}>01. Pre-Authenticated Access</h4>
+                      <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Bypassing manual login screens entirely through seamless backend synchronization with the partner HRMS.</p>
                    </div>
                 </div>
 
