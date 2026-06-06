@@ -656,17 +656,14 @@ export const SmartEPPCaseStudy = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
               {/* Narrative (Left) */}
               <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 'normal', letterSpacing: '0px', margin: 0, marginBottom: '24px' }}>
-                  OneAssist launched a new category: employee device leasing. Employees lease premium phones through work and save up to 40%, paid via monthly salary EMIs. The employer pays nothing and gains a zero-cost retention perk; OneAssist earns on the mandatory theft-and-damage protection bundled into every lease.
-                </p>
-                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 'normal', letterSpacing: '0px', margin: 0 }}>
-                  Why now: a 2023–24 tax change unlocked the savings. 30% income-tax relief plus 18% GST nets ~40% after financier interest.
+                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0px', margin: 0 }}>
+                  A recent tax change unlocked massive savings, allowing OneAssist to launch a <strong style={{ color: '#fff', fontWeight: 500 }}>net-new 0-to-1 category: employee device leasing.</strong> Employees save ~40% on premium phones via salary EMIs, while OneAssist earns on the bundled device protection.
                 </p>
                 <div style={{ marginTop: '32px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '24px' }}>
-                  <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>Business Goal</div>
-                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Successfully launch a net-new revenue stream (0-to-1) for OneAssist by driving high employee adoption, while ensuring the platform requires zero manual intervention from B2B partner HR teams.</p>
-                  <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>User Goal</div>
-                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>Provide absolute transparency on tax savings and eliminate anxiety surrounding the salary deduction and delivery mechanism.</p>
+                  <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>The Business Challenge</div>
+                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Drive rapid employee adoption to validate the new revenue stream, while ensuring <strong style={{ color: '#fff', fontWeight: 500 }}>zero manual overhead</strong> for B2B partner HR teams.</p>
+                  <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>The UX Challenge</div>
+                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>Provide absolute transparency on the complex tax-savings mathematics and eliminate all anxiety surrounding automatic salary deductions.</p>
                 </div>
               </div>
 
