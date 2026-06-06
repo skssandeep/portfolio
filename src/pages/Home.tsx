@@ -9,6 +9,7 @@ import { CaseStudiesSectionFinal } from '../components/CaseStudiesSectionFinal';
 import { CaseStudiesSectionSideBySide } from '../components/CaseStudiesSectionSideBySide';
 import { MoreCaseStudiesSection } from '../components/MoreCaseStudiesSection';
 import { LogoRevealOrbital2 } from '../components/ui/LogoRevealOrbital2';
+import { BrandLogoSection } from '../components/BrandLogoSection';
 import { ServicesSection } from '../components/ServicesSection';
 import { Testimonials } from '../components/Testimonials';
 import { HowItWorks } from '../components/HowItWorks';
@@ -257,6 +258,9 @@ export const Home = () => {
 
           {/* 9. Close: Final CTA / Logo Reveal Section */}
           <LogoRevealOrbital2 />
+
+          {/* 10. Brand Logo just above the footer */}
+          <BrandLogoSection />
         </>
       )}
     </>
