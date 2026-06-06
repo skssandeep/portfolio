@@ -506,7 +506,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 0.3 }}
               style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}
             >
-              {['Mobile App', 'HR Dashboard', 'Lessor Portal', 'Seller Portal'].map((tag, idx) => (
+              {['Mobile App', 'HR Dashboard', 'Financier Portal', 'Seller Portal'].map((tag, idx) => (
                 <div key={idx} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 20px', borderRadius: '100px', fontSize: '16px', color: '#a3a3a3', fontWeight: 500, letterSpacing: '0.5px' }}>
                   {tag}
                 </div>
@@ -773,7 +773,7 @@ export const SmartEPPCaseStudy = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
                 <div style={{ color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>No shared vocabulary</div>
                 <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>Four user types. One order. Four completely different meanings.</h4>
-                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Employees think products. HR thinks policy. Lessors think risk. Sellers think fulfillment.</p>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>Employees think products. HR thinks policy. Financiers think risk. Sellers think fulfillment.</p>
               </motion.div>
 
               {/* Challenge 5 - Full Width Hero Card */}
@@ -1314,7 +1314,7 @@ export const SmartEPPCaseStudy = () => {
             >
               <div style={{ fontSize: '16px', fontWeight: 600, color: '#a3a3a3', marginBottom: '8px' }}>What we missed (The Reality Check)</div>
               <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                Due to timeline constraints, the lessor and seller portals were only stakeholder-reviewed, not user-tested. Upon launch, they generated 3× more change requests than the validated employee apps. We also failed to test the full cross-portal handoff, catching friction only after going live.
+                Due to timeline constraints, the financier and seller portals were only stakeholder-reviewed, not user-tested. Upon launch, they generated 3× more change requests than the validated employee apps. We also failed to test the full cross-portal handoff, catching friction only after going live.
               </p>
             </motion.div>
 
@@ -1652,7 +1652,7 @@ export const SmartEPPCaseStudy = () => {
                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>The Trade-off</h3>
                  <div style={{ flex: 1, background: 'rgba(239,68,68,0.05)', borderLeft: '3px solid var(--semantic-error)', padding: '24px', borderRadius: '4px 16px 16px 4px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <p style={{ fontSize: '16px', color: '#a3a3a3', margin: '0 0 16px 0', lineHeight: 1.6 }}>
-                      We skipped early validation on the <strong style={{ color: '#fff' }}>Lessor/Seller portals</strong> to hit the 5-month MVP deadline.
+                      We skipped early validation on the <strong style={{ color: '#fff' }}>Financier/Seller portals</strong> to hit the 5-month MVP deadline.
                     </p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>
                       <XCircle size={18} color="var(--semantic-error)" style={{ flexShrink: 0 }} />
@@ -1701,7 +1701,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Search size={24} /></div>
                 <div>
                   <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Research gaps cost time</h3>
-                  <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Lessor and seller portals relied on stakeholder workshops instead of user observation, resulting in significantly higher post-launch change requests.</p>
+                  <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Financier and seller portals relied on stakeholder workshops instead of user observation, resulting in significantly higher post-launch change requests.</p>
                 </div>
               </motion.div>
 
