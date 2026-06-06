@@ -1779,6 +1779,10 @@ export const SmartEPPCaseStudy = () => {
                     </li>
                     <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                        <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
+                       <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Massive Scale:</strong> Successfully onboarded 20 Enterprises, 10 Lessors, and 10 Sellers.</p>
+                    </li>
+                    <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                       <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
                        <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Support tickets</strong> for savings calculation dropped to near-zero.</p>
                     </li>
                     <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
