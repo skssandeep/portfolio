@@ -305,7 +305,7 @@ export const SmartEPPCaseStudy = () => {
                  exit={{ scale: 0.95, opacity: 0, y: -20 }}
                  transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                  src={modalImages[modalIndex]} 
-                 style={{ width: '100%', maxWidth: '500px', height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: 'auto' }} 
+                 style={{ width: '100%', maxWidth: '500px', height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: '0 auto' }} 
               />
             </div>
 
