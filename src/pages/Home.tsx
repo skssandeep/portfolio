@@ -180,7 +180,13 @@ export const Home = () => {
             
             <h1 className="text-hero" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px', lineHeight: 1.15, textTransform: 'uppercase', opacity: 0.9 }}>
               <span>DESIGNS THAT SELL</span>
-              <span style={{ color: 'var(--accent-color)' }}>
+              <span style={{ 
+                background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                color: 'transparent'
+              }}>
                 INTERFACES THAT CONVERT.
               </span>
             </h1>
