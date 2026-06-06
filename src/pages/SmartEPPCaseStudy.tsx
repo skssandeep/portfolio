@@ -1114,8 +1114,17 @@ export const SmartEPPCaseStudy = () => {
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-system)' }}>
                       <XCircle size={16} strokeWidth={2.5} /> Rejected Concept
                     </div>
-                    <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 12px 0', fontFamily: 'var(--font-heading)' }}>Minimal Product Page</h4>
-                    <div style={{ fontSize: '32px', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>2.1% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Conversion</span></div>
+                    <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 16px 0', fontFamily: 'var(--font-heading)' }}>Minimal Product Page</h4>
+                    
+                    <div style={{ padding: '16px 20px', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', borderLeft: '2px solid rgba(255,255,255,0.2)', marginBottom: '20px' }}>
+                      <div style={{ fontSize: '16px', color: '#fff', fontStyle: 'italic', marginBottom: '8px', fontFamily: 'var(--font-system)', lineHeight: 1.5 }}>
+                        "I don't understand the real benefit. I need to see exactly how much I'm saving."
+                      </div>
+                      <div style={{ fontSize: '12px', color: '#737373', fontFamily: 'var(--font-system)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>
+                        — User Testing Feedback
+                      </div>
+                    </div>
+
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                       Too bare. Without seeing exact savings upfront, users wouldn't convert. A monthly salary EMI felt like a leap of faith.
                     </p>
@@ -1125,9 +1134,17 @@ export const SmartEPPCaseStudy = () => {
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-system)' }}>
                       <XCircle size={16} strokeWidth={2.5} /> Rejected Concept
                     </div>
-                    <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 12px 0', fontFamily: 'var(--font-heading)' }}>Hidden Protection Cost</h4>
-                    <div style={{ fontSize: '32px', fontWeight: 700, color: '#fff', marginBottom: '4px', fontFamily: 'var(--font-heading)' }}>61% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Drop-off</span></div>
-                    <div style={{ fontSize: '14px', color: '#737373', marginBottom: '16px', fontFamily: 'var(--font-system)', fontStyle: 'italic' }}>(measures friction, not conversion)</div>
+                    <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 16px 0', fontFamily: 'var(--font-heading)' }}>Hidden Protection Cost</h4>
+                    
+                    <div style={{ padding: '16px 20px', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', borderLeft: '2px solid rgba(239,68,68,0.5)', marginBottom: '20px' }}>
+                      <div style={{ fontSize: '16px', color: '#fff', fontStyle: 'italic', marginBottom: '8px', fontFamily: 'var(--font-system)', lineHeight: 1.5 }}>
+                        "Wait, why is the price suddenly higher here? Are there hidden fees?"
+                      </div>
+                      <div style={{ fontSize: '12px', color: '#737373', fontFamily: 'var(--font-system)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>
+                        — Drop-off Point Feedback
+                      </div>
+                    </div>
+
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                       Hiding the mandatory insurance cost until checkout destroyed trust. Transparency isn't optional when touching salaries.
                     </p>
