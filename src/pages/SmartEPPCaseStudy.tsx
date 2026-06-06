@@ -657,13 +657,13 @@ export const SmartEPPCaseStudy = () => {
               {/* Narrative (Left) */}
               <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <p style={{ fontFamily: "'Jost', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0px', margin: 0 }}>
-                  A recent tax change unlocked massive savings, allowing OneAssist to launch a <strong style={{ color: '#fff', fontWeight: 500 }}>net-new 0-to-1 category: employee device leasing.</strong> Employees save ~40% on premium phones via salary EMIs, while OneAssist earns on the bundled device protection.
+                  A tax change unlocked massive savings, allowing OneAssist to launch a <strong style={{ color: '#fff', fontWeight: 500 }}>0-to-1 product: employee device leasing.</strong> Employees save ~40% on premium phones via salary EMIs, while OneAssist earns on the bundled protection.
                 </p>
                 <div style={{ marginTop: '32px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '24px' }}>
                   <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>The Business Challenge</div>
-                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Drive rapid employee adoption to validate the new revenue stream, while ensuring <strong style={{ color: '#fff', fontWeight: 500 }}>zero manual overhead</strong> for B2B partner HR teams.</p>
+                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Validate this new revenue stream through rapid employee adoption, while guaranteeing <strong style={{ color: '#fff', fontWeight: 500 }}>zero manual overhead</strong> for partner HR teams.</p>
                   <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>The UX Challenge</div>
-                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>Provide absolute transparency on the complex tax-savings mathematics and eliminate all anxiety surrounding automatic salary deductions.</p>
+                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>Demystify complex tax mathematics to build immediate trust, entirely eliminating anxiety around automatic payroll deductions.</p>
                 </div>
               </div>
 
