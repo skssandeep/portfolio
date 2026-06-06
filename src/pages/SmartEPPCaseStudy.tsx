@@ -760,7 +760,7 @@ export const SmartEPPCaseStudy = () => {
                   <h4 style={{ fontSize: '28px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3 }}>The invisible 4-party chain.</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>
-                  15+ order states across 4 parties. Three days of silence kills trust even when nothing's wrong. The fix: employees see a clean 5-step progress bar. The chain stays hidden.
+                  15+ order states across 4 parties. Three days of silence kills trust even when nothing's wrong. <br />The fix: employees see a clean 5-step progress bar. The chain stays hidden.
                 </p>
               </motion.div>
 
