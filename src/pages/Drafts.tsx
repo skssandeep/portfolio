@@ -17,11 +17,12 @@ import { Top1Percent } from '../components/drafts/Top1Percent';
 import { PostMortems } from '../components/drafts/PostMortems';
 import { Avatars } from '../components/drafts/Avatars';
 import { Cursors } from '../components/drafts/Cursors';
+import { DesignSystemDraft } from '../components/drafts/DesignSystemDraft';
 
 
 export const Drafts = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const categories = ['All', 'Hero Concepts', 'Logo Animations', 'Footer Layouts', 'Content Layouts', 'Top 1%', 'Post-Mortems', 'Brand Avatars', 'Cursors'];
+  const categories = ['All', 'Hero Concepts', 'Logo Animations', 'Footer Layouts', 'Content Layouts', 'Design Systems', 'Top 1%', 'Post-Mortems', 'Brand Avatars', 'Cursors'];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -328,6 +329,13 @@ export const Drafts = () => {
       </section>
       )}
 
+
+      {/* =========================================
+          CATEGORY: DESIGN SYSTEMS
+          ========================================= */}
+      {(activeCategory === 'All' || activeCategory === 'Design Systems') && (
+        <DesignSystemDraft />
+      )}
 
       {/* =========================================
           CATEGORY: TOP 1%
