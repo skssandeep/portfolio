@@ -695,8 +695,8 @@ export const SmartEPPCaseStudy = () => {
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
                     <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Integrations</div>
-                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>3</div>
-                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>HRMS, Corporate SSO & Tax APIs.</div>
+                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>2</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>HRMS & Financier APIs.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
@@ -907,7 +907,7 @@ export const SmartEPPCaseStudy = () => {
               <div>
                 <div style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '12px' }}>Navigating Engineering Constraints</div>
                 <p style={{ color: '#a3a3a3', fontSize: '18px', lineHeight: 1.6, margin: 0 }}>
-                  We didn't design in a vacuum. During our cross-functional syncs with engineering and product management, we discovered the third-party tax calculation API had a strict 3-4 second latency. To prevent employees from abandoning the flow while waiting for their exact EMI amounts, we designed optimistic loading skeletons and progressive disclosure states—ensuring the UI felt instantaneous even when the backend was crunching numbers.
+                  We didn't design in a vacuum. During our cross-functional syncs with engineering and product management, we discovered the third-party financier credit-check API had a strict 3-4 second latency. To prevent employees from abandoning the flow while waiting for their approved EMI limits, we designed optimistic loading skeletons and progressive disclosure states—ensuring the UI felt instantaneous even when the backend was crunching numbers.
                 </p>
               </div>
             </div>
@@ -1179,9 +1179,9 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px' }}>
                   <CheckCircle2 size={16} /> The Winner
                 </div>
-                <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless SSO & Instant Credit</h4>
+                <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless Email OTP & Instant Credit</h4>
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>
-                  By syncing Corporate SSO, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout, boosting confidence and skyrocketing conversions.
+                  By validating corporate email via a simple OTP, we unlocked instant credit limits <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout, boosting confidence and skyrocketing conversions.
                 </p>
               </div>
             </motion.div>
