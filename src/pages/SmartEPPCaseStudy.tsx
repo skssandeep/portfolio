@@ -1152,7 +1152,7 @@ export const SmartEPPCaseStudy = () => {
                 </div>
                 <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>Initial Wireframes</h4>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '15px', lineHeight: 1.6, margin: 0 }}>
-                  Exploring structural layouts and information hierarchy through rapid sketching.
+                  Exploring structural layouts and information hierarchy through rapid wireframing using UX Pilot.
                 </p>
               </div>
             </motion.div>
