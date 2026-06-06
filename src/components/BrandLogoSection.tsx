@@ -26,7 +26,7 @@ export const BrandLogoSection = () => {
         <div style={{ 
           fontFamily: "'Dune Rise', var(--font-system)", 
           fontWeight: 'normal', 
-          fontSize: '48px', 
+          fontSize: 'clamp(48px, 8vw, 72px)', 
           letterSpacing: '8px', 
           color: 'var(--text-primary)', 
           display: 'flex', 
