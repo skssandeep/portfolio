@@ -1016,7 +1016,7 @@ export const SmartEPPCaseStudy = () => {
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '80px', marginBottom: '80px' }}>
               <div style={{ marginBottom: '48px' }}>
                 <h3 style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', fontWeight: 700, color: '#fff', margin: '0 0 16px 0', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>
-                  The Winning Formula: 2.4x Higher Conversion
+                  User Testing: 80% Preference for Context
                 </h3>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '800px', fontFamily: 'var(--font-system)' }}>
                   Users didn't want a "minimal" interface. They wanted <strong style={{ color: '#fff' }}>proof</strong>. By embedding a real-time savings calculator directly into the product page, we built immediate trust.
@@ -1094,12 +1094,119 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* 05. Final Solution: The Visual Ecosystem */}
+      {/* 05. Validation */}
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+
+            {/* Header */}
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
+                <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>05: Validation</span>
+              </div>
+              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
+                How we tested across all four portals.
+              </h2>
+            </div>
+
+            {/* Testing Metrics Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ marginBottom: '24px' }}>
+              
+              {/* Metric 1 */}
+              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Employee App</div>
+                <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px' }}>
+                  11<span style={{ color: '#555', fontSize: '0.6em' }}>/14</span>
+                </div>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  Employees instantly understood their exact tax savings, up from just 3/14 before we added the interactive calculator.
+                </p>
+              </motion.div>
+
+              {/* Metric 2 */}
+              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>HR Dashboard</div>
+                <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '4px' }}>
+                  11<span style={{ color: 'var(--semantic-success)', fontSize: '0.4em', letterSpacing: 0, fontWeight: 600 }}>sec</span>
+                </div>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  Average request approval time. By redesigning the data hierarchy, we slashed this down from 48 seconds.
+                </p>
+              </motion.div>
+
+              {/* Metric 3 */}
+              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Order Tracking</div>
+                <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px' }}>
+                  -60<span style={{ color: 'var(--semantic-success)', fontSize: '0.6em' }}>%</span>
+                </div>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  Lower reported anxiety during the "processing" phase by simplifying a complex 15-state model into 4 clear steps.
+                </p>
+              </motion.div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ marginBottom: '40px' }}>
+              {/* Quote */}
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(var(--semantic-success-rgb),0.4)', borderRadius: '4px 20px 20px 4px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+              >
+                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.6, margin: '0 0 20px 0', fontStyle: 'italic' }}>
+                  "I didn't realise how much I was saving until I put in my tax slab. ₹38,000 is real money. That changed everything for me."
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#1a1a1a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', fontWeight: 600, color: '#a3a3a3' }}>SE</div>
+                  <div style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>
+                    Software Engineer, Hyderabad
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* What changed from testing */}
+              <motion.div
+                initial={{ opacity: 0, x: 12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                style={{ background: 'rgba(var(--semantic-warning-rgb),0.03)', border: '1px solid rgba(var(--semantic-warning-rgb),0.12)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} />
+                  <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: "'Jost', sans-serif" }}>
+                    Key Pivot
+                  </div>
+                </div>
+                <p style={{ fontSize: '16px', color: '#c0c0c0', lineHeight: 1.6, margin: 0 }}>
+                  Testing showed users completely ignored our standalone "How it works" page. We pivoted immediately, moving the explanation <span style={{ color: 'var(--semantic-warning)', fontWeight: 600 }}>in-context</span> as an inline accordion directly inside the calculator.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* What was NOT validated */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '32px' }}
+            >
+              <div style={{ fontSize: '16px', fontWeight: 600, color: '#a3a3a3', marginBottom: '8px' }}>What we missed (The Reality Check)</div>
+              <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                Due to timeline constraints, the lessor and seller portals were only stakeholder-reviewed, not user-tested. Upon launch, they generated 3× more change requests than the validated employee apps. We also failed to test the full cross-portal handoff, catching friction only after going live.
+              </p>
+            </motion.div>
+
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 06. Final Solution: The Visual Ecosystem */}
       <section id="final-designs" ref={finalDesignsRef} style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-              <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>05: Final Solution</span>
+              <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>06: Final Solution</span>
             </div>
             <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.03em', margin: 0 }}>
               The product, screen by screen.
@@ -1539,113 +1646,6 @@ export const SmartEPPCaseStudy = () => {
                 </div>
               </div>
             </div>
-        </div>
-      </section>
-
-      {/* 06. Validation */}
-      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
-
-            {/* Header */}
-            <div style={{ marginBottom: '48px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>06: Validation</span>
-              </div>
-              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
-                How we tested across all four portals.
-              </h2>
-            </div>
-
-            {/* Testing Metrics Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ marginBottom: '24px' }}>
-              
-              {/* Metric 1 */}
-              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Employee App</div>
-                <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px' }}>
-                  11<span style={{ color: '#555', fontSize: '0.6em' }}>/14</span>
-                </div>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Employees instantly understood their exact tax savings, up from just 3/14 before we added the interactive calculator.
-                </p>
-              </motion.div>
-
-              {/* Metric 2 */}
-              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>HR Dashboard</div>
-                <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px', display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                  11<span style={{ color: 'var(--semantic-success)', fontSize: '0.4em', letterSpacing: 0, fontWeight: 600 }}>sec</span>
-                </div>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Average request approval time. By redesigning the data hierarchy, we slashed this down from 48 seconds.
-                </p>
-              </motion.div>
-
-              {/* Metric 3 */}
-              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Order Tracking</div>
-                <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '12px' }}>
-                  -60<span style={{ color: 'var(--semantic-success)', fontSize: '0.6em' }}>%</span>
-                </div>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                  Lower reported anxiety during the "processing" phase by simplifying a complex 15-state model into 4 clear steps.
-                </p>
-              </motion.div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ marginBottom: '40px' }}>
-              {/* Quote */}
-              <motion.div
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '3px solid rgba(var(--semantic-success-rgb),0.4)', borderRadius: '4px 20px 20px 4px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-              >
-                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.6, margin: '0 0 20px 0', fontStyle: 'italic' }}>
-                  "I didn't realise how much I was saving until I put in my tax slab. ₹38,000 is real money. That changed everything for me."
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#1a1a1a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', fontWeight: 600, color: '#a3a3a3' }}>SE</div>
-                  <div style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>
-                    Software Engineer, Hyderabad
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* What changed from testing */}
-              <motion.div
-                initial={{ opacity: 0, x: 12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                style={{ background: 'rgba(var(--semantic-warning-rgb),0.03)', border: '1px solid rgba(var(--semantic-warning-rgb),0.12)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} />
-                  <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: "'Jost', sans-serif" }}>
-                    Key Pivot
-                  </div>
-                </div>
-                <p style={{ fontSize: '16px', color: '#c0c0c0', lineHeight: 1.6, margin: 0 }}>
-                  Testing showed users completely ignored our standalone "How it works" page. We pivoted immediately, moving the explanation <span style={{ color: 'var(--semantic-warning)', fontWeight: 600 }}>in-context</span> as an inline accordion directly inside the calculator.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* What was NOT validated */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '32px' }}
-            >
-              <div style={{ fontSize: '16px', fontWeight: 600, color: '#a3a3a3', marginBottom: '8px' }}>What we missed (The Reality Check)</div>
-              <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                Due to timeline constraints, the lessor and seller portals were only stakeholder-reviewed, not user-tested. Upon launch, they generated 3× more change requests than the validated employee apps. We also failed to test the full cross-portal handoff, catching friction only after going live.
-              </p>
-            </motion.div>
-
-          </motion.div>
         </div>
       </section>
 
