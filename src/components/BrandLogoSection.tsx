@@ -34,7 +34,7 @@ export const BrandLogoSection = () => {
           userSelect: 'none'
         }}>
           SANDST<span style={{ 
-            background: 'linear-gradient(135deg, #7928CA 0%, #FF007A 100%)', 
+            background: 'linear-gradient(to right, #7928CA 0%, #FF007A 70%)', 
             WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
