@@ -33,7 +33,15 @@ export const BrandLogoSection = () => {
           alignItems: 'center',
           userSelect: 'none'
         }}>
-          SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 4px' }}>o</span>RMIFY
+          SANDST<span style={{ 
+            background: 'linear-gradient(135deg, #ff0844 0%, #ffb199 100%)', 
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            display: 'inline-block', 
+            transform: 'scale(1.15)', 
+            margin: '0 4px',
+            filter: 'drop-shadow(0px 4px 12px rgba(255, 8, 68, 0.4))'
+          }}>o</span>RMIFY
         </div>
       </motion.div>
     </section>
