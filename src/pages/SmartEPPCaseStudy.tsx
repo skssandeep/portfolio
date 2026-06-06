@@ -657,7 +657,7 @@ export const SmartEPPCaseStudy = () => {
               {/* Narrative (Left) */}
               <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <p style={{ fontFamily: "'Jost', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0px', margin: 0 }}>
-                  A tax change unlocked massive savings, allowing OneAssist to launch a <strong style={{ color: '#fff', fontWeight: 500 }}>0-to-1 product: employee device leasing.</strong> Employees save ~40% on premium phones via salary EMIs, while OneAssist earns on the bundled protection.
+                  By combining corporate GST benefits with pre-tax salary deductions, we unlocked a massive ~40% discount on premium phones. This insight birthed a <strong style={{ color: '#fff', fontWeight: 500 }}>0-to-1 product: employee device leasing.</strong> OneAssist monetizes this entirely through mandatory, bundled device protection.
                 </p>
                 <div style={{ marginTop: '32px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '24px' }}>
                   <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>The Business Challenge</div>
