@@ -1521,103 +1521,36 @@ export const SmartEPPCaseStudy = () => {
                   </div>
                 )}
               </motion.div>
-
-            {/* System Foundations Block - Integrated as Appendix */}
-        </div>
-
-        <div className="container">
-            {/* System Foundations Block - Integrated as Appendix */}
-            <div style={{ paddingBottom: '40px', maxWidth: '100%', margin: '120px auto 0' }}>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                {/* Title Block (Inside Grid) */}
-                <div className="md:col-span-1 flex flex-col justify-center" style={{ padding: '24px 0' }}>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
-                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--semantic-info)' }} />
-                    <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '1px', textTransform: 'uppercase' }}>Behind the Scenes</span>
-                  </div>
-                  <h3 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-                    System Foundations.
-                  </h3>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6, maxWidth: '90%' }}>
-                    The core design principles powering all four platforms.
-                  </p>
-                </div>
-
-                {/* Card 1: Design System */}
-                <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                  <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Design System</div>
-                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Platforms.</h4>
-                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
-                    A unified component library keeps every screen perfectly in sync. We designed once to scale everywhere.
-                  </p>
-                </div>
-
-                {/* Card 2: Accessibility */}
-                <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                  <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Accessibility</div>
-                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Inclusive by Design.</h4>
-                  <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                    Built for everyone. High-contrast text and large touch targets ensure a frictionless experience.
-                  </p>
-                </div>
-
-                {/* Card 3: Edge Cases Designed */}
-                <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
-                  <div className="flex flex-col justify-center">
-                    <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Edge Cases Designed</div>
-                    <h4 style={{ fontSize: '24px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Zero Dead Ends.</h4>
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                      We mapped out failure states so users never hit a wall. Every error offers a way forward.
-                    </p>
-                  </div>
-                  
-                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ fontSize: '16px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-error)' }} /> HR Rejections
-                    </div>
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Clear feedback & instant next steps.</p>
-                  </div>
-                  
-                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ fontSize: '16px', fontWeight: 600, color: '#e5e5e5', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} /> Out of Stock
-                    </div>
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Smart alternatives. No blank screens.</p>
-                  </div>
-                </div>
-              </div>
             </div>
-        </div>
       </section>
 
-      {/* 07. Outcomes & Impact */}
+      {/* 07. Execution & Impact */}
       <section style={{ padding: '120px 0', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative' }}>
-        <div className="container" style={{ maxWidth: '1000px' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-
+            
             {/* Header */}
             <div style={{ textAlign: 'center', marginBottom: '64px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '24px' }}>
                 <Target size={14} strokeWidth={2.5} />
-                Outcomes & Impact
+                Execution & Impact
               </div>
-              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 20px 0', fontFamily: 'var(--font-heading)', whiteSpace: 'nowrap' }}>
-                High adoption. Zero churn.
+              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 20px 0', fontFamily: 'var(--font-heading)' }}>
+                High adoption. Zero dead ends.
               </h2>
-              <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '600px' }}>
-                Measured 90 days post-launch. The simplified 4-party flow delivered strong business results and dramatically reduced HR overhead.
+              <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '650px' }}>
+                Measured 90 days post-launch. A robust design system and foolproof edge cases directly delivered strong business results and dramatically reduced HR overhead.
               </p>
             </div>
 
-            {/* Hero Metrics - 3 Column */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+              {/* ROW 1: Metrics */}
               {[
                 { value: '9.4%', label: 'Total Conversion', sub: 'Target: ≥ 5%' },
                 { value: '<12s', label: 'HR Approval', sub: 'Target: ≤ 30s' },
                 { value: '0%', label: 'Client Churn', sub: 'Target: Zero drop-offs' }
               ].map((m, i) => (
-                <div key={i} style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', borderTop: '2px solid var(--semantic-success)', borderRadius: '16px', padding: '32px 24px', textAlign: 'center' }}>
+                <div key={i} className="md:col-span-4" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', borderTop: '2px solid var(--semantic-success)', borderRadius: '20px', padding: '32px 24px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <div style={{ fontSize: 'clamp(3rem, 4vw, 4rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', lineHeight: 1, fontFamily: 'var(--font-heading)', marginBottom: '12px' }}>
                     {m.value}
                   </div>
@@ -1625,48 +1558,87 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ fontSize: '15px', color: 'var(--semantic-success)', fontWeight: 500 }}>{m.sub}</div>
                 </div>
               ))}
-            </div>
 
-            {/* Secondary details in 2 columns */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-               {/* Qualitative Wins */}
-               <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px' }}>
-                 <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>Beyond the Numbers</h3>
-                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                       <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
-                       <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>4.4★ Rating</strong> across App Store & Play Store.</p>
-                    </li>
-                    <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                       <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
-                       <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Massive Scale:</strong> Successfully onboarded 20 Enterprises, 10 Lessors, and 10 Sellers.</p>
-                    </li>
-                    <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                       <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
-                       <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Support tickets</strong> for savings calculation dropped to near-zero.</p>
-                    </li>
-                    <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                       <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
-                       <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Sales impact:</strong> 3 enterprise clients cited the HR dashboard during renewals.</p>
-                    </li>
-                 </ul>
-               </div>
+              {/* ROW 2: Craft & Trade-offs */}
+              {/* Design System */}
+              <div className="md:col-span-4 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Design System</div>
+                <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Platforms.</h4>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  A unified component library keeps every screen perfectly in sync. We designed once to scale everywhere.
+                </p>
+              </div>
 
-               {/* The Trade-off */}
-               <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column' }}>
-                 <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>The Trade-off</h3>
-                 <div style={{ flex: 1, background: 'rgba(239,68,68,0.05)', borderLeft: '3px solid var(--semantic-error)', padding: '24px', borderRadius: '4px 16px 16px 4px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', margin: '0 0 16px 0', lineHeight: 1.6 }}>
-                      We skipped early validation on the <strong style={{ color: '#fff' }}>Financier/Seller portals</strong> to hit the 5-month MVP deadline.
-                    </p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>
-                      <XCircle size={18} color="var(--semantic-error)" style={{ flexShrink: 0 }} />
-                      <span style={{ fontSize: '15px', color: '#fff', fontWeight: 500 }}>Missed target of ≤5 change requests, causing unplanned rework.</span>
+              {/* Accessibility */}
+              <div className="md:col-span-4 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Accessibility</div>
+                <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Inclusive by Design.</h4>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  Built for everyone. High-contrast text and large touch targets ensure a frictionless experience.
+                </p>
+              </div>
+
+              {/* The Trade-off */}
+              <div className="md:col-span-4 flex flex-col justify-center" style={{ background: 'rgba(239,68,68,0.03)', border: '1px solid rgba(239,68,68,0.1)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-error)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>The Trade-off</div>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', margin: '0 0 16px 0', lineHeight: 1.6 }}>
+                  We skipped early validation on the <strong style={{ color: '#fff' }}>Financier/Seller portals</strong> to hit the 5-month MVP deadline.
+                </p>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px', background: 'rgba(0,0,0,0.3)', borderRadius: '8px' }}>
+                  <XCircle size={16} color="var(--semantic-error)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <span style={{ fontSize: '14px', color: '#fff', lineHeight: 1.4 }}>Missed target of ≤5 change requests, causing unplanned rework.</span>
+                </div>
+              </div>
+
+              {/* ROW 3: Edge Cases & Beyond the Numbers */}
+              {/* Edge Cases Designed */}
+              <div className="md:col-span-6 flex flex-col" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Edge Cases Designed</div>
+                <h4 style={{ fontSize: '24px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>Zero Dead Ends.</h4>
+                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                  We mapped out failure states so users never hit a wall. Every error offers a way forward.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto">
+                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)' }}>
+                    <div style={{ fontSize: '15px', fontWeight: 600, color: '#e5e5e5', marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-error)' }} /> HR Rejections
                     </div>
-                 </div>
-               </div>
-            </div>
+                    <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Clear feedback & instant next steps.</p>
+                  </div>
+                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.04)' }}>
+                    <div style={{ fontSize: '15px', fontWeight: 600, color: '#e5e5e5', marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--semantic-warning)' }} /> Out of Stock
+                    </div>
+                    <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Smart alternatives. No blank screens.</p>
+                  </div>
+                </div>
+              </div>
 
+              {/* Qualitative Wins */}
+              <div className="md:col-span-6 flex flex-col" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '20px', padding: '32px' }}>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Beyond the Numbers</div>
+                <h4 style={{ fontSize: '24px', color: '#fff', fontWeight: 500, marginBottom: '24px', letterSpacing: '-0.01em' }}>Qualitative Wins</h4>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px', marginTop: 'auto' }}>
+                  <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                     <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
+                     <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>4.4★ Rating</strong> across App Store & Play Store.</p>
+                  </li>
+                  <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                     <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
+                     <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Massive Scale:</strong> Successfully onboarded 20 Enterprises, 10 Financiers, and 10 Sellers.</p>
+                  </li>
+                  <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                     <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
+                     <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Support tickets</strong> for savings calculation dropped to near-zero.</p>
+                  </li>
+                  <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                     <div style={{ color: 'var(--semantic-success)', marginTop: '2px' }}><CheckCircle2 size={18} /></div>
+                     <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}><strong style={{ color: '#fff' }}>Sales impact:</strong> 3 enterprise clients cited the HR dashboard during renewals.</p>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
           </motion.div>
         </div>
       </section>
