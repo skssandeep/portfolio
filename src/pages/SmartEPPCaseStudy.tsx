@@ -907,17 +907,18 @@ export const SmartEPPCaseStudy = () => {
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
-            {/* Header */}
-            <div style={{ display: 'grid', gridTemplateColumns: '55% 45%', gap: '48px', alignItems: 'end', marginBottom: '56px' }}>
-              <div>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', marginBottom: '28px' }}>
-                  <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>04: Design Exploration</span>
-                </div>
-                <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
-                  Principles, then pixels.
-                </h2>
-              </div>
-              <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.75, margin: 0 }}>
+            {/* Section Label */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-brand)', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '32px' }}>
+              <Palette size={14} strokeWidth={2.5} />
+              Design Exploration
+            </div>
+
+            {/* Heading & Central Tension */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', margin: 0, fontFamily: 'var(--font-heading)' }}>
+                Principles, then pixels.
+              </h2>
+              <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                 Five principles set before wireframes began, derived directly from research, not assumptions.
               </p>
             </div>
