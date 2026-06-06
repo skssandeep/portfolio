@@ -1075,7 +1075,8 @@ export const SmartEPPCaseStudy = () => {
                       <XCircle size={14} strokeWidth={2.5} /> Rejected Concept
                     </div>
                     <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Guided Wizard</h4>
-                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>44% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Drop-off</span></div>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '2px', fontFamily: 'var(--font-heading)' }}>44% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Step-1 Abandonment</span></div>
+                    <div style={{ fontSize: '13px', color: '#737373', marginBottom: '12px', fontFamily: 'var(--font-system)', fontStyle: 'italic' }}>(measures friction, not conversion)</div>
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                       Too much friction. People want to browse before they configure. Abandoned at step 1.
                     </p>
