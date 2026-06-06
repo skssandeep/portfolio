@@ -1773,7 +1773,7 @@ export const SmartEPPCaseStudy = () => {
             
             {/* Left Column: Sticky Header */}
             <div className="lg:col-span-4" style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginTop: 0, paddingTop: 0 }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', alignSelf: 'flex-start' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-info)', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', alignSelf: 'flex-start' }}>
                 <FastForward size={14} strokeWidth={2.5} />
                 <span>08: Reflection</span>
               </div>
