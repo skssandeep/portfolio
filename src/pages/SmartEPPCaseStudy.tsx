@@ -1773,8 +1773,9 @@ export const SmartEPPCaseStudy = () => {
             
             {/* Left Column: Sticky Header */}
             <div className="lg:col-span-4" style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginTop: 0, paddingTop: 0 }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px 14px', alignSelf: 'flex-start' }}>
-                <span style={{ fontSize: '16px', color: '#a3a3a3', fontFamily: "'Jost', sans-serif", letterSpacing: '0.5px' }}>08: Reflection</span>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', alignSelf: 'flex-start' }}>
+                <FastForward size={14} strokeWidth={2.5} />
+                <span>08: Reflection</span>
               </div>
               <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, fontFamily: 'var(--font-heading)' }}>
                 Looking Back.
@@ -1795,7 +1796,7 @@ export const SmartEPPCaseStudy = () => {
               >
                 <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Search size={24} /></div>
                 <div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px' }}>Research gaps cost time</h3>
+                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Research gaps cost time</h3>
                   <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Lessor and seller portals relied on stakeholder workshops instead of user observation, resulting in significantly higher post-launch change requests.</p>
                 </div>
               </motion.div>
@@ -1808,7 +1809,7 @@ export const SmartEPPCaseStudy = () => {
               >
                 <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Layers size={24} /></div>
                 <div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px' }}>System before screens</h3>
+                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>System before screens</h3>
                   <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Extracting components halfway through caused inconsistencies that took 2 weeks to fix. A foundational design system must always come first.</p>
                 </div>
               </motion.div>
@@ -1822,7 +1823,7 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'var(--semantic-brand)' }} />
                 <div style={{ background: 'rgba(249,87,56,0.15)', padding: '20px', borderRadius: '20px', color: 'var(--semantic-brand)', alignSelf: 'flex-start' }}><AlertCircle size={32} /></div>
                 <div>
-                  <h3 style={{ fontSize: '32px', fontWeight: 600, color: '#fff', marginBottom: '16px', lineHeight: 1.2, fontFamily: 'var(--font-heading)' }}>Edge cases are the product</h3>
+                  <h3 style={{ fontSize: '32px', fontWeight: 600, color: '#fff', marginBottom: '16px', lineHeight: 1.2, fontFamily: "'Jost', sans-serif" }}>Edge cases are the product</h3>
                   <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, margin: 0 }}>I used to treat edge cases as final cleanup. This project taught me that in B2B operations, failure states (like a stuck order) are core UX problems. I now audit edge cases during initial problem definition, not as a polish pass.</p>
                 </div>
               </motion.div>
@@ -1835,7 +1836,7 @@ export const SmartEPPCaseStudy = () => {
               >
                 <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Lightbulb size={24} /></div>
                 <div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px' }}>Tooltips aren't flows</h3>
+                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Tooltips aren't flows</h3>
                   <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>We answered "What if I leave the company?" with a tooltip. It instantly became the #1 support ticket. It desperately needed a dedicated user flow.</p>
                 </div>
               </motion.div>
@@ -1848,7 +1849,7 @@ export const SmartEPPCaseStudy = () => {
               >
                 <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><FastForward size={24} /></div>
                 <div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px' }}>The Next Iteration</h3>
+                  <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The Next Iteration</h3>
                   <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>(1) Power-user tax calculator mode. (2) Full end-of-tenure flow. (3) Complete redesign of lessor/seller portals backed by actual user research.</p>
                 </div>
               </motion.div>
