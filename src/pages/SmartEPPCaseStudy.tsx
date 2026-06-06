@@ -1049,11 +1049,11 @@ export const SmartEPPCaseStudy = () => {
                   </div>
 
                   {/* Image: Contextual Detail */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center', padding: '32px 0' }}>
                     <img 
                       src="/images/EPP_CaseStudy_07.png" 
                       alt="Tax Calculator UI" 
-                      style={{ width: '100%', height: 'auto', display: 'block' }} 
+                      style={{ width: '100%', maxWidth: '320px', height: 'auto', display: 'block', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} 
                     />
                   </div>
                 </motion.div>
