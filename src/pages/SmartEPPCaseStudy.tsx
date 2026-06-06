@@ -1142,7 +1142,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 8. Ideating/Solutions & 9. Iterations (The Messy Middle) */}
-      <section style={{ padding: '120px 0' }}>
+      <section style={{ padding: '120px 0 0 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#3b82f6', background: 'rgba(59,130,246,0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
@@ -1216,7 +1216,7 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
       {/* 05. Validation */}
-      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <section style={{ padding: '80px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
