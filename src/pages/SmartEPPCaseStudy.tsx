@@ -1048,18 +1048,13 @@ export const SmartEPPCaseStudy = () => {
                     </div>
                   </div>
 
-                  {/* Wireframe: Contextual Detail */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '16px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '12px', height: '60px' }} />
-                    <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '12px' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '6px', height: '12px', width: '90%' }} />
-                        <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '6px', height: '12px', width: '70%' }} />
-                        <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '6px', height: '12px', width: '50%' }} />
-                      </div>
-                      <div style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.05))', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '8px', height: '60px' }} />
-                    </div>
-                    <div style={{ background: 'rgba(16, 185, 129, 0.15)', borderRadius: '8px', height: '40px', marginTop: '8px' }} />
+                  {/* Image: Contextual Detail */}
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
+                    <img 
+                      src="/images/EPP_CaseStudy_07.png" 
+                      alt="Tax Calculator UI" 
+                      style={{ width: '100%', height: 'auto', display: 'block' }} 
+                    />
                   </div>
                 </motion.div>
 
