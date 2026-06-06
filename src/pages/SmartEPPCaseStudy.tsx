@@ -959,7 +959,7 @@ export const SmartEPPCaseStudy = () => {
                   <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Compare to Amazon, not nothing</h4>
                 </div>
                 <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
-                  Savings need contrast to land. Comparison is a first-class feature on the PDP, not a marketing footnote.
+                  Savings need contrast to land. Comparison is a first-class feature on the product page, not a marketing footnote.
                 </p>
               </motion.div>
 
@@ -1038,7 +1038,7 @@ export const SmartEPPCaseStudy = () => {
                       </div>
                       <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Contextual Detail</h4>
                       <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '400px', fontFamily: 'var(--font-system)' }}>
-                        Savings calculator, inline comparison, and protection summary built into one scrollable PDP. Completeness built confidence.
+                        Savings calculator, inline comparison, and protection summary built into one scrollable product page. Completeness built confidence.
                       </p>
                     </div>
                     
@@ -1070,7 +1070,7 @@ export const SmartEPPCaseStudy = () => {
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-system)' }}>
                       <XCircle size={14} strokeWidth={2.5} /> Rejected Concept
                     </div>
-                    <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Minimal PDP</h4>
+                    <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Minimal Product Page</h4>
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>28% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Conversion</span></div>
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                       Too bare. Without seeing exact savings upfront, users wouldn't convert. A monthly salary EMI felt like a leap of faith.
