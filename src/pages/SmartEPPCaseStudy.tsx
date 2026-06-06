@@ -928,10 +928,12 @@ export const SmartEPPCaseStudy = () => {
               
               {/* Principle 1 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-3 group relative overflow-hidden transition-all duration-300"
-                style={{ background: 'linear-gradient(135deg, rgba(var(--semantic-brand-rgb), 0.05), rgba(255,255,255,0.01))', border: '1px solid rgba(var(--semantic-brand-rgb), 0.2)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-                  <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(var(--semantic-brand-rgb), 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--semantic-brand)', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(var(--semantic-brand-rgb), 0.05)' }}>
+                  <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     01
                   </div>
                   <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>Show the rupee, hide the formula</h4>
