@@ -696,7 +696,7 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
                     <div style={{ color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '8px' }}>Integrations</div>
                     <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>3</div>
-                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>HRMS, Payment Gateway & IAM.</div>
+                    <div style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5 }}>HRMS, Corporate SSO & Tax APIs.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
