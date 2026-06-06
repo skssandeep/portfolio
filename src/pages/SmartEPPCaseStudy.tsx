@@ -532,7 +532,7 @@ export const SmartEPPCaseStudy = () => {
             {[
               { label: 'ROLE', value: 'UX Designer', subtext: 'Solo designer' },
               { label: 'TEAM', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
-              { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 portals • 2 mobile OS' },
+              { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 platforms' },
               { label: 'TIMELINE', value: '5 months', subtext: 'Blank canvas → shipped MVP' },
               { label: 'USER RESEARCH', value: '26 interviews', subtext: 'Across all 4 actor types' },
               { label: 'DESIGN SYSTEM', value: '44 components', subtext: "Built on OneAssist's existing library" },
@@ -1494,7 +1494,7 @@ export const SmartEPPCaseStudy = () => {
                 {/* Card 1: Design System */}
                 <div className="md:col-span-1 flex flex-col justify-center" style={{ background: 'linear-gradient(145deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '32px' }}>
                   <div style={{ fontSize: '16px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Design System</div>
-                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Portals.</h4>
+                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 500, marginBottom: '12px', letterSpacing: '-0.01em' }}>1 System. 4 Platforms.</h4>
                   <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '400px' }}>
                     A unified component library keeps every screen perfectly in sync. We designed once to scale everywhere.
                   </p>
