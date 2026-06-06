@@ -1492,23 +1492,8 @@ export const SmartEPPCaseStudy = () => {
                 {activePortalTab === 'hr' && (
                   <div>
                     {/* HR Portal Image */}
-                    <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', marginBottom: '40px', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img src="/images/HR.jpg" alt="HR Portal Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                    </div>
-
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Everything at a glance.</strong>
-                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Employee name, role, band, and requested device cost are visible in a single row. No tab-switching or profile opening required.</p>
-                      </div>
-                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Band-based eligibility.</strong>
-                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>HR immediately knows if the device is within policy. Requests outside band limits are automatically flagged for review.</p>
-                      </div>
-                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Emotional reframing.</strong>
-                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Showing "Total Savings" reframes HR from an admin approving requests to a champion delivering real employee value.</p>
-                      </div>
                     </div>
                   </div>
                 )}
@@ -1516,23 +1501,8 @@ export const SmartEPPCaseStudy = () => {
                 {activePortalTab === 'financier' && (
                   <div>
                     {/* Financier Portal Image */}
-                    <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', marginBottom: '40px', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img src="/images/Financier.jpg" alt="Financier Portal Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                    </div>
-                    
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Corporate Risk Profiling.</strong>
-                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Financiers can evaluate loan books based on corporate partner risk rather than individual retail risk, enabling better rates.</p>
-                      </div>
-                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Automated Disbursals.</strong>
-                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Once HR approves and KYC is complete, capital is automatically routed to sellers without manual intervention.</p>
-                      </div>
-                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>EMI Collection Sync.</strong>
-                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Direct integration with corporate payroll systems ensures EMI collections are perfectly synced with salary cycles.</p>
-                      </div>
                     </div>
                   </div>
                 )}
@@ -1540,23 +1510,8 @@ export const SmartEPPCaseStudy = () => {
                 {activePortalTab === 'seller' && (
                   <div>
                     {/* Seller Portal Image */}
-                    <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', marginBottom: '40px', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img src="/images/Seller.jpg" alt="Seller Hub Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                    </div>
-
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Inventory Protection.</strong>
-                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Devices are temporarily reserved during the HR approval window to prevent out-of-stock scenarios for approved requests.</p>
-                      </div>
-                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>Streamlined Fulfillment.</strong>
-                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>Sellers only see fully funded, approved orders. Financing and corporate approvals are abstracted away completely.</p>
-                      </div>
-                      <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' }}>
-                        <strong style={{ color: '#e5e5e5', fontWeight: 600, display: 'block', marginBottom: '6px', fontSize: '16px' }}>B2B Tax Invoicing.</strong>
-                        <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0 }}>GST invoices are automatically generated in the correct B2B format to ensure corporate tax benefits can be claimed.</p>
-                      </div>
                     </div>
                   </div>
                 )}
