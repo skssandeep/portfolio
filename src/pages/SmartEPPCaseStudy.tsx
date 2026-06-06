@@ -294,16 +294,20 @@ export const SmartEPPCaseStudy = () => {
               </button>
             )}
 
-            <motion.img 
-               key={modalIndex} // Add key to trigger animation on index change
-               initial={{ scale: 0.9, opacity: 0, x: 50 }} 
-               animate={{ scale: 1, opacity: 1, x: 0 }} 
-               exit={{ scale: 0.9, opacity: 0, x: -50 }}
-               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-               src={modalImages[modalIndex]} 
-               style={{ maxHeight: '90vh', maxWidth: '80vw', objectFit: 'contain', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))' }} 
-               onClick={(e) => e.stopPropagation()} 
-            />
+            <div 
+              style={{ maxHeight: '90vh', width: '80vw', overflowY: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', padding: '20px 0' }} 
+              onClick={(e) => e.stopPropagation()}
+            >
+              <motion.img 
+                 key={modalIndex} 
+                 initial={{ scale: 0.95, opacity: 0, y: 20 }} 
+                 animate={{ scale: 1, opacity: 1, y: 0 }} 
+                 exit={{ scale: 0.95, opacity: 0, y: -20 }}
+                 transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                 src={modalImages[modalIndex]} 
+                 style={{ width: '100%', maxWidth: '500px', height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: 'auto' }} 
+              />
+            </div>
 
             {/* Next Button */}
             {modalIndex < modalImages.length - 1 && (
