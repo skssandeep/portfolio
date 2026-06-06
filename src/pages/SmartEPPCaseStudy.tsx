@@ -1026,59 +1026,60 @@ export const SmartEPPCaseStudy = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="flex flex-col gap-6">
                 
-                {/* The Winner (Left Side) */}
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2" style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '24px', padding: '48px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                {/* The Winner (Top) */}
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '24px', padding: '48px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '48px', alignItems: 'center' }}>
                   
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '24px' }}>
-                    <div>
-                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', background: 'var(--semantic-success)', borderRadius: '100px', marginBottom: '16px' }}>
-                        <span style={{ fontSize: '16px', fontWeight: 700, color: '#fff', letterSpacing: '1px', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>The Winner</span>
-                      </div>
-                      <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Contextual Detail</h4>
-                      <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '400px', fontFamily: 'var(--font-system)' }}>
-                        Savings calculator, inline comparison, and protection summary built into one scrollable product page. Completeness built confidence.
-                      </p>
+                  {/* Text Content */}
+                  <div style={{ flex: '1 1 400px' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', background: 'var(--semantic-success)', borderRadius: '100px', marginBottom: '24px' }}>
+                      <span style={{ fontSize: '16px', fontWeight: 700, color: '#fff', letterSpacing: '1px', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>The Winner</span>
                     </div>
+                    <h4 style={{ fontSize: '32px', fontWeight: 700, color: '#fff', margin: '0 0 16px 0', fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em' }}>Contextual Detail</h4>
+                    <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '500px', fontFamily: 'var(--font-system)' }}>
+                      Savings calculator, inline comparison, and protection summary built into one scrollable product page. Completeness built confidence.
+                    </p>
                     
-                    <div style={{ textAlign: 'right' }}>
-                      <div style={{ fontSize: '48px', fontWeight: 700, color: 'var(--semantic-success)', lineHeight: 1, fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>9.4%</div>
-                      <div style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)', marginTop: '4px' }}>Conversion Rate</div>
+                    <div>
+                      <div style={{ fontSize: '56px', fontWeight: 700, color: 'var(--semantic-success)', lineHeight: 1, fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>9.4%</div>
+                      <div style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)', marginTop: '8px' }}>Total Conversion Rate</div>
                     </div>
                   </div>
 
-                  {/* Image: Contextual Detail */}
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center', padding: '32px 0' }}>
-                    <img 
-                      src="/images/EPP_CaseStudy_07.png" 
-                      alt="Tax Calculator UI" 
-                      style={{ width: '100%', maxWidth: '320px', height: 'auto', display: 'block', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} 
-                    />
+                  {/* Image */}
+                  <div style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center' }}>
+                    <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', padding: '32px', width: '100%', maxWidth: '380px', display: 'flex', justifyContent: 'center' }}>
+                      <img 
+                        src="/images/EPP_CaseStudy_07.png" 
+                        alt="Tax Calculator UI" 
+                        style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} 
+                      />
+                    </div>
                   </div>
                 </motion.div>
 
-                {/* The Losers (Right Side) */}
-                <div className="lg:col-span-1" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {/* The Losers (Bottom Row) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   
-                  <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-system)' }}>
-                      <XCircle size={14} strokeWidth={2.5} /> Rejected Concept
+                  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-system)' }}>
+                      <XCircle size={16} strokeWidth={2.5} /> Rejected Concept
                     </div>
-                    <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Minimal Product Page</h4>
-                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>2.1% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Conversion</span></div>
+                    <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 12px 0', fontFamily: 'var(--font-heading)' }}>Minimal Product Page</h4>
+                    <div style={{ fontSize: '32px', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>2.1% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Conversion</span></div>
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                       Too bare. Without seeing exact savings upfront, users wouldn't convert. A monthly salary EMI felt like a leap of faith.
                     </p>
                   </motion.div>
 
-                  <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px', fontFamily: 'var(--font-system)' }}>
-                      <XCircle size={14} strokeWidth={2.5} /> Rejected Concept
+                  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px', fontFamily: 'var(--font-system)' }}>
+                      <XCircle size={16} strokeWidth={2.5} /> Rejected Concept
                     </div>
-                    <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Hidden Protection Cost</h4>
-                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '2px', fontFamily: 'var(--font-heading)' }}>61% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Checkout Drop-off</span></div>
-                    <div style={{ fontSize: '13px', color: '#737373', marginBottom: '12px', fontFamily: 'var(--font-system)', fontStyle: 'italic' }}>(measures friction, not conversion)</div>
+                    <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#e5e5e5', margin: '0 0 12px 0', fontFamily: 'var(--font-heading)' }}>Hidden Protection Cost</h4>
+                    <div style={{ fontSize: '32px', fontWeight: 700, color: '#fff', marginBottom: '4px', fontFamily: 'var(--font-heading)' }}>61% <span style={{ fontSize: '16px', color: '#a3a3a3', fontWeight: 500, fontFamily: 'var(--font-system)' }}>Drop-off</span></div>
+                    <div style={{ fontSize: '14px', color: '#737373', marginBottom: '16px', fontFamily: 'var(--font-system)', fontStyle: 'italic' }}>(measures friction, not conversion)</div>
                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                       Hiding the mandatory insurance cost until checkout destroyed trust. Transparency isn't optional when touching salaries.
                     </p>
