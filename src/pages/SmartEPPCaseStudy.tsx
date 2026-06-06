@@ -275,7 +275,7 @@ export const SmartEPPCaseStudy = () => {
               alignItems: 'center', 
               justifyContent: 'center', 
               padding: '40px',
-              cursor: 'zoom-out'
+              cursor: 'default'
             }}
           >
             <button 
