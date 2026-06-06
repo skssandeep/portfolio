@@ -937,7 +937,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
                   <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>Show the rupee, hide the formula</h4>
                 </div>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.7, margin: 0, maxWidth: '800px', fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.7, margin: 0, maxWidth: '800px', fontFamily: 'var(--font-system)' }}>
                   Present ₹38,257 saved, not tax slab math. Outcomes in the primary view. Mechanics on demand.
                 </p>
               </motion.div>
@@ -953,7 +953,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
                   <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Compare to Amazon, not nothing</h4>
                 </div>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Savings need contrast to land. Comparison is a first-class feature on the PDP, not a marketing footnote.
                 </p>
               </motion.div>
@@ -969,7 +969,7 @@ export const SmartEPPCaseStudy = () => {
                   </div>
                   <h4 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>Answer anxieties proactively</h4>
                 </div>
-                <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   What if it breaks? What if I leave? Every anxiety surfaced in-context, before the user has to search.
                 </p>
               </motion.div>
