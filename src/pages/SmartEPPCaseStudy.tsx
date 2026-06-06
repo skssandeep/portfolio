@@ -1130,58 +1130,77 @@ export const SmartEPPCaseStudy = () => {
             </div>
             <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>The Messy Middle</h2>
             <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
-              Dozens of wireframes, flows, and structural iterations explored before dialing in the perfect frictionless UX.
+              Design isn't linear. 3 Iterations. 1 Clear Winner.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((num, i) => (
-              <motion.div 
-                key={num}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -10, scale: 1.03, zIndex: 10 }}
-                onClick={() => { setModalImages(Array.from({length: 8}, (_, idx) => `/images/wireframe${idx+1}.jpg`)); setModalIndex(i); }}
-                style={{ 
-                  background: 'rgba(255,255,255,0.02)', 
-                  borderRadius: '24px', 
-                  border: '1px solid rgba(255,255,255,0.05)', 
-                  overflow: 'hidden',
-                  cursor: 'zoom-in',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-                  marginTop: i % 2 !== 0 ? '48px' : '0', // Beautiful staggered masonry effect
-                  marginBottom: i % 2 === 0 ? '48px' : '0'
-                }}
-              >
-                <div style={{ width: '100%', height: '100%', background: '#0a0a0a', position: 'relative' }}>
-                  <img 
-                    src={`/images/wireframe${num}.jpg`} 
-                    alt={`Wireframe Iteration ${num}`} 
-                    style={{ 
-                      width: '100%', 
-                      height: '100%', 
-                      objectFit: 'cover', 
-                      opacity: 0.6, 
-                      transition: 'opacity 0.4s ease, transform 0.4s ease',
-                      display: 'block' 
-                    }} 
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.opacity = '1';
-                      e.currentTarget.style.transform = 'scale(1.05)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.opacity = '0.6';
-                      e.currentTarget.style.transform = 'scale(1)';
-                    }}
-                  />
-                  <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', padding: '6px', borderRadius: '50%', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.1)', opacity: 0.8 }}>
-                    <Maximize size={14} />
-                  </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 0', flexWrap: 'wrap', gap: '20px' }}>
+            
+            {/* Wireframes Gallery */}
+            <motion.div 
+               whileHover={{ y: -5, rotate: 0, opacity: 1, filter: 'grayscale(0%)', zIndex: 10 }}
+               onClick={() => { setModalImages(Array.from({length: 8}, (_, idx) => `/images/wireframe${idx+1}.jpg`)); setModalIndex(0); }}
+               style={{ width: '280px', transform: 'rotate(-6deg)', opacity: 0.5, filter: 'grayscale(100%)', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 1, cursor: 'zoom-in' }}
+            >
+              <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
+                <img src="/images/wireframe1.jpg" alt="Wireframe Gallery" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
+                <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', padding: '6px 12px', borderRadius: '100px', color: '#fff', fontSize: '12px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.1)' }}>
+                  8 Photos
                 </div>
-              </motion.div>
-            ))}
+              </div>
+              <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(255,255,255,0.1)', color: '#fff', padding: '4px 10px', borderRadius: '6px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
+                  <Maximize size={12} /> Wireframes
+                </div>
+                <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>Exploration Phase</h4>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>
+                  Dozens of rough sketches and flows to map out the ideal cart experience.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Draft 2 (Failed) */}
+            <motion.div 
+               whileHover={{ y: -5, rotate: 0, opacity: 1, filter: 'grayscale(0%)', zIndex: 10 }}
+               style={{ width: '280px', transform: 'rotate(4deg)', opacity: 0.5, filter: 'grayscale(100%)', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 2, marginLeft: '-40px' }}
+            >
+              <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
+                <img src="/images/wireframe_v2.png" alt="Draft 2" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
+              </div>
+              <div style={{ padding: '24px', background: '#0a0a0a', marginTop: '-40px', position: 'relative' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(239,68,68,0.1)', color: '#ef4444', padding: '4px 10px', borderRadius: '6px', fontSize: '16px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '12px' }}>
+                  <XCircle size={12} /> Draft 02
+                </div>
+                <h4 style={{ color: '#fff', fontSize: '16px', fontWeight: 600, margin: '0 0 8px 0' }}>High Friction</h4>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>
+                  Forcing KYC uploads before browsing caused a fatal 70% bounce rate.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* The Winner */}
+            <motion.div 
+               whileHover={{ y: -10, scale: 1.02 }}
+               style={{ width: '560px', background: 'rgba(16,185,129,0.02)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 3, marginLeft: '20px', boxShadow: '0 20px 40px rgba(16,185,129,0.15)', position: 'relative' }}
+            >
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '3px', background: 'linear-gradient(90deg, #10b981, #3b82f6)', zIndex: 10 }} />
+              <div style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
+                <img src="/images/wireframe_final.png" alt="Winner" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '120px', background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }} />
+              </div>
+              <div style={{ padding: '32px', background: '#0a0a0a', marginTop: '-60px', position: 'relative' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.1)', color: '#10b981', padding: '6px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px' }}>
+                  <CheckCircle2 size={16} /> The Winner
+                </div>
+                <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, margin: '0 0 16px 0', lineHeight: 1.2 }}>Frictionless Access & Context</h4>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>
+                  By seamlessly authenticating users into their employee profiles, we unlocked personalized context <strong style={{ color: '#fff' }}>before</strong> browsing. Complex KYC was delayed until checkout, boosting confidence and skyrocketing conversions.
+                </p>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
