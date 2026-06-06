@@ -1656,7 +1656,7 @@ export const SmartEPPCaseStudy = () => {
                 <Target size={14} strokeWidth={2.5} />
                 Outcomes & Impact
               </div>
-              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 20px 0', fontFamily: 'var(--font-heading)' }}>
+              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 20px 0', fontFamily: 'var(--font-heading)', whiteSpace: 'nowrap' }}>
                 High adoption. Zero churn.
               </h2>
               <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '600px' }}>
