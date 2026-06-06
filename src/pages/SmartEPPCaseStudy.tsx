@@ -664,7 +664,7 @@ export const SmartEPPCaseStudy = () => {
                 </p>
                 <div style={{ marginTop: '32px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '24px' }}>
                   <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>Business Goal</div>
-                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Drive high adoption of the leasing program by eliminating friction, aiming to reduce HR support overhead and manual interventions by at least 40%.</p>
+                  <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Successfully launch a net-new revenue stream (0-to-1) for OneAssist by driving high employee adoption, while ensuring the platform requires zero manual intervention from B2B partner HR teams.</p>
                   <div style={{ color: '#fff', fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>User Goal</div>
                   <p style={{ color: '#a3a3a3', fontSize: '16px', lineHeight: 1.5, margin: 0 }}>Provide absolute transparency on tax savings and eliminate anxiety surrounding the salary deduction and delivery mechanism.</p>
                 </div>
