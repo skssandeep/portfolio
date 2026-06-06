@@ -2199,25 +2199,7 @@ export const SmartEPPCaseStudy = () => {
           </>
           )}
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ background: 'linear-gradient(145deg, rgba(30,30,30,0.8) 0%, rgba(10,10,10,0.9) 100%)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', padding: '64px', textAlign: 'center', boxShadow: '0 40px 80px rgba(0,0,0,0.4)' }}
-          >
-            <Target size={40} color="#3b82f6" style={{ margin: '0 auto 24px auto', display: 'block' }} />
-            <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '24px' }}>Final Thoughts</h3>
-            <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, maxWidth: '800px', margin: '0 auto 48px auto', fontStyle: 'italic' }}>
-              "Smart EPP was a masterclass in designing for trust and low friction over pure aesthetics. By deeply understanding FinTech regulations and corporate HR integrations, we were able to engineer a truly frictionless checkout experience."
-            </p>
-
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '48px' }}>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '12px 24px', borderRadius: '100px', fontSize: '16px', color: 'rgba(255,255,255,0.7)', display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
-                <Palette size={18} color="var(--accent-color)" /> 
-                <span><strong style={{ color: '#fff' }}>Built with:</strong> Figma, Claude, & UX Pilot</span>
-              </div>
-            </div>
-
+          <div style={{ textAlign: 'center' }}>
             <Link 
               to="/" 
               style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#0a0a0a', background: '#fff', padding: '16px 40px', borderRadius: '100px', textDecoration: 'none', fontWeight: 600, fontSize: '16px', letterSpacing: '1px', textTransform: 'uppercase', transition: 'all 0.3s ease' }}
@@ -2226,7 +2208,7 @@ export const SmartEPPCaseStudy = () => {
             >
               Back to All Projects
             </Link>
-          </motion.div>
+          </div>
 
         </div>
       </section>
