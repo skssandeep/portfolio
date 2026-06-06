@@ -1149,9 +1149,12 @@ export const SmartEPPCaseStudy = () => {
               Ideation & Iteration
             </div>
             <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '-0.02em' }}>Early Explorations</h2>
-            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
+            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto 32px auto' }}>
               From low-fidelity structural wireframes to the first high-fidelity visual drafts.
             </p>
+            <a href="#final-designs" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, transition: 'all 0.2s ease', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}>
+              Jump to Final Designs <ArrowDown size={18} />
+            </a>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', padding: '40px 0', flexWrap: 'wrap', gap: '20px' }}>
@@ -1216,7 +1219,7 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
       {/* 05. Validation */}
-      <section style={{ padding: '80px 0' }}>
+      <section id="final-designs" style={{ padding: '80px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
