@@ -38,7 +38,7 @@ export const Essays = () => {
         <header style={{ marginBottom: '80px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
             <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--accent-color)' }} />
-            <span style={{ fontSize: '12px', letterSpacing: '4px', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>Written Point of View</span>
+            <span style={{ fontSize: '12px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>Written Point of View</span>
           </div>
           <h1 className="text-headline" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', marginBottom: '32px', lineHeight: 1.1 }}>
             Hills I'll die on.
@@ -52,7 +52,7 @@ export const Essays = () => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
           {essays.map((essay, i) => (
             <article key={i} style={{ borderBottom: i !== essays.length - 1 ? '1px solid var(--glass-border)' : 'none', paddingBottom: i !== essays.length - 1 ? '48px' : '0' }}>
-              <div style={{ display: 'flex', gap: '16px', color: 'var(--text-secondary)', fontSize: '13px', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+              <div style={{ display: 'flex', gap: '16px', color: 'var(--text-secondary)', fontSize: '13px', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0', }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><BookOpen size={14} /> {essay.date}</span>
                 <span>•</span>
                 <span>{essay.readTime}</span>

@@ -30,7 +30,7 @@ export const CaseStudiesSection = () => {
         
         {/* Section Header */}
         <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '96px' }}>
-          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '13px' }}>
+          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '13px' }}>
             Featured Work
           </span>
           <h2 className="text-headline" style={{ fontSize: '48px', marginTop: '16px' }}>

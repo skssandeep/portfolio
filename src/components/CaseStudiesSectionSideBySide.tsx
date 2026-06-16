@@ -230,7 +230,7 @@ export const CaseStudiesSectionSideBySide = () => {
           viewport={{ once: true, amount: 0.3 }}
           style={{ textAlign: 'center', marginBottom: '140px', willChange: 'transform, opacity, filter' }}
         >
-          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif" }}>
+          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif" }}>
             Selected Works
           </span>
           <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '24px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff' }}>

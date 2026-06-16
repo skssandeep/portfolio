@@ -13,7 +13,7 @@ export const Process = () => {
         {/* Header */}
         <header style={{ marginBottom: '80px', textAlign: 'center' }}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-            <span style={{ fontSize: '12px', letterSpacing: '4px', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>The Messy Middle</span>
+            <span style={{ fontSize: '12px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>The Messy Middle</span>
           </div>
           <h1 className="text-headline" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', marginBottom: '32px', lineHeight: 1.1 }}>
             Process artifacts, shown raw.

@@ -87,7 +87,7 @@ export const FooterCurtain = () => {
 
         {/* Center Content: Massive Magnetic Button */}
         <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '40px' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '14px', letterSpacing: '0', textTransform: 'uppercase', marginBottom: '40px' }}>
             Got an idea?
           </p>
           
@@ -122,7 +122,7 @@ export const FooterCurtain = () => {
         <div style={{ position: 'absolute', bottom: '40px', left: '40px', right: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 10 }}>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span style={{ color: 'var(--text-primary)', fontSize: '16px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '1px' }}>
+            <span style={{ color: 'var(--text-primary)', fontSize: '16px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '0', }}>
               SANDST<span style={{ color: 'var(--accent-color)' }}>o</span>RMIFY
             </span>
             <span style={{ color: 'var(--text-secondary)', fontSize: '12px' }}>

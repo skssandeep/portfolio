@@ -38,7 +38,7 @@ export const FooterSchematic = () => {
       <div style={{ position: 'relative', zIndex: 10, padding: '80px 40px 40px 40px', display: 'flex', flexDirection: 'column', gap: '80px' }}>
         
         {/* Top Info Bar */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '24px', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '24px', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', }}>
           <div style={{ display: 'flex', gap: '40px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Terminal size={14} /> SYSTEM.STATUS: ONLINE</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Cpu size={14} /> CAPACITY: 94.2%</span>
@@ -66,7 +66,7 @@ export const FooterSchematic = () => {
           {/* Data Links */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <div>
-              <h4 style={{ color: 'white', fontSize: '14px', letterSpacing: '2px', borderBottom: '1px dashed rgba(255,255,255,0.2)', paddingBottom: '8px', marginBottom: '16px', fontWeight: 'normal' }}>// DIRECTORIES</h4>
+              <h4 style={{ color: 'white', fontSize: '14px', letterSpacing: '0', borderBottom: '1px dashed rgba(255,255,255,0.2)', paddingBottom: '8px', marginBottom: '16px', fontWeight: 'normal' }}>// DIRECTORIES</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
                 <li><Link to="/#work" style={{ color: 'inherit', textDecoration: 'none' }} className="hover:text-white transition-colors">./projects_compiled</Link></li>
                 <li><Link to="/brand-identity" style={{ color: 'inherit', textDecoration: 'none' }} className="hover:text-white transition-colors">./brand_system.sys</Link></li>
@@ -78,7 +78,7 @@ export const FooterSchematic = () => {
           {/* Comm Link */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <div>
-              <h4 style={{ color: 'white', fontSize: '14px', letterSpacing: '2px', borderBottom: '1px dashed rgba(255,255,255,0.2)', paddingBottom: '8px', marginBottom: '16px', fontWeight: 'normal' }}>// COMM_LINKS</h4>
+              <h4 style={{ color: 'white', fontSize: '14px', letterSpacing: '0', borderBottom: '1px dashed rgba(255,255,255,0.2)', paddingBottom: '8px', marginBottom: '16px', fontWeight: 'normal' }}>// COMM_LINKS</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px' }}>
                 <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }} className="hover:text-white transition-colors">&gt; PING TWITTER</a></li>
                 <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }} className="hover:text-white transition-colors">&gt; PING LINKEDIN</a></li>
@@ -89,7 +89,7 @@ export const FooterSchematic = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '24px', fontSize: '11px', letterSpacing: '1px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '24px', fontSize: '11px', letterSpacing: '0', }}>
           <div>V 2.0.4 || BUILD: {new Date().getFullYear()}</div>
           <div style={{ display: 'flex', gap: '24px' }}>
             <span>ENCRYPTION: ENABLED</span>

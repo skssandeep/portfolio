@@ -14,7 +14,7 @@ export const AIWorkflow = () => {
         <header style={{ marginBottom: '80px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
             <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--accent-color)' }} />
-            <span style={{ fontSize: '12px', letterSpacing: '4px', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>Workflow Engineering</span>
+            <span style={{ fontSize: '12px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>Workflow Engineering</span>
           </div>
           <h1 className="text-headline" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', marginBottom: '32px', lineHeight: 1.1 }}>
             How I treat AI as a compiler for design.
@@ -93,13 +93,13 @@ export const AIWorkflow = () => {
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
             <div style={{ backgroundColor: 'rgba(239, 68, 68, 0.05)', border: '1px solid rgba(239, 68, 68, 0.2)', padding: '24px', borderRadius: '16px' }}>
-              <h4 style={{ color: 'var(--accent-color)', marginBottom: '16px', fontSize: '14px', letterSpacing: '2px' }}>THE BAD PROMPT</h4>
+              <h4 style={{ color: 'var(--accent-color)', marginBottom: '16px', fontSize: '14px', letterSpacing: '0', }}>THE BAD PROMPT</h4>
               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
                 "Check this code for accessibility issues and make it responsive."
               </p>
             </div>
             <div style={{ backgroundColor: 'rgba(34, 197, 94, 0.05)', border: '1px solid rgba(34, 197, 94, 0.2)', padding: '24px', borderRadius: '16px' }}>
-              <h4 style={{ color: '#22c55e', marginBottom: '16px', fontSize: '14px', letterSpacing: '2px' }}>THE ENGINEERED PROMPT</h4>
+              <h4 style={{ color: '#22c55e', marginBottom: '16px', fontSize: '14px', letterSpacing: '0', }}>THE ENGINEERED PROMPT</h4>
               <p style={{ fontSize: '14px', color: '#e5e7eb', fontStyle: 'italic', lineHeight: 1.5 }}>
                 "Act as a strict WCAG 2.1 AA auditor. Analyze the attached React tree. Identify any missing aria-labels, incorrect focus trapping, or insufficient color contrasts against the #050505 background. Output the exact line numbers to fix, and provide the drop-in TSX replacement code. Do not explain the 'why', only the 'how'."
               </p>

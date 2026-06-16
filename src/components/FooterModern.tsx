@@ -23,19 +23,19 @@ export const FooterModern = () => {
           
           {/* Column 1: Info */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Status</span>
+            <span style={{ fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Status</span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--accent-color)', boxShadow: '0 0 10px var(--accent-color)' }} />
               <span style={{ fontSize: '15px' }}>Available for new projects</span>
             </div>
-            <a href="mailto:hello@sandstormify.com" className="btn-link" style={{ fontSize: '20px', fontWeight: 500, letterSpacing: '-0.5px' }}>
+            <a href="mailto:hello@sandstormify.com" className="btn-link" style={{ fontSize: '20px', fontWeight: 500, letterSpacing: '0', }}>
               hello@sandstormify.com
             </a>
           </div>
 
           {/* Column 2: Navigation */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Sitemap</span>
+            <span style={{ fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Sitemap</span>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <li><Link to="/#how-it-works" className="btn-link" style={{ fontSize: '15px' }}>How it works</Link></li>
               <li><Link to="/#work" className="btn-link" style={{ fontSize: '15px' }}>Projects</Link></li>
@@ -46,7 +46,7 @@ export const FooterModern = () => {
 
           {/* Column 3: Socials */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Connect</span>
+            <span style={{ fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Connect</span>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <li><a href="#" className="btn-link" style={{ fontSize: '15px' }}>X (Twitter)</a></li>
               <li><a href="#" className="btn-link" style={{ fontSize: '15px' }}>LinkedIn</a></li>
@@ -56,7 +56,7 @@ export const FooterModern = () => {
           
           {/* Column 4: Links */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Exploration</span>
+            <span style={{ fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Exploration</span>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <li><Link to="/drafts" className="btn-link" style={{ fontSize: '15px' }}>Drafts</Link></li>
               <li><Link to="/brand-identity" className="btn-link" style={{ fontSize: '15px' }}>Brand Identity</Link></li>

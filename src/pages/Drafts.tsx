@@ -183,7 +183,7 @@ export const Drafts = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 01</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 01</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Logo Reveal - Spin</h3>
               </div>
               <LogoRevealSpin />
@@ -191,7 +191,7 @@ export const Drafts = () => {
 
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 02</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 02</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Logo Reveal - Cinematic</h3>
               </div>
               <LogoRevealCinematic />
@@ -199,7 +199,7 @@ export const Drafts = () => {
 
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 03</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 03</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Logo Reveal - Orbital (V1)</h3>
               </div>
               <LogoRevealOrbital />
@@ -223,7 +223,7 @@ export const Drafts = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 01</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 01</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Modern Grid</h3>
               </div>
               <FooterModern />
@@ -231,7 +231,7 @@ export const Drafts = () => {
 
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 02</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 02</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Bento Box</h3>
               </div>
               <FooterUnique />
@@ -239,7 +239,7 @@ export const Drafts = () => {
 
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 03</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 03</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Kinetic Marquee</h3>
               </div>
               <FooterCreative />
@@ -247,7 +247,7 @@ export const Drafts = () => {
 
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 04</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 04</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Interactive Halo</h3>
               </div>
               <div style={{ position: 'relative', height: '600px' }}>
@@ -257,7 +257,7 @@ export const Drafts = () => {
 
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px', position: 'relative', zIndex: 10 }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 05</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 05</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Sticky Curtain</h3>
               </div>
               <div style={{ height: '600px' }}>
@@ -267,7 +267,7 @@ export const Drafts = () => {
 
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 06</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 06</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>The Blueprint Schematic</h3>
               </div>
               <FooterSchematic />
@@ -292,7 +292,7 @@ export const Drafts = () => {
             
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 01</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 01</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Case Studies Grid</h3>
               </div>
               <div className="section-padding">
@@ -319,7 +319,7 @@ export const Drafts = () => {
 
             <div style={{ paddingBottom: '80px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ marginBottom: '40px' }}>
-                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent-color)' }}>Variant 02</span>
+                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0', color: 'var(--accent-color)' }}>Variant 02</span>
                 <h3 style={{ fontSize: '24px', margin: '8px 0 0 0', fontWeight: 'normal' }}>Performance Section</h3>
               </div>
               <PerformanceSection />

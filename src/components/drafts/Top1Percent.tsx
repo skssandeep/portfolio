@@ -73,7 +73,7 @@ export const Top1Percent = () => {
         <header className="scroll-reveal" style={{ marginBottom: '80px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
             <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--accent-color)' }} />
-            <span style={{ fontSize: '12px', letterSpacing: '4px', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>The Manifesto</span>
+            <span style={{ fontSize: '12px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>The Manifesto</span>
           </div>
           <h1 className="text-headline" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', marginBottom: '40px', lineHeight: 1.1 }}>
             The Top 1%
@@ -143,7 +143,7 @@ export const Top1Percent = () => {
                 <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.7, marginBottom: '24px' }}>
                   {principle.content}
                 </p>
-                <div style={{ color: 'var(--text-primary)', fontSize: '14px', fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase' }}>
+                <div style={{ color: 'var(--text-primary)', fontSize: '14px', fontWeight: 500, letterSpacing: '0', textTransform: 'uppercase' }}>
                   Explore Case Study &rarr;
                 </div>
               </div>

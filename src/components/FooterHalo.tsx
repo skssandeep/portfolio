@@ -84,19 +84,19 @@ export const FooterHalo = () => {
       {/* Top Corner Links */}
       <div style={{ position: 'relative', zIndex: 10, padding: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Based in</span>
+          <span style={{ fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Based in</span>
           <span style={{ fontSize: '14px' }}>Global / Remote</span>
         </div>
         
         <div style={{ display: 'flex', gap: '40px', textAlign: 'right' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Social</span>
+            <span style={{ fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Social</span>
             <a href="#" className="btn-link" style={{ fontSize: '14px', color: 'var(--text-primary)' }}>X (Twitter)</a>
             <a href="#" className="btn-link" style={{ fontSize: '14px', color: 'var(--text-primary)' }}>LinkedIn</a>
             <a href="https://www.upwork.com/freelancers/~01b0aab6d05f52f81e" className="btn-link" style={{ fontSize: '14px', color: 'var(--text-primary)' }}>Upwork</a>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Site</span>
+            <span style={{ fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Site</span>
             <Link to="/#work" className="btn-link" style={{ fontSize: '14px', color: 'var(--text-primary)' }}>Projects</Link>
             <Link to="/brand-identity" className="btn-link" style={{ fontSize: '14px', color: 'var(--text-primary)' }}>Brand</Link>
             <Link to="/drafts" className="btn-link" style={{ fontSize: '14px', color: 'var(--text-primary)' }}>Drafts</Link>
@@ -151,7 +151,7 @@ export const FooterHalo = () => {
         justifyContent: 'space-between', 
         alignItems: 'flex-end' 
       }}>
-        <div style={{ fontFamily: "'Dune Rise', var(--font-system)", fontSize: '18px', letterSpacing: '2px' }}>
+        <div style={{ fontFamily: "'Dune Rise', var(--font-system)", fontSize: '18px', letterSpacing: '0', }}>
           SANDST<span style={{ color: 'var(--accent-color)' }}>o</span>RMIFY
         </div>
         

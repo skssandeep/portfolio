@@ -243,7 +243,7 @@ export const LogoRevealCinematic = () => {
             data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#ff0000] to-[#ff5555] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500" style={{ letterSpacing: '0.05em' }}>
+            <span className="relative z-10 group-hover:text-white transition-colors duration-500" style={{ letterSpacing: '0', }}>
               CLICK TO SUPERCHARGE YOUR BRAND!
             </span>
           </button>

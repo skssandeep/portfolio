@@ -10,7 +10,7 @@ export const ProblemReframeDraft = () => {
 
           {/* Section Label */}
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#a3a3a3', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontFamily: 'var(--font-system)' }}>
               <Target size={14} strokeWidth={2.5} />
               Problem Reframe
             </div>
@@ -26,7 +26,7 @@ export const ProblemReframeDraft = () => {
 
             {/* Before */}
             <div className="flex flex-col h-full" style={{ background: 'rgba(225, 29, 72, 0.02)', border: '1px solid rgba(225, 29, 72, 0.15)', borderRadius: '24px', padding: '40px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '32px', fontFamily: 'var(--font-system)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px', fontFamily: 'var(--font-system)' }}>
                 <XCircle size={16} strokeWidth={2.5} />
                 Before: Fragmented Chaos
               </div>
@@ -49,7 +49,7 @@ export const ProblemReframeDraft = () => {
 
             {/* After */}
             <div className="flex flex-col h-full" style={{ background: 'rgba(16, 185, 129, 0.03)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '24px', padding: '40px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '14px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '32px', fontFamily: 'var(--font-system)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px', fontFamily: 'var(--font-system)' }}>
                 <CheckCircle2 size={16} strokeWidth={2.5} />
                 After: Unified Ecosystem
               </div>

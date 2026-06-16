@@ -31,7 +31,7 @@ export const FAQ = () => {
     <section id="faq" className="section-padding" style={{ position: 'relative', background: 'var(--bg-color)', overflow: 'hidden' }}>
       <div className="container" style={{ maxWidth: '900px', position: 'relative', zIndex: 10 }}>
         <div style={{ textAlign: 'center', marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif" }}>
+          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif" }}>
             FAQ
           </span>
           <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '24px', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff' }}>
@@ -76,7 +76,7 @@ export const FAQ = () => {
                     textAlign: 'left'
                   }}
                 >
-                  <span style={{ fontSize: '24px', fontWeight: 500, letterSpacing: '-0.5px' }}>{faq.q}</span>
+                  <span style={{ fontSize: '24px', fontWeight: 500, letterSpacing: '0', }}>{faq.q}</span>
                   <div style={{ 
                     transform: `rotate(${isOpen ? 180 : 0}deg)`, 
                     transition: 'transform 0.3s var(--apple-easing)',

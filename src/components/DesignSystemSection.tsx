@@ -182,7 +182,7 @@ export const DesignSystemSection = () => {
                 <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', margin: '0 0 4px 0', letterSpacing: '-0.02em' }}>
                   {color.name}
                 </h3>
-                <div style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: color.hex, marginBottom: '16px', letterSpacing: '0.5px' }}>
+                <div style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: color.hex, marginBottom: '16px', letterSpacing: '0', }}>
                   {color.hex.toUpperCase()}
                 </div>
                 

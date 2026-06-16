@@ -56,7 +56,7 @@ export const CaseStudiesSectionAlt = () => {
       <div className="container">
         
         <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '140px' }}>
-          <span style={{ color: '#fff', fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', fontSize: '11px', opacity: 0.5 }}>
+          <span style={{ color: '#fff', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '11px', opacity: 0.5 }}>
             Bespoke Environments
           </span>
           <h2 style={{ fontSize: '56px', marginTop: '24px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff' }}>

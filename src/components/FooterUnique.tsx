@@ -40,7 +40,7 @@ export const FooterUnique = () => {
           }} />
 
           <div>
-            <span style={{ fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>Let's work together</span>
+            <span style={{ fontSize: '13px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>Let's work together</span>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 4rem)', fontWeight: 600, lineHeight: 1.1, marginTop: '16px', marginBottom: '40px', maxWidth: '600px' }}>
               Have an idea? <br />
               <span style={{ color: 'var(--text-secondary)' }}>Let's build it.</span>
@@ -69,7 +69,7 @@ export const FooterUnique = () => {
           justifyContent: 'space-between',
         }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <span style={{ fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600 }}>Explore</span>
+            <span style={{ fontSize: '13px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600 }}>Explore</span>
             <Link to="/#how-it-works" className="btn-link" style={{ fontSize: '18px' }}>How it works</Link>
             <Link to="/#work" className="btn-link" style={{ fontSize: '18px' }}>Projects</Link>
             <Link to="/#services" className="btn-link" style={{ fontSize: '18px' }}>Services</Link>
@@ -96,7 +96,7 @@ export const FooterUnique = () => {
           gap: '24px'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ fontFamily: "'Dune Rise', var(--font-system)", fontSize: '18px', letterSpacing: '1px', paddingTop: '4px' }}>
+            <span style={{ fontFamily: "'Dune Rise', var(--font-system)", fontSize: '18px', letterSpacing: '0', paddingTop: '4px' }}>
               SANDST<span style={{ color: 'var(--accent-color)' }}>o</span>RMIFY
             </span>
             <span style={{ color: 'var(--text-secondary)', fontSize: '14px', borderLeft: '1px solid var(--glass-border)', paddingLeft: '12px' }}>

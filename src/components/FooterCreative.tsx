@@ -73,7 +73,7 @@ export const FooterCreative = () => {
           
           {/* Top Half: Huge Contact Callout */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <span style={{ color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '4px', fontSize: '14px' }}>
+            <span style={{ color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0', fontSize: '14px' }}>
               Have a project in mind?
             </span>
             <a href="mailto:hello@sandstormify.com" className="creative-link" style={{ 
@@ -98,13 +98,13 @@ export const FooterCreative = () => {
             {/* Left: Navigation */}
             <div style={{ display: 'flex', gap: '80px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <span style={{ color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '12px', marginBottom: '8px' }}>Menu</span>
+                <span style={{ color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0', fontSize: '12px', marginBottom: '8px' }}>Menu</span>
                 <Link to="/#how-it-works" className="creative-link" style={{ fontSize: '18px', color: 'var(--text-primary)', textDecoration: 'none' }}>How it works</Link>
                 <Link to="/#work" className="creative-link" style={{ fontSize: '18px', color: 'var(--text-primary)', textDecoration: 'none' }}>Projects</Link>
                 <Link to="/#services" className="creative-link" style={{ fontSize: '18px', color: 'var(--text-primary)', textDecoration: 'none' }}>Services</Link>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <span style={{ color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '12px', marginBottom: '8px' }}>Socials</span>
+                <span style={{ color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0', fontSize: '12px', marginBottom: '8px' }}>Socials</span>
                 <a href="#" className="creative-link" style={{ fontSize: '18px', color: 'var(--text-primary)', textDecoration: 'none' }}>X (Twitter)</a>
                 <a href="#" className="creative-link" style={{ fontSize: '18px', color: 'var(--text-primary)', textDecoration: 'none' }}>LinkedIn</a>
                 <a href="https://www.upwork.com/freelancers/~01b0aab6d05f52f81e" className="creative-link" style={{ fontSize: '18px', color: 'var(--text-primary)', textDecoration: 'none' }}>Upwork</a>
@@ -113,7 +113,7 @@ export const FooterCreative = () => {
 
             {/* Right: Brand and Copyright */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'flex-end', gap: '24px', textAlign: 'right' }}>
-              <div style={{ fontFamily: "'Dune Rise', var(--font-system)", fontSize: '24px', letterSpacing: '4px' }}>
+              <div style={{ fontFamily: "'Dune Rise', var(--font-system)", fontSize: '24px', letterSpacing: '0', }}>
                 SANDST<span style={{ color: 'var(--accent-color)' }}>o</span>RMIFY
               </div>
               <div style={{ color: 'var(--text-secondary)', fontSize: '14px', maxWidth: '300px', lineHeight: 1.6 }}>

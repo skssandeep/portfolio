@@ -13,7 +13,7 @@ export const UXDocs = () => {
       {/* Header */}
       <section style={{ paddingTop: '160px', paddingBottom: '80px', borderBottom: '1px solid var(--glass-border)' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', background: 'rgba(239, 68, 68, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '24px' }}>
             <BookOpen size={16} /> Digital Garden
           </div>
           <h1 className="text-hero" style={{ fontSize: 'clamp(3rem, 5vw, 4.5rem)', lineHeight: 1.05, marginBottom: '24px', letterSpacing: '-0.02em' }}>

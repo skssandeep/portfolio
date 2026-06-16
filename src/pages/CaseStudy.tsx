@@ -78,7 +78,7 @@ export const CaseStudy = () => {
             
             {/* Titles & Metrics */}
             <div className="animate-fade-up">
-              <span style={{ display: 'inline-block', color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '13px', marginBottom: '16px' }}>
+              <span style={{ display: 'inline-block', color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '13px', marginBottom: '16px' }}>
                 {study.client} • {study.role}
               </span>
               <h1 className="text-hero" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1.1, marginBottom: '48px', whiteSpace: 'normal', wordBreak: 'break-word' }}>
@@ -87,10 +87,10 @@ export const CaseStudy = () => {
 
               {/* Massive Hero Metric */}
               <div style={{ marginBottom: '48px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ fontSize: '5rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1, letterSpacing: '-2px' }}>
+                <div style={{ fontSize: '5rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1, letterSpacing: '0', }}>
                   {study.heroMetric}
                 </div>
-                <div style={{ fontSize: '18px', color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', marginTop: '8px' }}>
+                <div style={{ fontSize: '18px', color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginTop: '8px' }}>
                   {study.heroMetricLabel}
                 </div>
               </div>
@@ -143,7 +143,7 @@ export const CaseStudy = () => {
               {study.metrics.map((metric: any, i: number) => (
                 <div key={i} className="glass" style={{ padding: '48px 32px', borderRadius: '24px', background: 'var(--glass-bg)', border: '1px solid var(--glass-border)' }}>
                   <div style={{ fontSize: '48px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>{metric.value}</div>
-                  <div style={{ fontSize: '15px', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '1px' }}>{metric.label}</div>
+                  <div style={{ fontSize: '15px', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0', }}>{metric.label}</div>
                 </div>
               ))}
             </div>
@@ -154,7 +154,7 @@ export const CaseStudy = () => {
             <p style={{ fontSize: '24px', lineHeight: 1.6, color: 'var(--text-primary)', fontStyle: 'italic', marginBottom: '32px' }}>
               "{study.testimonial.quote}"
             </p>
-            <div style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>
+            <div style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase' }}>
               — {study.testimonial.author}
             </div>
           </div>

@@ -64,10 +64,10 @@ export const FooterTechnical = () => {
         }}
       >
         <div style={{ flex: '0 0 auto', padding: '48px', display: 'flex', justifyContent: 'space-between' }}>
-          <span style={{ color: 'var(--text-secondary)', fontSize: '11px', letterSpacing: '2px', fontFamily: 'monospace', textTransform: 'uppercase' }}>
+          <span style={{ color: 'var(--text-secondary)', fontSize: '11px', letterSpacing: '0', fontFamily: 'monospace', textTransform: 'uppercase' }}>
             SYS.FOOTER_MOD // v3.0
           </span>
-          <span style={{ color: 'var(--text-secondary)', fontSize: '11px', letterSpacing: '2px', fontFamily: 'monospace', textTransform: 'uppercase' }}>
+          <span style={{ color: 'var(--text-secondary)', fontSize: '11px', letterSpacing: '0', fontFamily: 'monospace', textTransform: 'uppercase' }}>
             STATUS: ACTIVE
           </span>
         </div>
@@ -81,7 +81,7 @@ export const FooterTechnical = () => {
               whileHover={{ backgroundColor: 'rgba(255,255,255,0.02)' }}
               transition={{ duration: 0.3 }}
             >
-              <span style={{ color: 'var(--accent-color)', fontSize: '10px', letterSpacing: '2px', fontFamily: 'monospace' }}>[01] ID</span>
+              <span style={{ color: 'var(--accent-color)', fontSize: '10px', letterSpacing: '0', fontFamily: 'monospace' }}>[01] ID</span>
               <h2 style={{ color: 'var(--text-primary)', fontSize: '4vw', fontFamily: "'Dune Rise', var(--font-system)", margin: 0, fontWeight: 'normal' }}>
                 SANDST<span style={{ color: 'var(--accent-color)' }}>o</span>RMIFY
               </h2>
@@ -93,7 +93,7 @@ export const FooterTechnical = () => {
               whileHover={{ backgroundColor: 'rgba(255,255,255,0.02)' }}
               transition={{ duration: 0.3 }}
             >
-              <span style={{ color: 'var(--accent-color)', fontSize: '10px', letterSpacing: '2px', fontFamily: 'monospace' }}>[02] LOC</span>
+              <span style={{ color: 'var(--accent-color)', fontSize: '10px', letterSpacing: '0', fontFamily: 'monospace' }}>[02] LOC</span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <span style={{ color: 'var(--text-secondary)', fontSize: '2vw', fontFamily: "'Syne', sans-serif" }}>NEW YORK, NY</span>
                 <span style={{ color: 'var(--text-primary)', fontSize: '3vw', fontFamily: "'Syne', sans-serif", fontWeight: 600 }}>{formattedTime}</span>
@@ -106,13 +106,13 @@ export const FooterTechnical = () => {
               whileHover={{ backgroundColor: 'rgba(255,255,255,0.02)' }}
               transition={{ duration: 0.3 }}
             >
-              <span style={{ color: 'var(--accent-color)', fontSize: '10px', letterSpacing: '2px', fontFamily: 'monospace' }}>[03] NET</span>
+              <span style={{ color: 'var(--accent-color)', fontSize: '10px', letterSpacing: '0', fontFamily: 'monospace' }}>[03] NET</span>
               <div style={{ display: 'flex', gap: '32px' }}>
                 {socialLinks.map(link => (
                   <a 
                     key={link.label}
                     href={link.href}
-                    style={{ color: 'var(--text-secondary)', fontSize: '16px', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '1px', transition: 'color 0.2s ease' }}
+                    style={{ color: 'var(--text-secondary)', fontSize: '16px', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0', transition: 'color 0.2s ease' }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
                   >
@@ -128,7 +128,7 @@ export const FooterTechnical = () => {
               whileHover={{ backgroundColor: 'rgba(255,255,255,0.02)' }}
               transition={{ duration: 0.3 }}
             >
-              <span style={{ color: 'var(--accent-color)', fontSize: '10px', letterSpacing: '2px', fontFamily: 'monospace' }}>[04] COM</span>
+              <span style={{ color: 'var(--accent-color)', fontSize: '10px', letterSpacing: '0', fontFamily: 'monospace' }}>[04] COM</span>
               <a 
                 href="mailto:hello@sandstormify.com" 
                 style={{ color: 'var(--text-primary)', fontSize: '3vw', fontFamily: "'Syne', sans-serif", textDecoration: 'none', fontWeight: 600, transition: 'color 0.2s ease' }}

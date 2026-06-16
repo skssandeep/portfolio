@@ -39,10 +39,10 @@ export const FooterMinimal = () => {
             {/* Brand section */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '400px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                <a href="https://sandstormify.com" style={{ color: 'var(--text-primary)', fontSize: '16px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '1px', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+                <a href="https://sandstormify.com" style={{ color: 'var(--text-primary)', fontSize: '16px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '0', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                   SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
                 </a>
-                <span style={{ color: 'var(--text-secondary)', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', opacity: 0.7 }}>
+                <span style={{ color: 'var(--text-secondary)', fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', opacity: 0.7 }}>
                   By Sandeep KS
                 </span>
               </div>

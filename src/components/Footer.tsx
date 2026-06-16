@@ -41,10 +41,10 @@ export const Footer = () => {
           {/* Brand section */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '400px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <a href="https://sandstormify.com" style={{ color: 'var(--text-primary)', fontSize: '16px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '1px', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+              <a href="https://sandstormify.com" style={{ color: 'var(--text-primary)', fontSize: '16px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '0', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                 SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
               </a>
-              <span style={{ color: 'var(--text-secondary)', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', opacity: 0.7 }}>
+              <span style={{ color: 'var(--text-secondary)', fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', opacity: 0.7 }}>
                 By Sandeep KS
               </span>
             </div>
@@ -121,10 +121,15 @@ export const Footer = () => {
             ))}
           </div>
 
-          {/* Copyright */}
-          <p style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>
-            &copy; {new Date().getFullYear()} Sandstormify. All rights reserved.
-          </p>
+          {/* Links & Copyright */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <Link to="/brand-logos" style={{ color: 'var(--text-secondary)', fontSize: '14px', textDecoration: 'none', borderBottom: '1px solid transparent' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+              Brand Logos
+            </Link>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '14px', margin: 0 }}>
+              &copy; {new Date().getFullYear()} Sandstormify. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
       <FooterBackgroundGradient />

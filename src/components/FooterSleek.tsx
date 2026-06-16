@@ -22,7 +22,7 @@ export const FooterSleek = () => {
       
       {/* Brand */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <a href="https://sandstormify.com" style={{ color: 'var(--text-primary)', fontSize: '14px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '1px', textDecoration: 'none' }}>
+        <a href="https://sandstormify.com" style={{ color: 'var(--text-primary)', fontSize: '14px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '0', textDecoration: 'none' }}>
           SANDST<span style={{ color: 'var(--accent-color)', transform: 'scale(1.15)', display: 'inline-block' }}>o</span>RMIFY
         </a>
         <span style={{ color: 'var(--text-secondary)', fontSize: '12px' }}>

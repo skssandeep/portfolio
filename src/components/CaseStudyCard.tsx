@@ -20,7 +20,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ title, role, probl
       </div>
       
       <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '13px', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: '12px' }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '13px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '12px' }}>
           {role}
         </p>
         

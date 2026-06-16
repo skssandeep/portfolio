@@ -14,6 +14,7 @@ import { Essays } from './pages/Essays';
 import { Process } from './pages/Process';
 import { SmartEPPCaseStudy } from './pages/SmartEPPCaseStudy';
 import { UXDocs } from './pages/UXDocs';
+import { BrandLogos } from './pages/BrandLogos';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css';
 
@@ -103,7 +104,7 @@ function App() {
               
               {/* Left: Logo */}
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Link to="/" style={{ fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', fontSize: '18px', letterSpacing: '2px', color: 'var(--text-primary)', paddingTop: '2px', display: 'flex', alignItems: 'center' }}>
+                <Link to="/" style={{ fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', fontSize: '18px', letterSpacing: '0', color: 'var(--text-primary)', paddingTop: '2px', display: 'flex', alignItems: 'center' }}>
                   SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
                 </Link>
               </div>
@@ -179,8 +180,7 @@ function App() {
             transform: 'rotate(180deg)',
             fontFamily: "'Dune Rise', var(--font-system)",
             fontSize: '10px',
-            letterSpacing: '4px',
-            color: 'var(--text-secondary)',
+            letterSpacing: '0', color: 'var(--text-secondary)',
             zIndex: 50,
             pointerEvents: 'none',
             display: 'flex',
@@ -215,6 +215,7 @@ function App() {
             <Route path="/essays" element={<Essays />} />
             <Route path="/process" element={<Process />} />
             <Route path="/ux-docs" element={<UXDocs />} />
+            <Route path="/brand-logos" element={<BrandLogos />} />
           </Routes>
         </ErrorBoundary>
 
