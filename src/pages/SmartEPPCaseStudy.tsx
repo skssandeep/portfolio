@@ -46,7 +46,8 @@ export const SmartEPPCaseStudy = () => {
     "/images/EPP_CaseStudy_06.png",
     "/images/EPP_CaseStudy_07.png",
     "/images/EPP_CaseStudy_08.png",
-    "/images/EPP_CaseStudy_09.png"
+    "/images/EPP_CaseStudy_09.png",
+    "/images/EPP_CaseStudy_10.png"
   ];
 
   // Drag-to-scroll logic
@@ -192,6 +193,14 @@ export const SmartEPPCaseStudy = () => {
                  exit={{ scale: 0.95, opacity: 0, y: -20 }}
                  transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                  src={modalImages[modalIndex]} 
+                 onLoad={(e) => {
+                   const img = e.target as HTMLImageElement;
+                   if (img.naturalWidth > img.naturalHeight) {
+                     setImageWidth(1200);
+                   } else {
+                     setImageWidth(500);
+                   }
+                 }}
                  style={{ width: '100%', maxWidth: `${imageWidth}px`, height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: '0 auto', transition: 'max-width 0.3s ease' }} 
               />
             </div>
@@ -389,7 +398,7 @@ export const SmartEPPCaseStudy = () => {
                   e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)';
                 }}
               >
-                <span style={{ fontSize: '16px', fontWeight: 600, letterSpacing: '0', }}>Scroll to final designs</span>
+                <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.05em', fontFamily: "'Syne', sans-serif", textTransform: 'uppercase' }}>Scroll to final designs</span>
                 <div style={{
                   background: 'var(--semantic-success)',
                   color: '#000',
@@ -408,77 +417,7 @@ export const SmartEPPCaseStudy = () => {
         </AnimatePresence>
       </section>
 
-      {/* Executive Summary: Impact */}
-      <section style={{ padding: '80px 0', position: 'relative', overflow: 'hidden' }}>
-        
 
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(var(--semantic-success-rgb),0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(var(--semantic-success-rgb),0.12)', borderRadius: '32px', padding: '64px', position: 'relative', overflow: 'hidden' }}>
-            
-            {/* Background watermark */}
-            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(var(--semantic-success-rgb),0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-
-            {/* Header */}
-            <div style={{ marginBottom: '48px' }}>
-              <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-warning)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
-                <Search size={14} strokeWidth={2.5} />
-                <span>Executive Summary</span>
-              </div>
-              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '0', margin: 0 }}>
-                The Impact: Measured across 4 touchpoints.
-              </h2>
-            </div>
-
-            {/* Testing Metrics Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style={{ marginBottom: '0' }}>
-              
-              {/* Metric 1 */}
-              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', overflow: 'hidden' }}>
-                <div style={{fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '24px'}}>Employee App</div>
-                <div style={{ fontSize: 'clamp(2.5rem, 3.5vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.02em', marginBottom: '20px', display: 'flex', alignItems: 'baseline', gap: '4px', fontFamily: 'var(--font-heading)' }}>
-                  11<span style={{ color: '#555', fontSize: '0.5em', fontWeight: 600 }}>/14</span>
-                </div>
-                <p style={{ fontSize: '15px', color: '#888', lineHeight: 1.6, margin: 0 }}>
-                  Users instantly understood exact tax savings.
-                </p>
-              </motion.div>
-
-              {/* Metric 2 */}
-              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', overflow: 'hidden' }}>
-                <div style={{fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '24px'}}>HR Dashboard</div>
-                <div style={{ fontSize: 'clamp(2.5rem, 3.5vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.02em', marginBottom: '20px', display: 'flex', alignItems: 'baseline', gap: '8px', fontFamily: 'var(--font-heading)' }}>
-                  11<span style={{ color: 'var(--semantic-success)', fontSize: '0.4em', letterSpacing: 0, fontWeight: 700, textTransform: 'uppercase' }}>sec</span>
-                </div>
-                <p style={{ fontSize: '15px', color: '#888', lineHeight: 1.6, margin: 0 }}>
-                  Average HR approval time (down from 48s).
-                </p>
-              </motion.div>
-
-              {/* Metric 3 */}
-              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', overflow: 'hidden' }}>
-                <div style={{fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '24px'}}>Financier Portal</div>
-                <div style={{ fontSize: 'clamp(2.5rem, 3.5vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.02em', marginBottom: '20px', display: 'flex', alignItems: 'baseline', gap: '8px', fontFamily: 'var(--font-heading)' }}>
-                  2<span style={{ color: 'var(--semantic-success)', fontSize: '0.4em', letterSpacing: 0, fontWeight: 700, textTransform: 'uppercase' }}>clicks</span>
-                </div>
-                <p style={{ fontSize: '15px', color: '#888', lineHeight: 1.6, margin: 0 }}>
-                  To underwrite a lease.
-                </p>
-              </motion.div>
-
-              {/* Metric 4 */}
-              <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', overflow: 'hidden' }}>
-                <div style={{fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '24px'}}>Seller Portal</div>
-                <div style={{ fontSize: 'clamp(2.5rem, 3.5vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.02em', marginBottom: '20px', display: 'flex', alignItems: 'baseline', gap: '4px', fontFamily: 'var(--font-heading)' }}>
-                  -40<span style={{ color: 'var(--semantic-success)', fontSize: '0.6em', letterSpacing: 0, fontWeight: 700 }}>%</span>
-                </div>
-                <p style={{ fontSize: '15px', color: '#888', lineHeight: 1.6, margin: 0 }}>
-                  Drop in fulfillment errors.
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
 
       {/* 3. Problem */}
@@ -506,13 +445,13 @@ export const SmartEPPCaseStudy = () => {
               {/* Narrative (Left) */}
               <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <p style={{ fontFamily: "'Jost', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0 }}>
-                  By combining corporate GST benefits with pre-tax salary deductions, we unlocked a massive ~40% discount on premium phones. This birthed a <strong style={{ color: '#fff', fontWeight: 500 }}>0-to-1 product: employee device leasing.</strong>
+                  By combining corporate GST benefits with pre-tax salary deductions, we unlocked a massive ~40% discount on premium phones. This birthed a <strong style={{ color: '#fff', fontWeight: 500 }}>0-to-1 product: Smart EPP (Employee Purchase Program).</strong>
                 </p>
                 <div style={{ marginTop: '32px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '24px' }}>
                   <div style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '8px' }}>The Business Goal</div>
                   <p style={{ color: '#a3a3a3', fontSize: '18px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Validate a new revenue stream via rapid employee adoption with <strong style={{ color: '#fff', fontWeight: 500 }}>zero manual HR overhead.</strong></p>
                   <div style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '8px' }}>The UX Goal</div>
-                  <p style={{ color: '#a3a3a3', fontSize: '18px', lineHeight: 1.5, margin: 0 }}>Demystify complex tax mathematics to build immediate trust and <strong style={{ color: '#fff', fontWeight: 500 }}>eliminate anxiety around payroll deductions.</strong></p>
+                  <p style={{ color: '#a3a3a3', fontSize: '18px', lineHeight: 1.5, margin: 0 }}>Explain the tax savings simply to build immediate trust and <strong style={{ color: '#fff', fontWeight: 500 }}>eliminate anxiety around salary deductions.</strong></p>
                 </div>
               </div>
 
@@ -623,171 +562,6 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      {/* Research Section */}
-      <section style={{ padding: '80px 0' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
-
-            {/* Section Label */}
-            <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-info)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
-              <Search size={14} strokeWidth={2.5} />
-              02: Research
-            </div>
-
-            {/* Heading & Central Tension */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
-              <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '0', margin: 0 }}>
-                Validating the prototype.
-              </h2>
-              <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                Tested with <strong style={{ color: '#fff', fontWeight: 600 }}>26 users</strong> across all 4 actors. The core insight: The interface had to be <strong style={{ color: '#fff', fontWeight: 600 }}>simple on the surface, detailed on demand.</strong>
-              </p>
-            </div>
-
-            {/* Unified 3-Column Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-6 gap-5">
-              
-              {/* Card 1: Employee Confusion */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>73%</div>
-                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>couldn't calculate their actual tax savings.</div>
-                </div>
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px' }}>
-                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I need actual rupees, not a generic percentage."</p>
-                </div>
-                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', marginTop: 'auto' }}>
-                  <div>
-                    <div style={{fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '0', textTransform: 'uppercase', marginBottom: '4px'}}>The Fix</div>
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Interactive tax slider for immediate math.</p>
-                  </div>
-                  <div 
-                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
-                    style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
-                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
-                  >
-                    <img src="/images/smart-epp-calculator-screen.png" alt="Calculator Screen" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.9, filter: 'grayscale(10%)' }} />
-                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <polyline points="9 21 3 21 3 15"></polyline>
-                        <line x1="21" y1="3" x2="14" y2="10"></line>
-                        <line x1="3" y1="21" x2="10" y2="14"></line>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Card 2: Employee Anxiety */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>8/12</div>
-                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>flagged salary EMIs as their top fear.</div>
-                </div>
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px' }}>
-                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"What if I leave the company? What if the device breaks?"</p>
-                </div>
-                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', marginTop: 'auto' }}>
-                  <div>
-                    <div style={{fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '0', textTransform: 'uppercase', marginBottom: '4px'}}>The Fix</div>
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>In-context trust signals. No hidden FAQs.</p>
-                  </div>
-                  <div 
-                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
-                    style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
-                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
-                  >
-                    <img src="/images/smart-epp-calculator-screen.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.9, filter: 'grayscale(10%)' }} />
-                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <polyline points="9 21 3 21 3 15"></polyline>
-                        <line x1="21" y1="3" x2="14" y2="10"></line>
-                        <line x1="3" y1="21" x2="10" y2="14"></line>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Card 3: HR & Financier Friction */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>50+</div>
-                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>manual approvals/week created massive HR bottlenecks.</div>
-                </div>
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px' }}>
-                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I can't open 50 orders individually. I need bulk actions."</p>
-                </div>
-                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', marginTop: 'auto' }}>
-                  <div>
-                    <div style={{fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '0', textTransform: 'uppercase', marginBottom: '4px'}}>The Fix</div>
-                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Bulk-action underwriting dashboard.</p>
-                  </div>
-                  <div 
-                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
-                    style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
-                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
-                  >
-                    <img src="/images/smart-epp-calculator-screen.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.9, filter: 'grayscale(10%)' }} />
-                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <polyline points="9 21 3 21 3 15"></polyline>
-                        <line x1="21" y1="3" x2="14" y2="10"></line>
-                        <line x1="3" y1="21" x2="10" y2="14"></line>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Card 4: Seller Fulfillment */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>Late</div>
-                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>visibility caused frequent stockouts.</div>
-                </div>
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px' }}>
-                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"By the time it's approved, the device is out of stock."</p>
-                </div>
-                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', marginTop: 'auto' }}>
-                  <div>
-                     <div style={{fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '0', textTransform: 'uppercase', marginBottom: '4px'}}>The Fix</div>
-                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Pre-approval "Upcoming Orders" pipeline.</p>
-                  </div>
-                  <div 
-                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
-                    style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
-                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
-                  >
-                    <img src="/images/smart-epp-calculator-screen.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.9, filter: 'grayscale(10%)' }} />
-                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <polyline points="9 21 3 21 3 15"></polyline>
-                        <line x1="21" y1="3" x2="14" y2="10"></line>
-                        <line x1="3" y1="21" x2="10" y2="14"></line>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-            </div>
-
-          </motion.div>
-        </div>
-      </section>
-
-
-
-      {/* Design Exploration */}
       <section style={{ padding: '80px 0', background: 'radial-gradient(100% 100% at 50% 0%, rgba(20,20,22,1) 0%, rgba(10,10,10,1) 100%)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '600px', background: 'radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 60%)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -796,7 +570,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Section Label */}
             <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-brand)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
               <Palette size={14} strokeWidth={2.5} />
-              03: Design Exploration
+              02: Design Strategy
             </div>
 
             {/* Heading & Central Tension */}
@@ -901,14 +675,12 @@ export const SmartEPPCaseStudy = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* 8. Ideating/Solutions & 9. Iterations (The Messy Middle) */}
       <section style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#3b82f6', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
               <Lightbulb size={14} strokeWidth={2.5} />
-              04: Ideation & Iteration
+              03: Ideation & Wireframing
             </div>
             <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '0', }}>Early Explorations</h2>
             <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
@@ -982,15 +754,174 @@ export const SmartEPPCaseStudy = () => {
 
         </div>
       </section>
+      {/* Research Section */}
+      <section style={{ padding: '80px 0' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
-      {/* 05. Validation (User Testing) */}
+            {/* Section Label */}
+            <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-info)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
+              <Search size={14} strokeWidth={2.5} />
+              04: Evaluative Research
+            </div>
+
+            {/* Heading & Central Tension */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '0', margin: 0 }}>
+                Testing the Prototypes & Final Fixes.
+              </h2>
+              <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                Tested with <strong style={{ color: '#fff', fontWeight: 600 }}>26 users</strong> across all 4 actors. The core insight: The interface had to be <strong style={{ color: '#fff', fontWeight: 600 }}>simple on the surface, detailed on demand.</strong>
+              </p>
+            </div>
+
+            {/* Unified 3-Column Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-6 gap-5">
+              
+              {/* Card 1: Employee Confusion */}
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>73%</div>
+                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>couldn't calculate their actual tax savings.</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px' }}>
+                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I need actual rupees, not a generic percentage."</p>
+                </div>
+                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', marginTop: 'auto' }}>
+                  <div>
+                    <div style={{fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '0', textTransform: 'uppercase', marginBottom: '4px'}}>The Fix</div>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Interactive tax slider for immediate math.</p>
+                  </div>
+                  <div 
+                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
+                    style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
+                  >
+                    <img src="/images/smart-epp-calculator-screen.png" alt="Calculator Screen" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Card 2: Employee Anxiety */}
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>8/12</div>
+                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>flagged device damage as a major concern.</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px' }}>
+                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"What if I drop the phone? Will I still have to pay the EMI?"</p>
+                </div>
+                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', marginTop: 'auto' }}>
+                  <div>
+                    <div style={{fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '0', textTransform: 'uppercase', marginBottom: '4px'}}>The Fix</div>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Transparent 2-year protection. Accidental damage & theft covered.</p>
+                  </div>
+                  <div 
+                    onClick={() => { setModalImages(['/images/EPP_CaseStudy_10.png']); setModalIndex(0); }}
+                    style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
+                  >
+                    <img src="/images/EPP_CaseStudy_10.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Card 3: HR & Financier Friction */}
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>50+</div>
+                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>manual purchase order approvals created massive HR bottlenecks.</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px' }}>
+                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"I can't open 50 purchase orders individually. I need to approve them in bulk."</p>
+                </div>
+                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', marginTop: 'auto' }}>
+                  <div>
+                    <div style={{fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '0', textTransform: 'uppercase', marginBottom: '4px'}}>The Fix</div>
+                    <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>1-click bulk purchase order approval dashboard.</p>
+                  </div>
+                  <div 
+                    onClick={() => { setModalImages(['/images/HR_BULK.png']); setModalIndex(0); }}
+                    style={{ height: '48px', width: '84px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
+                  >
+                    <img src="/images/HR_BULK.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Card 4: Seller Fulfillment */}
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                  <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>Late</div>
+                  <div style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.4, flex: 1 }}>visibility caused frequent stockouts.</div>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', marginBottom: '24px' }}>
+                  <p style={{ fontSize: '16px', color: '#e5e5e5', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>"By the time it's approved, the device is out of stock."</p>
+                </div>
+                <div style={{ borderTop: '1px solid rgba(var(--semantic-warning-rgb),0.2)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', marginTop: 'auto' }}>
+                  <div>
+                     <div style={{fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--semantic-success)', letterSpacing: '0', textTransform: 'uppercase', marginBottom: '4px'}}>The Fix</div>
+                     <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.5, margin: 0 }}>Pre-approval "Upcoming Orders" pipeline.</p>
+                  </div>
+                  <div 
+                    onClick={() => { setModalImages(['/images/Seller_Upcoming.png']); setModalIndex(0); }}
+                    style={{ height: '48px', width: '84px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
+                  >
+                    <img src="/images/Seller_Upcoming.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
       <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             {/* Section Label */}
             <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
               <CheckCircle2 size={14} strokeWidth={2.5} />
-              05: Validation
+              04b: A/B Testing
             </div>
 
             {/* Heading & Intro */}
@@ -1350,8 +1281,8 @@ export const SmartEPPCaseStudy = () => {
             </div>
       </section>
 
-          {/* 07. Outcomes & Learnings */}
-      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+          {/* 06: Outcomes & Learnings */}
+      <section style={{ padding: '100px 0', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
         {/* Subtle reflection background elements */}
         <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: '50%', height: '80%', background: 'radial-gradient(ellipse, rgba(255,255,255,0.03) 0%, transparent 60%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '60%', height: '80%', background: 'radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 60%)', filter: 'blur(100px)', pointerEvents: 'none' }} />
@@ -1359,150 +1290,119 @@ export const SmartEPPCaseStudy = () => {
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1200px' }}>
           
           {/* Section Header */}
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-info)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '16px'}}>
               <Target size={14} strokeWidth={2.5} />
-              07: Outcomes & Learnings
+              06: Outcomes & Learnings
             </div>
             <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em', margin: '0 0 16px 0', fontFamily: 'var(--font-heading)' }}>
-              The Result.
+              The Impact Ledger.
             </h2>
             <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
-              Measured 90 days post-launch. A robust system delivered strong business results, alongside hard-earned lessons in designing for B2B2C FinTech.
+              Measured 90 days post-launch. A streamlined system delivered powerful business metrics alongside counter-intuitive UX lessons.
             </p>
           </div>
 
-          {/* THE BENTO BOX DASHBOARD */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            style={{ 
-              background: '#0a0a0a', 
-              border: '1px solid rgba(255,255,255,0.08)', 
-              borderRadius: '32px', 
-              overflow: 'hidden',
-              boxShadow: '0 40px 80px rgba(0,0,0,0.5)',
-              display: 'flex',
-              flexDirection: 'column'
-            }}
-          >
-            {/* Top Bar: Minimal Platform Scale */}
-            <div style={{ padding: '20px 32px', background: 'rgba(255,255,255,0.02)', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '32px', alignItems: 'center' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: 'var(--font-heading)' }}>Platform Scale</div>
-              <div style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.1)' }} />
-              <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <span style={{ color: '#fff', fontSize: '15px' }}><strong style={{ color: '#3b82f6' }}>14</strong> Enterprise Partners</span>
-                <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
-                <span style={{ color: '#fff', fontSize: '15px' }}><strong style={{ color: '#10b981' }}>6</strong> Financiers</span>
-                <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
-                <span style={{ color: '#fff', fontSize: '15px' }}><strong style={{ color: '#f59e0b' }}>45+</strong> Seller Networks</span>
+          {/* PART 1: The Hard Numbers */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12" style={{ marginBottom: '100px', borderTop: '1px solid rgba(255,255,255,0.1)', borderBottom: '1px solid rgba(255,255,255,0.1)', padding: '60px 0' }}>
+            
+            {/* Metric 1 */}
+            <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '16px'}}>Business Goal</div>
+              <div style={{ fontSize: 'clamp(3.5rem, 4.5vw, 4.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '16px', fontFamily: 'var(--font-heading)' }}>
+                9.4<span style={{ color: 'var(--semantic-success)', fontSize: '0.5em', letterSpacing: 0, fontWeight: 700 }}>%</span>
               </div>
-            </div>
-
-            {/* Main Content Split */}
-            <div className="grid grid-cols-1 lg:grid-cols-12" style={{ gap: 0 }}>
-              
-              {/* Left Side: System Performance */}
-              <div className="lg:col-span-5" style={{ padding: '48px', borderRight: '1px solid rgba(255,255,255,0.05)', position: 'relative' }}>
-                <div style={{ position: 'absolute', top: '10%', left: '-20%', width: '140%', height: '80%', background: 'radial-gradient(ellipse, rgba(16,185,129,0.08) 0%, transparent 60%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-                
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--semantic-success)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '40px', fontFamily: 'var(--font-heading)' }}>System Performance</h3>
-                
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
-                  {[
-                    { value: '9.4%', label: 'Total Conversion', sub: 'Target was ≥ 5%' },
-                    { value: '<12S', label: 'HR Approval Time', sub: 'Reduced from 24 hrs' },
-                    { value: '0%', label: 'Client Churn', sub: 'Zero onboarding drop-offs' }
-                  ].map((m, i) => (
-                    <div key={i}>
-                      <div style={{ fontSize: '4.5rem', fontWeight: 700, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1, fontFamily: 'var(--font-heading)', marginBottom: '8px' }}>
-                        {m.value}
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap' }}>
-                        <span style={{ fontSize: '20px', color: '#fff', fontWeight: 600, fontFamily: "'Jost', sans-serif" }}>{m.label}</span>
-                        <span style={{ fontSize: '15px', color: 'var(--semantic-success)' }}>{m.sub}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Side: Qualitative Learnings */}
-              <div className="lg:col-span-7" style={{ padding: '48px' }}>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '40px', fontFamily: 'var(--font-heading)' }}>Executive Learnings</h3>
-                
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                  {[
-                    { title: 'Strategic Friction Builds Trust', desc: 'In FinTech, "zero friction" isn\'t always the goal. Making a multi-lakh loan approval "1-click" actually caused panic. We learned that strategic friction builds psychological safety.' },
-                    { title: 'The "Silent Stakeholders"', desc: 'We initially obsessed over the end-employee. But the true bottlenecks were back-office compliance teams. B2B UX means designing the entire operational chain.' },
-                    { title: 'The Speed Trade-off', desc: 'We skipped early validation on Financier and Seller portals to optimize for speed. This resulted in excessive change requests and rework post-launch.' }
-                  ].map((item, i) => (
-                    <div key={i} style={{ display: 'flex', gap: '24px' }}>
-                      <div style={{ fontSize: '18px', fontWeight: 600, color: 'rgba(255,255,255,0.2)', fontFamily: 'var(--font-heading)', lineHeight: 1.4 }}>
-                        0{i+1}
-                      </div>
-                      <div>
-                        <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>{item.title}</h4>
-                        <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Span: Hero Takeaway */}
-            <div style={{ background: 'rgba(249,87,56,0.08)', borderTop: '1px solid rgba(249,87,56,0.2)', padding: '32px 48px', display: 'flex', alignItems: 'flex-start', gap: '24px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(249,87,56,0.2)', color: 'var(--semantic-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <AlertCircle size={20} />
-              </div>
-              <div>
-                <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '4px', fontFamily: "'Jost', sans-serif" }}>Edge cases are the product.</h4>
-                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', margin: 0 }}>In B2B operations, failure states (like a stuck order) are core UX problems. Audit edge cases during initial problem definition, not as a post-launch polish pass.</p>
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ marginTop: '24px' }}>
-
-            {/* What changed from testing */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              style={{ background: 'linear-gradient(145deg, rgba(var(--semantic-warning-rgb),0.08), rgba(var(--semantic-warning-rgb),0.02))', border: '1px solid rgba(var(--semantic-warning-rgb),0.2)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', height: '100%' }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--semantic-warning)', boxShadow: '0 0 12px var(--semantic-warning)' }} />
-                <div style={{fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0.05em', textTransform: 'uppercase'}}>
-                  Key Pivot
-                </div>
-              </div>
-              <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.6, margin: 0 }}>
-                Forcing users to leave the page to read FAQs caused massive drop-offs. We fixed this by answering common questions <span style={{ color: 'var(--semantic-warning)', fontWeight: 600 }}>directly next to the action buttons</span>—keeping users focused and boosting completion rates.
-              </p>
+              <p style={{ fontSize: '18px', color: '#fff', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Total Conversion Rate</p>
+              <p style={{ fontSize: '16px', color: '#888', lineHeight: 1.6, margin: 0 }}>Nearly double the initial target of 5%, driven by the real-time tax simulator.</p>
             </motion.div>
 
-            {/* Reality Check */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              style={{ background: 'linear-gradient(145deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', height: '100%' }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ef4444', boxShadow: '0 0 12px #ef4444' }} />
-                <div style={{fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, color: '#ef4444', letterSpacing: '0.05em', textTransform: 'uppercase'}}>
-                  Reality Check
-                </div>
+            {/* Metric 2 */}
+            <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '16px'}}>HR Efficiency</div>
+              <div style={{ fontSize: 'clamp(3.5rem, 4.5vw, 4.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '16px', fontFamily: 'var(--font-heading)' }}>
+                11<span style={{ color: 'var(--text-secondary)', fontSize: '0.5em', letterSpacing: 0, fontWeight: 600 }}>s</span>
               </div>
-              <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.6, margin: 0 }}>
-                Skipping user research to hit a tight deadline caused a spike in early complaints. Instead of guessing, we launched the MVP, tracked where real users got stuck, and pushed <strong style={{ color: '#fff', fontWeight: 600 }}>rapid updates based on real data</strong> to hit our goals.
-              </p>
+              <p style={{ fontSize: '18px', color: '#fff', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Average Approval Time</p>
+              <p style={{ fontSize: '16px', color: '#888', lineHeight: 1.6, margin: 0 }}>Drastically reduced from 48 hours thanks to the 1-click bulk PO dashboard.</p>
             </motion.div>
+
+            {/* Metric 3 */}
+            <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700, color: '#a3a3a3', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '16px'}}>Seller Network</div>
+              <div style={{ fontSize: 'clamp(3.5rem, 4.5vw, 4.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '16px', fontFamily: 'var(--font-heading)' }}>
+                -40<span style={{ color: 'var(--semantic-success)', fontSize: '0.5em', letterSpacing: 0, fontWeight: 700 }}>%</span>
+              </div>
+              <p style={{ fontSize: '18px', color: '#fff', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>Fulfillment Errors</p>
+              <p style={{ fontSize: '16px', color: '#888', lineHeight: 1.6, margin: 0 }}>Stockouts plummeted after giving sellers a "pre-approval" visibility pipeline.</p>
+            </motion.div>
+
           </div>
 
+          {/* PART 2: The Honest Learnings */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-4">
+              <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', margin: '0 0 16px 0', fontFamily: 'var(--font-heading)' }}>The "So What?"</h3>
+              <p style={{ fontSize: '16px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                Beyond the metrics, B2B2C FinTech taught us that standard UX "best practices" don't always apply when risk and compliance are involved.
+              </p>
+            </div>
 
+            <div className="lg:col-span-8 flex flex-col gap-12">
+              
+              {/* Learning 1 */}
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+                <div style={{ display: 'flex', gap: '24px' }}>
+                  <div style={{ fontSize: '20px', fontWeight: 700, color: 'var(--semantic-info)', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>01</div>
+                  <div>
+                    <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>Strategic Friction Builds Trust</h4>
+                    <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                      "Zero friction" isn't always the goal in FinTech. Making large loan approvals "1-click" caused panic. We learned that adding <strong style={{ color: '#fff', fontWeight: 600 }}>strategic friction</strong> (like review screens) actually builds necessary psychological safety.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Learning 2 */}
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+                <div style={{ display: 'flex', gap: '24px' }}>
+                  <div style={{ fontSize: '20px', fontWeight: 700, color: 'var(--semantic-warning)', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>02</div>
+                  <div>
+                    <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>Design For Silent Stakeholders</h4>
+                    <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                      End-users are only half the story. The true bottlenecks were back-office compliance teams. <strong style={{ color: '#fff', fontWeight: 600 }}>B2B UX requires designing the entire operational chain</strong>, not just the consumer-facing interface.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Learning 3 */}
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
+                <div style={{ display: 'flex', gap: '24px' }}>
+                  <div style={{ fontSize: '20px', fontWeight: 700, color: 'var(--semantic-error)', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>03</div>
+                  <div>
+                    <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>The Speed Trade-off</h4>
+                    <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                      Skipping early validation on backend portals led to massive post-launch rework. We learned a hard lesson: <strong style={{ color: '#fff', fontWeight: 600 }}>optimizing for speed early on can cost you more time later.</strong>
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Learning 4 */}
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
+                <div style={{ display: 'flex', gap: '24px' }}>
+                  <div style={{ fontSize: '20px', fontWeight: 700, color: 'var(--semantic-success)', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>04</div>
+                  <div>
+                    <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>Edge Cases Are The Product</h4>
+                    <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                      In B2B operations, failure states like stuck orders or rejected KYC aren't edge cases. They are the core user experience. <strong style={{ color: '#fff', fontWeight: 600 }}>You must design failure states first</strong>, rather than treating them as an afterthought.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+            </div>
+          </div>
 
         </div>
       </section>
