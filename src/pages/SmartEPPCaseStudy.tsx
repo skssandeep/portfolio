@@ -1,134 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Layers, ArrowLeft, ArrowRight, ArrowDown, CheckCircle2, XCircle, AlertCircle, TrendingUp, Clock, Target, Lightbulb, Search, Code, Smartphone, Palette, FileText, Building2, Users, Fingerprint, Wallet, Zap, ChevronLeft, ChevronRight, LayoutGrid, Columns, Package, Landmark, Briefcase, FastForward, Maximize, ZoomIn, ZoomOut, Store } from 'lucide-react';
-import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
-
-// Mock Interactive Component for the Prototype Section
-const SmartEPPPrototype = () => {
-  const [step, setStep] = useState(1);
-  const [selectedDevice, setSelectedDevice] = useState<string | null>(null);
-
-  const devices = [
-    { id: 'iphone', name: 'iPhone 15 Pro', specs: 'Zero-Cost EMI', price: '₹4,166/mo' },
-    { id: 'macbook', name: 'MacBook Air M3', specs: 'Salary Linked', price: '₹5,833/mo' },
-  ];
-
-  return (
-    <div style={{
-      background: 'var(--bg-color)',
-      border: '1px solid var(--glass-border)',
-      borderRadius: '24px',
-      padding: '32px',
-      maxWidth: '600px',
-      margin: '0 auto',
-      boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-      fontFamily: 'var(--font-system)'
-    }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)' }}>Instant Eligibility Check</h3>
-        <span style={{ fontSize: '16px', color: 'var(--accent-color)', fontWeight: 500 }}>Step {step} of 3</span>
-      </div>
-
-      <div style={{ minHeight: '200px' }}>
-        {step === 1 && (
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>Select a premium device to calculate your pre-approved monthly EMI.</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {devices.map(device => (
-                <div 
-                  key={device.id}
-                  onClick={() => setSelectedDevice(device.id)}
-                  style={{
-                    padding: '16px',
-                    borderRadius: '12px',
-                    border: `1px solid ${selectedDevice === device.id ? 'var(--accent-color)' : 'rgba(255,255,255,0.1)'}`,
-                    background: selectedDevice === device.id ? 'rgba(239, 68, 68, 0.05)' : 'transparent',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    transition: 'all 0.2s ease'
-                  }}
-                >
-                  <div>
-                    <div style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{device.name}</div>
-                    <div style={{ color: 'var(--text-secondary)', fontSize: '16px' }}>{device.specs}</div>
-                  </div>
-                  <div style={{ color: 'var(--text-primary)', fontFamily: "'JetBrains Mono', monospace" }}>{device.price}</div>
-                </div>
-              ))}
-            </div>
-            <button 
-              onClick={() => selectedDevice && setStep(2)}
-              disabled={!selectedDevice}
-              style={{
-                marginTop: '24px',
-                width: '100%',
-                padding: '12px',
-                background: selectedDevice ? 'var(--text-primary)' : 'rgba(255,255,255,0.1)',
-                color: selectedDevice ? 'var(--bg-color)' : 'rgba(255,255,255,0.3)',
-                border: 'none',
-                borderRadius: '8px',
-                fontWeight: 600,
-                cursor: selectedDevice ? 'pointer' : 'not-allowed'
-              }}
-            >
-              Continue to verification
-            </button>
-          </motion.div>
-        )}
-
-        {step === 2 && (
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>Auto-verifying your employment via corporate HRMS integration...</p>
-            <div style={{
-              background: 'rgba(255,255,255,0.03)',
-              padding: '16px',
-              borderRadius: '8px',
-              border: '1px solid rgba(255,255,255,0.05)',
-              color: 'var(--text-secondary)',
-              fontSize: '16px',
-              lineHeight: 1.6,
-              marginBottom: '24px'
-            }}>
-              "Successfully fetched employee records. Salary band qualifies for up to ₹2,50,000 in zero-cost EMI financing with no manual KYC required."
-            </div>
-            <div style={{ display: 'flex', gap: '12px' }}>
-              <button 
-                onClick={() => setStep(1)}
-                style={{ flex: 1, padding: '12px', background: 'transparent', border: '1px solid rgba(255,255,255,0.2)', color: 'var(--text-primary)', borderRadius: '8px', cursor: 'pointer' }}
-              >
-                Back
-              </button>
-              <button 
-                onClick={() => setStep(3)}
-                style={{ flex: 2, padding: '12px', background: 'var(--accent-color)', border: 'none', color: '#fff', borderRadius: '8px', fontWeight: 600, cursor: 'pointer' }}
-              >
-                Confirm 1-Click Checkout
-              </button>
-            </div>
-          </motion.div>
-        )}
-
-        {step === 3 && (
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ textAlign: 'center', padding: '32px 0' }}>
-            <CheckCircle2 size={48} color="var(--accent-color)" style={{ margin: '0 auto 16px auto' }} />
-            <h4 style={{ color: 'var(--text-primary)', fontSize: '20px', marginBottom: '8px' }}>Purchase Approved</h4>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6 }}>
-              Your new device is being dispatched. The first EMI will be automatically deducted from your next month's payroll.
-            </p>
-            <button 
-                onClick={() => { setStep(1); setSelectedDevice(null); }}
-                style={{ marginTop: '24px', padding: '8px 16px', background: 'transparent', border: '1px solid rgba(255,255,255,0.2)', color: 'var(--text-primary)', borderRadius: '100px', cursor: 'pointer', fontSize: '16px' }}
-              >
-                Reset Prototype
-            </button>
-          </motion.div>
-        )}
-      </div>
-    </div>
-  );
-};
+import { ArrowLeft, ArrowRight, ArrowDown, CheckCircle2, XCircle, AlertCircle, Target, Lightbulb, Search, Smartphone, Palette, Users, ChevronLeft, ChevronRight, LayoutGrid, ZoomOut, ZoomIn, Maximize, Landmark, Package, Columns } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const SmartEPPCaseStudy = () => {
   const [modalImages, setModalImages] = useState<string[]>([]);
@@ -136,12 +9,12 @@ export const SmartEPPCaseStudy = () => {
   const [imageWidth, setImageWidth] = useState(500);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setImageWidth(500);
   }, [modalIndex]);
   const [showHeroPill, setShowHeroPill] = useState(true);
   
   const finalDesignsRef = useRef<HTMLElement>(null);
-  const isFinalDesignsInView = useInView(finalDesignsRef, { margin: "0px 0px -20% 0px" });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -162,11 +35,7 @@ export const SmartEPPCaseStudy = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  const solutionImages = [
-    "/images/EPP_CaseStudy_02.png",
-    "/images/EPP_CaseStudy_03.png",
-    "/images/EPP_CaseStudy_04.png"
-  ];
+
 
   const ecosystemImages = [
     "/images/EPP_CaseStudy_01.png",
@@ -360,141 +229,19 @@ export const SmartEPPCaseStudy = () => {
         </Link>
       </div>
 
-      {/* 1. Out-of-the-box Hero Section (Moved to Drafts) */}
-      {false && (
-      <section style={{ width: '100%', minHeight: '100vh', paddingTop: '140px', paddingBottom: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#0a0a0a' }}>
-        
-        <style>
-          {`
-            .floating-chips {
-              position: absolute; 
-              inset: 0; 
-              pointer-events: none;
-              z-index: 15;
-            }
-            .chip-wrapper {
-              position: absolute; 
-              pointer-events: auto;
-            }
-            .chip-1 { top: 15%; left: 5%; }
-            .chip-2 { top: 30%; right: 0%; }
-            .chip-3 { bottom: 30%; left: 0%; }
-            .chip-4 { bottom: 15%; right: 5%; }
-            
-            @media (max-width: 900px) {
-              .floating-chips {
-                position: relative;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px;
-                padding: 24px;
-                margin-top: -20px;
-                z-index: 20;
-              }
-              .chip-wrapper {
-                position: relative; 
-                top: auto !important; 
-                left: auto !important; 
-                right: auto !important; 
-                bottom: auto !important;
-              }
-            }
-          `}
-        </style>
-
-        {/* Subtle background glow */}
-        <div style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%, -50%)', width: '80vw', height: '80vw', background: 'radial-gradient(circle, rgba(229,9,20,0.15) 0%, rgba(0,0,0,0) 50%)', zIndex: 1, pointerEvents: 'none' }} />
-
-
-        {/* Massive Typography */}
-        <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', marginBottom: '-6vw', width: '100%', padding: '0 24px' }}>
-          <div>
-            <div style={{ display: 'inline-flex', background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-secondary)', padding: '8px 24px', borderRadius: '100px', fontSize: '16px', fontWeight: 700, letterSpacing: '0', marginBottom: '24px', border: '1px solid rgba(255, 255, 255, 0.15)' }}>
-              B2B2C FINTECH CASE STUDY
-            </div>
-            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 10vw, 8rem)', fontWeight: 800, color: '#fff', margin: '0', letterSpacing: '-0.04em', lineHeight: 1, opacity: 0.95, whiteSpace: 'nowrap' }}>
-              SMART EPP
-            </h1>
-            <p style={{ fontFamily: 'var(--font-system)', fontSize: 'clamp(1rem, 1.5vw, 1.3rem)', color: '#a3a3a3', maxWidth: '600px', margin: '32px auto 0 auto', lineHeight: 1.6, fontWeight: 400 }}>
-              Revolutionizing Employee Purchase Programs with zero-friction, salary-linked financing.
-            </p>
-          </div>
-        </div>
-
-        {/* The Floating Ecosystem */}
-        <div style={{ position: 'relative', zIndex: 20, width: '100%', maxWidth: '1100px', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 'auto' }}>
-          
-          <img 
-            src="/images/Mockup2_EPP.png" 
-            alt="Smart EPP" 
-            fetchPriority="high"
-            style={{ width: '100%', maxWidth: '900px', filter: 'drop-shadow(0 40px 100px rgba(0,0,0,0.8))', position: 'relative', zIndex: 10, objectFit: 'contain', marginBottom: '-5%' }} 
-          />
-
-          {/* Floating Context Cards (Chips) */}
-          <div className="floating-chips">
-            {[
-              { class: 'chip-1', icon: <Target size={14}/>, title: "My Role", val: "UX Designer", delay: 0.4 },
-              { class: 'chip-2', icon: <Clock size={14}/>, title: "Timeline", val: "4 Months", delay: 0.5 },
-              { class: 'chip-3', icon: <Smartphone size={14}/>, title: "Platform", val: "Mobile App", delay: 0.6 },
-              { class: 'chip-4', icon: <AlertCircle size={14}/>, title: "Constraint", val: "Strict KYC & NBFC", delay: 0.7 }
-            ].map((chip, idx) => (
-              <motion.div key={idx} className={`chip-wrapper ${chip.class}`}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              >
-                <div style={{
-                  background: 'rgba(20, 20, 20, 0.75)',
-                  backdropFilter: 'blur(24px)',
-                  WebkitBackdropFilter: 'blur(24px)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  padding: '16px 24px',
-                  borderRadius: '100px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '4px',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
-                  whiteSpace: 'nowrap'
-                }}>
-                  <div style={{fontFamily: 'var(--font-heading)', display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-color)', fontSize: '16px', fontWeight: 700, letterSpacing: '0', textTransform: 'uppercase'}}>
-                    {chip.icon} {chip.title}
-                  </div>
-                  <div style={{ color: '#fff', fontSize: '16px', fontWeight: 500, letterSpacing: '0', }}>{chip.val}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-      )}
 
       {/* 2. Intro & Stats Section */}
-      <section style={{ paddingTop: '150px', paddingBottom: '0', background: 'var(--bg-color)', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ paddingTop: '150px', paddingBottom: '80px', background: 'var(--bg-color)', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px' }}>
           
           {/* Left Text Block */}
           <div style={{ flex: '1 1 700px', zIndex: 10, paddingBottom: '80px', maxWidth: '800px' }}>
-            {/* Pre-header Pill (Drafted) */}
-            {false && (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              style={{ display: 'inline-block', padding: '10px 28px', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '100px', background: 'rgba(255,255,255,0.03)', marginBottom: '32px' }}
-            >
-              <div style={{fontFamily: 'var(--font-heading)', color: '#e0e0e0', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase'}}>
-                0→1 APP DESIGN • ONEASSIST
-              </div>
-            </motion.div>
-            )}
 
             {/* Headline */}
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '20px', letterSpacing: '0', }}
             >
               Up to 40% of that phone is just tax. <span style={{ color: 'var(--semantic-success)', fontWeight: 500 }}>We built the system that gives it back.</span>
@@ -503,9 +250,8 @@ export const SmartEPPCaseStudy = () => {
             {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ fontFamily: "'Jost', sans-serif", fontSize: '24px', color: '#a3a3a3', lineHeight: 1.6, marginBottom: '32px', maxWidth: '100%' }}
             >
               Employees lease premium devices via salary EMIs, reclaiming up to 40% in tax savings. I led the <strong style={{ color: '#fff', fontWeight: 600 }}>0-to-1 design</strong> of all <strong style={{ color: '#fff', fontWeight: 600 }}>4 interconnected platforms</strong> from a blank canvas.
@@ -514,9 +260,8 @@ export const SmartEPPCaseStudy = () => {
             {/* Pills */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}
             >
               {['Mobile App', 'HR Dashboard', 'Financier Portal', 'Seller Portal'].map((tag, idx) => (
@@ -535,9 +280,8 @@ export const SmartEPPCaseStudy = () => {
             
             <motion.img 
               initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6, type: 'spring', stiffness: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
               src="/images/Mockup2_EPP.png" 
               alt="Smart EPP Mobile App Mockup" 
               style={{ position: 'absolute', top: '-20%', left: '-25%', width: '165%', maxWidth: '1100px', objectFit: 'contain', zIndex: 2, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
@@ -552,9 +296,8 @@ export const SmartEPPCaseStudy = () => {
         <div className="container" style={{ position: 'relative', zIndex: 20 }}>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             style={{ 
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
@@ -666,7 +409,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* Executive Summary: Impact */}
-      <section style={{ paddingTop: '120px', paddingBottom: '40px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '80px 0', position: 'relative', overflow: 'hidden' }}>
         
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -687,7 +430,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* Testing Metrics Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style={{ marginBottom: '32px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style={{ marginBottom: '0' }}>
               
               {/* Metric 1 */}
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', overflow: 'hidden' }}>
@@ -733,55 +476,13 @@ export const SmartEPPCaseStudy = () => {
                 </p>
               </motion.div>
             </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ marginBottom: '0' }}>
-
-              {/* What changed from testing */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                style={{ background: 'linear-gradient(145deg, rgba(var(--semantic-warning-rgb),0.08), rgba(var(--semantic-warning-rgb),0.02))', border: '1px solid rgba(var(--semantic-warning-rgb),0.2)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', height: '100%' }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--semantic-warning)', boxShadow: '0 0 12px var(--semantic-warning)' }} />
-                  <div style={{fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0.05em', textTransform: 'uppercase'}}>
-                    Key Pivot
-                  </div>
-                </div>
-                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.6, margin: 0 }}>
-                  External FAQs caused drop-offs. We pivoted to <span style={{ color: 'var(--semantic-warning)', fontWeight: 600 }}>just-in-time reassurance</span>—embedding visual cues directly at the point of decision to eliminate friction and retain users.
-                </p>
-              </motion.div>
-
-              {/* Reality Check */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                style={{ background: 'linear-gradient(145deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', height: '100%' }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ef4444', boxShadow: '0 0 12px #ef4444' }} />
-                  <div style={{fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, color: '#ef4444', letterSpacing: '0.05em', textTransform: 'uppercase'}}>
-                    Reality Check
-                  </div>
-                </div>
-                <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.6, margin: 0 }}>
-                  Skipping upfront research caused a 3× spike in early change requests. We ultimately hit our target metrics through rapid, data-driven <strong style={{ color: '#fff', fontWeight: 600 }}>post-launch iteration</strong>.
-                </p>
-              </motion.div>
-            </div>
-
           </motion.div>
         </div>
       </section>
 
 
       {/* 3. Problem */}
-      <section style={{ paddingTop: '40px', paddingBottom: '160px' }}>
+      <section style={{ padding: '80px 0' }}>
         <div className="container">
           
           {/* Zone A & B: The Setup Block */}
@@ -796,7 +497,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0 }}>
-              The Challenge: Consumer-grade UX for a 4-party financial ecosystem.
+              A 4-party financial product that had to feel as simple as shopping on Amazon.
             </h2>
             
             <div style={{ marginTop: '64px' }} />
@@ -923,7 +624,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* Research Section */}
-      <section style={{ padding: '0 0 80px 0' }}>
+      <section style={{ padding: '80px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
 
@@ -1087,7 +788,7 @@ export const SmartEPPCaseStudy = () => {
 
 
       {/* Design Exploration */}
-      <section style={{ padding: '120px 0', background: 'radial-gradient(100% 100% at 50% 0%, rgba(20,20,22,1) 0%, rgba(10,10,10,1) 100%)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '80px 0', background: 'radial-gradient(100% 100% at 50% 0%, rgba(20,20,22,1) 0%, rgba(10,10,10,1) 100%)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '600px', background: 'radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 60%)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -1202,7 +903,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 8. Ideating/Solutions & 9. Iterations (The Messy Middle) */}
-      <section style={{ padding: '120px 0' }}>
+      <section style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#3b82f6', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
@@ -1283,7 +984,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 05. Validation (User Testing) */}
-      <section style={{ padding: '120px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             {/* Section Label */}
@@ -1446,6 +1147,7 @@ export const SmartEPPCaseStudy = () => {
               The product, screen by screen.
             </h2>
             
+
             
             {/* Unified Super-Tabs */}
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px', marginBottom: '60px' }}>
@@ -1648,59 +1350,8 @@ export const SmartEPPCaseStudy = () => {
             </div>
       </section>
 
-      {/* 06.5. Ecosystem Scale */}
-      <section style={{ padding: '120px 0', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div style={{ textAlign: 'center', marginBottom: '64px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-color)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '24px'}}>
-                <Users size={14} strokeWidth={2.5} />
-                07: Platform Scale
-              </div>
-              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 16px 0', fontFamily: 'var(--font-heading)' }}>
-                Rapid Ecosystem Onboarding
-              </h2>
-              <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0, maxWidth: '700px' }}>
-                The intuitive, role-specific portal designs eliminated onboarding friction, connecting major enterprises to banks and national retailers within the first 90 days.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '48px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, transparent, #3b82f6, transparent)' }} />
-                <div style={{ width: '72px', height: '72px', borderRadius: '50%', background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '32px' }}>
-                  <Building2 size={36} />
-                </div>
-                <div style={{ fontSize: '4.5rem', fontWeight: 700, color: '#fff', lineHeight: 1, marginBottom: '16px', fontFamily: 'var(--font-heading)' }}>14</div>
-                <div style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Enterprise Partners</div>
-                <p style={{ fontSize: '16px', color: '#888', lineHeight: 1.6, margin: 0 }}>Major corporations rolling out the program to their employee bases.</p>
-              </div>
-
-              <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '48px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, transparent, #10b981, transparent)' }} />
-                <div style={{ width: '72px', height: '72px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '32px' }}>
-                  <Landmark size={36} />
-                </div>
-                <div style={{ fontSize: '4.5rem', fontWeight: 700, color: '#fff', lineHeight: 1, marginBottom: '16px', fontFamily: 'var(--font-heading)' }}>6</div>
-                <div style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Financiers</div>
-                <p style={{ fontSize: '16px', color: '#888', lineHeight: 1.6, margin: 0 }}>Leading banks and NBFCs providing competitive salary-linked credit lines.</p>
-              </div>
-
-              <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '48px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, transparent, #f59e0b, transparent)' }} />
-                <div style={{ width: '72px', height: '72px', borderRadius: '50%', background: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '32px' }}>
-                  <Store size={36} />
-                </div>
-                <div style={{ fontSize: '4.5rem', fontWeight: 700, color: '#fff', lineHeight: 1, marginBottom: '16px', fontFamily: 'var(--font-heading)' }}>45<span style={{ fontSize: '2.5rem', color: '#f59e0b' }}>+</span></div>
-                <div style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Seller Networks</div>
-                <p style={{ fontSize: '16px', color: '#888', lineHeight: 1.6, margin: 0 }}>Top-tier electronics retailers plugging into the fulfillment engine.</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
           {/* 07. Outcomes & Learnings */}
-      <section style={{ padding: '120px 0', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
         {/* Subtle reflection background elements */}
         <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: '50%', height: '80%', background: 'radial-gradient(ellipse, rgba(255,255,255,0.03) 0%, transparent 60%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '60%', height: '80%', background: 'radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 60%)', filter: 'blur(100px)', pointerEvents: 'none' }} />
@@ -1711,7 +1362,7 @@ export const SmartEPPCaseStudy = () => {
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-info)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '16px'}}>
               <Target size={14} strokeWidth={2.5} />
-              08: Outcomes & Learnings
+              07: Outcomes & Learnings
             </div>
             <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em', margin: '0 0 16px 0', fontFamily: 'var(--font-heading)' }}>
               The Result.
@@ -1721,312 +1372,141 @@ export const SmartEPPCaseStudy = () => {
             </p>
           </div>
 
-          {/* Row 1: Outcomes Metrics Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginBottom: '80px' }}>
-            {[
-              { value: '9.4%', label: 'Total Conversion', sub: 'Target: ≥ 5%' },
-              { value: '<12S', label: 'HR Approval Time', sub: 'Target: ≤ 30s' },
-              { value: '0%', label: 'Client Churn', sub: 'Zero drop-offs' }
-            ].map((m, i) => (
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} key={i} style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, transparent, var(--semantic-success), transparent)' }} />
-                <div style={{ position: 'absolute', top: 0, left: '20%', right: '20%', height: '20px', background: 'var(--semantic-success)', filter: 'blur(20px)', opacity: 0.15 }} />
-                
-                <div style={{ fontSize: '3.5rem', fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', lineHeight: 1, fontFamily: 'var(--font-heading)', marginBottom: '16px' }}>
-                  {m.value}
-                </div>
-                <div style={{ fontSize: '18px', color: '#fff', fontWeight: 600, marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>{m.label}</div>
-                <div style={{ fontSize: '14px', color: 'var(--semantic-success)', fontWeight: 500 }}>{m.sub}</div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Divider & Subheader for Insights */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '40px' }}>
-            <div style={{ height: '1px', flexGrow: 1, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1))' }} />
-            <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.1em', margin: 0, fontFamily: 'var(--font-heading)' }}>Qualitative Learnings</h3>
-            <div style={{ height: '1px', flexGrow: 1, background: 'linear-gradient(270deg, transparent, rgba(255,255,255,0.1))' }} />
-          </div>
-
-          {/* Row 2: Insight Cards (3 cols) */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginBottom: '24px' }}>
-            
-            {/* Card 1 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-              style={{ background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'flex-start', position: 'relative', overflow: 'hidden', transition: 'all 0.3s ease' }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.01)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
-            >
-              <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Fingerprint size={24} /></div>
-              <div>
-                <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Strategic Friction Builds Trust</h3>
-                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>In FinTech, "zero friction" isn't always the goal. Making a multi-lakh loan approval "1-click" actually caused panic. We learned that strategic friction builds psychological safety.</p>
-              </div>
-            </motion.div>
-
-            {/* Card 2 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-              style={{ background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'flex-start', position: 'relative', overflow: 'hidden', transition: 'all 0.3s ease' }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.01)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
-            >
-              <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Briefcase size={24} /></div>
-              <div>
-                <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The "Silent Stakeholders"</h3>
-                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>We initially obsessed over the end-employee. But the true bottlenecks were back-office compliance teams. B2B UX means designing the entire operational chain.</p>
-              </div>
-            </motion.div>
-
-            {/* Card 3: Trade-off */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
-              style={{ background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'flex-start', position: 'relative', overflow: 'hidden', transition: 'all 0.3s ease' }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.01)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
-            >
-              <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '16px', color: '#fff' }}><Zap size={24} /></div>
-              <div>
-                <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The Speed Trade-off</h3>
-                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>
-                  We skipped early validation on Financier and Seller portals to optimize for speed. This resulted in excessive change requests and rework post-launch.
-                </p>
-              </div>
-            </motion.div>
-
-          </div>
-
-          {/* Row 3: HERO CARD - Card 4 */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
-            style={{ background: 'radial-gradient(120% 120% at 50% 0%, rgba(249,87,56,0.1) 0%, rgba(249,87,56,0.02) 100%)', backdropFilter: 'blur(30px)', border: '1px solid rgba(249,87,56,0.2)', borderRadius: '32px', padding: '56px', display: 'flex', flexDirection: 'column', gap: '24px', position: 'relative', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)' }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(249,87,56,0.4)'; e.currentTarget.style.boxShadow = '0 30px 60px rgba(249,87,56,0.1), inset 0 1px 0 rgba(255,255,255,0.2)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(249,87,56,0.2)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+          {/* THE BENTO BOX DASHBOARD */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            style={{ 
+              background: '#0a0a0a', 
+              border: '1px solid rgba(255,255,255,0.08)', 
+              borderRadius: '32px', 
+              overflow: 'hidden',
+              boxShadow: '0 40px 80px rgba(0,0,0,0.5)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
           >
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'var(--semantic-brand)' }} />
-            <div style={{ background: 'rgba(249,87,56,0.15)', padding: '20px', borderRadius: '20px', color: 'var(--semantic-brand)', alignSelf: 'flex-start' }}><AlertCircle size={32} /></div>
-            <div>
-              <h3 style={{ fontSize: '32px', fontWeight: 600, color: '#fff', marginBottom: '16px', lineHeight: 1.2, fontFamily: "'Jost', sans-serif" }}>Edge cases are the product</h3>
-              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, margin: 0, maxWidth: '800px' }}>In B2B operations, failure states (like a stuck order) are core UX problems. I now audit edge cases during initial problem definition, not as a post-launch polish pass.</p>
+            {/* Top Bar: Minimal Platform Scale */}
+            <div style={{ padding: '20px 32px', background: 'rgba(255,255,255,0.02)', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '32px', alignItems: 'center' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: 'var(--font-heading)' }}>Platform Scale</div>
+              <div style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.1)' }} />
+              <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <span style={{ color: '#fff', fontSize: '15px' }}><strong style={{ color: '#3b82f6' }}>14</strong> Enterprise Partners</span>
+                <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
+                <span style={{ color: '#fff', fontSize: '15px' }}><strong style={{ color: '#10b981' }}>6</strong> Financiers</span>
+                <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
+                <span style={{ color: '#fff', fontSize: '15px' }}><strong style={{ color: '#f59e0b' }}>45+</strong> Seller Networks</span>
+              </div>
+            </div>
+
+            {/* Main Content Split */}
+            <div className="grid grid-cols-1 lg:grid-cols-12" style={{ gap: 0 }}>
+              
+              {/* Left Side: System Performance */}
+              <div className="lg:col-span-5" style={{ padding: '48px', borderRight: '1px solid rgba(255,255,255,0.05)', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '10%', left: '-20%', width: '140%', height: '80%', background: 'radial-gradient(ellipse, rgba(16,185,129,0.08) 0%, transparent 60%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
+                
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--semantic-success)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '40px', fontFamily: 'var(--font-heading)' }}>System Performance</h3>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+                  {[
+                    { value: '9.4%', label: 'Total Conversion', sub: 'Target was ≥ 5%' },
+                    { value: '<12S', label: 'HR Approval Time', sub: 'Reduced from 24 hrs' },
+                    { value: '0%', label: 'Client Churn', sub: 'Zero onboarding drop-offs' }
+                  ].map((m, i) => (
+                    <div key={i}>
+                      <div style={{ fontSize: '4.5rem', fontWeight: 700, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1, fontFamily: 'var(--font-heading)', marginBottom: '8px' }}>
+                        {m.value}
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap' }}>
+                        <span style={{ fontSize: '20px', color: '#fff', fontWeight: 600, fontFamily: "'Jost', sans-serif" }}>{m.label}</span>
+                        <span style={{ fontSize: '15px', color: 'var(--semantic-success)' }}>{m.sub}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Side: Qualitative Learnings */}
+              <div className="lg:col-span-7" style={{ padding: '48px' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '40px', fontFamily: 'var(--font-heading)' }}>Executive Learnings</h3>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                  {[
+                    { title: 'Strategic Friction Builds Trust', desc: 'In FinTech, "zero friction" isn\'t always the goal. Making a multi-lakh loan approval "1-click" actually caused panic. We learned that strategic friction builds psychological safety.' },
+                    { title: 'The "Silent Stakeholders"', desc: 'We initially obsessed over the end-employee. But the true bottlenecks were back-office compliance teams. B2B UX means designing the entire operational chain.' },
+                    { title: 'The Speed Trade-off', desc: 'We skipped early validation on Financier and Seller portals to optimize for speed. This resulted in excessive change requests and rework post-launch.' }
+                  ].map((item, i) => (
+                    <div key={i} style={{ display: 'flex', gap: '24px' }}>
+                      <div style={{ fontSize: '18px', fontWeight: 600, color: 'rgba(255,255,255,0.2)', fontFamily: 'var(--font-heading)', lineHeight: 1.4 }}>
+                        0{i+1}
+                      </div>
+                      <div>
+                        <h4 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>{item.title}</h4>
+                        <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Span: Hero Takeaway */}
+            <div style={{ background: 'rgba(249,87,56,0.08)', borderTop: '1px solid rgba(249,87,56,0.2)', padding: '32px 48px', display: 'flex', alignItems: 'flex-start', gap: '24px' }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(249,87,56,0.2)', color: 'var(--semantic-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <AlertCircle size={20} />
+              </div>
+              <div>
+                <h4 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '4px', fontFamily: "'Jost', sans-serif" }}>Edge cases are the product.</h4>
+                <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', margin: 0 }}>In B2B operations, failure states (like a stuck order) are core UX problems. Audit edge cases during initial problem definition, not as a post-launch polish pass.</p>
+              </div>
             </div>
           </motion.div>
 
-        </div>
-      </section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ marginTop: '24px' }}>
 
-      {/* 4. Breakdown of Solution (Single Pitch Slide) - MOVED TO DRAFTS */}
-      {false && (
-      <section style={{ padding: '80px 0' }}>
-        <div className="container" style={{ maxWidth: '1600px' }}>
-          
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(30,30,30,0.8) 0%, rgba(10,10,10,0.9) 100%)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', padding: '64px', display: 'flex', flexDirection: 'column', gap: '64px', boxShadow: '0 40px 80px rgba(0,0,0,0.4)' }}>
-             
-             {/* Slide Header */}
-             <div style={{ textAlign: 'center' }}>
-                <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#10b981', background: 'rgba(16, 185, 129, 0.1)', padding: '8px 16px', borderRadius: '100px', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '24px'}}>
-                  <CheckCircle2 size={16} /> The Solution
-                </div>
-                <h2 style={{ fontSize: '40px', fontWeight: 600, color: '#fff', marginBottom: '16px', letterSpacing: '0', lineHeight: 1.1 }}>Zero-Friction Financing</h2>
-                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>
-                  A seamless B2B2C FinTech mobile ecosystem offering corporate employees instant salary-linked EMIs and 1-click checkout for premium devices.
-                </p>
-             </div>
-
-             {/* The 3 Pillars */}
-             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '48px' }}>
-                {/* Pillar 1 */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
-                     <img 
-                        src="/images/EPP_CaseStudy_02.png" 
-                        alt="SSO Auth" 
-                        style={{ width: '100%', maxWidth: '180px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
-                        onClick={() => { setModalImages(solutionImages); setModalIndex(0); }}
-                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                     />
-                   </div>
-                   <div style={{ textAlign: 'center', padding: '0 16px' }}>
-                      <h4 style={{ fontSize: '22px', fontWeight: 500, color: '#fff', marginBottom: '12px', letterSpacing: '0', }}>01. Pre-Authenticated Access</h4>
-                      <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Bypassing manual login screens entirely through seamless backend synchronization with the partner HRMS.</p>
-                   </div>
-                </div>
-
-                {/* Pillar 2 */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
-                     <img 
-                        src="/images/EPP_CaseStudy_03.png" 
-                        alt="Dynamic Limits" 
-                        style={{ width: '100%', maxWidth: '180px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
-                        onClick={() => { setModalImages(solutionImages); setModalIndex(1); }}
-                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                     />
-                   </div>
-                   <div style={{ textAlign: 'center', padding: '0 16px' }}>
-                      <h4 style={{ fontSize: '22px', fontWeight: 500, color: '#fff', marginBottom: '12px', letterSpacing: '0', }}>02. Dynamic Limits</h4>
-                      <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Pre-calculating maximum EMIs based on salary bands so users browse with total financial confidence.</p>
-                   </div>
-                </div>
-
-                {/* Pillar 3 */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                   <div style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center' }}>
-                     <img 
-                        src="/images/EPP_CaseStudy_04.png" 
-                        alt="1-Click Checkout" 
-                        style={{ width: '100%', maxWidth: '180px', borderRadius: '8px', display: 'block', cursor: 'pointer', transition: 'transform 0.3s ease' }} 
-                        onClick={() => { setModalImages(solutionImages); setModalIndex(2); }}
-                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                     />
-                   </div>
-                   <div style={{ textAlign: 'center', padding: '0 16px' }}>
-                      <h4 style={{ fontSize: '22px', fontWeight: 500, color: '#fff', marginBottom: '12px', letterSpacing: '0', }}>03. 1-Click Checkout</h4>
-                      <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>Automatically routing the first EMI deduction to the next month's payroll, eliminating credit cards entirely.</p>
-                   </div>
-                </div>
-             </div>
-          </motion.div>
-        </div>
-      </section>
-      )}
-
-      {/* Moved to drafts */}
-      {false && (
-      <>
-      {/* 5. Research & 6. Analysis */}
-      <section style={{ padding: '120px 0', position: 'relative' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
-          
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-             <h2 style={{ fontSize: '36px', fontWeight: 600, color: '#fff', letterSpacing: '0', margin: '0 0 16px 0' }}>Discovery & Insights</h2>
-             <p style={{ fontSize: '18px', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>We didn't just guess. We looked at the hard data and talked to real employees to understand where the friction lived.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '24px' }}>
-            
-            {/* Left Column (Spans 4 columns) */}
-            <div style={{ gridColumn: 'span 4', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingLeft: '8px' }}>
-                <Search size={24} color="#10b981" />
-                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0 }}>The Research</h3>
-              </div>
-              
-              <motion.div 
-                 whileHover={{ y: -5 }}
-                 style={{ background: 'rgba(255,255,255,0.02)', padding: '40px 32px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '32px', flexGrow: 1 }}
-              >
-                <div>
-                  <div style={{ fontSize: '48px', fontWeight: 700, lineHeight: 1, background: 'linear-gradient(135deg, #10b981, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px' }}>40+</div>
-                  <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.5 }}>In-depth user interviews across 3 massive partner companies.</div>
-                </div>
-                <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
-                <div>
-                  <div style={{ fontSize: '48px', fontWeight: 700, lineHeight: 1, background: 'linear-gradient(135deg, #10b981, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px' }}>15k</div>
-                  <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.5 }}>Funnel data points analyzed via Mixpanel to find the drop-off.</div>
-                </div>
-                <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
-                <div>
-                  <div style={{ fontSize: '48px', fontWeight: 700, lineHeight: 1, background: 'linear-gradient(135deg, #10b981, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px' }}>3</div>
-                  <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.5 }}>Competitor platforms fully audited for UX teardowns.</div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Right Column (Spans 8 columns) */}
-            <div style={{ gridColumn: 'span 8', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingLeft: '8px' }}>
-                <Lightbulb size={24} color="#3b82f6" />
-                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', margin: 0 }}>The Insights</h3>
-              </div>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', flexGrow: 1 }}>
-                {/* Insight 1 - Full Width */}
-                <motion.div 
-                   whileHover={{ y: -5 }}
-                   style={{ background: 'rgba(255,255,255,0.02)', padding: '40px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', flexGrow: 1, display: 'flex', gap: '32px', alignItems: 'center', position: 'relative', overflow: 'hidden' }}
-                >
-                  <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%)', borderRadius: '50%' }} />
-                  <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'rgba(16,185,129,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Smartphone size={32} color="#10b981" />
-                  </div>
-                  <div>
-                    <div style={{fontFamily: 'var(--font-heading)', color: '#10b981', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Insight 01</div>
-                    <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: 600, marginBottom: '12px' }}>The "App Fatigue" Hurdle</h4>
-                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>Users purchase a laptop once every 3 years. They explicitly refused to download a dedicated, heavy native app for a rare transaction. We needed a lightweight web flow.</p>
-                  </div>
-                </motion.div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', flexGrow: 1 }}>
-                  {/* Insight 2 */}
-                  <motion.div 
-                     whileHover={{ y: -5 }}
-                     style={{ background: 'rgba(255,255,255,0.02)', padding: '40px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}
-                  >
-                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #3b82f6, transparent)' }} />
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                      <div style={{fontFamily: 'var(--font-heading)', color: '#3b82f6', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase'}}>Insight 02</div>
-                      <Fingerprint size={24} color="#3b82f6" style={{ opacity: 0.6 }} />
-                    </div>
-                    <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '12px', paddingRight: '20px' }}>KYC is a Funnel Killer</h4>
-                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>Asking for PAN numbers and salary slips upfront caused immediate mistrust. Users felt they were applying for a mortgage just to browse devices.</p>
-                  </motion.div>
-
-                  {/* Insight 3 */}
-                  <motion.div 
-                     whileHover={{ y: -5 }}
-                     style={{ background: 'rgba(255,255,255,0.02)', padding: '40px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}
-                  >
-                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #f59e0b, transparent)' }} />
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                      <div style={{fontFamily: 'var(--font-heading)', color: '#f59e0b', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase'}}>Insight 03</div>
-                      <AlertCircle size={24} color="#f59e0b" style={{ opacity: 0.6 }} />
-                    </div>
-                    <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '12px', paddingRight: '20px' }}>The "Blind Cart" Effect</h4>
-                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '16px', lineHeight: 1.6, margin: 0 }}>Users didn't know their approved EMI limit while browsing. Reaching checkout only to be rejected caused them to abandon the cart entirely.</p>
-                  </motion.div>
+            {/* What changed from testing */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              style={{ background: 'linear-gradient(145deg, rgba(var(--semantic-warning-rgb),0.08), rgba(var(--semantic-warning-rgb),0.02))', border: '1px solid rgba(var(--semantic-warning-rgb),0.2)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', height: '100%' }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--semantic-warning)', boxShadow: '0 0 12px var(--semantic-warning)' }} />
+                <div style={{fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0.05em', textTransform: 'uppercase'}}>
+                  Key Pivot
                 </div>
               </div>
-            </div>
+              <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.6, margin: 0 }}>
+                Forcing users to leave the page to read FAQs caused massive drop-offs. We fixed this by answering common questions <span style={{ color: 'var(--semantic-warning)', fontWeight: 600 }}>directly next to the action buttons</span>—keeping users focused and boosting completion rates.
+              </p>
+            </motion.div>
 
+            {/* Reality Check */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              style={{ background: 'linear-gradient(145deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', height: '100%' }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ef4444', boxShadow: '0 0 12px #ef4444' }} />
+                <div style={{fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, color: '#ef4444', letterSpacing: '0.05em', textTransform: 'uppercase'}}>
+                  Reality Check
+                </div>
+              </div>
+              <p style={{ fontSize: '17px', color: '#e5e5e5', lineHeight: 1.6, margin: 0 }}>
+                Skipping user research to hit a tight deadline caused a spike in early complaints. Instead of guessing, we launched the MVP, tracked where real users got stuck, and pushed <strong style={{ color: '#fff', fontWeight: 600 }}>rapid updates based on real data</strong> to hit our goals.
+              </p>
+            </motion.div>
           </div>
+
+
+
         </div>
       </section>
 
-      {/* 7. How Might We's */}
-      <section style={{ padding: '120px 0', background: '#050505', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 60%)', borderRadius: '50%', pointerEvents: 'none' }} />
-        
-        <div style={{fontFamily: 'var(--font-heading)', position: 'absolute', left: '32px', bottom: '32px', transform: 'rotate(-90deg)', transformOrigin: 'left bottom', color: '#3b82f6', letterSpacing: '0', fontSize: '16px', textTransform: 'uppercase', fontWeight: 600, opacity: 0.8}}>
-          Explore
-        </div>
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <Lightbulb size={40} color="#3b82f6" style={{ margin: '0 auto 24px auto', display: 'block' }} />
-          <h2 style={{fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 600, color: '#3b82f6', marginBottom: '32px', letterSpacing: '0.05em', textTransform: 'uppercase'}}>The Core HMW</h2>
-          <h3 style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 400, color: '#fff', lineHeight: 1.5, margin: 0, fontStyle: 'italic', letterSpacing: '0', }}>
-            "How might we allow employees to confidently browse devices within their pre-approved budget, without manual KYC blocking the funnel?"
-          </h3>
-        </div>
-      </section>
-
-      </>
-      )}
-
-      {/* 10. Final Design w prototype (Live Verification Prototype) - MOVED TO DRAFTS */}
-      {false && (
-      <section style={{ padding: '120px 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
-
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '16px', letterSpacing: '0', }}>Live Verification Prototype</h2>
-            <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px', marginInline: 'auto' }}>
-              By linking directly to corporate HRMS systems, we eliminated the need for manual income verification entirely. Try the flow yourself.
-            </p>
-          </div>
-          
-          <SmartEPPPrototype />
-        </div>
-      </section>
-      )}
 
 
 
