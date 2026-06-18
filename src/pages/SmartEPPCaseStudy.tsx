@@ -421,7 +421,7 @@ export const SmartEPPCaseStudy = () => {
 
 
       {/* 3. Problem */}
-      <section style={{ padding: '80px 0' }}>
+      <section style={{ padding: '120px 0' }}>
         <div className="container">
           
           {/* Zone A & B: The Setup Block */}
@@ -562,7 +562,7 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      <section style={{ padding: '80px 0', background: 'radial-gradient(100% 100% at 50% 0%, rgba(20,20,22,1) 0%, rgba(10,10,10,1) 100%)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '600px', background: 'radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 60%)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -676,8 +676,13 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
       <section style={{ padding: '80px 0' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px', position: 'relative', overflow: 'hidden' }}>
+            
+            {/* Subtle glow effect */}
+            <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '600px', height: '400px', background: 'radial-gradient(ellipse, rgba(59,130,246,0.05) 0%, transparent 60%)', pointerEvents: 'none' }} />
+
+            <div style={{ textAlign: 'center', marginBottom: '80px', position: 'relative', zIndex: 1 }}>
             <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#3b82f6', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
               <Lightbulb size={14} strokeWidth={2.5} />
               03: Ideation & Wireframing
@@ -751,13 +756,14 @@ export const SmartEPPCaseStudy = () => {
               Jump to Final Designs <ArrowDown size={18} />
             </a>
           </div>
+          </motion.div>
 
         </div>
       </section>
       {/* Research Section */}
-      <section style={{ padding: '80px 0' }}>
+      <section style={{ padding: '120px 0' }}>
         <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
 
             {/* Section Label */}
             <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-info)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
@@ -912,18 +918,8 @@ export const SmartEPPCaseStudy = () => {
 
             </div>
 
-          </motion.div>
-        </div>
-      </section>
-      <section style={{ padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            {/* Section Label */}
-            <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-success)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
-              <CheckCircle2 size={14} strokeWidth={2.5} />
-              04b: A/B Testing
-            </div>
-
+            {/* Sub-section divider */}
+            <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', width: '100%', margin: '80px 0 64px 0' }} />
             {/* Heading & Intro */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
               <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', margin: 0, fontFamily: 'var(--font-heading)' }}>
@@ -1067,12 +1063,12 @@ export const SmartEPPCaseStudy = () => {
 
 
       {/* 06. Final Solution: The Visual Ecosystem */}
-      <section id="final-designs" ref={finalDesignsRef} style={{ padding: '80px 0' }}>
+      <section id="final-designs" ref={finalDesignsRef} style={{ padding: '120px 0', background: '#080808', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--semantic-brand)', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '32px'}}>
               <LayoutGrid size={14} strokeWidth={2.5} />
-              <span>06: Final Solution</span>
+              <span>05: Final Solution</span>
             </div>
             <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.05, letterSpacing: '0', margin: 0 }}>
               The product, screen by screen.
@@ -1281,11 +1277,8 @@ export const SmartEPPCaseStudy = () => {
             </div>
       </section>
 
-          {/* 06: Outcomes & Learnings */}
-      <section style={{ padding: '100px 0', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
-        {/* Subtle reflection background elements */}
-        <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: '50%', height: '80%', background: 'radial-gradient(ellipse, rgba(255,255,255,0.03) 0%, transparent 60%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '60%', height: '80%', background: 'radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 60%)', filter: 'blur(100px)', pointerEvents: 'none' }} />
+      {/* 06: Outcomes & Learnings */}
+      <section style={{ padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
 
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1200px' }}>
           
@@ -1380,9 +1373,9 @@ export const SmartEPPCaseStudy = () => {
                 <div style={{ display: 'flex', gap: '24px' }}>
                   <div style={{ fontSize: '20px', fontWeight: 700, color: 'var(--semantic-error)', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>03</div>
                   <div>
-                    <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>The Speed Trade-off</h4>
+                    <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>Transparency Over Cleverness</h4>
                     <p style={{ fontSize: '18px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
-                      Skipping early validation on backend portals led to massive post-launch rework. We learned a hard lesson: <strong style={{ color: '#fff', fontWeight: 600 }}>optimizing for speed early on can cost you more time later.</strong>
+                      Trying to make prices look attractive by hiding mandatory insurance until checkout backfired. We learned that in FinTech, <strong style={{ color: '#fff', fontWeight: 600 }}>radical transparency upfront drives higher conversion</strong> than deceptive simplicity.
                     </p>
                   </div>
                 </div>
