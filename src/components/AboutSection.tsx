@@ -7,31 +7,37 @@ export const AboutSection = () => {
   return (
     <section id="about" className="section-padding scroll-reveal" style={{ position: 'relative', zIndex: 10 }}>
       <div className="container" style={{ maxWidth: '1200px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '64px' }}>
+          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
+            About Me
+          </span>
+          <h2 style={{ 
+            fontSize: 'clamp(40px, 5vw, 56px)', 
+            fontWeight: 500, 
+            color: '#fff', 
+            letterSpacing: '-0.03em', 
+            lineHeight: 1.15,
+            margin: 0
+          }}>
+            Designing for Scale.
+          </h2>
+        </div>
+
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', 
           gap: '80px', 
-          alignItems: 'center' 
+          alignItems: 'start' 
         }}>
           
           {/* Left Column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
-            <h2 style={{ 
-              fontSize: 'clamp(40px, 5vw, 56px)', 
-              fontWeight: 600, 
-              color: '#fff', 
-              letterSpacing: '-0.03em', 
-              lineHeight: 1.1 
-            }}>
-              Who's behind Sandstormify?
-            </h2>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             
             {/* Image Card Container */}
             <div style={{ 
               position: 'relative', 
               width: 'fit-content', 
-              marginLeft: '24px', // Offset to account for tilted badges
-              marginTop: '24px'
+              marginLeft: '24px' // Offset to account for tilted badges
             }}>
             {/* Tilted Photo */}
               <motion.div 
@@ -108,7 +114,7 @@ export const AboutSection = () => {
                   fontWeight: 600,
                   boxShadow: '0 8px 16px rgba(0,0,0,0.2)'
                 }}>
-                  Founder @Sandstormify
+                  UX Designer
                 </div>
               </motion.div>
             </div>
@@ -120,21 +126,20 @@ export const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="relative flex flex-col p-8 md:p-10"
+            className="relative flex flex-col"
             style={{ 
-              background: 'rgba(255,255,255,0.01)',
-              marginTop: '24px'
+              paddingTop: '0px' // Removed nudge since headline is no longer adjacent
             }}
           >
             <div className="relative z-20 flex flex-col gap-8 w-full">
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0 }}>
-                  Sandstormify was built to help SaaS and tech founders ship faster without sacrificing quality. Over the last 4 years, I've specialized in crafting user-centered, high-conversion designs that drive real business results for funded startups and growth-stage companies.
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
+                  I'm a UX Designer specializing in complex SaaS systems and zero-to-one execution. For over 4 years, I've simplified dense B2B workflows into frictionless experiences that drive enterprise adoption.
                 </p>
-                <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0 }}>
-                  With a background in Quality Assurance engineering and a Google UX Design Professional Certification, I bring a unique blend of rigorous technical precision and creative problem-solving to every project. 
+                <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
+                  I blend analytical precision with deep user empathy—architecting unified design systems that reduce cross-platform friction and scale seamlessly.
                   <br /><br />
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>My mission:</span> help founders unlock growth velocity with premium digital products.
+                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>My focus:</span> Bridging human needs and business objectives through world-class UX design.
                 </p>
               </div>
               

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { BrandLogoSection } from '../components/BrandLogoSection';
 
 const GRADIENTS = [
   { 
@@ -66,8 +67,9 @@ const GRADIENTS = [
 
 export const BrandLogos = () => {
   return (
-    <div style={{ paddingTop: '140px', paddingBottom: '100px', minHeight: '100vh', backgroundColor: '#020205' }} className="container">
-      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+    <div style={{ paddingTop: '80px', paddingBottom: '100px', minHeight: '100vh', backgroundColor: '#020205' }} className="container">
+      <BrandLogoSection />
+      <div style={{ maxWidth: '1000px', margin: '0 auto', paddingTop: '64px' }}>
         <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 600, color: 'white', marginBottom: '24px', lineHeight: 1.1 }}>
           Sandstormify Brand Gradients
         </h1>

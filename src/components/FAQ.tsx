@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    q: "Which tool will you use to deliver the design?",
-    a: "All designs are created in Figma, doesn't matter if it's an icon, full page design or custom graphic."
+    q: "Are you open to relocation or hybrid work models?",
+    a: "Yes, I am highly adaptable. While I have extensive experience collaborating with distributed global teams remotely, I am open to hybrid or on-site roles in major tech hubs depending on the scope and impact of the opportunity."
   },
   {
-    q: "What is the turnaround time for my designs?",
-    a: "Most requests are fulfilled within 48 hours. For complex projects, I provide regular updates. Social media assets are delivered in 1 business day; full page designs take 2 days. Each design is uniquely crafted to meet your specific needs, ensuring top quality and originality."
+    q: "What is your availability to start a new role?",
+    a: "I am currently open to exploring new high-impact positions. My availability is flexible, but I can generally wrap up current commitments and begin contributing to a new team within a standard 2 to 4 week notice period."
   },
   {
-    q: "What if I don't like the design?",
-    a: "I offer unlimited revisions to ensure your complete satisfaction. I'll refine your project until you're 200% happy with the final result."
+    q: "How do you collaborate with Engineering and Product Management?",
+    a: "I treat design as a strategic partnership. I align with PMs early on business metrics and user needs, and I embed with Engineering to ensure technical feasibility. I rely on robust design systems, detailed handoffs, and continuous communication to eliminate silos."
   },
   {
-    q: "What is your refund policy?",
-    a: "I don't provide refunds, but I offer the flexibility to pause and resume your service whenever needed. My commitment is focused on helping you achieve excellent results through our partnership."
+    q: "Can I get access to your locked case studies?",
+    a: "Out of respect for my previous employers and active NDAs, certain enterprise case studies are password-protected. I am happy to walk through these projects in detail during a live interview, or provide secure access upon request for recruiters and hiring managers."
   }
 ];
 
@@ -31,10 +32,10 @@ export const FAQ = () => {
     <section id="faq" className="section-padding" style={{ position: 'relative', background: 'var(--bg-color)', overflow: 'hidden' }}>
       <div className="container" style={{ maxWidth: '900px', position: 'relative', zIndex: 10 }}>
         <div style={{ textAlign: 'center', marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif" }}>
+          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
             FAQ
           </span>
-          <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '24px', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff' }}>
+          <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '0', marginBottom: '0', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
             Frequently Asked Questions
           </h2>
         </div>
@@ -88,15 +89,21 @@ export const FAQ = () => {
                     <ChevronDown size={28} strokeWidth={1.5} />
                   </div>
                 </button>
-                <div style={{ 
-                  maxHeight: isOpen ? '500px' : '0px', 
-                  opacity: isOpen ? 1 : 0,
-                  transition: 'all 0.4s var(--apple-easing)',
-                  paddingTop: isOpen ? '24px' : '0px',
-                  overflow: 'hidden'
-                }}>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0, fontSize: '18px', maxWidth: '800px' }}>{faq.a}</p>
-                </div>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }} // Apple-like custom spring/easing
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <div style={{ paddingTop: '24px', paddingBottom: '8px' }}>
+                        <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0, fontSize: '18px', maxWidth: '800px' }}>{faq.a}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
                 
                 {/* Custom Divider */}
                 {index < faqs.length - 1 && <div style={dividerStyle} />}

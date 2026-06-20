@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
+import { DesignSystemSection } from '../components/DesignSystemSection';
 
 export const UXDocs = () => {
   useEffect(() => {
@@ -72,6 +73,9 @@ export const UXDocs = () => {
 
         </div>
       </section>
+
+      {/* Design System Reference */}
+      <DesignSystemSection />
       
     </div>
   );

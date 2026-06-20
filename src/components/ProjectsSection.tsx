@@ -81,14 +81,16 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects" className="section-padding" style={{ overflow: 'hidden', position: 'relative', zIndex: 1 }}>
-      <div className="container" style={{ textAlign: 'center', marginBottom: '64px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif" }}>
-          Portfolio
+      <div className="container" style={{ textAlign: 'center', marginBottom: '48px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", marginBottom: '16px' }}>
+          Projects
         </span>
-        <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '24px', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff' }}>
-          Project Gallery
+        <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '0', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
+          Selected Work
         </h2>
-        <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px' }}>A collection of our recent work and case studies.</p>
+        <p className="text-body-large" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6 }}>
+          A collection of my design work.
+        </p>
       </div>
 
       <div 

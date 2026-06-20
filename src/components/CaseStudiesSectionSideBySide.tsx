@@ -6,7 +6,7 @@ const caseStudies = [
   {
     id: 1,
     title: 'OneAssist Smart EPP',
-    description: 'An entirely new Employee Purchase Program ecosystem letting employees lease premium devices through salary-linked EMIs. Featuring an elegant mobile experience built from the ground up to maximize user conversion.',
+    description: 'A 0-to-1 Employee Purchase Program unlocking ~40% discounts on premium devices via salary-linked EMIs. I designed the end-to-end mobile experience to simplify complex financial flows and drive maximum user conversion.',
     tags: ['Product Design', 'Fintech', 'B2B2C'],
     image: '/images/Mockup2_EPP.png',
     bgColor: '#161618',
@@ -67,13 +67,12 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
         style={{ 
           display: 'flex', 
           flexDirection: 'column', 
-          gap: '32px', 
           padding: '40px',
           order: isEven ? 1 : 2,
         }}
       >
-        <div>
-          <h3 style={{ fontSize: '48px', fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '24px', lineHeight: 1.1, color: '#fff' }}>
+        <div style={{ marginBottom: '32px' }}>
+          <h3 style={{ fontSize: '48px', fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '16px', lineHeight: 1.1, color: '#fff' }}>
             {study.title}
           </h3>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
@@ -81,7 +80,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
           </p>
         </div>
         
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '48px' }}>
           {study.tags.map((tag: string, tagIndex: number) => (
             <span key={tagIndex} style={{
               fontSize: '12px',
@@ -112,7 +111,6 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
             cursor: 'pointer',
             padding: '16px 32px',
             borderRadius: '100px',
-            marginTop: '24px',
             letterSpacing: '1px',
             textTransform: 'uppercase',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -230,11 +228,11 @@ export const CaseStudiesSectionSideBySide = () => {
           viewport={{ once: true, amount: 0.3 }}
           style={{ textAlign: 'center', marginBottom: '140px', willChange: 'transform, opacity, filter' }}
         >
-          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif" }}>
-            Selected Works
+          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
+            Deep Dives
           </span>
-          <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '24px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff' }}>
-            Featured Case Studies
+          <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '0', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
+            Case Studies
           </h2>
         </motion.div>
 

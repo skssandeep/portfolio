@@ -140,15 +140,15 @@ export const LogoRevealOrbital2 = () => {
             >
               <div className="flex items-center gap-2">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                VIEWPORT: SCALABLE
+                APPROACH: USER_FIRST
               </div>
               <div className="flex items-center gap-2">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 12h18"></path><path d="M12 3v18"></path></svg>
-                LAYOUT: AUTO_FLEX
+                DESIGN: INCLUSIVE
               </div>
               <div className="flex items-center gap-2">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
-                SPATIAL_GRID: ACTIVE
+                LAYOUT: RESPONSIVE
               </div>
             </div>
             {/* Top Right: Typographic & Render Specs */}
@@ -157,15 +157,15 @@ export const LogoRevealOrbital2 = () => {
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               <div className="flex items-center gap-2">
-                TYPE: SYNE / 600W
+                TYPOGRAPHY: SYNE
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
               </div>
               <div className="flex items-center gap-2">
-                COLOR_SPACE: DCI-P3
+                COLORS: ACCESSIBLE
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2v20"></path></svg>
               </div>
               <div className="flex items-center gap-2">
-                RENDER: WEBGL_2.0
+                STATE: INTERACTIVE
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
               </div>
             </div>
@@ -191,7 +191,7 @@ export const LogoRevealOrbital2 = () => {
             className="relative mb-2 sm:mb-4 flex flex-col items-center w-full px-4 z-30"
           >
             <h2 className="text-[6vw] sm:text-[4.5vw] md:text-[3.5vw] font-medium leading-tight text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500 tracking-tight drop-shadow-xl" style={{ fontFamily: "'Syne', sans-serif" }}>
-              Ready to level up with
+              Ready to build world-class products with
             </h2>
           </div>
 
@@ -252,7 +252,7 @@ export const LogoRevealOrbital2 = () => {
               style={{ padding: '24px 80px', minWidth: '320px', minHeight: '64px', fontSize: '20px', fontFamily: "'JetBrains Mono', monospace" }}
               data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
             >
-              CLICK TO SUPERCHARGE YOUR BRAND!
+              SCHEDULE AN INTRO CALL
             </button>
           </div>
         </div>

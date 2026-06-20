@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 const steps = [
   {
     num: "1",
-    title: "Market Research",
-    desc: "Thoroughly analyze your market, outpace your competition, and pinpoint customer needs."
+    title: "Define the Problem",
+    desc: "Partner with Product and Engineering to align on business goals, user needs, and technical scope."
   },
   {
     num: "2",
-    title: "Content & Visuals",
-    desc: "Craft captivating content and visuals that elevate your brand and website above the competition."
+    title: "Iterative Design",
+    desc: "Rapidly explore solutions through wireframes, high-fidelity prototypes, and continuous user feedback."
   },
   {
     num: "3",
-    title: "Kickstart & Upscale",
-    desc: "Launch your website, fueling business growth through constant support and optimization."
+    title: "Build & Scale",
+    desc: "Deliver production-ready assets and contribute to a scalable design system for a seamless engineering handoff."
   }
 ];
 
@@ -45,7 +45,7 @@ export const HowItWorks = ({ variant: _variant = 'red' }: { variant?: 'white' | 
         fontWeight: 500,
         color: '#fff',
         position: 'relative',
-        boxShadow: `0px -10px 30px -15px var(--accent-color)`,
+        boxShadow: `0px -10px 30px -15px #7928CA`,
         background: 'var(--bg-secondary)', // Solid dark background so the line doesn't show through
         zIndex: 2
       }}>
@@ -54,7 +54,7 @@ export const HowItWorks = ({ variant: _variant = 'red' }: { variant?: 'white' | 
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,
           borderRadius: '50%',
-          background: `linear-gradient(180deg, var(--accent-color) 0%, rgba(185, 255, 102, 0.1) 80%, transparent 80%)`,
+          background: `linear-gradient(180deg, #7928CA 0%, #FF007A 50%, transparent 80%)`,
           zIndex: 1,
           WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
           WebkitMaskComposite: 'xor',
@@ -70,7 +70,7 @@ export const HowItWorks = ({ variant: _variant = 'red' }: { variant?: 'white' | 
         {step.title}
       </h3>
       
-      <p className="text-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0, marginTop: '16px', fontSize: '15px' }}>
+      <p className="text-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0, marginTop: '16px', fontSize: '18px' }}>
         {step.desc}
       </p>
     </div>
@@ -95,14 +95,14 @@ export const HowItWorks = ({ variant: _variant = 'red' }: { variant?: 'white' | 
           
           {/* Section Title */}
           <div style={{ textAlign: 'center', marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif" }}>
+            <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
               Process
             </span>
-            <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '24px', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff' }}>
-              How it works
+            <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '0', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
+              My Process
             </h2>
-            <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px' }}>
-              A streamlined 3-step framework designed to execute fast and deliver premium results without the usual agency friction.
+            <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
+              A simple, proven framework for turning complex problems into scalable, user-centered products.
             </p>
           </div>
 

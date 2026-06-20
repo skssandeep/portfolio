@@ -9,7 +9,6 @@ import { CaseStudiesSectionFinal } from '../components/CaseStudiesSectionFinal';
 import { CaseStudiesSectionSideBySide } from '../components/CaseStudiesSectionSideBySide';
 import { MoreCaseStudiesSection } from '../components/MoreCaseStudiesSection';
 import { LogoRevealOrbital2 } from '../components/ui/LogoRevealOrbital2';
-import { BrandLogoSection } from '../components/BrandLogoSection';
 import { ServicesSection } from '../components/ServicesSection';
 import { Testimonials } from '../components/Testimonials';
 import { HowItWorks } from '../components/HowItWorks';
@@ -17,7 +16,7 @@ import { FAQ } from '../components/FAQ';
 import { CTASection } from '../components/CTASection';
 import { ToolsSection } from '../components/ToolsSection';
 import { AboutSection } from '../components/AboutSection';
-import { DesignSystemSection } from '../components/DesignSystemSection';
+
 import { motion, useScroll, useTransform, useMotionValue, useMotionTemplate } from 'motion/react';
 
 const TUBES_COLORS = ["#f967fb", "#53bc28", "#6958d5"];
@@ -134,7 +133,7 @@ export const Home = () => {
         display: 'flex', 
         alignItems: 'center', 
         paddingTop: '128px', 
-        paddingBottom: '0', 
+        paddingBottom: '128px', 
         textAlign: 'center', 
         // overflow: 'visible' allows the parallax portal to bleed out behind other sections
         overflow: 'visible'
@@ -178,8 +177,8 @@ export const Home = () => {
 
         <div className="container scroll-reveal" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             
-            <h1 className="text-hero" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px', lineHeight: 1.15, textTransform: 'uppercase', opacity: 0.9 }}>
-              <span>DESIGNS THAT SELL</span>
+            <h1 className="text-hero" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '16px', lineHeight: 1.15, textTransform: 'uppercase', opacity: 0.9 }}>
+              <span>DESIGNING FOR USERS.</span>
               <span style={{ 
                 background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
                 WebkitBackgroundClip: 'text',
@@ -187,12 +186,18 @@ export const Home = () => {
                 WebkitTextFillColor: 'transparent',
                 color: 'transparent'
               }}>
-                INTERFACES THAT CONVERT.
+                OPTIMIZING FOR IMPACT.
               </span>
             </h1>
             
-            <p className="text-body-large" style={{ marginBottom: '48px', maxWidth: '1200px' }}>
-              Stop losing customers to slow, confusing websites. I design and engineer high-performance web experiences that turn your visitors into paying clients.
+            <p className="text-body-large" style={{ 
+              marginBottom: '32px', 
+              maxWidth: '800px', 
+              lineHeight: 1.6, 
+              color: '#E0E0E0', 
+              fontWeight: 400 
+            }}>
+              Bridging human-centered design and strategic thinking to build scalable product ecosystems that drive measurable business results.
             </p>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', justifyContent: 'center', alignItems: 'center' }}>
@@ -200,8 +205,7 @@ export const Home = () => {
                 
                 <LiquidButton 
                   size="lg" 
-                  data-cal-link="sandeepks/15min"
-                  data-cal-config='{"layout":"month_view"}'
+                  onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
                   style={{ 
                     fontWeight: 700, 
                     letterSpacing: '2px', 
@@ -224,11 +228,10 @@ export const Home = () => {
                     display: 'inline-block',
                     marginRight: '12px'
                   }} />
-                  BOOK A CALL WITH ME
+                  VIEW CASE STUDIES
                 </LiquidButton>
 
               </div>
-              <span style={{ color: 'var(--text-secondary)', fontSize: '13px', opacity: 0.7 }}>Free 15-Minute Strategy Session</span>
             </div>
           </div>
         </section>
@@ -260,14 +263,8 @@ export const Home = () => {
           {/* 8. Objection Handling: FAQ */}
           <FAQ />
 
-          {/* 8.5 Design System: Semantic Colors */}
-          <DesignSystemSection />
-
           {/* 9. Close: Final CTA / Logo Reveal Section */}
           <LogoRevealOrbital2 />
-
-          {/* 10. Brand Logo just above the footer */}
-          <BrandLogoSection />
         </>
       )}
     </>

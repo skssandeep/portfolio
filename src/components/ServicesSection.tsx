@@ -40,21 +40,10 @@ export const ServicesSection = () => {
 
 
           <div style={{ textAlign: 'center', marginBottom: '96px', position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <span style={{ 
-              background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              color: 'transparent',
-              fontWeight: 600, 
-              letterSpacing: '2px', 
-              textTransform: 'uppercase', 
-              fontSize: '14px', 
-              fontFamily: "'Syne', sans-serif" 
-            }}>
+            <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
               Services
             </span>
-            <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '24px', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '0', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
               Available Services that I<br />work on
             </h2>
           </div>
