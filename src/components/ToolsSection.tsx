@@ -8,13 +8,12 @@ import antigravityIdeLogo from '../assets/antigravity-ide.png';
 import uxPilotLogo from '../assets/uxpilot.png';
 
 const tools = [
-  { name: "Figma", customImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", category: "UI/UX Design", useIcon: false },
-  { name: "Framer", icon: SiFramer, category: "Web Engineering", color: "#ffffff", useIcon: true },
-  { name: "Claude", icon: SiClaude, category: "AI Architecture", color: "#D97757", useIcon: true },
-  { name: "ChatGPT", icon: SiOpenai, category: "Logic & Code", color: "#ffffff", useIcon: true },
-  { name: "Gemini", customImage: geminiLogo, category: "Data Analysis", useIcon: false },
-  { name: "UX Pilot", customImage: uxPilotLogo, category: "UX Research", useIcon: false },
-  { name: "Antigravity", customImage: antigravityLogo, category: "Agentic Automation", useIcon: false, scale: 1.45 },
+  { name: "Figma", customImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", category: "Product & UI Design", useIcon: false },
+  { name: "Framer", icon: SiFramer, category: "Frontend Development", color: "#ffffff", useIcon: true },
+  { name: "Claude", icon: SiClaude, category: "Design & Architecture", color: "#D97757", useIcon: true },
+  { name: "ChatGPT", icon: SiOpenai, category: "Research & UX Copy", color: "#ffffff", useIcon: true },
+  { name: "Gemini", customImage: geminiLogo, category: "Research & Development", useIcon: false },
+  { name: "Antigravity", customImage: antigravityLogo, category: "Autonomous Engineering", useIcon: false, scale: 1.45 },
   { name: "Antigravity IDE", customImage: antigravityIdeLogo, category: "Development Environment", useIcon: false, scale: 1.45 }
 ];
 
@@ -23,14 +22,38 @@ export const ToolsSection = () => {
     <section className="scroll-reveal" style={{ padding: '120px 0', position: 'relative' }}>
       <div className="container">
         <div style={{ marginBottom: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
-          The Arsenal
-        </span>
+        <motion.div 
+          style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '8px', marginBottom: '32px', cursor: 'pointer' }}
+          whileHover="hover"
+          whileTap="tap"
+          initial="rest"
+        >
+          {/* Interactive Boolean Operation Icon */}
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
+            <defs>
+               <filter id="boolGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="1.5" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            
+            {/* Left Circle (Purple) */}
+            <motion.circle cx="16" cy="12" r="8" stroke="#7928CA" strokeWidth="1.5" fill="rgba(121, 40, 202, 0.15)" filter="url(#boolGlow)"
+               variants={{ rest: { x: 0 }, hover: { x: -6 }, tap: { x: 4 } }} transition={{ type: "spring", stiffness: 300, damping: 15 }} />
+               
+            {/* Right Circle (Red) */}
+            <motion.circle cx="24" cy="12" r="8" stroke="var(--accent-color)" strokeWidth="1.5" fill="rgba(229, 9, 20, 0.15)"
+               variants={{ rest: { x: 0 }, hover: { x: 6 }, tap: { x: -4 } }} transition={{ type: "spring", stiffness: 300, damping: 15 }} />
+          </svg>
+          <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '13px', fontFamily: "'Syne', sans-serif" }}>
+            Tech Stack
+          </span>
+        </motion.div>
         <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '0', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
-          My Armour
+          The Arsenal
         </h2>
         <p className="text-body-large" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6 }}>
-          The modern design stack I use to craft digital experiences.
+          The exact tools and AI agents I use to design, build, and scale digital products.
         </p>
       </div>
 

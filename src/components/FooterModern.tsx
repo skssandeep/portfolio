@@ -50,7 +50,7 @@ export const FooterModern = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <li><a href="#" className="btn-link" style={{ fontSize: '15px' }}>X (Twitter)</a></li>
               <li><a href="#" className="btn-link" style={{ fontSize: '15px' }}>LinkedIn</a></li>
-              <li><a href="https://www.upwork.com/freelancers/~01b0aab6d05f52f81e" className="btn-link" style={{ fontSize: '15px' }}>Upwork</a></li>
+
             </ul>
           </div>
           

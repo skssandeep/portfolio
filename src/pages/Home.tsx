@@ -146,6 +146,9 @@ export const Home = () => {
           background: backgroundGlow,
           zIndex: 0,
           pointerEvents: 'none',
+          // Mask out the bottom so the glowing cursor light doesn't hit a hard horizontal edge
+          maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
         }} />
 
         {/* Grid overlay */}
@@ -156,9 +159,9 @@ export const Home = () => {
           backgroundSize: '50px 50px',
           zIndex: 0,
           pointerEvents: 'none',
-          // Mask out the very bottom to blend smoothly into Case Studies, and mask out the portal center slightly
-          maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
+          // Mask out the grid smoothly from top to bottom so it blends seamlessly into the black background
+          maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
         }} />
 
         <motion.div style={{ y: portalY, position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
@@ -176,6 +179,24 @@ export const Home = () => {
         </motion.div>
 
         <div className="container scroll-reveal" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+                        <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              marginBottom: '32px'
+            }}>
+              <span className="animate-pulse" style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 8px rgba(16, 185, 129, 0.4)' }}></span>
+              <span style={{ 
+                color: 'rgba(255, 255, 255, 0.55)', 
+                fontWeight: 500, 
+                letterSpacing: '0.2em', 
+                fontSize: '12px', 
+                textTransform: 'uppercase', 
+                fontFamily: "'Dune Rise', sans-serif" 
+              }}>
+                Sandeep KS • Product Designer
+              </span>
+            </div>
             
             <h1 className="text-hero" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '16px', lineHeight: 1.15, textTransform: 'uppercase', opacity: 0.9 }}>
               <span>DESIGNING FOR USERS.</span>
@@ -191,10 +212,10 @@ export const Home = () => {
             </h1>
             
             <p className="text-body-large" style={{ 
-              marginBottom: '32px', 
+              marginBottom: '40px', 
               maxWidth: '800px', 
               lineHeight: 1.6, 
-              color: '#E0E0E0', 
+              color: 'var(--text-secondary)', 
               fontWeight: 400 
             }}>
               Bridging human-centered design and strategic thinking to build scalable product ecosystems that drive measurable business results.
@@ -207,10 +228,11 @@ export const Home = () => {
                   size="lg" 
                   onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
                   style={{ 
-                    fontWeight: 700, 
-                    letterSpacing: '2px', 
+                    fontFamily: "'Syne', sans-serif",
+                    fontWeight: 500, 
+                    letterSpacing: '0px', 
                     padding: '0 48px', 
-                    fontSize: '1rem',
+                    fontSize: '16px',
                     minHeight: '60px',
                     position: 'relative',
                     zIndex: 1,
@@ -219,15 +241,6 @@ export const Home = () => {
                     gap: '16px'
                   }}
                 >
-                  <span className="animate-pulse" style={{ 
-                    width: '10px', 
-                    height: '10px', 
-                    borderRadius: '50%', 
-                    backgroundColor: '#22c55e', 
-                    boxShadow: '0 0 12px 4px rgba(34, 197, 94, 0.4)',
-                    display: 'inline-block',
-                    marginRight: '12px'
-                  }} />
                   VIEW CASE STUDIES
                 </LiquidButton>
 
@@ -239,31 +252,26 @@ export const Home = () => {
       {/* Sections and below */}
       {!figmaMode && (
         <>
-          {/* 2. Visual Proof: Gallery / Projects Carousel */}
-          <ProjectsSection />
-
-          {/* 3. Logical Proof: Case Studies */}
-          <CaseStudiesSectionSideBySide />
-
-          {/* 4. Social Proof: Clients Trust */}
-          <Testimonials />
-
-          {/* 5. Offer: Services Section */}
-          <ServicesSection />
-
-          {/* 6. USP: My Armour (Tools) */}
-          <ToolsSection />
-
-          {/* 6.5 Founder Intro: Who's behind Sandstormify */}
+          {/* 2. Establish Seniority & Pedigree */}
           <AboutSection />
 
-          {/* 7. Process: How it works */}
+          {/* 3. Logical Proof: Deep Problem Solving (Case Studies) */}
+          <CaseStudiesSectionSideBySide />
+
+          {/* 4. Process: How you achieve results */}
           <HowItWorks variant="red" />
 
-          {/* 8. Objection Handling: FAQ */}
-          <FAQ />
+          {/* 5. Areas of Expertise & Technical Domain */}
+          <ServicesSection />
+          <ToolsSection />
 
-          {/* 9. Close: Final CTA / Logo Reveal Section */}
+          {/* 6. Visual Proof: High-fidelity craft (UI Gallery) */}
+          <ProjectsSection />
+
+          {/* 7. Social Proof: Clients Trust */}
+          <Testimonials />
+
+          {/* 8. Close: Final CTA */}
           <LogoRevealOrbital2 />
         </>
       )}

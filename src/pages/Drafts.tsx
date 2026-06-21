@@ -307,7 +307,7 @@ export const Drafts = () => {
                     />
                     <CaseStudyCard 
                       title="AI-Powered Onboarding"
-                      role="UX Designer"
+                      role="Product Designer"
                       problem="High friction in the B2B signup flow resulted in a 65% bounce rate before completing profile setup."
                       impact="Implemented a conversational AI onboarding agent that dynamically adapted to user context, increasing completion rate by 42%."
                       imageUrl="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000"

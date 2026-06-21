@@ -107,7 +107,7 @@ export const FooterCreative = () => {
                 <span style={{ color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0', fontSize: '12px', marginBottom: '8px' }}>Socials</span>
                 <a href="#" className="creative-link" style={{ fontSize: '18px', color: 'var(--text-primary)', textDecoration: 'none' }}>X (Twitter)</a>
                 <a href="#" className="creative-link" style={{ fontSize: '18px', color: 'var(--text-primary)', textDecoration: 'none' }}>LinkedIn</a>
-                <a href="https://www.upwork.com/freelancers/~01b0aab6d05f52f81e" className="creative-link" style={{ fontSize: '18px', color: 'var(--text-primary)', textDecoration: 'none' }}>Upwork</a>
+
               </div>
             </div>
 

@@ -93,7 +93,7 @@ export const FooterHalo = () => {
             <span style={{ fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Social</span>
             <a href="#" className="btn-link" style={{ fontSize: '14px', color: 'var(--text-primary)' }}>X (Twitter)</a>
             <a href="#" className="btn-link" style={{ fontSize: '14px', color: 'var(--text-primary)' }}>LinkedIn</a>
-            <a href="https://www.upwork.com/freelancers/~01b0aab6d05f52f81e" className="btn-link" style={{ fontSize: '14px', color: 'var(--text-primary)' }}>Upwork</a>
+
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <span style={{ fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Site</span>
@@ -115,13 +115,19 @@ export const FooterHalo = () => {
         flexDirection: 'column',
         gap: '24px'
       }}>
-        <a href="mailto:hello@sandstormify.com" style={{ 
+        <button 
+          data-cal-link="sandeepks/15min" 
+          data-cal-config='{"layout":"month_view"}'
+          style={{ 
           display: 'flex', 
           alignItems: 'center',
           gap: '16px',
           textDecoration: 'none',
           color: 'var(--text-primary)',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          background: 'transparent',
+          border: 'none',
+          padding: 0
         }} className="hover-scale">
           <div style={{ 
             width: '80px', 
@@ -136,10 +142,10 @@ export const FooterHalo = () => {
           }}>
             <ArrowUpRight size={32} />
           </div>
-          <h2 style={{ fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 500, letterSpacing: '-2px', margin: 0 }}>
+          <h2 style={{ fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 500, letterSpacing: '-2px', margin: 0, fontFamily: "'Syne', sans-serif" }}>
             Start a project
           </h2>
-        </a>
+        </button>
       </div>
 
       {/* Bottom Footer Bar */}

@@ -21,7 +21,7 @@ export const FooterPremium = () => {
   const socialLinks = [
     { label: "X", href: "#" },
     { label: "LinkedIn", href: "#" },
-    { label: "Upwork", href: "https://www.upwork.com/freelancers/~01b0aab6d05f52f81e" },
+
     { label: "Instagram", href: "#" }
   ];
 

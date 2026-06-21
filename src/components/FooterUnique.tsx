@@ -41,7 +41,7 @@ export const FooterUnique = () => {
 
           <div>
             <span style={{ fontSize: '13px', letterSpacing: '0', textTransform: 'uppercase', color: 'var(--accent-color)', fontWeight: 600 }}>Let's work together</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 4rem)', fontWeight: 600, lineHeight: 1.1, marginTop: '16px', marginBottom: '40px', maxWidth: '600px' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 4rem)', fontWeight: 600, lineHeight: 1.1, marginTop: '16px', marginBottom: '40px', maxWidth: '600px', fontFamily: "'Syne', sans-serif", letterSpacing: '-0.02em' }}>
               Have an idea? <br />
               <span style={{ color: 'var(--text-secondary)' }}>Let's build it.</span>
             </h2>

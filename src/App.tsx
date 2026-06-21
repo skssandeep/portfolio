@@ -13,8 +13,6 @@ import { Prototypes } from './pages/Prototypes';
 import { Essays } from './pages/Essays';
 import { Process } from './pages/Process';
 import { SmartEPPCaseStudy } from './pages/SmartEPPCaseStudy';
-import { UXDocs } from './pages/UXDocs';
-import { BrandLogos } from './pages/BrandLogos';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css';
 
@@ -30,12 +28,10 @@ const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
 };
 
 const navLinks = [
-  { label: 'Projects', path: '/#projects', id: 'projects' },
-  { label: 'Services', path: '/#services', id: 'services' },
-  { label: 'How it works', path: '/#how-it-works', id: 'how-it-works' },
-  { label: 'Drafts', path: '/drafts', id: 'drafts' },
-  { label: 'UX Docs', path: '/ux-docs', id: 'ux-docs' },
-  { label: 'FAQs', path: '/#faq', id: 'faq' }
+  { label: 'About', path: '/#about', id: 'about' },
+  { label: 'Case Studies', path: '/#case-studies', id: 'case-studies' },
+  { label: 'Process', path: '/#how-it-works', id: 'how-it-works' },
+  { label: 'Expertise', path: '/#services', id: 'services' }
 ];
 
 function App() {
@@ -104,7 +100,7 @@ function App() {
               
               {/* Left: Logo */}
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Link to="/" style={{ fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', fontSize: '18px', letterSpacing: '0', color: 'var(--text-primary)', paddingTop: '2px', display: 'flex', alignItems: 'center' }}>
+                <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', fontSize: '18px', letterSpacing: '0', color: 'var(--text-primary)', paddingTop: '2px', display: 'flex', alignItems: 'center' }}>
                   SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
                 </Link>
               </div>
@@ -214,8 +210,6 @@ function App() {
             <Route path="/prototypes" element={<Prototypes />} />
             <Route path="/essays" element={<Essays />} />
             <Route path="/process" element={<Process />} />
-            <Route path="/ux-docs" element={<UXDocs />} />
-            <Route path="/brand-logos" element={<BrandLogos />} />
           </Routes>
         </ErrorBoundary>
 

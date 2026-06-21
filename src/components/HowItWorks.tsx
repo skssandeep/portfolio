@@ -15,7 +15,7 @@ const steps = [
   {
     num: "3",
     title: "Build & Scale",
-    desc: "Deliver production-ready assets and contribute to a scalable design system for a seamless engineering handoff."
+    desc: "Deliver pixel-perfect specs and reusable components so engineering can build faster and ship with zero friction."
   }
 ];
 
@@ -82,26 +82,65 @@ export const HowItWorks = ({ variant: _variant = 'red' }: { variant?: 'white' | 
         
         {/* The Dark Card Container */}
         <div style={{
-          background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%)',
-          borderRadius: '32px',
-          padding: '96px 64px',
-          borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-          borderLeft: '1px solid rgba(255, 255, 255, 0.02)',
-          borderRight: '1px solid rgba(255, 255, 255, 0.02)',
-          borderBottom: 'none',
-          position: 'relative',
-          overflow: 'hidden'
+          position: 'relative'
         }}>
           
           {/* Section Title */}
           <div style={{ textAlign: 'center', marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
+          <motion.div 
+            style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '8px', marginBottom: '32px', cursor: 'pointer' }}
+            whileHover="hover"
+            whileTap="tap"
+            initial="rest"
+          >
+            {/* Interactive Prototyping Noodle Icon */}
+            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
+              <defs>
+                 <linearGradient id="protoGradient" x1="0" y1="0" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+                   <stop offset="0%" stopColor="#7928CA" />
+                   <stop offset="50%" stopColor="#FF007A" />
+                   <stop offset="100%" stopColor="var(--accent-color)" />
+                 </linearGradient>
+                 <filter id="protoGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="1.5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+              
+              {/* Frame 1 (Left) */}
+              <motion.g variants={{ rest: { x: 0 }, hover: { x: -6 }, tap: { x: 3 } }} transition={{ type: "spring", stiffness: 300, damping: 15 }}>
+                <rect x="4" y="6" width="12" height="12" rx="2" fill="rgba(121, 40, 202, 0.1)" stroke="#7928CA" strokeWidth="1.5" />
+                <circle cx="17" cy="12" r="2.5" fill="#7928CA" filter="url(#protoGlow)" />
+                <circle cx="17" cy="12" r="1.5" fill="#fff" />
+              </motion.g>
+
+              {/* Frame 2 (Right) */}
+              <motion.g variants={{ rest: { x: 0 }, hover: { x: 6 }, tap: { x: -3 } }} transition={{ type: "spring", stiffness: 300, damping: 15 }}>
+                <rect x="32" y="6" width="12" height="12" rx="2" fill="rgba(229, 9, 20, 0.1)" stroke="var(--accent-color)" strokeWidth="1.5" />
+                {/* Arrow Head */}
+                <path d="M 29 9 L 32 12 L 29 15" stroke="var(--accent-color)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </motion.g>
+
+              {/* Connecting Prototype Noodle */}
+              <motion.line 
+                y1="12" y2="12"
+                stroke="url(#protoGradient)" strokeWidth="2" strokeLinecap="round"
+                variants={{
+                  rest: { x1: 17, x2: 31 },
+                  hover: { x1: 11, x2: 37 },
+                  tap: { x1: 20, x2: 28 }
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              />
+            </svg>
+            <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '13px', fontFamily: "'Syne', sans-serif" }}>
               Process
             </span>
+          </motion.div>
             <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '0', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
               My Process
             </h2>
-            <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
+            <p className="text-body-large" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6 }}>
               A simple, proven framework for turning complex problems into scalable, user-centered products.
             </p>
           </div>
@@ -134,8 +173,8 @@ export const HowItWorks = ({ variant: _variant = 'red' }: { variant?: 'white' | 
                 style={{
                   width: '25%', // Length of the laser
                   height: '100%',
-                  background: 'linear-gradient(90deg, transparent, var(--accent-color), transparent)',
-                  boxShadow: '0 0 15px 2px var(--accent-color)', // Glowing aura
+                  background: 'linear-gradient(90deg, transparent, #FF007A, transparent)',
+                  boxShadow: '0 0 15px 2px #7928CA', // Glowing aura
                   opacity: 0.8
                 }}
               />

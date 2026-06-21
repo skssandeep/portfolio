@@ -8,9 +8,42 @@ export const AboutSection = () => {
     <section id="about" className="section-padding scroll-reveal" style={{ position: 'relative', zIndex: 10 }}>
       <div className="container" style={{ maxWidth: '1200px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '64px' }}>
-          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
-            About Me
-          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+            <motion.div 
+              style={{ display: 'inline-flex', width: 'fit-content', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
+              whileHover="hover"
+              whileTap="tap"
+              initial="rest"
+            >
+              <svg width="56" height="40" viewBox="0 0 56 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
+                <defs>
+                  <linearGradient id="penGradient" x1="0" y1="0" x2="56" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#7928CA" />
+                    <stop offset="50%" stopColor="#FF007A" />
+                    <stop offset="100%" stopColor="var(--accent-color)" />
+                  </linearGradient>
+                </defs>
+                
+                {/* Handles (White faint lines) */}
+                <motion.line x1="12" y1="28" stroke="rgba(255,255,255,0.3)" strokeWidth="1" variants={{ rest: { x2: 26, y2: 28 }, hover: { x2: 20, y2: 38 }, tap: { x2: 8, y2: 18 } }} transition={{ type: "spring", stiffness: 300, damping: 12 }} />
+                <motion.line x1="44" y1="12" stroke="rgba(255,255,255,0.3)" strokeWidth="1" variants={{ rest: { x2: 30, y2: 12 }, hover: { x2: 36, y2: 2 }, tap: { x2: 48, y2: 22 } }} transition={{ type: "spring", stiffness: 300, damping: 12 }} />
+                
+                {/* Bezier Curve */}
+                <motion.path stroke="url(#penGradient)" strokeWidth="2" fill="none" variants={{ rest: { d: "M 12 28 C 26 28, 30 12, 44 12" }, hover: { d: "M 12 28 C 20 38, 36 2, 44 12" }, tap: { d: "M 12 28 C 8 18, 48 22, 44 12" } }} transition={{ type: "spring", stiffness: 300, damping: 12 }} />
+                
+                {/* Anchor Nodes (Black Squares with Colored Borders) */}
+                <rect x="10" y="26" width="4" height="4" fill="#000" stroke="#7928CA" strokeWidth="1" />
+                <rect x="42" y="10" width="4" height="4" fill="#000" stroke="var(--accent-color)" strokeWidth="1" />
+
+                {/* Control Points (Solid White Circles) */}
+                <motion.circle r="1.5" fill="#fff" variants={{ rest: { cx: 26, cy: 28 }, hover: { cx: 20, cy: 38 }, tap: { cx: 8, cy: 18 } }} transition={{ type: "spring", stiffness: 300, damping: 12 }} />
+                <motion.circle r="1.5" fill="#fff" variants={{ rest: { cx: 30, cy: 12 }, hover: { cx: 36, cy: 2 }, tap: { cx: 48, cy: 22 } }} transition={{ type: "spring", stiffness: 300, damping: 12 }} />
+              </svg>
+            </motion.div>
+            <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '13px', fontFamily: "'Syne', sans-serif" }}>
+              About Me
+            </span>
+          </div>
           <h2 style={{ 
             fontSize: 'clamp(40px, 5vw, 56px)', 
             fontWeight: 500, 
@@ -47,8 +80,8 @@ export const AboutSection = () => {
                 transition={{ type: 'spring', bounce: 0.4, duration: 1 }}
                 style={{
                   position: 'relative',
-                  width: '320px',
-                  height: '380px',
+                  width: '400px',
+                  height: '480px',
                   borderRadius: '24px',
                   overflow: 'hidden',
                   boxShadow: '0 30px 60px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.1)',
@@ -63,6 +96,22 @@ export const AboutSection = () => {
                      height: '100%', 
                      objectFit: 'cover', 
                      filter: 'grayscale(100%) contrast(1.1)' 
+                   }} 
+                 />
+                 {/* Online Status Dot */}
+                 <span 
+                   className="animate-pulse" 
+                   style={{ 
+                     position: 'absolute',
+                     top: '20px',
+                     right: '20px',
+                     width: '12px', 
+                     height: '12px', 
+                     borderRadius: '50%', 
+                     backgroundColor: '#10b981', 
+                     boxShadow: '0 0 12px rgba(16, 185, 129, 0.8)',
+                     border: '2px solid rgba(0,0,0,0.4)',
+                     zIndex: 3 
                    }} 
                  />
                  {/* Dark gradient overlay for text legibility at bottom */}
@@ -93,28 +142,32 @@ export const AboutSection = () => {
                 }}
               >
                 <div style={{ 
-                  background: 'var(--accent-color)', 
+                  background: 'linear-gradient(90deg, #7928CA 0%, #FF007A 35%, #ff0033 75%)', 
                   color: '#fff', 
-                  padding: '6px 16px', 
+                  padding: '8px 20px', 
                   borderRadius: '100px', 
-                  fontSize: '14px', 
-                  fontWeight: 800,
-                  boxShadow: '0 8px 16px rgba(229, 9, 20, 0.2)'
+                  fontSize: '15px', 
+                  fontWeight: 500,
+                  boxShadow: '0 8px 24px rgba(255, 0, 122, 0.4)',
+                  letterSpacing: '0.02em',
+                  fontFamily: "'Syne', sans-serif"
                 }}>
-                  Sandeep
+                  Sandeep KS
                 </div>
                 <div style={{ 
-                  background: 'rgba(255, 255, 255, 0.1)', 
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  background: 'rgba(255, 255, 255, 0.05)', 
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
                   color: '#fff', 
                   padding: '8px 20px', 
                   borderRadius: '100px', 
                   fontSize: '14px', 
-                  fontWeight: 600,
-                  boxShadow: '0 8px 16px rgba(0,0,0,0.2)'
+                  fontWeight: 500,
+                  boxShadow: '0 8px 16px rgba(0,0,0,0.4)',
+                  letterSpacing: '0.01em',
+                  fontFamily: "'Syne', sans-serif"
                 }}>
-                  UX Designer
+                  Product Designer
                 </div>
               </motion.div>
             </div>
@@ -134,12 +187,15 @@ export const AboutSection = () => {
             <div className="relative z-20 flex flex-col gap-8 w-full">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                 <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
-                  I'm a UX Designer specializing in complex SaaS systems and zero-to-one execution. For over 4 years, I've simplified dense B2B workflows into frictionless experiences that drive enterprise adoption.
+                  I'm a Product Designer with <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>3+ years of experience</span> transforming complex B2B and consumer ecosystems into seamless, high-converting experiences. I focus on building products that people actually love to use, driving real business growth.
                 </p>
                 <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
-                  I blend analytical precision with deep user empathy—architecting unified design systems that reduce cross-platform friction and scale seamlessly.
+                  Recently, I led the design of an enterprise mobile and web platform adopted by <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>20+ corporate partners</span>. By creating a unified design system, I eliminated user friction and drastically reduced post-launch support tickets.
                   <br /><br />
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>My focus:</span> Bridging human needs and business objectives through world-class UX design.
+                  <span style={{ position: 'relative', display: 'inline-block', marginRight: '4px' }}>
+                    <span style={{ position: 'absolute', left: '0px', right: '0px', bottom: '4px', height: '9px', background: 'linear-gradient(90deg, #8a0000, #b30000)', borderRadius: '2px', zIndex: 0 }} />
+                    <span style={{ color: '#ffffff', fontWeight: 700, fontFamily: "'Syne', sans-serif", letterSpacing: '0.02em', position: 'relative', zIndex: 1 }}>My Edge:</span>
+                  </span> I started my career in QA Engineering. I bring that same analytical mindset into my design process, ensuring every product I build is not only beautiful, but technically flawless and ready to scale.
                 </p>
               </div>
               
@@ -148,11 +204,12 @@ export const AboutSection = () => {
                   size="lg"
                   data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}' 
                   style={{
-                    fontWeight: 800,
-                    padding: '0 32px',
+                    fontWeight: 600,
+                    padding: '0 40px',
                     minHeight: '56px',
                     borderRadius: '100px',
-                    letterSpacing: '1px'
+                    letterSpacing: '1px',
+                    fontSize: '16px'
                   }}
                 >
                   <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>

@@ -125,10 +125,10 @@ export const LogoRevealOrbital2 = () => {
     <div className="w-full relative">
       <section 
         ref={containerRef} 
-        className="relative flex flex-col items-center justify-center w-full min-h-screen bg-[#020205] overflow-hidden"
+        className="relative flex flex-col items-center justify-center w-full min-h-screen bg-transparent overflow-hidden"
       >
         {/* Deep Space Background Glow */}
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.05)_0%,rgba(0,0,0,1)_70%)] pointer-events-none" />
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(255,0,0,0.08)_0%,transparent_60%)] pointer-events-none" />
         
         {/* HUD Elements - Design Engineering Theme */}
         <div ref={hudRef} className="absolute inset-0 pointer-events-none z-10 flex flex-col justify-between p-6 sm:p-10">
@@ -190,7 +190,7 @@ export const LogoRevealOrbital2 = () => {
             ref={topContentRef}
             className="relative mb-2 sm:mb-4 flex flex-col items-center w-full px-4 z-30"
           >
-            <h2 className="text-[6vw] sm:text-[4.5vw] md:text-[3.5vw] font-medium leading-tight text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500 tracking-tight drop-shadow-xl" style={{ fontFamily: "'Syne', sans-serif" }}>
+            <h2 className="text-[6vw] sm:text-[4.5vw] md:text-[3.5vw] font-medium leading-tight text-center text-white opacity-90 tracking-tight drop-shadow-xl" style={{ fontFamily: "'Syne', sans-serif" }}>
               Ready to build world-class products with
             </h2>
           </div>
@@ -248,11 +248,11 @@ export const LogoRevealOrbital2 = () => {
             style={{ marginTop: 'clamp(2rem, 4vw, 3.5rem)' }}
           >
             <button 
-              className="rounded-full bg-white text-black font-mono font-bold tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] cursor-pointer whitespace-nowrap inline-flex items-center justify-center"
-              style={{ padding: '24px 80px', minWidth: '320px', minHeight: '64px', fontSize: '20px', fontFamily: "'JetBrains Mono', monospace" }}
+              className="rounded-full bg-white text-black font-bold tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] cursor-pointer whitespace-nowrap inline-flex items-center justify-center"
+              style={{ padding: '24px 80px', minWidth: '320px', minHeight: '64px', fontSize: '20px', fontFamily: "'Syne', sans-serif", letterSpacing: '2px' }}
               data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
             >
-              SCHEDULE AN INTRO CALL
+              BOOK AN INTRO CALL
             </button>
           </div>
         </div>

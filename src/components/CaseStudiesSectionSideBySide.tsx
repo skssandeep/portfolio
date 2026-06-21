@@ -75,7 +75,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
           <h3 style={{ fontSize: '48px', fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '16px', lineHeight: 1.1, color: '#fff' }}>
             {study.title}
           </h3>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
             {study.description}
           </p>
         </div>
@@ -83,13 +83,17 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '48px' }}>
           {study.tags.map((tag: string, tagIndex: number) => (
             <span key={tagIndex} style={{
-              fontSize: '12px',
-              padding: '8px 16px',
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.1)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              fontSize: '11px',
+              fontFamily: "'Syne', sans-serif",
+              fontWeight: 600,
+              padding: '6px 16px',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.15)',
               borderRadius: '100px',
-              color: 'rgba(255,255,255,0.8)',
-              letterSpacing: '0.04em',
+              color: 'rgba(255,255,255,0.7)',
+              letterSpacing: '0.06em',
               textTransform: 'uppercase'
             }}>
               {tag}
@@ -100,10 +104,11 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
         <button 
           onClick={() => navigate(study.customLink || `/case-study/${study.id}`)}
           style={{
+            fontFamily: "'Syne', sans-serif",
             background: '#fff',
             border: 'none',
             color: '#000',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: 600,
             display: 'inline-flex',
             alignItems: 'center',
@@ -228,9 +233,37 @@ export const CaseStudiesSectionSideBySide = () => {
           viewport={{ once: true, amount: 0.3 }}
           style={{ textAlign: 'center', marginBottom: '140px', willChange: 'transform, opacity, filter' }}
         >
-          <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
-            Deep Dives
-          </span>
+          <motion.div 
+            style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '8px', marginBottom: '32px', cursor: 'pointer' }}
+            whileHover="hover"
+            whileTap="tap"
+            initial="rest"
+          >
+            {/* Interactive Isometric Layer Stack */}
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
+              <defs>
+                <filter id="layerGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+              {/* Layer 3 (Bottom - Red) */}
+              <motion.path d="M6,24 L20,17 L34,24 L20,31 Z" stroke="var(--accent-color)" strokeWidth="1.5" strokeLinejoin="round" fill="rgba(229, 9, 20, 0.05)"
+                variants={{ rest: { y: 0 }, hover: { y: 8 }, tap: { y: -4 } }} 
+                transition={{ type: 'spring', stiffness: 300, damping: 15 }} />
+              {/* Layer 2 (Middle - Pink) */}
+              <motion.path d="M6,24 L20,17 L34,24 L20,31 Z" stroke="#FF007A" strokeWidth="1.5" strokeLinejoin="round" fill="rgba(255, 0, 122, 0.1)"
+                variants={{ rest: { y: -5 }, hover: { y: -2 }, tap: { y: -4 } }} 
+                transition={{ type: 'spring', stiffness: 300, damping: 15 }} />
+              {/* Layer 1 (Top - Purple) */}
+              <motion.path d="M6,24 L20,17 L34,24 L20,31 Z" stroke="#7928CA" strokeWidth="1.5" strokeLinejoin="round" fill="rgba(121, 40, 202, 0.15)" filter="url(#layerGlow)"
+                variants={{ rest: { y: -10 }, hover: { y: -12 }, tap: { y: -4 } }} 
+                transition={{ type: 'spring', stiffness: 300, damping: 15 }} />
+            </svg>
+            <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '13px', fontFamily: "'Syne', sans-serif" }}>
+              Deep Dives
+            </span>
+          </motion.div>
           <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '0', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
             Case Studies
           </h2>

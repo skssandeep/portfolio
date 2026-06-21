@@ -19,7 +19,7 @@ export const Footer = () => {
   const socialLinks = [
     { label: "X", href: "#" },
     { label: "LinkedIn", href: "#" },
-    { label: "Upwork", href: "https://www.upwork.com/freelancers/~01b0aab6d05f52f81e" },
+
     { label: "Instagram", href: "#" },
   ];
 
@@ -31,17 +31,45 @@ export const Footer = () => {
       position: 'relative', 
       overflow: 'hidden', 
       borderRadius: '32px', 
-      backgroundColor: 'var(--bg-secondary)',
-      boxShadow: 'var(--glass-shadow)',
-      border: '1px solid var(--glass-border)'
+      backgroundColor: 'transparent',
+      border: '1px solid rgba(255,255,255,0.05)'
     }}>
+
+
+      {/* Background Glow */}
+      <div style={{
+        position: 'absolute',
+        bottom: 0,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '800px',
+        height: '400px',
+        background: 'radial-gradient(ellipse at bottom, rgba(239, 68, 68, 0.08) 0%, transparent 70%)',
+        zIndex: 0,
+        pointerEvents: 'none'
+      }} />
+
+      {/* Architectural Grid */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+        backgroundSize: '40px 40px',
+        zIndex: 0,
+        pointerEvents: 'none',
+        maskImage: 'radial-gradient(ellipse at bottom, black 0%, transparent 80%)',
+        WebkitMaskImage: 'radial-gradient(ellipse at bottom, black 0%, transparent 80%)'
+      }} />
       <div style={{ margin: '0 auto', padding: '64px', position: 'relative', zIndex: 10 }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '64px' }}>
           
           {/* Brand section */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '400px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <a href="https://sandstormify.com" style={{ color: 'var(--text-primary)', fontSize: '16px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '0', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+              <a href="https://sandstormify.com" style={{ color: 'var(--text-primary)', fontSize: '20px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '0', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                 SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
               </a>
               <span style={{ color: 'var(--text-secondary)', fontSize: '11px', letterSpacing: '0', textTransform: 'uppercase', opacity: 0.7 }}>
@@ -49,7 +77,7 @@ export const Footer = () => {
               </span>
             </div>
             <p style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
-              Sandstormify is a premium UI/UX design studio focused on process over polish.
+              A Product Designer focused on solving complex user problems and driving measurable business impact.
             </p>
           </div>
 
@@ -123,8 +151,8 @@ export const Footer = () => {
 
           {/* Links & Copyright */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <Link to="/brand-logos" style={{ color: 'var(--text-secondary)', fontSize: '14px', textDecoration: 'none', borderBottom: '1px solid transparent' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-              Brand Logos
+            <Link to="/drafts" style={{ color: 'var(--text-secondary)', fontSize: '14px', textDecoration: 'none', borderBottom: '1px solid transparent' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+              Drafts
             </Link>
             <p style={{ color: 'var(--text-secondary)', fontSize: '14px', margin: 0 }}>
               &copy; {new Date().getFullYear()} Sandstormify. All rights reserved.
@@ -132,8 +160,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <FooterBackgroundGradient />
-      </footer>
+    </footer>
     </div>
   );
 }

@@ -10,7 +10,7 @@ const caseStudiesDB: Record<string, any> = {
     title: 'OneAssist Smart EPP',
     client: 'OneAssist',
     timeline: 'Product Launch',
-    role: 'Lead UI/UX Designer',
+    role: 'Lead Product Designer',
     heroMetric: '10k+',
     heroMetricLabel: 'Employees Onboarded',
     metrics: [
