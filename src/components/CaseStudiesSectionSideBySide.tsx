@@ -85,7 +85,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
             <span key={tagIndex} style={{
               display: 'inline-flex',
               alignItems: 'center',
-              fontSize: '11px',
+              fontSize: '12px',
               fontFamily: "'Syne', sans-serif",
               fontWeight: 600,
               padding: '6px 16px',

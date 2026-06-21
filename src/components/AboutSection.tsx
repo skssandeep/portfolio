@@ -146,10 +146,10 @@ export const AboutSection = () => {
                   color: '#fff', 
                   padding: '8px 20px', 
                   borderRadius: '100px', 
-                  fontSize: '15px', 
+                  fontSize: '16px', 
                   fontWeight: 500,
                   boxShadow: '0 8px 24px rgba(255, 0, 122, 0.4)',
-                  letterSpacing: '0.02em',
+                  letterSpacing: '0px',
                   fontFamily: "'Syne', sans-serif"
                 }}>
                   Sandeep KS
@@ -161,10 +161,10 @@ export const AboutSection = () => {
                   color: '#fff', 
                   padding: '8px 20px', 
                   borderRadius: '100px', 
-                  fontSize: '14px', 
+                  fontSize: '16px', 
                   fontWeight: 500,
                   boxShadow: '0 8px 16px rgba(0,0,0,0.4)',
-                  letterSpacing: '0.01em',
+                  letterSpacing: '0px',
                   fontFamily: "'Syne', sans-serif"
                 }}>
                   Product Designer
@@ -204,11 +204,11 @@ export const AboutSection = () => {
                   size="lg"
                   data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}' 
                   style={{
-                    fontWeight: 600,
+                    fontWeight: 500,
                     padding: '0 40px',
                     minHeight: '56px',
                     borderRadius: '100px',
-                    letterSpacing: '1px',
+                    letterSpacing: '0px',
                     fontSize: '16px'
                   }}
                 >

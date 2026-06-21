@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { LiquidButton } from './ui/liquid-glass-button';
 
 const testimonials = [
@@ -100,14 +101,41 @@ export const Testimonials = () => {
           
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '48px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <span style={{ color: 'var(--accent-color)', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', fontSize: '14px', fontFamily: "'Syne', sans-serif", display: 'block', marginBottom: '16px' }}>
-                Testimonials
+              <motion.div 
+                style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '8px', marginBottom: '32px', cursor: 'pointer' }}
+                whileHover="hover"
+                whileTap="tap"
+                initial="rest"
+                animate="rest"
+              >
+                {/* Interactive Star/Spark Icon */}
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
+                  <defs>
+                     <filter id="starGlow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="2" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
+                  
+                  <motion.path 
+                    d="M20 4C20 12.8366 12.8366 20 4 20C12.8366 20 20 27.1634 20 36C20 27.1634 27.1634 20 36 20C27.1634 20 20 12.8366 20 4Z" 
+                    fill="rgba(229, 9, 20, 0.15)" stroke="var(--accent-color)" strokeWidth="1.5" filter="url(#starGlow)"
+                    variants={{ rest: { scale: 1, rotate: 0 }, hover: { scale: 1.1, rotate: 90 }, tap: { scale: 0.8, rotate: -45 } }}
+                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                  />
+                  <motion.circle cx="20" cy="20" r="3" fill="#fff" 
+                    variants={{ rest: { scale: 1 }, hover: { scale: 0 }, tap: { scale: 1.5 } }}
+                  />
+                </svg>
+              </motion.div>
+              <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '13px', fontFamily: "'Syne', sans-serif" }}>
+                Proven Collaboration
               </span>
-              <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '0', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
-                Client Love
+              <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginTop: '16px', marginBottom: '16px', fontWeight: 500, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15 }}>
+                Trusted by Teams.
               </h2>
               <p className="text-body-large" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6 }}>
-                Feedback from founders and teams I've partnered with.
+                Here’s what engineering and product leads say about building with me.
               </p>
             </div>
 
@@ -116,9 +144,9 @@ export const Testimonials = () => {
               style={{ 
                 width: '100%', 
                 overflow: 'hidden', 
-                padding: '20px 0',
+                padding: '40px 0 100px 0', 
                 position: 'relative',
-                marginBottom: '64px'
+                marginBottom: '0px'
               }}
             >
               <div 
@@ -184,23 +212,6 @@ export const Testimonials = () => {
               <div style={{ position: 'absolute', top: 0, right: 0, width: '100px', height: '100%', background: 'linear-gradient(to left, var(--bg-color), transparent)', pointerEvents: 'none' }} />
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <LiquidButton 
-                size="lg" 
-                style={{ 
-                  fontWeight: 700, 
-                  letterSpacing: '2px', 
-                  padding: '0 56px', 
-                  fontSize: '1rem',
-                  minHeight: '60px',
-                  position: 'relative',
-                  zIndex: 1
-                }}
-                onClick={() => window.open('https://www.upwork.com/freelancers/~01b0aab6d05f52f81e', '_blank')}
-              >
-                VISIT MY UPWORK PROFILE
-              </LiquidButton>
-            </div>
           </div>
         </div>
       </div>
