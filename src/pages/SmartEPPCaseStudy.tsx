@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ArrowDown, CheckCircle2, XCircle, AlertCircle, Target, Lightbulb, Search, Smartphone, Palette, Users, ChevronLeft, ChevronRight, LayoutGrid, ZoomOut, ZoomIn, Maximize, Landmark, Package, Columns } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 
 export const SmartEPPCaseStudy = () => {
   const [modalImages, setModalImages] = useState<string[]>([]);
@@ -13,6 +13,32 @@ export const SmartEPPCaseStudy = () => {
     setImageWidth(500);
   }, [modalIndex]);
   const [showHeroPill, setShowHeroPill] = useState(true);
+  const modalContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        const zoomDelta = e.deltaY * -3;
+        setImageWidth(w => Math.max(300, Math.min(3000, w + zoomDelta)));
+      }
+    };
+
+    const el = modalContainerRef.current;
+    if (el) {
+      el.addEventListener('wheel', handleWheel, { passive: false });
+    }
+    return () => {
+      if (el) el.removeEventListener('wheel', handleWheel);
+    };
+  }, [modalIndex]);
+  
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
   
   const finalDesignsRef = useRef<HTMLElement>(null);
 
@@ -139,6 +165,20 @@ export const SmartEPPCaseStudy = () => {
 
   return (
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px', overflowX: 'hidden' }}>
+      {/* Animated Gradient Reading Progress Bar */}
+      <motion.div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '4px',
+          background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)',
+          transformOrigin: '0%',
+          scaleX,
+          zIndex: 99999
+        }}
+      />
       
       {/* Fullscreen Image Modal */}
       <AnimatePresence>
@@ -183,10 +223,12 @@ export const SmartEPPCaseStudy = () => {
             )}
 
             <div 
+              ref={modalContainerRef}
               style={{ maxHeight: '90vh', width: '80vw', overflowY: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', padding: '20px 0' }} 
-              onClick={(e) => e.stopPropagation()}
+              onClick={() => setModalIndex(null)}
             >
               <motion.img 
+                 onClick={(e) => e.stopPropagation()}
                  key={modalIndex} 
                  initial={{ scale: 0.95, opacity: 0, y: 20 }} 
                  animate={{ scale: 1, opacity: 1, y: 0 }} 
@@ -195,10 +237,13 @@ export const SmartEPPCaseStudy = () => {
                  src={modalImages[modalIndex]} 
                  onLoad={(e) => {
                    const img = e.target as HTMLImageElement;
+                   const aspectRatio = img.naturalWidth / img.naturalHeight;
+                   const maxInitialHeight = window.innerHeight * 0.85;
+                   const fitWidth = maxInitialHeight * aspectRatio;
                    if (img.naturalWidth > img.naturalHeight) {
-                     setImageWidth(1200);
+                     setImageWidth(Math.min(1200, fitWidth));
                    } else {
-                     setImageWidth(500);
+                     setImageWidth(fitWidth);
                    }
                  }}
                  style={{ width: '100%', maxWidth: `${imageWidth}px`, height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: '0 auto', transition: 'max-width 0.3s ease' }} 
@@ -211,7 +256,7 @@ export const SmartEPPCaseStudy = () => {
                 <ZoomOut size={24} />
               </button>
               <div style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.2)' }} />
-              <button onClick={() => setImageWidth(w => Math.min(1500, w + 200))} style={{ color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', opacity: imageWidth >= 1500 ? 0.5 : 1 }} disabled={imageWidth >= 1500} title="Zoom In">
+              <button onClick={() => setImageWidth(w => Math.min(3000, w + 200))} style={{ color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', opacity: imageWidth >= 3000 ? 0.5 : 1 }} disabled={imageWidth >= 3000} title="Zoom In">
                 <ZoomIn size={24} />
               </button>
             </div>
@@ -763,10 +808,40 @@ export const SmartEPPCaseStudy = () => {
       </section>
       <section style={{ padding: '80px 0' }}>
         <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '32px', padding: '64px', position: 'relative', overflow: 'hidden' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{
+            position: 'relative',
+            borderRadius: '32px',
+            padding: '64px',
+            background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%)',
+            borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+            borderLeft: '1px solid rgba(255, 255, 255, 0.02)',
+            borderRight: '1px solid rgba(255, 255, 255, 0.02)',
+            borderBottom: 'none',
+            overflow: 'hidden'
+          }}>
             
-            {/* Subtle glow effect */}
-            <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '600px', height: '400px', background: 'radial-gradient(ellipse, rgba(59,130,246,0.05) 0%, transparent 60%)', pointerEvents: 'none' }} />
+            {/* Top Edge Glow */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '60%',
+              height: '1px',
+              background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)',
+            }} />
+            
+            {/* Large Radial Glow at the top */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '100%',
+              height: '500px',
+              background: 'radial-gradient(ellipse at top center, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 70%)',
+              pointerEvents: 'none'
+            }} />
 
             <div style={{ textAlign: 'center', marginBottom: '80px', position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '32px' }}>
@@ -1243,8 +1318,30 @@ export const SmartEPPCaseStudy = () => {
 
 
       {/* 06. Final Solution: The Visual Ecosystem */}
-      <section id="final-designs" ref={finalDesignsRef} style={{ padding: '120px 0', background: '#080808', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
+      <section id="final-designs" ref={finalDesignsRef} style={{ position: 'relative', padding: '120px 0', background: '#080808', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+        {/* Top Edge Glow */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '60%',
+          height: '1px',
+          background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)',
+        }} />
+        
+        {/* Large Radial Glow at the top */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '100%',
+          height: '500px',
+          background: 'radial-gradient(ellipse at top center, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 70%)',
+          pointerEvents: 'none'
+        }} />
+        <div className="container" style={{ maxWidth: '1200px', position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '32px' }}>
               <motion.div
@@ -1412,7 +1509,7 @@ export const SmartEPPCaseStudy = () => {
                 padding: isGridView ? '0' : '60px 10vw',
                 width: '100%',
                 alignItems: isGridView ? 'start' : 'center',
-                cursor: isGridView ? 'default' : (isDragging ? 'grabbing' : 'pointer')
+                cursor: isGridView ? 'default' : (isDragging ? 'grabbing' : 'default')
             }}>
               {ecosystemImages.map((src, idx) => (
                 <motion.img 

@@ -14,11 +14,13 @@ const caseStudies = [
   },
   {
     id: 4,
-    title: 'Fintech Web Platform',
-    description: 'A comprehensive desktop web application designed for high-density financial data management, real-time portfolio tracking, and sophisticated trading algorithms.',
-    tags: ['Web Application', 'Fintech', 'SaaS'],
+    title: 'SnipKeep',
+    description: 'A privacy-first Chrome extension that saves web highlights directly to your Google Docs. Featuring gentle triage, deadline-aware citations, and one-click archiving, it cures the "collector\'s fallacy" and ensures you actually use what you save.',
+    tags: ['CHROME EXTENSION', 'PRODUCTIVITY', 'PRIVACY-FIRST'],
     image: '/images/LAP01.png',
-    bgColor: '#0f1115'
+    bgColor: '#0f1115',
+    cta: 'VIEW CASE STUDY',
+    customLink: '/snipkeep'
   }
 ];
 
@@ -134,7 +136,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
             if (img) img.style.filter = 'drop-shadow(0 40px 60px rgba(0,0,0,0.5))';
           }}
         >
-          View Project
+          {study.cta || 'View Project'}
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 import { getCalApi } from "@calcom/embed-react";
 import { Footer } from './components/Footer';
@@ -13,6 +13,7 @@ import { Prototypes } from './pages/Prototypes';
 import { Essays } from './pages/Essays';
 import { Process } from './pages/Process';
 import { SmartEPPCaseStudy } from './pages/SmartEPPCaseStudy';
+import { SnipKeepCaseStudy } from './pages/SnipKeepCaseStudy';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css';
 
@@ -33,6 +34,34 @@ const navLinks = [
   { label: 'Process', path: '/#how-it-works', id: 'how-it-works' },
   { label: 'Expertise', path: '/#services', id: 'services' }
 ];
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
+      >
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/drafts" element={<Drafts />} />
+          <Route path="/case-study/:id" element={<CaseStudy />} />
+          <Route path="/smart-epp" element={<SmartEPPCaseStudy />} />
+          <Route path="/snipkeep" element={<SnipKeepCaseStudy />} />
+          <Route path="/ai-workflow" element={<AIWorkflow />} />
+          <Route path="/prototypes" element={<Prototypes />} />
+          <Route path="/essays" element={<Essays />} />
+          <Route path="/process" element={<Process />} />
+        </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
 
 function App() {
   const [hideNav, setHideNav] = useState(false);
@@ -201,16 +230,7 @@ function App() {
 
         {/* Page Routing */}
         <ErrorBoundary>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/drafts" element={<Drafts />} />
-            <Route path="/case-study/:id" element={<CaseStudy />} />
-            <Route path="/smart-epp" element={<SmartEPPCaseStudy />} />
-            <Route path="/ai-workflow" element={<AIWorkflow />} />
-            <Route path="/prototypes" element={<Prototypes />} />
-            <Route path="/essays" element={<Essays />} />
-            <Route path="/process" element={<Process />} />
-          </Routes>
+          <AnimatedRoutes />
         </ErrorBoundary>
 
         {/* Global Footer (Original) */}

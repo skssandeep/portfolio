@@ -39,37 +39,26 @@ export const Home = () => {
     return () => window.removeEventListener('figmaModeToggle', handleFigmaToggle);
   }, []);
 
-  // Handle hash scrolling when navigating from another page
+  // Handle hash scrolling
   useEffect(() => {
-    // Prevent browser from auto-restoring scroll position on refresh
+    // Prevent browser from auto-restoring scroll position
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
 
-    // Check if this is a page reload
-    const navEntries = performance.getEntriesByType('navigation') as PerformanceNavigationTiming[];
-    const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
-
-    if (isReload) {
-      // Force scroll to top on reload, even if there's a hash
-      window.scrollTo(0, 0);
-      // Optionally clear the hash from the URL
-      if (hash) {
-        window.history.replaceState(null, '', window.location.pathname);
-      }
-    } else if (hash) {
-      // Normal navigation with a hash
-      const element = document.querySelector(hash);
-      if (element) {
-        // Add a slight delay to ensure the page is rendered before scrolling
-        setTimeout(() => {
+    if (hash) {
+      // Wait a moment for the page fade-in transition (400ms) to finish before scrolling
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id) || document.querySelector(hash);
+        if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+        }
+      }, 450);
     } else {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }, [hash]);
+  }, [hash, location.pathname]);
 
   // Mouse tracking for ambient glow and portal hover detection
   const mouseX = useMotionValue(0);
