@@ -115,18 +115,9 @@ export const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section style={{ 
-        position: 'relative', 
-        width: '100%', 
-        minHeight: '100vh', 
-        display: 'flex', 
-        alignItems: 'center', 
-        paddingTop: '128px', 
-        paddingBottom: '128px', 
-        textAlign: 'center', 
-        // overflow: 'visible' allows the parallax portal to bleed out behind other sections
-        overflow: 'visible'
-      }}>
+      <section 
+        className="relative w-full flex items-center text-center overflow-visible md:pt-[128px] md:pb-[128px] min-h-0 md:min-h-[100vh]"
+      >
         
         {/* Dynamic Background Glow following cursor */}
         <motion.div style={{
@@ -238,7 +229,7 @@ export const Home = () => {
             </div>
 
             {/* 2. MOBILE HERO (NEW SAFE PLAYGROUND) */}
-            <div className="flex md:hidden flex-col items-center w-full" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+            <div className="flex md:hidden flex-col items-center w-full" style={{ paddingLeft: '0px', paddingRight: '0px', paddingTop: '172px', paddingBottom: '40px' }}>
               {/* Pre-header */}
               <div className="flex flex-col items-center gap-1" style={{ marginBottom: '16px' }}>
                 <div className="flex items-center gap-2">
