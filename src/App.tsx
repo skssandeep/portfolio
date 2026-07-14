@@ -66,6 +66,7 @@ const AnimatedRoutes = () => {
 function App() {
   const [hideNav, setHideNav] = useState(false);
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // Smooth scroll progress for the thermometer line to prevent jumping
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, {
@@ -102,21 +103,21 @@ function App() {
   return (
     <Router>
       <Preloader />
-      <div className="portfolio" style={{ position: 'relative' }}>
+      <div className="portfolio overflow-x-hidden w-full max-w-full" style={{ position: 'relative' }}>
         
         {/* Global Navigation Container */}
         <div 
-          style={{ position: 'fixed', width: '100%', top: '20px', zIndex: 100, display: 'flex', justifyContent: 'center', pointerEvents: 'none' }}
+          style={{ position: 'fixed', left: '16px', right: '16px', top: '16px', zIndex: 100, display: 'flex', justifyContent: 'center', pointerEvents: 'none' }}
         >
-          <div style={{ display: 'flex', gap: '20px', alignItems: 'center', pointerEvents: 'auto' }}>
-            {/* The main navbar pill */}
+          <div className="w-full md:w-auto" style={{ display: 'flex', gap: '20px', alignItems: 'center', pointerEvents: 'auto', justifyContent: 'center' }}>
+            
+            {/* --- DESKTOP NAVBAR (100% UNTOUCHED ORIGINAL) --- */}
             <motion.div 
               initial={{ y: 0 }}
               animate={{ y: hideNav ? -100 : 0, opacity: hideNav ? 0 : 1 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="glass" 
+              className="glass hidden md:flex" 
               style={{ 
-              display: 'flex', 
               alignItems: 'center', 
               justifyContent: 'space-between',
               padding: '8px 8px 8px 32px', 
@@ -191,13 +192,113 @@ function App() {
 
             </motion.div>
 
+            {/* --- MOBILE NAVBAR --- */}
+            <motion.div 
+              initial={{ y: 0 }}
+              animate={{ y: hideNav ? -100 : 0, opacity: hideNav ? 0 : 1 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="glass flex md:hidden w-full items-center justify-between" 
+              style={{ 
+              padding: '8px 8px 8px 24px', 
+              borderRadius: '100px', 
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              background: 'var(--glass-bg)',
+              boxShadow: 'var(--glass-shadow)'
+            }}>
+              {/* Left: Logo */}
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', fontSize: '15px', letterSpacing: '0', color: 'var(--text-primary)', paddingTop: '2px', display: 'flex', alignItems: 'center' }}>
+                  SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
+                </Link>
+              </div>
+
+              {/* Right: Burger Menu Button */}
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  {isMobileMenuOpen ? (
+                    <>
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </>
+                  ) : (
+                    <>
+                      <line x1="3" y1="12" x2="21" y2="12"></line>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </>
+                  )}
+                </svg>
+              </button>
+            </motion.div>
 
           </div>
         </div>
 
+        {/* --- MOBILE MENU OVERLAY --- */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
+              style={{ pointerEvents: 'auto', paddingTop: '80px' }}
+            >
+              {/* Close button inside overlay as backup */}
+              <button 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="absolute top-[28px] right-[20px] w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white z-50"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+
+              <div className="flex flex-col items-center gap-6">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.id}
+                    to={link.path} 
+                    onClick={(e) => {
+                      if (link.path.startsWith('/#')) {
+                        handleScrollTo(e, link.id);
+                      }
+                      setIsMobileMenuOpen(false);
+                    }} 
+                    style={{ 
+                      fontSize: '24px',
+                      color: 'var(--text-primary)',
+                      fontFamily: "'Syne', sans-serif",
+                      fontWeight: 500
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-8">
+                <LiquidButton 
+                  size="lg"
+                  style={{ fontWeight: 600, fontSize: '16px', padding: '0 32px', minHeight: '56px', borderRadius: '100px' }}
+                  data-cal-link="sandeepks/15min"
+                  data-cal-config='{"layout":"month_view"}'
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Book a Call
+                </LiquidButton>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Global Vertical Edge Typography */}
         {!hideNav && (
-          <div className="edge-typography" style={{
+          <div className="edge-typography hidden md:flex items-center gap-4" style={{
             position: 'fixed',
             left: '32px',
             bottom: '48px',
@@ -208,9 +309,6 @@ function App() {
             letterSpacing: '0', color: 'var(--text-secondary)',
             zIndex: 50,
             pointerEvents: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
             opacity: 0.6
           }}>
             <div style={{ position: 'relative', width: '2px', height: '60px', background: 'rgba(255, 255, 255, 0.1)' }}>

@@ -153,7 +153,7 @@ export const Home = () => {
           WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
         }} />
 
-        <motion.div style={{ y: portalY, position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
+        <motion.div className="hidden md:block" style={{ y: portalY, position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
           <TubesCursor
             initialColors={TUBES_COLORS}
             lightColors={TUBES_LIGHTS}
@@ -168,71 +168,127 @@ export const Home = () => {
         </motion.div>
 
         <div className="container scroll-reveal" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', zIndex: 1 }}>
-                        <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              marginBottom: '32px'
-            }}>
-              <span className="animate-pulse" style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 8px rgba(16, 185, 129, 0.4)' }}></span>
-              <span style={{ 
-                color: 'rgba(255, 255, 255, 0.55)', 
-                fontWeight: 500, 
-                letterSpacing: '0.2em', 
-                fontSize: '12px', 
-                textTransform: 'uppercase', 
-                fontFamily: "'Dune Rise', sans-serif" 
+            {/* 1. DESKTOP HERO (100% UNTOUCHED ORIGINAL) */}
+            <div className="hidden md:flex flex-col items-center w-full">
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                marginBottom: '32px'
               }}>
-                Sandeep KS • Product Designer
-              </span>
+                <span className="animate-pulse" style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 8px rgba(16, 185, 129, 0.4)' }}></span>
+                <span style={{ 
+                  color: 'rgba(255, 255, 255, 0.55)', 
+                  fontWeight: 500, 
+                  letterSpacing: '0.2em', 
+                  fontSize: '12px', 
+                  textTransform: 'uppercase', 
+                  fontFamily: "'Dune Rise', sans-serif" 
+                }}>
+                  Sandeep KS • Product Designer
+                </span>
+              </div>
+              
+              <h1 className="text-hero" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '16px', lineHeight: 1.15, textTransform: 'uppercase', opacity: 0.9 }}>
+                <span>DESIGNING FOR USERS.</span>
+                <span style={{ 
+                  background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  color: 'transparent'
+                }}>
+                  OPTIMIZING FOR IMPACT.
+                </span>
+              </h1>
+              
+              <p className="text-body-large" style={{ 
+                marginBottom: '40px', 
+                maxWidth: '800px', 
+                lineHeight: 1.6, 
+                color: 'var(--text-secondary)', 
+                fontWeight: 400 
+              }}>
+                Bridging human-centered design and strategic thinking to build scalable product ecosystems that drive measurable business results.
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', alignItems: 'center' }}>
+                  <LiquidButton 
+                    size="lg" 
+                    onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                    style={{ 
+                      fontFamily: "'Syne', sans-serif",
+                      fontWeight: 500, 
+                      letterSpacing: '0px', 
+                      padding: '0 48px', 
+                      fontSize: '16px',
+                      minHeight: '60px',
+                      position: 'relative',
+                      zIndex: 1,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '16px'
+                    }}
+                  >
+                    VIEW CASE STUDIES
+                  </LiquidButton>
+                </div>
+              </div>
             </div>
-            
-            <h1 className="text-hero" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '16px', lineHeight: 1.15, textTransform: 'uppercase', opacity: 0.9 }}>
-              <span>DESIGNING FOR USERS.</span>
-              <span style={{ 
-                background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                color: 'transparent'
-              }}>
-                OPTIMIZING FOR IMPACT.
-              </span>
-            </h1>
-            
-            <p className="text-body-large" style={{ 
-              marginBottom: '40px', 
-              maxWidth: '800px', 
-              lineHeight: 1.6, 
-              color: 'var(--text-secondary)', 
-              fontWeight: 400 
-            }}>
-              Bridging human-centered design and strategic thinking to build scalable product ecosystems that drive measurable business results.
-            </p>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', justifyContent: 'center', alignItems: 'center' }}>
-              <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', alignItems: 'center' }}>
-                
+
+            {/* 2. MOBILE HERO (NEW SAFE PLAYGROUND) */}
+            <div className="flex md:hidden flex-col items-center w-full" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+              {/* Pre-header */}
+              <div className="flex flex-col items-center gap-1" style={{ marginBottom: '16px' }}>
+                <div className="flex items-center gap-2">
+                  <span className="animate-pulse w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
+                  <span className="text-[10px] tracking-[0.15em] uppercase font-medium text-white/60 text-center" style={{ fontFamily: "'Dune Rise', sans-serif" }}>
+                    Sandeep KS
+                  </span>
+                </div>
+                <span className="text-[10px] tracking-[0.15em] uppercase font-medium text-white/60 text-center" style={{ fontFamily: "'Dune Rise', sans-serif" }}>
+                  Product Designer
+                </span>
+              </div>
+              
+              {/* Main Headline */}
+              <h1 
+                className="text-center tracking-tight opacity-90 w-full" 
+                style={{ 
+                  fontFamily: "'Syne', sans-serif", 
+                  fontSize: 'clamp(22px, 8vw, 36px)',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  marginBottom: '24px', 
+                  lineHeight: 1.15
+                }}
+              >
+                <span className="block">DESIGNING FOR USERS.</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#7928CA] via-[#FF007A] to-[var(--accent-color)]">
+                  OPTIMIZING FOR IMPACT.
+                </span>
+              </h1>
+              
+              {/* Sub-headline Paragraph */}
+              <p className="text-[16px] text-white/70 font-normal leading-relaxed text-center px-4" style={{ marginBottom: '40px' }}>
+                Bridging human-centered design and strategic thinking to build scalable product ecosystems that drive measurable business results.
+              </p>
+              
+              {/* CTA Button */}
+              <div className="w-full flex justify-center px-4">
                 <LiquidButton 
                   size="lg" 
                   onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full flex items-center justify-center min-h-[56px] text-[15px]"
                   style={{ 
                     fontFamily: "'Syne', sans-serif",
-                    fontWeight: 500, 
-                    letterSpacing: '0px', 
-                    padding: '0 48px', 
-                    fontSize: '16px',
-                    minHeight: '60px',
-                    position: 'relative',
+                    fontWeight: 600, 
                     zIndex: 1,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '16px'
                   }}
                 >
                   VIEW CASE STUDIES
                 </LiquidButton>
-
               </div>
             </div>
           </div>

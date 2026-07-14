@@ -118,7 +118,7 @@ a {
 .container {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 4vw;
+  padding: 0 max(16px, 4vw);
 }
 
 /* Glassmorphism - Apple Style */
@@ -142,11 +142,18 @@ a {
 
 /* Typography Utility */
 .text-hero {
-  font-size: clamp(1rem, 3.5vw, 4rem);
+  font-size: clamp(1.5rem, 5vw, 4rem);
   font-weight: 800;
   letter-spacing: 0;
-  line-height: 1.1;
-  white-space: nowrap;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .text-hero {
+    font-size: clamp(1rem, 3.5vw, 4rem);
+    line-height: 1.1;
+    white-space: nowrap;
+  }
 }
 
 .text-headline {
