@@ -29,9 +29,12 @@ const caseStudies = [
 const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean, navigate: any }) => {
   const ref = React.useRef(null);
   
+  // Synchronous check for mobile screen size to adjust scroll offsets safely
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 90%", "center 60%"] // Starts animating when top of card hits 90% from top of screen, finishes when center hits 60%
+    offset: isMobile ? ["start 90%", "start 40%"] : ["start 90%", "center 60%"] // Desktop uses center 60%, Mobile uses start 40% so it doesn't scroll offscreen before finishing
   });
 
   // Apply a buttery smooth physics spring to the raw scroll data
@@ -56,25 +59,17 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
   const imgY = useTransform(smoothProgress, [0, 1], [30, 0]);
 
   return (
-    <div ref={ref} className="case-study-row" style={{
-      display: 'grid',
+    <div ref={ref} className="case-study-row grid gap-12 md:gap-20 w-full" style={{
       gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))',
-      gap: '80px',
       alignItems: 'center',
-      width: '100%',
     }}>
       
       {/* Static Text Content (No Animation for maximum performance and elegance) */}
       <div 
-        style={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          padding: '40px',
-          order: isEven ? 1 : 2,
-        }}
+        className={`flex flex-col items-center md:items-start text-center md:text-left p-4 md:p-10 order-2 ${isEven ? 'md:order-1' : 'md:order-2'}`}
       >
         <div style={{ marginBottom: '32px' }}>
-          <h3 style={{ fontSize: '48px', fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '16px', lineHeight: 1.1, color: '#fff' }}>
+          <h3 className="text-[36px] md:text-[48px]" style={{ fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '16px', lineHeight: 1.1, color: '#fff' }}>
             {study.title}
           </h3>
           <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
@@ -82,7 +77,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
           </p>
         </div>
         
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '48px' }}>
+        <div className="flex flex-wrap justify-center md:justify-start gap-2" style={{ marginBottom: '48px' }}>
           {study.tags.map((tag: string, tagIndex: number) => (
             <span key={tagIndex} style={{
               display: 'inline-flex',
@@ -105,6 +100,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
 
         <button 
           onClick={() => navigate(study.customLink || `/case-study/${study.id}`)}
+          className="w-full md:w-auto flex justify-center items-center"
           style={{
             fontFamily: "'Syne', sans-serif",
             background: '#fff',
@@ -112,8 +108,6 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
             color: '#000',
             fontSize: '14px',
             fontWeight: 600,
-            display: 'inline-flex',
-            alignItems: 'center',
             gap: '12px',
             cursor: 'pointer',
             padding: '16px 32px',
@@ -121,7 +115,6 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
             letterSpacing: '1px',
             textTransform: 'uppercase',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-            width: 'fit-content'
           }}
           onMouseOver={(e: any) => {
             e.currentTarget.style.transform = 'translateY(-4px)';
@@ -146,7 +139,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
 
       {/* Image Showcase perfectly synchronized to scroll position */}
       <motion.div 
-        className="image-showcase-container"
+        className={`image-showcase-container order-1 ${isEven ? 'md:order-2' : 'md:order-1'}`}
         style={{
         opacity,
         rotateX,
@@ -163,7 +156,6 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
         paddingBottom: '0', 
         paddingLeft: '20px',
         paddingRight: '20px',
-        order: isEven ? 2 : 1,
         border: '1px solid rgba(255,255,255,0.03)',
         overflow: 'hidden',
         cursor: 'pointer',
@@ -223,6 +215,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
 
 export const CaseStudiesSectionSideBySide = () => {
   const navigate = useNavigate();
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   return (
     <section id="case-studies" className="section-padding" style={{ position: 'relative', zIndex: 10, marginTop: '60px', paddingBottom: '160px', background: 'transparent' }}>
@@ -233,7 +226,7 @@ export const CaseStudiesSectionSideBySide = () => {
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, amount: 0.3 }}
-          style={{ textAlign: 'center', marginBottom: '140px', willChange: 'transform, opacity, filter' }}
+          style={{ textAlign: 'center', marginBottom: isMobile ? '100px' : '140px', willChange: 'transform, opacity, filter' }}
         >
           <motion.div 
             style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '8px', marginBottom: '32px', cursor: 'pointer' }}
@@ -271,7 +264,7 @@ export const CaseStudiesSectionSideBySide = () => {
           </h2>
         </motion.div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '160px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '120px' : '160px' }}>
           {caseStudies.map((study, index) => (
             <CaseStudyRow key={study.id} study={study} isEven={index % 2 === 0} navigate={navigate} />
           ))}

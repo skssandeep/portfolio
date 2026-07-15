@@ -8,6 +8,8 @@ const projects = [
 ];
 
 export const ProjectsSection = () => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <section id="projects" style={{ 
       position: 'relative',
@@ -17,7 +19,7 @@ export const ProjectsSection = () => {
         <div style={{
           position: 'relative',
           borderRadius: '32px',
-          padding: '96px 64px',
+          padding: isMobile ? '96px 16px' : '96px 64px',
           background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%)',
           borderTop: '1px solid rgba(255, 255, 255, 0.06)',
           borderLeft: '1px solid rgba(255, 255, 255, 0.02)',
@@ -93,8 +95,8 @@ export const ProjectsSection = () => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '32px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))',
+            gap: isMobile ? '24px' : '32px',
             padding: '0',
             maxWidth: '1200px',
             margin: '0 auto'

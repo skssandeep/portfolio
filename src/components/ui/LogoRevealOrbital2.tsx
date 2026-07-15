@@ -119,6 +119,7 @@ export const LogoRevealOrbital2 = () => {
     return () => ctx.revert();
   }, []);
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const text = "SANDSTORMIFY";
 
   return (
@@ -131,7 +132,7 @@ export const LogoRevealOrbital2 = () => {
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(255,0,0,0.08)_0%,transparent_60%)] pointer-events-none" />
         
         {/* HUD Elements - Design Engineering Theme */}
-        <div ref={hudRef} className="absolute inset-0 pointer-events-none z-10 flex flex-col justify-between p-6 sm:p-10">
+        <div ref={hudRef} className="absolute inset-0 pointer-events-none z-10 flex flex-col justify-between p-6 sm:p-10" style={{ display: isMobile ? 'none' : undefined }}>
           <div className="flex justify-between w-full">
             {/* Top Left: Layout & Structural Metrics */}
             <div 
@@ -190,7 +191,15 @@ export const LogoRevealOrbital2 = () => {
             ref={topContentRef}
             className="relative mb-2 sm:mb-4 flex flex-col items-center w-full px-4 z-30"
           >
-            <h2 className="text-[6vw] sm:text-[4.5vw] md:text-[3.5vw] font-medium leading-tight text-center text-white opacity-90 tracking-tight drop-shadow-xl" style={{ fontFamily: "'Syne', sans-serif" }}>
+            <h2 
+              className="font-medium leading-tight text-center text-white opacity-90 tracking-tight drop-shadow-xl" 
+              style={{ 
+                fontFamily: "'Syne', sans-serif",
+                fontSize: isMobile ? '24px' : 'clamp(32px, 4vw, 48px)',
+                lineHeight: isMobile ? 1.4 : undefined,
+                marginBottom: isMobile ? '32px' : undefined
+              }}
+            >
               Ready to build world-class products with
             </h2>
           </div>
@@ -205,16 +214,17 @@ export const LogoRevealOrbital2 = () => {
               className="absolute top-1/2 left-1/2 flex items-center justify-center pointer-events-none opacity-30 z-0" 
               style={{ transform: 'translate(-50%, -50%) rotateX(65deg) scale(1.2)' }}
             >
-              <div className="absolute w-[65vw] h-[65vw] rounded-full border border-red-500/20 animate-[spin_60s_linear_infinite]" />
-              <div className="absolute w-[45vw] h-[45vw] rounded-full border border-red-500/30 border-dashed animate-[spin_40s_linear_infinite_reverse]" />
-              <div className="absolute w-[25vw] h-[25vw] rounded-full border border-red-400/40 animate-[spin_20s_linear_infinite]" />
+              <div className="absolute rounded-full border border-red-500/20 animate-[spin_60s_linear_infinite]" style={{ width: isMobile ? '80vw' : '65vw', height: isMobile ? '80vw' : '65vw' }} />
+              <div className="absolute rounded-full border border-red-500/30 border-dashed animate-[spin_40s_linear_infinite_reverse]" style={{ width: isMobile ? '60vw' : '45vw', height: isMobile ? '60vw' : '45vw' }} />
+              <div className="absolute rounded-full border border-red-400/40 animate-[spin_20s_linear_infinite]" style={{ width: isMobile ? '40vw' : '25vw', height: isMobile ? '40vw' : '25vw' }} />
             </div>
 
             {/* 3D Tilted Text Container */}
             <div 
               ref={textContainerRef}
-              className="relative z-20 flex text-white text-[8vw] sm:text-[6vw] md:text-[5.5vw] tracking-tighter select-none font-normal drop-shadow-[0_0_15px_rgba(255,0,0,0.3)]"
+              className="relative z-20 flex text-white tracking-tighter select-none font-normal drop-shadow-[0_0_15px_rgba(255,0,0,0.3)]"
               style={{ 
+                fontSize: isMobile ? '7.5vw' : 'clamp(48px, 6vw, 96px)',
                 fontFamily: "'Dune Rise', var(--font-system)",
                 transformStyle: 'preserve-3d'
               }}
@@ -245,11 +255,22 @@ export const LogoRevealOrbital2 = () => {
           <div 
             ref={bottomContentRef}
             className="relative flex flex-col items-center w-full px-4 z-30"
-            style={{ marginTop: 'clamp(2rem, 4vw, 3.5rem)' }}
+            style={{ 
+              marginTop: 'clamp(2rem, 4vw, 3.5rem)',
+              padding: isMobile ? '0 16px' : undefined 
+            }}
           >
             <button 
               className="rounded-full bg-white text-black font-bold tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] cursor-pointer whitespace-nowrap inline-flex items-center justify-center"
-              style={{ padding: '24px 80px', minWidth: '320px', minHeight: '64px', fontSize: '20px', fontFamily: "'Syne', sans-serif", letterSpacing: '2px' }}
+              style={{ 
+                padding: isMobile ? '16px 32px' : '24px 80px', 
+                width: isMobile ? '100%' : undefined,
+                minWidth: isMobile ? 'auto' : '320px', 
+                minHeight: isMobile ? '56px' : '64px', 
+                fontSize: isMobile ? '14px' : '20px', 
+                fontFamily: "'Syne', sans-serif", 
+                letterSpacing: '2px' 
+              }}
               data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
             >
               BOOK AN INTRO CALL

@@ -2,13 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export const ServicesSection = () => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <section id="services" className="section-padding">
       <div className="container">
         <div style={{
           position: 'relative',
           borderRadius: '32px',
-          padding: '96px 64px',
+          padding: isMobile ? '96px 16px' : '96px 64px',
           background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%)',
           borderTop: '1px solid rgba(255, 255, 255, 0.06)',
           borderLeft: '1px solid rgba(255, 255, 255, 0.02)',
@@ -86,7 +88,7 @@ export const ServicesSection = () => {
           {/* Service 01 */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '48px', alignItems: 'start', marginBottom: '32px' }}>
-              <h3 className="text-title" style={{ fontSize: '40px', margin: 0, fontWeight: 700, display: 'flex', gap: '12px' }}>
+              <h3 className="text-title" style={{ fontSize: '40px', margin: 0, fontWeight: 700, display: 'flex', gap: '12px', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', justifyContent: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left' }}>
                 <span style={{ 
                   background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
                   WebkitBackgroundClip: 'text',
@@ -95,7 +97,7 @@ export const ServicesSection = () => {
                   color: 'transparent'
                 }}>01.</span> <span style={{ color: '#ffffff' }}>Product Design</span>
               </h3>
-              <p className="text-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '18px', margin: 0 }}>
+              <p className="text-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '18px', margin: 0, textAlign: isMobile ? 'center' : 'left' }}>
                 I transform complex business requirements into intuitive, high-converting product experiences. By bridging the gap between user needs and technical constraints, I design scalable interfaces that drive measurable business growth.
               </p>
             </div>
@@ -110,9 +112,11 @@ export const ServicesSection = () => {
             {/* Tags row */}
             <div style={{ 
               display: 'flex', 
+              flexDirection: isMobile ? 'column' : 'row',
+              alignItems: 'center',
               justifyContent: 'center', 
               flexWrap: 'wrap', 
-              gap: '48px',
+              gap: isMobile ? '24px' : '48px',
               padding: '28px 0'
             }}>
               {['Landing Pages', 'Mobile Apps', 'Wireframes', 'Design Systems', 'SaaS Platforms'].map((item) => (
@@ -133,7 +137,7 @@ export const ServicesSection = () => {
           {/* Service 02 */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '48px', alignItems: 'start', marginBottom: '32px' }}>
-              <h3 className="text-title" style={{ fontSize: '40px', margin: 0, fontWeight: 700, display: 'flex', gap: '12px' }}>
+              <h3 className="text-title" style={{ fontSize: '40px', margin: 0, fontWeight: 700, display: 'flex', gap: '12px', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', justifyContent: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left' }}>
                 <span style={{ 
                   background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
                   WebkitBackgroundClip: 'text',
@@ -142,7 +146,7 @@ export const ServicesSection = () => {
                   color: 'transparent'
                 }}>02.</span> <span style={{ color: '#ffffff' }}>Framer Development</span>
               </h3>
-              <p className="text-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '18px', margin: 0 }}>
+              <p className="text-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '18px', margin: 0, textAlign: isMobile ? 'center' : 'left' }}>
                 Leveraging my Framer development skills, I build CMS-driven, responsive sites that excel in SEO. I create multipage websites with custom animations, designed to drive leads and boost conversions.
               </p>
             </div>
@@ -157,9 +161,11 @@ export const ServicesSection = () => {
             {/* Tags row */}
             <div style={{ 
               display: 'flex', 
+              flexDirection: isMobile ? 'column' : 'row',
+              alignItems: 'center',
               justifyContent: 'center', 
               flexWrap: 'wrap', 
-              gap: '48px',
+              gap: isMobile ? '24px' : '48px',
               padding: '28px 0'
             }}>
               {['CMS', 'Responsive Sites', 'Custom Animations', 'SEO', 'Multipage Websites'].map((item) => (

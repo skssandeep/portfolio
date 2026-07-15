@@ -14,6 +14,7 @@ const testimonials = [
 
 export const Testimonials = () => {
   const trackRef = useRef<HTMLDivElement>(null);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   
   // Drag and animation state
   const isDragging = useRef(false);
@@ -26,9 +27,9 @@ export const Testimonials = () => {
     const track = trackRef.current;
     if (!track) return;
 
-    // Card Width (450px) + Gap (32px) = 482px.
-    // 6 cards total in the original array = 2892px width.
-    const loopWidth = 6 * (450 + 32); 
+    // Card Width dynamically based on screen size + Gap (32px)
+    const cardWidth = window.innerWidth < 768 ? 280 : 450;
+    const loopWidth = 6 * (cardWidth + 32); 
     const speed = -0.5; // Auto scroll speed
     
     const animate = () => {
@@ -86,7 +87,7 @@ export const Testimonials = () => {
     <section className="section-padding" style={{ position: 'relative', zIndex: 10, background: 'transparent' }}>
       {/* Outer wrapper to handle the Addverb-style card padding */}
       <div style={{ 
-        padding: '0 32px', // Dark space on left and right
+        padding: isMobile ? '0 16px' : '0 32px', // Dark space on left and right
         maxWidth: '1600px',
         margin: '0 auto',
         position: 'relative'
@@ -99,7 +100,7 @@ export const Testimonials = () => {
           overflow: 'hidden'
         }}>
           
-          <div className="container">
+          <div className="container" style={{ padding: 0 }}>
             <div style={{ textAlign: 'center', marginBottom: '48px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <motion.div 
                 style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '8px', marginBottom: '32px', cursor: 'pointer' }}
@@ -139,78 +140,88 @@ export const Testimonials = () => {
               </p>
             </div>
 
-            <div 
-              className="carousel-container" 
-              style={{ 
-                width: '100%', 
-                overflow: 'hidden', 
-                padding: '40px 0 100px 0', 
-                position: 'relative',
-                marginBottom: '0px'
-              }}
-            >
-              <div 
-                ref={trackRef}
-                onPointerDown={handlePointerDown}
-                onPointerMove={handlePointerMove}
-                onPointerUp={handlePointerUpOrLeave}
-                onPointerLeave={handlePointerUpOrLeave}
-                style={{
-                  display: 'flex',
-                  gap: '32px',
-                  width: 'max-content',
-                  cursor: 'grab',
-                  userSelect: 'none',
-                  touchAction: 'none'
-                }}
-              >
-                {/* Render the array twice for a seamless infinite loop */}
-                {[...testimonials, ...testimonials].map((imgUrl, index) => (
-                  <div 
-                    key={index} 
-                    className="carousel-card glass"
-                    style={{ 
-                      width: '450px', // Slightly smaller to fit better inside the bounded card
-                      borderRadius: '24px', 
-                      overflow: 'hidden', 
-                      border: '1px solid rgba(255,255,255,0.05)', 
-                      background: 'rgba(255,255,255,0.02)', 
-                      boxShadow: '0 20px 40px rgba(0,0,0,0.5)', 
-                      padding: '24px',
-                      transition: 'transform 0.4s ease, box-shadow 0.4s ease',
-                      flexShrink: 0,
-                      position: 'relative'
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!isDragging.current) {
-                        e.currentTarget.style.transform = 'scale(1.02) translateY(-10px)';
-                        e.currentTarget.style.boxShadow = '0 30px 60px rgba(239,68,68,0.15)'; 
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'scale(1) translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
-                    }}
-                  >
-                    <img 
-                      src={imgUrl} 
-                      alt={`Testimonial ${index + 1}`} 
-                      style={{ 
-                        width: '100%', 
-                        height: 'auto', 
-                        display: 'block', 
-                        borderRadius: '12px',
-                        pointerEvents: 'none'
-                      }} 
-                    />
+            {isMobile ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '40px 0', width: '100%' }}>
+                {testimonials.slice(0, 4).map((imgUrl, index) => (
+                  <div key={index} className="glass" style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)', background: 'rgba(255,255,255,0.02)', padding: '16px' }}>
+                    <img src={imgUrl} alt={`Testimonial ${index + 1}`} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }} />
                   </div>
                 ))}
               </div>
+            ) : (
+              <div 
+                className="carousel-container" 
+                style={{ 
+                  width: '100%', 
+                  overflow: 'hidden', 
+                  padding: '40px 0 100px 0', 
+                  position: 'relative',
+                  marginBottom: '0px'
+                }}
+              >
+                <div 
+                  ref={trackRef}
+                  onPointerDown={handlePointerDown}
+                  onPointerMove={handlePointerMove}
+                  onPointerUp={handlePointerUpOrLeave}
+                  onPointerLeave={handlePointerUpOrLeave}
+                  style={{
+                    display: 'flex',
+                    gap: '32px',
+                    width: 'max-content',
+                    cursor: 'grab',
+                    userSelect: 'none',
+                    touchAction: 'none'
+                  }}
+                >
+                  {/* Render the array twice for a seamless infinite loop */}
+                  {[...testimonials, ...testimonials].map((imgUrl, index) => (
+                    <div 
+                      key={index} 
+                      className="carousel-card glass"
+                      style={{ 
+                        width: '450px',
+                        borderRadius: '24px', 
+                        overflow: 'hidden', 
+                        border: '1px solid rgba(255,255,255,0.05)', 
+                        background: 'rgba(255,255,255,0.02)', 
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.5)', 
+                        padding: '24px',
+                        transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+                        flexShrink: 0,
+                        position: 'relative'
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!isDragging.current) {
+                          e.currentTarget.style.transform = 'scale(1.02) translateY(-10px)';
+                          e.currentTarget.style.boxShadow = '0 30px 60px rgba(239,68,68,0.15)'; 
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'scale(1) translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
+                      }}
+                    >
+                      <img 
+                        src={imgUrl} 
+                        alt={`Testimonial ${index + 1}`} 
+                        style={{ 
+                          width: '100%', 
+                          height: 'auto', 
+                          display: 'block', 
+                          borderRadius: '12px',
+                          pointerEvents: 'none'
+                        }} 
+                      />
+                    </div>
+                  ))}
+                </div>
 
-              {/* Fade gradients on edges updated for dark background */}
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '100px', height: '100%', background: 'linear-gradient(to right, var(--bg-color), transparent)', pointerEvents: 'none' }} />
-              <div style={{ position: 'absolute', top: 0, right: 0, width: '100px', height: '100%', background: 'linear-gradient(to left, var(--bg-color), transparent)', pointerEvents: 'none' }} />
-            </div>
+                {/* Fade gradients on edges updated for dark background */}
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100px', height: '100%', background: 'linear-gradient(to right, var(--bg-color), transparent)', pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', top: 0, right: 0, width: '100px', height: '100%', background: 'linear-gradient(to left, var(--bg-color), transparent)', pointerEvents: 'none' }} />
+              </div>
+            )}
 
           </div>
         </div>

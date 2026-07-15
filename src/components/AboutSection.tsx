@@ -56,18 +56,17 @@ export const AboutSection = () => {
           </h2>
         </div>
 
-        <div style={{ 
+        <div className="gap-10 md:gap-20" style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', 
-          gap: '80px', 
           alignItems: 'start' 
         }}>
           
           {/* Left Column */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             
-            {/* Image Card Container */}
-            <div style={{ 
+            {/* 1. DESKTOP IMAGE CARD (100% UNTOUCHED ORIGINAL) */}
+            <div className="hidden md:block" style={{ 
               position: 'relative', 
               width: 'fit-content', 
               marginLeft: '24px' // Offset to account for tilted badges
@@ -171,6 +170,111 @@ export const AboutSection = () => {
                 </div>
               </motion.div>
             </div>
+
+            {/* 2. MOBILE IMAGE CARD (SCALED) */}
+            <div className="block md:hidden w-full" style={{ 
+              position: 'relative', 
+              margin: '0 auto'
+            }}>
+            {/* Tilted Photo */}
+              <motion.div 
+                initial={{ rotate: -4, scale: 0.9, opacity: 0 }}
+                whileInView={{ rotate: -2, scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: 'spring', bounce: 0.4, duration: 1 }}
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '4/5',
+                  borderRadius: '24px',
+                  overflow: 'hidden',
+                  boxShadow: '0 30px 60px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.1)',
+                  background: '#111'
+                }}
+              >
+                 <img 
+                   src="/images/sandeep.png" 
+                   alt="Sandeep Kumar Singh" 
+                   style={{ 
+                     width: '100%', 
+                     height: '100%', 
+                     objectFit: 'cover', 
+                     filter: 'grayscale(100%) contrast(1.1)' 
+                   }} 
+                 />
+                 {/* Online Status Dot */}
+                 <span 
+                   className="animate-pulse" 
+                   style={{ 
+                     position: 'absolute',
+                     top: '16px',
+                     right: '16px',
+                     width: '12px', 
+                     height: '12px', 
+                     borderRadius: '50%', 
+                     backgroundColor: '#10b981', 
+                     boxShadow: '0 0 12px rgba(16, 185, 129, 0.8)',
+                     border: '2px solid rgba(0,0,0,0.4)',
+                     zIndex: 3 
+                   }} 
+                 />
+                 {/* Dark gradient overlay for text legibility at bottom */}
+                 <div style={{ 
+                   position: 'absolute', 
+                   bottom: 0, left: 0, right: 0, 
+                   height: '60%', 
+                   background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)' 
+                 }} />
+              </motion.div>
+              
+              {/* Overlapping Badges (Adjusted to not overflow screen) */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                style={{
+                  position: 'absolute',
+                  bottom: '12px',
+                  left: '-8px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  gap: '8px',
+                  transform: 'rotate(-2deg)',
+                  zIndex: 2
+                }}
+              >
+                <div style={{ 
+                  background: 'linear-gradient(90deg, #7928CA 0%, #FF007A 35%, #ff0033 75%)', 
+                  color: '#fff', 
+                  padding: '6px 16px', 
+                  borderRadius: '100px', 
+                  fontSize: '14px', 
+                  fontWeight: 500,
+                  boxShadow: '0 8px 24px rgba(255, 0, 122, 0.4)',
+                  letterSpacing: '0px',
+                  fontFamily: "'Syne', sans-serif"
+                }}>
+                  Sandeep KS
+                </div>
+                <div style={{ 
+                  background: 'rgba(255, 255, 255, 0.05)', 
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  color: '#fff', 
+                  padding: '6px 16px', 
+                  borderRadius: '100px', 
+                  fontSize: '14px', 
+                  fontWeight: 500,
+                  boxShadow: '0 8px 16px rgba(0,0,0,0.4)',
+                  letterSpacing: '0px',
+                  fontFamily: "'Syne', sans-serif"
+                }}>
+                  Product Designer
+                </div>
+              </motion.div>
+            </div>
           </div>
 
           {/* Right Column */}
@@ -199,10 +303,11 @@ export const AboutSection = () => {
                 </p>
               </div>
               
-              <div style={{ marginTop: '8px' }}>
+              <div className="w-full flex" style={{ marginTop: '8px' }}>
                 <LiquidButton 
                   size="lg"
-                  data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}' 
+                  data-cal-link="sandeepks/15min" data-cal-config='{"layout":"month_view"}'
+                  className="w-full md:w-auto flex justify-center items-center"
                   style={{
                     fontWeight: 500,
                     padding: '0 40px',
@@ -212,7 +317,7 @@ export const AboutSection = () => {
                     fontSize: '16px'
                   }}
                 >
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
                     BOOK AN INTRO CALL
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"></polygon>

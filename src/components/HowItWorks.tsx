@@ -22,7 +22,7 @@ const steps = [
 export const HowItWorks = ({ variant: _variant = 'red' }: { variant?: 'white' | 'red' }) => {
   const StepCard = ({ step }: { step: typeof steps[0] }) => (
     <div 
-      className="step-card"
+      className="step-card px-4 md:px-0 w-full"
       style={{ 
         display: 'flex', 
         flexDirection: 'column', 
@@ -86,7 +86,7 @@ export const HowItWorks = ({ variant: _variant = 'red' }: { variant?: 'white' | 
         }}>
           
           {/* Section Title */}
-          <div style={{ textAlign: 'center', marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div className="px-4 md:px-0" style={{ textAlign: 'center', marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <motion.div 
             style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '8px', marginBottom: '32px', cursor: 'pointer' }}
             whileHover="hover"

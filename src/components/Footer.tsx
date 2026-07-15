@@ -24,6 +24,7 @@ export const Footer = () => {
   ];
 
   const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   return (
     <div className="container" style={{ paddingBottom: '32px' }}>
@@ -63,11 +64,11 @@ export const Footer = () => {
         maskImage: 'radial-gradient(ellipse at bottom, black 0%, transparent 80%)',
         WebkitMaskImage: 'radial-gradient(ellipse at bottom, black 0%, transparent 80%)'
       }} />
-      <div style={{ margin: '0 auto', padding: '64px', position: 'relative', zIndex: 10 }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '64px' }}>
+      <div style={{ margin: '0 auto', padding: isMobile ? '48px 16px' : '64px', position: 'relative', zIndex: 10 }}>
+        <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', flexWrap: 'wrap', justifyContent: 'space-between', gap: isMobile ? '48px' : '64px' }}>
           
           {/* Brand section */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '400px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '400px', alignItems: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left', margin: isMobile ? '0 auto' : undefined }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
               <a href="https://sandstormify.com" style={{ color: 'var(--text-primary)', fontSize: '20px', fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', letterSpacing: '0', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                 SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
@@ -82,11 +83,11 @@ export const Footer = () => {
           </div>
 
           {/* Contact section */}
-          <div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left' }}>
             <h4 style={{ color: 'var(--text-primary)', fontSize: '18px', fontWeight: 600, marginBottom: '24px' }}>
               Get in Touch
             </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 0 -16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: isMobile ? 0 : '0 0 0 -16px', display: 'flex', flexDirection: 'column', gap: '8px', alignItems: isMobile ? 'center' : 'flex-start' }}>
               {contactInfo.map((item, i) => (
                 <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0px', color: 'var(--text-secondary)' }}>
                   
@@ -108,10 +109,10 @@ export const Footer = () => {
         </div>
 
         {/* Footer bottom */}
-        <div style={{ paddingTop: '32px', marginTop: '32px', borderTop: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+        <div style={{ paddingTop: '32px', marginTop: '32px', borderTop: '1px solid var(--glass-border)', display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: isMobile ? 'center' : 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: isMobile ? '24px' : '16px' }}>
           {/* Social icons */}
           <div 
-            style={{ display: 'flex', gap: '8px', color: 'var(--text-secondary)' }}
+            style={{ display: 'flex', gap: '8px', color: 'var(--text-secondary)', justifyContent: 'center', flexWrap: 'wrap' }}
             onMouseLeave={() => setHoveredSocial(null)}
           >
             {socialLinks.map(({ label, href }) => (
@@ -150,11 +151,13 @@ export const Footer = () => {
           </div>
 
           {/* Links & Copyright */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <Link to="/drafts" style={{ color: 'var(--text-secondary)', fontSize: '14px', textDecoration: 'none', borderBottom: '1px solid transparent' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-              Drafts
-            </Link>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '14px', margin: 0 }}>
+          <div style={{ display: 'flex', flexDirection: isMobile ? 'column-reverse' : 'row', alignItems: 'center', gap: isMobile ? '16px' : '24px', flexWrap: 'wrap' }}>
+            {!isMobile && (
+              <Link to="/drafts" style={{ color: 'var(--text-secondary)', fontSize: '14px', textDecoration: 'none', borderBottom: '1px solid transparent' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+                Drafts
+              </Link>
+            )}
+            <p style={{ color: 'var(--text-secondary)', fontSize: '14px', margin: 0, textAlign: 'center' }}>
               &copy; {new Date().getFullYear()} Sandstormify. All rights reserved.
             </p>
           </div>
