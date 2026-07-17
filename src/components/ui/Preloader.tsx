@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export const Preloader = () => {
   // Only show the preloader if the user initially lands on or hard-refreshes the root homepage
   const [isLoading, setIsLoading] = useState(window.location.pathname === '/');
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   useEffect(() => {
     if (!isLoading) return;
@@ -53,12 +54,12 @@ export const Preloader = () => {
               display: 'flex',
               alignItems: 'center',
               fontFamily: "'Dune Rise', var(--font-system)",
-              fontSize: 'clamp(32px, 6vw, 64px)',
+              fontSize: isMobile ? '20px' : 'clamp(32px, 6vw, 64px)',
               fontWeight: 'bold',
               textTransform: 'uppercase',
-              letterSpacing: '16px', // Fixed wide spacing. The scaling effect will naturally expand this without layout thrashing!
+              letterSpacing: isMobile ? '4px' : '16px', // Fixed wide spacing. The scaling effect will naturally expand this without layout thrashing!
               willChange: 'transform, filter, opacity', // Hint browser for GPU acceleration
-              marginLeft: '16px' // offset for the letter spacing to center it perfectly
+              marginLeft: isMobile ? '4px' : '16px' // offset for the letter spacing to center it perfectly
             }}
           >
             <span>S</span>

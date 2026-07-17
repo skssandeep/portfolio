@@ -7,13 +7,18 @@ export const SmartEPPCaseStudy = () => {
   const [modalImages, setModalImages] = useState<string[]>([]);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
   const [imageWidth, setImageWidth] = useState(500);
+  const [direction, setDirection] = useState(0);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setImageWidth(500);
+    setImageWidth(typeof window !== 'undefined' && window.innerWidth < 768 ? window.innerWidth : 500);
+    setDirection(0); // Reset direction on open
   }, [modalIndex]);
   const [showHeroPill, setShowHeroPill] = useState(true);
   const modalContainerRef = useRef<HTMLDivElement>(null);
+  const touchStart = useRef<{x: number, y: number} | null>(null);
+  const pinchDistance = useRef<number>(0);
+  const tempZoomWidth = useRef<number>(0);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
@@ -88,6 +93,7 @@ export const SmartEPPCaseStudy = () => {
   // Layout toggle logic
   const [isGridView, setIsGridView] = useState(false);
   const [activePortalTab, setActivePortalTab] = useState<'employee' | 'hr' | 'financier' | 'seller'>('employee');
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
@@ -129,16 +135,18 @@ export const SmartEPPCaseStudy = () => {
     return () => window.removeEventListener('resize', checkScroll);
   }, []);
 
-  const handleNextImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleNextImage = (e?: React.SyntheticEvent) => {
+    e?.stopPropagation();
     if (modalIndex !== null && modalIndex < modalImages.length - 1) {
+      setDirection(1);
       setModalIndex(modalIndex + 1);
     }
   };
 
-  const handlePrevImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handlePrevImage = (e?: React.SyntheticEvent) => {
+    e?.stopPropagation();
     if (modalIndex !== null && modalIndex > 0) {
+      setDirection(-1);
       setModalIndex(modalIndex - 1);
     }
   };
@@ -163,22 +171,45 @@ export const SmartEPPCaseStudy = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [modalIndex, modalImages.length]);
 
+  useEffect(() => {
+    if (isMobile && modalIndex !== null) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isMobile, modalIndex]);
+
   return (
     <div style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '120px', overflowX: 'hidden' }}>
+      <style>
+        {`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}
+      </style>
       {/* Animated Gradient Reading Progress Bar */}
-      <motion.div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '4px',
-          background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)',
-          transformOrigin: '0%',
-          scaleX,
-          zIndex: 99999
-        }}
-      />
+      {!(isMobile && modalIndex !== null) && (
+        <motion.div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '4px',
+            background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)',
+            transformOrigin: '0%',
+            scaleX,
+            zIndex: 99999
+          }}
+        />
+      )}
       
       {/* Fullscreen Image Modal */}
       <AnimatePresence>
@@ -197,23 +228,23 @@ export const SmartEPPCaseStudy = () => {
               display: 'flex', 
               alignItems: 'center', 
               justifyContent: 'center', 
-              padding: '40px',
+              padding: isMobile ? 0 : '40px',
               cursor: 'default'
             }}
           >
             <button 
               onClick={(e) => { e.stopPropagation(); setModalIndex(null); }}
-              style={{ position: 'absolute', top: '40px', right: '40px', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '50%', padding: '12px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000, backdropFilter: 'blur(10px)' }}
+              style={{ position: 'absolute', top: isMobile ? '20px' : '40px', right: isMobile ? '20px' : '40px', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '50%', padding: isMobile ? '8px' : '12px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000, backdropFilter: 'blur(10px)' }}
               onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.8)'}
               onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
             >
-              <XCircle size={32} />
+              <XCircle size={isMobile ? 24 : 32} />
             </button>
 
             {/* Prev Button */}
-            {modalIndex > 0 && (
+            {modalIndex > 0 && !isMobile && (
               <button 
-                onClick={handlePrevImage}
+                onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
                 style={{ position: 'absolute', left: '40px', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000, backdropFilter: 'blur(10px)' }}
                 onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.8)'}
                 onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
@@ -222,49 +253,158 @@ export const SmartEPPCaseStudy = () => {
               </button>
             )}
 
-            <div 
-              ref={modalContainerRef}
-              style={{ maxHeight: '90vh', width: '80vw', overflowY: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', padding: '20px 0' }} 
-              onClick={() => setModalIndex(null)}
-            >
-              <motion.img 
-                 onClick={(e) => e.stopPropagation()}
-                 key={modalIndex} 
-                 initial={{ scale: 0.95, opacity: 0, y: 20 }} 
-                 animate={{ scale: 1, opacity: 1, y: 0 }} 
-                 exit={{ scale: 0.95, opacity: 0, y: -20 }}
-                 transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                 src={modalImages[modalIndex]} 
-                 onLoad={(e) => {
-                   const img = e.target as HTMLImageElement;
-                   const aspectRatio = img.naturalWidth / img.naturalHeight;
-                   const maxInitialHeight = window.innerHeight * 0.85;
-                   const fitWidth = maxInitialHeight * aspectRatio;
-                   if (img.naturalWidth > img.naturalHeight) {
-                     setImageWidth(Math.min(1200, fitWidth));
-                   } else {
-                     setImageWidth(fitWidth);
-                   }
-                 }}
-                 style={{ width: '100%', maxWidth: `${imageWidth}px`, height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: '0 auto', transition: 'max-width 0.3s ease' }} 
-              />
-            </div>
+            {isMobile ? (
+              <div 
+                className="no-scrollbar"
+                style={{
+                  display: 'flex',
+                  width: '100vw',
+                  height: '100vh',
+                  overflowX: (typeof window !== 'undefined' && imageWidth > window.innerWidth + 5) ? 'hidden' : 'auto',
+                  overflowY: 'hidden',
+                  scrollSnapType: (typeof window !== 'undefined' && imageWidth > window.innerWidth + 5) ? 'none' : 'x mandatory',
+                  WebkitOverflowScrolling: 'touch'
+                }}
+                onScroll={(e) => {
+                  const isZoomedLocal = typeof window !== 'undefined' && imageWidth > window.innerWidth + 5;
+                  if (isZoomedLocal) return;
+                  const index = Math.round(e.currentTarget.scrollLeft / window.innerWidth);
+                  if (index !== modalIndex) {
+                    setModalIndex(index);
+                  }
+                }}
+                ref={(el) => {
+                  if (el && !el.dataset.initialized) {
+                    el.scrollLeft = (modalIndex || 0) * window.innerWidth;
+                    el.dataset.initialized = 'true';
+                  }
+                }}
+              >
+                {modalImages.map((src, idx) => (
+                  <div 
+                    key={idx}
+                    style={{
+                      minWidth: '100vw',
+                      width: '100vw',
+                      height: '100vh',
+                      scrollSnapAlign: 'start',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      position: 'relative'
+                    }}
+                  >
+                    {idx === modalIndex ? (
+                      <div 
+                        ref={modalContainerRef}
+                        className="no-scrollbar"
+                        style={{ width: '100vw', height: '100vh', overflowX: (typeof window !== 'undefined' && imageWidth > window.innerWidth + 5) ? 'auto' : 'hidden', overflowY: 'auto', touchAction: 'pan-x pan-y', WebkitOverflowScrolling: 'touch', textAlign: 'center' }}
+                        onClick={() => setModalIndex(null)}
+                        onTouchStart={(e) => {
+                          if (e.touches.length === 2) {
+                            const dx = e.touches[0].clientX - e.touches[1].clientX;
+                            const dy = e.touches[0].clientY - e.touches[1].clientY;
+                            pinchDistance.current = Math.sqrt(dx * dx + dy * dy);
+                            tempZoomWidth.current = imageWidth;
+                          }
+                        }}
+                        onTouchMove={(e) => {
+                          if (e.touches.length === 2 && pinchDistance.current) {
+                            const dx = e.touches[0].clientX - e.touches[1].clientX;
+                            const dy = e.touches[0].clientY - e.touches[1].clientY;
+                            const distance = Math.sqrt(dx * dx + dy * dy);
+                            const diff = distance - pinchDistance.current;
+                            const newWidth = Math.min(3000, Math.max(window.innerWidth, tempZoomWidth.current + diff * 1.5));
+                            tempZoomWidth.current = newWidth;
+                            pinchDistance.current = distance;
+                            if (modalContainerRef.current) {
+                              const img = modalContainerRef.current.querySelector('img');
+                              if (img) img.style.width = `${newWidth}px`;
+                            }
+                          }
+                        }}
+                        onTouchEnd={(e) => {
+                          if (e.touches.length < 2) {
+                            pinchDistance.current = 0;
+                            if (tempZoomWidth.current && tempZoomWidth.current !== imageWidth) {
+                              setImageWidth(tempZoomWidth.current);
+                            }
+                          }
+                        }}
+                      >
+                        <div style={{ display: 'table', width: '100%', height: '100%' }}>
+                          <div style={{ display: 'table-cell', verticalAlign: 'middle' }}>
+                            <img 
+                               draggable={false}
+                               onClick={(e) => e.stopPropagation()}
+                               src={src} 
+                               style={{ width: `${imageWidth}px`, maxWidth: 'none', height: 'auto', display: 'block', borderRadius: '0px', margin: '0 auto', userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none' }} 
+                               onLoad={(e) => {
+                                 const img = e.target as HTMLImageElement;
+                                 const aspectRatio = img.naturalWidth / img.naturalHeight;
+                                 const maxInitialHeight = window.innerHeight * 0.85;
+                                 let fitWidth = maxInitialHeight * aspectRatio;
+                                 if (fitWidth > window.innerWidth) {
+                                   fitWidth = window.innerWidth;
+                                 }
+                                 setImageWidth(fitWidth);
+                               }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                       <img 
+                         src={src} 
+                         style={{ maxWidth: '100vw', maxHeight: '100vh', objectFit: 'contain' }} 
+                       />
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div 
+                ref={modalContainerRef}
+                style={{ maxHeight: '90vh', width: '80vw', overflow: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', padding: '20px 0' }} 
+                onClick={() => setModalIndex(null)}
+              >
+                <motion.img 
+                   onClick={(e) => e.stopPropagation()}
+                   key={modalIndex} 
+                   initial={{ opacity: 0, x: direction * 300, y: direction === 0 ? 20 : 0, scale: direction === 0 ? 0.95 : 1 }} 
+                   animate={{ opacity: 1, x: 0, y: 0, scale: 1 }} 
+                   exit={{ opacity: 0, x: direction * -300, y: direction === 0 ? -20 : 0, scale: direction === 0 ? 0.95 : 1 }}
+                   transition={{ type: 'tween', duration: 0.3, ease: 'easeOut' }}
+                   src={modalImages[modalIndex]} 
+                   onLoad={(e) => {
+                     const img = e.target as HTMLImageElement;
+                     const aspectRatio = img.naturalWidth / img.naturalHeight;
+                     const maxInitialHeight = window.innerHeight * 0.85;
+                     const fitWidth = maxInitialHeight * aspectRatio;
+                     setImageWidth(img.naturalWidth > img.naturalHeight ? Math.min(1200, fitWidth) : fitWidth);
+                   }}
+                   style={{ width: `${imageWidth}px`, maxWidth: 'none', height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: '0 auto' }} 
+                />
+              </div>
+            )}
 
             {/* Zoom Controls */}
-            <div style={{ position: 'absolute', bottom: '40px', left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: '16px', zIndex: 10000, background: 'rgba(0,0,0,0.7)', padding: '12px 24px', borderRadius: '100px', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }} onClick={(e) => e.stopPropagation()}>
-              <button onClick={() => setImageWidth(w => Math.max(300, w - 200))} style={{ color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', opacity: imageWidth <= 300 ? 0.5 : 1 }} disabled={imageWidth <= 300} title="Zoom Out">
-                <ZoomOut size={24} />
-              </button>
-              <div style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.2)' }} />
-              <button onClick={() => setImageWidth(w => Math.min(3000, w + 200))} style={{ color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', opacity: imageWidth >= 3000 ? 0.5 : 1 }} disabled={imageWidth >= 3000} title="Zoom In">
-                <ZoomIn size={24} />
-              </button>
-            </div>
+            {!isMobile && (
+              <div style={{ position: 'absolute', bottom: '40px', left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: '16px', zIndex: 10000, background: 'rgba(0,0,0,0.7)', padding: '12px 24px', borderRadius: '100px', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }} onClick={(e) => e.stopPropagation()}>
+                <button onClick={() => setImageWidth(w => Math.max(300, w - 200))} style={{ color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', opacity: imageWidth <= 300 ? 0.5 : 1 }} disabled={imageWidth <= 300} title="Zoom Out">
+                  <ZoomOut size={24} />
+                </button>
+                <div style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.2)' }} />
+                <button onClick={() => setImageWidth(w => Math.min(3000, w + 200))} style={{ color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', opacity: imageWidth >= 3000 ? 0.5 : 1 }} disabled={imageWidth >= 3000} title="Zoom In">
+                  <ZoomIn size={24} />
+                </button>
+              </div>
+            )}
 
             {/* Next Button */}
-            {modalIndex < modalImages.length - 1 && (
+            {modalIndex < modalImages.length - 1 && !isMobile && (
               <button 
-                onClick={handleNextImage}
+                onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
                 style={{ position: 'absolute', right: '40px', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', zIndex: 10000, backdropFilter: 'blur(10px)' }}
                 onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.8)'}
                 onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
@@ -277,7 +417,7 @@ export const SmartEPPCaseStudy = () => {
       </AnimatePresence>
 
       {/* Floating Back Button */}
-      <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100 }}>
+      <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100, display: isMobile ? 'none' : 'block' }}>
         <Link to="/#case-studies" className="btn-link" style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, letterSpacing: '0', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px'}}>
           <ArrowLeft size={16} /> Back
         </Link>
@@ -285,18 +425,18 @@ export const SmartEPPCaseStudy = () => {
 
 
       {/* 2. Intro & Stats Section */}
-      <section style={{ paddingTop: '150px', paddingBottom: '80px', background: 'var(--bg-color)', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ paddingTop: isMobile ? '100px' : '150px', paddingBottom: '80px', background: 'var(--bg-color)', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px' }}>
           
           {/* Left Text Block */}
-          <div style={{ flex: '1 1 700px', zIndex: 10, paddingBottom: '80px', maxWidth: '800px' }}>
+          <div style={{ flex: '1 1 700px', zIndex: 10, paddingBottom: isMobile ? '40px' : '80px', maxWidth: '800px', display: 'flex', flexDirection: 'column', alignItems: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left' }}>
 
             {/* Headline */}
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '20px', letterSpacing: '0', }}
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '20px', letterSpacing: '0', textAlign: isMobile ? 'center' : 'left' }}
             >
               Up to 40% of that phone is just tax. <span style={{ color: 'var(--semantic-success)', fontWeight: 500 }}>We built the system that gives it back.</span>
             </motion.h2>
@@ -306,7 +446,7 @@ export const SmartEPPCaseStudy = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontFamily: "'Jost', sans-serif", fontSize: '24px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '32px', maxWidth: '100%' }}
+              style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '18px' : '24px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '32px', maxWidth: '100%', textAlign: isMobile ? 'center' : 'left' }}
             >
               Employees lease premium devices via salary EMIs, reclaiming up to 40% in tax savings. I led the <strong style={{ color: '#fff', fontWeight: 600 }}>0-to-1 design</strong> of all <strong style={{ color: '#fff', fontWeight: 600 }}>4 interconnected platforms</strong> from a blank canvas.
             </motion.p>
@@ -316,10 +456,10 @@ export const SmartEPPCaseStudy = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: isMobile ? '8px' : '12px', marginBottom: '20px', justifyContent: isMobile ? 'center' : 'flex-start' }}
             >
               {['Mobile App', 'HR Dashboard', 'Financier Portal', 'Seller Portal'].map((tag, idx) => (
-                <div key={idx} style={{ fontFamily: "'Syne', sans-serif", background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '8px 20px', borderRadius: '100px', fontSize: '13px', color: '#D4D4D4', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>
+                <div key={idx} style={{ fontFamily: "'Syne', sans-serif", background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: isMobile ? '6px 16px' : '8px 20px', borderRadius: '100px', fontSize: isMobile ? '11px' : '13px', color: '#D4D4D4', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>
                   {tag}
                 </div>
               ))}
@@ -328,7 +468,7 @@ export const SmartEPPCaseStudy = () => {
           </div>
 
           {/* Right Mockup Block */}
-          <div style={{ flex: '1 1 400px', position: 'relative', zIndex: 5, minHeight: '600px' }}>
+          <div style={{ flex: '1 1 400px', position: 'relative', zIndex: 5, minHeight: isMobile ? '350px' : '600px' }}>
             {/* Soft Glow Behind Image */}
             <div style={{ position: 'absolute', top: '50%', left: '30%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(249,87,56,0.15) 0%, transparent 60%)', zIndex: 0 }} />
             
@@ -347,15 +487,15 @@ export const SmartEPPCaseStudy = () => {
         </div>
 
         {/* Stats - Top-Border Metric Style */}
-        <div className="container" style={{ position: 'relative', zIndex: 20 }}>
+        <div className="container" style={{ position: 'relative', zIndex: 20, marginTop: isMobile ? '-32px' : '0px' }}>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             style={{ 
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-              gap: '24px',
+              gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(auto-fit, minmax(150px, 1fr))',
+              gap: isMobile ? '32px 16px' : '24px',
               marginTop: '0px'
             }}
           >
@@ -375,16 +515,17 @@ export const SmartEPPCaseStudy = () => {
                   paddingTop: '20px',
                   borderTop: '2px solid',
                   borderColor: (stat as any).highlight ? 'var(--accent-color)' : 'rgba(255,255,255,0.15)',
-                  fontFamily: "'Jost', sans-serif"
+                  fontFamily: "'Jost', sans-serif",
+                  marginTop: isMobile && (stat.label === 'TEAM' || stat.label === 'ROLE') ? '18px' : '0'
                 }}
               >
-                <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: '14px', fontWeight: 500, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>
+                <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: isMobile ? '12px' : '14px', fontWeight: 500, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>
                   {stat.label}
                 </div>
-                <div style={{ color: (stat as any).highlight ? 'var(--accent-color)' : '#fff', fontSize: '20px', fontWeight: 500, marginBottom: '4px', letterSpacing: '0', }}>
+                <div style={{ color: (stat as any).highlight ? 'var(--accent-color)' : '#fff', fontSize: isMobile ? '16px' : '20px', fontWeight: 500, marginBottom: '4px', letterSpacing: '0', }}>
                   {stat.value}
                 </div>
-                <div style={{ color: '#D4D4D4', fontSize: '16px', lineHeight: 1.5 }}>
+                <div style={{ color: '#D4D4D4', fontSize: isMobile ? '14px' : '16px', lineHeight: 1.5 }}>
                   {stat.subtext}
                 </div>
               </div>
@@ -401,7 +542,7 @@ export const SmartEPPCaseStudy = () => {
               transition={{ delay: 1.5, type: 'spring', stiffness: 200, damping: 20 }}
               style={{
                 position: 'fixed',
-                bottom: '40px',
+                bottom: isMobile ? '20px' : '40px',
                 left: '50%',
                 zIndex: 100,
                 display: 'flex',
@@ -443,7 +584,7 @@ export const SmartEPPCaseStudy = () => {
                   e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)';
                 }}
               >
-                <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.05em', fontFamily: "'Syne', sans-serif", textTransform: 'uppercase' }}>Scroll to final designs</span>
+                <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.05em', fontFamily: "'Syne', sans-serif", textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Scroll to final designs</span>
                 <div style={{
                   background: 'var(--semantic-success)',
                   color: '#000',
@@ -466,11 +607,11 @@ export const SmartEPPCaseStudy = () => {
 
 
       {/* 3. Problem */}
-      <section style={{ padding: '120px 0' }}>
+      <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           
           {/* Zone A & B: The Setup Block */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(var(--semantic-error-rgb),0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(var(--semantic-error-rgb),0.12)', borderRadius: '32px', padding: '64px', position: 'relative', overflow: 'hidden' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(var(--semantic-error-rgb),0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(var(--semantic-error-rgb),0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             
             {/* Background watermark */}
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(var(--semantic-error-rgb),0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
@@ -524,72 +665,72 @@ export const SmartEPPCaseStudy = () => {
                   />
                 </svg>
               </motion.div>
-              <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '13px', fontFamily: "'Syne', sans-serif" }}>
+              <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: isMobile ? '11px' : '13px', fontFamily: "'Syne', sans-serif" }}>
                 01: The Problem
               </span>
             </div>
 
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0 }}>
+            <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0 }}>
               A 4-party financial product that had to feel as simple as shopping on Amazon.
             </h2>
             
-            <div style={{ marginTop: '64px' }} />
+            <div style={{ marginTop: isMobile ? '32px' : '64px' }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
               {/* Narrative (Left) */}
               <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0 }}>
+                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0 }}>
                   By combining corporate GST benefits with pre-tax salary deductions, we unlocked a massive ~40% discount on premium phones. This birthed a <strong style={{ color: '#fff', fontWeight: 500 }}>0-to-1 product: Smart EPP (Employee Purchase Program).</strong>
                 </p>
-                <div style={{ marginTop: '32px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '24px' }}>
-                  <div style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '8px' }}>The Business Goal</div>
-                  <p style={{ color: '#D4D4D4', fontSize: '18px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Validate a new revenue stream via rapid employee adoption with <strong style={{ color: '#fff', fontWeight: 500 }}>zero manual HR overhead.</strong></p>
-                  <div style={{ color: '#fff', fontSize: '20px', fontWeight: 600, marginBottom: '8px' }}>The UX Goal</div>
-                  <p style={{ color: '#D4D4D4', fontSize: '18px', lineHeight: 1.5, margin: 0 }}>Explain the tax savings simply to build immediate trust and <strong style={{ color: '#fff', fontWeight: 500 }}>eliminate anxiety around salary deductions.</strong></p>
+                <div style={{ marginTop: '32px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: isMobile ? '20px' : '24px' }}>
+                  <div style={{ color: '#fff', fontSize: isMobile ? '16px' : '20px', fontWeight: 600, marginBottom: '8px' }}>The Business Goal</div>
+                  <p style={{ color: '#D4D4D4', fontSize: isMobile ? '16px' : '18px', lineHeight: 1.5, margin: '0 0 20px 0' }}>Validate a new revenue stream via rapid employee adoption with <strong style={{ color: '#fff', fontWeight: 500 }}>zero manual HR overhead.</strong></p>
+                  <div style={{ color: '#fff', fontSize: isMobile ? '16px' : '20px', fontWeight: 600, marginBottom: '8px' }}>The UX Goal</div>
+                  <p style={{ color: '#D4D4D4', fontSize: isMobile ? '16px' : '18px', lineHeight: 1.5, margin: 0 }}>Explain the tax savings simply to build immediate trust and <strong style={{ color: '#fff', fontWeight: 500 }}>eliminate anxiety around salary deductions.</strong></p>
                 </div>
               </div>
 
               {/* Stats (Right) */}
               <div className="lg:col-span-5" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', fontFamily: "'Jost', sans-serif" }}>
-                <div style={{fontFamily: 'var(--font-heading)', fontSize: '16px', color: 'var(--semantic-error)', textTransform: 'uppercase', letterSpacing: '0', marginBottom: '16px', fontWeight: 600}}>
+                <div style={{fontFamily: 'var(--font-heading)', fontSize: isMobile ? '14px' : '16px', color: 'var(--semantic-error)', textTransform: 'uppercase', letterSpacing: '0', marginBottom: '16px', fontWeight: 600}}>
                   Project Scope
                 </div>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
                   
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Core Features</div>
-                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>12+</div>
-                    <div style={{ color: '#D4D4D4', fontSize: '16px', lineHeight: 1.5 }}>End-to-end leasing workflows.</div>
+                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: isMobile ? '12px' : '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Core Features</div>
+                    <div style={{ color: '#fff', fontSize: isMobile ? '20px' : '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>12+</div>
+                    <div style={{ color: '#D4D4D4', fontSize: isMobile ? '14px' : '16px', lineHeight: 1.5 }}>End-to-end leasing workflows.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>User Types</div>
-                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>4</div>
-                    <div style={{ color: '#D4D4D4', fontSize: '16px', lineHeight: 1.5 }}>Distinct actors in one shared flow.</div>
+                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: isMobile ? '12px' : '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>User Types</div>
+                    <div style={{ color: '#fff', fontSize: isMobile ? '20px' : '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>4</div>
+                    <div style={{ color: '#D4D4D4', fontSize: isMobile ? '14px' : '16px', lineHeight: 1.5 }}>Distinct actors in one shared flow.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Backbone</div>
-                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>1</div>
-                    <div style={{ color: '#D4D4D4', fontSize: '16px', lineHeight: 1.5 }}>Unified operational backend.</div>
+                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: isMobile ? '12px' : '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Backbone</div>
+                    <div style={{ color: '#fff', fontSize: isMobile ? '20px' : '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>1</div>
+                    <div style={{ color: '#D4D4D4', fontSize: isMobile ? '14px' : '16px', lineHeight: 1.5 }}>Unified operational backend.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Integrations</div>
-                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>1</div>
-                    <div style={{ color: '#D4D4D4', fontSize: '16px', lineHeight: 1.5 }}>Backend HRMS sync.</div>
+                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: isMobile ? '12px' : '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Integrations</div>
+                    <div style={{ color: '#fff', fontSize: isMobile ? '20px' : '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>1</div>
+                    <div style={{ color: '#D4D4D4', fontSize: isMobile ? '14px' : '16px', lineHeight: 1.5 }}>Backend HRMS sync.</div>
                   </div>
 
                   <div style={{ background: 'rgba(var(--semantic-error-rgb),0.04)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.3)', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Key Deliverables</div>
-                    <div style={{ color: '#fff', fontSize: '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>250+</div>
-                    <div style={{ color: '#D4D4D4', fontSize: '16px', lineHeight: 1.5 }}>High-fidelity screens & flows.</div>
+                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: isMobile ? '12px' : '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Key Deliverables</div>
+                    <div style={{ color: '#fff', fontSize: isMobile ? '20px' : '24px', fontWeight: 500, lineHeight: 1, marginBottom: '6px' }}>250+</div>
+                    <div style={{ color: '#D4D4D4', fontSize: isMobile ? '14px' : '16px', lineHeight: 1.5 }}>High-fidelity screens & flows.</div>
                   </div>
 
                   <div style={{ background: 'rgba(255,255,255,0.02)', borderLeft: '3px solid #333', borderRadius: '4px 12px 12px 4px', padding: '16px 20px' }}>
-                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Out of Scope</div>
-                    <div style={{ color: '#D4D4D4', fontSize: '16px', fontWeight: 400, lineHeight: 1.5, marginTop: '6px' }}>Brand identity.</div>
+                    <div style={{fontFamily: 'var(--font-heading)', color: '#D4D4D4', fontSize: isMobile ? '12px' : '16px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Out of Scope</div>
+                    <div style={{ color: '#D4D4D4', fontSize: isMobile ? '14px' : '16px', fontWeight: 400, lineHeight: 1.5, marginTop: '6px' }}>Brand identity.</div>
                   </div>
 
                 </div>
@@ -611,40 +752,40 @@ export const SmartEPPCaseStudy = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               
               {/* Challenge 1 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Abstract savings</div>
-                <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', marginBottom: '6px', lineHeight: 1.3, margin: '0 0 6px 0' }}>Tax savings are abstract. Money feels real.</h4>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0 }}>Employees don't think in slabs. They think "what do I actually save?" The math had to become one personal, immediate number.</p>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: isMobile ? '20px' : '28px 32px' }}>
+                <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: isMobile ? '12px' : '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: isMobile ? '4px' : '8px'}}>Abstract savings</div>
+                <h4 style={{ fontSize: isMobile ? '18px' : '20px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: isMobile ? '0 0 8px 0' : '0 0 12px 0' }}>Tax savings are abstract. Money feels real.</h4>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0 }}>Employees don't think in slabs. They think "what do I actually save?" The math had to become one personal, immediate number.</p>
               </motion.div>
 
               {/* Challenge 2 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>High-trust commitment</div>
-                <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>A monthly salary EMI is terrifying without trust signals.</h4>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0 }}>Committing months of salary is a high-trust act. Without confidence at every step, people abandon at the product page.</p>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: isMobile ? '20px' : '28px 32px' }}>
+                <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: isMobile ? '12px' : '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: isMobile ? '4px' : '8px'}}>High-trust commitment</div>
+                <h4 style={{ fontSize: isMobile ? '18px' : '20px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: isMobile ? '0 0 8px 0' : '0 0 12px 0' }}>A monthly salary EMI is terrifying without trust signals.</h4>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0 }}>Committing months of salary is a high-trust act. Without confidence at every step, people abandon at the product page.</p>
               </motion.div>
 
               {/* Challenge 3 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>Scale without friction</div>
-                <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>HR needs to approve hundreds of requests in seconds.</h4>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0 }}>Approvals at scale break without proper tooling. If approval is slow, HR simply stops using it.</p>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: isMobile ? '20px' : '28px 32px' }}>
+                <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: isMobile ? '12px' : '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: isMobile ? '4px' : '8px'}}>Scale without friction</div>
+                <h4 style={{ fontSize: isMobile ? '18px' : '20px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: isMobile ? '0 0 8px 0' : '0 0 12px 0' }}>HR needs to approve hundreds of requests in seconds.</h4>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0 }}>Approvals at scale break without proper tooling. If approval is slow, HR simply stops using it.</p>
               </motion.div>
 
               {/* Challenge 4 */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: '28px 32px' }}>
-                <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>No shared vocabulary</div>
-                <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: '0 0 6px 0', lineHeight: 1.3 }}>Four user types. One order. Four completely different meanings.</h4>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0 }}>Employees think products. HR thinks policy. Financiers think risk. Sellers think fulfillment.</p>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ fontFamily: "'Jost', sans-serif", background: 'rgba(var(--semantic-error-rgb),0.03)', borderLeft: '3px solid rgba(var(--semantic-error-rgb),0.25)', borderRadius: '4px 16px 16px 4px', padding: isMobile ? '20px' : '28px 32px' }}>
+                <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: isMobile ? '12px' : '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: isMobile ? '4px' : '8px'}}>No shared vocabulary</div>
+                <h4 style={{ fontSize: isMobile ? '18px' : '20px', fontWeight: 600, color: '#fff', lineHeight: 1.3, margin: isMobile ? '0 0 8px 0' : '0 0 12px 0' }}>Four user types. One order. Four completely different meanings.</h4>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0 }}>Employees think products. HR thinks policy. Financiers think risk. Sellers think fulfillment.</p>
               </motion.div>
 
               {/* Challenge 5 - Full Width Hero Card */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ fontFamily: "'Jost', sans-serif", background: 'linear-gradient(135deg, rgba(var(--semantic-error-rgb), 0.07) 0%, rgba(var(--semantic-error-rgb),0.02) 100%)', borderLeft: '3px solid var(--semantic-error)', borderRadius: '4px 16px 16px 4px', padding: '32px 40px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'center' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2" style={{ fontFamily: "'Jost', sans-serif", background: 'linear-gradient(135deg, rgba(var(--semantic-error-rgb), 0.07) 0%, rgba(var(--semantic-error-rgb),0.02) 100%)', borderLeft: '3px solid var(--semantic-error)', borderRadius: '4px 16px 16px 4px', padding: isMobile ? '24px' : '32px 40px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr', gap: isMobile ? '12px' : '48px', alignItems: 'center' }}>
                 <div>
-                  <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '8px'}}>The Hardest One</div>
-                  <h4 style={{ fontSize: '28px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3 }}>The invisible 4-party chain.</h4>
+                  <div style={{fontFamily: 'var(--font-heading)', color: 'var(--semantic-error)', fontSize: isMobile ? '12px' : '14px', fontWeight: 600, letterSpacing: '0', textTransform: 'uppercase', marginBottom: isMobile ? '4px' : '8px'}}>The Hardest One</div>
+                  <h4 style={{ fontSize: isMobile ? '22px' : '28px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3 }}>The invisible 4-party chain.</h4>
                 </div>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.7, margin: 0 }}>
                   15+ order states across 4 parties. Three days of silence kills trust even when nothing's wrong. <br />The fix: employees see a clean 5-step progress bar. The chain stays hidden.
                 </p>
               </motion.div>
@@ -656,13 +797,13 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
 
-      <section style={{ padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: isMobile ? '64px 0' : '120px 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '600px', background: 'radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 60%)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
 
             {/* Section Label */}
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+            <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', justifyContent: isMobile ? 'center' : 'flex-start', gap: '16px', marginBottom: '32px' }}>
               <motion.div
                 style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer' }}
                 whileHover="hover"
@@ -705,7 +846,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* Heading & Central Tension */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
               <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', margin: 0, fontFamily: 'var(--font-heading)' }}>
                 Design Principles Driven by Data
               </h2>
@@ -719,7 +860,7 @@ export const SmartEPPCaseStudy = () => {
               
               {/* Principle 1 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-3 group relative overflow-hidden transition-all duration-300"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: isMobile ? '20px' : '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
@@ -727,16 +868,16 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     01
                   </div>
-                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3, fontFamily: "'Jost', sans-serif" }}>Show the rupee, hide the formula</h4>
+                  <h4 style={{ fontSize: isMobile ? '18px' : '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.3, fontFamily: "'Jost', sans-serif" }}>Show the rupee, hide the formula</h4>
                 </div>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.7, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.7, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Present ₹38,257 saved, not tax slab math. Outcomes in the primary view. Mechanics on demand.
                 </p>
               </motion.div>
 
               {/* Principle 2 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="lg:col-span-3 group relative overflow-hidden transition-all duration-300"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: isMobile ? '20px' : '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
@@ -744,16 +885,16 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     02
                   </div>
-                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>Compare to Amazon, not nothing</h4>
+                  <h4 style={{ fontSize: isMobile ? '18px' : '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>Compare to Amazon, not nothing</h4>
                 </div>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Savings need contrast to land. Comparison is a first-class feature on the product page, not a marketing footnote.
                 </p>
               </motion.div>
 
               {/* Principle 3 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="lg:col-span-2 group relative overflow-hidden transition-all duration-300"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: isMobile ? '20px' : '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
@@ -761,16 +902,16 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     03
                   </div>
-                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>Answer anxieties proactively</h4>
+                  <h4 style={{ fontSize: isMobile ? '18px' : '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>Answer anxieties proactively</h4>
                 </div>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   What if it breaks? What if I leave? Every anxiety surfaced in-context.
                 </p>
               </motion.div>
 
               {/* Principle 4 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="lg:col-span-2 group relative overflow-hidden transition-all duration-300"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: isMobile ? '20px' : '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
@@ -778,16 +919,16 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     04
                   </div>
-                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>HR approves in seconds</h4>
+                  <h4 style={{ fontSize: isMobile ? '18px' : '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>HR approves in seconds</h4>
                 </div>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Name, role, device, policy: one card, one click. No endless scrolling.
                 </p>
               </motion.div>
 
               {/* Principle 5 */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="lg:col-span-2 group relative overflow-hidden transition-all duration-300"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '24px', padding: isMobile ? '20px' : '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; }}
               >
@@ -795,9 +936,9 @@ export const SmartEPPCaseStudy = () => {
                   <div style={{ minWidth: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-system)', background: 'rgba(255,255,255, 0.02)' }}>
                     05
                   </div>
-                  <h4 style={{ fontSize: '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>Status must never be silent</h4>
+                  <h4 style={{ fontSize: isMobile ? '18px' : '20px', fontWeight: 600, color: '#fff', margin: 0, lineHeight: 1.35, fontFamily: "'Jost', sans-serif" }}>Status must never be silent</h4>
                 </div>
-                <p style={{ fontSize: '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
+                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-system)' }}>
                   Every state change triggers a notification to prevent anxiety.
                 </p>
               </motion.div>
@@ -811,7 +952,7 @@ export const SmartEPPCaseStudy = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{
             position: 'relative',
             borderRadius: '32px',
-            padding: '64px',
+            padding: isMobile ? '16px' : '64px',
             background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%)',
             borderTop: '1px solid rgba(255, 255, 255, 0.06)',
             borderLeft: '1px solid rgba(255, 255, 255, 0.02)',
@@ -843,7 +984,7 @@ export const SmartEPPCaseStudy = () => {
               pointerEvents: 'none'
             }} />
 
-            <div style={{ textAlign: 'center', marginBottom: '80px', position: 'relative', zIndex: 1 }}>
+            <div style={{ textAlign: 'center', marginBottom: isMobile ? '40px' : '80px', position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '32px' }}>
               <motion.div
                 style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer' }}
@@ -967,9 +1108,9 @@ export const SmartEPPCaseStudy = () => {
 
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '8px' }}>
-            <a href="#final-designs" onClick={(e) => { e.preventDefault(); document.getElementById('final-designs')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 32px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 600, fontFamily: "'Syne', sans-serif", textTransform: 'uppercase', letterSpacing: '1px', transition: 'all 0.2s ease', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}>
-              Jump to Final Designs <ArrowDown size={18} />
+          <div style={{ textAlign: 'center', marginTop: '8px', width: '100%' }}>
+            <a href="#final-designs" onClick={(e) => { e.preventDefault(); document.getElementById('final-designs')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ display: isMobile ? 'flex' : 'inline-flex', width: isMobile ? '100%' : 'auto', justifyContent: 'center', alignItems: 'center', gap: '8px', padding: isMobile ? '14px 20px' : '12px 32px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', color: '#fff', textDecoration: 'none', fontSize: isMobile ? '12px' : '14px', fontWeight: 600, fontFamily: "'Syne', sans-serif", textTransform: 'uppercase', letterSpacing: '1px', transition: 'all 0.2s ease', cursor: 'pointer', whiteSpace: 'nowrap' }} onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}>
+              Jump to Final Designs <ArrowDown size={isMobile ? 16 : 18} />
             </a>
           </div>
           </motion.div>
@@ -977,12 +1118,12 @@ export const SmartEPPCaseStudy = () => {
         </div>
       </section>
       {/* Research Section */}
-      <section style={{ padding: '120px 0' }}>
+      <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
 
             {/* Section Label */}
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+            <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', justifyContent: isMobile ? 'center' : 'flex-start', gap: '16px', marginBottom: '32px' }}>
               <motion.div
                 style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer' }}
                 whileHover="hover"
@@ -1027,7 +1168,7 @@ export const SmartEPPCaseStudy = () => {
             </div>
 
             {/* Heading & Central Tension */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left', gap: '24px', marginBottom: '56px', maxWidth: '900px', margin: isMobile ? '0 auto 56px auto' : '0 0 56px 0' }}>
               <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '0', margin: 0 }}>
                 Testing the Prototypes & Final Fixes.
               </h2>
@@ -1040,7 +1181,7 @@ export const SmartEPPCaseStudy = () => {
             <div className="grid grid-cols-1 lg:grid-cols-6 gap-5">
               
               {/* Card 1: Employee Confusion */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: isMobile ? '20px' : '32px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>73%</div>
                   <div style={{ fontSize: '16px', color: '#D4D4D4', lineHeight: 1.4, flex: 1 }}>couldn't calculate their actual tax savings.</div>
@@ -1073,7 +1214,7 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Card 2: Employee Anxiety */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: isMobile ? '20px' : '32px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>8/12</div>
                   <div style={{ fontSize: '16px', color: '#D4D4D4', lineHeight: 1.4, flex: 1 }}>flagged device damage as a major concern.</div>
@@ -1106,7 +1247,7 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Card 3: HR & Financier Friction */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: isMobile ? '20px' : '32px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>50+</div>
                   <div style={{ fontSize: '16px', color: '#D4D4D4', lineHeight: 1.4, flex: 1 }}>manual purchase order approvals created massive HR bottlenecks.</div>
@@ -1139,7 +1280,7 @@ export const SmartEPPCaseStudy = () => {
               </motion.div>
 
               {/* Card 4: Seller Fulfillment */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: '32px', display: 'flex', flexDirection: 'column' }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="lg:col-span-3" style={{ background: '#0d0d0d', border: '1px solid rgba(var(--semantic-warning-rgb),0.15)', borderRadius: '20px', padding: isMobile ? '20px' : '32px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                   <div style={{ fontSize: '42px', fontWeight: 700, color: 'var(--semantic-warning)', letterSpacing: '0', lineHeight: 1 }}>Late</div>
                   <div style={{ fontSize: '16px', color: '#D4D4D4', lineHeight: 1.4, flex: 1 }}>visibility caused frequent stockouts.</div>
@@ -1176,7 +1317,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Sub-section divider */}
             <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', width: '100%', margin: '80px 0 64px 0' }} />
             {/* Heading & Intro */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '56px', maxWidth: '900px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left', gap: '24px', marginBottom: '56px', maxWidth: '900px', margin: isMobile ? '0 auto 56px auto' : '0 0 56px 0' }}>
               <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', margin: 0, fontFamily: 'var(--font-heading)' }}>
                 User Testing: 80% Preference for Context
               </h2>
@@ -1188,7 +1329,7 @@ export const SmartEPPCaseStudy = () => {
               <div className="flex flex-col gap-6">
                 
                 {/* The Winner (Top) */}
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '24px', padding: '48px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '48px', alignItems: 'center' }}>
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '24px', padding: isMobile ? '20px' : '48px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '48px', alignItems: 'center' }}>
                   
                   {/* Text Content */}
                   <div style={{ flex: '1 1 400px' }}>
@@ -1269,7 +1410,7 @@ export const SmartEPPCaseStudy = () => {
                 {/* The Losers (Bottom Row) */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   
-                  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: isMobile ? '20px' : '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#D4D4D4', fontSize: '16px', fontWeight: 700, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '16px',}}>
                       <XCircle size={16} strokeWidth={2.5} /> Rejected Concept
                     </div>
@@ -1289,7 +1430,7 @@ export const SmartEPPCaseStudy = () => {
                     </p>
                   </motion.div>
 
-                  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: isMobile ? '20px' : '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <div style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#D4D4D4', fontSize: '16px', fontWeight: 700, letterSpacing: '0', textTransform: 'uppercase', marginBottom: '16px',}}>
                       <XCircle size={16} strokeWidth={2.5} /> Rejected Concept
                     </div>
@@ -1318,7 +1459,7 @@ export const SmartEPPCaseStudy = () => {
 
 
       {/* 06. Final Solution: The Visual Ecosystem */}
-      <section id="final-designs" ref={finalDesignsRef} style={{ position: 'relative', padding: '120px 0', background: '#080808', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+      <section id="final-designs" ref={finalDesignsRef} style={{ position: 'relative', padding: isMobile ? '64px 0' : '120px 0', background: '#080808', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         {/* Top Edge Glow */}
         <div style={{
           position: 'absolute',
@@ -1394,29 +1535,32 @@ export const SmartEPPCaseStudy = () => {
 
             
             {/* Unified Super-Tabs */}
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px', marginBottom: '60px' }}>
-              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '12px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px', marginBottom: '60px', width: '100%' }}>
+              <div style={{ display: 'flex', flexWrap: isMobile ? 'nowrap' : 'wrap', justifyContent: 'center', gap: isMobile ? '8px' : '12px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '100px', padding: '6px', width: 'auto', maxWidth: '100%' }}>
                 {[
                   { id: 'employee', label: 'Employee App', icon: <Smartphone size={16} /> },
                   { id: 'hr', label: 'HR Portal', icon: <Users size={16} /> },
                   { id: 'financier', label: 'Financier Portal', icon: <Landmark size={16} /> },
                   { id: 'seller', label: 'Seller Hub', icon: <Package size={16} /> }
-                ].map(tab => (
+                ].map(tab => {
+                  const isActive = activePortalTab === tab.id;
+                  return (
                   <button
                     key={tab.id}
                     onClick={() => setActivePortalTab(tab.id as any)}
                     style={{
                       position: 'relative',
-                      display: 'flex', alignItems: 'center', gap: '8px',
-                      padding: '10px 24px', borderRadius: '100px',
+                      display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+                      padding: isMobile ? (isActive ? '10px 20px' : '12px 14px') : '10px 24px', 
+                      borderRadius: '100px',
                       background: 'transparent',
-                      color: activePortalTab === tab.id ? '#fff' : '#888',
+                      color: isActive ? '#fff' : '#888',
                       border: 'none',
-                      cursor: 'pointer', transition: 'color 0.3s ease',
-                      fontWeight: 500, fontSize: '16px', fontFamily: "'Syne', sans-serif"
+                      cursor: 'pointer', transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                      fontWeight: 500, fontSize: isMobile ? '14px' : '16px', fontFamily: "'Syne', sans-serif"
                     }}
                   >
-                    {activePortalTab === tab.id && (
+                    {isActive && (
                       <motion.div
                         layoutId="portal-tab-active"
                         style={{
@@ -1429,11 +1573,21 @@ export const SmartEPPCaseStudy = () => {
                         transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                       />
                     )}
-                    <span style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      {tab.icon} {tab.label}
+                    <span style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: isMobile ? '6px' : '8px' }}>
+                      {React.cloneElement(tab.icon as any, { size: isMobile ? 18 : 16 })} 
+                      {(!isMobile || isActive) && (
+                        <motion.span 
+                           initial={isMobile ? { width: 0, opacity: 0 } : false} 
+                           animate={{ width: 'auto', opacity: 1 }} 
+                           transition={{ duration: 0.3 }} 
+                           style={{ whiteSpace: 'nowrap', overflow: 'hidden', display: 'inline-block' }}
+                        >
+                          {tab.label}
+                        </motion.span>
+                      )}
                     </span>
                   </button>
-                ))}
+                )})}
               </div>
             </div>
 
@@ -1484,11 +1638,11 @@ export const SmartEPPCaseStudy = () => {
             {!isGridView && canScrollLeft && (
               <button 
                 onClick={() => handleCarouselScroll('left')}
-                style={{ position: 'absolute', left: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
+                style={{ position: 'absolute', left: isMobile ? '2vw' : '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: isMobile ? '8px' : '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
                 onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.9)'}
                 onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
               >
-                <ChevronLeft size={32} />
+                <ChevronLeft size={isMobile ? 20 : 32} />
               </button>
             )}
 
@@ -1551,11 +1705,11 @@ export const SmartEPPCaseStudy = () => {
             {!isGridView && canScrollRight && (
               <button 
                 onClick={() => handleCarouselScroll('right')}
-                style={{ position: 'absolute', right: '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
+                style={{ position: 'absolute', right: isMobile ? '2vw' : '4vw', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', padding: isMobile ? '8px' : '16px', color: '#fff', cursor: 'pointer', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}
                 onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.9)'}
                 onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
               >
-                <ChevronRight size={32} />
+                <ChevronRight size={isMobile ? 20 : 32} />
               </button>
             )}
           </div>
@@ -1595,7 +1749,7 @@ export const SmartEPPCaseStudy = () => {
       </section>
 
       {/* 06: Outcomes & Learnings */}
-      <section style={{ padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: isMobile ? '64px 0' : '120px 0', position: 'relative', overflow: 'hidden' }}>
 
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1200px' }}>
           
