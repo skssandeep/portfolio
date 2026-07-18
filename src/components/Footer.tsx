@@ -20,7 +20,7 @@ export const Footer = () => {
     { label: "X", href: "#" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/sandeep-kumar-singh-7ba716194/" },
 
-    { label: "Instagram", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/sandy.here_/" },
   ];
 
   const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
