@@ -119,6 +119,8 @@ export const Footer = () => {
               <a 
                 key={label} 
                 href={href} 
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label} 
                 style={{ 
                   color: hoveredSocial === label ? 'var(--text-primary)' : 'inherit', 
