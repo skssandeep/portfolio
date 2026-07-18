@@ -3,8 +3,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 export const LogoRevealOrbital2 = () => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const containerRef = useRef<HTMLDivElement>(null);
   const charRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const hudRef = useRef<HTMLDivElement>(null);
@@ -18,6 +20,12 @@ export const LogoRevealOrbital2 = () => {
     const eye = chars[6]; // The 'o'
     if (!eye) return;
 
+    // Observe body for layout shifts (like images loading) and refresh
+    const resizeObserver = new ResizeObserver(() => {
+      ScrollTrigger.refresh();
+    });
+    resizeObserver.observe(document.body);
+
     const ctx = gsap.context(() => {
       const eyeX = eye.offsetLeft + eye.offsetWidth / 2;
       const eyeY = eye.offsetTop + eye.offsetHeight / 2;
@@ -26,10 +34,12 @@ export const LogoRevealOrbital2 = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
-          end: '+=250%', // Increased scroll duration slightly to give more room for the tilt
+          end: '+=200%', 
           scrub: 1.5,
           pin: true,
-          anticipatePin: 1
+          anticipatePin: 0,
+          invalidateOnRefresh: true,
+          pinSpacer: true
         }
       });
 
@@ -116,10 +126,12 @@ export const LogoRevealOrbital2 = () => {
       tl.to({}, { duration: 0.3 });
     });
 
-    return () => ctx.revert();
-  }, []);
+    return () => {
+      resizeObserver.disconnect();
+      ctx.revert();
+    };
+  }, [isMobile]);
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const text = "SANDSTORMIFY";
 
   return (

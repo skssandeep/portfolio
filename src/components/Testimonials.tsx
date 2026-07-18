@@ -95,7 +95,7 @@ export const Testimonials = () => {
         
         {/* The Massive Light Card (Now Dark/Transparent) */}
         <div style={{
-          padding: '80px 0',
+          padding: isMobile ? '0' : '80px 0',
           position: 'relative',
           overflow: 'hidden'
         }}>

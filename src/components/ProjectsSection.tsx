@@ -1,32 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SiClaude } from 'react-icons/si';
+import { FullscreenImageModal } from './FullscreenImageModal';
 
 const projects = [
-  { title: "Enterprise Dashboard", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" },
-  { title: "Fintech Platform", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" },
-  { title: "Healthcare App", image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" }
+  { 
+    title: "Saarthi", 
+    image: "/images/saarthi_01.png", 
+    preview: "/images/saarthi_02.png",
+    description: "A smart home manager that proactively supervises appliances, experts, and updates."
+  },
+  { 
+    title: "Pause.", 
+    image: "/images/pause.png", 
+    preview: "/images/pause_web.jpg",
+    description: "A premium coffee subscription concept focusing on mindful, slow morning rituals.",
+    madeWith: "Claude Design"
+  }
 ];
 
 export const ProjectsSection = () => {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const [activePreview, setActivePreview] = React.useState<string | null>(null);
 
   return (
     <section id="projects" style={{ 
       position: 'relative',
-      padding: '120px 0'
+      padding: isMobile ? '0' : '120px 0'
     }}>
-      <div className="container">
-        <div style={{
-          position: 'relative',
-          borderRadius: '32px',
-          padding: isMobile ? '96px 16px' : '96px 64px',
-          background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%)',
-          borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-          borderLeft: '1px solid rgba(255, 255, 255, 0.02)',
-          borderRight: '1px solid rgba(255, 255, 255, 0.02)',
-          borderBottom: 'none',
-          overflow: 'hidden'
-        }}>
+      <div style={{
+        position: 'relative',
+        padding: isMobile ? '96px 16px' : '96px 64px',
+        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+        borderBottom: 'none',
+        overflow: 'hidden',
+        width: '100%'
+      }}>
           {/* Top Edge Glow */}
           <div style={{
             position: 'absolute',
@@ -93,69 +103,229 @@ export const ProjectsSection = () => {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))',
-            gap: isMobile ? '24px' : '32px',
-            padding: '0',
-            maxWidth: '1200px',
-            margin: '0 auto'
-          }}>
-            {projects.map((project, i) => (
-              <a 
-                key={i} 
-                href="#"
-                className="carousel-card glass"
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  aspectRatio: '4/3',
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  transition: 'transform 0.4s ease, box-shadow 0.4s ease',
-                  border: '1px solid var(--glass-border)',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.02) translateY(-10px)';
-                  e.currentTarget.style.boxShadow = '0 30px 60px rgba(239,68,68,0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(1) translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  // Add specific link handling here later
-                }}
-              >
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'cover',
-                  }} 
-                />
-                <div style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  width: '100%',
-                  padding: '32px 24px',
-                  background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)',
-                  textAlign: 'left',
-                }}>
-                  <h3 style={{ margin: 0, color: '#fff', fontSize: '24px', fontWeight: 600, letterSpacing: '1px' }}>{project.title}</h3>
+          {isMobile ? (
+            /* Mobile Layout: Groups Image and Text together for each project */
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '64px',
+              maxWidth: '1440px',
+              margin: '0 auto',
+              padding: '0'
+            }}>
+              {projects.map((project, i) => (
+                <div key={`mobile-proj-${i}`} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                  {/* Mobile Image */}
+                  <a 
+                    href="#"
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      width: '100%',
+                      position: 'relative',
+                      transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      borderBottom: 'none'
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if ((project as any).preview) {
+                        setActivePreview((project as any).preview);
+                      }
+                    }}
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      style={{ 
+                        width: '100%', 
+                        height: 'auto', 
+                        display: 'block',
+                        objectFit: 'contain',
+                      }} 
+                    />
+                  </a>
+
+                  {/* Mobile Text */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
+                    <h3 style={{ 
+                      margin: 0, 
+                      color: '#fff', 
+                      fontSize: '28px', 
+                      fontWeight: 600, 
+                      letterSpacing: '0.5px' 
+                    }}>
+                      {project.title}
+                    </h3>
+                    
+                    <p style={{ margin: 0, fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                      {(project as any).description}
+                    </p>
+
+                    {(project as any).madeWith && (
+                      <div style={{ 
+                        display: 'inline-flex', 
+                        alignItems: 'center', 
+                        gap: '8px', 
+                        marginTop: '8px',
+                        padding: '8px 14px',
+                        background: 'rgba(217, 119, 87, 0.1)',
+                        border: '1px solid rgba(217, 119, 87, 0.25)',
+                        borderRadius: '8px',
+                        alignSelf: 'flex-start',
+                      }}>
+                        <SiClaude size={16} color="#D97757" />
+                        <span style={{ 
+                          fontSize: '12px', 
+                          color: '#D97757', 
+                          fontWeight: 600, 
+                          letterSpacing: '1px', 
+                          textTransform: 'uppercase',
+                        }}>
+                          Made with {(project as any).madeWith}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </a>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            /* Web Layout: Separates Images and Details into independent aligned rows */
+            <>
+              {/* Images Row */}
+              <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '48px',
+                padding: '0',
+                maxWidth: '1440px',
+                margin: '0 auto'
+              }}>
+                {projects.map((project, i) => (
+                  <a 
+                    key={`img-${i}`} 
+                    href="#"
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      width: i === 0 ? '24%' : '72%',
+                      position: 'relative',
+                      transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      borderBottom: 'none',
+                      borderRadius: '24px',
+                      overflow: 'hidden'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.02) translateY(-12px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'scale(1) translateY(0)';
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if ((project as any).preview) {
+                        setActivePreview((project as any).preview);
+                      }
+                    }}
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      style={{ 
+                        width: '100%', 
+                        height: 'auto', 
+                        display: 'block',
+                        objectFit: 'cover',
+                      }} 
+                    />
+                  </a>
+                ))}
+              </div>
+
+              {/* Details Row */}
+              <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'flex-start',
+                justifyContent: 'center',
+                gap: '48px',
+                maxWidth: '1440px',
+                margin: '40px auto 0',
+                padding: '0'
+              }}>
+                {projects.map((project, i) => (
+                  <div key={`details-${i}`} style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    gap: '16px',
+                    width: i === 0 ? '24%' : '72%'
+                  }}>
+                    {/* Visual Connector Line */}
+                    <div style={{ 
+                      width: '100%', 
+                      height: '1px', 
+                      background: 'linear-gradient(90deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%)',
+                      marginBottom: '8px'
+                    }} />
+
+                    <h3 style={{ 
+                      margin: 0, 
+                      color: '#fff', 
+                      fontSize: '28px', 
+                      fontWeight: 600, 
+                      letterSpacing: '0.5px' 
+                    }}>
+                      {project.title}
+                    </h3>
+                    
+                    <p style={{ margin: 0, fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                      {(project as any).description}
+                    </p>
+
+                    {(project as any).madeWith && (
+                      <div style={{ 
+                        display: 'inline-flex', 
+                        alignItems: 'center', 
+                        gap: '8px', 
+                        marginTop: '8px',
+                        padding: '8px 14px',
+                        background: 'rgba(217, 119, 87, 0.1)',
+                        border: '1px solid rgba(217, 119, 87, 0.25)',
+                        borderRadius: '8px',
+                        alignSelf: 'flex-start',
+                      }}>
+                        <SiClaude size={16} color="#D97757" />
+                        <span style={{ 
+                          fontSize: '12px', 
+                          color: '#D97757', 
+                          fontWeight: 600, 
+                          letterSpacing: '1px', 
+                          textTransform: 'uppercase',
+                        }}>
+                          Made with {(project as any).madeWith}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
-      </div>
+
+      {/* Lightbox Preview */}
+      <FullscreenImageModal
+        isOpen={!!activePreview}
+        images={activePreview ? [activePreview] : []}
+        initialIndex={0}
+        onClose={() => setActivePreview(null)}
+      />
     </section>
   );
 };
