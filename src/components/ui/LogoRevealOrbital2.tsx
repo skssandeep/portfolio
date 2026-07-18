@@ -39,7 +39,7 @@ export const LogoRevealOrbital2 = () => {
           pin: true,
           anticipatePin: 0,
           invalidateOnRefresh: true,
-          pinSpacer: true
+          pinSpacing: true
         }
       });
 
