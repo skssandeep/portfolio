@@ -17,7 +17,7 @@ export const Footer = () => {
 
   // Social media icons
   const socialLinks = [
-    { label: "X", href: "#" },
+    { label: "X", href: "https://x.com/sandy_here__" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/sandeep-kumar-singh-7ba716194/" },
 
     { label: "Instagram", href: "https://www.instagram.com/sandy.here_/" },
