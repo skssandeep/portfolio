@@ -291,7 +291,7 @@ export const AboutSection = () => {
             <div className="relative z-20 flex flex-col gap-8 w-full">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                 <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
-                  I'm a Product Designer with <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>3+ years of experience</span> transforming complex B2B and consumer ecosystems into seamless, high-converting experiences. I focus on building products that people actually love to use, driving real business growth.
+                  I'm a Product Designer with <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>4 years of experience</span> transforming complex B2B and consumer ecosystems into seamless, high-converting experiences. I focus on building products that people actually love to use, driving real business growth.
                 </p>
                 <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
                   Recently, I led the design of an enterprise mobile and web platform adopted by <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>20+ corporate partners</span>. By creating a unified design system, I eliminated user friction and drastically reduced post-launch support tickets.
