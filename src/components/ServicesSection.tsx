@@ -217,7 +217,7 @@ export const ServicesSection = () => {
               gap: isMobile ? '24px' : '48px',
               padding: '28px 0'
             }}>
-              {['Claude Code', 'Claude Design', 'Gemini', 'Antigravity IDE', 'UX Pilot', 'Rapid Prototyping'].map((item) => (
+              {['Claude Code', 'Claude Design', 'Gemini', 'Antigravity IDE', 'UX Pilot'].map((item) => (
                 <span key={item} style={{ fontSize: '16px', fontWeight: 500, color: '#ffffff' }}>
                   {item}
                 </span>
