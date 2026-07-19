@@ -263,7 +263,7 @@ export const FullscreenImageModal: React.FC<FullscreenImageModalProps> = ({ isOp
                    const fitWidth = maxInitialHeight * aspectRatio;
                    setImageWidth(img.naturalWidth > img.naturalHeight ? Math.min(1200, fitWidth) : fitWidth);
                  }}
-                 style={{ width: `${imageWidth}px`, maxWidth: 'none', height: 'auto', display: 'block', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: '0 auto' }} 
+                 style={{ width: `${imageWidth}px`, maxWidth: 'none', height: 'auto', display: 'block', borderRadius: '4px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))', margin: '0 auto' }} 
               />
             </div>
           )}
