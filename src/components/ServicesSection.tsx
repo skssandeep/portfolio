@@ -183,6 +183,55 @@ export const ServicesSection = () => {
             }} />
           </div>
 
+          {/* Service 03 */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '48px', alignItems: 'start', marginBottom: '32px' }}>
+              <h3 className="text-title" style={{ fontSize: '40px', margin: 0, fontWeight: 700, display: 'flex', gap: '12px', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', justifyContent: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left' }}>
+                <span style={{ 
+                  background: 'linear-gradient(to right, #7928CA 0%, #FF007A 50%, var(--accent-color) 100%)', 
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  color: 'transparent'
+                }}>03.</span> <span style={{ color: '#ffffff' }}>AI-Driven Development</span>
+              </h3>
+              <p className="text-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '18px', margin: 0, textAlign: isMobile ? 'center' : 'left' }}>
+                I leverage advanced AI tools to accelerate the product lifecycle. From rapidly generating wireframes and high-fidelity UI with UX Pilot and Claude Design, to coding and developing robust applications with Claude Code, Gemini, and the Antigravity IDE.
+              </p>
+            </div>
+            
+            {/* Glowing line top */}
+            <div style={{ 
+              width: '100%', 
+              height: '1px', 
+              background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)',
+            }} />
+            
+            {/* Tags row */}
+            <div style={{ 
+              display: 'flex', 
+              flexDirection: isMobile ? 'column' : 'row',
+              alignItems: 'center',
+              justifyContent: 'center', 
+              flexWrap: 'wrap', 
+              gap: isMobile ? '24px' : '48px',
+              padding: '28px 0'
+            }}>
+              {['Claude Code', 'Gemini', 'Antigravity IDE', 'UX Pilot', 'Rapid Prototyping'].map((item) => (
+                <span key={item} style={{ fontSize: '16px', fontWeight: 500, color: '#ffffff' }}>
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            {/* Glowing line bottom */}
+            <div style={{ 
+              width: '100%', 
+              height: '1px', 
+              background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)',
+            }} />
+          </div>
+
         </div>
         </div>
       </div>
