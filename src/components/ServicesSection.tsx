@@ -196,7 +196,7 @@ export const ServicesSection = () => {
                 }}>03.</span> <span style={{ color: '#ffffff' }}>AI-Driven Development</span>
               </h3>
               <p className="text-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '18px', margin: 0, textAlign: isMobile ? 'center' : 'left' }}>
-                I leverage advanced AI tools to accelerate the product lifecycle. From rapidly generating wireframes and high-fidelity UI with UX Pilot and Claude Design, to coding and developing robust applications with Claude Code, Gemini, and the Antigravity IDE.
+                I build products faster and smarter by integrating AI into every stage of the lifecycle. From rapid UI prototyping with UX Pilot and Claude Design to robust development using Claude Code, Gemini, and Antigravity IDE—delivering premium results at unmatched speed.
               </p>
             </div>
             
