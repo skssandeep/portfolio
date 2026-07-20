@@ -500,7 +500,7 @@ export const SmartEPPCaseStudy = () => {
             }}
           >
             {[
-              { label: 'ROLE', value: 'Product Designer', subtext: 'Solo designer' },
+              { label: 'ROLE', value: 'UI/UX Designer', subtext: 'Solo designer' },
               { label: 'TEAM', value: '1 PM • 2 FE • 1 BE', subtext: '1 QA • 1 Business Analyst' },
               { label: 'PLATFORMS', value: 'iOS • Android • Web', subtext: '4 platforms' },
               { label: 'TIMELINE', value: '5 months', subtext: <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>Blank canvas <ArrowRight size={14} /> shipped MVP</span> },

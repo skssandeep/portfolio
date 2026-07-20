@@ -78,7 +78,7 @@ export const Footer = () => {
               </span>
             </div>
             <p style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
-              A Product Designer focused on solving complex user problems and driving measurable business impact.
+              A UI/UX Designer focused on solving complex user problems and driving measurable business impact.
             </p>
           </div>
 

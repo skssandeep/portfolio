@@ -176,7 +176,7 @@ export const Home = () => {
                   textTransform: 'uppercase', 
                   fontFamily: "'Dune Rise', sans-serif" 
                 }}>
-                  Sandeep KS • Product Designer
+                  Sandeep KS • UI/UX Designer
                 </span>
               </div>
               
@@ -239,7 +239,7 @@ export const Home = () => {
                   </span>
                 </div>
                 <span className="text-[10px] tracking-[0.15em] uppercase font-medium text-white/60 text-center" style={{ fontFamily: "'Dune Rise', sans-serif" }}>
-                  Product Designer
+                  UI/UX Designer
                 </span>
               </div>
               

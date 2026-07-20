@@ -300,14 +300,14 @@ export const Drafts = () => {
                   <div className="grid-2 scroll-reveal">
                     <CaseStudyCard 
                       title="Enterprise Dashboard Redesign"
-                      role="Lead Product Designer"
+                      role="Lead UI/UX Designer"
                       problem="Legacy reporting tools were causing a 40% drop-off in enterprise user engagement due to data density."
                       impact="Increased DAU by 28% and reduced time-to-insight from 5 mins to 45 seconds through a customizable widget architecture."
                       imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000"
                     />
                     <CaseStudyCard 
                       title="AI-Powered Onboarding"
-                      role="Product Designer"
+                      role="UI/UX Designer"
                       problem="High friction in the B2B signup flow resulted in a 65% bounce rate before completing profile setup."
                       impact="Implemented a conversational AI onboarding agent that dynamically adapted to user context, increasing completion rate by 42%."
                       imageUrl="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000"

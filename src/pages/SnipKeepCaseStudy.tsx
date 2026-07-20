@@ -229,7 +229,7 @@ export const SnipKeepCaseStudy = () => {
             }}
           >
             {[
-              { label: 'ROLE', value: 'Product Designer & Developer', subtext: 'Solo project' },
+              { label: 'ROLE', value: 'UI/UX Designer & Developer', subtext: 'Solo project' },
               { label: 'METHODS', value: 'Live Testing', subtext: 'Iterative unmoderated evaluation' },
               { label: 'PLATFORM', value: 'Chrome Extension', subtext: 'React, Shadow DOM' },
               { label: 'DESIGN SYSTEM', value: 'Strict Contrast', subtext: '4.8:1 accent ratio achieved', highlight: true },

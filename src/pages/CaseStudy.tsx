@@ -10,7 +10,7 @@ const caseStudiesDB: Record<string, any> = {
     title: 'OneAssist Smart EPP',
     client: 'OneAssist',
     timeline: 'Product Launch',
-    role: 'Lead Product Designer',
+    role: 'Lead UI/UX Designer',
     heroMetric: '10k+',
     heroMetricLabel: 'Employees Onboarded',
     metrics: [
@@ -31,7 +31,7 @@ const caseStudiesDB: Record<string, any> = {
     title: 'Fintech Mobile App Launch',
     client: 'Stripe for Web3',
     timeline: '4 Months',
-    role: 'Product Designer & Frontend',
+    role: 'UI/UX Designer & Frontend',
     heroMetric: '$2M',
     heroMetricLabel: 'Seed Funding Secured',
     metrics: [
