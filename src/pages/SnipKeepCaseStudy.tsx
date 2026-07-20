@@ -33,6 +33,7 @@ export const SnipKeepCaseStudy = () => {
   }, [modalIndex]);
   
   const { scrollYProgress } = useScroll();
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -136,7 +137,7 @@ export const SnipKeepCaseStudy = () => {
       </AnimatePresence>
 
       {/* Floating Back Button */}
-      <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100 }}>
+      <div style={{ position: 'fixed', top: '29px', left: '4vw', zIndex: 100, display: isMobile ? 'none' : 'block' }}>
         <Link to="/#case-studies" className="btn-link" style={{fontFamily: 'var(--font-heading)', display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, letterSpacing: '0', textTransform: 'uppercase', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '100px'}}>
           <ArrowLeft size={16} /> Back
         </Link>
@@ -151,7 +152,7 @@ export const SnipKeepCaseStudy = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            style={{ position: 'fixed', bottom: '40px', left: '50%', transform: 'translateX(-50%)', zIndex: 100, display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 600, fontFamily: "'Syne', sans-serif", textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
+            style={{ position: 'fixed', bottom: '40px', left: '50%', transform: 'translateX(-50%)', zIndex: 100, display: isMobile ? 'none' : 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 600, fontFamily: "'Syne', sans-serif", textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
             whileHover={{ scale: 1.05, background: 'rgba(0,0,0,1)', borderColor: 'var(--accent-color)' }}
             whileTap={{ scale: 0.95 }}
           >
