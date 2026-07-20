@@ -95,7 +95,7 @@ export const ServicesSection = () => {
                   backgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   color: 'transparent'
-                }}>01.</span> <span style={{ color: '#ffffff' }}>Product Design</span>
+                }}>01.</span> <span style={{ color: '#ffffff' }}>UI/UX Design</span>
               </h3>
               <p className="text-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '18px', margin: 0, textAlign: isMobile ? 'center' : 'left' }}>
                 I transform complex business requirements into intuitive, high-converting product experiences. By bridging the gap between user needs and technical constraints, I design scalable interfaces that drive measurable business growth.
