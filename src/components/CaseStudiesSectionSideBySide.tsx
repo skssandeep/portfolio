@@ -195,7 +195,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
           style={{
             scale: imgScale,
             y: imgY,
-            width: study.title === 'SnipKeep' ? '85%' : '100%',
+            width: study.title === 'SnipKeep' ? '75%' : '100%',
             height: 'auto',
             objectFit: 'contain',
             objectPosition: 'bottom center',
