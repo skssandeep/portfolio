@@ -164,7 +164,7 @@ export const SnipKeepCaseStudy = () => {
       {/* Hero Section */}
       <section style={{ paddingTop: '150px', paddingBottom: '80px', background: 'var(--bg-color)', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px' }}>
-          <div style={{ flex: '1 1 700px', zIndex: 10, paddingBottom: '80px', maxWidth: '800px' }}>
+          <div style={{ flex: '1 1 700px', zIndex: 10, paddingBottom: isMobile ? '40px' : '0px', maxWidth: '800px' }}>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -202,7 +202,7 @@ export const SnipKeepCaseStudy = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '700px' }}
+              style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '650px', marginTop: isMobile ? '0' : '-40px' }}
             >
               <img 
                 src="/images/LAP01.png"
