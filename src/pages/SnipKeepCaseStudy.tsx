@@ -207,8 +207,7 @@ export const SnipKeepCaseStudy = () => {
               <img 
                 src="/images/LAP01.png"
                 alt="SnipKeep Laptop Mockup"
-                style={{ width: '100%', height: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))', cursor: 'pointer' }}
-                onClick={() => { setModalImages(['/images/LAP01.png']); setModalIndex(0); }}
+                style={{ width: '100%', height: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
               />
             </motion.div>
           </div>
