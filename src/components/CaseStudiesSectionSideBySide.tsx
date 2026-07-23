@@ -153,7 +153,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
         borderRadius: '32px',
         willChange: 'transform, opacity',
         paddingTop: '40px', 
-        paddingBottom: '0', 
+        paddingBottom: study.title === 'SnipKeep' ? '40px' : '0', 
         paddingLeft: '20px',
         paddingRight: '20px',
         border: '1px solid rgba(255,255,255,0.03)',
