@@ -202,16 +202,14 @@ export const SnipKeepCaseStudy = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '500px' }}
+              style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '700px' }}
             >
-              <div 
-                style={{ borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 40px 80px rgba(0,0,0,0.5)', background: 'linear-gradient(145deg, #1A1A1A, #111)', padding: '40px', textAlign: 'center', cursor: 'pointer' }}
+              <img 
+                src="/images/LAP01.png"
+                alt="SnipKeep Laptop Mockup"
+                style={{ width: '100%', height: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))', cursor: 'pointer' }}
                 onClick={() => { setModalImages(['/images/LAP01.png']); setModalIndex(0); }}
-              >
-                <div style={{ color: '#D4D4D4', marginBottom: '16px', fontFamily: 'var(--font-heading)' }}>[HERO SCREENSHOT]</div>
-                <p style={{ color: '#888', fontSize: '14px' }}>Browser window with the SnipKeep extension saving highlights.</p>
-                <p style={{ color: 'var(--semantic-success)', fontSize: '14px', marginTop: '16px', fontStyle: 'italic' }}>Capturing notes directly to Google Docs.</p>
-              </div>
+              />
             </motion.div>
           </div>
         </div>
