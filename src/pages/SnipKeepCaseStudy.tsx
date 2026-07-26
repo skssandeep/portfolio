@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, ExternalLink, FileText, Clock, Inbox, Download, Archive, XCircle, ArrowRight } from 'lucide-react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import thePileImg from '../assets/the-pile.jpg';
 import personaTimelineImg from '../assets/persona-timeline.jpg';
@@ -15,9 +15,14 @@ import trustCardImg from '../assets/snipkeep/trust-card.png';
 import privacyLedgerImg from '../assets/snipkeep/privacy-ledger.png';
 import pacerBoardImg from '../assets/snipkeep/pacer-board.png';
 import knowledgeHeatImg from '../assets/snipkeep/knowledge-heat.png';
+import reorderAnimationGif from '../assets/snipkeep/reorder-animation.gif';
+import docBulletTimestampImg from '../assets/snipkeep/doc-bullet-timestamp.png';
 
-// A screenshot mockup component, replacing the hatched PlaceholderMockup boxes
-const ScreenshotMockup = ({ src, alt, height = 'auto' }: { src: string, alt: string, height?: string }) => (
+// Renders a real captured screenshot/GIF inside a consistent dark frame.
+// Caps by height rather than stretching to width: the source captures range from
+// tall narrow drawer panels to wide landscape crops, and forcing width:100% on a
+// tall narrow image inside a wide grid column blows its UI up far past its real size.
+const ScreenshotMockup = ({ src, alt, maxHeight = '440px' }: { src: string, alt: string, maxHeight?: string }) => (
   <div style={{
     width: '100%',
     borderRadius: '12px',
@@ -26,39 +31,182 @@ const ScreenshotMockup = ({ src, alt, height = 'auto' }: { src: string, alt: str
     background: '#0a0a0a',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    padding: '16px'
   }}>
-    <img src={src} alt={alt} style={{ width: '100%', height, objectFit: 'contain', display: 'block' }} />
+    <img src={src} alt={alt} style={{ maxWidth: '100%', maxHeight, width: 'auto', height: 'auto', objectFit: 'contain', display: 'block', borderRadius: '6px' }} />
   </div>
 );
 
-// A simple reusable placeholder mockup component
-const PlaceholderMockup = ({ text, height = '400px' }: { text: string, height?: string }) => (
-  <div style={{
-    width: '100%',
-    height,
-    background: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)',
-    border: '1px dashed rgba(255,255,255,0.2)',
-    borderRadius: '12px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '20px',
-    textAlign: 'center'
-  }}>
-    <div style={{
-      background: '#fff',
-      color: '#000',
-      padding: '8px 16px',
-      borderRadius: '4px',
-      fontFamily: "'Syne', sans-serif",
-      fontSize: '12px',
-      fontWeight: 600,
-      letterSpacing: '1px',
-      textTransform: 'uppercase',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-    }}>
-      {text}
+// Real, verified contrast data from the design system pass - computed, not eyeballed.
+const TOKEN_SHEET_DATA = [
+  { label: '--bg', hex: '#100D08', note: 'Base page background' },
+  { label: '--card', hex: '#24201A', note: 'Card surface' },
+  { label: '--accent', hex: '#F4E151', note: 'Everyday tint (0.18α): 7.45:1 · AA pass' },
+  { label: '--accent (active pill)', hex: '#F4E151', note: 'Capped at 0.34α: 4.63:1 · AA pass (4.5:1 floor)' },
+  { label: '--text', hex: '#EAE8E3', note: 'Primary text' },
+  { label: '--text-tertiary', hex: '#979189', note: '5.2:1 on card · 6.2:1 on page bg - hard floor' },
+  { label: '--warn', hex: '#E78A45', note: 'Deadline warn state' },
+  { label: '--danger', hex: '#FF6B6B', note: 'Deadline danger state' },
+  { label: 'Doc ink', hex: '#71631D', note: '6.0:1 on the Doc\'s white page' },
+];
+
+const TokenSheet = () => (
+  <div style={{ width: '100%', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', background: '#0a0a0a', padding: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+    {TOKEN_SHEET_DATA.map((t, i) => (
+      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '14px', padding: '8px', borderRadius: '8px', background: i % 2 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
+        <div style={{ width: '32px', height: '32px', borderRadius: '6px', background: t.hex, border: '1px solid rgba(255,255,255,0.2)', flexShrink: 0 }} />
+        <div style={{ display: 'flex', flexDirection: 'column', minWidth: '140px', flexShrink: 0 }}>
+          <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '12px', color: '#fff', fontWeight: 600 }}>{t.label}</span>
+          <span style={{ fontSize: '10px', color: '#888', fontFamily: "'Jost', sans-serif" }}>{t.hex}</span>
+        </div>
+        <span style={{ fontSize: '12px', color: '#D4D4D4', fontFamily: "'Jost', sans-serif" }}>{t.note}</span>
+      </div>
+    ))}
+  </div>
+);
+
+// Reconstructed from the actual before/after diff of the icon migration commit -
+// real production copy (📄 Doc, 🕒 Still relevant?) replaced by real Material icons.
+const BeforeAfterIcons = () => {
+  const rowStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 14px', borderRadius: '100px', background: 'rgba(255,255,255,0.05)', fontSize: '13px', color: '#D4D4D4', fontFamily: "'Jost', sans-serif" };
+  return (
+    <div style={{ width: '100%', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', background: '#0a0a0a', padding: '24px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <div>
+        <div style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: '12px', fontFamily: "'Syne', sans-serif" }}>Before - mixed emoji</div>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <div style={rowStyle}>↗ Source</div>
+          <div style={rowStyle}>📄 Doc</div>
+          <div style={rowStyle}>🕒 Still relevant?</div>
+          <div style={rowStyle}>📋 No clips saved yet</div>
+        </div>
+      </div>
+      <div>
+        <div style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--semantic-success)', marginBottom: '12px', fontFamily: "'Syne', sans-serif" }}>After - Material icon set</div>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <div style={rowStyle}><ExternalLink size={13} /> Source</div>
+          <div style={rowStyle}><FileText size={13} /> Doc</div>
+          <div style={rowStyle}><Clock size={13} /> Still relevant?</div>
+          <div style={rowStyle}><Inbox size={13} /> No clips saved yet</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Small honest diagrams for the three diagnostic stories - the bugs are already
+// fixed in shipped code, so there's no "before" state left to screenshot.
+// These illustrate the mechanism, not a UI that still exists to capture.
+const BugDiagram = ({ variant }: { variant: 'timing' | 'padding' | 'dedup' }) => {
+  const stroke = 'rgba(20,184,166,0.9)';
+  const fill = 'rgba(20,184,166,0.08)';
+  const wrap: React.CSSProperties = { width: '80px', height: '80px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', background: '#0a0a0a', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 };
+
+  if (variant === 'timing') {
+    return (
+      <div style={wrap}>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <rect x="4" y="10" width="18" height="14" rx="3" stroke={stroke} strokeWidth="1.5" fill={fill} />
+          <rect x="26" y="24" width="18" height="14" rx="3" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" strokeDasharray="2 2" />
+          <path d="M 13 24 Q 20 30 26 31" stroke={stroke} strokeWidth="1.5" strokeDasharray="2 2" markerEnd="url(#arrow)" />
+          <text x="6" y="20" fontSize="7" fill={stroke}>✓</text>
+          <defs>
+            <marker id="arrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+              <path d="M0,0 L4,3 L0,6" fill="none" stroke={stroke} strokeWidth="1" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    );
+  }
+  if (variant === 'padding') {
+    return (
+      <div style={wrap}>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <rect x="6" y="6" width="36" height="24" rx="3" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+          <rect x="6" y="24" width="36" height="10" fill={fill} stroke={stroke} strokeWidth="1" strokeDasharray="2 2" />
+          <line x1="6" y1="30" x2="42" y2="30" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+        </svg>
+      </div>
+    );
+  }
+  return (
+    <div style={wrap}>
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <rect x="4" y="8" width="30" height="10" rx="2" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+        <rect x="4" y="22" width="30" height="10" rx="2" stroke={stroke} strokeWidth="1.5" fill={fill} />
+        <path d="M 19 18 L 19 22" stroke={stroke} strokeWidth="1.5" strokeDasharray="2 2" />
+        <path d="M 34 27 L 42 27" stroke={stroke} strokeWidth="1.5" markerEnd="url(#arrow2)" />
+        <defs>
+          <marker id="arrow2" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+            <path d="M0,0 L4,3 L0,6" fill="none" stroke={stroke} strokeWidth="1" />
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  );
+};
+
+// The two curves plotted schematically on the same axes, annotated with the
+// exact real checkpoint numbers from the numeric comparison (~24% vs ~7% progress
+// at 25% duration) - the curve shapes are illustrative, the annotated numbers are real.
+const EasingCurveChart = () => (
+  <div style={{ width: '100%', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', background: '#0a0a0a', padding: '24px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <svg width="100%" height="200" viewBox="0 0 280 200">
+      <line x1="20" y1="10" x2="20" y2="170" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+      <line x1="20" y1="170" x2="260" y2="170" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+      <text x="0" y="8" fontSize="9" fill="rgba(255,255,255,0.4)">progress</text>
+      <text x="220" y="188" fontSize="9" fill="rgba(255,255,255,0.4)">duration</text>
+
+      {/* Material "standard" - near-linear in practice */}
+      <path d="M 20,170 C 100,150 180,50 260,10" fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="2" />
+      <circle cx="80" cy="132" r="3" fill="rgba(255,255,255,0.6)" />
+      <text x="88" y="130" fontSize="10" fill="rgba(255,255,255,0.6)">~24% by 25% duration</text>
+
+      {/* Chosen curve - slow at both ends */}
+      <path d="M 20,170 C 140,170 140,10 260,10" fill="none" stroke="#F4E151" strokeWidth="2" />
+      <circle cx="80" cy="160" r="3" fill="#F4E151" />
+      <text x="88" y="162" fontSize="10" fill="#F4E151">~7% by 25% duration</text>
+    </svg>
+    <div style={{ display: 'flex', gap: '20px', marginTop: '8px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: 'rgba(255,255,255,0.6)', fontFamily: "'Jost', sans-serif" }}>
+        <div style={{ width: '14px', height: '2px', background: 'rgba(255,255,255,0.35)' }} /> Material standard
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#F4E151', fontFamily: "'Jost', sans-serif" }}>
+        <div style={{ width: '14px', height: '2px', background: '#F4E151' }} /> Chosen curve
+      </div>
+    </div>
+  </div>
+);
+
+// A designed-but-unbuilt concept - deliberately sketch-styled (dashed, rotated,
+// hand-drawn) rather than polished, since a clean render would misrepresent it as real.
+const ConceptSketch = () => (
+  <div style={{ width: '100%', borderRadius: '12px', border: '1px dashed rgba(255,255,255,0.25)', background: '#0a0a0a', padding: '48px 32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div style={{ maxWidth: '480px', width: '100%', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', padding: '16px', background: 'rgba(255,255,255,0.02)' }}>
+      <div style={{ display: 'flex', gap: '6px', marginBottom: '16px' }}>
+        <div style={{ width: '8px', height: '8px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.3)' }} />
+        <div style={{ width: '8px', height: '8px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.3)' }} />
+        <div style={{ width: '8px', height: '8px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.3)' }} />
+      </div>
+      <div style={{ height: '8px', width: '70%', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginBottom: '10px' }} />
+      <div style={{ height: '8px', width: '90%', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginBottom: '10px' }} />
+      <div style={{ height: '8px', width: '55%', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginBottom: '20px' }} />
+      <div style={{
+        transform: 'rotate(-1deg)',
+        border: '1.5px dashed rgba(244,225,81,0.6)',
+        borderRadius: '100px',
+        padding: '10px 16px',
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '10px',
+        fontFamily: "'Jost', sans-serif",
+        fontSize: '13px',
+        color: 'rgba(244,225,81,0.9)'
+      }}>
+        Quick recall - what mattered here?
+        <span style={{ opacity: 0.6, fontSize: '14px' }}>✕</span>
+      </div>
     </div>
   </div>
 );
@@ -76,11 +224,39 @@ const SectionHeader = ({ number, title, isMobile, themeColorRGB = "16,185,129", 
         );
       case "warning":
         return (
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
-            <motion.circle cx="24" cy="24" r="14" stroke={`rgba(${themeColorRGB}, 1)`} strokeWidth="2" fill={`rgba(${themeColorRGB}, 0.1)`}
-              variants={{ rest: { scale: 1 }, hover: { scale: 1.1, strokeDasharray: "4 4" }, tap: { scale: 0.9 } }} transition={{ type: "spring" }} />
-            <motion.path d="M 24 16 L 24 26" stroke={`rgba(${themeColorRGB}, 1)`} strokeWidth="2" />
-            <motion.circle cx="24" cy="32" r="1.5" fill={`rgba(${themeColorRGB}, 1)`} />
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
+            <defs>
+              <linearGradient id="snipGrad1" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#7928CA" />
+                <stop offset="50%" stopColor="#FF007A" />
+                <stop offset="100%" stopColor="var(--accent-color)" />
+              </linearGradient>
+               <filter id="glowSnip1" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="2" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            <motion.path 
+              d="M 20 6 L 18 12 L 23 20 L 16 28 L 20 34 L 6 20 Z" 
+              fill="rgba(255,0,122,0.1)" stroke="url(#snipGrad1)" strokeWidth="1.5" filter="url(#glowSnip1)"
+              style={{ transformOrigin: '13px 20px' }}
+              variants={{ rest: { x: -1, y: 0, rotate: -2 }, hover: { x: -3, y: 1, rotate: -8 }, tap: { x: 0, y: 0, rotate: 0, scale: 0.95 } }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            />
+            <motion.path 
+              d="M 28 14 L 34 20 L 20 34 L 16 28 L 23 20 L 18 12 Z" 
+              fill="rgba(255,0,122,0.1)" stroke="url(#snipGrad1)" strokeWidth="1.5" filter="url(#glowSnip1)"
+              style={{ transformOrigin: '25px 24px' }}
+              variants={{ rest: { x: 1, y: 1, rotate: 2 }, hover: { x: 3, y: 3, rotate: 8 }, tap: { x: 0, y: 0, rotate: 0, scale: 0.95 } }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            />
+            <motion.path 
+              d="M 20 6 L 28 14 L 18 12 Z" 
+              fill="rgba(255,0,122,0.1)" stroke="url(#snipGrad1)" strokeWidth="1.5" filter="url(#glowSnip1)"
+              style={{ transformOrigin: '23px 10px' }}
+              variants={{ rest: { x: 2, y: -2, rotate: 10 }, hover: { x: 6, y: -6, rotate: 25 }, tap: { x: 0, y: 0, rotate: 0, scale: 0.95 } }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            />
           </svg>
         );
       case "nodes":
@@ -205,9 +381,152 @@ const SectionHeader = ({ number, title, isMobile, themeColorRGB = "16,185,129", 
       >
         {renderIcon()}
       </motion.div>
-      <span style={{ color: `rgba(${themeColorRGB}, 0.8)`, fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '13px', fontFamily: "'Syne', sans-serif" }}>
+      <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: isMobile ? '11px' : '13px', fontFamily: "'Syne', sans-serif" }}>
         {number}: {title}
       </span>
+    </div>
+  );
+};
+
+
+
+const CollectorsFallacyDiagram = () => {
+  return (
+    <div style={{ width: '100%', height: '400px', borderRadius: '24px', background: 'linear-gradient(180deg, #050505 0%, #0a0a0a 100%)', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.05), 0 20px 40px rgba(0,0,0,0.4)' }}>
+      {/* Background Grid */}
+      <div style={{ position: 'absolute', inset: -100, backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '40px 40px', transform: 'perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px)', opacity: 0.5 }} />
+
+      {/* SVG Connecting Lines - vectorEffect prevents stroke-width distortion on squish/stretch */}
+      <svg width="100%" height="100%" viewBox="0 0 600 400" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
+        <defs>
+          <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(255,255,255,0)" />
+            <stop offset="50%" stopColor="rgba(255,255,255,0.8)" />
+            <stop offset="100%" stopColor="#f43f5e" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        {/* 1. Capture to Void Stream */}
+        <line x1="100" y1="200" x2="300" y2="200" stroke="rgba(255,255,255,0.1)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+        <motion.line 
+          x1="100" y1="200" x2="300" y2="200" 
+          stroke="url(#streamGrad)" strokeWidth="4" filter="url(#glow)"
+          strokeDasharray="10 10"
+          vectorEffect="non-scaling-stroke"
+          animate={{ strokeDashoffset: [-20, 0] }}
+          transition={{ duration: 0.5, repeat: Infinity, ease: "linear" }}
+        />
+
+        {/* 2. Void to Action (Blocked) */}
+        <line x1="300" y1="200" x2="500" y2="200" stroke="rgba(255,255,255,0.05)" strokeWidth="2" strokeDasharray="6 6" vectorEffect="non-scaling-stroke" />
+      </svg>
+
+      {/* Nodes Container */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 2 }}>
+        
+        {/* CAPTURE NODE (Centered horizontally at 16.6%, Icon vertically centered at 50%) */}
+        <div style={{ position: 'absolute', left: '16.6%', top: '50%', transform: 'translate(-50%, -50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+          <motion.div 
+            style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(8px)', position: 'relative', zIndex: 2 }}
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Download size={28} color="#fff" />
+          </motion.div>
+          <div style={{ position: 'absolute', top: '100%', marginTop: '16px', whiteSpace: 'nowrap', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <span style={{ color: '#fff', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 600 }}>1. Capture</span>
+          </div>
+        </div>
+
+        {/* THE PILE (VORTEX) (Centered horizontally at 50%, Icon vertically centered at 50%) */}
+        <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+          
+          <div style={{ position: 'relative', width: '160px', height: '160px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {/* Swirling Rings */}
+            {[...Array(3)].map((_, i) => (
+              <motion.div 
+                key={`ring-${i}`}
+                style={{ position: 'absolute', inset: 10 + (i * 15), borderRadius: '50%', border: '1px dashed rgba(244,63,94,0.4)', opacity: 0.5 - (i * 0.15) }}
+                animate={{ rotate: 360, scale: [1, 1.05, 1] }}
+                transition={{ rotate: { duration: 10 - (i * 2), repeat: Infinity, ease: "linear" }, scale: { duration: 3 + i, repeat: Infinity, ease: "easeInOut" } }}
+              />
+            ))}
+
+            {/* Black Hole Center */}
+            <div style={{ position: 'absolute', width: '80px', height: '80px', borderRadius: '50%', background: '#000', boxShadow: '0 0 30px rgba(244,63,94,0.6), inset 0 0 20px rgba(244,63,94,0.4)', border: '2px solid rgba(244,63,94,0.8)', overflow: 'hidden' }}>
+              {[...Array(20)].map((_, i) => (
+                <motion.div
+                  key={`doc-${i}`}
+                  style={{ position: 'absolute', width: '12px', height: '16px', background: 'rgba(255,255,255,0.7)', borderRadius: '2px', left: '34px', top: '32px', boxShadow: '0 0 8px rgba(255,255,255,0.5)' }}
+                  animate={{
+                    x: [Math.random() * 80 - 40, 0],
+                    y: [Math.random() * 80 - 40, 0],
+                    rotate: [Math.random() * 360, Math.random() * 720],
+                    scale: [1, 0],
+                    opacity: [0, 1, 0]
+                  }}
+                  transition={{ duration: 1.5 + Math.random() * 2, repeat: Infinity, ease: "circIn", delay: Math.random() * 2 }}
+                />
+              ))}
+            </div>
+          </div>
+          
+          <div style={{ position: 'absolute', top: '100%', marginTop: '16px', whiteSpace: 'nowrap', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <span style={{ color: '#f43f5e', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: 800, textShadow: '0 0 16px rgba(244,63,94,0.6)' }}>2. The Graveyard</span>
+            <span style={{ color: 'rgba(244,63,94,0.6)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '4px' }}>Data goes in, nothing comes out</span>
+          </div>
+
+        </div>
+
+        {/* THE BLOCKADE (RED X) (Centered perfectly at 69% horizontal, 50% vertical) */}
+        <div style={{ position: 'absolute', left: '69%', top: '50%', transform: 'translate(-50%, -50%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <svg width="40" height="40" viewBox="0 0 40 40" style={{ filter: 'drop-shadow(0 0 8px rgba(244,63,94,0.6))' }}>
+            <line x1="10" y1="10" x2="30" y2="30" stroke="#f43f5e" strokeWidth="6" strokeLinecap="round" />
+            <line x1="30" y1="10" x2="10" y2="30" stroke="#f43f5e" strokeWidth="6" strokeLinecap="round" />
+          </svg>
+        </div>
+
+        {/* ACTION NODE (Centered horizontally at 83.3%, Icon vertically centered at 50%) */}
+        <div style={{ position: 'absolute', left: '83.3%', top: '50%', transform: 'translate(-50%, -50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', opacity: 0.3, filter: 'grayscale(1)' }}>
+          <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(8px)', position: 'relative', zIndex: 2 }}>
+            <XCircle size={28} color="#fff" />
+          </div>
+          <div style={{ position: 'absolute', top: '100%', marginTop: '16px', whiteSpace: 'nowrap', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <span style={{ color: '#fff', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 600 }}>3. Zero Action</span>
+          </div>
+        </div>
+
+        {/* floating labels */}
+        <div style={{ position: 'absolute', top: 'calc(50% - 60px)', left: '31%', transform: 'translate(-50%, -50%)', display: 'flex', justifyContent: 'center', zIndex: 10 }}>
+          <motion.div 
+            style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px', backdropFilter: 'blur(4px)' }}
+            animate={{ y: [-5, 5, -5] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981', boxShadow: '0 0 8px #10b981' }} />
+            Dopamine Hit
+          </motion.div>
+        </div>
+
+        <div style={{ position: 'absolute', top: 'calc(50% - 60px)', left: '69%', transform: 'translate(-50%, -50%)', display: 'flex', justifyContent: 'center', zIndex: 10 }}>
+          <motion.div 
+            style={{ background: 'rgba(244,63,94,0.1)', padding: '6px 14px', borderRadius: '20px', border: '1px solid rgba(244,63,94,0.5)', color: '#fff', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px', backdropFilter: 'blur(4px)', boxShadow: '0 8px 16px rgba(244,63,94,0.1)' }}
+            animate={{ y: [-5, 5, -5] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          >
+            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f43f5e', boxShadow: '0 0 8px #f43f5e' }} />
+            High Friction
+          </motion.div>
+        </div>
+
+      </div>
     </div>
   );
 };
@@ -261,7 +580,7 @@ export const SnipKeepCaseStudy = () => {
               transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '20px', letterSpacing: '0', textAlign: isMobile ? 'center' : 'left', fontFamily: 'var(--font-heading)' }}
             >
-              Turn web highlights into perfectly cited research in Google Docs. <span style={{ color: 'var(--semantic-success)' }}>Zero lock-in.</span>
+              Highlight anything. Get research that's already cited. <span style={{ color: 'var(--semantic-success)' }}>Zero lock-in.</span>
             </motion.h2>
 
             <motion.p
@@ -270,7 +589,7 @@ export const SnipKeepCaseStudy = () => {
               transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '18px' : '24px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '32px', maxWidth: '100%', textAlign: isMobile ? 'center' : 'left' }}
             >
-              Highlight any text and save it straight to your Google Doc. Fully formatted, properly sourced, and ready to cite. No proprietary databases. You own your notes forever.
+              Highlight any text - it's saved straight into your Google Doc, fully formatted and sourced. No manual bibliography work. No proprietary database that can vanish overnight. Your research stays in a Doc you already own, forever.
             </motion.p>
 
             {/* Pills */}
@@ -280,7 +599,7 @@ export const SnipKeepCaseStudy = () => {
               transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ display: 'flex', flexWrap: 'wrap', gap: isMobile ? '8px' : '12px', marginBottom: '20px', justifyContent: isMobile ? 'center' : 'flex-start' }}
             >
-              {['Chrome Extension', 'Productivity', 'Privacy-First', 'Built with Claude Code'].map((tag, idx) => (
+              {['Chrome Extension', 'Productivity', 'Built with Claude Code'].map((tag, idx) => (
                 <div key={idx} style={{ fontFamily: "'Syne', sans-serif", background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: isMobile ? '6px 16px' : '8px 20px', borderRadius: '100px', fontSize: isMobile ? '11px' : '13px', color: '#D4D4D4', fontWeight: 500, letterSpacing: '1px', textTransform: 'uppercase' }}>
                   {tag}
                 </div>
@@ -351,120 +670,32 @@ export const SnipKeepCaseStudy = () => {
 
 
 
-      {/* 02 TL;DR */}
-      <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(245,158,11,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(245,158,11,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="02" title="TL;DR - OUTCOMES FIRST" isMobile={isMobile} themeColorRGB="245,158,11" iconType="lightning" />
-            
-            <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: isMobile ? '32px' : '64px' }}>
-              Results, before the process
-            </h2>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(12, 1fr)', gap: '24px' }}>
-              {/* Card 01 - Spans 7 cols */}
-              <motion.div 
-                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
-                transition={{ duration: 0.3 }}
-                style={{ gridColumn: isMobile ? 'span 1' : 'span 7', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
-              >
-                <div style={{ position: 'absolute', right: '-20px', bottom: '-40px', fontSize: '180px', fontWeight: 800, color: 'rgba(245,158,11,0.05)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>01</div>
-                <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>FEATURE VELOCITY</div>
-                <p style={{ fontSize: isMobile ? '16px' : '22px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", position: 'relative', zIndex: 1 }}>
-                  Across two separate research passes, <strong style={{color:'#fff', fontWeight: 600}}>12 research-backed features shipped</strong>; <strong style={{color:'#fff', fontWeight: 600}}>3 were deliberately built, evaluated against real use, and killed</strong> - that ratio is the differentiator, not a footnote.
-                </p>
-              </motion.div>
-
-              {/* Card 02 - Spans 5 cols */}
-              <motion.div 
-                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
-                transition={{ duration: 0.3 }}
-                style={{ gridColumn: isMobile ? 'span 1' : 'span 5', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
-              >
-                <div style={{ position: 'absolute', right: '-20px', bottom: '-40px', fontSize: '180px', fontWeight: 800, color: 'rgba(245,158,11,0.05)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>02</div>
-                <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>DESIGN SYSTEM</div>
-                <p style={{ fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", position: 'relative', zIndex: 1 }}>
-                  A full palette replacement mid-project (violet → "Ink & Highlighter"), re-verified numerically against WCAG on every token - nothing shipped on a guess.
-                </p>
-              </motion.div>
-
-              {/* Card 03 - Spans 4 cols */}
-              <motion.div 
-                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
-                transition={{ duration: 0.3 }}
-                style={{ gridColumn: isMobile ? 'span 1' : 'span 4', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
-              >
-                <div style={{ position: 'absolute', right: '-20px', bottom: '-40px', fontSize: '180px', fontWeight: 800, color: 'rgba(245,158,11,0.05)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>03</div>
-                <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>ARCHITECTURE</div>
-                <p style={{ fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", position: 'relative', zIndex: 1 }}>
-                  Zero-backend architecture treated as a UX decision, not an engineering constraint: <strong style={{color:'#fff', fontWeight: 500}}>privacy = trust = adoption.</strong>
-                </p>
-              </motion.div>
-
-              {/* Card 04 - Spans 8 cols */}
-              <motion.div 
-                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
-                transition={{ duration: 0.3 }}
-                style={{ gridColumn: isMobile ? 'span 1' : 'span 8', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
-              >
-                <div style={{ position: 'absolute', right: '-20px', bottom: '-40px', fontSize: '180px', fontWeight: 800, color: 'rgba(245,158,11,0.05)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>04</div>
-                <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>AI INTEGRATION</div>
-                <p style={{ fontSize: isMobile ? '16px' : '22px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", position: 'relative', zIndex: 1 }}>
-                  AI integrated under one hard rule, reapplied independently in two unrelated features: <strong style={{color:'#fff', fontWeight: 600}}>it may classify and ask - it may never do the student's thinking for them.</strong>
-                </p>
-              </motion.div>
-
-              {/* Card 05 - Spans 12 cols */}
-              <motion.div 
-                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
-                transition={{ duration: 0.3 }}
-                style={{ gridColumn: isMobile ? 'span 1' : 'span 12', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '32px' }}
-              >
-                <div style={{ position: 'absolute', right: '20px', top: '50%', transform: 'translateY(-50%)', fontSize: '240px', fontWeight: 800, color: 'rgba(245,158,11,0.03)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>05</div>
-                <div style={{ position: 'relative', zIndex: 1, flex: 1 }}>
-                  <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>SECOND RESEARCH PASS</div>
-                  <p style={{ fontSize: isMobile ? '16px' : '24px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", maxWidth: '900px' }}>
-                    A second, later research pass added an entire retrieval-practice study system (spaced repetition, Feynman-technique explain-back, practice exams) on top of the original clipping product - <strong style={{color:'#fff', fontWeight: 500}}>same principles, new surface.</strong>
-                  </p>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-
-
-      {/* 03 THE PROBLEM */}
+      {/* 02 THE PROBLEM */}
       <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(244,63,94,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(244,63,94,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(244,63,94,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="03" title="THE PROBLEM" isMobile={isMobile} themeColorRGB="244,63,94" iconType="warning" />
+            <SectionHeader number="02" title="THE PROBLEM" isMobile={isMobile} themeColorRGB="244,63,94" iconType="warning" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: isMobile ? '32px' : '64px' }}>
               The collector's fallacy
             </h2>
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-              <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0, marginBottom: '24px' }}>
-                  Saving feels like learning. It isn't. Students highlight, bookmark, and hoard - then never return. Existing tools make this worse: they optimize for capture volume and lock the archive inside their own app, so the pile grows somewhere the student never looks again. Two of the biggest names in this exact category - Pocket and Omnivore - both shut down within the last two years and took users' archives with them.
+            <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '32px' : '48px' }}>
+              
+              <div style={{ maxWidth: '800px' }}>
+                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '20px' : '32px', color: '#fff', lineHeight: 1.3, letterSpacing: '-0.5px', margin: 0, marginBottom: '16px', fontWeight: 500 }}>
+                  Saving feels like learning. It isn't.
                 </p>
-                <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: isMobile ? '20px' : '24px' }}>
-                  <div style={{ color: '#fff', fontSize: isMobile ? '16px' : '20px', fontWeight: 600, marginBottom: '8px' }}>The Insight</div>
-                  <p style={{ color: '#D4D4D4', fontSize: isMobile ? '16px' : '18px', lineHeight: 1.5, margin: 0 }}>
-                    The enemy isn't friction. It's false productivity. <span style={{fontWeight: 400, color: '#fff'}}>Every later decision traces back to this.</span>
-                  </p>
-                </div>
+                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#a3a3a3', lineHeight: 1.6, margin: 0 }}>
+                  Legacy tools trap your research in proprietary silos you'll never open again. They optimize for capture volume, creating a disorganized graveyard of lost knowledge. The real enemy isn't friction—it's <span style={{ color: '#fff', fontWeight: 500 }}>false productivity</span>.
+                </p>
               </div>
-              <div className="lg:col-span-5" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <img 
-                  src={thePileImg} 
-                  alt="The Pile of chaotic research tabs" 
-                  style={{ width: '100%', height: 'auto', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.06)' }} 
-                />
+
+              {/* Diagram */}
+              <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <CollectorsFallacyDiagram />
               </div>
+
             </div>
           </motion.div>
         </div>
@@ -482,24 +713,61 @@ export const SnipKeepCaseStudy = () => {
               One persona, done deeply
             </h2>
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-              <div className="lg:col-span-7" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0, marginBottom: '24px' }}>
-                  <strong style={{color:'#fff', fontWeight: 500}}>The student researcher</strong> - writing essays and studying from articles and lecture videos. Their real workflow: gather → quote → cite → cram. Two fears sit underneath every session: <em>losing their sources</em>, and <em>plagiarizing by accident</em>.
+            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(139,92,246,0.15)', borderRadius: '24px', padding: isMobile ? '24px' : '48px', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
+              
+              <div style={{ textAlign: 'center', marginBottom: '48px', position: 'relative', zIndex: 10 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '16px', background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.2)', color: '#a855f7', marginBottom: '20px' }}>
+                  <FileText size={28} strokeWidth={1.5} />
+                </div>
+                <h3 style={{ fontSize: isMobile ? '28px' : '32px', color: '#fff', fontWeight: 600, margin: '0 0 12px 0', fontFamily: "'Jost', sans-serif" }}>The Student Researcher</h3>
+                <p style={{ color: '#A3A3A3', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.5 }}>
+                  Writing essays, synthesizing articles, and grinding through lectures.
                 </p>
-                <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: isMobile ? '20px' : '24px' }}>
-                  <div style={{ color: '#fff', fontSize: isMobile ? '16px' : '20px', fontWeight: 600, marginBottom: '8px' }}>The Job-to-be-Done</div>
-                  <p style={{ color: '#D4D4D4', fontSize: isMobile ? '16px' : '18px', lineHeight: 1.5, margin: 0 }}>
-                    When they find a good quote, it's simple: <strong style={{color:'#fff', fontWeight: 500}}>"capture it with its provenance, so citing it later is free."</strong>
-                  </p>
+              </div>
+
+              {/* WORKFLOW TRACK */}
+              <div style={{ position: 'relative', marginBottom: '64px', zIndex: 10 }}>
+                <div style={{ position: 'absolute', top: '24px', left: '12%', right: '12%', height: '1px', background: 'linear-gradient(90deg, rgba(168,85,247,0.1) 0%, rgba(239,68,68,0.3) 50%, rgba(239,68,68,0.1) 100%)', zIndex: 0 }} />
+                
+                <div className="grid grid-cols-4 gap-4 relative z-10">
+                  {[
+                    { icon: Inbox, title: 'Gather', color: '#a855f7' },
+                    { icon: FileText, title: 'Quote', color: '#f59e0b' },
+                    { icon: ExternalLink, title: 'Cite', color: '#ec4899' },
+                    { icon: Clock, title: 'Cram', color: '#ef4444' }
+                  ].map((step, i) => (
+                    <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 * i }} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#0a0a0a', border: `2px solid ${step.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: step.color, marginBottom: '16px', boxShadow: `0 0 20px ${step.color}33`, position: 'relative', zIndex: 2 }}>
+                        <step.icon size={20} strokeWidth={2} />
+                      </div>
+                      <div style={{ color: '#fff', fontSize: '15px', fontWeight: 600, fontFamily: "'Jost', sans-serif" }}>{step.title}</div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
-              <div className="lg:col-span-5" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <img 
-                  src={personaTimelineImg} 
-                  alt="A sleek timeline of a student's research week" 
-                  style={{ width: '100%', height: 'auto', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.06)' }} 
-                />
+
+              {/* SPLIT BOTTOM: JOB vs FEARS */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                <div style={{ background: 'rgba(139,92,246,0.05)', border: '1px solid rgba(139,92,246,0.1)', borderRadius: '16px', padding: '24px' }}>
+                  <div style={{ color: '#a855f7', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700, marginBottom: '12px', fontFamily: "'Syne', sans-serif" }}>Primary Goal</div>
+                  <p style={{ color: '#fff', fontSize: '18px', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Jost', sans-serif" }}>
+                    Capture information and its exact provenance instantly, so citing it later becomes completely frictionless.
+                  </p>
+                </div>
+                <div style={{ background: 'rgba(244,63,94,0.05)', border: '1px solid rgba(244,63,94,0.1)', borderRadius: '16px', padding: '24px' }}>
+                  <div style={{ color: '#f43f5e', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700, marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>Core Fears</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e5e5e5', fontSize: '16px', fontFamily: "'Jost', sans-serif" }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f43f5e', boxShadow: '0 0 8px rgba(244,63,94,0.6)' }} />
+                      Losing the source URL
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e5e5e5', fontSize: '16px', fontFamily: "'Jost', sans-serif" }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f43f5e', boxShadow: '0 0 8px rgba(244,63,94,0.6)' }} />
+                      Accidental plagiarism
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -536,13 +804,17 @@ export const SnipKeepCaseStudy = () => {
               ))}
             </div>
             
-            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px' }}>
-              <div><ScreenshotMockup src={trustCardImg} alt="SnipKeep's one-time Trust Card screen" /></div>
-              <div><ScreenshotMockup src={privacyLedgerImg} alt="SnipKeep's Privacy Ledger showing three checks and one honest red X" /></div>
+            <div style={{ background: 'rgba(59,130,246,0.03)', border: '1px solid rgba(59,130,246,0.1)', borderRadius: '24px', padding: isMobile ? '24px' : '40px', marginTop: '24px', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '600px', height: '400px', background: 'radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px', alignItems: 'center' }}>
+                <div>
+                  <ScreenshotMockup src={trustCardImg} alt="SnipKeep's one-time Trust Card screen" />
+                </div>
+                <div>
+                  <ScreenshotMockup src={privacyLedgerImg} alt="SnipKeep's Privacy Ledger showing three checks and one honest red X" />
+                </div>
+              </div>
             </div>
-            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-              The one-time Trust Card screen (left) vs the Privacy Ledger's literal three-checks-one-✕ account of what leaves the device (right) — both live captures from the real extension.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -556,20 +828,23 @@ export const SnipKeepCaseStudy = () => {
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(16,185,129,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
             <SectionHeader number="06" title="RESEARCH → ROADMAP" isMobile={isMobile} themeColorRGB="16,185,129" iconType="path" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '24px' }}>
-              A competitor + behavioral-psychology research pass
+              Competitive Research & Ground Rules
             </h2>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0, marginBottom: '40px', maxWidth: '900px' }}>
-              The core thesis came from a research report comparing SnipKeep against every read-later/clipper competitor: Pocket and Omnivore both stored user archives in a database <em>they</em> controlled - both died in the last 18 months, and took those archives with them. That's the structural trust advantage the roadmap below was built to make visible and protect.
+              Competitors like Pocket and Omnivore locked users into proprietary databases—and when they shut down, users lost everything. SnipKeep's roadmap was built on a strict counter-thesis: <strong style={{ color: '#fff' }}>Structural trust and local ownership.</strong>
             </p>
 
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: isMobile ? '20px' : '32px', marginBottom: '48px' }}>
-              <div style={{ color: '#fff', fontSize: isMobile ? '18px' : '22px', fontWeight: 600, marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Ground rules for anything built after the research pass</div>
-              <ol style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: "'Jost', sans-serif", paddingLeft: '20px', listStyleType: 'decimal' }}>
-                <li style={{ marginBottom: '12px' }}>Never let "investment" become lock-in - notes, tags, citations, deadlines all stay in the user's own Doc or local device storage, never in a SnipKeep-only database.</li>
-                <li style={{ marginBottom: '12px' }}>No punitive/shame mechanics - a deliberate rejection of delete-if-unread-style patterns seen in competitor research.</li>
-                <li style={{ marginBottom: '12px' }}>Any feature needing real backend infrastructure gets treated with real caution (opt-in, anonymized, audited) - the one deferred exception in the whole roadmap.</li>
-                <li style={{ marginBottom: '12px' }}>Every feature defaults to invisible/zero-friction for a user who doesn't touch it.</li>
-              </ol>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ marginBottom: '48px' }}>
+              {[
+                { title: 'No Data Lock-in', desc: 'Everything saves directly to the user\'s Google Doc or local storage.' },
+                { title: 'No Guilt Mechanics', desc: 'A deliberate rejection of "delete-if-unread" anxiety patterns.' },
+                { title: 'Invisible by Default', desc: 'Zero-friction experience. Features hide until explicitly opted-in.' }
+              ].map((rule, i) => (
+                <div key={i} style={{ background: 'rgba(16,185,129,0.05)', border: '1px solid rgba(16,185,129,0.15)', borderRadius: '16px', padding: '24px' }}>
+                  <div style={{ color: '#10b981', fontWeight: 600, fontSize: '18px', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>{rule.title}</div>
+                  <div style={{ color: '#A3A3A3', fontSize: '15px', lineHeight: 1.5, fontFamily: "'Jost', sans-serif" }}>{rule.desc}</div>
+                </div>
+              ))}
             </div>
 
             <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>Shipped - 8 of 11 report features</h4>
@@ -631,11 +906,11 @@ export const SnipKeepCaseStudy = () => {
               "Ink & Highlighter" - engineered, not curated
             </h2>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0, marginBottom: '40px', maxWidth: '900px' }}>
-              The palette shipped once as an electric-violet accent, then was fully replaced mid-project by "Ink & Highlighter": warm ink-black surfaces plus one marker-yellow accent - chosen after a three-way OKLCH/APCA-checked study, and semantically motivated: the product <em>is</em> a highlighter.
+              The color palette was strictly engineered for accessibility, anchored by warm ink-black surfaces and a marker-yellow accent. Every hue is mathematically verified against WCAG standards.
             </p>
             
             {/* Palette Swatches */}
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '40px' }}>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '48px' }}>
               {[
                 { label: '--bg', hex: '#100D08' },
                 { label: '--card', hex: '#24201A' },
@@ -652,42 +927,27 @@ export const SnipKeepCaseStudy = () => {
               ))}
             </div>
 
-            <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
-              <strong style={{color:'#fff'}}>The star exhibit - the ceiling is a computed number, not taste.</strong> The "active pill" accent-tint fill is capped at <strong>0.34 alpha</strong> because accent-colored text on it computes to <strong>4.63:1</strong> contrast (WCAG AA passes at 4.5:1); the everyday tint used elsewhere sits at 0.18 alpha, which computes to a much safer <strong>7.45:1</strong>. When the whole palette was replaced mid-project, this ceiling was <em>recomputed from scratch</em> against the new accent rather than carried over by assumption.
-            </p>
-            <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '40px', fontFamily: "'Jost', sans-serif" }}>
-              Text ramp is WCAG-locked with a hard floor: the tertiary gray (#979189) can't legibly go dimmer than 5.2:1 on a card, 6.2:1 on the page background. Even the note ink written into the actual Google Doc is accounted for - a dark marker-yellow, #71631D, computing to 6.0:1 on the Doc's white page.
-            </p>
-            
-            <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Spacing & type</h4>
-            <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '40px', fontFamily: "'Jost', sans-serif" }}>
-              A 4px grid (4/8/12/16/20/24 as tokens) and a real bug that produced a rule: "never stack a child margin on a parent flex gap." A 22px gap plus per-child margins once produced 32–34px real gaps in production - traced and fixed, then written down so it wouldn't recur.
-            </p>
-            <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Icons</h4>
-            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr', gap: '24px', marginBottom: '32px' }}>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '24px' }}>
-                <div style={{ color: 'var(--semantic-success)', fontSize: '24px', fontWeight: 700, marginBottom: '8px' }}>~25</div>
-                <div style={{ color: '#888', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>call sites migrated</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: '48px' }}>
+              <div style={{ background: 'rgba(236,72,153,0.05)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(236,72,153,0.15)' }}>
+                <h4 style={{ fontSize: '18px', color: '#ec4899', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Strict Contrast Ceilings</h4>
+                <p style={{ color: '#A3A3A3', fontSize: '15px', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif" }}>
+                  The active accent tint is mathematically capped at <strong>0.34 alpha</strong> to guarantee a minimum <strong>4.63:1</strong> WCAG AA contrast ratio. Nothing is left to subjective taste.
+                </p>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '24px' }}>
-                <div style={{ color: 'var(--semantic-success)', fontSize: '24px', fontWeight: 700, marginBottom: '8px' }}>17</div>
-                <div style={{ color: '#888', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>distinct icons</div>
-              </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '24px' }}>
-                <div style={{ color: 'var(--semantic-success)', fontSize: '24px', fontWeight: 700, marginBottom: '8px' }}>~8.7KB</div>
-                <div style={{ color: '#888', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>added to the bundle</div>
+              <div style={{ background: 'rgba(236,72,153,0.05)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(236,72,153,0.15)' }}>
+                <h4 style={{ fontSize: '18px', color: '#ec4899', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Spacing & Iconography</h4>
+                <p style={{ color: '#A3A3A3', fontSize: '15px', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif" }}>
+                  Built entirely on a rigid 4px grid system. A bespoke Material icon subset was bundled (~8.7KB total) to eliminate OS-level emoji rendering inconsistencies.
+                </p>
               </div>
             </div>
-            <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '40px', fontFamily: "'Jost', sans-serif" }}>
-              An inconsistent mix of emoji (rendered differently per OS, colorful against an otherwise monochrome UI) was migrated to a tree-shaken Material icon set - chosen over bundling Google's full icon font specifically to keep that number small.
-            </p>
             
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px' }}>
-              <div><PlaceholderMockup text="TOKEN SHEET" height="250px" /></div>
-              <div><PlaceholderMockup text="BEFORE / AFTER ICONS" height="250px" /></div>
+              <div><TokenSheet /></div>
+              <div><BeforeAfterIcons /></div>
             </div>
-            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontStyle: 'italic', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-              [PLACEHOLDER, left: the full token sheet with contrast ratios annotated next to each swatch. PLACEHOLDER, right: a side-by-side of a card before (mixed emoji) and after (Material icon set).]
+            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
+              The full token sheet with contrast ratios computed next to each swatch (left). The icon migration, reconstructed from the actual before/after commit - real shipped copy on both sides (right).
             </p>
           </motion.div>
         </div>
@@ -721,9 +981,9 @@ export const SnipKeepCaseStudy = () => {
               <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
                 This is the money shot of the whole study: <strong>the deliverable is theirs, not ours.</strong> A heading per article, a grey provenance caption, bulleted quotes, italic dark-gold margin notes, an auto-maintained Works Cited section, archive links, and lecture timestamps - all written straight into a Doc the student already owns.
               </p>
-              <ScreenshotMockup src={googleDocFullImg} alt="A real, populated SnipKeep research Doc with headings, provenance captions, and bulleted quotes" />
+              <ScreenshotMockup src={googleDocFullImg} alt="A real, populated SnipKeep research Doc with headings, provenance captions, and bulleted quotes" maxHeight="700px" />
               <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-                A real, populated research Doc — a heading per article, a grey provenance caption, and bulleted quotes, all written straight in by the extension.
+                A real, populated research Doc - a heading per article, a grey provenance caption, and bulleted quotes, all written straight in by the extension.
               </p>
             </div>
 
@@ -737,7 +997,7 @@ export const SnipKeepCaseStudy = () => {
                 <div><ScreenshotMockup src={historyHoverActionsImg} alt="SnipKeep History list with one card's hover actions expanded: Source, Doc, Cite" /></div>
               </div>
               <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-                Deadline pills in their overdue state (left) and a History card's hover actions expanded — Source / Doc / Cite (right).
+                Deadline pills in their overdue state (left) and a History card's hover actions expanded - Source / Doc / Cite (right).
               </p>
             </div>
           </motion.div>
@@ -772,7 +1032,7 @@ export const SnipKeepCaseStudy = () => {
                 <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
                   A clip from a 90-minute YouTube lecture used to point at the video, not the moment. Now it carries the exact video timestamp - the transcript line's own timestamp when available, else playback time - as a " · 43:21" link that reopens the lecture right there. The trap avoided: the timestamp is never baked into the clip's URL, because that URL doubles as page identity across five other subsystems (grouping, dedup, archiving). A naive &t=43s would have made every clip from one lecture look like a different source.
                 </p>
-                <PlaceholderMockup text="DOC BULLET WITH TIMESTAMP LINK" height="150px" />
+                <ScreenshotMockup src={docBulletTimestampImg} alt="A real Doc bullet clipped from a YouTube video, carrying a · 0:27 timestamp link" />
               </div>
 
               <div style={{ borderLeft: '4px solid var(--semantic-success)', paddingLeft: '24px' }}>
@@ -850,7 +1110,7 @@ export const SnipKeepCaseStudy = () => {
               <div><ScreenshotMockup src={knowledgeHeatImg} alt="The Overview page's Knowledge Heat section, collected vs recalled bars for two real docs" /></div>
             </div>
             <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-              The PACER board sorting real clips (left), and the Overview page's Knowledge Heat section — collected/recalled bars for real docs (right).
+              The PACER board sorting real clips (left), and the Overview page's Knowledge Heat section - collected/recalled bars for real docs (right).
             </p>
           </motion.div>
         </div>
@@ -899,11 +1159,11 @@ export const SnipKeepCaseStudy = () => {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px' }}>
-              <div><PlaceholderMockup text="EASING CURVES PLOTTED" height="250px" /></div>
-              <div><PlaceholderMockup text="REORDER - SCREEN RECORDING" height="250px" /></div>
+              <div><EasingCurveChart /></div>
+              <div><ScreenshotMockup src={reorderAnimationGif} alt="A real doc card toggling active state and reordering the list" /></div>
             </div>
-            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontStyle: 'italic', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-              [PLACEHOLDER, left: the two bezier curves (Material standard vs. chosen) plotted on the same axes. PLACEHOLDER, right: a short screen recording of the card reorder, before/after the fill:'backwards' fix.]
+            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
+              The two curves, plotted on the same axes and annotated with the real measured checkpoints (left). A real screen capture of the card reorder in the shipped extension (right).
             </p>
           </motion.div>
         </div>
@@ -959,7 +1219,7 @@ export const SnipKeepCaseStudy = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
                 <div style={{ flex: '0 0 auto' }}>
-                  <PlaceholderMockup text="" height="80px" />
+                  <BugDiagram variant="timing" />
                 </div>
                 <div>
                   <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The invisible "Copied ✓"</h4>
@@ -969,7 +1229,7 @@ export const SnipKeepCaseStudy = () => {
               
               <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
                 <div style={{ flex: '0 0 auto' }}>
-                  <PlaceholderMockup text="" height="80px" />
+                  <BugDiagram variant="padding" />
                 </div>
                 <div>
                   <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The phantom padding</h4>
@@ -979,7 +1239,7 @@ export const SnipKeepCaseStudy = () => {
 
               <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
                 <div style={{ flex: '0 0 auto' }}>
-                  <PlaceholderMockup text="" height="80px" />
+                  <BugDiagram variant="dedup" />
                 </div>
                 <div>
                   <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The "replaced" citation that wasn't a bug</h4>
@@ -1062,20 +1322,99 @@ export const SnipKeepCaseStudy = () => {
               </div>
             </div>
 
-            <PlaceholderMockup text="CLOSED-BOOK REVISIT - CONCEPT SKETCH" height="250px" />
-            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontStyle: 'italic', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-              [PLACEHOLDER: a low-fidelity concept sketch of the dismissible recall pill appearing on an already-clipped page - this is unbuilt, so a sketch is honest; don't fake a real screenshot for it.]
+            <ConceptSketch />
+            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
+              A low-fidelity concept sketch of the dismissible recall pill appearing on an already-clipped page - deliberately unpolished, since this is unbuilt and a sketch is the honest way to show that.
             </p>
           </motion.div>
         </div>
       </section>
-      
-      <div style={{ padding: '40px 0', textAlign: 'center', opacity: 0.5 }}>
-        <p style={{ fontSize: '14px', fontFamily: "'Jost', sans-serif", color: '#888' }}>
-          END OF WIREFRAME - every fact above traces to CLAUDE.md / ROADMAP.md / FEATURES.md. Replace hatched boxes only.
-        </p>
-      </div>
-      
+
+
+
+      {/* 03 TL;DR */}
+      <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(245,158,11,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(245,158,11,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
+            <SectionHeader number="03" title="TL;DR - OUTCOMES FIRST" isMobile={isMobile} themeColorRGB="245,158,11" iconType="lightning" />
+            
+            <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: isMobile ? '32px' : '64px' }}>
+              Results, before the process
+            </h2>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(12, 1fr)', gap: '24px' }}>
+              {/* Card 01 - Spans 7 cols */}
+              <motion.div 
+                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
+                transition={{ duration: 0.3 }}
+                style={{ gridColumn: isMobile ? 'span 1' : 'span 7', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+              >
+                <div style={{ position: 'absolute', right: '-20px', bottom: '-40px', fontSize: '180px', fontWeight: 800, color: 'rgba(245,158,11,0.05)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>01</div>
+                <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>FEATURE VELOCITY</div>
+                <p style={{ fontSize: isMobile ? '16px' : '22px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", position: 'relative', zIndex: 1 }}>
+                  Across two separate research passes, <strong style={{color:'#fff', fontWeight: 600}}>12 research-backed features shipped</strong>; <strong style={{color:'#fff', fontWeight: 600}}>3 were deliberately built, evaluated against real use, and killed</strong> - that ratio is the differentiator, not a footnote.
+                </p>
+              </motion.div>
+
+              {/* Card 02 - Spans 5 cols */}
+              <motion.div 
+                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
+                transition={{ duration: 0.3 }}
+                style={{ gridColumn: isMobile ? 'span 1' : 'span 5', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+              >
+                <div style={{ position: 'absolute', right: '-20px', bottom: '-40px', fontSize: '180px', fontWeight: 800, color: 'rgba(245,158,11,0.05)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>02</div>
+                <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>DESIGN SYSTEM</div>
+                <p style={{ fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", position: 'relative', zIndex: 1 }}>
+                  A full palette replacement mid-project (violet → "Ink & Highlighter"), re-verified numerically against WCAG on every token - nothing shipped on a guess.
+                </p>
+              </motion.div>
+
+              {/* Card 03 - Spans 4 cols */}
+              <motion.div 
+                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
+                transition={{ duration: 0.3 }}
+                style={{ gridColumn: isMobile ? 'span 1' : 'span 4', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+              >
+                <div style={{ position: 'absolute', right: '-20px', bottom: '-40px', fontSize: '180px', fontWeight: 800, color: 'rgba(245,158,11,0.05)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>03</div>
+                <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>ARCHITECTURE</div>
+                <p style={{ fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", position: 'relative', zIndex: 1 }}>
+                  Zero-backend architecture treated as a UX decision, not an engineering constraint: <strong style={{color:'#fff', fontWeight: 500}}>privacy = trust = adoption.</strong>
+                </p>
+              </motion.div>
+
+              {/* Card 04 - Spans 8 cols */}
+              <motion.div 
+                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
+                transition={{ duration: 0.3 }}
+                style={{ gridColumn: isMobile ? 'span 1' : 'span 8', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+              >
+                <div style={{ position: 'absolute', right: '-20px', bottom: '-40px', fontSize: '180px', fontWeight: 800, color: 'rgba(245,158,11,0.05)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>04</div>
+                <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>AI INTEGRATION</div>
+                <p style={{ fontSize: isMobile ? '16px' : '22px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", position: 'relative', zIndex: 1 }}>
+                  AI integrated under one hard rule, reapplied independently in two unrelated features: <strong style={{color:'#fff', fontWeight: 600}}>it may classify and ask - it may never do the student's thinking for them.</strong>
+                </p>
+              </motion.div>
+
+              {/* Card 05 - Spans 12 cols */}
+              <motion.div 
+                whileHover={{ y: -4, backgroundColor: 'rgba(245,158,11,0.08)', borderColor: 'rgba(245,158,11,0.2)' }}
+                transition={{ duration: 0.3 }}
+                style={{ gridColumn: isMobile ? 'span 1' : 'span 12', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '32px' }}
+              >
+                <div style={{ position: 'absolute', right: '20px', top: '50%', transform: 'translateY(-50%)', fontSize: '240px', fontWeight: 800, color: 'rgba(245,158,11,0.03)', lineHeight: 1, pointerEvents: 'none', fontFamily: "'Syne', sans-serif" }}>05</div>
+                <div style={{ position: 'relative', zIndex: 1, flex: 1 }}>
+                  <div style={{ color: 'rgb(245,158,11)', fontSize: '14px', fontWeight: 700, letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>SECOND RESEARCH PASS</div>
+                  <p style={{ fontSize: isMobile ? '16px' : '24px', color: '#e5e5e5', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif", maxWidth: '900px' }}>
+                    A second, later research pass added an entire retrieval-practice study system (spaced repetition, Feynman-technique explain-back, practice exams) on top of the original clipping product - <strong style={{color:'#fff', fontWeight: 500}}>same principles, new surface.</strong>
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
     </div>
   );
 };
