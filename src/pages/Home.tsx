@@ -304,8 +304,8 @@ export const Home = () => {
           {/* 6. Visual Proof: High-fidelity craft (UI Gallery) */}
           <ProjectsSection />
 
-          {/* 7. Social Proof: Clients Trust */}
-          <Testimonials />
+          {/* 7. Social Proof: Clients Trust — hidden for now, uncomment to bring back */}
+          {/* <Testimonials /> */}
 
           {/* 8. Close: Final CTA */}
           <LogoRevealOrbital2 />

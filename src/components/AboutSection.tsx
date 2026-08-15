@@ -291,15 +291,19 @@ export const AboutSection = () => {
             <div className="relative z-20 flex flex-col gap-8 w-full">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                 <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
-                  I'm a UI/UX Designer with <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>4 years of experience</span> transforming complex B2B and consumer ecosystems into seamless, high-converting experiences. I focus on building products that people actually love to use, driving real business growth.
+                  I'm a UI/UX Designer with <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>4 years of experience</span>, working on products where customers, business partners, and internal teams all depend on the same system.
                 </p>
                 <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
-                  Recently, I led the design of an enterprise mobile and web platform adopted by <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>20+ corporate partners</span>. By creating a unified design system, I eliminated user friction and drastically reduced post-launch support tickets.
-                  <br /><br />
+                  I design for OneAssist, an insurtech serving <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>1.3 crore customers</span>: the consumer protection app, Unite (how partners sell plans and manage service), and Oasys (internal partner onboarding and policy creation).
+                </p>
+                <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
+                  Most recently I took SmartEPP from <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>0 to 1</span>, making B2B financing feel as simple as buying a phone online. Now live with <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>5,000+ employees</span> across <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>50+ partner organizations</span>.
+                </p>
+                <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: 0, lineHeight: 1.6, fontSize: '18px' }}>
                   <span style={{ position: 'relative', display: 'inline-block', marginRight: '4px' }}>
                     <span style={{ position: 'absolute', left: '0px', right: '0px', bottom: '4px', height: '9px', background: 'linear-gradient(90deg, #8a0000, #b30000)', borderRadius: '2px', zIndex: 0 }} />
                     <span style={{ color: '#ffffff', fontWeight: 700, fontFamily: "'Syne', sans-serif", letterSpacing: '0.02em', position: 'relative', zIndex: 1 }}>My Edge:</span>
-                  </span> I started my career in QA Engineering. I bring that same analytical mindset into my design process, ensuring every product I build is not only beautiful, but technically flawless and ready to scale.
+                  </span> I came into design from engineering, so I build the tooling as well as the screens. Figma connected directly to Claude Code, custom GPTs for research and UX writing. I ship faster, and what I hand developers is ready to build.
                 </p>
               </div>
               

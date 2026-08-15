@@ -701,87 +701,12 @@ export const SnipKeepCaseStudy = () => {
         </div>
       </section>
 
-
-
-      {/* 04 WHO IT'S FOR */}
-      <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(139,92,246,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(139,92,246,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="04" title="WHO IT'S FOR" isMobile={isMobile} themeColorRGB="139,92,246" iconType="nodes" />
-            <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: isMobile ? '32px' : '64px' }}>
-              One persona, done deeply
-            </h2>
-            
-            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(139,92,246,0.15)', borderRadius: '24px', padding: isMobile ? '24px' : '48px', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
-              
-              <div style={{ textAlign: 'center', marginBottom: '48px', position: 'relative', zIndex: 10 }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '16px', background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.2)', color: '#a855f7', marginBottom: '20px' }}>
-                  <FileText size={28} strokeWidth={1.5} />
-                </div>
-                <h3 style={{ fontSize: isMobile ? '28px' : '32px', color: '#fff', fontWeight: 600, margin: '0 0 12px 0', fontFamily: "'Jost', sans-serif" }}>The Student Researcher</h3>
-                <p style={{ color: '#A3A3A3', fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.5 }}>
-                  Writing essays, synthesizing articles, and grinding through lectures.
-                </p>
-              </div>
-
-              {/* WORKFLOW TRACK */}
-              <div style={{ position: 'relative', marginBottom: '64px', zIndex: 10 }}>
-                <div style={{ position: 'absolute', top: '24px', left: '12%', right: '12%', height: '1px', background: 'linear-gradient(90deg, rgba(168,85,247,0.1) 0%, rgba(239,68,68,0.3) 50%, rgba(239,68,68,0.1) 100%)', zIndex: 0 }} />
-                
-                <div className="grid grid-cols-4 gap-4 relative z-10">
-                  {[
-                    { icon: Inbox, title: 'Gather', color: '#a855f7' },
-                    { icon: FileText, title: 'Quote', color: '#f59e0b' },
-                    { icon: ExternalLink, title: 'Cite', color: '#ec4899' },
-                    { icon: Clock, title: 'Cram', color: '#ef4444' }
-                  ].map((step, i) => (
-                    <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 * i }} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#0a0a0a', border: `2px solid ${step.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: step.color, marginBottom: '16px', boxShadow: `0 0 20px ${step.color}33`, position: 'relative', zIndex: 2 }}>
-                        <step.icon size={20} strokeWidth={2} />
-                      </div>
-                      <div style={{ color: '#fff', fontSize: '15px', fontWeight: 600, fontFamily: "'Jost', sans-serif" }}>{step.title}</div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* SPLIT BOTTOM: JOB vs FEARS */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-                <div style={{ background: 'rgba(139,92,246,0.05)', border: '1px solid rgba(139,92,246,0.1)', borderRadius: '16px', padding: '24px' }}>
-                  <div style={{ color: '#a855f7', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700, marginBottom: '12px', fontFamily: "'Syne', sans-serif" }}>Primary Goal</div>
-                  <p style={{ color: '#fff', fontSize: '18px', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Jost', sans-serif" }}>
-                    Capture information and its exact provenance instantly, so citing it later becomes completely frictionless.
-                  </p>
-                </div>
-                <div style={{ background: 'rgba(244,63,94,0.05)', border: '1px solid rgba(244,63,94,0.1)', borderRadius: '16px', padding: '24px' }}>
-                  <div style={{ color: '#f43f5e', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700, marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>Core Fears</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e5e5e5', fontSize: '16px', fontFamily: "'Jost', sans-serif" }}>
-                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f43f5e', boxShadow: '0 0 8px rgba(244,63,94,0.6)' }} />
-                      Losing the source URL
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e5e5e5', fontSize: '16px', fontFamily: "'Jost', sans-serif" }}>
-                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f43f5e', boxShadow: '0 0 8px rgba(244,63,94,0.6)' }} />
-                      Accidental plagiarism
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-
-
-      {/* 05 PRODUCT THESIS */}
+      {/* 04 PRODUCT THESIS */}
       <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(59,130,246,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(59,130,246,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="05" title="PRODUCT THESIS & DESIGN PRINCIPLES" isMobile={isMobile} themeColorRGB="59,130,246" iconType="target" />
+            <SectionHeader number="04" title="PRODUCT THESIS & DESIGN PRINCIPLES" isMobile={isMobile} themeColorRGB="59,130,246" iconType="target" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '24px' }}>
               Four tiebreakers, not four posters
             </h2>
@@ -789,44 +714,23 @@ export const SnipKeepCaseStudy = () => {
               Good UX for learners is mostly restraint - the product's job is to disappear into the user's own work, never to trap them in ours.
             </p>
             
-            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '24px', marginBottom: '48px' }}>
-              {[
-                { num: '01', title: 'The Google Doc is the real product', desc: 'SnipKeep is just how content got there. If it vanished tomorrow, nothing is lost. A one-time Trust Card says this to the user directly, with a live link to their own Doc.' },
-                { num: '02', title: 'No server, ever', desc: 'Privacy isn\'t a policy, it\'s an architecture. The Privacy Ledger gives a literal account of what leaves the device: three green checks, one honest red ✕ - "A SnipKeep server - there isn\'t one."' },
-                { num: '03', title: 'No shame mechanics', desc: 'No streaks, no guilt, no delete-if-unread countdowns - a deliberate rejection of punitive competitor patterns. Every nudge is zero-consequence to ignore.' },
-                { num: '04', title: 'Invisible by default', desc: 'Optional features render nothing until opted in. The entire AI layer is absent from every menu until a key is connected - never shown disabled.' }
-              ].map((item, i) => (
-                <div key={i} style={{ background: 'rgba(59,130,246,0.04)', borderLeft: '3px solid rgba(59,130,246,0.3)', padding: '24px', borderRadius: '4px 16px 16px 4px' }}>
-                  <div style={{ color: 'var(--semantic-success)', fontSize: '14px', fontWeight: 600, fontFamily: "'Syne', sans-serif", marginBottom: '8px' }}>{item.num}</div>
-                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>{item.title}</h4>
-                  <p style={{ fontSize: isMobile ? '14px' : '16px', color: '#D4D4D4', lineHeight: 1.5, fontFamily: "'Jost', sans-serif", margin: 0 }}>{item.desc}</p>
-                </div>
-              ))}
-            </div>
-            
-            <div style={{ background: 'rgba(59,130,246,0.03)', border: '1px solid rgba(59,130,246,0.1)', borderRadius: '24px', padding: isMobile ? '24px' : '40px', marginTop: '24px', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '600px', height: '400px', background: 'radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
-              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px', alignItems: 'center' }}>
-                <div>
-                  <ScreenshotMockup src={trustCardImg} alt="SnipKeep's one-time Trust Card screen" />
-                </div>
-                <div>
-                  <ScreenshotMockup src={privacyLedgerImg} alt="SnipKeep's Privacy Ledger showing three checks and one honest red X" />
-                </div>
-              </div>
-            </div>
+            <ul style={{ color: '#D4D4D4', fontSize: isMobile ? '16px' : '18px', lineHeight: 1.6, fontFamily: "'Jost', sans-serif", display: 'flex', flexDirection: 'column', gap: '16px', paddingLeft: '24px', marginBottom: '32px' }}>
+              <li><strong style={{color: '#fff'}}>The Google Doc is the real product.</strong> SnipKeep is just the capture layer. If we vanish tomorrow, the user's research is perfectly intact in a Doc they own.</li>
+              <li><strong style={{color: '#fff'}}>Zero-Server Privacy.</strong> Privacy isn't a policy, it's an architecture. There is no SnipKeep backend server. Everything runs on-device.</li>
+              <li><strong style={{color: '#fff'}}>No Shame Mechanics.</strong> We deliberately reject punitive patterns. No streaks, no guilt trips, no "delete if unread" countdowns. Nudges are consequence-free.</li>
+            </ul>
           </motion.div>
         </div>
       </section>
 
 
 
-      {/* 06 RESEARCH -> ROADMAP */}
+      {/* 05 RESEARCH -> ROADMAP */}
       <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(16,185,129,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(16,185,129,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(16,185,129,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="06" title="RESEARCH → ROADMAP" isMobile={isMobile} themeColorRGB="16,185,129" iconType="path" />
+            <SectionHeader number="05" title="RESEARCH → ROADMAP" isMobile={isMobile} themeColorRGB="16,185,129" iconType="path" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '24px' }}>
               Competitive Research & Ground Rules
             </h2>
@@ -847,48 +751,31 @@ export const SnipKeepCaseStudy = () => {
               ))}
             </div>
 
-            <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>Shipped - 8 of 11 report features</h4>
+            <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>The Feature Ledger</h4>
             
-            <div style={{ overflowX: 'auto', marginBottom: '32px', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px' }}>
-              <table style={{ width: '100%', minWidth: '600px', borderCollapse: 'collapse', textAlign: 'left', fontFamily: "'Jost', sans-serif", fontSize: '16px' }}>
-                <thead>
-                  <tr style={{ background: 'rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                    <th style={{ padding: '16px', color: 'var(--semantic-success)' }}>#</th>
-                    <th style={{ padding: '16px', color: 'var(--semantic-success)' }}>FEATURE</th>
-                    <th style={{ padding: '16px', color: 'var(--semantic-success)' }}>ONE-LINE</th>
-                    <th style={{ padding: '16px', color: 'var(--semantic-success)' }}>STATUS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { id: '1', feature: 'Privacy Ledger', desc: 'Honest, literal account of what leaves the device', status: 'SHIPPED', statusColor: '#7928CA' },
-                    { id: '2', feature: 'Trust Card', desc: '"Your Doc is the real thing" - shown once, with a real link to it', status: 'SHIPPED', statusColor: '#7928CA' },
-                    { id: '3', feature: 'Link-Rot Insurance', desc: 'Best-effort Wayback Machine snapshot, written back into the Doc', status: 'SHIPPED', statusColor: '#7928CA' },
-                    { id: '4', feature: <s style={{opacity: 0.5}}>Soft Triage ("Someday")</s>, desc: <s style={{opacity: 0.5}}>Optional tag + "still relevant?" check-in</s>, status: 'REMOVED', statusColor: 'var(--semantic-error)' },
-                    { id: '5', feature: 'Gentle Reflection Nudge', desc: "Soft one-liner after several note-less clips - targets the collector's fallacy", status: 'SHIPPED', statusColor: '#7928CA' },
-                    { id: '6', feature: 'Deadline-Aware Citations', desc: 'Calm→warn→danger countdown + uncited-clip count', status: 'SHIPPED', statusColor: '#7928CA' },
-                    { id: '7', feature: 'Assignment / Project Mode', desc: 'Mark a Doc "done" → moves to its own Completed tab', status: 'SHIPPED', statusColor: '#7928CA' },
-                    { id: '8', feature: 'Living Resurface', desc: 'Writes a freshly dated note back into the Doc at any bookmarked clip', status: 'SHIPPED', statusColor: '#7928CA' },
-                    { id: '10', feature: <s style={{opacity: 0.5}}>Topic Auto-Clustering</s>, desc: <s style={{opacity: 0.5}}>Tag/domain chips above search</s>, status: 'KILLED', statusColor: 'var(--semantic-error)' },
-                    { id: '✨', feature: 'Resurfaced', desc: 'Daily spotlight of one old clip', status: 'PAUSED', statusColor: '#eab308' },
-                    { id: '9', feature: 'Weekly Synthesis Digest', desc: "Opt-in weekly clustering of that week's clips", status: 'DEFERRED', statusColor: '#6b7280' },
-                    { id: '11', feature: 'Anonymous Highlight Signal', desc: '"14 people also highlighted this" - needs real backend + privacy review', status: 'DEFERRED', statusColor: '#6b7280' },
-                  ].map((row, i) => (
-                    <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td style={{ padding: '16px', color: '#D4D4D4' }}>{row.id}</td>
-                      <td style={{ padding: '16px', color: '#fff', fontWeight: 500 }}>{row.feature}</td>
-                      <td style={{ padding: '16px', color: '#D4D4D4' }}>{row.desc}</td>
-                      <td style={{ padding: '16px' }}>
-                        <span style={{ fontSize: '12px', fontWeight: 600, fontFamily: "'Syne', sans-serif", background: 'rgba(255,255,255,0.1)', padding: '4px 10px', borderRadius: '4px', color: row.statusColor }}>{row.status}</span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ marginBottom: '32px' }}>
+              {[
+                { title: 'Privacy Ledger', desc: 'Literal account of what leaves the device.', status: 'SHIPPED', color: '#10b981', bg: 'rgba(16,185,129,0.05)' },
+                { title: 'Trust Card', desc: 'Links the Google Doc as the source of truth.', status: 'SHIPPED', color: '#10b981', bg: 'rgba(16,185,129,0.05)' },
+                { title: 'Link-Rot Insurance', desc: 'Wayback Machine snapshots saved automatically.', status: 'SHIPPED', color: '#10b981', bg: 'rgba(16,185,129,0.05)' },
+                { title: 'Topic Auto-Clustering', desc: 'Deleted. Domain chips proved useless on large archives.', status: 'KILLED', color: '#ef4444', bg: 'rgba(239,68,68,0.05)' },
+                { title: 'Soft Triage', desc: 'Deleted. Violated the "No Guilt" ground rule.', status: 'KILLED', color: '#ef4444', bg: 'rgba(239,68,68,0.05)' },
+                { title: 'Anonymous Signals', desc: '"14 people highlighted this" — needs privacy review.', status: 'DEFERRED', color: '#a3a3a3', bg: 'rgba(255,255,255,0.03)' },
+              ].map((item, i) => (
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px', background: item.bg, border: `1px solid ${item.color}40`, borderRadius: '12px' }}>
+                  <div style={{ paddingRight: '16px' }}>
+                    <div style={{ color: '#fff', fontSize: '16px', fontWeight: 600, marginBottom: '6px', fontFamily: "'Jost', sans-serif" }}>{item.title}</div>
+                    <div style={{ color: '#A3A3A3', fontSize: '14px', lineHeight: 1.4, fontFamily: "'Jost', sans-serif" }}>{item.desc}</div>
+                  </div>
+                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.5px', color: item.color, background: 'rgba(0,0,0,0.2)', padding: '6px 10px', borderRadius: '6px', flexShrink: 0, marginTop: '2px' }}>
+                    {item.status}
+                  </div>
+                </div>
+              ))}
             </div>
             
-            <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: "'Jost', sans-serif" }}>
-              <strong style={{color:'#fff'}}>Why the strikethroughs matter more than the checkmarks:</strong> a roadmap with visible kills is more credible than a clean one. Topic Auto-Clustering shipped, then got deleted outright - not paused - once real archive sizes showed the chips carried no signal (a domain chip covering ~100% of clips filters to "everything"). One capability was salvaged: search now also matches source URLs.
+            <p style={{ fontSize: isMobile ? '15px' : '16px', color: '#888', fontStyle: 'italic', margin: 0, fontFamily: "'Jost', sans-serif" }}>
+              * A roadmap with visible kills is more credible than a clean one. Features were rigorously pruned if they didn't survive contact with real-world user data.
             </p>
           </motion.div>
         </div>
@@ -896,58 +783,17 @@ export const SnipKeepCaseStudy = () => {
 
 
 
-      {/* 07 DESIGN SYSTEM */}
+      {/* 06 DESIGN SYSTEM */}
       <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(236,72,153,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(236,72,153,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(236,72,153,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="07" title="DESIGN SYSTEM - SMALL, STRICT, VERIFIED" isMobile={isMobile} themeColorRGB="236,72,153" iconType="layers" />
+            <SectionHeader number="06" title="DESIGN SYSTEM - SMALL, STRICT, VERIFIED" isMobile={isMobile} themeColorRGB="236,72,153" iconType="layers" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '24px' }}>
               "Ink & Highlighter" - engineered, not curated
             </h2>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0, marginBottom: '40px', maxWidth: '900px' }}>
-              The color palette was strictly engineered for accessibility, anchored by warm ink-black surfaces and a marker-yellow accent. Every hue is mathematically verified against WCAG standards.
-            </p>
-            
-            {/* Palette Swatches */}
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '48px' }}>
-              {[
-                { label: '--bg', hex: '#100D08' },
-                { label: '--card', hex: '#24201A' },
-                { label: '--accent', hex: '#F4E151' },
-                { label: '--text', hex: '#EAE8E3' },
-                { label: '--warn', hex: '#E78A45' },
-                { label: '--danger', hex: '#FF6B6B' },
-              ].map((color, i) => (
-                <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <div style={{ width: '60px', height: '60px', borderRadius: '8px', background: color.hex, border: '1px solid rgba(255,255,255,0.2)', marginBottom: '8px' }}></div>
-                  <div style={{ fontSize: '12px', fontFamily: "'Syne', sans-serif", color: '#fff' }}>{color.label}</div>
-                  <div style={{ fontSize: '10px', color: '#888' }}>{color.hex}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: '48px' }}>
-              <div style={{ background: 'rgba(236,72,153,0.05)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(236,72,153,0.15)' }}>
-                <h4 style={{ fontSize: '18px', color: '#ec4899', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Strict Contrast Ceilings</h4>
-                <p style={{ color: '#A3A3A3', fontSize: '15px', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif" }}>
-                  The active accent tint is mathematically capped at <strong>0.34 alpha</strong> to guarantee a minimum <strong>4.63:1</strong> WCAG AA contrast ratio. Nothing is left to subjective taste.
-                </p>
-              </div>
-              <div style={{ background: 'rgba(236,72,153,0.05)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(236,72,153,0.15)' }}>
-                <h4 style={{ fontSize: '18px', color: '#ec4899', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>Spacing & Iconography</h4>
-                <p style={{ color: '#A3A3A3', fontSize: '15px', lineHeight: 1.5, margin: 0, fontFamily: "'Jost', sans-serif" }}>
-                  Built entirely on a rigid 4px grid system. A bespoke Material icon subset was bundled (~8.7KB total) to eliminate OS-level emoji rendering inconsistencies.
-                </p>
-              </div>
-            </div>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px' }}>
-              <div><TokenSheet /></div>
-              <div><BeforeAfterIcons /></div>
-            </div>
-            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-              The full token sheet with contrast ratios computed next to each swatch (left). The icon migration, reconstructed from the actual before/after commit - real shipped copy on both sides (right).
+              The color palette was strictly engineered for accessibility, anchored by warm ink-black surfaces and a marker-yellow accent. Every hue is mathematically verified against WCAG AA standards, with contrast ceilings programmatically enforced to eliminate guesswork.
             </p>
           </motion.div>
         </div>
@@ -955,21 +801,18 @@ export const SnipKeepCaseStudy = () => {
 
 
 
-      {/* 08 CORE FLOWS */}
+      {/* 07 CORE FLOWS */}
       <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(14,165,233,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(14,165,233,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(14,165,233,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="08" title="CORE FLOWS" isMobile={isMobile} themeColorRGB="14,165,233" iconType="flow" />
+            <SectionHeader number="07" title="CORE FLOWS" isMobile={isMobile} themeColorRGB="14,165,233" iconType="flow" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '40px' }}>
               Three end-to-end walkthroughs
             </h2>
             
             <div style={{ marginBottom: '64px' }}>
               <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>1 - Capture</h3>
-              <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
-                Select text → floating toolbar appears → save. Layers of depth: a bare clip, a margin note ("your take"), a <em>voice</em> note (speak it instead of typing - silence auto-stops <em>listening</em> but never auto-saves, preserving one review beat always), a fully keyboard-first path (Enter saves, an ↵ badge teaches the shortcut), preserved hyperlinks, and right-click image capture.
-              </p>
               <ScreenshotMockup src={toolbarMidSelectionImg} alt="SnipKeep's floating toolbar appearing over a text selection on Wikipedia" />
               <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
                 The floating toolbar appearing over a live text selection, save/note/menu options visible.
@@ -978,9 +821,6 @@ export const SnipKeepCaseStudy = () => {
 
             <div style={{ marginBottom: '64px' }}>
               <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>2 - The Doc as artifact</h3>
-              <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
-                This is the money shot of the whole study: <strong>the deliverable is theirs, not ours.</strong> A heading per article, a grey provenance caption, bulleted quotes, italic dark-gold margin notes, an auto-maintained Works Cited section, archive links, and lecture timestamps - all written straight into a Doc the student already owns.
-              </p>
               <ScreenshotMockup src={googleDocFullImg} alt="A real, populated SnipKeep research Doc with headings, provenance captions, and bulleted quotes" maxHeight="700px" />
               <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
                 A real, populated research Doc - a heading per article, a grey provenance caption, and bulleted quotes, all written straight in by the extension.
@@ -989,9 +829,6 @@ export const SnipKeepCaseStudy = () => {
 
             <div>
               <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>3 - Revisit & cite</h3>
-              <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
-                History with full-text search (also matches source URLs), #tag filter chips, per-clip Cite with the style picked at the moment of citing (an earlier persistent "Cite as" strip was removed - most users never cite, so the jargon shouldn't own prime space), deadlines with calm→warn→danger escalation, and a Completed tab for finished projects.
-              </p>
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px' }}>
                 <div><ScreenshotMockup src={docsDeadlinePillsImg} alt="SnipKeep Docs list with deadline pills in their overdue/warn state" /></div>
                 <div><ScreenshotMockup src={historyHoverActionsImg} alt="SnipKeep History list with one card's hover actions expanded: Source, Doc, Cite" /></div>
@@ -1006,49 +843,56 @@ export const SnipKeepCaseStudy = () => {
 
 
 
-      {/* 09 FEATURE DEEP-DIVES */}
+      {/* 08 FEATURE DEEP-DIVES */}
       <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(99,102,241,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(99,102,241,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="09" title="FEATURE DEEP-DIVES" isMobile={isMobile} themeColorRGB="99,102,241" iconType="magnify" />
+            <SectionHeader number="08" title="FEATURE DEEP-DIVES" isMobile={isMobile} themeColorRGB="99,102,241" iconType="magnify" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '40px' }}>
               Four stories: problem → options → principle → shipped → learned
             </h2>
-            
             <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
               <div style={{ borderLeft: '4px solid var(--semantic-success)', paddingLeft: '24px' }}>
-                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>Works Cited, auto-maintained</h3>
-                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>REBUILD, DON'T APPEND</div>
+                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>Auto-Maintained Bibliography</h3>
+                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>Rebuild, Don't Append</div>
                 <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
-                  Per-clip citations existed but assembling a real bibliography was still manual. Now every Cite click rebuilds a "Works Cited" block at the true end of the Doc - deduplicated by source page, alphabetized, and re-rendered entirely in whichever style was just picked. Live testing found a real bug: re-citing an already-cited clip in a new style updated the clipboard but not the Doc. The fix - rebuilding on <em>every</em> successful cite, not patching one entry - made the whole list style-consistent as a side effect. One user report ("my citation got replaced") turned out to be correct dedup behavior; the fix there was an explanation, not code.
+                  <strong>The Problem:</strong> Manual bibliographies break focus.<br/>
+                  <strong>The Solution:</strong> One click rebuilds the entire "Works Cited" block—alphabetized, deduplicated, and perfectly styled.<br/>
+                  <strong>The Lesson:</strong> Sometimes "bugs" are just correct behavior misunderstood. A user thought a replaced citation was an error; it was intentional deduplication. The fix wasn't code—it was better communication.
                 </p>
                 <ScreenshotMockup src={worksCitedBlockImg} alt="An auto-generated Works Cited block, alphabetized with real citation URLs" />
               </div>
 
               <div style={{ borderLeft: '4px solid var(--semantic-success)', paddingLeft: '24px' }}>
-                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>Lecture-timestamp clipping</h3>
-                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>THE INVISIBLE DESIGN WORK</div>
+                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>Deep-Linked Video Timestamps</h3>
+                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>The Invisible Design Work</div>
                 <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
-                  A clip from a 90-minute YouTube lecture used to point at the video, not the moment. Now it carries the exact video timestamp - the transcript line's own timestamp when available, else playback time - as a " · 43:21" link that reopens the lecture right there. The trap avoided: the timestamp is never baked into the clip's URL, because that URL doubles as page identity across five other subsystems (grouping, dedup, archiving). A naive &t=43s would have made every clip from one lecture look like a different source.
+                  <strong>The Problem:</strong> A clip from a 90-minute lecture is useless if you can't find the exact moment again.<br/>
+                  <strong>The Solution:</strong> Clips now carry precise timestamp links (e.g., "· 43:21") that reopen the video at that exact second.<br/>
+                  <strong>The Lesson:</strong> Don't bake timestamps into the source URL. It breaks clipping identity and creates duplicate sources for the same lecture. Separate the "where" from the "what".
                 </p>
                 <ScreenshotMockup src={docBulletTimestampImg} alt="A real Doc bullet clipped from a YouTube video, carrying a · 0:27 timestamp link" />
               </div>
 
               <div style={{ borderLeft: '4px solid var(--semantic-success)', paddingLeft: '24px' }}>
-                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>Voice notes</h3>
-                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>TWO FAILED ARCHITECTURES FIRST</div>
+                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>Frictionless Voice Notes</h3>
+                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>Two Failed Architectures First</div>
                 <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
-                  Chrome's offscreen documents can never obtain microphone permission - confirmed twice by live testing, including a pre-grant attempt. The shipped design runs speech recognition in a real, backgrounded tab instead. The interaction design: silence auto-stops <em>listening</em> (a 1.8s pause once speaking begins) but never <em>auto-saves</em>, since transcription is imperfect and a review beat matters. A real bug - manually correcting a mis-heard word mid-recording got silently overwritten by the next transcript update - was fixed by switching to append-mode the instant a manual edit is detected.
+                  <strong>The Problem:</strong> Chrome restricts microphone access in background scripts.<br/>
+                  <strong>The Solution:</strong> A dedicated, backgrounded tab handles speech recognition. It auto-stops listening on silence, but waits for your approval before saving.<br/>
+                  <strong>The Lesson:</strong> Transcription isn't perfect. Never auto-save without a review beat, or you'll silently overwrite manual user corrections.
                 </p>
                 <ScreenshotMockup src={voiceNoteRecordingImg} alt="A voice note mid-recording, live transcript visible, mic active" />
               </div>
 
               <div style={{ borderLeft: '4px solid var(--semantic-success)', paddingLeft: '24px' }}>
-                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>Bring-your-own-AI layer</h3>
-                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>THE PHILOSOPHY CAME BEFORE ANY CODE</div>
+                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#fff', marginBottom: '8px', fontFamily: "'Jost', sans-serif" }}>Bring-Your-Own-AI</h3>
+                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px', fontFamily: "'Syne', sans-serif" }}>Philosophy Before Code</div>
                 <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '24px', fontFamily: "'Jost', sans-serif" }}>
-                  <strong>AI may classify and ask questions; it may never do the student's thinking.</strong> A user connects their own OpenAI, Anthropic, or Gemini key - validated against a free endpoint, stored device-local (never synced, never seen by any SnipKeep server), invisible in every menu until connected. Live debugging surfaced three real findings: a generic "key rejected" error was hiding the actual cause (Anthropic blocking direct browser requests without an explicit opt-in header); and a genuine UX finding - users assume a Claude Pro subscription includes API access. It doesn't. The surfaced error text became the diagnostic.
+                  <strong>The Problem:</strong> AI shouldn't do the thinking for the student, and API costs shouldn't dictate pricing.<br/>
+                  <strong>The Solution:</strong> Users connect their own OpenAI or Anthropic keys. The keys stay device-local—we never see them.<br/>
+                  <strong>The Lesson:</strong> Don't rely on generic errors. Users confused "Claude Pro" with "API access". Updating our error messages stopped the confusion instantly.
                 </p>
                 <ScreenshotMockup src={aiConnectScreenImg} alt="The bring-your-own-AI-key connection screen, showing a connected, redacted key" />
               </div>
@@ -1058,125 +902,12 @@ export const SnipKeepCaseStudy = () => {
       </section>
 
 
-
-      {/* 09B A SECOND RESEARCH PASS */}
-      <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(132,204,22,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(132,204,22,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(132,204,22,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="09B" title="A SECOND RESEARCH PASS - THE STUDY TAB" isMobile={isMobile} themeColorRGB="132,204,22" iconType="cycle" />
-            <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '24px' }}>
-              Retrieval-first learning, built on top of the clipping product
-            </h2>
-            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0, marginBottom: '40px', maxWidth: '900px' }}>
-              A later, separate research pass (learning-science literature: the testing effect, spaced exposure, the generation effect) produced a full study surface - the newest and largest part of the product today. The same ground rule from the AI layer above was independently rediscovered here and applied again: <strong>AI asks and classifies; it never digests the material for the student.</strong>
-            </p>
-            
-            <div style={{ overflowX: 'auto', marginBottom: '40px', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px' }}>
-              <table style={{ width: '100%', minWidth: '600px', borderCollapse: 'collapse', textAlign: 'left', fontFamily: "'Jost', sans-serif", fontSize: '16px' }}>
-                <thead>
-                  <tr style={{ background: 'rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                    <th style={{ padding: '16px', color: 'var(--semantic-success)' }}>FEATURE</th>
-                    <th style={{ padding: '16px', color: 'var(--semantic-success)' }}>WHAT IT DOES</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { f: 'Retrieval Flip', d: 'Every saved clip quietly gets one AI-drafted question attached to it' },
-                    { f: 'Five-Minute Review', d: 'A spaced-repetition ladder (1 → 3 → 7 → 14 → 30 → 60 days) resurfaces due questions' },
-                    { f: 'Teach-It-Back', d: 'Explain a doc out loud; AI classifies covered / missing / conflicting - never grades' },
-                    { f: 'Predict-First', d: 'Pauses chaptered YouTube lectures, alternating recall and predict prompts' },
-                    { f: 'PACER Board', d: 'AI sorts clips into Procedural / Analogical / Conceptual / Evidence / Reference; drag to correct' },
-                    { f: 'Exam Forge', d: "A practice exam forged fresh from a doc's own clips - written or multiple choice" },
-                    { f: 'Knowledge Heat', d: 'Collected-vs-recalled shown as two bars on one scale - no percentages, no red, no streaks' },
-                    { f: 'Study Pact', d: "A weekly review schedule synced to the student's own Google Calendar" },
-                    { f: <s style={{opacity: 0.5}}>Confusion Flag</s>, d: <s style={{opacity: 0.5}}>BUILT + REVERTED SAME DAY</s> }
-                  ].map((row, i) => (
-                    <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td style={{ padding: '16px', color: '#fff', fontWeight: 500 }}>{row.f}</td>
-                      <td style={{ padding: '16px', color: '#D4D4D4' }}>{row.d}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, marginBottom: '40px', fontFamily: "'Jost', sans-serif" }}>
-              Exam Forge in particular went through several rapid rounds of live iteration: an exit-confirm shared identically between its own button and every Sidebar navigation link (not two separate prompts for one decision); mandatory completion before submission, with a question-jump palette instead of a hidden progress counter; and always-visible correct answers for both formats after a written/MCQ asymmetry was caught live.
-            </p>
-
-            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px' }}>
-              <div><ScreenshotMockup src={pacerBoardImg} alt="The PACER board sorting real clips into Procedural, Analogical, Conceptual, Evidence, and Reference columns" /></div>
-              <div><ScreenshotMockup src={knowledgeHeatImg} alt="The Overview page's Knowledge Heat section, collected vs recalled bars for two real docs" /></div>
-            </div>
-            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-              The PACER board sorting real clips (left), and the Overview page's Knowledge Heat section - collected/recalled bars for real docs (right).
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-
-
-      {/* 10 MOTION */}
-      <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(245,158,11,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(245,158,11,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="10" title="MOTION & MICROINTERACTION CRAFT" isMobile={isMobile} themeColorRGB="245,158,11" iconType="wave" />
-            <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '24px' }}>
-              The toggle-reorder saga - wrong fixes first
-            </h2>
-            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0, marginBottom: '40px', maxWidth: '900px' }}>
-              Toggling a doc card active/inactive reorders the whole list, animated with FLIP (measure each card's position before and after, play the delta as a slide) using the Web Animations API - chosen over CSS transitions because setting an inline CSS transition <em>replaces</em> a card's own hover transition outright.
-            </p>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '40px' }}>
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '12px', fontWeight: 600, fontFamily: "'Syne', sans-serif", background: 'rgba(56, 189, 248, 0.1)', color: '#38bdf8', padding: '4px 8px', borderRadius: '4px', whiteSpace: 'nowrap' }}>VERIFIED</span>
-                <p style={{ margin: 0, fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, fontFamily: "'Jost', sans-serif" }}>Easing checked numerically, not by eye: Material's "standard" curve has a zero tangent at t=0 yet reaches ~24% progress by 25% of duration - near-linear in practice. The chosen curve reaches only ~7% by the same point: genuinely slow at both ends.</p>
-              </div>
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '12px', fontWeight: 600, fontFamily: "'Syne', sans-serif", background: 'rgba(244, 63, 94, 0.1)', color: '#f43f5e', padding: '4px 8px', borderRadius: '4px', whiteSpace: 'nowrap' }}>WRONG FIX #1</span>
-                <p style={{ margin: 0, fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, fontFamily: "'Jost', sans-serif" }}>User reported a "sudden jerk" on toggle. GPU layer promotion (<code style={{background:'rgba(255,255,255,0.1)', padding:'2px 4px', borderRadius:'4px', fontSize:'14px'}}>will-change</code>) - a real improvement, but not the actual cause.</p>
-              </div>
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '12px', fontWeight: 600, fontFamily: "'Syne', sans-serif", background: 'rgba(244, 63, 94, 0.1)', color: '#f43f5e', padding: '4px 8px', borderRadius: '4px', whiteSpace: 'nowrap' }}>WRONG FIX #2</span>
-                <p style={{ margin: 0, fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, fontFamily: "'Jost', sans-serif" }}>A 140ms hold before the slide ("click, pause, move") - made it worse.</p>
-              </div>
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '12px', fontWeight: 600, fontFamily: "'Syne', sans-serif", background: 'rgba(34, 197, 94, 0.1)', color: '#22c55e', padding: '4px 8px', borderRadius: '4px', whiteSpace: 'nowrap' }}>ROOT CAUSE</span>
-                <p style={{ margin: 0, fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, fontFamily: "'Jost', sans-serif" }}>With <code style={{background:'rgba(255,255,255,0.1)', padding:'2px 4px', borderRadius:'4px', fontSize:'14px'}}>fill: 'none'</code>, a delayed animation applies no keyframes during its delay - so the card jumped to its final spot, sat there, jumped back, then slid. <code style={{background:'rgba(255,255,255,0.1)', padding:'2px 4px', borderRadius:'4px', fontSize:'14px'}}>fill: 'backwards'</code> was the one-word fix.</p>
-              </div>
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '12px', fontWeight: 600, fontFamily: "'Syne', sans-serif", background: 'rgba(99, 102, 241, 0.1)', color: '#6366f1', padding: '4px 8px', borderRadius: '4px', whiteSpace: 'nowrap' }}>PRINCIPLE</span>
-                <p style={{ margin: 0, fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, fontFamily: "'Jost', sans-serif" }}>"Data arriving is not movement" - an async docs list load meant the first render was always empty and the second populated; anything existing in both renders ghost-slid on open until a guard distinguished data-arrival from an actual reorder.</p>
-              </div>
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '12px', fontWeight: 600, fontFamily: "'Syne', sans-serif", background: 'rgba(168, 85, 247, 0.1)', color: '#a855f7', padding: '4px 8px', borderRadius: '4px', whiteSpace: 'nowrap' }}>FINAL LESSON</span>
-                <p style={{ margin: 0, fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, fontFamily: "'Jost', sans-serif" }}>From direct user feedback ("keep it simple and minimal") on an over-choreographed animation: two motion registers. Slow symmetric curves for system-initiated rearrangement; a fast ease-out for direct user commands. A user-invoked control on the system's clock reads as laggy, not gentle.</p>
-              </div>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px' }}>
-              <div><EasingCurveChart /></div>
-              <div><ScreenshotMockup src={reorderAnimationGif} alt="A real doc card toggling active state and reordering the list" /></div>
-            </div>
-            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-              The two curves, plotted on the same axes and annotated with the real measured checkpoints (left). A real screen capture of the card reorder in the shipped extension (right).
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-
-
-      {/* 11 DESIGNING BY SUBTRACTION */}
+      {/* 09 DESIGNING BY SUBTRACTION */}
       <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(239,68,68,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(239,68,68,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(239,68,68,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="11" title="DESIGNING BY SUBTRACTION" isMobile={isMobile} themeColorRGB="239,68,68" iconType="subtract" />
+            <SectionHeader number="09" title="DESIGNING BY SUBTRACTION" isMobile={isMobile} themeColorRGB="239,68,68" iconType="subtract" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '40px' }}>
               The roadmap's strikethroughs are the proof of a real evaluation loop
             </h2>
@@ -1206,14 +937,14 @@ export const SnipKeepCaseStudy = () => {
 
 
 
-      {/* 12 ITERATING ON LIVE FEEDBACK */}
+      {/* 10 ITERATING ON LIVE FEEDBACK */}
       <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(20,184,166,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(20,184,166,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="12" title="ITERATING ON LIVE FEEDBACK" isMobile={isMobile} themeColorRGB="20,184,166" iconType="pulse" />
+            <SectionHeader number="10" title="ITERATING ON LIVE FEEDBACK" isMobile={isMobile} themeColorRGB="20,184,166" iconType="pulse" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '40px' }}>
-              Three diagnostic stories
+              One diagnostic story
             </h2>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -1226,98 +957,27 @@ export const SnipKeepCaseStudy = () => {
                   <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: "'Jost', sans-serif" }}>Choosing a citation style closed the dropdown, which physically moved the cursor onto the <em>next</em> card - collapsing the action row before the feedback could ever render. Fixed by pinning the row open by state for exactly as long as feedback is showing, regardless of where the cursor lands.</p>
                 </div>
               </div>
-              
-              <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
-                <div style={{ flex: '0 0 auto' }}>
-                  <BugDiagram variant="padding" />
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The phantom padding</h4>
-                  <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: "'Jost', sans-serif" }}>"Top padding looks smaller than bottom" was actually an invisible collapsed row: with border-box sizing, an element's height can never shrink below its own padding. The hidden hover-row's padding was leaving a phantom band under every card.</p>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
-                <div style={{ flex: '0 0 auto' }}>
-                  <BugDiagram variant="dedup" />
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '12px', fontFamily: "'Jost', sans-serif" }}>The "replaced" citation that wasn't a bug</h4>
-                  <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: "'Jost', sans-serif" }}>A report that citing a second quote from the same article "replaced" the first entry - actually correct dedup-by-source behavior, working as designed. The fix here was an explanation, not a code change: knowing when the design is right and the mental model just needs a bridge is its own UX skill.</p>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
 
-
-      {/* 13 ACCESSIBILITY & TRUST */}
-      <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(59,130,246,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(59,130,246,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="13" title="ACCESSIBILITY & TRUST" isMobile={isMobile} themeColorRGB="59,130,246" iconType="shield" />
-            <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '40px' }}>
-              Verified, not assumed
-            </h2>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
-              {[
-                "Every contrast ratio in the token sheet computed and recorded - not eyeballed.",
-                "Full keyboard operability, focus-visible rings on every interactive element.",
-                "A long-lived invalid-HTML bug - the account dropdown was nested inside its own trigger <button>, which browsers silently re-parent. Found by diffing the parsed DOM against the JSX source, not by inspection alone.",
-                "prefers-reduced-motion honored across every animation, including mount-gated ones.",
-                "Undo-over-confirm as a standing philosophy: reversible deletes get a 6-second undo bar; blocking confirms are reserved for genuinely destructive bulk actions."
-              ].map((item, i) => (
-                <div key={i} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <CheckCircle2 size={24} color="var(--semantic-success)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: "'Jost', sans-serif" }}>
-                    {item.includes('<button>') ? (
-                      <>A long-lived invalid-HTML bug - the account dropdown was nested inside its own trigger <code style={{background:'rgba(255,255,255,0.1)', padding:'2px 4px', borderRadius:'4px', fontSize:'14px'}}>&lt;button&gt;</code>, which browsers silently re-parent. Found by diffing the parsed DOM against the JSX source, not by inspection alone.</>
-                    ) : item.includes('prefers-reduced-motion') ? (
-                      <><code style={{background:'rgba(255,255,255,0.1)', padding:'2px 4px', borderRadius:'4px', fontSize:'14px'}}>prefers-reduced-motion</code> honored across every animation, including mount-gated ones.</>
-                    ) : item}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <ScreenshotMockup src={privacyLedgerImg} alt="A close crop of the Privacy Ledger's three-checks-and-one-X layout" />
-            <p style={{ marginTop: '16px', color: 'rgba(255,255,255,0.5)', fontSize: '14px', fontFamily: "'Jost', sans-serif" }}>
-              The Privacy Ledger's three-checks-and-one-✕ layout, legible enough to read the actual copy.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-
-
-      {/* 14 RESULTS */}
+      {/* 11 RESULTS */}
       <section style={{ padding: isMobile ? '64px 0' : '120px 0' }}>
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: 'linear-gradient(145deg, rgba(168,85,247,0.06) 0%, rgba(10,10,10,0) 45%, rgba(10,10,10,0) 100%)', border: '1px solid rgba(168,85,247,0.12)', borderRadius: '32px', padding: isMobile ? '16px' : '64px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(168,85,247,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-            <SectionHeader number="14" title="RESULTS, REFLECTION & WHAT'S NEXT" isMobile={isMobile} themeColorRGB="168,85,247" iconType="star" />
+            <SectionHeader number="11" title="RESULTS, REFLECTION & WHAT'S NEXT" isMobile={isMobile} themeColorRGB="168,85,247" iconType="star" />
             <h2 style={{ fontSize: isMobile ? '28px' : 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 500, color: '#fff', lineHeight: 1.1, letterSpacing: '0', maxWidth: '1100px', margin: 0, marginBottom: '24px' }}>
               Honest framing for a solo, personal project
             </h2>
-            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: isMobile ? '16px' : '20px', color: '#e5e5e5', lineHeight: 1.5, letterSpacing: '0', margin: 0, marginBottom: '48px', maxWidth: '900px' }}>
-              Validated through continuous live testing with one primary user whose screenshot-driven bug reports shaped multiple iterations. Every feature listed here shipped and builds clean. No usage metrics exist yet - none are fabricated here as a stand-in.
-            </p>
-
-            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '32px', marginBottom: '48px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr', gap: '32px', marginBottom: '48px' }}>
               <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '32px', borderRadius: '16px' }}>
-                <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>What I'd do differently</h4>
+                <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>Reflection & What's Next</h4>
                 <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: "'Jost', sans-serif" }}>
-                  Establish the motion invariants before the animation work, instead of excavating them bug by bug. Concept-test ideas like Soft Triage with a user before building the whole thing.
-                </p>
-              </div>
-              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '32px', borderRadius: '16px' }}>
-                <h4 style={{ fontSize: '20px', color: '#fff', fontWeight: 600, marginBottom: '16px', fontFamily: "'Jost', sans-serif" }}>What's next - Closed-Book Revisit</h4>
-                <p style={{ fontSize: isMobile ? '16px' : '18px', color: '#D4D4D4', lineHeight: 1.6, margin: 0, fontFamily: "'Jost', sans-serif" }}>
-                  A designed-but-unbuilt concept: when a student organically returns to a page they clipped weeks ago, a small dismissible pill asks them to recall what mattered <em>before</em> revealing their old clips - the testing effect, ambushing the exact moment students default to re-reading. Its own honest critique: it must be one-click dismissible and per-site muteable (interruption risk), and the reveal must never auto-grade - "you remembered 1 of 3" would be exactly the shame mechanic this whole product refuses to build.
+                  <strong>What I'd change:</strong> Establish motion invariants before animation work to avoid chasing bugs. Concept-test features before fully building them.<br/><br/>
+                  <strong>What's next:</strong> A "Closed-Book Revisit" concept where returning users are nudged to recall what mattered before revealing their old clips (the testing effect). Crucially, this must be consequence-free to avoid the very shame mechanics this product rejects.
                 </p>
               </div>
             </div>
