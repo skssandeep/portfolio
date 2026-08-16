@@ -17,7 +17,7 @@ const caseStudies = [
     title: 'SnipKeep',
     description: 'A privacy-first Chrome extension that saves web highlights directly to your Google Docs. Featuring gentle triage, deadline-aware citations, and one-click archiving, it cures the "collector\'s fallacy" and ensures you actually use what you save.',
     tags: ['CHROME EXTENSION', 'PRODUCTIVITY', 'BUILT WITH CLAUDE CODE'],
-    image: '/images/LAP01.png',
+    image: '/images/LAP01-v2.png',
     bgColor: '#0f1115',
     cta: 'VIEW CASE STUDY',
     customLink: '/snipkeep'

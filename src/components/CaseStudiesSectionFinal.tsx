@@ -14,7 +14,7 @@ const caseStudies = [
     title: 'Fintech Web Platform',
     description: 'A comprehensive desktop web application designed for high-density financial data management and real-time portfolio tracking.',
     tags: ['Web Application', 'Fintech', 'SaaS'],
-    image: '/images/LAP01.png'
+    image: '/images/LAP01-v2.png'
   }
 ];
 
