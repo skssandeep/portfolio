@@ -3,9 +3,9 @@ import { SiFigma, SiOpenai, SiClaude, SiGooglegemini, SiFramer } from 'react-ico
 import { Rocket, Compass } from 'lucide-react';
 import { motion } from 'framer-motion';
 import geminiLogo from '../assets/gemini.svg';
-import antigravityLogo from '../assets/antigravity.png';
-import antigravityIdeLogo from '../assets/antigravity-ide.png';
-import uxPilotLogo from '../assets/uxpilot.png';
+import antigravityLogo from '../assets/antigravity.webp';
+import antigravityIdeLogo from '../assets/antigravity-ide.webp';
+import uxPilotLogo from '../assets/uxpilot.webp';
 
 const tools = [
   { name: "Figma", customImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", category: "Product & UI Design", useIcon: false },

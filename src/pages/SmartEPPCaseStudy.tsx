@@ -69,16 +69,16 @@ export const SmartEPPCaseStudy = () => {
 
 
   const ecosystemImages = [
-    "/images/EPP_CaseStudy_01.png",
-    "/images/EPP_CaseStudy_02.png",
-    "/images/EPP_CaseStudy_03.png",
-    "/images/EPP_CaseStudy_04.png",
-    "/images/EPP_CaseStudy_05.png",
-    "/images/EPP_CaseStudy_06.png",
-    "/images/EPP_CaseStudy_07.png",
-    "/images/EPP_CaseStudy_08.png",
-    "/images/EPP_CaseStudy_09.png",
-    "/images/EPP_CaseStudy_10.png"
+    "/images/EPP_CaseStudy_01.webp",
+    "/images/EPP_CaseStudy_02.webp",
+    "/images/EPP_CaseStudy_03.webp",
+    "/images/EPP_CaseStudy_04.webp",
+    "/images/EPP_CaseStudy_05.webp",
+    "/images/EPP_CaseStudy_06.webp",
+    "/images/EPP_CaseStudy_07.webp",
+    "/images/EPP_CaseStudy_08.webp",
+    "/images/EPP_CaseStudy_09.webp",
+    "/images/EPP_CaseStudy_10.webp"
   ];
 
   // Drag-to-scroll logic
@@ -476,7 +476,7 @@ export const SmartEPPCaseStudy = () => {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              src="/images/Mockup2_EPP.png" 
+              src="/images/Mockup2_EPP.webp" 
               alt="Smart EPP Mobile App Mockup" 
               style={{ position: 'absolute', top: '-20%', left: '-25%', width: '165%', maxWidth: '1100px', objectFit: 'contain', zIndex: 2, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
             />
@@ -1059,9 +1059,9 @@ export const SmartEPPCaseStudy = () => {
                style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 1, display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '20px', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
-                <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe3.jpg" alt="Wireframe 3" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
-                <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe2.jpg" alt="Wireframe 2" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
-                <motion.img variants={{ hover: { scale: 1.05 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe1.jpg" alt="Wireframe 1" style={{ position: 'relative', width: '180px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 10 }} />
+                <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe3.webp" alt="Wireframe 3" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
+                <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe2.webp" alt="Wireframe 2" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
+                <motion.img variants={{ hover: { scale: 1.05 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/wireframe1.webp" alt="Wireframe 1" style={{ position: 'relative', width: '180px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 10 }} />
                 
                 <motion.div variants={{ hover: { opacity: 1, scale: 1 } }} initial={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} style={{ position: 'absolute', zIndex: 20, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(8px)', padding: '10px 20px', borderRadius: '100px', display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '14px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.2)', pointerEvents: 'none' }}>
                   <Maximize size={16} /> Open Gallery
@@ -1086,9 +1086,9 @@ export const SmartEPPCaseStudy = () => {
                style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 2, display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '20px', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
-                <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev03.jpg" alt="HiFi 3" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
-                <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev02.jpg" alt="HiFi 2" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
-                <motion.img variants={{ hover: { scale: 1.05 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev01.jpg" alt="HiFi 1" style={{ position: 'relative', width: '180px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 10 }} />
+                <motion.img variants={{ hover: { rotate: -12, x: -40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev03.webp" alt="HiFi 3" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.4, border: '1px solid rgba(255,255,255,0.1)' }} />
+                <motion.img variants={{ hover: { rotate: 12, x: 40, y: 10, opacity: 0.8 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev02.webp" alt="HiFi 2" style={{ position: 'absolute', top: '20px', width: '160px', borderRadius: '12px', opacity: 0.6, border: '1px solid rgba(255,255,255,0.1)' }} />
+                <motion.img variants={{ hover: { scale: 1.05 } }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} src="/images/prev01.webp" alt="HiFi 1" style={{ position: 'relative', width: '180px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 10 }} />
                 
                 <motion.div variants={{ hover: { opacity: 1, scale: 1 } }} initial={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} style={{ position: 'absolute', zIndex: 20, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(8px)', padding: '10px 20px', borderRadius: '100px', display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', fontSize: '14px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.2)', pointerEvents: 'none' }}>
                   <Maximize size={16} /> Open Gallery
@@ -1195,12 +1195,12 @@ export const SmartEPPCaseStudy = () => {
                     <p style={{ fontSize: '16px', color: '#D4D4D4', lineHeight: 1.5, margin: 0 }}>Interactive tax slider for immediate math.</p>
                   </div>
                   <div 
-                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.png']); setModalIndex(0); }}
+                    onClick={() => { setModalImages(['/images/smart-epp-calculator-screen.webp']); setModalIndex(0); }}
                     style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
                     onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
                   >
-                    <img src="/images/smart-epp-calculator-screen.png" alt="Calculator Screen" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <img src="/images/smart-epp-calculator-screen.webp" alt="Calculator Screen" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.9, filter: 'grayscale(10%)' }} />
                     <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 3 21 3 21 9"></polyline>
@@ -1228,12 +1228,12 @@ export const SmartEPPCaseStudy = () => {
                     <p style={{ fontSize: '16px', color: '#D4D4D4', lineHeight: 1.5, margin: 0 }}>Transparent 2-year protection. Accidental damage & theft covered.</p>
                   </div>
                   <div 
-                    onClick={() => { setModalImages(['/images/EPP_CaseStudy_10.png']); setModalIndex(0); }}
+                    onClick={() => { setModalImages(['/images/EPP_CaseStudy_10.webp']); setModalIndex(0); }}
                     style={{ height: '76px', width: '38px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
                     onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
                   >
-                    <img src="/images/EPP_CaseStudy_10.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <img src="/images/EPP_CaseStudy_10.webp" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.9, filter: 'grayscale(10%)' }} />
                     <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 3 21 3 21 9"></polyline>
@@ -1261,12 +1261,12 @@ export const SmartEPPCaseStudy = () => {
                     <p style={{ fontSize: '16px', color: '#D4D4D4', lineHeight: 1.5, margin: 0 }}>1-click bulk purchase order approval dashboard.</p>
                   </div>
                   <div 
-                    onClick={() => { setModalImages(['/images/HR_BULK.png']); setModalIndex(0); }}
+                    onClick={() => { setModalImages(['/images/HR_BULK.webp']); setModalIndex(0); }}
                     style={{ height: '48px', width: '84px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
                     onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
                   >
-                    <img src="/images/HR_BULK.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <img src="/images/HR_BULK.webp" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.9, filter: 'grayscale(10%)' }} />
                     <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 3 21 3 21 9"></polyline>
@@ -1294,12 +1294,12 @@ export const SmartEPPCaseStudy = () => {
                      <p style={{ fontSize: '16px', color: '#D4D4D4', lineHeight: 1.5, margin: 0 }}>Pre-approval "Upcoming Orders" pipeline.</p>
                   </div>
                   <div 
-                    onClick={() => { setModalImages(['/images/Seller_Upcoming.png']); setModalIndex(0); }}
+                    onClick={() => { setModalImages(['/images/Seller_Upcoming.webp']); setModalIndex(0); }}
                     style={{ height: '48px', width: '84px', borderRadius: '6px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(var(--semantic-warning-rgb),0.4)', flexShrink: 0, transition: 'all 0.2s ease', position: 'relative', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
                     onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.8)'; e.currentTarget.style.boxShadow = '0 8px 16px rgba(var(--semantic-warning-rgb),0.15)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.borderColor = 'rgba(var(--semantic-warning-rgb),0.4)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)'; }}
                   >
-                    <img src="/images/Seller_Upcoming.png" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.9, filter: 'grayscale(10%)' }} />
+                    <img src="/images/Seller_Upcoming.webp" alt="Screen Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.9, filter: 'grayscale(10%)' }} />
                     <div style={{ position: 'absolute', bottom: '4px', right: '4px', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 3 21 3 21 9"></polyline>
@@ -1373,12 +1373,12 @@ export const SmartEPPCaseStudy = () => {
                     {/* Image 1: Entry Point */}
                     <div 
                       style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', padding: '24px', width: '100%', maxWidth: '280px', display: 'flex', justifyContent: 'center', position: 'relative', cursor: 'pointer', transition: 'transform 0.3s ease' }}
-                      onClick={() => { setModalImages(['/images/EPP_CaseStudy_02.png', '/images/EPP_CaseStudy_07.png']); setModalIndex(0); }}
+                      onClick={() => { setModalImages(['/images/EPP_CaseStudy_02.webp', '/images/EPP_CaseStudy_07.webp']); setModalIndex(0); }}
                       onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
                       onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                     >
                       <img 
-                        src="/images/EPP_CaseStudy_02.png" 
+                        src="/images/EPP_CaseStudy_02.webp" 
                         alt="Tax Calculator Entry Point" 
                         style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} 
                       />
@@ -1390,12 +1390,12 @@ export const SmartEPPCaseStudy = () => {
                     {/* Image 2: Slider */}
                     <div 
                       style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', padding: '24px', width: '100%', maxWidth: '280px', display: 'flex', justifyContent: 'center', position: 'relative', cursor: 'pointer', transition: 'transform 0.3s ease' }}
-                      onClick={() => { setModalImages(['/images/EPP_CaseStudy_02.png', '/images/EPP_CaseStudy_07.png']); setModalIndex(1); }}
+                      onClick={() => { setModalImages(['/images/EPP_CaseStudy_02.webp', '/images/EPP_CaseStudy_07.webp']); setModalIndex(1); }}
                       onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
                       onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                     >
                       <img 
-                        src="/images/EPP_CaseStudy_07.png" 
+                        src="/images/EPP_CaseStudy_07.webp" 
                         alt="Tax Calculator UI Slider" 
                         style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} 
                       />
@@ -1722,7 +1722,7 @@ export const SmartEPPCaseStudy = () => {
                   <div>
                     {/* HR Portal Image */}
                     <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                      <img src="/images/HR.jpg" alt="HR Portal Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <img src="/images/HR.webp" alt="HR Portal Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   </div>
                 )}
@@ -1731,7 +1731,7 @@ export const SmartEPPCaseStudy = () => {
                   <div>
                     {/* Financier Portal Image */}
                     <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                      <img src="/images/Financier.jpg" alt="Financier Portal Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <img src="/images/Financier.webp" alt="Financier Portal Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   </div>
                 )}
@@ -1740,7 +1740,7 @@ export const SmartEPPCaseStudy = () => {
                   <div>
                     {/* Seller Portal Image */}
                     <div style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                      <img src="/images/Seller.jpg" alt="Seller Hub Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <img src="/images/Seller.webp" alt="Seller Hub Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   </div>
                 )}

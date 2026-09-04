@@ -7,14 +7,14 @@ const additionalCaseStudies = [
     title: 'Oasys Admin Console',
     description: 'A brutalist admin interface designed to orchestrate partner onboarding and lifecycle management seamlessly.',
     tags: ['Dashboard', 'Enterprise'],
-    image: '/images/mockup_hand_jpg.jpg'
+    image: '/images/mockup_hand_jpg.webp'
   },
   {
     id: 3,
     title: 'AI Shopping Assistant',
     description: 'An intelligent in-app Ask AI assistant designed to navigate complex catalog selections through conversational interfaces.',
     tags: ['AI/ML', 'Mobile'],
-    image: '/images/EPP - 04.jpg'
+    image: '/images/EPP - 04.webp'
   }
 ];
 

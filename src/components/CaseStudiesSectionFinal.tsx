@@ -7,14 +7,14 @@ const caseStudies = [
     title: 'OneAssist Smart EPP',
     description: 'An entirely new Employee Purchase Program ecosystem letting employees lease premium devices through salary-linked EMIs. Featuring an elegant mobile experience built from the ground up.',
     tags: ['Product Design', 'Fintech', 'B2B2C'],
-    image: '/images/Mockup2_EPP.png'
+    image: '/images/Mockup2_EPP.webp'
   },
   {
     id: 4,
     title: 'Fintech Web Platform',
     description: 'A comprehensive desktop web application designed for high-density financial data management and real-time portfolio tracking.',
     tags: ['Web Application', 'Fintech', 'SaaS'],
-    image: '/images/LAP01-v2.png'
+    image: '/images/LAP01-v2.webp'
   }
 ];
 

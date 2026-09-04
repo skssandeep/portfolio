@@ -6,14 +6,14 @@ import { FullscreenImageModal } from './FullscreenImageModal';
 const projects = [
   { 
     title: "Saarthi", 
-    image: "/images/saarthi_01.png", 
-    preview: "/images/saarthi_02.png",
+    image: "/images/saarthi_01.webp", 
+    preview: "/images/saarthi_02.webp",
     description: "A smart home manager that proactively supervises appliances, experts, and updates."
   },
   { 
     title: "Pause.", 
-    image: "/images/pause.png", 
-    preview: "/images/pause_web.jpg",
+    image: "/images/pause.webp", 
+    preview: "/images/pause_web.webp",
     description: "A premium coffee subscription concept focusing on mindful, slow morning rituals.",
     madeWith: "Claude Design"
   }

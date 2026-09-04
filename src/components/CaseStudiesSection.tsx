@@ -8,8 +8,8 @@ const caseStudies = [
     title: 'OneAssist Smart EPP',
     description: 'Designed an Employee Purchase Program from the ground up, letting employees lease devices through salary-linked EMIs. Built a mobile app, partner dashboards, and an admin console.',
     tags: ['Product Design', 'Design System', 'B2B2C'],
-    image: '/images/EPP - 01.jpg',
-    images: ['/images/EPP - 01.jpg', '/images/EPP - 02.jpg', '/images/EPP - 03.jpg', '/images/EPP - 04.jpg'],
+    image: '/images/EPP - 01.webp',
+    images: ['/images/EPP - 01.webp', '/images/EPP - 02.webp', '/images/EPP - 03.webp', '/images/EPP - 04.webp'],
     presentationStyle: 'mobile-isometric'
   },
   {

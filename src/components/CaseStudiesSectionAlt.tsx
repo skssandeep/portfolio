@@ -7,21 +7,21 @@ const caseStudies = [
     title: 'OneAssist Smart EPP',
     description: 'An entirely new Employee Purchase Program ecosystem letting employees lease premium devices through salary-linked EMIs. Featuring an elegant mobile experience built from the ground up.',
     tags: ['Product Design', 'Fintech', 'B2B2C'],
-    images: ['/images/EPP - 01.jpg', '/images/EPP - 02.jpg', '/images/EPP - 03.jpg', '/images/EPP - 04.jpg'],
+    images: ['/images/EPP - 01.webp', '/images/EPP - 02.webp', '/images/EPP - 03.webp', '/images/EPP - 04.webp'],
     presentationStyle: 'hand-composite',
     bgText: 'EPP',
-    handImage: '/images/Mockup2_EPP.png'
+    handImage: '/images/Mockup2_EPP.webp'
   },
   {
     id: 2,
     title: 'Oasys Admin Console',
     description: 'A powerful, brutalist admin interface designed to orchestrate partner onboarding and device lifecycle management seamlessly.',
     tags: ['Dashboard', 'UX Research', 'Enterprise'],
-    images: ['/images/EPP - 02.jpg'],
+    images: ['/images/EPP - 02.webp'],
     presentationStyle: 'hand-composite',
     bgText: 'OASYS',
-    handImage: '/images/mockup_hand_jpg.jpg',
-    screenImage: '/images/EPP - 01 MOCK.jpg',
+    handImage: '/images/mockup_hand_jpg.webp',
+    screenImage: '/images/EPP - 01 MOCK.webp',
     screenTransform: {
       width: '32.5%',
       height: '68%',
@@ -35,7 +35,7 @@ const caseStudies = [
     title: 'AI Shopping Assistant',
     description: 'An intelligent in-app Ask AI assistant designed to navigate complex catalog selections through conversational interfaces.',
     tags: ['AI/ML', 'Interaction Design', 'Mobile'],
-    images: ['/images/EPP - 04.jpg'],
+    images: ['/images/EPP - 04.webp'],
     background: '/images/mockup_bg_liquid_silk.png',
     presentationStyle: 'liquid-float',
     bgText: ''

@@ -88,7 +88,7 @@ export const AboutSection = () => {
                 }}
               >
                  <img 
-                   src="/images/sandeep.png" 
+                   src="/images/sandeep.webp" 
                    alt="Sandeep Kumar Singh" 
                    style={{ 
                      width: '100%', 
@@ -193,7 +193,7 @@ export const AboutSection = () => {
                 }}
               >
                  <img 
-                   src="/images/sandeep.png" 
+                   src="/images/sandeep.webp" 
                    alt="Sandeep Kumar Singh" 
                    style={{ 
                      width: '100%', 

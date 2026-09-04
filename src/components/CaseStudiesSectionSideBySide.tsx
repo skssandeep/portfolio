@@ -8,7 +8,7 @@ const caseStudies = [
     title: 'OneAssist Smart EPP',
     description: 'A 0-to-1 Employee Purchase Program unlocking ~40% discounts on premium devices via salary-linked EMIs. I designed the end-to-end mobile experience to simplify complex financial flows and drive maximum user conversion.',
     tags: ['Product Design', 'Fintech', 'B2B2C'],
-    image: '/images/Mockup2_EPP.png',
+    image: '/images/Mockup2_EPP.webp',
     bgColor: '#161618',
     customLink: '/smart-epp'
   },
@@ -17,7 +17,7 @@ const caseStudies = [
     title: 'SnipKeep',
     description: 'A privacy-first Chrome extension that saves web highlights directly to your Google Docs. Featuring gentle triage, deadline-aware citations, and one-click archiving, it cures the "collector\'s fallacy" and ensures you actually use what you save.',
     tags: ['CHROME EXTENSION', 'PRODUCTIVITY', 'BUILT WITH CLAUDE CODE'],
-    image: '/images/LAP01-v2.png',
+    image: '/images/LAP01-v2.webp',
     bgColor: '#0f1115',
     cta: 'VIEW CASE STUDY',
     customLink: '/snipkeep'
