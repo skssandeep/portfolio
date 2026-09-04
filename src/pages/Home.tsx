@@ -60,6 +60,19 @@ export const Home = () => {
     }
   }, [hash, location.pathname]);
 
+  // The tube cursor pulls 757 KB of three.js from a CDN. `hidden md:block` only
+  // hides it with CSS, so phones downloaded and initialised WebGL for something
+  // they never see. Gate on the same md breakpoint, but do not mount at all.
+  const [isDesktop, setIsDesktop] = React.useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches
+  );
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
   // Mouse tracking for ambient glow and portal hover detection
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -144,6 +157,7 @@ export const Home = () => {
           WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
         }} />
 
+        {isDesktop && (
         <motion.div className="hidden md:block" style={{ y: portalY, position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
           <TubesCursor
             initialColors={TUBES_COLORS}
@@ -157,6 +171,7 @@ export const Home = () => {
             className="!absolute inset-0 z-0 !h-full pointer-events-none [clip-path:circle(35%_at_50%_50%)] sm:[clip-path:circle(400px_at_50%_50%)]"
           />
         </motion.div>
+        )}
 
         <div className="container scroll-reveal" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             {/* 1. DESKTOP HERO (100% UNTOUCHED ORIGINAL) */}
