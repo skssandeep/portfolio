@@ -6,14 +6,17 @@ import { Footer } from './components/Footer';
 import { LiquidButton } from './components/ui/liquid-glass-button';
 import { Preloader } from './components/ui/Preloader';
 import { Home } from './pages/Home';
-import { Drafts } from './pages/Drafts';
-import { CaseStudy } from './pages/CaseStudy';
-import { AIWorkflow } from './pages/AIWorkflow';
-import { Prototypes } from './pages/Prototypes';
-import { Essays } from './pages/Essays';
-import { Process } from './pages/Process';
-import { SmartEPPCaseStudy } from './pages/SmartEPPCaseStudy';
-import { SnipKeepCaseStudy } from './pages/SnipKeepCaseStudy';
+import { pageLoaders } from './pageLoaders';
+
+// Home stays eager: it is the entry point and must paint immediately.
+const Drafts = React.lazy(pageLoaders['/drafts']);
+const CaseStudy = React.lazy(pageLoaders['/case-study']);
+const AIWorkflow = React.lazy(pageLoaders['/ai-workflow']);
+const Prototypes = React.lazy(pageLoaders['/prototypes']);
+const Essays = React.lazy(pageLoaders['/essays']);
+const Process = React.lazy(pageLoaders['/process']);
+const SmartEPPCaseStudy = React.lazy(pageLoaders['/smart-epp']);
+const SnipKeepCaseStudy = React.lazy(pageLoaders['/snipkeep']);
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css';
 
@@ -47,6 +50,13 @@ const AnimatedRoutes = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4, ease: 'easeInOut' }}
       >
+        <React.Suspense fallback={
+          <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        background: '#050505', color: 'var(--accent-color)',
+                        fontFamily: "'Dune Rise', var(--font-system)", fontSize: '14px', letterSpacing: '2px' }}>
+            LOADING
+          </div>
+        }>
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/drafts" element={<Drafts />} />
@@ -58,6 +68,7 @@ const AnimatedRoutes = () => {
           <Route path="/essays" element={<Essays />} />
           <Route path="/process" element={<Process />} />
         </Routes>
+        </React.Suspense>
       </motion.div>
     </AnimatePresence>
   );

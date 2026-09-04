@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { prefetchPage } from '../pageLoaders';
 
 const caseStudies = [
   {
@@ -100,6 +101,8 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
 
         <button 
           onClick={() => navigate(study.customLink || `/case-study/${study.id}`)}
+          onMouseEnter={() => prefetchPage(study.customLink || '/case-study')}
+          onFocus={() => prefetchPage(study.customLink || '/case-study')}
           className="w-full md:w-auto flex justify-center items-center"
           style={{
             fontFamily: "'Syne', sans-serif",
@@ -164,6 +167,7 @@ const CaseStudyRow = ({ study, isEven, navigate }: { study: any, isEven: boolean
       }}
       onClick={() => navigate(study.customLink || `/case-study/${study.id}`)}
       onMouseOver={(e: any) => {
+        prefetchPage(study.customLink || '/case-study');
         const img = e.currentTarget.querySelector('img');
         if (img) img.style.filter = 'drop-shadow(0 0 60px rgba(239,68,68,0.4))';
       }}
