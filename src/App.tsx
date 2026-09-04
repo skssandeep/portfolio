@@ -131,7 +131,7 @@ function App() {
               {/* Left: Logo */}
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', fontSize: '18px', letterSpacing: '0', color: 'var(--text-primary)', paddingTop: '2px', display: 'flex', alignItems: 'center' }}>
-                  SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
+                  ST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
                 </Link>
               </div>
               
@@ -208,7 +208,7 @@ function App() {
               {/* Left: Logo */}
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ fontFamily: "'Dune Rise', var(--font-system)", fontWeight: 'normal', fontSize: '15px', letterSpacing: '0', color: 'var(--text-primary)', paddingTop: '2px', display: 'flex', alignItems: 'center' }}>
-                  SANDST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
+                  ST<span style={{ color: 'var(--accent-color)', display: 'inline-block', transform: 'scale(1.15)', margin: '0 2px' }}>o</span>RMIFY
                 </Link>
               </div>
 

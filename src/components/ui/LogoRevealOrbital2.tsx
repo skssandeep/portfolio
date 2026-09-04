@@ -14,10 +14,13 @@ export const LogoRevealOrbital2 = () => {
   const topContentRef = useRef<HTMLDivElement>(null);
   const textContainerRef = useRef<HTMLDivElement>(null);
 
+  const text = "STORMIFY";
+  const accentIndex = text.indexOf("O");
+
   useEffect(() => {
     if (!containerRef.current) return;
     const chars = charRefs.current;
-    const eye = chars[6]; // The 'o'
+    const eye = chars[accentIndex]; // The 'o' — every letter orbits this
     if (!eye) return;
 
     // Observe body for layout shifts (like images loading) and refresh
@@ -60,7 +63,7 @@ export const LogoRevealOrbital2 = () => {
       }, 0);
 
       chars.forEach((char, i) => {
-        if (i === 6 || !char) return;
+        if (i === accentIndex || !char) return;
         
         const charX = char.offsetLeft + char.offsetWidth / 2;
         const charY = char.offsetTop + char.offsetHeight / 2;
@@ -130,9 +133,8 @@ export const LogoRevealOrbital2 = () => {
       resizeObserver.disconnect();
       ctx.revert();
     };
-  }, [isMobile]);
+  }, [isMobile, accentIndex]);
 
-  const text = "SANDSTORMIFY";
 
   return (
     <div className="w-full relative">
@@ -247,13 +249,13 @@ export const LogoRevealOrbital2 = () => {
                   ref={el => { charRefs.current[i] = el; }}
                   className="inline-block origin-center"
                   style={{ 
-                    color: i === 6 ? 'var(--accent-color)' : undefined,
-                    textShadow: i === 6 ? '0 0 40px rgba(255, 0, 0, 1), 0 0 80px rgba(255, 0, 0, 0.8)' : undefined,
-                    textTransform: i === 6 ? 'lowercase' : 'uppercase',
+                    color: i === accentIndex ? 'var(--accent-color)' : undefined,
+                    textShadow: i === accentIndex ? '0 0 40px rgba(255, 0, 0, 1), 0 0 80px rgba(255, 0, 0, 0.8)' : undefined,
+                    textTransform: i === accentIndex ? 'lowercase' : 'uppercase',
                     transformStyle: 'preserve-3d'
                   }}
                 >
-                  {i === 6 ? (
+                  {i === accentIndex ? (
                     <span style={{ display: 'inline-block', transform: 'scale(1.15)', margin: '0 0.5vw' }}>
                       {char}
                     </span>

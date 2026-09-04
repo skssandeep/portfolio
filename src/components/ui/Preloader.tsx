@@ -63,10 +63,6 @@ export const Preloader = () => {
             }}
           >
             <span>S</span>
-            <span>A</span>
-            <span>N</span>
-            <span>D</span>
-            <span>S</span>
             <span>T</span>
             <span style={{ 
               color: 'var(--accent-color)', 
