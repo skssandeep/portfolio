@@ -234,7 +234,7 @@ export const ProjectsSection = () => {
                       }
                     }}
                   >
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src={project.image} 
                       alt={project.title} 
                       style={{ 

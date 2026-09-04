@@ -202,7 +202,7 @@ export const Testimonials = () => {
                         e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
                       }}
                     >
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={imgUrl} 
                         alt={`Testimonial ${index + 1}`} 
                         style={{ 

@@ -6,7 +6,7 @@ import { Footer } from './components/Footer';
 import { LiquidButton } from './components/ui/liquid-glass-button';
 import { Preloader } from './components/ui/Preloader';
 import { Home } from './pages/Home';
-import { pageLoaders } from './pageLoaders';
+import { pageLoaders, prefetchPage } from './pageLoaders';
 
 // Home stays eager: it is the entry point and must paint immediately.
 const Drafts = React.lazy(pageLoaders['/drafts']);
@@ -86,6 +86,15 @@ function App() {
     restDelta: 0.001
   });
   const scrollFillHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
+
+  // Recruiters almost always go on to read a case study, so fetch those chunks
+  // once the browser is idle. By the time they click, the code is already here.
+  useEffect(() => {
+    const warm = () => { prefetchPage('/smart-epp'); prefetchPage('/snipkeep'); };
+    const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+    if (ric) ric(warm, { timeout: 4000 });
+    else setTimeout(warm, 2500);
+  }, []);
 
   useEffect(() => {
     (async function () {

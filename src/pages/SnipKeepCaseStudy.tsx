@@ -618,7 +618,7 @@ export const SnipKeepCaseStudy = () => {
               transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
               style={{ position: 'relative', zIndex: 2, width: isMobile ? '100%' : '100%', marginTop: isMobile ? '20px' : '0', display: 'flex', justifyContent: 'center' }}
             >
-              <img 
+              <img loading="lazy" decoding="async" 
                 src="/images/LAP01-v2.webp"
                 alt="SnipKeep Laptop Mockup" 
                 style={{ width: '100%', maxWidth: '650px', height: 'auto', display: 'block', objectFit: 'contain', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.6))' }}
