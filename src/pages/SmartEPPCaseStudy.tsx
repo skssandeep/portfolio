@@ -1055,7 +1055,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Phase 1: Initial Wireframes */}
             <motion.div 
                whileHover="hover"
-               onClick={() => { setModalImages(Array.from({length: 8}, (_, idx) => `/images/wireframe${idx+1}.jpg`)); setModalIndex(0); }}
+               onClick={() => { setModalImages(Array.from({length: 8}, (_, idx) => `/images/wireframe${idx+1}.webp`)); setModalIndex(0); }}
                style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 1, display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '20px', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
@@ -1082,7 +1082,7 @@ export const SmartEPPCaseStudy = () => {
             {/* Phase 2: Initial Hi-Fi */}
             <motion.div 
                whileHover="hover"
-               onClick={() => { setModalImages(Array.from({length: 5}, (_, idx) => `/images/prev0${idx+1}.jpg`)); setModalIndex(0); }}
+               onClick={() => { setModalImages(Array.from({length: 5}, (_, idx) => `/images/prev0${idx+1}.webp`)); setModalIndex(0); }}
                style={{ width: '320px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', overflow: 'hidden', transition: 'all 0.3s ease', cursor: 'pointer', zIndex: 2, display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ height: '260px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '20px', background: 'radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%)' }}>
